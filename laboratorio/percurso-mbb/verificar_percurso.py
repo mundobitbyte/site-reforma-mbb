@@ -130,7 +130,10 @@ assert len(analysis)==15 and len(bd)==11
 progress=json.loads((ROOT/'docs/reforma/progresso-subetapas.json').read_text(encoding="utf-8"))
 items=[e for m in progress['macroetapas'] for e in m['subetapas']]
 assert len(items)==len({e['id'] for e in items})==31
-assert set(e['situacao'] for e in items)<={'concluida','pendente','bloqueada'}
+assert set(e['situacao'] for e in items)<={'concluida','pendente','bloqueada','parcial'}
+for e in items:
+    if e['situacao']=='parcial':
+        assert e.get('preparacao') and e['depende_de'] and e['evidencias'], 'Subetapa parcial requer avanço documentado, dependência e evidência'
 assert progress['resumo']['concluidas']==sum(e['situacao']=='concluida' for e in items)
 assert progress['resumo']['restantes']==sum(e['situacao']!='concluida' for e in items)
 assert progress['resumo']['total_subetapas']==len(items)

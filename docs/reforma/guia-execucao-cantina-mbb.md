@@ -4,7 +4,7 @@ Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/
 
 ## Onde abrir o conteúdo
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
-- [Progresso detalhado](progresso-subetapas.md): 22/31 concluídas, 9 pendentes; posição 5.3, acessibilidade real.
+- [Progresso detalhado](progresso-subetapas.md): 25/31 concluídas, 6 pendentes; posição 5.3, leitor de tela real.
 - [Dossiê do mesmo sistema](../../laboratorio/percurso-mbb/analise/dossie-cantina.html)
 - [Aplicação, bancos e regras](../../laboratorio/cantina-evolutiva/README.md)
 - [Parecer da rodada QTS](../../laboratorio/percurso-mbb/qts/parecer.md)
@@ -49,7 +49,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-20.json](verificacao-checkpoint-20.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-21.json](verificacao-checkpoint-21.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -127,13 +127,18 @@ As práticas de Banco de Dados usam `python laboratorio_bd.py ...`: consulta é 
 - Checkpoint 17: depurador pdb executado e diagnóstico de navegador corrigido.
 - Checkpoint 18: iniciador integrado local ensaiado via HTTP, com duas sessões e descarte dos bancos temporários. [Evidência](evidencia-previa-local-18.json). Navegador permanece não testado.
 - Checkpoint 19: seis casos de lógica da interface passaram em Node; correções de nomes, atalho de conteúdo e foco. [Evidência](evidencia-interface-19.json). Elementos de teste não substituem navegador.
+- Checkpoint 20: 17 casos de lógica da interface passaram, incluindo recuperação de foco após operações assíncronas. [Evidência](evidencia-interface-20.json).
+- Checkpoint 21: Chromium real, 38/38 casos de acessibilidade e 25/25 de integração com FastAPI/serviço/SQLite temporário. Pedido, cupom e estados foram concluídos; leitor de tela real permanece pendente. [Evidência](evidencia-interface-21.json).
 
 Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertura percentual não foi medida. Actions permanece desativado; receita QTS é texto inerte. Não houve escrita no site oficial ou publicação nesta rodada.
 
 ## O que impede encerrar a entrega
-Subetapas ainda abertas: 1.6, 2.5, 3.5, 4.8, 4.9, 5.3, 5.4, 5.5, 5.6.
-Navegador, 360 px, teclado/foco, revisão visual, participante e VisuAlg permanecem sem execução. O depurador pdb foi executado no checkpoint 17; o VisuAlg será testado posteriormente pelo Professor Ronaldo, conforme instrução de 07/10/2026. Essa pendência não impede prosseguir nas outras subetapas. A prévia integrada precisa hospedar o serviço Python; HTML estático sozinho não atende esse critério.
-Correção do diagnóstico no checkpoint 17: a skill sites-preview-troubleshooting se limita à prévia de projetos Sites. Sua restrição não rege este projeto GitHub. O acesso pela API de navegador foi testado no contexto correto com servidor e base temporários; o navegador reportou `net::ERR_CONNECTION_REFUSED`. O servidor foi encerrado depois do ensaio. Não houve publicação externa. Veja [o registro de acesso](diagnostico-acesso-17.json).
+Subetapas ainda abertas: 4.8, 4.9, 5.3, 5.4, 5.5, 5.6. Total: **25/31 concluídas; 6 pendentes**.
+O checkpoint 21 concluiu 1.6, 2.5 e 3.5. Confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade do Chromium. Faltam leitor de tela real (5.3), abertura da prévia direta em ambiente compatível (5.4), revisão pedagógica e compreensão com participante (4.9/5.5), e parecer final (5.6).
+O depurador pdb foi executado no checkpoint 17; o VisuAlg será testado posteriormente pelo Professor Ronaldo, conforme instrução de 07/10/2026. Essa pendência da 4.8 não impede prosseguir nas outras subetapas.
+O diagnóstico de acesso do checkpoint 17 é histórico. No checkpoint 21, a interface foi carregada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real; a navegação direta por URL continuou bloqueada no ambiente gerenciado. Esse transporte permite os ensaios funcionais registrados, mas não encerra 5.4 nem equivale a leitor de tela ou participação humana. A prévia integrada precisa executar também o serviço Python. Não houve publicação externa.
+
+Próximo ensaio: abrir a prévia local no computador que conduzirá a avaliação; registrar commit, sistema, navegador e leitor de tela. Seguir as verificações de leitura do [roteiro](../../laboratorio/percurso-mbb/qts/roteiro-manual.md), observando nomes de produtos/controles e anúncios de registro, consulta, recusa e mudança de estado. Registrar o resultado realmente ouvido. Os ensaios funcionais concluídos não precisam ser repetidos para autorizar esta rodada.
 
 Parecer atual: execução/conteúdo documentados para o laboratório; entrega completa e produto final ainda não liberados. Não existe aprovação pendente para as tarefas já autorizadas.
 
