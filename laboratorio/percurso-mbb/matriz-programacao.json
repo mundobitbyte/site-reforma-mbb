@@ -221,7 +221,9 @@
       "raise",
       "type",
       "break",
-      "while True"
+      "while True",
+      "is/is not",
+      "curto-circuito"
     ],
     "pre_requisitos": [
       "Etapas 0–7"
@@ -276,7 +278,8 @@
       "UTF-8",
       "json",
       "modo x",
-      "modo r"
+      "modo r",
+      "FileExistsError"
     ],
     "pre_requisitos": [
       "Etapas 0–9"

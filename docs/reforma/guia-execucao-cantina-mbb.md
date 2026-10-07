@@ -50,7 +50,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-22.json](verificacao-checkpoint-22.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-23.json](verificacao-checkpoint-23.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.

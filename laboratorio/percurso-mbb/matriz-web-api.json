@@ -120,7 +120,13 @@
       "preventDefault",
       "Number",
       "textContent",
-      "defer"
+      "defer",
+      "Number.isInteger",
+      "!",
+      "||",
+      "return",
+      "template literal",
+      "modo estrito"
     ],
     "pre_requisitos": [
       "WEB00–WEB03; PG03/PG07/PG08"
@@ -147,7 +153,10 @@
       "let",
       "map",
       "arrow function",
-      "JSON.stringify"
+      "JSON.stringify",
+      "campo do objeto",
+      "console.log",
+      "null"
     ],
     "pre_requisitos": [
       "WEB00–WEB04; PG06/PG07"
@@ -204,7 +213,11 @@
       "json",
       "try/catch",
       "throw",
-      "export/import"
+      "export/import",
+      "parâmetro padrão",
+      "URL",
+      "Error",
+      "valor alternativo com ||"
     ],
     "pre_requisitos": [
       "WEB00–WEB06; PG08/PG09"

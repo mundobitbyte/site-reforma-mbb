@@ -99,3 +99,6 @@ A Cantina foi executada em Chromium real com as fontes do branch conferidas byte
 
 ## Avanço no checkpoint 22
 O professor adiou os novos ensaios. A revisão editorial alinhou as declarações de situação ao checkpoint 21 e ao pdb já executado. A entrada principal orienta a prévia temporária; a matriz, o capítulo e os exercícios QTS14 foram sincronizados. A [entrega parcial](entrega-parcial.md) prepara a 5.6, que permanece parcial. Total mantido: **25/31**, seis pendentes. [Registro](checkpoint-22-revisao-sem-ensaios.md).
+
+## Avanço no checkpoint 23
+A preparação da 5.6 inclui revisão de oito capítulos: posições/chaves, erro previsto, importação, operadores, mensagens e ausência de cupom foram explicados no ponto de uso. Páginas e matrizes de conceitos foram alinhadas. Programas preservados; nenhum novo ensaio. Total **25/31**, seis pendentes. [Registro](checkpoint-23-pontes-de-leitura.md).
