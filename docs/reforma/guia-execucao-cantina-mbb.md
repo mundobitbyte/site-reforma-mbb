@@ -4,6 +4,7 @@ Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/
 
 ## Onde abrir o conteúdo
 - [Orientação da entrega parcial](entrega-parcial.md): leitura e encadeamento do material sem iniciar a aplicação; ensaios podem ficar para depois.
+- [Ficha curta para a próxima sessão](registro-retomada.md) · [Minuta do parecer final](parecer-final-minuta.md): registrar apenas as observações ainda pendentes, sem repetir as suítes concluídas.
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
 - [Progresso detalhado](progresso-subetapas.md): 25/31 concluídas, 6 pendentes; posição 5.6, preparação da entrega parcial; ensaios adiados.
 - [Dossiê do mesmo sistema](../../laboratorio/percurso-mbb/analise/dossie-cantina.html)
@@ -50,7 +51,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-23.json](verificacao-checkpoint-23.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-24.json](verificacao-checkpoint-24.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.

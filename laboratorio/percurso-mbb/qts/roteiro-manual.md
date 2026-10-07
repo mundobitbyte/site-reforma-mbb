@@ -10,6 +10,8 @@ O próximo ensaio é **5.3: leitor de tela real**; falta também abrir a prévia
 
 ## Preparar uma rodada
 
+Para retomar a avaliação restante, use primeiro a [ficha curta](../../../docs/reforma/registro-retomada.md). O roteiro completo abaixo pode aprofundar observações, falhas ou situações que não tenham sido verificadas; não é exigência de repetir todos os casos funcionais já concluídos.
+
 1. Use o [guia consolidado](../../../docs/reforma/guia-execucao-cantina-mbb.md) para ativar o ambiente Python e instalar as dependências.
 2. Na raiz do laboratório, execute `python laboratorio/cantina-evolutiva/previa_local.py`.
 3. Aguarde o servidor iniciar. Abra os dois endereços impressos no terminal, no mesmo computador. O banco começa novo; a data do ensaio é 07/10/2026.

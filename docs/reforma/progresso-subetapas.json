@@ -365,7 +365,10 @@
             "laboratorio/percurso-mbb/qts/parecer.md",
             "docs/reforma/entrega-parcial.md",
             "docs/reforma/checkpoint-22-revisao-sem-ensaios.md",
-            "docs/reforma/checkpoint-23-pontes-de-leitura.md"
+            "docs/reforma/checkpoint-23-pontes-de-leitura.md",
+            "docs/reforma/parecer-final-minuta.md",
+            "docs/reforma/registro-retomada.md",
+            "docs/reforma/checkpoint-24-preparacao-do-parecer.md"
           ],
           "depende_de": [
             "1.6",
@@ -377,7 +380,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Entrega parcial preparada no checkpoint 22; pontes de leitura de oito capítulos e matrizes revisadas no 23, sem alteração dos programas ou novos ensaios. Parecer final aguarda critérios de saída."
+          "preparacao": "Entrega parcial e revisão de leitura preparadas nos checkpoints 22/23. No 24, minuta do parecer e ficha curta da próxima sessão foram organizadas com evidências anteriores e campos futuros sem preenchimento. Parecer final aguarda os resultados reais."
         }
       ]
     }
@@ -397,6 +400,6 @@
     "restantes": 6,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 23,
+  "checkpoint_atualizacao": 24,
   "orientacao_atual": "Trabalho sem novos ensaios, conforme pedido do professor em 07/10/2026. Entrega parcial preparada; testes podem ser retomados depois, a partir da 5.3."
 }

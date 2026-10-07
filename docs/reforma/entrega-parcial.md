@@ -40,6 +40,8 @@ O percurso contém 81 etapas de ensino: Análise 15, Banco de Dados 11, Programa
 
 Quando houver disponibilidade, use o [guia de execução](guia-execucao-cantina-mbb.md) e o [roteiro de uso](../../laboratorio/percurso-mbb/qts/roteiro-manual.md). Os casos funcionais já concluídos não precisam ser repetidos apenas para retomar. Uma nova execução só será necessária quando uma mudança ou o objetivo da avaliação justificar.
 
+A [ficha curta de retomada](registro-retomada.md) permite registrar o que falta numa mesma sessão. A [minuta do parecer final](parecer-final-minuta.md) já reúne o que foi comprovado; sua decisão permanece sem preenchimento até analisar os novos resultados.
+
 ## Limite da entrega
 
 O sistema usa dados fictícios e execução local. Não tem autenticação por usuário nem chave de idempotência para o registro de venda. Não foi aprovado para operação de uma cantina real. O SQL protegido e os projetos de referência permanecem preservados. Não houve publicação no domínio oficial nem expansão para App Inventor, Santa Filomena ou Academia.

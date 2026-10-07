@@ -102,3 +102,6 @@ O professor adiou os novos ensaios. A revisão editorial alinhou as declaraçõe
 
 ## Avanço no checkpoint 23
 A preparação da 5.6 inclui revisão de oito capítulos: posições/chaves, erro previsto, importação, operadores, mensagens e ausência de cupom foram explicados no ponto de uso. Páginas e matrizes de conceitos foram alinhadas. Programas preservados; nenhum novo ensaio. Total **25/31**, seis pendentes. [Registro](checkpoint-23-pontes-de-leitura.md).
+
+## Avanço no checkpoint 24
+Preparadas a [minuta do parecer](parecer-final-minuta.md) e a [ficha curta da sessão](registro-retomada.md). Evidências já existentes identificadas; campos de resultados e decisão final permanecem vazios. A 5.6 continua parcial; total **25/31**, seis pendentes. [Registro](checkpoint-24-preparacao-do-parecer.md).
