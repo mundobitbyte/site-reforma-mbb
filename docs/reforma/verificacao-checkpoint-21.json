@@ -1,0 +1,22 @@
+{
+  "checkpoint": 21,
+  "paginas_html": 108,
+  "referencias_locais": 3398,
+  "botoes_copiar": 104,
+  "codigo_canonico": 48,
+  "browser_tested": true,
+  "browser_cases": 38,
+  "browser_pass": 38,
+  "integrated_real_api_cases": 25,
+  "integrated_real_api_pass": 25,
+  "leitor_de_tela_real": false,
+  "visualg_executado": false,
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 25,
+    "restantes": 6,
+    "total_etapas_ensino": 81
+  },
+  "posicao_atual": "5.3",
+  "erros": []
+}
