@@ -1,0 +1,71 @@
+{
+  "data": "2026-10-07",
+  "fuso": "America/Sao_Paulo",
+  "conduzido_por": "Professor Ronaldo",
+  "ferramenta": "Narrador do Windows conforme orientação e respostas do professor; versão não informada",
+  "etapa": "5.3",
+  "concluida": true,
+  "observacoes": [
+    {
+      "caso": "R02",
+      "observado": "Professor confirmou nome do campo Quantidade de Água e relatou anúncio Adicionar Água ao pedido. Demais produtos, atalho, cupom e campo de consulta ainda sem confirmação específica."
+    },
+    {
+      "caso": "R03",
+      "observado": "Quantidade 0 recusada com mensagem vermelha; professor confirmou que o Narrador falou e a tela escreveu. Destino de foco e compreensão com participante não confirmados."
+    },
+    {
+      "caso": "R04",
+      "observado": "Professor narrou literalmente Status - Pedido #3 — Novo — R$ 6,00. 2 × Água. Consulta anunciada. Registro confirmado por consulta; anúncio do instante de registro não foi isoladamente confirmado."
+    },
+    {
+      "caso": "R06",
+      "observado": "Professor relatou mensagem de banco não confirmou após orientação para avanço do #3. Captura image(20261007-184458).png mostra consulta do #3 em Confirmado, 2 Águas, R$ 6,00, histórico Novo → Confirmado às 15:42:15. Captura image(20261007-184511).png mostra #3 e erro de avanço. Captura anterior image(20261007-184402).png comprova #4 Confirmado, R$ 12,00, com histórico às 15:43:42. Falha intermitente/repetida ainda sem causa SQLite identificada. Não encerra R06."
+    }
+  ],
+  "bloqueio_atual": "5.3 encerrada com observações do Narrador e evidência anterior de layout/teclado/foco. Próximas etapas: revisão curricular e compreensão com participante; VisuAlg adiado.",
+  "contagem": {
+    "concluidas": 27,
+    "total": 31,
+    "restantes": 4
+  },
+  "confirmacao_pedagogica_com_participante": false,
+  "retomada_8002": {
+    "abertura": "Professor confirmou abertura após comando -X utf8 --port 8002",
+    "registro": "Professor confirmou pedido #1 e anúncio da confirmação",
+    "sequencia": "Após orientação para avançar cada etapa e ouvir Narrador, professor respondeu deu certo. Captura mostra #1 Entregue, R$ 6,00, 2 Águas e quatro eventos: 15:55:48, 15:56:12, 15:56:16, 15:56:22. Não há transcrição individual dos anúncios.",
+    "imagem": "image(20261007-185650).png",
+    "citacao": "file_00000000a34c820e93233c5fb400eaee",
+    "sha256": "8a022d003fff99488aa3cb653e08cf6ac48cb12b801264dea54465a6e86fddcc",
+    "limite": "A sessão Windows usa ZIP anterior com -X utf8 e base nova; não comprova que o arquivo servico.py corrigido foi baixado. Porta não aparece na captura recortada, vinculada pela sequência de instrução/resposta."
+  },
+  "checkpoint": 27,
+  "confirmacoes_finais": [
+    {
+      "caso": "R04",
+      "fala_usuario": "pedido #1 anunciou sim",
+      "conclusao": "Confirmação de registro anunciada na sessão nova."
+    },
+    {
+      "caso": "R05",
+      "fala_usuario": "o cupom exige pedido de pelo menos 30,00",
+      "contexto": "Resposta à pergunta sobre mensagem anunciada após uma Água com MBB10.",
+      "conclusao": "Recusa de cupom por mínimo anunciada."
+    },
+    {
+      "caso": "R02",
+      "fala_usuario": "falou tudo certo",
+      "contexto": "Conferência com Tab de Quantidade/Adicionar com nome de cada produto; Cupom opcional; Número do pedido e Consultar.",
+      "conclusao": "Professor confirmou todos os nomes solicitados."
+    }
+  ],
+  "criterio_encerrado": "5.3",
+  "evidencia_anterior_complementar": "docs/reforma/evidencia-interface-21.json: Chromium real 360/320 px, teclado, foco, DOM e árvore de acessibilidade.",
+  "limites": [
+    "Anúncios confirmados pelo professor em respostas de conversa; não há gravação de áudio nem transcrição individual de cada transição.",
+    "Na sessão Windows o ZIP anterior foi iniciado com -X utf8 e banco novo; o arquivo corrigido no commit 26 não foi comprovadamente baixado.",
+    "Commit local e versões de Chrome/Narrador não foram informados.",
+    "Atalho de conteúdo e destinos individuais de foco não foram novamente relatados na sessão Narrador; a evidência técnica anterior de teclado/foco permanece identificada separadamente.",
+    "Revisão de professor com Narrador não comprova compreensão curricular de um participante."
+  ]
+}

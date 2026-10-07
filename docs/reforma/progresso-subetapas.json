@@ -319,19 +319,18 @@
         {
           "id": "5.3",
           "titulo": "Acessibilidade real: 360 px, teclado, foco e leitura",
-          "situacao": "parcial",
+          "situacao": "concluida",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/evidencia-interface-19.json",
             "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs",
             "docs/reforma/evidencia-interface-20.json",
             "docs/reforma/evidencia-interface-21.json",
-            "docs/reforma/evidencia-sql-utf8-26.json"
+            "docs/reforma/evidencia-sql-utf8-26.json",
+            "docs/reforma/evidencia-narrador-windows-27.json"
           ],
-          "depende_de": [
-            "LEITOR_DE_TELA"
-          ],
-          "preparacao": "Chromium real confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade. A integração navegador + FastAPI/serviço/SQLite passou 25/25; a rodada de acessibilidade passou 38/38. Leitor de tela real ainda pendente. Sessão Windows: Narrador confirmou campo/botão Água, recusa de quantidade e consulta do #3. Avanço encontrou falha de leitura SQL sob padrão cp1252; correção UTF-8 verificada em dois casos de serviço. Anúncios restantes e verificação Windows após correção ainda pendentes."
+          "depende_de": [],
+          "preparacao": "Chromium real confirmou 360/320 px, teclado e foco no checkpoint 21. No 27, o professor confirmou com Narrador nomes de controles, recusa de quantidade/cupom, consulta e registro; respondeu deu certo à sequência até Entregue, também comprovada em captura na sessão Windows UTF-8. Limites de versão e das observações estão no registro."
         },
         {
           "id": "5.4",
@@ -385,20 +384,19 @@
       ]
     }
   ],
-  "posicao_atual": "5.3",
+  "posicao_atual": "4.9",
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
-    "LEITOR_DE_TELA": "Narrador real observado parcialmente pelo professor; faltam anúncios de registro, cupom, sequência de estados e demais controles. Corrigir ambiente SQL e retomar R06; não recomeçar os casos já observados."
+    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução."
   },
   "resumo": {
     "total_subetapas": 31,
-    "concluidas": 26,
-    "restantes": 5,
+    "concluidas": 27,
+    "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 26,
-  "orientacao_atual": "Correção UTF-8 do serviço salva; leitor de tela parcial e contagem 26/31. Banco temporário criado com codificação errada exige nova base. Para o ZIP anterior, abrir segunda prévia com -X utf8 em porta 8002, mantendo a sessão anterior enquanto se preservam evidências."
+  "checkpoint_atualizacao": 27,
+  "orientacao_atual": "Narrador confirmado pelo professor e 5.3 encerrada. Próximo: 4.9, revisão do percurso em uso, e 5.5 com participante. VisuAlg permanece adiado; parecer final aguarda esses critérios."
 }

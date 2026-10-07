@@ -2,7 +2,7 @@
 
 Este material reúne o sistema-base e seu percurso interdisciplinar no laboratório `mundobitbyte/site-reforma-mbb`, branch `preparacao/isolamento-inicial`. O site oficial e o Firebase permanecem intactos.
 
-**Situação: 26/31 subetapas concluídas; 5 pendentes.** Esta é uma entrega parcial para leitura e revisão. Os ensaios com participante, leitor de tela e VisuAlg não foram declarados concluídos.
+**Situação: 27/31 subetapas concluídas; 4 pendentes.** Esta é uma entrega parcial para leitura e revisão. Narrador real confirmado no checkpoint 27; ensaios com participante e VisuAlg continuam pendentes.
 
 ## O que você pode fazer agora, sem testar
 
@@ -33,8 +33,6 @@ O percurso contém 81 etapas de ensino: Análise 15, Banco de Dados 11, Programa
 |---|---|
 | 4.8 | Execução dos arquivos no VisuAlg pelo professor; pdb já concluído. Foi adiada e não impede os outros trabalhos. |
 | 4.9 | Revisão visual e pedagógica do percurso em uso com participante. |
-| 5.3 | Leitor de tela real: nomes e anúncios efetivamente ouvidos. A árvore de acessibilidade do Chromium não substitui esse ensaio. |
-
 | 5.5 | Uso integrado e compreensão das mensagens/relações com participante. |
 | 5.6 | Parecer final depois de registrar os resultados e as reservas necessárias. Esta orientação prepara a entrega, mas não encerra a etapa. |
 
@@ -46,4 +44,4 @@ A [ficha curta de retomada](registro-retomada.md) permite registrar o que falta 
 
 O sistema usa dados fictícios e execução local. Não tem autenticação por usuário nem chave de idempotência para o registro de venda. Não foi aprovado para operação de uma cantina real. O SQL protegido e os projetos de referência permanecem preservados. Não houve publicação no domínio oficial nem expansão para App Inventor, Santa Filomena ou Academia.
 
-A abertura direta da aplicação e de uma aula curricular no Windows do professor encerrou 5.4 no [checkpoint 25](evidencia-previa-windows-25.json). Próximo ensaio: leitor de tela real, 5.3.
+A abertura direta da aplicação e de uma aula curricular no Windows do professor encerrou 5.4 no [checkpoint 25](evidencia-previa-windows-25.json). O Narrador real foi confirmado no [checkpoint 27](evidencia-narrador-windows-27.json), encerrando 5.3. Próximo: percurso em uso e compreensão com participante (4.9/5.5).

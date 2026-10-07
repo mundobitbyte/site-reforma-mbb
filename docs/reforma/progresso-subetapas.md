@@ -2,7 +2,7 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**26/31 concluídas; 5 pendentes. Posição atual: Entrega 5.3, leitor de tela real. A prévia direta 5.4 foi concluída na sessão Windows do professor.**
+**27/31 concluídas; 4 pendentes. Posição atual: Currículo 4.9, revisão do percurso em uso. Prévia direta 5.4 e Narrador real 5.3 concluídos na sessão Windows do professor.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
@@ -10,7 +10,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | Cupom | **5/5** | — |
 | Estados do pedido | **5/5** | — |
 | Percurso curricular | 7/9 | 4.8, 4.9 |
-| Entrega | 3/6 | 5.3, 5.5, 5.6 |
+| Entrega | 4/6 | 5.5, 5.6 |
 
 ## Cada subetapa
 
@@ -65,7 +65,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 |---|---|---|
 | 5.1 | Verificação estrutural portátil e registro reproduzível | Concluída |
 | 5.2 | Guia consolidado de execução, evidências e pendências | Concluída |
-| 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Parcial:** 360/320 px, teclado, foco, DOM e árvore AX confirmados; leitor de tela real pendente |
+| 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Concluída:** evidência Chromium do 21 complementada por Narrador Windows no 27 |
 | 5.4 | Prévia em ambiente compatível | **Concluída — checkpoint 25, Windows do professor** |
 | 5.5 | Rodada final de uso integrado e compreensão | Bloqueada |
 | 5.6 | Parecer e entrega final após os critérios de saída | Parcial: orientação da entrega preparada; encerramento aguarda critérios de saída |
@@ -77,7 +77,7 @@ Interface criada não significa interface testada em navegador. Conferir estrutu
 ## Bloqueios e próximos ensaios
 - O Chromium real foi usado no checkpoint 21. A navegação direta por URL continua bloqueada pela política gerenciada do ambiente, mas isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi exercitada no navegador e as chamadas foram encaminhadas internamente ao FastAPI real com banco SQLite temporário.
 - A prévia direta 5.4 foi comprovada no Chrome do Windows do professor: aplicação e aula curricular abertas por URL local. A restrição histórica do Chromium gerenciado não bloqueia essa conclusão.
-- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. Leitor de tela real e compreensão com participante continuam não executados.
+- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. Narrador real confirmado no checkpoint 27; compreensão com participante continua não executada.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
 Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização. A contagem detalhada será usada nas próximas falas; cada avanço deve ter evidência.
@@ -111,3 +111,6 @@ A sessão Windows confirmou aplicação e página curricular diretamente em `127
 
 ## Correção no checkpoint 26
 O Narrador foi observado parcialmente no Windows: nome de controles da Água, recusa de quantidade 0 e consulta do pedido #3. O avanço revelou HTTP 503 depois de Confirmado. A leitura SQL sem codificação explícita foi reproduzida com padrão cp1252; o estado acentuado fica corrompido na restrição CHECK. Serviço corrigido para UTF-8 nas três leituras. Dois testes de regressão falharam antes e passaram depois, até Entregue e com reabertura. Isso não substitui a confirmação no Windows nem conclui a 5.3. **26/31**, cinco pendentes. [Evidência](evidencia-sql-utf8-26.json).
+
+## Avanço no checkpoint 27
+O professor confirmou os nomes dos controles, anúncios de registro/consulta, recusa de quantidade e mínimo do cupom no Narrador. A nova sessão Windows com UTF-8 chegou a Entregue; captura mostra as quatro transições. A evidência manual complementa os ensaios anteriores de layout, teclado e foco e encerra **5.3**. Total **27/31**, quatro pendentes: 4.8, 4.9, 5.5, 5.6. [Registro e limites](evidencia-narrador-windows-27.json).
