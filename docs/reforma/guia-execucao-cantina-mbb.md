@@ -163,3 +163,15 @@ node --test laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs
 ```
 
 O conjunto atual tem 17 casos com o JavaScript real e elementos substitutos no Node, sem DOM de navegador ou rede. Inclui os seis casos do checkpoint 19 e 11 de operações assíncronas, recuperação de foco, respostas superadas e campo em edição. Não avalia layout, teclado nativo ou leitor de tela. [Evidência do checkpoint 20](evidencia-interface-20.json).
+
+## Windows: falha depois de Confirmado — checkpoint 26
+
+A leitura SQL deve usar UTF-8 explicitamente. Em um Windows com codificação padrão cp1252, a leitura sem encoding corrompe `Em preparação` nas restrições CHECK. O [registro 26](evidencia-sql-utf8-26.json) reproduz essa falha e registra a correção do serviço. A mudança não repara restrições já gravadas num banco antigo. Não altere SQL protegido nem remova bancos persistentes para contornar o erro.
+
+Para retomar o ZIP anterior sem fechar o ensaio original, abra outro CMD na raiz do projeto e use:
+
+```bat
+laboratorio\cantina-evolutiva\.venv\Scripts\python.exe -X utf8 laboratorio\cantina-evolutiva\previa_local.py --port 8002
+```
+
+Abra `http://127.0.0.1:8002/`. Essa sessão tem banco temporário novo e IDs próprios. O `-X utf8` evita a leitura errada no código antigo; o serviço corrigido já explicita UTF-8. Confirme a sequência de estados na sessão nova com Narrador. Aproveite os anúncios já observados; não declare o R06 concluído até ouvi-lo nessa sequência. A sessão original em 8001 pode permanecer aberta enquanto se preservam suas evidências.

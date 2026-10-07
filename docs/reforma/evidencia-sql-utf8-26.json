@@ -1,0 +1,80 @@
+{
+  "data": "2026-10-07",
+  "fuso": "America/Sao_Paulo",
+  "conduzido_por": "Professor Ronaldo",
+  "ferramenta": "Narrador do Windows conforme orientação e respostas do professor; versão não informada",
+  "etapa": "5.3",
+  "concluida": false,
+  "observacoes": [
+    {
+      "caso": "R02",
+      "observado": "Professor confirmou nome do campo Quantidade de Água e relatou anúncio Adicionar Água ao pedido. Demais produtos, atalho, cupom e campo de consulta ainda sem confirmação específica."
+    },
+    {
+      "caso": "R03",
+      "observado": "Quantidade 0 recusada com mensagem vermelha; professor confirmou que o Narrador falou e a tela escreveu. Destino de foco e compreensão com participante não confirmados."
+    },
+    {
+      "caso": "R04",
+      "observado": "Professor narrou literalmente Status - Pedido #3 — Novo — R$ 6,00. 2 × Água. Consulta anunciada. Registro confirmado por consulta; anúncio do instante de registro não foi isoladamente confirmado."
+    },
+    {
+      "caso": "R06",
+      "observado": "Professor relatou mensagem de banco não confirmou após orientação para avanço do #3. Captura image(20261007-184458).png mostra consulta do #3 em Confirmado, 2 Águas, R$ 6,00, histórico Novo → Confirmado às 15:42:15. Captura image(20261007-184511).png mostra #3 e erro de avanço. Captura anterior image(20261007-184402).png comprova #4 Confirmado, R$ 12,00, com histórico às 15:43:42. Na coleta inicial a causa ainda era desconhecida; a reprodução e correção UTF-8 estão registradas abaixo. Não encerra R06."
+    }
+  ],
+  "bloqueio_atual": "Defeito de leitura SQL sem UTF-8 reproduzido em ambiente que simula padrão cp1252. Corrigido no serviço para bancos novos e migração v2; banco já criado com SQL corrompido não é reparado pela mudança. Verificação real no Windows e R06 ainda pendentes.",
+  "contagem": {
+    "concluidas": 26,
+    "total": 31,
+    "restantes": 5
+  },
+  "confirmacao_pedagogica_com_participante": false,
+  "checkpoint": 26,
+  "reproducao": {
+    "ambiente": "Python 3.12.14 e SQLite reais; Path.read_text sem encoding usa cp1252 no teste para representar ambiente Windows",
+    "antes": {
+      "casos": 2,
+      "erros": 2,
+      "primeiro_avanco": "Confirmado",
+      "falha": "Confirmado → Em preparação",
+      "motivo": "CHECK constraint contém Em preparaÃ§Ã£o no pedido (base nova) ou no histórico (migração v2)"
+    },
+    "depois": {
+      "casos": 2,
+      "passaram": 2,
+      "verificou": [
+        "Banco novo",
+        "Migração v2",
+        "Quatro transições e histórico",
+        "Reabertura com valores e estoque preservados"
+      ]
+    },
+    "limite": "Codificação/SQL do banco no computador do professor não foram inspecionados diretamente. Reprodução demonstra defeito compatível com o padrão observado; confirmação local após correção ainda pendente."
+  },
+  "mudanca": "UTF-8 explícito na leitura de schema-inicial.sql e das migrações 02/03. SQL e regras preservados.",
+  "log_professor": {
+    "arquivo": "Texto colado(20261007-184835).txt",
+    "citacao": "file_000000009c9c820e82e60eded0650141",
+    "sha256": "b90ddba15938acb754a34ff5213d38af287dc9d874b0f4a736dd3c81afd1b857",
+    "windows_informado": "10.0.26200.9445",
+    "python_informado": "3.10.2",
+    "status_api_avancos_relevantes": [
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[32m200 OK←[0m",
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m",
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m",
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m",
+      "POST /api/pedidos/4/status HTTP/1.1←[0m\" ←[32m200 OK←[0m",
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m",
+      "POST /api/pedidos/3/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m",
+      "POST /api/pedidos/4/status HTTP/1.1←[0m\" ←[91m503 Service Unavailable←[0m"
+    ],
+    "instalacao_reportada": {
+      "fastapi": "0.142.2",
+      "uvicorn": "0.54.0",
+      "pytest": "9.1.1",
+      "httpx": "0.28.1"
+    },
+    "limite": "Log de instalação e acessos; não contém a exceção SQLite original nem confirma o commit local."
+  }
+}

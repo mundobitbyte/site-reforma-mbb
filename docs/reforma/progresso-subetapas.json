@@ -325,12 +325,13 @@
             "docs/reforma/evidencia-interface-19.json",
             "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs",
             "docs/reforma/evidencia-interface-20.json",
-            "docs/reforma/evidencia-interface-21.json"
+            "docs/reforma/evidencia-interface-21.json",
+            "docs/reforma/evidencia-sql-utf8-26.json"
           ],
           "depende_de": [
             "LEITOR_DE_TELA"
           ],
-          "preparacao": "Chromium real confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade. A integração navegador + FastAPI/serviço/SQLite passou 25/25; a rodada de acessibilidade passou 38/38. Leitor de tela real ainda pendente."
+          "preparacao": "Chromium real confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade. A integração navegador + FastAPI/serviço/SQLite passou 25/25; a rodada de acessibilidade passou 38/38. Leitor de tela real ainda pendente. Sessão Windows: Narrador confirmou campo/botão Água, recusa de quantidade e consulta do #3. Avanço encontrou falha de leitura SQL sob padrão cp1252; correção UTF-8 verificada em dois casos de serviço. Anúncios restantes e verificação Windows após correção ainda pendentes."
         },
         {
           "id": "5.4",
@@ -390,7 +391,7 @@
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
     "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
-    "LEITOR_DE_TELA": "A árvore de acessibilidade do Chromium foi conferida, mas um leitor de tela real ainda não foi executado; por isso 5.3 permanece parcial."
+    "LEITOR_DE_TELA": "Narrador real observado parcialmente pelo professor; faltam anúncios de registro, cupom, sequência de estados e demais controles. Corrigir ambiente SQL e retomar R06; não recomeçar os casos já observados."
   },
   "resumo": {
     "total_subetapas": 31,
@@ -398,6 +399,6 @@
     "restantes": 5,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 25,
-  "orientacao_atual": "Sessão local retomada pelo professor. R01/5.4 concluído por capturas; próximo passo: leitor de tela real, R02–R06/5.3. Não repetir testes funcionais já encerrados."
+  "checkpoint_atualizacao": 26,
+  "orientacao_atual": "Correção UTF-8 do serviço salva; leitor de tela parcial e contagem 26/31. Banco temporário criado com codificação errada exige nova base. Para o ZIP anterior, abrir segunda prévia com -X utf8 em porta 8002, mantendo a sessão anterior enquanto se preservam evidências."
 }

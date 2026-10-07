@@ -108,3 +108,6 @@ Preparadas a [minuta do parecer](parecer-final-minuta.md) e a [ficha curta da se
 
 ## Avanço no checkpoint 25
 A sessão Windows confirmou aplicação e página curricular diretamente em `127.0.0.1:8001`. R01/5.4 passou; total **26/31**, cinco pendentes. As capturas não comprovam leitor de tela nem compreensão. [Evidência](evidencia-previa-windows-25.json). Próximo: 5.3.
+
+## Correção no checkpoint 26
+O Narrador foi observado parcialmente no Windows: nome de controles da Água, recusa de quantidade 0 e consulta do pedido #3. O avanço revelou HTTP 503 depois de Confirmado. A leitura SQL sem codificação explícita foi reproduzida com padrão cp1252; o estado acentuado fica corrompido na restrição CHECK. Serviço corrigido para UTF-8 nas três leituras. Dois testes de regressão falharam antes e passaram depois, até Entregue e com reabertura. Isso não substitui a confirmação no Windows nem conclui a 5.3. **26/31**, cinco pendentes. [Evidência](evidencia-sql-utf8-26.json).

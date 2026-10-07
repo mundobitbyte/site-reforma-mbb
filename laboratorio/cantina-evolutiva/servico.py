@@ -32,7 +32,7 @@ class Cantina:
         conn = self.conectar()
         try:
             if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='produto' AND type='table'").fetchone():
-                conn.executescript(Path(__file__).with_name('schema-inicial.sql').read_text())
+                conn.executescript(Path(__file__).with_name('schema-inicial.sql').read_text(encoding='utf-8'))
                 conn.execute('BEGIN IMMEDIATE')
                 try:
                     conn.executemany('INSERT INTO produto VALUES (?,?,?,?)', [
@@ -55,7 +55,7 @@ class Cantina:
         try:
             versao = conn.execute('PRAGMA user_version').fetchone()[0]
             if versao == 0:
-                script = Path(__file__).with_name('migracao-02-cupom.sql').read_text()
+                script = Path(__file__).with_name('migracao-02-cupom.sql').read_text(encoding='utf-8')
                 # Este arquivo contém só comandos SQL simples, sem triggers.
                 for comando in script.split(';'):
                     if comando.strip():
@@ -74,7 +74,7 @@ class Cantina:
         try:
             versao = conn.execute('PRAGMA user_version').fetchone()[0]
             if versao == 2:
-                script = Path(__file__).with_name('migracao-03-estados.sql').read_text()
+                script = Path(__file__).with_name('migracao-03-estados.sql').read_text(encoding='utf-8')
                 for comando in script.split(';'):
                     if comando.strip():
                         conn.execute(comando)
