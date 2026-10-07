@@ -6,7 +6,7 @@ Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/
 - [Orientação da entrega parcial](entrega-parcial.md): leitura e encadeamento do material sem iniciar a aplicação; ensaios podem ficar para depois.
 - [Ficha curta para a próxima sessão](registro-retomada.md) · [Minuta do parecer final](parecer-final-minuta.md): registrar apenas as observações ainda pendentes, sem repetir as suítes concluídas.
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
-- [Progresso detalhado](progresso-subetapas.md): 27/31 concluídas, 4 pendentes; posição 4.9, revisão do percurso; prévia direta e Narrador confirmados no Windows do professor.
+- [Progresso detalhado](progresso-subetapas.md): 27/31 concluídas, 4 pendentes; posição 5.6, preparação do parecer; prévia direta e Narrador confirmados no Windows do professor.
 - [Dossiê do mesmo sistema](../../laboratorio/percurso-mbb/analise/dossie-cantina.html)
 - [Aplicação, bancos e regras](../../laboratorio/cantina-evolutiva/README.md)
 - [Parecer da rodada QTS](../../laboratorio/percurso-mbb/qts/parecer.md)
@@ -51,7 +51,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-28.json](verificacao-checkpoint-28.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-29.json](verificacao-checkpoint-29.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -127,10 +127,16 @@ As práticas de Banco de Dados usam `python laboratorio_bd.py ...`: consulta é 
 - Checkpoint 15: nove cenários em duas versões (18 observações), oito amostras por fase TDD, 62 comandos Git locais.
 - Checkpoint 16: verificação portátil, contagem detalhada e guia consolidado. Não é nova execução das suítes anteriores.
 - Checkpoint 17: depurador pdb executado e diagnóstico de navegador corrigido.
-- Checkpoint 18: iniciador integrado local ensaiado via HTTP, com duas sessões e descarte dos bancos temporários. [Evidência](evidencia-previa-local-18.json). Navegador permanece não testado.
+- Checkpoint 18: iniciador integrado local ensaiado via HTTP, com duas sessões e descarte dos bancos temporários. [Evidência](evidencia-previa-local-18.json). Navegador ainda não testado naquela rodada.
 - Checkpoint 19: seis casos de lógica da interface passaram em Node; correções de nomes, atalho de conteúdo e foco. [Evidência](evidencia-interface-19.json). Elementos de teste não substituem navegador.
 - Checkpoint 20: 17 casos de lógica da interface passaram, incluindo recuperação de foco após operações assíncronas. [Evidência](evidencia-interface-20.json).
-- Checkpoint 21: Chromium real, 38/38 casos de acessibilidade e 25/25 de integração com FastAPI/serviço/SQLite temporário. Pedido, cupom e estados foram concluídos; leitor de tela real permanece pendente. [Evidência](evidencia-interface-21.json).
+- Checkpoint 21: Chromium real, 38/38 casos de acessibilidade e 25/25 de integração com FastAPI/serviço/SQLite temporário. Pedido, cupom e estados foram concluídos; leitor de tela real ainda pendente naquela rodada. [Evidência](evidencia-interface-21.json).
+
+- Checkpoint 25: prévia direta da aplicação e aula curricular no Windows do professor. [Registro](evidencia-previa-windows-25.json).
+- Checkpoint 26: leitura UTF-8 corrigida no serviço; duas regressões de codificação falharam antes e passaram depois. [Registro](evidencia-sql-utf8-26.json).
+- Checkpoint 27: confirmações com Narrador Windows e sequência até Entregue na nova sessão UTF-8. [Registro e limites](evidencia-narrador-windows-27.json).
+- Checkpoint 28: 89 testes Python e 12 observações HTTP aprovados; retorno curricular corrigido e relato de navegação registrado como parcial. [Registro](evidencia-retomada-28.json).
+- Checkpoint 29: consolidação documental da minuta e atualização do parecer QTS; sem novos ensaios funcionais. [Registro](checkpoint-29-consolidacao-do-parecer.md).
 
 Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertura percentual não foi medida. Actions permanece desativado; receita QTS é texto inerte. Não houve escrita no site oficial ou publicação nesta rodada.
 

@@ -2,7 +2,7 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**27/31 concluídas; 4 pendentes. Posição atual: Currículo 4.9, revisão do percurso em uso. Prévia direta 5.4 e Narrador real 5.3 concluídos na sessão Windows do professor.**
+**27/31 concluídas; 4 pendentes. Posição atual: Entrega 5.6, preparação do parecer. Próximos ensaios humanos: 4.9/5.5; VisuAlg 4.8 adiado. Prévia direta 5.4 e Narrador real 5.3 concluídos na sessão Windows do professor.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
@@ -117,3 +117,6 @@ O professor confirmou os nomes dos controles, anúncios de registro/consulta, re
 
 ## Avanço sem teste do professor no checkpoint 28
 O professor está apenas no celular e relatou que a navegação orientada pareceu funcionar, sem garantir ausência de falhas. A 4.9 passa a parcial, sem ser encerrada. O retorno do percurso que apontava para `/curso/index.html` (404 registrado no log) agora abre a aplicação da Cantina pela rota já permitida. Foram completadas leituras UTF-8 nos testes de migração e no CLI de BD. **89 testes Python passaram** e **12 observações HTTP** conferiram o retorno, os recursos, a API e as seis entradas; escopos separados. Estados de leitura/prévia atualizados nas páginas. Total mantido: **27/31**, quatro pendentes. [Registro](checkpoint-28-retomada-no-celular.md).
+
+## Consolidação no checkpoint 29
+A minuta reúne os resultados 25–28, identifica a versão Linux testada e a ausência de commit confirmado no Windows. O parecer QTS foi atualizado de sua situação histórica para 27/31. Guia, entrega e painel foram alinhados; a decisão final da 5.6 continua pendente. Não houve novo ensaio funcional ou humano. Total mantido: **27/31**, quatro abertas. [Registro](checkpoint-29-consolidacao-do-parecer.md).

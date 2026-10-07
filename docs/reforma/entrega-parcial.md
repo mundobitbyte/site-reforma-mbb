@@ -25,6 +25,8 @@ O aluno começa por entender a situação. Os exemplos introdutórios isolam um 
 
 Pedido, cupom e estados têm evidência de servidor e de interface no Chromium real. O [checkpoint 21](checkpoint-21-navegador-integracao.md) registra 38/38 casos de acessibilidade e 25/25 de integração com API/serviço/SQLite temporário, incluindo 360/320 px, teclado e foco. O depurador pdb foi executado no checkpoint 17; backup/restauração didáticos, no 12. Essas evidências têm escopos distintos e não serão somadas como uma única suíte.
 
+A [prévia Windows no checkpoint 25](evidencia-previa-windows-25.json) e as [confirmações com Narrador no 27](evidencia-narrador-windows-27.json) encerraram 5.4 e 5.3. O [checkpoint 28](evidencia-retomada-28.json) registra a correção do retorno do percurso, 89 testes Python aprovados e 12 observações HTTP, com escopos separados. A [minuta consolidada no 29](parecer-final-minuta.md) identifica as versões avaliadas e os resultados que ainda faltam.
+
 O percurso contém 81 etapas de ensino: Análise 15, Banco de Dados 11, Programação 15, Web/API 13, QTS 17 e Git 10. Essa contagem é diferente das 31 subetapas de trabalho.
 
 ## O que ficará para quando for possível testar
@@ -32,7 +34,7 @@ O percurso contém 81 etapas de ensino: Análise 15, Banco de Dados 11, Programa
 | Subetapa | Falta para encerrar |
 |---|---|
 | 4.8 | Execução dos arquivos no VisuAlg pelo professor; pdb já concluído. Foi adiada e não impede os outros trabalhos. |
-| 4.9 | Revisão visual e pedagógica do percurso em uso com participante. |
+| 4.9 | Zoom 200%, copiar/conferir um bloco e revisão pedagógica com participante; navegação relatada como aparentemente correta. |
 | 5.5 | Uso integrado e compreensão das mensagens/relações com participante. |
 | 5.6 | Parecer final depois de registrar os resultados e as reservas necessárias. Esta orientação prepara a entrega, mas não encerra a etapa. |
 

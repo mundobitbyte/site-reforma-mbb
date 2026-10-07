@@ -370,7 +370,8 @@
             "docs/reforma/checkpoint-23-pontes-de-leitura.md",
             "docs/reforma/parecer-final-minuta.md",
             "docs/reforma/registro-retomada.md",
-            "docs/reforma/checkpoint-24-preparacao-do-parecer.md"
+            "docs/reforma/checkpoint-24-preparacao-do-parecer.md",
+            "docs/reforma/checkpoint-29-consolidacao-do-parecer.md"
           ],
           "depende_de": [
             "1.6",
@@ -382,12 +383,12 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Entrega parcial e revisão de leitura preparadas nos checkpoints 22/23. No 24, minuta do parecer e ficha curta da próxima sessão foram organizadas com evidências anteriores e campos futuros sem preenchimento. Parecer final aguarda os resultados reais."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída."
         }
       ]
     }
   ],
-  "posicao_atual": "4.9",
+  "posicao_atual": "5.6",
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
@@ -401,6 +402,6 @@
     "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 28,
-  "orientacao_atual": "Trabalho independente concluído no checkpoint 28: retorno à aplicação sem 404, UTF-8 nas consultas/testes, estados documentais alinhados. 4.9 parcial com relato de navegação aparentemente correta; 27/31. Retomar zoom/cópia e compreensão com participante quando o professor puder; VisuAlg adiado."
+  "checkpoint_atualizacao": 29,
+  "orientacao_atual": "Checkpoint 29: parecer consolidado com resultados e versões dos registros 25–28; parecer QTS atualizado. Preparação da 5.6 avançou, sem encerrar a entrega. 27/31; próximos ensaios: zoom/cópia e compreensão com participante; VisuAlg continua adiado."
 }
