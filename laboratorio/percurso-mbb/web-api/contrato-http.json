@@ -1,0 +1,109 @@
+{
+  "titulo": "Contrato didático da API existente — Cantina Horizonte",
+  "base_exemplo": "http://127.0.0.1:8001",
+  "origem": "laboratorio/cantina-evolutiva/app.py",
+  "observacao": "Não constitui autenticação, autorização, idempotência ou especificação completa de produção.",
+  "operacoes": [
+    {
+      "metodo": "GET",
+      "rota": "/api/produtos",
+      "sucesso": 200,
+      "entrada": null,
+      "campos_relevantes": [
+        "id",
+        "nome",
+        "preco_centavos",
+        "estoque"
+      ],
+      "efeito": "Consultar cadastro; não registrar venda."
+    },
+    {
+      "metodo": "POST",
+      "rota": "/api/pedidos",
+      "sucesso": 201,
+      "entrada": {
+        "itens": [
+          {
+            "produto_id": 1,
+            "quantidade": 2
+          }
+        ],
+        "cupom": null
+      },
+      "campos_relevantes": [
+        "id",
+        "status",
+        "subtotal_centavos",
+        "desconto_centavos",
+        "total_centavos",
+        "itens",
+        "proximo_status",
+        "historico_status"
+      ],
+      "efeito": "Uma nova venda fictícia aceita grava pedido/itens, baixa estoque e eventual cupom em uma transação."
+    },
+    {
+      "metodo": "GET",
+      "rota": "/api/pedidos/{pedido_id}",
+      "sucesso": 200,
+      "entrada": null,
+      "campos_relevantes": [
+        "id",
+        "status",
+        "subtotal_centavos",
+        "desconto_centavos",
+        "total_centavos",
+        "itens",
+        "proximo_status",
+        "historico_status"
+      ],
+      "efeito": "Consultar ID devolvido; manter preço e desconto da venda."
+    },
+    {
+      "metodo": "POST",
+      "rota": "/api/pedidos/{pedido_id}/status",
+      "sucesso": 200,
+      "entrada": {
+        "status": "Confirmado",
+        "estado_esperado": "Novo"
+      },
+      "campos_relevantes": [
+        "id",
+        "status",
+        "proximo_status",
+        "historico_status"
+      ],
+      "efeito": "Avançar só o próximo estado; mudança e evento juntos, sem nova baixa."
+    }
+  ],
+  "entrada_pedido": {
+    "produto_id": "inteiro estrito positivo",
+    "quantidade": "inteiro estrito de 1 a 10 em cada linha e após consolidar por produto",
+    "itens": "lista não vazia",
+    "cupom": "texto opcional ou null",
+    "campos_extras": "recusados pelo servidor, inclusive preço/total/desconto enviados como autoridade"
+  },
+  "erros": [
+    {
+      "status": 400,
+      "significado": "Regra de domínio recusada, por exemplo quantidade consolidada ou cupom abaixo do mínimo."
+    },
+    {
+      "status": 404,
+      "significado": "Produto ou pedido não encontrado."
+    },
+    {
+      "status": 409,
+      "significado": "Conflito: estoque insuficiente, cupom utilizado ou estado antigo/transição recusada."
+    },
+    {
+      "status": 422,
+      "significado": "Estrutura, campo ou tipo de entrada inválido."
+    },
+    {
+      "status": 503,
+      "significado": "Erro de banco tratado pelo servidor; esta tentativa de banco foi revertida."
+    }
+  ],
+  "rede": "Falha de comunicação pode ocorrer após a gravação. Não confirmar ausência de venda nem repetir POST automaticamente."
+}

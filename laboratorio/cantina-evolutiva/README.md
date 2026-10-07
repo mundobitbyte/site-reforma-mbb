@@ -172,3 +172,36 @@ e recusa consulta antiga. O CLI não aceita caminho externo de banco.
 Os 13 casos de `tests/test_terminal.py` passaram, com bancos temporários.
 Os arquivos VisuAlg são ponte revisada, sem execução no VisuAlg registrada.
 As pendências visuais da aplicação continuam as mesmas.
+
+
+## Web/API no percurso MbB
+
+[13 etapas de Web/API](../percurso-mbb/web-api/index.html) ligam HTML, campos,
+CSS, eventos, coleções e contrato HTTP à mesma interface/API já construída.
+Os recortes estáticos não gravam venda. Os módulos .mjs são clientes de exercício,
+não substitutos automáticos do app.js integrado. O contrato pode ser consultado
+em [contrato HTTP](../percurso-mbb/web-api/contrato.html).
+
+Na pasta `laboratorio/percurso-mbb/web-api`, opcionalmente com Node instalado:
+
+```bash
+node --test tests/clientes.test.mjs tests/simulacao.test.mjs
+```
+
+Esses testes verificam módulos com Fetch controlado, sem navegador ou DOM real.
+Validação visual, foco, teclado, compreensão humana e 360 px continuam pendentes.
+Falha de comunicação após POST pode deixar resultado desconhecido; o cliente
+nunca deve reenviar automaticamente uma venda para tentar conferir.
+
+
+Roteiro HTTP repetível, na pasta `laboratorio/percurso-mbb/web-api`, usando
+Python do ambiente da Cantina e Node instalado:
+
+```bash
+python tests/verificar_http_local.py
+```
+
+Esse roteiro cria uma API com banco temporário novo, confere as quatro operações
+OpenAPI e exercita 17 requisições pelos módulos JavaScript. Encerra o servidor
+no fim e preserva os bancos de trabalho. Não executar `http-local.mjs` diretamente
+contra a aplicação de trabalho: o roteiro de vendas usa apenas o banco temporário.

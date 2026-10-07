@@ -1,0 +1,214 @@
+[
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-1",
+    "titulo": "Capítulo 1 — Da necessidade ao primeiro arquivo",
+    "etapas_cantina": [
+      0,
+      1
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-2",
+    "titulo": "Capítulo 2 — Construindo a página inicial",
+    "etapas_cantina": [
+      1
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-3",
+    "titulo": "Capítulo 3 — Organizando o site em páginas",
+    "etapas_cantina": [
+      1
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-4",
+    "titulo": "Capítulo 4 — Formulários e acessibilidade",
+    "etapas_cantina": [
+      2
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-5",
+    "titulo": "Capítulo 5 — Identidade visual com CSS",
+    "etapas_cantina": [
+      3
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-6",
+    "titulo": "Capítulo 6 — Layout responsivo",
+    "etapas_cantina": [
+      3
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-7",
+    "titulo": "Capítulo 7 — JavaScript: comportamento e interação",
+    "etapas_cantina": [
+      4
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-8",
+    "titulo": "Capítulo 8 — Arrays, objetos e repetições",
+    "etapas_cantina": [
+      5
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-9",
+    "titulo": "Capítulo 9 — Fetch e JSON",
+    "etapas_cantina": [
+      6,
+      7
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-10",
+    "titulo": "Capítulo 10 — Web Storage",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web1.html#capitulo-11",
+    "titulo": "Capítulo 11 — Testes, qualidade e publicação",
+    "etapas_cantina": [
+      11,
+      12
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-1",
+    "titulo": "Capítulo 1 — Do site à primeira resposta do servidor",
+    "etapas_cantina": [
+      0,
+      6
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-2",
+    "titulo": "Capítulo 2 — A URL conversa com o servidor",
+    "etapas_cantina": [
+      6
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-3",
+    "titulo": "Capítulo 3 — O formulário chega ao servidor",
+    "etapas_cantina": [
+      2,
+      8
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-4",
+    "titulo": "Capítulo 4 — Uma confirmação sem reenvio",
+    "etapas_cantina": [
+      8
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-5",
+    "titulo": "Capítulo 5 — O Café ganha memória permanente",
+    "etapas_cantina": [
+      10
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-6",
+    "titulo": "Capítulo 6 — A mensagem vira registro",
+    "etapas_cantina": [
+      8,
+      10
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-7",
+    "titulo": "Capítulo 7 — As mensagens chegam à proprietária",
+    "etapas_cantina": [
+      10
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-8",
+    "titulo": "Capítulo 8 — Cada mensagem ganha andamento",
+    "etapas_cantina": [
+      9
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-9",
+    "titulo": "Capítulo 9 — Excluir exige critério",
+    "etapas_cantina": [],
+    "decisao": "manter aprofundamento original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-10",
+    "titulo": "Capítulo 10 — O teste pode ser repetido",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-11",
+    "titulo": "Capítulo 11 — A suíte entra no padrão",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  },
+  {
+    "origem": "pages/programacao-web/web2.html#capitulo-12",
+    "titulo": "Capítulo 12 — Pronto para entregar?",
+    "etapas_cantina": [
+      11,
+      12
+    ],
+    "decisao": "adaptar a necessidade e o fundamento na Cantina; preservar projeto original",
+    "limite": "Recursos PHP/PDO/sessão/CSRF/PRG e recursos não implementados não são apresentados como equivalentes ao contrato JSON/FastAPI."
+  }
+]

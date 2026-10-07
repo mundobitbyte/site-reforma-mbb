@@ -1,0 +1,364 @@
+[
+  {
+    "etapa": 0,
+    "destino": "laboratorio/percurso-mbb/web-api/00-fronteiras.html",
+    "conceitos": [
+      "cliente",
+      "servidor",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "API",
+      "responsabilidade"
+    ],
+    "pre_requisitos": [
+      "Dossiê de Análise e Programação/Python 14"
+    ],
+    "arquivos_exemplos": [],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-1",
+      "pages/programacao-web/web2.html#capitulo-1",
+      "pages/backend-fastapi.html#capitulo-02",
+      "pages/backend-fastapi.html#capitulo-03"
+    ],
+    "evidencia": "WEB00: mapa responsabilidade/artefato/limite; reusa E09/E12/PG14.",
+    "exercicio": "Descreva o caminho de RF-08 desde o botão até o pedido salvo.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 1,
+    "destino": "laboratorio/percurso-mbb/web-api/01-html.html",
+    "conceitos": [
+      "elemento",
+      "atributo",
+      "hierarquia",
+      "header",
+      "main",
+      "section",
+      "article",
+      "h1",
+      "caminho relativo"
+    ],
+    "pre_requisitos": [
+      "WEB00"
+    ],
+    "arquivos_exemplos": [
+      "01-estrutura/index.html"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-1",
+      "pages/programacao-web/web1.html#capitulo-2",
+      "pages/programacao-web/web1.html#capitulo-3"
+    ],
+    "evidencia": "WEB01: hierarquia e campos exibidos com origem; reusa E11/BD01.",
+    "exercicio": "Identifique início/fim dos elementos e confirme uma única função para cada título.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 2,
+    "destino": "laboratorio/percurso-mbb/web-api/02-formulario.html",
+    "conceitos": [
+      "form",
+      "label",
+      "for/id",
+      "input number",
+      "required",
+      "min/max/step",
+      "button",
+      "região de estado"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB01"
+    ],
+    "arquivos_exemplos": [
+      "02-formulario/index.html"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-4",
+      "pages/programacao-web/web2.html#capitulo-3"
+    ],
+    "evidencia": "WEB02: rótulo/campo/limite/resultado; reusa E11/RQ-01/RF-03.",
+    "exercicio": "Liste o que o HTML limita e o que o servidor ainda deve validar.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 3,
+    "destino": "laboratorio/percurso-mbb/web-api/03-css.html",
+    "conceitos": [
+      "seletor",
+      "regra CSS",
+      "modelo de caixa",
+      "grid",
+      "unidade relativa",
+      "media query",
+      "foco visível"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB02"
+    ],
+    "arquivos_exemplos": [
+      "03-estilo/index.html",
+      "03-estilo/styles.css"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-5",
+      "pages/programacao-web/web1.html#capitulo-6"
+    ],
+    "evidencia": "WEB03: regra visual, largura prevista e roteiro de verificação; reusa RQ-02/E11.",
+    "exercicio": "Explique uma regra de caixa e anote onde verificar corte de texto ou rolagem da página.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 4,
+    "destino": "laboratorio/percurso-mbb/web-api/04-eventos.html",
+    "conceitos": [
+      "const",
+      "function",
+      "DOM",
+      "querySelector",
+      "evento submit",
+      "preventDefault",
+      "Number",
+      "textContent",
+      "defer"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB03; PG03/PG07/PG08"
+    ],
+    "arquivos_exemplos": [
+      "04-simulacao/index.html",
+      "04-simulacao/styles.css",
+      "04-simulacao/app.js"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-7"
+    ],
+    "evidencia": "WEB04: evento, entrada, previsão e mensagem; reusa PG01/PG03/RQ-01.",
+    "exercicio": "Preveja 2 → 600; identifique o texto que deixa clara a simulação e o caminho da recusa.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 5,
+    "destino": "laboratorio/percurso-mbb/web-api/05-colecoes.html",
+    "conceitos": [
+      "array",
+      "objeto",
+      "for of",
+      "let",
+      "map",
+      "arrow function",
+      "JSON.stringify"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB04; PG06/PG07"
+    ],
+    "arquivos_exemplos": [
+      "05-colecoes.mjs"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-8",
+      "pages/backend-fastapi.html#capitulo-15"
+    ],
+    "evidencia": "WEB05: subtotal previsto e JSON de intenção, sem preço; reusa PG06/BD03/RF-02/RF-06.",
+    "exercicio": "Compare a coleção em memória com o JSON enviado e identifique o que o cliente não decide.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 6,
+    "destino": "laboratorio/percurso-mbb/web-api/06-http.html",
+    "conceitos": [
+      "HTTP",
+      "URL",
+      "rota",
+      "GET",
+      "POST",
+      "header",
+      "status",
+      "JSON",
+      "contrato"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB05; PG12/BD09"
+    ],
+    "arquivos_exemplos": [],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-9",
+      "pages/programacao-web/web2.html#capitulo-1",
+      "pages/programacao-web/web2.html#capitulo-2",
+      "pages/backend-fastapi.html#capitulo-03",
+      "pages/backend-fastapi.html#capitulo-04",
+      "pages/backend-fastapi.html#capitulo-05"
+    ],
+    "evidencia": "WEB06: método/rota/corpo/status/efeito; reusa BD09/PG12/E12.",
+    "exercicio": "Descreva por que consultar pedido não deve baixar estoque nem registrar outro pedido.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 7,
+    "destino": "laboratorio/percurso-mbb/web-api/07-fetch.html",
+    "conceitos": [
+      "fetch",
+      "Promise",
+      "async/await",
+      "Response.ok",
+      "json",
+      "try/catch",
+      "throw",
+      "export/import"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB06; PG08/PG09"
+    ],
+    "arquivos_exemplos": [
+      "api.mjs",
+      "07-consulta.mjs"
+    ],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-9",
+      "pages/backend-fastapi.html#capitulo-05",
+      "pages/backend-fastapi.html#capitulo-09",
+      "pages/backend-fastapi.html#capitulo-10"
+    ],
+    "evidencia": "WEB07: requisição, resposta, motivo e camada da falha; reusa PG08/E12/RQ-01.",
+    "exercicio": "Diferencie resposta 404 de ausência de resposta e explique por que json precisa ser esperado.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 8,
+    "destino": "laboratorio/percurso-mbb/web-api/08-registro.html",
+    "conceitos": [
+      "POST JSON",
+      "projeção dos campos",
+      "201",
+      "estado de envio",
+      "finally",
+      "resultado incerto"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB07"
+    ],
+    "arquivos_exemplos": [
+      "08-pedido.mjs"
+    ],
+    "origens": [
+      "pages/programacao-web/web2.html#capitulo-3",
+      "pages/programacao-web/web2.html#capitulo-4",
+      "pages/programacao-web/web2.html#capitulo-6",
+      "pages/backend-fastapi.html#capitulo-07",
+      "pages/backend-fastapi.html#capitulo-15",
+      "pages/backend-fastapi.html#capitulo-24"
+    ],
+    "evidencia": "WEB08: intenção, resposta salva e caminho de falha; reusa RF-03 a RF-08/PG12.",
+    "exercicio": "Explique quando limpar o carrinho e por que uma falha de rede não autoriza repetir a venda.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 9,
+    "destino": "laboratorio/percurso-mbb/web-api/09-estados.html",
+    "conceitos": [
+      "ID retornado",
+      "proximo_status",
+      "estado_esperado",
+      "409",
+      "controle de resposta antiga"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB08; PG12"
+    ],
+    "arquivos_exemplos": [
+      "09-estados.mjs"
+    ],
+    "origens": [
+      "pages/programacao-web/web2.html#capitulo-8",
+      "pages/backend-fastapi.html#capitulo-17",
+      "pages/backend-fastapi.html#capitulo-25"
+    ],
+    "evidencia": "WEB09: consulta, intenção, estado salvo, histórico e conflito; reusa RF-09/BD07/PG12.",
+    "exercicio": "Descreva duas telas em Novo: após uma avançar, por que a segunda deve consultar novamente?",
+    "browser_tested": false
+  },
+  {
+    "etapa": 10,
+    "destino": "laboratorio/percurso-mbb/web-api/10-servidor.html",
+    "conceitos": [
+      "modelo de entrada",
+      "Pydantic estrito",
+      "campos extras",
+      "FastAPI",
+      "serviço",
+      "transação",
+      "mesma origem"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB09; BD07/PG11/PG12"
+    ],
+    "arquivos_exemplos": [],
+    "origens": [
+      "pages/programacao-web/web2.html#capitulo-5",
+      "pages/programacao-web/web2.html#capitulo-6",
+      "pages/programacao-web/web2.html#capitulo-7",
+      "pages/backend-fastapi.html#capitulo-08",
+      "pages/backend-fastapi.html#capitulo-14",
+      "pages/backend-fastapi.html#capitulo-24",
+      "pages/backend-fastapi.html#capitulo-44"
+    ],
+    "evidencia": "WEB10: camada, campo, regra, operação e limite; reusa E12/BD07/PG11.",
+    "exercicio": "Escolha um erro estrutural e um conflito de domínio e mostre quem os recusa.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 11,
+    "destino": "laboratorio/percurso-mbb/web-api/11-evidencias.html",
+    "conceitos": [
+      "teste de módulo",
+      "HTTP local",
+      "teste de servidor",
+      "observação humana",
+      "360 px",
+      "Web Storage",
+      "documentação"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB10; PG13"
+    ],
+    "arquivos_exemplos": [],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-10",
+      "pages/programacao-web/web1.html#capitulo-11",
+      "pages/programacao-web/web2.html#capitulo-10",
+      "pages/programacao-web/web2.html#capitulo-11",
+      "pages/programacao-web/web2.html#capitulo-12",
+      "pages/backend-fastapi.html#capitulo-39",
+      "pages/backend-fastapi.html#capitulo-40",
+      "pages/backend-fastapi.html#capitulo-41",
+      "pages/backend-fastapi.html#capitulo-43",
+      "pages/backend-fastapi.html#capitulo-45"
+    ],
+    "evidencia": "WEB11: pergunta/camada/instrumento/resultado/limite; reusa E11/E12/PG13.",
+    "exercicio": "Separe o que a execução HTTP provou do que só a observação no navegador poderá provar.",
+    "browser_tested": false
+  },
+  {
+    "etapa": 12,
+    "destino": "laboratorio/percurso-mbb/web-api/12-integracao.html",
+    "conceitos": [
+      "rastreabilidade",
+      "fonte de verdade",
+      "crítica circular",
+      "retomada em espiral",
+      "reuso"
+    ],
+    "pre_requisitos": [
+      "WEB00–WEB11; E15/BD09/PG14"
+    ],
+    "arquivos_exemplos": [],
+    "origens": [
+      "pages/programacao-web/web1.html#capitulo-11",
+      "pages/programacao-web/web2.html#capitulo-12",
+      "pages/backend-fastapi.html#capitulo-45"
+    ],
+    "evidencia": "WEB12: defesa do mesmo pedido e mapa de impacto; reusa E15/BD09/PG14.",
+    "exercicio": "Explique uma mudança de RF-03 e liste código, modelo e testes que precisam ser revisados.",
+    "browser_tested": false
+  }
+]

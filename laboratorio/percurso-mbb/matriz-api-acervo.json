@@ -1,0 +1,360 @@
+[
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-01",
+    "titulo": "Quando o negócio começa a crescer",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-02",
+    "titulo": "Quem pede e quem responde?",
+    "etapas_cantina": [
+      0
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-03",
+    "titulo": "Como dois programas conseguem conversar?",
+    "etapas_cantina": [
+      0,
+      6
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-04",
+    "titulo": "Como o servidor oferece serviços para outros programas?",
+    "etapas_cantina": [
+      6
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-05",
+    "titulo": "Fazendo Python responder",
+    "etapas_cantina": [
+      6,
+      7
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-06",
+    "titulo": "Como outro programador descobre o que nossa API oferece?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-07",
+    "titulo": "Qual produto você está procurando?",
+    "etapas_cantina": [
+      8
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-08",
+    "titulo": "Um cliente fez um pedido",
+    "etapas_cantina": [
+      10
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-09",
+    "titulo": "O dado tem o tipo certo. Mas faz sentido?",
+    "etapas_cantina": [
+      7
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-10",
+    "titulo": "O que entra e o que sai da API",
+    "etapas_cantina": [
+      7
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-11",
+    "titulo": "Nem toda requisição dá certo",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-12",
+    "titulo": "Criar, consultar, alterar e excluir",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-13",
+    "titulo": "Nem todo produto se comporta do mesmo jeito",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-14",
+    "titulo": "E se só restar uma unidade?",
+    "etapas_cantina": [
+      10
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-15",
+    "titulo": "Um pedido pode ter vários itens",
+    "etapas_cantina": [
+      5,
+      8
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-16",
+    "titulo": "O preço de ontem não pode mudar hoje",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-17",
+    "titulo": "Em que situação o pedido está agora?",
+    "etapas_cantina": [
+      9
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-18",
+    "titulo": "Quem pode executar cada ação?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-19",
+    "titulo": "Os dados precisam sobreviver",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-20",
+    "titulo": "Criando nosso primeiro banco de dados",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-21",
+    "titulo": "Gravando e consultando produtos no banco",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-22",
+    "titulo": "Buscando, alterando e excluindo produtos no banco",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-23",
+    "titulo": "Um pedido precisa conhecer seus itens",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-24",
+    "titulo": "Criando um pedido em uma única transação",
+    "etapas_cantina": [
+      8,
+      10
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-25",
+    "titulo": "Consultando um pedido completo",
+    "etapas_cantina": [
+      9
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-26",
+    "titulo": "Cancelar um pedido também altera o estoque",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-27",
+    "titulo": "Dois clientes querem o último item",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-28",
+    "titulo": "O banco mudou. E os dados que já existem?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-29",
+    "titulo": "O cliente não deveria nascer novamente em cada pedido",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-30",
+    "titulo": "Quando SQLite deixa de ser a melhor escolha?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-31",
+    "titulo": "A senha não pode ficar no banco",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-32",
+    "titulo": "Como a API sabe se a senha está correta?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-33",
+    "titulo": "Como levar a identidade para a próxima requisição?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-34",
+    "titulo": "Criando nosso primeiro JWT",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-35",
+    "titulo": "Quem está fazendo esta requisição?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-36",
+    "titulo": "Estar autenticado não significa poder fazer tudo",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-37",
+    "titulo": "Este pedido pertence a quem?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-38",
+    "titulo": "Segredos não pertencem ao código",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-39",
+    "titulo": "Como saber se a API continua funcionando?",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-40",
+    "titulo": "Testes não devem usar nosso banco real",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-41",
+    "titulo": "Cada teste precisa começar do zero",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-42",
+    "titulo": "Nossa autenticação funciona de verdade?",
+    "etapas_cantina": [],
+    "decisao": "manter como aprofundamento preservado",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-43",
+    "titulo": "E se o pedido falhar no meio?",
+    "etapas_cantina": [
+      11
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-44",
+    "titulo": "Por que o navegador bloqueou nossa API?",
+    "etapas_cantina": [
+      10
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  },
+  {
+    "origem": "pages/backend-fastapi.html#capitulo-45",
+    "titulo": "O que realmente precisamos testar?",
+    "etapas_cantina": [
+      11,
+      12
+    ],
+    "decisao": "reusar teoria pela necessidade indicada; prática principal na Cantina",
+    "limite": "Não requer construir o projeto original nem importar cadastro, cancelamento, ORM, autenticação ou app móvel para o núcleo."
+  }
+]

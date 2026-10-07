@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; color: #172033; background: #f5f7fb; }
+header, main { width: min(60rem, calc(100% - 2rem)); margin: 1rem auto; }
+section { padding: 1rem; background: white; border: 1px solid #cfd7e5; border-radius: .75rem; }
+form { display: grid; gap: .6rem; max-width: 24rem; }
+button, input { font: inherit; padding: .75rem; border-radius: .4rem; }
+input { min-width: 0; width: 100%; border: 1px solid #6a7489; }
+button { border: 0; background: #2457d6; color: white; cursor: pointer; }
+button:disabled { opacity: .65; cursor: default; }
+button:focus-visible, input:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+p { overflow-wrap: anywhere; }
+@media (min-width: 48rem) { main { max-width: 45rem; } }

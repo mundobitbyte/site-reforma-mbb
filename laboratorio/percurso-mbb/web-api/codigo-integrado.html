@@ -1,0 +1,406 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Código integrado preservado | Cantina Horizonte — MbB</title><link rel="stylesheet" href="../../../css/analise-sistemas.css"><link rel="stylesheet" href="../percurso.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="course-header"><div class="header-left"><a class="portal-link" href="../index.html">← Percurso MbB</a><span class="course-title">Web/API</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" type="button" aria-controls="courseNav" aria-expanded="false">☰ Etapas</button></div></header><div class="course-shell"><nav class="course-nav" id="courseNav" aria-label="Etapas de Web/API"><div class="nav-project"><strong>Cantina Horizonte</strong><span>A tela pede; o servidor confirma.</span></div><a class="stage-link " href="00-fronteiras.html"><span class="stage-number">0</span><span>Do pedido à conversa entre programas</span></a><a class="stage-link " href="01-html.html"><span class="stage-number">1</span><span>Estruturar antes de estilizar</span></a><a class="stage-link " href="02-formulario.html"><span class="stage-number">2</span><span>Campos que uma pessoa consegue identificar</span></a><a class="stage-link " href="03-css.html"><span class="stage-number">3</span><span>Apresentação, caixa e adaptação ao espaço</span></a><a class="stage-link " href="04-eventos.html"><span class="stage-number">4</span><span>O evento transforma entrada em previsão</span></a><a class="stage-link " href="05-colecoes.html"><span class="stage-number">5</span><span>O carrinho representa vários itens</span></a><a class="stage-link " href="06-http.html"><span class="stage-number">6</span><span>Um contrato para perguntar e pedir alteração</span></a><a class="stage-link " href="07-fetch.html"><span class="stage-number">7</span><span>Consultar sem confundir erro HTTP e erro de rede</span></a><a class="stage-link " href="08-registro.html"><span class="stage-number">8</span><span>Registrar uma vez e ler o que foi confirmado</span></a><a class="stage-link " href="09-estados.html"><span class="stage-number">9</span><span>Consultar antes de avançar</span></a><a class="stage-link " href="10-servidor.html"><span class="stage-number">10</span><span>Validar na fronteira e operar no serviço</span></a><a class="stage-link " href="11-evidencias.html"><span class="stage-number">11</span><span>Testar cada camada e declarar seu limite</span></a><a class="stage-link " href="12-integracao.html"><span class="stage-number">12</span><span>Ler a aplicação integrada e defender o pedido</span></a><a class="stage-link" href="contrato.html">Contrato HTTP</a><a class="stage-link" href="codigo-integrado.html">Código integrado preservado</a><a class="stage-link" href="99-exercicios.html">99 · Exercícios encadeados</a><a class="stage-link" href="caderno-web-api.md">Caderno de evidências</a><a class="stage-link" href="../analise/dossie-cantina.html">Dossiê do sistema</a></nav><main class="course-main" id="conteudo"><div class="content-wrap"><section class="hero"><span class="kicker">Cantina Horizonte · laboratório</span><h1>Código integrado preservado</h1><p>A mesma interface, API, serviço e banco.</p></section><article class="chapter"><section><h2>Agora localize cada responsabilidade no conjunto</h2><p>Os blocos abaixo reproduzem os arquivos existentes do laboratório. Não houve reescrita da interface/API nesta fatia. Para executar, use o <a href="../../cantina-evolutiva/README.md">README e seu ambiente</a>; não mova esses arquivos para os recortes estáticos.</p><p>O app.js usa estado do carrinho, template, find/map/filter/reduce, função assíncrona, optional chaining e controles de envio/consulta. O acervo aprofunda a sintaxe. A leitura do código completo vem depois das pontes; ela não substitui verificação no navegador.</p></section><details><summary>frontend/index.html — código completo</summary><h3>frontend/index.html</h3><button class="copy-button" type="button" data-copy="integrado-0">Copiar código</button><pre id="integrado-0"><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+  &lt;title&gt;Cantina Horizonte — laboratório&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+  &lt;script src=&quot;app.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;topo&quot;&gt;
+    &lt;div&gt;&lt;p class=&quot;eyebrow&quot;&gt;Escola Horizonte • laboratório&lt;/p&gt;&lt;h1&gt;Cantina Horizonte&lt;/h1&gt;
+      &lt;p&gt;Monte um pedido e acompanhe sua preparação.&lt;/p&gt;&lt;/div&gt;
+    &lt;span class=&quot;versao&quot;&gt;Evolução 3&lt;/span&gt;
+  &lt;/header&gt;
+  &lt;main class=&quot;layout&quot;&gt;
+    &lt;section aria-labelledby=&quot;cardapio-titulo&quot;&gt;
+      &lt;div class=&quot;section-heading&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;Produtos disponíveis&lt;/h2&gt;
+        &lt;p class=&quot;hint&quot;&gt;Quantidade total por produto: de 1 a 10, respeitando o estoque.&lt;/p&gt;&lt;/div&gt;
+        &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot;&gt;Atualizar estoque&lt;/button&gt;&lt;/div&gt;
+      &lt;div id=&quot;produtos&quot; class=&quot;produtos&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+      &lt;section class=&quot;consulta&quot; aria-labelledby=&quot;consulta-titulo&quot;&gt;
+        &lt;h2 id=&quot;consulta-titulo&quot;&gt;Consultar pedido&lt;/h2&gt;
+        &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
+          &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; required&gt;
+          &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
+        &lt;p id=&quot;consulta-resultado&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+        &lt;div id=&quot;acompanhamento&quot; hidden&gt;
+          &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
+          &lt;p class=&quot;hint&quot;&gt;Cada ação avança uma etapa. Entregue encerra a sequência.&lt;/p&gt;
+          &lt;h3&gt;Histórico de mudanças&lt;/h3&gt;
+          &lt;ol id=&quot;historico&quot;&gt;&lt;/ol&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/section&gt;
+    &lt;aside class=&quot;carrinho&quot; aria-labelledby=&quot;carrinho-titulo&quot;&gt;
+      &lt;h2 id=&quot;carrinho-titulo&quot;&gt;Seu pedido&lt;/h2&gt;
+      &lt;div id=&quot;itensCarrinho&quot; class=&quot;itens-vazios&quot;&gt;Nenhum item adicionado.&lt;/div&gt;
+      &lt;dl class=&quot;totais&quot;&gt;&lt;div class=&quot;total&quot;&gt;&lt;dt&gt;Subtotal previsto&lt;/dt&gt;&lt;dd id=&quot;total&quot;&gt;R$ 0,00&lt;/dd&gt;&lt;/div&gt;&lt;/dl&gt;
+      &lt;label for=&quot;cupom&quot;&gt;Cupom opcional&lt;/label&gt;&lt;input id=&quot;cupom&quot; type=&quot;text&quot; placeholder=&quot;Ex.: MBB10&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;p class=&quot;hint&quot;&gt;O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório.&lt;/p&gt;
+      &lt;button id=&quot;finalizar&quot; class=&quot;primary&quot;&gt;Registrar pedido&lt;/button&gt;
+      &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;template id=&quot;produtoTemplate&quot;&gt;
+    &lt;article class=&quot;produto-card&quot;&gt;&lt;div class=&quot;produto-topo&quot;&gt;&lt;div&gt;&lt;h3 class=&quot;nome&quot;&gt;&lt;/h3&gt;&lt;p class=&quot;estoque&quot;&gt;&lt;/p&gt;&lt;/div&gt;&lt;strong class=&quot;preco&quot;&gt;&lt;/strong&gt;&lt;/div&gt;
+      &lt;label&gt;Quantidade &lt;input class=&quot;quantidade&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;1&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+      &lt;button class=&quot;adicionar primary&quot;&gt;Adicionar&lt;/button&gt;
+    &lt;/article&gt;
+  &lt;/template&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><a href="../../cantina-evolutiva/frontend/index.html">Arquivo canônico frontend/index.html</a></p></details><details><summary>frontend/styles.css — código completo</summary><h3>frontend/styles.css</h3><button class="copy-button" type="button" data-copy="integrado-1">Copiar código</button><pre id="integrado-1"><code>:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  line-height: 1.5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+.topo {
+  display: flex; justify-content: space-between; gap: 1rem; align-items: center;
+  padding: 2rem max(1.25rem, calc((100vw - 1180px) / 2));
+  background: white; border-bottom: 1px solid #e3e8f0;
+}
+.topo h1, .section-heading h2, .carrinho h2 { margin: .1rem 0 .35rem; }
+.topo p { margin: 0; color: #566178; }
+.eyebrow { margin: 0; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #2457d6; }
+.versao { white-space: nowrap; padding: .4rem .7rem; border-radius: 999px; background: #eef3ff; color: #2457d6; font-size: .82rem; font-weight: 700; }
+.layout { width: min(1180px, calc(100% - 2rem)); margin: 2rem auto; display: grid; grid-template-columns: 1fr 360px; gap: 2rem; align-items: start; }
+.section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+.produtos { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+.produto-card, .carrinho { background: white; border: 1px solid #e1e7f0; border-radius: 18px; box-shadow: 0 10px 30px rgba(20,33,61,.05); }
+.produto-card { padding: 1.15rem; }
+.produto-topo { display:flex; justify-content:space-between; gap:1rem; }
+.produto-topo h3 { margin: 0 0 .2rem; }
+.estoque, .hint { margin: 0; color:#6a7489; font-size:.9rem; }
+.preco { color:#2457d6; }
+.produto-card label, .carrinho label { display:grid; gap:.35rem; margin-top:1rem; font-size:.88rem; font-weight:700; }
+input { width:100%; border:1px solid #cfd7e5; border-radius:10px; padding:.7rem .8rem; background:white; }
+button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cursor:pointer; }
+.primary { background:#2457d6; color:white; }
+.secondary { background:#172033; color:white; }
+.ghost { background:white; border:1px solid #d8dfeb; color:#38445c; }
+.produto-card .adicionar { width:100%; margin-top:.8rem; }
+.carrinho { padding:1.25rem; position:sticky; top:1rem; }
+.itens-vazios { color:#6a7489; padding:1rem 0; }
+.item-carrinho { display:flex; justify-content:space-between; gap:.75rem; padding:.65rem 0; border-bottom:1px solid #edf0f5; }
+.item-carrinho small { display:block; color:#778196; }
+.remover { background:transparent; color:#b42318; padding:.25rem; }
+.cupom-linha { display:grid; grid-template-columns:1fr auto; gap:.5rem; }
+.totais { margin:1.2rem 0; }
+.totais div { display:flex; justify-content:space-between; gap:1rem; padding:.35rem 0; }
+.totais dt, .totais dd { margin:0; }
+.totais .total { border-top:1px solid #dfe5ee; margin-top:.45rem; padding-top:.75rem; font-weight:900; font-size:1.12rem; }
+.carrinho &gt; .primary { width:100%; }
+.mensagem { min-height:1.5rem; margin:.8rem 0 0; font-weight:700; }
+.ok { color:#067647; }
+.erro { color:#b42318; }
+@media (max-width: 820px) {
+  .topo { align-items:flex-start; flex-direction:column; }
+  .layout { grid-template-columns:1fr; }
+  .carrinho { position:static; }
+}
+@media (max-width: 560px) {
+  .produtos { grid-template-columns:1fr; }
+  .section-heading { align-items:flex-start; flex-direction:column; }
+}
+
+/* Complementos da evolução; identidade da v1 preservada. */
+.consulta { margin-top: 2rem; }
+.consulta form { display: grid; gap: .65rem; max-width: 24rem; }
+button:disabled { opacity: .6; cursor: wait; }
+button:focus-visible, input:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+.item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
+#acompanhamento { overflow-wrap: anywhere; }
+#avancar { max-width: 100%; }
+</code></pre><p><a href="../../cantina-evolutiva/frontend/styles.css">Arquivo canônico frontend/styles.css</a></p></details><details><summary>frontend/app.js — código completo</summary><h3>frontend/app.js</h3><button class="copy-button" type="button" data-copy="integrado-2">Copiar código</button><pre id="integrado-2"><code>&#x27;use strict&#x27;;
+const estado = { produtos: [], carrinho: [], enviando: false, consultado: null, consultando: false, alterando: false, versaoConsulta: 0 };
+const moeda = centavos =&gt; (centavos / 100).toLocaleString(&#x27;pt-BR&#x27;, { style: &#x27;currency&#x27;, currency: &#x27;BRL&#x27; });
+const $ = seletor =&gt; document.querySelector(seletor);
+
+function avisar(texto, erro = false) {
+  $(&#x27;#mensagem&#x27;).textContent = texto;
+  $(&#x27;#mensagem&#x27;).className = `mensagem ${erro ? &#x27;erro&#x27; : &#x27;ok&#x27;}`;
+}
+
+async function api(caminho, opcoes) {
+  let resposta;
+  try { resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes); }
+  catch { throw new Error(&#x27;Não foi possível conversar com o servidor.&#x27;); }
+  const dados = await resposta.json();
+  if (!resposta.ok) throw new Error(dados.detail || &#x27;Não foi possível concluir a operação.&#x27;);
+  return dados;
+}
+
+async function carregarProdutos() {
+  const produtos = await api(&#x27;produtos&#x27;);
+  estado.produtos = produtos;
+  const area = $(&#x27;#produtos&#x27;);
+  area.replaceChildren();
+  for (const produto of produtos) {
+    const node = $(&#x27;#produtoTemplate&#x27;).content.cloneNode(true);
+    node.querySelector(&#x27;.nome&#x27;).textContent = produto.nome;
+    node.querySelector(&#x27;.estoque&#x27;).textContent = `Estoque: ${produto.estoque}`;
+    node.querySelector(&#x27;.preco&#x27;).textContent = moeda(produto.preco_centavos);
+    const input = node.querySelector(&#x27;.quantidade&#x27;);
+    const botao = node.querySelector(&#x27;.adicionar&#x27;);
+    botao.disabled = produto.estoque === 0;
+    botao.addEventListener(&#x27;click&#x27;, () =&gt; {
+      if (estado.enviando) return;
+      const quantidade = Number(input.value);
+      const existente = estado.carrinho.find(item =&gt; item.produto.id === produto.id);
+      const total = quantidade + (existente?.quantidade || 0);
+      if (!Number.isInteger(quantidade) || quantidade &lt; 1 || total &gt; 10) {
+        avisar(&#x27;A quantidade total de cada produto deve ser inteira entre 1 e 10.&#x27;, true);
+        return;
+      }
+      if (total &gt; produto.estoque) {
+        avisar(`Estoque insuficiente para ${produto.nome}.`, true);
+        return;
+      }
+      if (existente) existente.quantidade = total;
+      else estado.carrinho.push({ produto, quantidade });
+      renderizarCarrinho();
+      avisar(`${produto.nome} adicionado ao pedido.`);
+    });
+    area.appendChild(node);
+  }
+}
+
+function renderizarCarrinho() {
+  const area = $(&#x27;#itensCarrinho&#x27;);
+  area.replaceChildren();
+  area.className = estado.carrinho.length ? &#x27;&#x27; : &#x27;itens-vazios&#x27;;
+  if (!estado.carrinho.length) area.textContent = &#x27;Nenhum item adicionado.&#x27;;
+  for (const item of estado.carrinho) {
+    const row = document.createElement(&#x27;div&#x27;);
+    row.className = &#x27;item-carrinho&#x27;;
+    const detalhe = document.createElement(&#x27;div&#x27;);
+    detalhe.textContent = `${item.produto.nome}: ${item.quantidade} × ${moeda(item.produto.preco_centavos)}`;
+    const remover = document.createElement(&#x27;button&#x27;);
+    remover.textContent = &#x27;Remover&#x27;;
+    remover.className = &#x27;remover&#x27;;
+    remover.setAttribute(&#x27;aria-label&#x27;, `Remover ${item.produto.nome}`);
+    remover.addEventListener(&#x27;click&#x27;, () =&gt; {
+      if (estado.enviando) return;
+      estado.carrinho = estado.carrinho.filter(atual =&gt; atual !== item);
+      renderizarCarrinho();
+    });
+    row.append(detalhe, remover);
+    area.appendChild(row);
+  }
+  $(&#x27;#total&#x27;).textContent = moeda(estado.carrinho.reduce((total, item) =&gt; total + item.quantidade * item.produto.preco_centavos, 0));
+}
+
+async function registrarPedido() {
+  if (estado.enviando) return;
+  if (!estado.carrinho.length) return avisar(&#x27;Adicione ao menos um produto ao pedido.&#x27;, true);
+  estado.enviando = true;
+  $(&#x27;#finalizar&#x27;).disabled = true;
+  try {
+    const pedido = await api(&#x27;pedidos&#x27;, {
+      method: &#x27;POST&#x27;, headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+      body: JSON.stringify({ itens: estado.carrinho.map(item =&gt; ({ produto_id: item.produto.id, quantidade: item.quantidade })), cupom: $(&#x27;#cupom&#x27;).value.trim() || null }),
+    });
+    estado.carrinho = [];
+    $(&#x27;#cupom&#x27;).value = &#x27;&#x27;;
+    renderizarCarrinho();
+    $(&#x27;#pedido-id&#x27;).value = pedido.id;
+    estado.versaoConsulta++;
+    mostrarPedido(pedido);
+    avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
+    try { await carregarProdutos(); }
+    catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
+  } catch (erro) {
+    avisar(erro.message || &#x27;Não foi possível conversar com o servidor.&#x27;, true);
+  } finally {
+    estado.enviando = false;
+    $(&#x27;#finalizar&#x27;).disabled = false;
+  }
+}
+
+$(&#x27;#finalizar&#x27;).addEventListener(&#x27;click&#x27;, registrarPedido);
+$(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; carregarProdutos().catch(erro =&gt; avisar(erro.message, true)));
+
+function controlesConsulta() {
+  const ocupado = estado.consultando || estado.alterando;
+  $(&#x27;#pedido-id&#x27;).disabled = ocupado;
+  $(&#x27;#consultar&#x27;).disabled = ocupado;
+  $(&#x27;#avancar&#x27;).disabled = ocupado || !estado.consultado?.proximo_status;
+}
+
+function mostrarPedido(pedido) {
+  estado.consultado = pedido;
+  $(&#x27;#consulta-resultado&#x27;).textContent = `Pedido #${pedido.id} — ${pedido.status} — ${moeda(pedido.total_centavos)}. ` + pedido.itens.map(item =&gt; `${item.quantidade} × ${item.nome}`).join(&#x27;; &#x27;);
+  $(&#x27;#acompanhamento&#x27;).hidden = false;
+  $(&#x27;#avancar&#x27;).textContent = pedido.proximo_status ? `Avançar para ${pedido.proximo_status}` : &#x27;Pedido entregue&#x27;;
+  const lista = $(&#x27;#historico&#x27;);
+  lista.replaceChildren();
+  if (!pedido.historico_status.length) {
+    const item = document.createElement(&#x27;li&#x27;);
+    item.textContent = &#x27;Nenhuma mudança registrada nesta evolução.&#x27;;
+    lista.appendChild(item);
+  }
+  for (const evento of pedido.historico_status) {
+    const item = document.createElement(&#x27;li&#x27;);
+    const data = new Date(evento.alterado_em.replace(&#x27; &#x27;, &#x27;T&#x27;) + &#x27;Z&#x27;).toLocaleString(&#x27;pt-BR&#x27;, { timeZone: &#x27;America/Sao_Paulo&#x27; });
+    item.textContent = `${evento.estado_anterior} → ${evento.estado_novo} — ${data}`;
+    lista.appendChild(item);
+  }
+  controlesConsulta();
+}
+
+function limparConsulta() {
+  estado.consultado = null;
+  estado.versaoConsulta++;
+  $(&#x27;#acompanhamento&#x27;).hidden = true;
+  controlesConsulta();
+}
+
+$(&#x27;#pedido-id&#x27;).addEventListener(&#x27;input&#x27;, () =&gt; {
+  limparConsulta();
+  $(&#x27;#consulta-resultado&#x27;).textContent = &#x27;&#x27;;
+});
+$(&#x27;#form-consulta&#x27;).addEventListener(&#x27;submit&#x27;, async evento =&gt; {
+  evento.preventDefault();
+  if (estado.consultando || estado.alterando) return;
+  const id = Number($(&#x27;#pedido-id&#x27;).value);
+  limparConsulta();
+  if (!Number.isInteger(id) || id &lt; 1) {
+    $(&#x27;#consulta-resultado&#x27;).textContent = &#x27;Informe um número de pedido inteiro positivo.&#x27;;
+    return;
+  }
+  const versao = estado.versaoConsulta;
+  estado.consultando = true;
+  controlesConsulta();
+  try {
+    const pedido = await api(`pedidos/${id}`);
+    if (versao === estado.versaoConsulta) mostrarPedido(pedido);
+  } catch (erro) {
+    if (versao === estado.versaoConsulta) $(&#x27;#consulta-resultado&#x27;).textContent = erro.message;
+  } finally {
+    estado.consultando = false;
+    controlesConsulta();
+  }
+});
+
+$(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
+  const pedido = estado.consultado;
+  if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
+  const versao = estado.versaoConsulta;
+  estado.alterando = true;
+  controlesConsulta();
+  try {
+    const atualizado = await api(`pedidos/${pedido.id}/status`, {
+      method: &#x27;POST&#x27;, headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+      body: JSON.stringify({ status: pedido.proximo_status, estado_esperado: pedido.status }),
+    });
+    if (versao === estado.versaoConsulta) mostrarPedido(atualizado);
+  } catch (erro) {
+    if (versao === estado.versaoConsulta) {
+      limparConsulta();
+      $(&#x27;#consulta-resultado&#x27;).textContent = erro.message + &#x27; Consulte o pedido para conferir o estado salvo.&#x27;;
+    }
+  } finally {
+    estado.alterando = false;
+    controlesConsulta();
+  }
+});
+carregarProdutos().catch(erro =&gt; avisar(erro.message, true));
+renderizarCarrinho();
+</code></pre><p><a href="../../cantina-evolutiva/frontend/app.js">Arquivo canônico frontend/app.js</a></p></details><details><summary>app.py — código completo</summary><h3>app.py</h3><button class="copy-button" type="button" data-copy="integrado-3">Copiar código</button><pre id="integrado-3"><code>&quot;&quot;&quot;API e interface local da Cantina evolutiva.&quot;&quot;&quot;
+from contextlib import asynccontextmanager
+from pathlib import Path
+import sqlite3
+
+from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+
+from servico import Cantina, ErroPedido
+
+BASE = Path(__file__).resolve().parent
+
+
+class ItemEntrada(BaseModel):
+    model_config = ConfigDict(extra=&#x27;forbid&#x27;)
+    produto_id: StrictInt = Field(gt=0)
+    quantidade: StrictInt = Field(ge=1, le=10)
+
+
+class PedidoEntrada(BaseModel):
+    model_config = ConfigDict(extra=&#x27;forbid&#x27;)
+    itens: list[ItemEntrada] = Field(min_length=1)
+    cupom: StrictStr | None = None
+
+
+class StatusEntrada(BaseModel):
+    model_config = ConfigDict(extra=&#x27;forbid&#x27;)
+    status: StrictStr
+    estado_esperado: StrictStr
+
+
+def criar_app(caminho=None, hoje=None):
+    cantina = Cantina(caminho or BASE / &#x27;dados&#x27; / &#x27;cantina-evolutiva.sqlite3&#x27;, hoje)
+
+    @asynccontextmanager
+    async def lifespan(_):
+        cantina.preparar()
+        yield
+
+    app = FastAPI(title=&#x27;Cantina Horizonte — pedido, cupom e estados&#x27;, lifespan=lifespan)
+    app.state.cantina = cantina
+
+    @app.exception_handler(ErroPedido)
+    async def erro_pedido(_, erro):
+        return JSONResponse(status_code=erro.status, content={&#x27;detail&#x27;: str(erro)})
+
+    @app.exception_handler(RequestValidationError)
+    async def entrada_invalida(requisicao, erro):
+        campos = [e[&#x27;loc&#x27;] for e in erro.errors()]
+        if any(&#x27;quantidade&#x27; in c for c in campos):
+            mensagem = &#x27;A quantidade deve ser um número inteiro entre 1 e 10.&#x27;
+        elif any(&#x27;produto_id&#x27; in c for c in campos):
+            mensagem = &#x27;Informe um identificador inteiro positivo para o produto.&#x27;
+        elif any(&#x27;cupom&#x27; in c for c in campos):
+            mensagem = &#x27;Informe o código do cupom como texto.&#x27;
+        elif requisicao.url.path.endswith(&#x27;/status&#x27;):
+            mensagem = &#x27;Envie somente o próximo estado e o estado exibido na consulta, ambos como texto.&#x27;
+        elif any(e[&#x27;type&#x27;] == &#x27;extra_forbidden&#x27; for e in erro.errors()):
+            mensagem = &#x27;Envie somente os itens e o cupom opcional.&#x27;
+        else:
+            mensagem = &#x27;Envie um pedido com pelo menos um item válido.&#x27;
+        return JSONResponse(status_code=422, content={&#x27;detail&#x27;: mensagem})
+
+    @app.exception_handler(sqlite3.Error)
+    async def banco_indisponivel(_, erro):
+        return JSONResponse(status_code=503, content={&#x27;detail&#x27;: &#x27;Não foi possível registrar a operação. O banco não confirmou esta tentativa.&#x27;})
+
+    @app.get(&#x27;/api/produtos&#x27;)
+    def produtos():
+        return cantina.produtos()
+
+    @app.post(&#x27;/api/pedidos&#x27;, status_code=201)
+    def registrar(entrada: PedidoEntrada):
+        return cantina.registrar([item.model_dump() for item in entrada.itens], entrada.cupom)
+
+    @app.get(&#x27;/api/pedidos/{pedido_id}&#x27;)
+    def consultar(pedido_id: int):
+        return cantina.consultar(pedido_id)
+
+    @app.post(&#x27;/api/pedidos/{pedido_id}/status&#x27;)
+    def alterar_status(pedido_id: int, entrada: StatusEntrada):
+        return cantina.alterar_status(pedido_id, entrada.status, entrada.estado_esperado)
+
+    app.mount(&#x27;/&#x27;, StaticFiles(directory=BASE / &#x27;frontend&#x27;, html=True), name=&#x27;interface&#x27;)
+    return app
+
+
+app = criar_app()
+</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>
