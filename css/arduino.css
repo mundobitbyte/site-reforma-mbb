@@ -1,0 +1,1497 @@
+:root{--primary:#0b7285;--dark:#07515f;--bg:#eaf5f7;--panel:#fff;--line:#c8dfe4;--text:#12343b;--muted:#5f7380;--code:#101827;--ok:#e6fffa;--warn:#fff1f2;--note:#fff7df;--shadow:0 8px 24px rgba(15,23,42,.08)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}header{position:sticky;top:0;z-index:40;background:var(--primary);color:white;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 18px;box-shadow:0 2px 10px rgba(0,0,0,.18)}header h1{font-size:18px;margin:0;font-weight:900}.brand{font-size:13px;font-weight:800;white-space:nowrap}.layout{display:grid;grid-template-columns:238px 1fr;min-height:calc(100vh - 56px)}nav{position:sticky;top:56px;align-self:start;height:calc(100vh - 56px);background:white;border-right:1px solid var(--line);padding:14px 10px;overflow:auto}nav h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:4px 8px 12px}.nav-btn{display:block;text-decoration:none;color:#10333b;font-weight:850;font-size:13px;border-radius:10px;padding:10px;margin-bottom:6px}.nav-btn:hover{background:#e3f4f7;color:var(--dark)}main{padding:18px;max-width:1320px;width:100%;margin:auto}.hero,.project{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.hero{padding:22px;margin-bottom:18px;background:linear-gradient(135deg,#fff,#f3fbfd)}.hero h2{font-size:28px;color:var(--dark);margin:0 0 8px}.hero p{max-width:960px;line-height:1.55;margin:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-size:12px;font-weight:850;color:var(--dark);background:#e6fffa;border:1px solid #bceee6;border-radius:999px;padding:6px 10px}.project{margin-bottom:20px;scroll-margin-top:70px}.projectHead{display:flex;gap:14px;align-items:center;padding:18px 20px;background:linear-gradient(135deg,#fff,#eef9fb);border-bottom:1px solid var(--line)}.badge{background:var(--primary);color:white;border-radius:12px;padding:8px 10px;font-weight:900;font-size:12px}.projectHead h2{margin:0;color:var(--dark);font-size:24px}.projectHead p{margin:6px 0 0;line-height:1.45}.circuitPanel{position:sticky;top:56px;z-index:20;background:#f8fbfc;border-bottom:1px solid var(--line);padding:10px 14px 12px}.circuitPanel h3{margin:0 0 8px;color:var(--dark);font-size:13px;text-transform:uppercase;letter-spacing:.06em}.circuit{display:block;width:100%;max-height:360px;background:#ffffff;border:1px solid #dbe8ec;border-radius:14px}.cards{padding:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.card.wide{grid-column:1/-1}.card h3{margin:0;padding:11px 13px;background:#f1fbfd;border-bottom:1px solid var(--line);font-size:13px;text-transform:uppercase;letter-spacing:.045em;color:var(--dark)}.card p,.card ul,.explain{font-size:14.5px;line-height:1.55}.card p{margin:13px}.card ul{margin:13px 13px 13px 32px;padding:0}.card li{margin:4px 0}.worked{background:var(--ok)}.errors{background:var(--warn)}.exercise{background:var(--note)}.table-wrap{overflow-x:auto;padding:13px}table{width:100%;border-collapse:collapse;font-size:13.5px;background:white}th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}th{background:#eef8fa;color:var(--dark);font-weight:900}.code h3{display:flex;justify-content:space-between;align-items:center;background:#1f2937;color:#e5e7eb;border-bottom:1px solid rgba(255,255,255,.14)}button{border:0;background:#4b5563;color:white;border-radius:7px;padding:6px 10px;font-weight:800;cursor:pointer}button:hover{background:#374151}pre{margin:0;padding:16px;overflow:auto;background:var(--code);color:#f8fafc;font-family:Consolas,'Courier New',monospace;font-size:13px;line-height:1.5}.explain{padding:13px}.explain p{margin:8px 0}.explain code,.card code{font-family:Consolas,'Courier New',monospace;background:#edf6f8;border:1px solid #cce5ea;border-radius:6px;padding:1px 5px;color:#12343b}.arduinoBoard rect:first-child{fill:#0b7285;stroke:#07515f;stroke-width:3;filter:url(#soft)}.usb{fill:#d9e1e8;stroke:#64748b;stroke-width:2}.chip{fill:#1f2937}.reset{fill:#e5e7eb;stroke:#64748b;stroke-width:2}.pinrow rect{fill:#101827;stroke:#e5e7eb;stroke-width:1}.bread rect:first-child{fill:#fff;stroke:#94a3b8;stroke-width:2;filter:url(#soft)}.hole{fill:#d8e2ea;stroke:#c1ccd6;stroke-width:.7}.rail{stroke-width:3;stroke-linecap:round}.redRail{stroke:#ef4444}.blueRail{stroke:#3b82f6}.wire{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:url(#soft)}.red{stroke:#e11d48}.black{stroke:#111827}.green{stroke:#16a34a}.blue{stroke:#2563eb}.orange{stroke:#f97316}.label{font:800 15px Segoe UI,Arial;fill:#12343b}.small{font:700 13px Segoe UI,Arial}.micro{font:800 9px Segoe UI,Arial;fill:#334155}.white{fill:white}.redTxt{fill:#ef4444}.blueTxt{fill:#2563eb}.call{font:800 14px Segoe UI,Arial;fill:#12343b}.resistor{fill:#fef3c7;stroke:#92400e;stroke-width:2}.led .bulb{fill:#ef4444;stroke:#991b1b;stroke-width:3;opacity:.92}.led line{stroke:#991b1b;stroke-width:4}.glow{fill:#fecaca;opacity:.55}.button rect:first-child{fill:#e5e7eb;stroke:#64748b;stroke-width:3}.button rect:nth-child(2){fill:#94a3b8;stroke:#475569;stroke-width:2}.button line{stroke:#475569;stroke-width:4}.buzz circle:first-child{fill:#111827;stroke:#475569;stroke-width:3}.buzz circle:nth-child(2){fill:#374151;stroke:#64748b;stroke-width:2}.pot rect{fill:#e5e7eb;stroke:#64748b;stroke-width:3}.pot circle{fill:#cbd5e1;stroke:#64748b;stroke-width:3}
+@media(max-width:980px){header{align-items:flex-start;flex-direction:column}.layout{display:block}nav{position:sticky;top:0;z-index:50;height:auto;display:flex;gap:6px;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px;background:white}nav h3{display:none}.nav-btn{min-width:150px;margin:0}.circuitPanel{position:static}.cards{grid-template-columns:1fr}.card.wide{grid-column:auto}.projectHead h2{font-size:21px}.hero h2{font-size:23px}}
+@media(max-width:620px){main{padding:10px}.projectHead{padding:14px}.cards{padding:10px}.circuitPanel{padding:10px}.circuit{min-width:760px}.circuitPanel{overflow-x:auto}header h1{font-size:16px}.brand{font-size:12px}pre{font-size:12px}.card p,.card ul,.explain{font-size:14px}}
+
+
+/* ===== VERSÃO REFEITA: MENU SUPERIOR HORIZONTAL ===== */
+body{overflow-x:hidden;}
+header{position:sticky;top:0;z-index:80;min-height:54px;}
+.layout{display:block;min-height:calc(100vh - 54px);}
+nav{
+  position:sticky;
+  top:54px;
+  z-index:70;
+  height:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(8px);
+  border-right:0;
+  border-bottom:1px solid var(--line);
+  padding:9px 16px;
+  box-shadow:0 4px 14px rgba(15,23,42,.06);
+}
+nav h3{display:none;}
+.nav-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:max-content;
+  white-space:nowrap;
+  margin:0;
+  padding:9px 13px;
+  border:1px solid transparent;
+  background:#f8fbfc;
+}
+.nav-btn:hover{border-color:#bce7ed;background:#e3f4f7;}
+main{max-width:1500px;width:100%;padding:18px 22px 26px;margin:0 auto;}
+.hero{margin-bottom:20px;}
+.project{scroll-margin-top:118px;margin-bottom:24px;}
+.projectHead{padding:16px 20px;}
+.circuitPanel{
+  position:sticky;
+  top:104px;
+  z-index:30;
+  background:rgba(248,251,252,.98);
+  backdrop-filter:blur(6px);
+  padding:10px 16px 12px;
+}
+.circuitPanel h3{margin-bottom:7px;}
+.circuit{
+  width:100%;
+  height:auto;
+  max-height:340px;
+  object-fit:contain;
+}
+.cards{
+  padding:16px 18px 20px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.card.wide{grid-column:1/-1;}
+@media(max-width:980px){
+  header{position:sticky;top:0;z-index:80;align-items:flex-start;flex-direction:column;gap:5px;}
+  nav{top:78px;padding:8px 10px;}
+  .layout{display:block;}
+  main{padding:12px;}
+  .project{scroll-margin-top:132px;}
+  .circuitPanel{position:static;top:auto;overflow-x:auto;}
+  .cards{grid-template-columns:1fr;padding:12px;}
+  .card.wide{grid-column:auto;}
+}
+@media(max-width:620px){
+  nav{top:78px;}
+  .nav-btn{font-size:12.5px;padding:8px 10px;}
+  .circuit{min-width:760px;max-height:none;}
+  main{padding:10px;}
+}
+
+
+/* ===== Circuitos por imagem técnica real ===== */
+.circuitPanel{
+  padding:12px 16px 14px;
+}
+.circuitFigure{
+  margin:0;
+  background:#f6f8fa;
+  border:1px solid #dbe8ec;
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.circuitPhoto{
+  display:block;
+  width:100%;
+  max-width:1120px;
+  max-height:430px;
+  object-fit:contain;
+  padding:8px;
+  background:#f6f8fa;
+}
+.circuitFigure figcaption{
+  width:100%;
+  border-top:1px solid #dbe8ec;
+  background:#ffffff;
+  color:#334155;
+  font-size:13px;
+  line-height:1.35;
+  padding:8px 12px;
+}
+@media(max-width:980px){
+  .circuitPhoto{max-height:390px;min-width:0;width:100%;}
+}
+@media(max-width:620px){
+  .circuitPhoto{max-height:none;min-width:720px;width:720px;padding:6px;}
+  .circuitFigure{align-items:flex-start;}
+  .circuitFigure figcaption{min-width:720px;}
+}
+
+.hero{scroll-margin-top:118px;}
+.fundamentos h2{font-size:28px;color:var(--dark);margin:0 0 8px;}
+.fundamentos p{max-width:1050px;line-height:1.55;margin:0 0 14px;}
+.fund-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px;}
+.fund-card{border:1px solid var(--line);border-radius:14px;background:#ffffff;padding:13px;box-shadow:0 3px 10px rgba(15,23,42,.04);}
+.fund-card strong{display:block;color:var(--dark);font-size:14px;margin-bottom:6px;}
+.fund-card span{display:block;font-size:13.5px;line-height:1.45;color:#1f3f47;}
+@media(max-width:980px){.hero{scroll-margin-top:132px;}.fund-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:620px){.fund-grid{grid-template-columns:1fr;}}
+
+
+.fundamentos-premium{
+  display:block;
+}
+.fund-hero{
+  background:linear-gradient(135deg,#f7feff,#e8f7fa);
+  border:1px solid #bddfe6;
+  border-radius:18px;
+  padding:28px;
+  margin-bottom:20px;
+  box-shadow:0 8px 22px rgba(15,23,42,.08);
+}
+.fund-hero .eyebrow{
+  display:inline-block;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#087080;
+  margin-bottom:8px;
+}
+.fund-hero h2{
+  font-size:34px;
+  line-height:1.1;
+  color:#064c5a;
+  margin:0 0 12px;
+}
+.fund-hero p{
+  max-width:980px;
+  font-size:17px;
+  line-height:1.65;
+  margin:0;
+}
+.hero-flow,.simple-flow,.project-path{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.hero-flow div,.project-path span,.simple-flow span{
+  background:#fff;
+  border:1px solid #b9dfe6;
+  border-radius:999px;
+  padding:9px 13px;
+  font-weight:800;
+  color:#073f49;
+}
+.hero-flow span,.project-path b,.simple-flow b{
+  color:#087080;
+  font-weight:900;
+}
+.journey-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:18px;
+}
+.journey-card{
+  background:#fff;
+  border:1px solid #c6e1e7;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 4px 14px rgba(15,23,42,.06);
+}
+.journey-card.wide{
+  grid-column:1 / -1;
+}
+.journey-card h3,.progress-panel h3,.closing-panel h3{
+  color:#07515f;
+  margin:0 0 10px;
+  font-size:21px;
+}
+.journey-card p,.progress-panel p,.closing-panel p{
+  line-height:1.6;
+  margin:0 0 10px;
+}
+.mini-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.mini-tags span{
+  background:#eefafa;
+  border:1px solid #bce4e9;
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:13px;
+  font-weight:800;
+  color:#07515f;
+}
+.concept-strip{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin:18px 0;
+}
+.concept-strip div{
+  background:#073f49;
+  color:#eaffff;
+  border-radius:14px;
+  padding:15px;
+}
+.concept-strip strong{
+  display:block;
+  font-size:18px;
+  margin-bottom:6px;
+}
+.concept-strip span{
+  font-size:13.5px;
+  line-height:1.45;
+  color:#d5f7fa;
+}
+.io-boxes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+.io-boxes div{
+  background:#f1fbfd;
+  border:1px solid #bee2e8;
+  border-radius:12px;
+  padding:12px;
+}
+.io-boxes strong{
+  display:block;
+  color:#07515f;
+  margin-bottom:5px;
+}
+.progress-panel,.closing-panel{
+  background:#fff;
+  border:1px solid #c6e1e7;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:18px;
+  box-shadow:0 4px 14px rgba(15,23,42,.06);
+}
+.formula-line{
+  margin-top:14px;
+  background:#e9fafa;
+  border:1px solid #bce4e9;
+  border-radius:14px;
+  padding:14px;
+  font-weight:900;
+  color:#064c5a;
+  text-align:center;
+}
+@media(max-width:900px){
+  .journey-grid,.concept-strip,.io-boxes{
+    grid-template-columns:1fr;
+  }
+  .fund-hero h2{
+    font-size:27px;
+  }
+  .fund-hero{
+    padding:20px;
+  }
+}
+
+
+/* Correção real para celular: a imagem do circuito deve aparecer inteira, sem corte lateral. */
+.circuitPanel{
+  overflow:visible !important;
+}
+.circuitFigure{
+  width:100% !important;
+  max-width:100% !important;
+  overflow:visible !important;
+  align-items:center !important;
+}
+.circuitPhoto{
+  display:block !important;
+  width:100% !important;
+  max-width:1120px !important;
+  min-width:0 !important;
+  height:auto !important;
+  max-height:430px !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+  padding:8px !important;
+}
+.circuitFigure figcaption{
+  width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+}
+@media(max-width:700px){
+  .project{scroll-margin-top:118px !important;}
+  .circuitPanel{
+    position:relative !important;
+    top:auto !important;
+    z-index:1 !important;
+    padding:8px !important;
+  }
+  .circuitPanel h3{
+    font-size:12px !important;
+    margin-bottom:6px !important;
+  }
+  .circuitFigure{
+    overflow:visible !important;
+    border-radius:12px !important;
+  }
+  .circuitPhoto{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    padding:4px !important;
+  }
+  .circuitFigure figcaption{
+    width:100% !important;
+    min-width:0 !important;
+    font-size:12px !important;
+    line-height:1.35 !important;
+  }
+}
+@media(max-width:420px){
+  .circuitPhoto{
+    padding:2px !important;
+  }
+}
+
+
+.exercises-section{margin-bottom:24px;scroll-margin-top:118px}
+.exercises-head{background:linear-gradient(135deg,#ffffff,#eef9fb);border-bottom:1px solid var(--line);padding:18px 20px}
+.exercises-head h2{margin:8px 0 0;color:var(--dark);font-size:26px}
+.exercises-head p{margin:8px 0 0;line-height:1.55;max-width:1080px}
+.exercise-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px;background:#f8fbfc;border-bottom:1px solid var(--line)}
+.exercise-tabs a{text-decoration:none;color:#07515f;background:#fff;border:1px solid #c8dfe4;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.exercise-tabs a:hover{background:#e3f4f7}
+.exercise-topic{padding:16px;border-top:1px solid #e4eef1;scroll-margin-top:118px}
+.exercise-topic h3{margin:0 0 10px;color:#07515f;font-size:22px}
+.topic-intro{margin:0 0 14px;line-height:1.55;color:#334155}
+.exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.exercise-box{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.exercise-box.wide{grid-column:1/-1}
+.exercise-box h4{margin:0;padding:10px 12px;background:#f1fbfd;border-bottom:1px solid var(--line);color:#07515f;font-size:13px;text-transform:uppercase;letter-spacing:.045em}
+.exercise-box .box-body{padding:13px}
+.exercise-box ol{margin:0 0 0 22px;padding:0;line-height:1.55}
+.exercise-box li{margin:0 0 14px}
+.exercise-box li:last-child{margin-bottom:0}
+.level{display:inline-block;font-size:11px;font-weight:900;text-transform:uppercase;border-radius:999px;padding:3px 7px;margin-right:6px;background:#e6fffa;color:#07515f;border:1px solid #bceee6}
+.level.mid{background:#fff7df;color:#92400e;border-color:#f8d98b}
+.level.hard{background:#fff1f2;color:#9f1239;border-color:#fecdd3}
+.mc-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+.mc-option{border:1px solid #c8dfe4;background:#fff;color:#12343b;border-radius:10px;padding:9px 10px;text-align:left;font-weight:700;cursor:pointer}
+.mc-option:hover{background:#eef8fa}
+.mc-question.answered .mc-option{cursor:not-allowed;opacity:.72}
+.mc-option.correct{background:#e6fffa;border-color:#10b981;color:#065f46}
+.mc-option.wrong{background:#fff1f2;border-color:#fb7185;color:#9f1239}
+.mc-feedback{display:none;margin-top:8px;padding:8px 10px;border-radius:10px;font-size:13px;font-weight:850}
+.mc-feedback.ok{display:block;background:#e6fffa;color:#065f46;border:1px solid #99f6e4}
+.mc-feedback.no{display:block;background:#fff1f2;color:#9f1239;border:1px solid #fecdd3}
+.exercise-code{margin:9px 0 0;background:#101827;color:#f8fafc;border-radius:10px;padding:12px;overflow:auto;font-family:Consolas,'Courier New',monospace;font-size:13px;line-height:1.5}
+.use-note,.task-note{background:#eef8fa;border:1px solid #c8dfe4;border-radius:12px;padding:10px 12px;margin-bottom:12px;line-height:1.5}
+.task-note strong{color:#07515f}
+.open-list li{margin-bottom:10px}
+@media(max-width:980px){.exercise-grid{grid-template-columns:1fr}.exercise-box.wide{grid-column:auto}.exercises-section,.exercise-topic{scroll-margin-top:132px}}
+@media(max-width:700px){.mc-options{grid-template-columns:1fr}}
+@media(max-width:620px){.exercise-topic{padding:10px}.exercises-head{padding:14px}.exercises-head h2{font-size:22px}.exercise-tabs{padding:10px}.exercise-tabs a{font-size:12.5px;padding:7px 9px}.exercise-box .box-body{padding:11px}.exercise-code{font-size:12px}}
+
+
+:root{
+  --primary:#1967d2;
+  --dark:#114b9e;
+  --bg:#edf3fb;
+  --panel:#ffffff;
+  --line:#d6e0ee;
+  --text:#132033;
+  --muted:#607089;
+  --code:#171717;
+  --codeHead:#2b2b2b;
+  --out:#08111f;
+  --note:#fff7d6;
+  --green:#0f766e;
+  --ok:#e8f5ee;
+  --warn:#fff1f2;
+  --shadow:0 4px 14px rgba(15,23,42,.08);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0 !important;
+  min-height:100vh;
+  font-family:"Segoe UI",Arial,sans-serif !important;
+  background:var(--bg) !important;
+  color:var(--text) !important;
+  overflow:auto !important;
+}
+
+/* Cabeçalho igual à família visualg */
+header{
+  height:46px !important;
+  min-height:46px !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:1000 !important;
+  background:var(--primary) !important;
+  color:#ffffff !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  padding:0 16px !important;
+  box-shadow:0 2px 8px #0003 !important;
+  border:0 !important;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+header h1{
+  font-size:18px !important;
+  font-weight:900 !important;
+  color:#ffffff !important;
+  margin:0 !important;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.brand{
+  font-size:14px !important;
+  font-weight:800 !important;
+  color:#ffffff !important;
+  white-space:nowrap;
+}
+
+.portal-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#ffffff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  white-space:nowrap;
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(255,255,255,.14);
+  border-radius:999px;
+  padding:6px 10px;
+}
+
+.portal-link:hover{
+  background:rgba(255,255,255,.24);
+}
+
+/* Estrutura igual ao padrão lateral */
+.layout{
+  display:grid !important;
+  grid-template-columns:138px 1fr !important;
+  min-height:calc(100vh - 46px) !important;
+}
+
+nav{
+  position:sticky !important;
+  top:46px !important;
+  align-self:start !important;
+  height:calc(100vh - 46px) !important;
+  background:#ffffff !important;
+  border-right:1px solid var(--line) !important;
+  border-bottom:0 !important;
+  padding:10px 6px !important;
+  overflow:auto !important;
+  display:block !important;
+  box-shadow:none !important;
+}
+
+nav h3{
+  display:block !important;
+  font-size:10px !important;
+  text-transform:uppercase !important;
+  letter-spacing:.08em !important;
+  color:var(--muted) !important;
+  margin:6px 6px 10px !important;
+}
+
+.nav-btn{
+  width:100% !important;
+  display:block !important;
+  border:0 !important;
+  background:transparent !important;
+  color:#0f172a !important;
+  cursor:pointer !important;
+  text-align:left !important;
+  font-size:12.5px !important;
+  font-weight:750 !important;
+  padding:8px 7px !important;
+  border-radius:7px !important;
+  margin:0 0 4px !important;
+  text-decoration:none !important;
+  white-space:normal !important;
+  min-width:0 !important;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+  background:var(--primary) !important;
+  color:#ffffff !important;
+  box-shadow:0 2px 7px rgba(25,103,210,.35) !important;
+  transform:none !important;
+}
+
+/* Conteúdo */
+main{
+  padding:13px !important;
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  overflow:visible !important;
+}
+
+/* Seções no padrão azul/visualg */
+.hero,
+.project,
+.fundamentos-premium,
+.exercises-section{
+  background:#ffffff !important;
+  border:1px solid var(--line) !important;
+  border-radius:12px !important;
+  box-shadow:var(--shadow) !important;
+  overflow:hidden !important;
+  margin-bottom:16px !important;
+  scroll-margin-top:58px !important;
+}
+
+.fund-hero{
+  background:linear-gradient(135deg,#eaf2ff,#ffffff) !important;
+  border:1px solid #bfdbfe !important;
+  border-radius:14px !important;
+  padding:18px !important;
+  margin:0 0 16px !important;
+  box-shadow:none !important;
+}
+
+.fund-hero .eyebrow{
+  color:var(--dark) !important;
+}
+
+.fund-hero h2,
+.hero h2,
+.projectHead h2,
+.project h2,
+.project h3,
+.journey-card h3,
+.progress-panel h3,
+.closing-panel h3,
+.exercise-topic h3,
+.exercises-head h2{
+  color:var(--dark) !important;
+}
+
+.fund-hero p,
+.projectHead p,
+.card p,
+.card ul,
+.explain,
+.journey-card p,
+.progress-panel p,
+.closing-panel p,
+.exercises-head p,
+.topic-intro{
+  color:var(--text) !important;
+}
+
+/* Cabeçalho dos projetos */
+.projectHead{
+  background:#ffffff !important;
+  border-bottom:1px solid var(--line) !important;
+  padding:16px 20px !important;
+}
+
+.badge{
+  background:var(--primary) !important;
+  color:white !important;
+  border-radius:8px !important;
+  padding:7px 9px !important;
+  font-weight:900 !important;
+}
+
+/* Circuito */
+.circuitPanel{
+  position:relative !important;
+  top:auto !important;
+  z-index:auto !important;
+  background:#f8fbff !important;
+  border-bottom:1px solid var(--line) !important;
+  padding:12px !important;
+  overflow:visible !important;
+}
+
+.circuitPanel h3{
+  color:var(--dark) !important;
+}
+
+.circuitFigure{
+  background:#ffffff !important;
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  flex-direction:column !important;
+}
+
+.circuitPhoto{
+  display:block !important;
+  width:100% !important;
+  max-width:1120px !important;
+  min-width:0 !important;
+  height:auto !important;
+  max-height:430px !important;
+  object-fit:contain !important;
+  background:#ffffff !important;
+  padding:8px !important;
+  margin:auto !important;
+  filter:none !important;
+}
+
+.circuitFigure figcaption{
+  width:100% !important;
+  min-width:0 !important;
+  background:#f8fbff !important;
+  color:#334155 !important;
+  border-top:1px solid var(--line) !important;
+}
+
+/* Cards */
+.cards{
+  padding:14px !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:12px !important;
+}
+
+.card,
+.journey-card,
+.progress-panel,
+.closing-panel,
+.exercise-box{
+  background:#ffffff !important;
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  box-shadow:none !important;
+  overflow:hidden !important;
+  transform:none !important;
+}
+
+.card:hover,
+.exercise-box:hover,
+.journey-card:hover{
+  transform:none !important;
+}
+
+.card h3,
+.exercise-box h4{
+  background:#eaf2ff !important;
+  color:var(--dark) !important;
+  border-bottom:1px solid var(--line) !important;
+  font-size:13px !important;
+}
+
+/* Fundamentos internos */
+.journey-grid,
+.concept-strip{
+  padding:0 0 0 0 !important;
+}
+
+.hero-flow div,
+.project-path span,
+.simple-flow span,
+.mini-tags span,
+.tag{
+  background:#eaf2ff !important;
+  color:var(--dark) !important;
+  border:1px solid #bfdbfe !important;
+  border-radius:999px !important;
+}
+
+.concept-strip div{
+  background:#0f172a !important;
+  color:#f8fafc !important;
+  border-radius:10px !important;
+}
+
+.concept-strip span{
+  color:#dbeafe !important;
+}
+
+/* Tabelas */
+table{
+  background:#ffffff !important;
+}
+
+th{
+  background:#eaf2ff !important;
+  color:var(--dark) !important;
+}
+
+td,th{
+  border-color:var(--line) !important;
+}
+
+/* Código */
+.code h3{
+  background:var(--codeHead) !important;
+  color:#e5e7eb !important;
+}
+
+pre,
+.exercise-code{
+  background:#0f172a !important;
+  color:#f8fafc !important;
+  border-radius:8px !important;
+}
+
+.explain code,
+.card code{
+  background:#eef4fb !important;
+  border:1px solid var(--line) !important;
+  color:var(--dark) !important;
+}
+
+/* Exercícios */
+.exercises-head{
+  background:#ffffff !important;
+  border-bottom:1px solid var(--line) !important;
+  padding:16px 20px !important;
+}
+
+.exercise-tabs{
+  background:#f8fbff !important;
+  border-bottom:1px solid var(--line) !important;
+}
+
+.exercise-tabs a{
+  background:#ffffff !important;
+  color:var(--dark) !important;
+  border:1px solid var(--line) !important;
+  border-radius:7px !important;
+}
+
+.exercise-tabs a:hover{
+  background:#eaf2ff !important;
+}
+
+.level{
+  background:#eaf2ff !important;
+  color:var(--dark) !important;
+  border-color:#bfdbfe !important;
+}
+
+.level.mid{
+  background:#fff7d6 !important;
+  color:#92400e !important;
+  border-color:#f59e0b55 !important;
+}
+
+.level.hard{
+  background:#fff1f2 !important;
+  color:#9f1239 !important;
+  border-color:#fecdd3 !important;
+}
+
+.mc-option{
+  background:#ffffff !important;
+  color:var(--text) !important;
+  border:1px solid var(--line) !important;
+}
+
+.mc-option:hover{
+  background:#eaf2ff !important;
+}
+
+.mc-option.correct{
+  background:#e8f5ee !important;
+  border-color:#10b981 !important;
+  color:#065f46 !important;
+}
+
+.mc-option.wrong{
+  background:#fff1f2 !important;
+  border-color:#fb7185 !important;
+  color:#9f1239 !important;
+}
+
+.use-note,
+.task-note{
+  background:#f8fbff !important;
+  border-color:var(--line) !important;
+}
+
+/* Cores pedagógicas */
+.worked{background:#e8f5ee !important}
+.errors{background:#fff1f2 !important}
+.exercise{background:#fff7d6 !important}
+
+/* Mobile */
+@media(max-width:1050px){
+  body{overflow:auto !important}
+  .layout{
+    height:auto !important;
+    min-height:0 !important;
+    grid-template-columns:1fr !important;
+  }
+  nav{
+    position:sticky !important;
+    top:46px !important;
+    z-index:900 !important;
+    height:auto !important;
+    display:flex !important;
+    gap:6px !important;
+    overflow-x:auto !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--line) !important;
+    padding:8px !important;
+  }
+  nav h3{display:none !important}
+  .nav-btn{
+    min-width:max-content !important;
+    width:auto !important;
+    white-space:nowrap !important;
+  }
+  main{padding:10px !important}
+  .cards,
+  .exercise-grid,
+  .journey-grid,
+  .concept-strip,
+  .io-boxes{
+    grid-template-columns:1fr !important;
+  }
+  .card.wide,
+  .exercise-box.wide,
+  .journey-card.wide{
+    grid-column:auto !important;
+  }
+}
+
+@media(max-width:720px){
+  header{
+    height:auto !important;
+    min-height:46px !important;
+    padding:7px 10px !important;
+    align-items:flex-start !important;
+    flex-direction:column !important;
+    gap:5px !important;
+  }
+  .header-left{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:5px !important;
+  }
+  header h1{font-size:15px !important;white-space:normal !important}
+  .brand{font-size:12px !important}
+  .portal-link{font-size:12px;padding:5px 9px}
+  nav{top:76px !important}
+  .circuitPhoto{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    max-height:none !important;
+  }
+}
+
+
+.layout{
+  display:block !important;
+  grid-template-columns:none !important;
+  min-height:calc(100vh - 46px) !important;
+}
+
+nav{
+  position:sticky !important;
+  top:46px !important;
+  z-index:950 !important;
+  height:auto !important;
+  display:flex !important;
+  align-items:center !important;
+  flex-wrap:nowrap !important;
+  gap:8px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  background:#ffffff !important;
+  border-right:0 !important;
+  border-bottom:1px solid var(--line) !important;
+  padding:8px 10px !important;
+  box-shadow:0 2px 8px rgba(15,23,42,.08) !important;
+}
+
+nav h3{
+  display:none !important;
+}
+
+.nav-btn{
+  width:auto !important;
+  min-width:max-content !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  margin:0 !important;
+  padding:8px 13px !important;
+  border-radius:999px !important;
+  border:1px solid #bfdbfe !important;
+  background:#ffffff !important;
+  color:#114b9e !important;
+  font-size:12.5px !important;
+  font-weight:850 !important;
+  text-decoration:none !important;
+  box-shadow:none !important;
+  transition:background .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+  background:#1967d2 !important;
+  color:#ffffff !important;
+  border-color:#1967d2 !important;
+  box-shadow:0 2px 7px rgba(25,103,210,.28) !important;
+  transform:none !important;
+}
+
+main{
+  max-width:1500px !important;
+  width:100% !important;
+  margin:0 auto !important;
+  padding:13px !important;
+}
+
+.project,
+.fundamentos-premium,
+.exercises-section{
+  scroll-margin-top:104px !important;
+}
+
+@media(max-width:1050px){
+  .layout{
+    display:block !important;
+  }
+
+  nav{
+    top:46px !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    padding:8px !important;
+  }
+
+  .nav-btn{
+    min-width:max-content !important;
+    width:auto !important;
+    white-space:nowrap !important;
+  }
+}
+
+@media(max-width:720px){
+  nav{
+    top:76px !important;
+  }
+
+  .project,
+  .fundamentos-premium,
+  .exercises-section{
+    scroll-margin-top:132px !important;
+  }
+}
+
+
+/* ===== RESPONSIVIDADE FUNDAMENTOS ARDUINO ===== */
+
+.fundamentos-img,
+.section-card img,
+.hero-image{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.fundamentos-img{
+    max-width: 80%;
+}
+
+@media (max-width: 768px){
+
+    .fundamentos-img,
+    .section-card img,
+    .hero-image{
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 16px auto !important;
+    }
+
+    .section-card{
+        overflow-x: hidden;
+    }
+}
+
+/* ===== Projeto 6 — LDR ===== */
+#p6 {
+  scroll-margin-top: 120px;
+}
+
+#p6 .circuitPhoto {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #p6 {
+    scroll-margin-top: 150px;
+  }
+}
+
+
+/* Mundo bit Byte — ajuste de navegação por painel único (Arduino)
+   Mantém IDs, classes e conteúdo. Apenas evita a rolagem longa entre projetos. */
+main > section[id]{display:none;}
+main > section[id].active-panel{display:block;}
+
+/* Correção definitiva: painel único sem rolagem animada */
+html,
+body {
+  scroll-behavior: auto !important;
+}
+
+/* Padronização aprovada dos cabeçalhos superiores dos módulos */
+.header-left{display:flex;align-items:center;gap:12px;min-width:0;}
+header h1,.topbar h1{margin:0;font-size:18px;font-weight:900;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brand{font-size:13px;font-weight:800;white-space:nowrap;}
+.portal-link,.btn-voltar,.topbar a{white-space:nowrap;}
+@media(max-width:720px){header h1,.topbar h1{font-size:17px}.brand{font-size:12px}}
+
+/* ===== AJUSTE FINAL MOBILE DOS CABEÇALHOS — 24/06/2026 ===== */
+@media(max-width:720px){
+  header,
+  .topbar{
+    height:46px !important;
+    min-height:46px !important;
+    max-height:46px !important;
+    padding:0 10px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+  }
+  .header-left,
+  header > div:first-child,
+  .topbar > div:first-child{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:8px !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    flex:1 1 auto !important;
+  }
+  header h1,
+  .topbar h1{
+    margin:0 !important;
+    color:#fff !important;
+    font-size:16px !important;
+    font-weight:900 !important;
+    line-height:1.1 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    min-width:0 !important;
+    flex:1 1 auto !important;
+  }
+  .portal-link,
+  .btn-voltar,
+  .btn-voltar.portal-link,
+  .topbar .portal-link,
+  .topbar a.portal-link{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    color:#fff !important;
+    text-decoration:none !important;
+    border:1px solid rgba(255,255,255,.42) !important;
+    background:rgba(255,255,255,.12) !important;
+    border-radius:999px !important;
+    padding:5px 9px !important;
+    font-size:12px !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    flex:0 0 auto !important;
+  }
+  .brand{
+    display:none !important;
+  }
+}
+
+
+/* ===== ARDUINO — NAVEGAÇÃO POR MÓDULOS + ETAPAS (11/08/2026) =====
+   Refatoração estrutural exclusiva deste módulo.
+   Preserva o conteúdo e as regras existentes; apenas redefine a navegação. */
+
+.module-menu{
+  position:sticky;
+  top:54px;
+  z-index:940;
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 14px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  white-space:nowrap;
+  background:rgba(255,255,255,.98);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 9px rgba(15,23,42,.07);
+  scrollbar-width:thin;
+}
+.module-btn{
+  flex:0 0 auto;
+  border:1px solid #b9dfe6;
+  border-radius:999px;
+  background:#f8fbfc;
+  color:var(--dark);
+  padding:8px 13px;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.15;
+  white-space:nowrap;
+}
+.module-btn:hover{
+  background:#e3f4f7;
+  color:var(--dark);
+}
+.module-btn.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+  box-shadow:0 2px 7px rgba(11,114,133,.25);
+}
+
+.layout.arduino-layout{
+  display:grid !important;
+  grid-template-columns:clamp(174px,12vw,190px) minmax(0,1fr) !important;
+  min-height:calc(100vh - 100px) !important;
+  align-items:start;
+}
+.layout.arduino-layout.no-sidebar{
+  grid-template-columns:minmax(0,1fr) !important;
+}
+
+.stage-sidebar{
+  position:sticky;
+  top:100px;
+  align-self:start;
+  height:calc(100vh - 100px);
+  overflow-y:auto;
+  background:#fff;
+  border-right:1px solid var(--line);
+  padding:12px 9px 16px;
+  z-index:55;
+}
+.no-sidebar .stage-sidebar{
+  display:none;
+}
+.stage-sidebar-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin:2px 5px 9px;
+}
+.stage-sidebar h3{
+  margin:0;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.stage-close{
+  display:none;
+}
+.stage-menu{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.stage-link{
+  display:none;
+  width:100%;
+  text-decoration:none;
+  color:#10333b;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:9px;
+  padding:8px 9px;
+  font-size:12.5px;
+  font-weight:800;
+  line-height:1.25;
+  overflow-wrap:anywhere;
+}
+.stage-link.module-visible{
+  display:block;
+}
+.stage-link:hover{
+  background:#eaf7f9;
+  border-color:#cce7ec;
+  color:var(--dark);
+}
+.stage-link.active{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  box-shadow:0 2px 7px rgba(11,114,133,.22);
+}
+.stage-exercises{
+  margin-top:7px;
+  border-top:1px solid var(--line);
+  border-radius:0 0 9px 9px;
+  padding-top:11px;
+}
+
+.arduino-content{
+  min-width:0;
+  width:100%;
+}
+.arduino-content main{
+  width:100% !important;
+  max-width:1500px !important;
+  margin:0 auto !important;
+  padding:18px 22px 26px !important;
+}
+.no-sidebar .arduino-content main{
+  max-width:1500px !important;
+}
+.stage-toggle{
+  display:none;
+}
+.stage-backdrop{
+  display:none;
+}
+
+/* Com duas barras fixas no desktop, o circuito continua abaixo delas sem sobreposição. */
+@media(min-width:1024px){
+  .arduino-layout:not(.no-sidebar) .circuitPanel{
+    top:100px !important;
+  }
+  .arduino-layout.no-sidebar .fundamentos-premium{
+    width:100%;
+  }
+}
+
+/* Tablet: conteúdo em largura total e etapas em drawer temporário. */
+@media(max-width:1023px){
+  .layout.arduino-layout,
+  .layout.arduino-layout.no-sidebar{
+    display:block !important;
+    min-height:calc(100vh - 92px) !important;
+  }
+  .arduino-content main{
+    max-width:100% !important;
+    padding:12px !important;
+  }
+  .stage-sidebar{
+    position:fixed !important;
+    top:0 !important;
+    left:0;
+    z-index:1200;
+    width:min(82vw,300px);
+    height:100dvh;
+    padding:14px 10px 18px;
+    border-right:1px solid var(--line);
+    box-shadow:8px 0 28px rgba(15,23,42,.18);
+    transform:translateX(-105%);
+    transition:transform .2s ease;
+  }
+  .arduino-layout.drawer-open .stage-sidebar{
+    transform:translateX(0);
+  }
+  .no-sidebar .stage-sidebar{
+    display:block;
+    transform:translateX(-105%);
+  }
+  .stage-sidebar-head{
+    margin-bottom:12px;
+  }
+  .stage-close{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    padding:0;
+    border-radius:9px;
+    background:#eef8fa;
+    color:var(--dark);
+    font-size:23px;
+    line-height:1;
+  }
+  .stage-link{
+    font-size:14px;
+    padding:10px 11px;
+  }
+  .stage-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:1190;
+    background:rgba(15,23,42,.36);
+  }
+  .arduino-layout.drawer-open .stage-backdrop{
+    display:block;
+  }
+  .stage-toggle{
+    position:sticky;
+    top:100px;
+    z-index:52;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin:8px 0 0 12px;
+    padding:8px 11px;
+    background:#fff;
+    color:var(--dark);
+    border:1px solid #b9dfe6;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(15,23,42,.08);
+  }
+  .no-sidebar .stage-toggle{
+    display:none;
+  }
+  .circuitPanel{
+    position:static !important;
+    top:auto !important;
+  }
+}
+
+/* Smartphone: módulos continuam numa única faixa rolável; conteúdo sempre ocupa 100%. */
+@media(max-width:720px){
+  .module-menu{
+    top:46px;
+    min-height:44px;
+    padding:6px 8px;
+    gap:6px;
+  }
+  .module-btn{
+    padding:7px 10px;
+    font-size:12px;
+  }
+  .layout.arduino-layout,
+  .layout.arduino-layout.no-sidebar{
+    min-height:calc(100vh - 90px) !important;
+  }
+  .stage-toggle{
+    top:90px;
+    margin:7px 0 0 10px;
+    font-size:12.5px;
+    padding:7px 10px;
+  }
+  .arduino-content main{
+    padding:10px !important;
+  }
+  .project,
+  .fundamentos-premium,
+  .exercises-section{
+    scroll-margin-top:98px !important;
+  }
+  .circuitPhoto,
+  .circuitFigure figcaption{
+    min-width:0 !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+
+/* ===== ARDUINO — CORREÇÃO DE ESPAÇAMENTO E SOBREPOSIÇÃO DOS CIRCUITOS (11/08/2026) =====
+   Ajuste exclusivamente estrutural.
+   - Remove o espaço inútil após o cabeçalho do projeto.
+   - Impede que circuito/legenda cubram os cards seguintes.
+   - Mantém o circuito responsivo em desktop, tablet e smartphone.
+*/
+.projectHead + .circuitPanel{
+  margin-top:0 !important;
+}
+
+.circuitPanel{
+  position:static !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:auto !important;
+  margin:0 !important;
+  padding-top:10px !important;
+  overflow:visible !important;
+}
+
+.circuitFigure{
+  position:relative !important;
+  z-index:auto !important;
+  margin:0 !important;
+}
+
+.circuitFigure figcaption{
+  position:static !important;
+  z-index:auto !important;
+}
+
+.cards{
+  position:relative !important;
+  z-index:auto !important;
+  clear:both !important;
+}
+
+@media(max-width:1023px){
+  .circuitPanel{
+    position:static !important;
+    top:auto !important;
+    margin:0 !important;
+  }
+}
+
+@media(max-width:720px){
+  .circuitPanel{
+    padding:8px !important;
+    overflow:hidden !important;
+  }
+
+  .circuitFigure{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:hidden !important;
+  }
+
+  .circuitPhoto,
+  .circuitFigure figcaption{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+}
+
+
+
+/* ===== CORREÇÃO FINAL — BARRA DE MÓDULOS OPACA E ALINHADA AO CABEÇALHO ===== */
+#arduinoModuleMenu.module-menu{
+  top:46px !important;
+  background:#ffffff !important;
+  opacity:1 !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  isolation:isolate !important;
+}

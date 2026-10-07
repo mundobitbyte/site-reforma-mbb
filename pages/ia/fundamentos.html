@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mundo bit Byte — Fundamentos de Inteligência Artificial</title>
+<link href="../../css/ia-fundamentos.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="topbar"><div class="header-left"><a class="portal-link" href="index.html">← Voltar IA</a><h1>Fundamentos de IA</h1></div><div class="brand">Professor Ronaldo Lavestein</div></header>
+<div class="layout">
+<aside>
+<div class="side-block">
+<div class="menu-label">Jornada do aluno</div>
+<a class="side-link active" href="#inicio">Início</a>
+<a class="side-link" href="#ideia">1 Ideia central</a>
+<a class="side-link" href="#mitos">2 Mitos</a>
+<a class="side-link" href="#fluxo">3 Fluxo da IA</a>
+<a class="side-link" href="#contexto">4 Contexto inicial</a>
+<a class="side-link" href="#tipos">5 Tipos de IA</a>
+<a class="side-link" href="#cotidiano">6 IA no cotidiano</a>
+<a class="side-link" href="#parece-inteligente">7 Por que parece inteligente</a>
+<a class="side-link" href="#erros">8 Primeiro alerta</a>
+<a class="side-link" href="#laboratorio-erro">9 Resposta suspeita</a>
+<a class="side-link" href="#aprendizagem">10 Como aprende</a>
+<a class="side-link" href="#contexto-avancado">11 Contexto na prática</a>
+<a class="side-link" href="#geracao-respostas">12 Geração de respostas</a>
+<a class="side-link" href="#pratique">13 Pratique</a>
+<a class="side-link" href="#validacao">14 Validação inicial</a>
+<a class="side-link" href="#erros-ia">15 Como a IA erra</a>
+<a class="side-link" href="#tipos-erros">16 Tipos de erro</a>
+<a class="side-link" href="#laboratorio-erros">17 Laboratório de erros</a>
+<a class="side-link" href="#uso-responsavel">18 Uso responsável</a>
+<a class="side-link" href="#validacao-final">19 Validação final</a>
+<a class="side-link" href="#reflexao">20 Reflexão</a>
+<a class="side-link" href="#limites-ia">21 Limites da IA</a>
+<a class="side-link" href="#laboratorio-parece-saber">22 Sabe ou parece saber?</a>
+<a class="side-link" href="#sintese-fase1">23 Síntese</a>
+<a class="side-link" href="#primeiros-laboratorios">24 Laboratórios finais</a>
+<a class="side-link" href="#lab5-estudar-sem-copiar">25 Estudar sem copiar</a>
+<a class="side-link" href="#conclusao-fase1">26 Conclusão</a>
+<a class="side-link" href="#proximos">27 Próximo passo</a>
+<p class="side-hint">Cada painel começa por uma pergunta, situação ou problema que cria a necessidade do conceito. Use o menu como trilha de estudo.</p>
+</div>
+</aside>
+<main>
+
+<section class="hero" id="inicio">
+<div class="hero-grid">
+<div>
+<span class="badge">Módulo 1 · Fundamentos</span>
+<h1>O que é IA de verdade</h1>
+<p class="lead">Em poucos minutos você pode receber uma rota alternativa no celular, ter um e-mail suspeito separado como spam e pedir a um chatbot que explique um erro de programação. Chamamos tudo isso de “IA”, mas esses sistemas não fazem a mesma coisa e nenhum deles deve ser tratado como uma mente que sabe tudo. Antes de usar IA bem, precisamos entender o que acontece por trás da aparência de inteligência.</p>
+<div class="hero-actions"><a class="button" href="#ideia">Começar estudo</a><a class="button secondary" href="#pratique">Ir para prática</a></div>
+</div>
+<div aria-label="Resumo visual do fluxo de IA" class="mini-panel">
+<div class="mini-title">A pergunta que guia o módulo</div>
+<div class="mini-flow">
+<div class="mini-step"><span class="mini-dot"></span> O que o sistema recebeu?</div>
+<div class="mini-step"><span class="mini-dot"></span> Que padrões ele aprendeu?</div>
+<div class="mini-step"><span class="mini-dot"></span> Que resposta produziu?</div>
+<div class="mini-step"><span class="mini-dot"></span> Onde pode estar errado?</div>
+<div class="mini-step"><span class="mini-dot"></span> Como o humano valida?</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="content-card connector" id="ideia">
+<div class="section-kicker">Ideia central</div>
+<h2>1. Quando uma máquina faz algo impressionante, ela está “pensando”?</h2>
+<p>Imagine três situações no mesmo dia: o aplicativo de mapas desvia você de um congestionamento; o e-mail manda uma mensagem suspeita para o spam; um chatbot escreve uma explicação sobre banco de dados. Os resultados parecem inteligentes, mas surgem de sistemas treinados para reconhecer padrões, estimar possibilidades e produzir saídas adequadas a uma tarefa.</p>
+<p><strong>Inteligência Artificial</strong> é um conjunto de técnicas que permite a sistemas computacionais realizar tarefas associadas a capacidades como reconhecer padrões, classificar, prever, recomendar, gerar conteúdo ou tomar decisões dentro de critérios definidos. Isso não significa consciência, experiência de vida ou pensamento humano.</p>
+<div class="grid-2">
+<div class="note idea"><h3>Ideia principal</h3><p>A IA pode produzir resultados úteis e sofisticados sem “entender o mundo” como uma pessoa entende. O comportamento observado e o mecanismo que o produz não são a mesma coisa.</p></div>
+<div class="note warn"><h3>Antes de confiar</h3><p>Uma resposta bem escrita pode estar errada; uma recomendação automática pode ser inadequada; uma classificação pode reproduzir limitações dos dados. A validação humana continua fazendo parte do processo.</p></div>
+</div>
+<div class="soft-divider"></div>
+<h3>Teste rápido</h3>
+<p>Escolha a alternativa que mais se aproxima do entendimento correto.</p>
+<div class="quiz-options">
+<button class="option">IA pensa igual a uma pessoa</button>
+<button class="option">IA trabalha com modelos, dados e padrões</button>
+<button class="option">IA só é inteligência quando acerta</button>
+<button class="option">Todo sistema de IA funciona como chatbot</button>
+</div>
+<div class="feedback" id="quizFeedback"><strong>Resposta esperada:</strong> sistemas de IA usam modelos, dados, regras, otimização e padrões para produzir resultados. Alguns conversam, outros classificam, preveem ou recomendam. Um resultado convincente não prova consciência nem garante correção.</div>
+</section>
+
+<section class="content-card connector" id="mitos">
+<div class="section-kicker">Separar aparência de realidade</div>
+<h2>2. Quatro ideias que atrapalham quem está começando</h2>
+<p>Os extremos são igualmente ruins: imaginar uma máquina quase humana que “sabe tudo” ou achar que IA é apenas um truque sem utilidade. Um iniciante precisa de um modelo mental mais equilibrado.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Mito</h3><ul class="mito-lista"><li><span class="x">✕</span><span>“Se escreveu com segurança, deve estar certo.”</span></li><li><span class="x">✕</span><span>“A IA conhece automaticamente minha situação.”</span></li><li><span class="x">✕</span><span>“Um chatbot procura uma resposta pronta e apenas copia.”</span></li><li><span class="x">✕</span><span>“Se a IA faz a tarefa, eu não preciso entender.”</span></li></ul></div>
+<div class="note good"><h3>Forma mais correta de pensar</h3><ul class="mito-lista"><li><span class="ok">✓</span><span>Forma convincente e verdade precisam ser separadas.</span></li><li><span class="ok">✓</span><span>Contexto precisa ser fornecido ou inferido — e a inferência pode falhar.</span></li><li><span class="ok">✓</span><span>Modelos generativos constroem respostas a partir de padrões aprendidos e contexto.</span></li><li><span class="ok">✓</span><span>Quanto menos você entende, menor sua capacidade de avaliar o resultado.</span></li></ul></div>
+</div>
+<div class="note idea" style="margin-top:16px"><h3>Exemplo realista</h3><p>Uma IA pode gerar em segundos um comando SQL, um e-mail ou uma explicação técnica. A velocidade ajuda, mas não transfere automaticamente para o usuário o conhecimento necessário para perceber um <code>DELETE</code> perigoso, um fato inventado ou uma conclusão exagerada.</p></div>
+</section>
+
+<section class="content-card connector" id="fluxo">
+<div class="section-kicker">Visão de conjunto</div>
+<h2>3. De onde vem uma resposta?</h2>
+<p>Antes de entrar em treinamento, tokens e probabilidades, use este mapa simplificado. Ele não descreve todos os detalhes internos, mas mostra onde surgem as principais oportunidades e riscos.</p>
+<div class="flow-box" id="fluxoPrincipal">
+<button class="flow-step active" data-info="Tudo começa com uma entrada: texto, imagem, áudio, dados ou outro sinal que o sistema consegue processar."><span class="num">1</span><strong>Entrada</strong></button>
+<button class="flow-step" data-info="O modelo usa relações aprendidas durante o treinamento e, dependendo do sistema, regras ou informações adicionais."><span class="num">2</span><strong>Padrões</strong></button>
+<button class="flow-step" data-info="A situação atual orienta o resultado: pergunta, histórico da conversa, imagem enviada, restrições, dados disponíveis e instruções."><span class="num">3</span><strong>Contexto</strong></button>
+<button class="flow-step" data-info="O sistema produz uma classificação, previsão, recomendação ou conteúdo gerado. Essa saída pode ser útil sem ser infalível."><span class="num">4</span><strong>Saída</strong></button>
+<button class="flow-step" data-info="O humano verifica se a saída é adequada ao objetivo, à fonte, ao risco e à realidade antes de agir sobre ela."><span class="num">5</span><strong>Validação</strong></button>
+</div>
+<div class="flow-detail" id="flowDetail">Tudo começa com uma entrada: texto, imagem, áudio, dados ou outro sinal que o sistema consegue processar.</div>
+</section>
+
+<section class="content-card connector" id="contexto">
+<div class="section-kicker">Primeiro contato com contexto</div>
+<h2>4. A mesma pergunta pode esconder situações completamente diferentes</h2>
+<p>Você recebe a mensagem de um colega: <strong>“Minha internet não funciona. O que faço?”</strong> Parece uma pergunta simples, mas quase tudo que permite diagnosticar o problema ainda está faltando. É Wi-Fi ou cabo? Só um site falha? Outros aparelhos navegam? O computador recebeu endereço IP? A rede é de casa, escola ou empresa?</p>
+<div class="grid-2">
+<div class="note bad"><h3>Pedido sem contexto</h3><div class="prompt">Minha internet não funciona. O que faço?</div><p>A IA terá de preencher várias lacunas e pode começar por uma hipótese que não combina com o problema.</p></div>
+<div class="note good"><h3>Contexto que muda o diagnóstico</h3><div class="prompt">Meu notebook com Windows aparece conectado ao Wi-Fi, mas nenhum site abre. O celular na mesma rede navega normalmente. Já testei outro navegador e o problema continua. Quero uma ordem de verificações seguras, começando pelas que apenas coletam informação e sem alterar configurações antes de entender a causa.</div><p>Agora há sintomas, comparação, ambiente e critério de segurança.</p></div>
+</div>
+<div class="note idea"><h3>Regra para guardar</h3><p>Contextualizar não é “escrever muito”. É fornecer as informações que mudam a resposta.</p></div>
+</section>
+
+<section class="content-card connector" id="tipos">
+<div class="section-kicker">Conceito essencial</div>
+<h2>5. O filtro de spam e o chatbot usam IA, mas não fazem a mesma coisa</h2>
+<p>De manhã seu e-mail separa mensagens suspeitas sem escrever nada novo. Minutos depois você pede a um chatbot que transforme anotações em texto. Os dois casos podem envolver IA, mas o tipo de saída é diferente.</p>
+<table aria-label="Comparação entre IA tradicional e IA generativa" class="compare-table">
+<thead><tr><th>Aspecto</th><th>IA preditiva/classificatória</th><th>IA generativa</th></tr></thead>
+<tbody>
+<tr><td>Problema típico</td><td>Classificar, prever, detectar, recomendar ou estimar.</td><td>Produzir novo texto, imagem, áudio, código ou outra saída.</td></tr>
+<tr><td>Exemplo cotidiano</td><td>Filtro de spam, detecção de fraude, previsão de trânsito, recomendação de conteúdo.</td><td>Chatbot redigindo e-mail, IA criando imagem, modelo gerando código ou resumo.</td></tr>
+<tr><td>O usuário percebe</td><td>Muitas vezes funciona “por trás” do aplicativo.</td><td>A criação aparece diretamente para o usuário.</td></tr>
+<tr><td>Risco comum</td><td>Tratar uma classificação automática como decisão infalível.</td><td>Confundir uma saída plausível e bem escrita com informação garantidamente verdadeira.</td></tr>
+</tbody>
+</table>
+<div class="note warn"><h3>Simplificação útil, não fronteira absoluta</h3><p>Na prática existem muitas famílias de técnicas e sistemas híbridos. Esta comparação serve para o iniciante perceber duas funções muito diferentes antes de aprofundar os conceitos.</p></div>
+</section>
+
+<section class="content-card connector" id="cotidiano">
+<div class="section-kicker">Observar no mundo real</div>
+<h2>6. IA já tomava pequenas decisões antes de começar a conversar com você</h2>
+<p>O chatbot tornou a IA visível, mas sistemas automáticos já influenciavam o cotidiano há bastante tempo. Observe o tipo de problema resolvido, não apenas a aparência da interface.</p>
+<div class="grid-3">
+<div class="example-card"><span class="icon">🗺️</span><h3>Rotas</h3><p>Estimam tempo, detectam mudanças de trânsito e recalculam caminhos conforme dados disponíveis.</p></div>
+<div class="example-card"><span class="icon">📧</span><h3>E-mail</h3><p>Classifica spam, prioriza mensagens e pode sugerir respostas com base em padrões.</p></div>
+<div class="example-card"><span class="icon">💳</span><h3>Fraude</h3><p>Sistemas analisam padrões de transações e destacam comportamentos considerados fora do esperado.</p></div>
+<div class="example-card"><span class="icon">📷</span><h3>Fotos</h3><p>Aplicativos podem agrupar imagens por objetos, lugares ou pessoas quando o recurso está disponível.</p></div>
+<div class="example-card"><span class="icon">🎧</span><h3>Recomendação</h3><p>Plataformas estimam o que pode interessar com base em histórico, semelhanças e outros sinais.</p></div>
+<div class="example-card"><span class="icon">💬</span><h3>Geração</h3><p>Chatbots criam explicações, textos, códigos e outros conteúdos a partir de pedidos e contexto.</p></div>
+</div>
+<div class="micro-question"><h3>Pense antes de ver</h3><p>Por que um chatbot costuma parecer “mais inteligente” do que um sistema que detecta fraude, mesmo que ambos resolvam problemas complexos?</p><button class="button secondary" onclick="toggleBox('respostaCotidiano')">Ver análise</button><div class="hidden-box note good" id="respostaCotidiano"><h3>Análise</h3><p>Linguagem natural cria uma forte impressão de diálogo, intenção e personalidade. Um classificador de fraude pode fazer análise sofisticada, mas sua decisão aparece apenas como alerta. Aparência humana e complexidade técnica não são a mesma coisa.</p></div></div>
+</section>
+
+<section class="content-card connector" id="parece-inteligente">
+<div class="section-kicker">Entender a aparência de inteligência</div>
+<h2>7. Por que conversar com uma IA dá a sensação de que “há alguém ali”?</h2>
+<p>Você escreve uma dúvida pela metade e recebe uma explicação organizada, com exemplos e tom adequado. O resultado parece ter intenção. Em modelos generativos de linguagem, porém, essa resposta é construída por um sistema que aprendeu relações complexas entre partes de texto e usa o contexto disponível para estimar boas continuações.</p>
+<div class="grid-2">
+<div class="note good"><h3>O que o sistema consegue fazer</h3><ul class="mito-lista"><li><span class="ok">✓</span><span>manter coerência por várias frases;</span></li><li><span class="ok">✓</span><span>adaptar formato e tom;</span></li><li><span class="ok">✓</span><span>relacionar conceitos e produzir exemplos;</span></li><li><span class="ok">✓</span><span>usar informações da conversa como contexto.</span></li></ul></div>
+<div class="note warn"><h3>O que isso não prova</h3><ul class="mito-lista"><li><span class="x">✕</span><span>consciência;</span></li><li><span class="x">✕</span><span>experiência vivida;</span></li><li><span class="x">✕</span><span>responsabilidade moral;</span></li><li><span class="x">✕</span><span>verdade garantida.</span></li></ul></div>
+</div>
+<div class="term-list">
+<div class="term"><strong>Dados</strong><span>Exemplos e registros usados em diferentes etapas de construção e treinamento de sistemas.</span></div>
+<div class="term"><strong>Treinamento</strong><span>Processo de ajustar parâmetros do modelo para melhorar seu desempenho em padrões e tarefas.</span></div>
+<div class="term"><strong>Modelo</strong><span>Estrutura matemática treinada que transforma entradas em saídas.</span></div>
+<div class="term"><strong>Contexto</strong><span>Informações disponíveis no uso atual que ajudam a orientar a saída.</span></div>
+<div class="term"><strong>Probabilidade</strong><span>Forma de representar quais resultados ou continuações são mais plausíveis.</span></div>
+<div class="term"><strong>Token</strong><span>Unidade usada por modelos de linguagem para processar e gerar texto; pode corresponder a palavra, parte de palavra, pontuação ou outro fragmento.</span></div>
+</div>
+</section>
+
+<section class="content-card connector" id="erros">
+<div class="section-kicker">Primeiro alerta</div>
+<h2>8. O problema não é só a IA errar — é o erro parecer pronto para entregar</h2>
+<p>Um aluno pede à IA que indique uma fonte para um relatório. A resposta traz autor, título e ano com aparência acadêmica. Como o texto está bem formatado, ele copia a referência. Só depois descobre que a obra citada não existe. Esse é o tipo de erro que torna a validação indispensável.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Forma convincente</h3><p>Nome de autor, título, data, explicação detalhada e tom seguro podem ser gerados mesmo quando a informação não está sustentada.</p></div>
+<div class="note good"><h3>Postura correta</h3><p>Quanto mais específica e importante for uma afirmação — fonte, número, versão, lei, compatibilidade, comando ou resultado — mais clara precisa ser a forma de conferir.</p></div>
+</div>
+<div class="note idea"><h3>Nome que você vai encontrar</h3><p>Quando um modelo generativo produz informação falsa ou sem sustentação suficiente como se fosse verdadeira, costuma-se usar o termo <strong>alucinação</strong>. Mais adiante vamos separar esse caso de outros tipos de erro.</p></div>
+</section>
+
+<section class="content-card connector" id="laboratorio-erro">
+<div class="section-kicker">Primeiro laboratório crítico</div>
+<h2>9. Antes de copiar uma fonte, descubra se ela existe</h2>
+<p>Faça este teste em uma IA que você costuma usar. O objetivo não é “pegar a IA no erro”, mas criar o hábito de não transformar uma saída em evidência de si mesma.</p>
+<div class="lab-steps">
+<div class="lab-step"><strong>1. Peça uma explicação.</strong><br/><code>Explique em poucas linhas como surgiu a World Wide Web e cite duas fontes que eu possa consultar.</code></div>
+<div class="lab-step"><strong>2. Separe fatos verificáveis.</strong><br/>Nomes, datas, instituições e referências precisam poder ser localizados fora da própria resposta.</div>
+<div class="lab-step"><strong>3. Confira as fontes.</strong><br/>Abra os endereços ou procure os documentos em instituições confiáveis. Não considere uma citação verdadeira apenas porque a IA a escreveu.</div>
+<div class="lab-step"><strong>4. Volte à conversa.</strong><br/><code>Separe o que você sabe com alta confiança do que eu ainda deveria confirmar e não invente referências que não possa sustentar.</code></div>
+</div>
+<div class="note warn"><h3>Uma limitação importante</h3><p>Pedir que a própria IA “confirme” não substitui conferir em fonte externa. A mesma ferramenta pode repetir a informação errada de outro jeito.</p></div>
+</section>
+
+<section class="content-card connector" id="aprendizagem">
+<div class="section-kicker">Entender por dentro</div>
+<h2>10. Como um sistema aprende um padrão que ninguém programou regra por regra?</h2>
+<p>Pense no filtro de spam. Ele recebe uma mensagem nova que nunca viu exatamente antes, mas consegue estimar se ela se parece com mensagens legítimas ou suspeitas. Em vez de alguém escrever uma regra para cada e-mail possível, técnicas de aprendizado de máquina ajustam modelos a partir de muitos exemplos e critérios.</p>
+<div aria-label="Fluxo simplificado de treinamento de IA" class="learning-diagram">
+<div class="visual-line"><div class="visual-chip">Dados</div><div class="visual-chip">Exemplos</div><div class="visual-chip">Treinamento</div><div class="visual-chip">Modelo</div><div class="visual-chip">Nova entrada</div><div class="visual-chip">Saída</div></div>
+<p style="margin-bottom:0">Esse fluxo é uma simplificação. Diferentes sistemas usam técnicas, objetivos e arquiteturas diferentes, mas a ideia de <strong>ajustar um modelo a partir de dados</strong> é central em aprendizado de máquina.</p>
+</div>
+<div class="grid-2">
+<div class="note idea"><h3>Dados</h3><p>Podem incluir textos, imagens, medições, códigos, classificações, pares de entrada e saída e muitos outros tipos de exemplo.</p></div>
+<div class="note good"><h3>Padrões</h3><p>São regularidades que ajudam o modelo a distinguir, prever ou gerar resultados. Uma palavra isolada raramente é suficiente; combinações e contexto importam.</p></div>
+<div class="note warn"><h3>Treinamento</h3><p>É o processo de ajustar parâmetros do modelo para reduzir erros ou melhorar um objetivo de desempenho.</p></div>
+<div class="note ai"><h3>Modelo treinado</h3><p>Depois do treinamento, o modelo usa os padrões aprendidos para lidar com novas entradas — inclusive situações que não são cópias exatas dos exemplos.</p></div>
+</div>
+<div class="soft-divider"></div>
+<h3>Treinamento não é a mesma coisa que conversar no chat</h3>
+<p>Quando você informa nesta conversa que seu projeto usa Arduino Uno, essa informação pode orientar as próximas respostas do chat. Isso não significa que o modelo inteiro esteja sendo “retreinado” naquele instante com tudo o que você escreveu.</p>
+<div class="grid-2">
+<div class="note"><h3>Treinamento</h3><p>Acontece em processos específicos de construção ou atualização do modelo, com infraestrutura, dados e técnicas próprias.</p></div>
+<div class="note"><h3>Uso</h3><p>O modelo já treinado recebe a entrada atual e usa o contexto disponível para gerar uma saída.</p></div>
+</div>
+<div class="soft-divider"></div>
+<h3>Generalização: lidar com algo novo</h3>
+<p>O valor de um modelo não está em repetir apenas exemplos conhecidos. Ele precisa conseguir lidar com novas entradas parecidas com padrões aprendidos. Isso se chama <strong>generalização</strong>. Mas generalizar também pode dar errado: o sistema pode aplicar um padrão inadequado a um caso diferente.</p>
+<div class="note warn"><h3>Exemplo realista</h3><p>Imagine um sistema treinado principalmente com endereços urbanos muito padronizados. Ele pode funcionar bem nesse contexto e ter mais dificuldade com endereços rurais, formatos pouco representados ou dados incompletos. O problema não é “má vontade” do sistema: é uma limitação do que foi representado nos dados e de como o modelo foi construído.</p></div>
+<div class="soft-divider"></div>
+<h3>Viés: quando padrões históricos carregam distorções</h3>
+<p>Se dados, rótulos ou critérios trazem desequilíbrios, estereótipos ou exclusões, um modelo pode aprender e reproduzir parte dessas distorções. Por isso, qualidade não significa apenas “ter muitos dados”: importa quem e o que está representado, como os dados foram coletados e qual decisão será tomada com o resultado.</p>
+<div class="note idea"><h3>Pergunta crítica</h3><p>Se um sistema funciona muito bem para a maioria dos casos, mas falha repetidamente para um grupo ou situação pouco representada, a média de acertos conta toda a história?</p></div>
+<div class="soft-divider"></div>
+<h3>Mini laboratório — reconhecer padrões sem transformar sinal em certeza</h3>
+<div class="grid-2">
+<div class="note"><h3>Teste 1</h3><div class="prompt">Considere estes assuntos de e-mail: “Sua conta será bloqueada hoje”, “Clique aqui e atualize sua senha agora”, “Você ganhou um prêmio, confirme seus dados”. Quais padrões podem fazer um filtro considerar essas mensagens suspeitas? Explique também por que nenhuma palavra isolada prova que uma mensagem é fraude.</div></div>
+<div class="note"><h3>Teste 2</h3><div class="prompt">Agora crie dois exemplos legítimos que poderiam conter palavras como “senha”, “conta” ou “urgente”. Explique por que contexto e combinação de sinais são mais importantes do que uma regra simples.</div></div>
+</div>
+<div class="note good"><h3>Síntese</h3><p>Aprendizado de máquina é ajuste de modelos a partir de dados. O sistema pode generalizar, mas também herdar limitações, vieses e padrões inadequados. “Aprender” aqui é um termo técnico, não experiência consciente.</p></div>
+</section>
+
+<section class="content-card connector" id="contexto-avancado">
+<div class="section-kicker">Interagir melhor</div>
+<h2>11. Contexto: a informação que muda o significado ou a decisão</h2>
+<p>No painel 4 vimos que sintomas adicionais mudam um diagnóstico. Agora aprofunde a ideia: contexto também define <strong>sentido, público, objetivo, restrições, fonte e formato</strong>.</p>
+<h3>A mesma palavra pode significar coisas diferentes</h3>
+<div class="grid-3">
+<div class="note"><h3>Porta física</h3><p>“Feche a porta da sala.”</p></div>
+<div class="note"><h3>Porta de rede</h3><p>“O serviço responde na porta 443.”</p></div>
+<div class="note"><h3>Porta de conexão</h3><p>“Conecte o cabo na porta USB.”</p></div>
+</div>
+<p>A palavra é a mesma; as palavras ao redor e a situação determinam o sentido mais provável.</p>
+<div class="soft-divider"></div>
+<h3>De uma dúvida vaga para uma necessidade verificável</h3>
+<div class="grid-3">
+<div class="note bad"><h3>Vago</h3><div class="prompt">Meu programa não funciona.</div><p>Quase nada pode ser diagnosticado.</p></div>
+<div class="note warn"><h3>Melhor</h3><div class="prompt">Meu programa Python dá erro quando tento abrir um arquivo.</div><p>Já existe linguagem e momento da falha, mas faltam evidências.</p></div>
+<div class="note good"><h3>Contextualizado</h3><div class="prompt">Estou usando Python 3 no Windows. O programa deveria abrir “dados/clientes.csv”, mas ao executar pelo VS Code aparece FileNotFoundError. O arquivo existe dentro da pasta dados. Antes de sugerir alteração, explique o que preciso verificar sobre diretório de trabalho e caminho do arquivo. Não invente a estrutura do projeto além do que informei.</div><p>Agora a IA pode raciocinar sobre evidências reais e indicar o que ainda falta verificar.</p></div>
+</div>
+<div class="note idea"><h3>Contexto bom não é contexto enorme</h3><p>Inclua aquilo que altera a resposta. Detalhes irrelevantes, instruções contraditórias e múltiplos objetivos misturados podem atrapalhar tanto quanto a falta de informação.</p></div>
+</section>
+
+<section class="content-card connector" id="geracao-respostas">
+<div class="section-kicker">Modelos generativos de texto</div>
+<h2>12. A resposta não estava pronta esperando sua pergunta</h2>
+<p>Quando um modelo de linguagem responde, ele processa a entrada e gera texto em sequência. Para isso trabalha com unidades chamadas <strong>tokens</strong>. Um token pode corresponder a uma palavra, parte de palavra, sinal ou outro fragmento. A cada etapa, o modelo estima continuações plausíveis considerando o contexto.</p>
+<div class="note idea"><h3>Situação concreta</h3><p>Você escreve: <strong>“Ao abrir a página /clientes, o servidor respondeu 404. Antes de alterar o banco de dados...”</strong> Algumas continuações combinam melhor com o contexto do que outras. Uma resposta coerente provavelmente vai investigar rota, endereço ou recurso solicitado antes de concluir que o banco é a causa.</p></div>
+<table aria-label="Exemplo didático de continuações" class="probability-table">
+<thead><tr><th>Continuação possível</th><th>Relação com o contexto</th><th>Representação didática</th></tr></thead>
+<tbody>
+<tr><td><strong>verifique se a rota existe e se a URL está correta</strong></td><td>Combina diretamente com um erro 404.</td><td><div class="prob-bar"><div class="prob-fill" style="width:88%"></div></div></td></tr>
+<tr><td><strong>investigue o banco somente se houver evidência de que a rota depende dele</strong></td><td>Mantém o diagnóstico orientado por evidência.</td><td><div class="prob-bar"><div class="prob-fill" style="width:58%"></div></div></td></tr>
+<tr><td><strong>formate o disco</strong></td><td>Não é uma conclusão sustentada pelo sintoma.</td><td><div class="prob-bar"><div class="prob-fill" style="width:2%"></div></div></td></tr>
+</tbody>
+</table>
+<div class="note warn"><h3>Esta tabela não mostra números reais do modelo</h3><p>As barras são apenas ilustração didática. O objetivo é perceber que o contexto altera quais continuações são plausíveis.</p></div>
+<div class="soft-divider"></div>
+<h3>Coerência não é o mesmo que verdade</h3>
+<div class="grid-2">
+<div class="note good"><h3>Coerência</h3><p>O texto mantém tema, estrutura, vocabulário e relação entre frases.</p></div>
+<div class="note bad"><h3>Correção</h3><p>Depende de os fatos, cálculos, comandos, fontes e conclusões resistirem à conferência.</p></div>
+</div>
+<p>Um modelo pode produzir texto coerente sobre uma premissa falsa. É por isso que “pareceu raciocinar” não é critério suficiente para aceitar o resultado.</p>
+<div class="soft-divider"></div>
+<h3>Mini laboratório — a continuação muda quando o contexto muda</h3>
+<div class="grid-2">
+<div class="note"><h3>Teste A</h3><div class="prompt" id="promptGeracaoA"><button class="prompt-copy-inside" onclick="copiarTexto('promptGeracaoA', this)">Copiar</button><span class="prompt-text">Continue a frase de três maneiras plausíveis: “O computador está conectado ao Wi-Fi, mas...” Depois diga que informações faltam para saber qual continuação corresponde ao caso real.</span></div></div>
+<div class="note"><h3>Teste B</h3><div class="prompt" id="promptGeracaoB"><button class="prompt-copy-inside" onclick="copiarTexto('promptGeracaoB', this)">Copiar</button><span class="prompt-text">Situação: o notebook mostra Wi-Fi conectado, nenhum site abre, mas o celular na mesma rede navega normalmente. Continue a análise com três hipóteses iniciais e diga que evidência diferenciaria uma da outra. Não trate hipótese como causa confirmada.</span></div></div>
+</div>
+</section>
+
+<section class="content-card connector" id="pratique">
+<div class="section-kicker">Prática guiada</div>
+<h2>13. Teste a diferença entre “explique” e “me ajude nesta situação”</h2>
+<p>Use a mesma tarefa nas duas versões. O objetivo é observar como público, situação e critério de saída alteram o resultado.</p>
+<div class="grid-2">
+<div class="note"><h3>Teste A — genérico</h3><div class="prompt">Explique autenticação em dois fatores.</div></div>
+<div class="note"><h3>Teste B — situação real</h3><div class="prompt">Preciso explicar autenticação em dois fatores para uma pessoa da família que usa o e-mail para recuperar várias contas e acha que uma senha forte já resolve tudo. Use linguagem simples, uma comparação do cotidiano e explique o benefício sem prometer segurança absoluta. Termine dizendo que a configuração deve ser feita pelas opções oficiais do serviço.</div></div>
+</div>
+<div class="note ai"><h3>Teste numa IA real</h3><div aria-label="Links para ferramentas de IA" class="tool-grid"><a class="tool-button" href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a><a class="tool-button" href="https://gemini.google.com/" rel="noopener" target="_blank">Gemini</a><a class="tool-button" href="https://claude.ai/" rel="noopener" target="_blank">Claude</a><a class="tool-button" href="https://copilot.microsoft.com/" rel="noopener" target="_blank">Copilot</a><a class="tool-button" href="https://www.perplexity.ai/" rel="noopener" target="_blank">Perplexity</a></div><p class="tool-note">Compare utilidade, precisão, linguagem e exageros. A segunda resposta não precisa ser maior; precisa estar mais adequada ao uso.</p></div>
+</section>
+
+<section class="content-card connector" id="validacao">
+<div class="section-kicker">Primeiro método de conferência</div>
+<h2>14. Antes de usar uma resposta, pergunte o que nela precisa ser provado</h2>
+<p>Validar não significa checar cada palavra com a mesma intensidade. A conferência deve ser proporcional à consequência do erro.</p>
+<div class="checklist"><div class="check">✓ Há nomes, datas, números, versões ou fontes específicas?</div><div class="check">✓ O resultado será executado, publicado ou enviado a outra pessoa?</div><div class="check">✓ Existe material original com o qual posso comparar?</div><div class="check">✓ Um teste prático pode confirmar o comportamento?</div><div class="check">✓ A IA separou fato, hipótese e sugestão?</div><div class="check">✓ Eu domino o tema o suficiente para perceber um erro?</div></div>
+<div class="note warn"><h3>Regra proporcional</h3><p>Uma sugestão de título exige pouca validação. Um comando que altera dados, uma orientação de saúde, uma cláusula jurídica, uma compra cara ou um procedimento elétrico exigem muito mais cuidado.</p></div>
+</section>
+
+<section class="content-card connector" id="erros-ia">
+<div class="section-kicker">Aprofundamento</div>
+<h2>15. Por que a IA pode errar mesmo depois de receber um bom pedido?</h2>
+<p>Contexto melhor reduz alguns problemas, mas não torna um modelo infalível. Erros podem surgir de limitações do modelo, dados incompletos ou enviesados, informação desatualizada, ambiguidade, cálculo incorreto, mistura de padrões e geração de detalhes que apenas parecem plausíveis.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Erro de quem usa</h3><p>Pedido vago, fonte ausente, expectativa impossível ou confiança sem validação podem direcionar mal o resultado.</p></div>
+<div class="note warn"><h3>Limitação do sistema</h3><p>Mesmo com instrução clara, o modelo pode não possuir informação correta, pode interpretar mal evidências ou pode gerar uma continuação incorreta.</p></div>
+</div>
+<div class="note idea"><h3>Consequência pedagógica</h3><p>“Aprender a fazer prompt” não substitui aprender a verificar. O usuário maduro melhora a entrada <strong>e</strong> mantém um processo de validação da saída.</p></div>
+</section>
+
+<section class="content-card connector" id="tipos-erros">
+<div class="section-kicker">Reconhecer padrões de falha</div>
+<h2>16. Nem todo erro tem a mesma aparência</h2>
+<div class="grid-3">
+<div class="note bad"><h3>Erro factual</h3><p>Data, nome, versão, valor ou afirmação estão incorretos. Ex.: atribuir uma tecnologia a uma pessoa ou data sem base.</p></div>
+<div class="note bad"><h3>Erro lógico</h3><p>As informações podem parecer corretas isoladamente, mas a conclusão não segue delas. É comum em cálculos, regras e diagnósticos.</p></div>
+<div class="note bad"><h3>Alucinação</h3><p>O modelo produz detalhe, fonte, citação ou informação sem sustentação suficiente e apresenta como plausível.</p></div>
+<div class="note warn"><h3>Viés</h3><p>A saída pode reproduzir distorções dos dados, dos critérios ou do próprio contexto fornecido.</p></div>
+<div class="note warn"><h3>Excesso de confiança</h3><p>O texto usa tom categórico mesmo quando há incerteza ou mais de uma interpretação possível.</p></div>
+<div class="note warn"><h3>Desatualização</h3><p>Preço, versão, regra, agenda, pessoa no cargo ou outra informação mutável pode ter mudado depois do conhecimento disponível ao sistema.</p></div>
+</div>
+<div class="note good"><h3>Não memorize rótulos; reconheça o problema</h3><p>Na prática, uma única resposta pode combinar vários tipos de falha. O objetivo é saber o que verificar e por quê.</p></div>
+</section>
+
+<section class="content-card connector" id="laboratorio-erros">
+<div class="section-kicker">Laboratório de erro e ambiguidade</div>
+<h2>17. “Qual foi o primeiro computador?” — uma pergunta simples que exige critério</h2>
+<p>Esse é um excelente teste porque diferentes máquinas podem ser chamadas de “primeiro computador” dependendo do critério: programável, eletrônico, digital, de propósito geral, com programa armazenado e assim por diante. Uma resposta que dá apenas um nome sem explicar o critério pode parecer correta e ainda ser simplista.</p>
+<div class="grid-2">
+<div class="note"><h3>Prompt 1 — direto</h3><div class="prompt" id="promptErro1"><button class="prompt-copy-inside" onclick="copiarTexto('promptErro1', this)">Copiar</button><span class="prompt-text">Qual foi o primeiro computador da história? Responda em cinco linhas.</span></div></div>
+<div class="note"><h3>Prompt 2 — com critério</h3><div class="prompt" id="promptErro2"><button class="prompt-copy-inside" onclick="copiarTexto('promptErro2', this)">Copiar</button><span class="prompt-text">A expressão “primeiro computador” pode mudar conforme o critério. Explique pelo menos quatro critérios históricos possíveis, dê um exemplo de máquina associado a cada um e deixe claro onde existe debate de classificação. Indique fontes institucionais ou históricas que eu possa conferir e não invente referências.</span></div></div>
+</div>
+<div class="note good"><h3>O que observar</h3><div class="checklist"><div class="check">✓ A primeira resposta apresentou um nome como certeza absoluta?</div><div class="check">✓ A segunda distinguiu critérios antes de concluir?</div><div class="check">✓ As fontes indicadas existem?</div><div class="check">✓ O texto separou fato histórico de convenção de classificação?</div></div></div>
+</section>
+
+<section class="content-card connector" id="uso-responsavel">
+<div class="section-kicker">Maturidade digital</div>
+<h2>18. Antes de colar um arquivo na IA, pense em quem aparece nele</h2>
+<p>Imagine uma planilha com nomes, telefones, notas ou documentos de alunos. A tarefa “resuma os dados para mim” parece inocente, mas o primeiro problema nem é o prompt: é saber se aquelas informações deveriam ser enviadas para uma ferramenta externa.</p>
+<div class="grid-3">
+<div class="note warn"><h3>Privacidade</h3><p>Não envie dados pessoais, credenciais, documentos ou informações de terceiros apenas por conveniência. Considere necessidade, autorização, regras da instituição e configurações do serviço.</p></div>
+<div class="note warn"><h3>Autoria</h3><p>Usar IA como apoio não elimina a responsabilidade por compreender, revisar e assumir o resultado entregue ou publicado.</p></div>
+<div class="note warn"><h3>Dependência</h3><p>Se a IA faz toda atividade enquanto o aluno apenas copia, a tarefa pode até ficar pronta, mas o conhecimento que deveria ser construído não aparece.</p></div>
+</div>
+<div class="grid-2">
+<div class="note bad"><h3>Uso imaturo</h3><p>Enviar qualquer material, aceitar a primeira resposta e repassar sem entender.</p></div>
+<div class="note good"><h3>Uso maduro</h3><p>Reduzir dados ao necessário, proteger informações, pedir ajuda com objetivo definido, validar e manter decisão humana.</p></div>
+</div>
+</section>
+
+<section class="content-card connector" id="validacao-final">
+<div class="section-kicker">Método de validação</div>
+<h2>19. Um processo simples para não confundir resposta com prova</h2>
+<p>Quando a resposta importa, siga uma sequência. O tipo de fonte e teste muda conforme o assunto, mas o raciocínio é reutilizável.</p>
+<div class="flow-box" id="fluxoValidacao">
+<button class="flow-step" data-info="Leia a resposta inteira e confirme se ela realmente respondeu à pergunta e respeitou as restrições."><span class="num">1</span><strong>Ler</strong></button>
+<button class="flow-step" data-info="Marque afirmações que têm consequência: números, fontes, datas, comandos, compatibilidade, diagnósticos e conclusões fortes."><span class="num">2</span><strong>Identificar</strong></button>
+<button class="flow-step" data-info="Confronte com fonte primária, documentação oficial, material original ou referência confiável apropriada ao tema."><span class="num">3</span><strong>Conferir</strong></button>
+<button class="flow-step" data-info="Quando for comportamento de código, cálculo, circuito ou procedimento seguro, faça teste controlado antes de aceitar a conclusão."><span class="num">4</span><strong>Testar</strong></button>
+<button class="flow-step" data-info="Corrija, peça nova análise ou descarte o que não se sustentou. A versão final precisa refletir o que foi validado."><span class="num">5</span><strong>Corrigir</strong></button>
+</div>
+<div class="flow-detail" id="flowDetailValidacao">Clique em uma etapa para ver como aplicar a validação.</div>
+<div class="note good"><h3>Checklist final</h3><div class="checklist"><div class="check">✓ Eu entendi o que estou usando?</div><div class="check">✓ Sei de onde vieram os fatos importantes?</div><div class="check">✓ Testei quando o resultado dependia de funcionamento real?</div><div class="check">✓ Não expus dados desnecessários?</div><div class="check">✓ Diferenciei hipótese de confirmação?</div><div class="check">✓ Assumo responsabilidade pela versão final?</div></div></div>
+</section>
+
+<section class="content-card connector" id="reflexao">
+<div class="section-kicker">Autonomia</div>
+<h2>20. Que tipo de usuário a IA está ajudando você a se tornar?</h2>
+<p>Duas pessoas podem usar a mesma ferramenta e aprender coisas opostas. Uma usa a IA para formular hipótese, receber explicação, comparar alternativas e testar o próprio entendimento. Outra pede tudo pronto, copia e passa adiante.</p>
+<div class="grid-2">
+<div class="note good"><h3>IA como amplificador de raciocínio</h3><p>Ajuda a organizar pensamento, levantar possibilidades, revisar, criar exemplos, comparar e acelerar etapas que o usuário consegue avaliar.</p></div>
+<div class="note bad"><h3>IA como substituto do raciocínio</h3><p>Entrega respostas prontas, mas o usuário perde a oportunidade de compreender, questionar e desenvolver autonomia.</p></div>
+</div>
+<div class="frase">A pergunta importante não é apenas “o que a IA consegue fazer por mim?”, mas “o que eu continuo sabendo fazer depois que ela me ajudou?”.</div>
+</section>
+
+<section class="content-card connector" id="limites-ia">
+<div class="section-kicker">Limites</div>
+<h2>21. Há situações em que uma resposta plausível simplesmente não basta</h2>
+<p>Um texto para convite e uma orientação sobre medicamento não podem receber o mesmo nível de confiança. Quanto maior a consequência de um erro, maior deve ser a exigência de fonte, especialista, teste ou procedimento oficial.</p>
+<div class="grid-3">
+<div class="note warn"><h3>Informação mutável</h3><p>Preços, horários, versões, leis, regras, disponibilidade e acontecimentos recentes precisam de fonte atual.</p></div>
+<div class="note warn"><h3>Alta consequência</h3><p>Saúde, direito, finanças, segurança, eletricidade, máquinas e decisões que afetam outras pessoas exigem cuidado maior.</p></div>
+<div class="note warn"><h3>Ambiente real</h3><p>Código em produção, banco com dados reais, rede de empresa ou equipamento físico não devem ser alterados só porque uma IA sugeriu.</p></div>
+</div>
+<div class="checklist"><div class="check">✓ A IA não possui consciência ou responsabilidade própria.</div><div class="check">✓ Não garante verdade.</div><div class="check">✓ Pode não possuir informação atual.</div><div class="check">✓ Pode interpretar mal contexto.</div><div class="check">✓ Pode produzir detalhes plausíveis não sustentados.</div><div class="check">✓ Não substitui especialista, teste ou fonte quando a situação exige.</div></div>
+</section>
+
+<section class="content-card connector" id="laboratorio-parece-saber">
+<div class="section-kicker">Laboratório de confiança</div>
+<h2>22. “Essa memória RAM serve no meu notebook?” — quando falta um detalhe que muda tudo</h2>
+<p>Compatibilidade de hardware é um exemplo cotidiano em que uma resposta confiante pode sair errada se o modelo exato do equipamento não estiver claro. Uma mesma linha comercial de notebook pode ter variações de placa, memória soldada, quantidade de slots e limites diferentes.</p>
+<div class="grid-2">
+<div class="note"><h3>Prompt 1 — contexto insuficiente</h3><div class="prompt" id="promptLimite1"><button class="prompt-copy-inside" onclick="copiarTexto('promptLimite1', this)">Copiar</button><span class="prompt-text">Tenho um notebook Aspire 5. Posso comprar um módulo DDR4 de 16 GB e instalar nele?</span></div></div>
+<div class="note"><h3>Prompt 2 — resposta orientada por evidência</h3><div class="prompt" id="promptLimite2"><button class="prompt-copy-inside" onclick="copiarTexto('promptLimite2', this)">Copiar</button><span class="prompt-text">Quero verificar se um módulo DDR4 de 16 GB é compatível com meu notebook. “Aspire 5” é apenas a família e eu ainda não informei o código completo do modelo. Antes de concluir, diga exatamente quais identificadores e especificações preciso localizar. Depois indique como conferir compatibilidade em documentação oficial ou do fabricante. Não afirme compatibilidade com base apenas no nome da família.</span></div></div>
+</div>
+<div class="note good"><h3>O que observar</h3><div class="checklist"><div class="check">✓ A primeira resposta assumiu um modelo específico?</div><div class="check">✓ A segunda pediu evidência que realmente muda a decisão?</div><div class="check">✓ Indicou fonte adequada para confirmar?</div><div class="check">✓ Evitou transformar probabilidade em certeza?</div></div></div>
+</section>
+
+<section class="content-card connector" id="sintese-fase1">
+<div class="section-kicker">Síntese</div>
+<h2>23. O caminho mental que deve acompanhar qualquer uso de IA</h2>
+<p>Você não precisa lembrar cada exemplo deste módulo. Precisa carregar um processo: entender o problema, reconhecer como a IA produz a saída e saber o que fazer antes de confiar.</p>
+<div class="flow-box">
+<div class="flow-step"><span class="num">1</span><strong>Problema</strong></div>
+<div class="flow-step"><span class="num">2</span><strong>Dados e padrões</strong></div>
+<div class="flow-step"><span class="num">3</span><strong>Contexto</strong></div>
+<div class="flow-step"><span class="num">4</span><strong>Saída provável</strong></div>
+<div class="flow-step"><span class="num">5</span><strong>Validação</strong></div>
+</div>
+<div class="note idea"><h3>Essência</h3><p>IA não é mágica nem autoridade. É uma tecnologia capaz de ampliar muito a capacidade humana de analisar e produzir — e também de ampliar erro quando recebe contexto ruim ou quando a saída é usada sem critério.</p></div>
+</section>
+
+<section class="content-card connector" id="primeiros-laboratorios">
+<div class="section-kicker">Prática final</div>
+<h2>24. Quatro situações para juntar contexto, crítica e validação</h2>
+<p>Use uma ou mais IAs. O importante é justificar sua avaliação da resposta, não escolher “a IA vencedora”.</p>
+<div class="note ai"><div aria-label="Links para ferramentas de IA" class="tool-grid"><a class="tool-button" href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a><a class="tool-button" href="https://gemini.google.com/" rel="noopener" target="_blank">Gemini</a><a class="tool-button" href="https://claude.ai/" rel="noopener" target="_blank">Claude</a><a class="tool-button" href="https://copilot.microsoft.com/" rel="noopener" target="_blank">Copilot</a><a class="tool-button" href="https://www.perplexity.ai/" rel="noopener" target="_blank">Perplexity</a></div></div>
+<div class="grid-2">
+<div class="note"><h3>Laboratório A — diagnóstico com contexto</h3><div class="prompt">Meu notebook mostra Wi-Fi conectado, mas nenhum site abre. O celular na mesma rede funciona. Crie três hipóteses iniciais e, para cada uma, um teste que apenas colete informação antes de alterar configurações. Separe hipótese de causa confirmada.</div><p><strong>Observe:</strong> a resposta propõe testes que realmente diferenciam hipóteses?</p></div>
+<div class="note"><h3>Laboratório B — explicação para leigo</h3><div class="prompt">Uma pessoa diz “o Wi-Fi caiu” sempre que a Internet não funciona. Explique, em linguagem simples, a diferença entre Wi-Fi e Internet usando uma situação doméstica real. Não trate os dois termos como sinônimos.</div><p><strong>Observe:</strong> a simplificação continuou tecnicamente correta?</p></div>
+<div class="note"><h3>Laboratório C — afirmação forte</h3><div class="prompt">HTTPS significa que um site é confiável? Explique o que HTTPS realmente protege e dê um exemplo de algo que ainda pode dar errado mesmo com o cadeado do navegador.</div><p><strong>Observe:</strong> a IA evita prometer que HTTPS garante honestidade do site?</p></div>
+<div class="note"><h3>Laboratório D — comparar fonte e resposta</h3><div class="prompt">Vou fornecer um trecho de documentação técnica e depois uma explicação feita por IA. Compare os dois e marque: CONFIRMADO PELA FONTE, INTERPRETAÇÃO PLAUSÍVEL e NÃO SUSTENTADO PELO TRECHO. Não use conhecimento externo para preencher o que a fonte não diz.</div><p><strong>Observe:</strong> a IA consegue distinguir evidência de interpretação?</p></div>
+</div>
+</section>
+
+<section class="content-card connector" id="lab5-estudar-sem-copiar">
+<div class="section-kicker">Aprendizagem ativa</div>
+<h2>25. Usar IA para estudar sem terceirizar a resolução</h2>
+<p>Você está estudando modelagem de banco de dados e recebeu um exercício para identificar entidades, relacionamentos e cardinalidades. Pedir a solução pronta termina a atividade; pedir orientação pode transformar a IA em tutor.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Uso que substitui a atividade</h3><div class="prompt">Faça este exercício de modelagem e me dê o DER pronto.</div><p>Você pode até entregar um resultado, mas não pratica a decisão que o exercício queria desenvolver.</p></div>
+<div class="note good"><h3>Uso que preserva o raciocínio</h3><div class="prompt">Estou aprendendo modelagem conceitual. Vou enviar um enunciado e quero tentar resolver sozinho. Não monte o DER para mim. Primeiro faça perguntas que me ajudem a identificar possíveis entidades e regras de negócio. Depois que eu responder, critique meu modelo e explique onde meu raciocínio pode estar fraco, sem entregar uma solução pronta antes da minha tentativa.</div><p>A IA atua como interlocutora e revisora, não como substituta da atividade.</p></div>
+</div>
+<div class="note idea"><h3>Teste de autonomia</h3><p>Ao terminar, feche a resposta da IA e tente explicar com suas palavras por que cada entidade e cardinalidade ficou daquele jeito. Se não consegue explicar, ainda há algo para aprender.</p></div>
+</section>
+
+<section class="content-card final connector" id="conclusao-fase1">
+<div class="section-kicker">Fechamento</div>
+<h2>26. O que você deve levar de Fundamentos de IA</h2>
+<p>Este módulo não foi feito para decorar nomes de ferramentas nem fórmulas de prompt. Ele construiu uma base para entender o que a IA faz, por que resultados convincentes podem falhar e qual responsabilidade permanece com o usuário.</p>
+<div class="grid-3" style="margin-top:18px">
+<div class="note good"><h3>Você entendeu</h3><p>IA trabalha com modelos, dados, padrões, contexto e objetivos — não com consciência humana.</p></div>
+<div class="note good"><h3>Você reconheceu</h3><p>Coerência, confiança e velocidade não garantem verdade.</p></div>
+<div class="note good"><h3>Você praticou</h3><p>Contextualizar, separar hipótese de fato, comparar fontes, testar e validar.</p></div>
+</div>
+<div class="frase">IA não substitui entendimento. Ela se torna muito mais útil quando encontra um usuário que sabe perguntar, observar e conferir.</div>
+</section>
+
+<section class="content-card" id="proximos">
+<div class="section-kicker">Próximo passo</div>
+<h2>27. Agora a IA sai da teoria e entra em situações concretas</h2>
+<p>Você já tem base para não tratar a IA como mágica nem como autoridade. O próximo módulo, <strong>IA na Vida Real</strong>, usa essa base em tarefas que realmente aparecem no cotidiano: mensagens, e-mails, organização digital, criação visual, leitura de prints e estudo de documentos.</p>
+<div class="grid-3">
+<div class="note good"><h3>Fundamentos</h3><p>Como a IA funciona, aprende, gera, erra e precisa ser validada.</p></div>
+<div class="note idea"><h3>IA na Vida Real</h3><p>Como aplicar essa base a tarefas pontuais usando material e situações reais.</p></div>
+<div class="note warn"><h3>Depois</h3><p>Comunicação com IA aprofunda conversas em várias etapas; Produtividade, Programação e Ética/Sociedade completarão o percurso.</p></div>
+</div>
+<div class="footer-nav"><a class="button secondary" href="#inicio">Revisar início</a><a class="button" href="vida-real.html">Próximo: IA na Vida Real</a></div>
+</section>
+
+</main>
+</div>
+<script src="../../js/ia-fundamentos.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

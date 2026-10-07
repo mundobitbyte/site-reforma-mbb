@@ -1,0 +1,125 @@
+.mbb-contextualizacao{
+  margin:16px 0 22px;
+  padding:18px;
+  border:1px solid #c7d9ef;
+  border-radius:14px;
+  background:linear-gradient(135deg,#f7fbff,#fff);
+}
+.mbb-contextualizacao>strong{
+  display:block;
+  margin-bottom:10px;
+  color:var(--primary-dark);
+  font-size:16px;
+}
+.mbb-context-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:10px 0 12px;
+}
+.mbb-context-card{
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#fff;
+}
+.mbb-context-card strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--primary-dark);
+}
+.mbb-central-question{
+  margin-top:10px;
+  padding:11px 13px;
+  border-left:4px solid var(--primary);
+  border-radius:8px;
+  background:var(--primary-soft);
+}
+.mbb-professor-pensa{
+  margin-top:12px;
+  padding:11px 13px;
+  border-radius:9px;
+  background:#f4f8fc;
+  border:1px dashed #b9cbe1;
+  font-size:.96em;
+}
+.mbb-professor-pensa strong{
+  color:var(--primary-dark);
+}
+.mbb-guided-solution{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+.mbb-guided-step{
+  position:relative;
+  padding:11px 12px 11px 42px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+}
+.mbb-guided-step>.mbb-step-number{
+  position:absolute;
+  left:11px;
+  top:11px;
+  width:23px;
+  height:23px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--primary);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.mbb-guided-step strong{
+  display:block;
+  margin-bottom:3px;
+  color:var(--primary-dark);
+}
+.mbb-guided-step p{margin:4px 0}
+.mbb-calc-steps{margin:6px 0 0 20px!important}
+.mbb-calc-steps li{margin:5px 0}
+.mbb-pause-question{
+  margin:10px 0 0;
+  padding:9px 11px;
+  border-left:4px solid #7c3aed;
+  border-radius:8px;
+  background:#f7f3ff;
+  font-size:.94em;
+}
+.mbb-pa-story{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:14px 0;
+}
+.mbb-pa-story .mini-card{height:100%}
+.mbb-equation-walk{
+  margin:12px 0;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--surface-soft);
+}
+.mbb-equation-walk p{margin:6px 0}
+.mbb-equation-walk .math{display:inline-block}
+.mbb-bridge-box{
+  margin:16px 0;
+  padding:13px 15px;
+  border:1px solid #cbd5e1;
+  border-radius:11px;
+  background:#f8fafc;
+}
+.mbb-bridge-box strong{color:var(--primary-dark)}
+.exercise-feedback .mbb-guided-solution{
+  margin-top:12px;
+}
+.exercise-feedback .mbb-guided-step{
+  background:#fff;
+}
+@media(max-width:720px){
+  .mbb-context-grid,.mbb-pa-story{grid-template-columns:1fr}
+  .mbb-contextualizacao{padding:14px}
+  .mbb-guided-step{padding-left:40px}
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 2 de Qualidade e Teste de Software: entenda, com a Cantina Horizonte, a diferença entre erro humano, defeito no software, falha observada, teste e depuração.">
+<title>2 — Erro, defeito, falha e teste | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="2">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Dar nome ao que aconteceu</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 2</span>
+        <h1>Erro, defeito, falha e teste</h1>
+        <p>Na Cantina Horizonte nós já vimos comportamentos estranhos. Agora vamos separar coisas que, numa conversa comum, costumam receber o mesmo nome: <strong>erro, defeito e falha</strong> — e entender onde entra a palavra informal <strong>bug</strong>.</p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>Vamos olhar para um caso conhecido</h3>
+          <p>Para analisar uma situação concreta, a equipe da cantina confirma uma regra:</p>
+          <p><strong>cada item do pedido deve ter de 1 a 10 unidades.</strong></p>
+          <p>Mesmo assim, a primeira versão aceita quantidade <strong>0</strong>.</p>
+        </div>
+
+        <h2>Onde exatamente está o problema?</h2>
+        <p>É fácil dizer apenas: <strong>“o sistema está com erro”</strong>.</p>
+        <p>Mas essa frase mistura momentos diferentes da história. Vamos acompanhá-la desde o começo.</p>
+
+        <h2>Primeiro aconteceu uma ação humana</h2>
+        <p>O desenvolvedor precisava representar a regra:</p>
+        <div class="card evidence-card"><p><strong>quantidade entre 1 e 10.</strong></p></div>
+        <p>Ao programar, ele verificou apenas o limite máximo e esqueceu o mínimo.</p>
+        <div class="card tool-card"><h3>Erro</h3><p>Neste contexto, <strong>erro</strong> é uma ação humana incorreta: esquecer uma condição, interpretar mal uma regra, digitar algo errado ou tomar uma decisão inadequada durante o trabalho.</p></div>
+        <p>O erro aconteceu na atividade da pessoa. Mas ele deixou uma consequência no produto.</p>
+
+        <h2>O erro deixou algo incorreto no software</h2>
+        <p>O código acabou aceitando qualquer número menor ou igual a 10, inclusive zero e valores negativos.</p>
+        <div class="card tool-card"><h3>Defeito</h3><p>Um <strong>defeito</strong> é uma imperfeição existente em um artefato do software: pode estar no código, numa regra documentada, numa configuração, num script ou em outro material usado no desenvolvimento.</p></div>
+        <p>No dia a dia, você também ouvirá a palavra <strong>bug</strong>. Ela é muito usada como sinônimo informal de defeito ou problema no software.</p>
+
+        <h2>O defeito pode ficar escondido</h2>
+        <p>Agora teste mentalmente:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Quantidade</th><th>O que acontece</th></tr></thead>
+            <tbody>
+              <tr><td>3</td><td>O pedido parece normal.</td></tr>
+              <tr><td>8</td><td>O pedido parece normal.</td></tr>
+              <tr><td>0</td><td>O sistema aceita uma quantidade que não deveria aceitar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>O defeito já estava no software quando testamos 3 e 8. Só que esses valores não o tornaram visível.</p>
+        <div class="card evidence-card"><p><strong>Nem todo defeito produz uma falha em toda execução.</strong></p></div>
+
+        <h2>Quando o problema aparece durante o uso</h2>
+        <p>O usuário informa <strong>0</strong> e o sistema adiciona o item ao carrinho.</p>
+        <p>Agora temos um comportamento observável diferente do esperado.</p>
+        <div class="card tool-card"><h3>Falha</h3><p>Uma <strong>falha</strong> acontece durante a execução quando o sistema não apresenta o comportamento esperado para aquela situação.</p></div>
+
+        <h2>A sequência inteira</h2>
+        <div class="path" aria-label="Do erro humano à falha observada">
+          <span>Erro humano</span><b>→</b><span>Defeito no software</span><b>→</b><span>Uma situação o ativa</span><b>→</b><span>Falha observada</span>
+        </div>
+        <div class="card context-card">
+          <p><strong>Erro humano:</strong> o limite mínimo foi esquecido.</p>
+          <p><strong>Defeito:</strong> a lógica ficou incompleta.</p>
+          <p><strong>Situação:</strong> alguém informa quantidade 0.</p>
+          <p><strong>Falha:</strong> o sistema aceita a quantidade inválida.</p>
+        </div>
+
+        <h2>O teste não criou o defeito</h2>
+        <p>Quando você tentou quantidade 0, o problema já existia.</p>
+        <p>O teste apenas colocou o sistema numa situação que permitiu <strong>revelar</strong> o comportamento incorreto.</p>
+        <div class="card question-card"><p><strong>Testar é procurar evidências sobre o comportamento do software.</strong> Alguns testes revelam falhas; outros aumentam nossa confiança de que determinados comportamentos estão funcionando como esperado.</p></div>
+        <p>Mas existe um cuidado: dez testes que passam não provam que não exista um décimo primeiro cenário capaz de revelar outro defeito.</p>
+
+        <h2>“O teste deu erro” pode significar coisas diferentes</h2>
+        <p>Em conversa informal, essa frase aparece bastante. Vale perguntar:</p>
+        <div class="grid2">
+          <div class="card question-card"><h3>O teste está incorreto?</h3><p>Talvez o próprio caso de teste tenha sido escrito com um resultado esperado errado.</p></div>
+          <div class="card question-card"><h3>Ou o teste revelou uma falha?</h3><p>Talvez o teste esteja certo e tenha acabado de mostrar um problema real no produto.</p></div>
+        </div>
+        <p>Mais adiante, quando automatizarmos testes, essa diferença ficará ainda mais visível.</p>
+
+        <h2>Testar não é a mesma coisa que corrigir</h2>
+        <p>Imagine que você registre:</p>
+        <div class="card practice-card">
+          <p><strong>Entrada:</strong> quantidade 0</p>
+          <p><strong>Esperado:</strong> rejeitar</p>
+          <p><strong>Obtido:</strong> aceitou</p>
+        </div>
+        <p>Esse registro mostra uma falha. A partir daí, alguém investiga a causa, localiza o defeito e altera o software.</p>
+        <div class="grid2">
+          <div class="card tool-card"><h3>Teste</h3><p>Avalia o comportamento e procura evidências de problemas ou de conformidade com o esperado.</p></div>
+          <div class="card tool-card"><h3>Depuração</h3><p>Investiga a causa do problema para localizar e corrigir o defeito. Você também verá o termo inglês <strong>debugging</strong>, que significa depuração.</p></div>
+        </div>
+        <p>As atividades se ajudam, mas não são a mesma coisa.</p>
+
+        <h2>O problema pertence ao produto, não a uma disputa</h2>
+        <p>Em uma equipe saudável, encontrar uma falha não deveria virar:</p>
+        <div class="card quote-card"><p><strong>“Eu achei um bug.” — “Meu código está certo.”</strong></p></div>
+        <p>O teste traz uma evidência. O desenvolvimento investiga a causa. A equipe trabalha para melhorar o mesmo produto.</p>
+        <p>Qualidade funciona melhor quando evidência vale mais do que defesa pessoal.</p>
+
+        <h2>Vamos tentar com o cupom</h2>
+        <p>A equipe confirma outra regra para este exercício:</p>
+        <div class="card evidence-card"><p>O cupom <strong>MBB10</strong> só deve ser aceito enquanto estiver válido.</p></div>
+        <p>Imagine que o software verifique apenas se o texto digitado é <strong>MBB10</strong>, sem verificar a data.</p>
+        <div class="card practice-card">
+          <h3>Separe os três momentos</h3>
+          <ol>
+            <li>Qual ação ou omissão humana pode ter ocorrido?</li>
+            <li>Que defeito ficou no software?</li>
+            <li>Que falha o usuário conseguiria observar?</li>
+          </ol>
+        </div>
+
+        <h2>E se a falha estiver visível, mas a causa ainda não?</h2>
+        <p>Suponha que o total mostrado seja R$ 42,00, mas a soma correta seja R$ 38,00.</p>
+        <p>Já temos uma <strong>falha observável</strong>: o total está incorreto.</p>
+        <p>Mas ainda não sabemos automaticamente onde está o defeito. Pode ser no cálculo, no desconto, nos dados recebidos, na interface ou em outro ponto.</p>
+        <div class="card evidence-card"><p><strong>Observar a falha não significa conhecer imediatamente sua causa.</strong></p></div>
+
+        <h2>Duas perguntas próximas, mas diferentes</h2>
+        <p>Existe ainda uma distinção importante no trabalho de qualidade.</p>
+        <div class="grid2">
+          <div class="card tool-card"><h3>Verificação</h3><p>Pergunta se o produto ou artefato está de acordo com aquilo que foi especificado. Exemplo: a regra diz “1 a 10”; o sistema implementa essa regra corretamente?</p></div>
+          <div class="card tool-card"><h3>Validação</h3><p>Pergunta se aquilo que foi construído realmente atende à necessidade de uso. Exemplo: o limite de 10 unidades faz sentido para a rotina real da cantina?</p></div>
+        </div>
+        <p>Um sistema pode seguir perfeitamente uma especificação e ainda assim descobrir, no uso real, que a especificação não atendia à necessidade.</p>
+
+        <h2>Agora você consegue falar com mais precisão</h2>
+        <p>No começo, era natural dizer:</p>
+        <div class="card quote-card"><p><strong>“Tem um erro na quantidade.”</strong></p></div>
+        <p>Agora podemos dizer algo mais útil:</p>
+        <div class="card evidence-card"><p><strong>“Observei uma falha ao usar quantidade 0. Existe um defeito na lógica que precisa ser investigado.”</strong></p></div>
+        <p>Não é apenas trocar palavras. É separar aquilo que observamos daquilo que ainda precisamos descobrir.</p>
+
+        <h2>Mas de onde veio o “esperado”?</h2>
+        <p>Ao longo desta etapa nós usamos frases como:</p>
+        <div class="card quote-card"><p><strong>“Esperado: rejeitar quantidade 0.”</strong></p></div>
+        <p>Por que esse é o resultado esperado? Quem definiu que o mínimo é 1? Onde essa regra deveria estar registrada? E se duas pessoas entenderem a regra de maneiras diferentes?</p>
+        <p>Para testar com segurança, precisamos parar de depender de suposições.</p>
+
+        <div class="card next-card">
+          <h3>A seguir: o que deveria acontecer?</h3>
+          <p>Vamos descobrir de onde vem o comportamento esperado e como <strong>necessidades, regras de negócio, requisitos e critérios de aceitação</strong> ajudam a transformar uma intenção vaga em algo que realmente pode ser testado.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar, usando um exemplo da Cantina Horizonte:</p>
+          <ul>
+            <li>a diferença entre erro humano, defeito e falha;</li>
+            <li>por que um defeito pode existir sem aparecer em toda execução;</li>
+            <li>por que testar e depurar são atividades diferentes;</li>
+            <li>a diferença básica entre verificar o que foi especificado e validar se aquilo atende à necessidade real.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="01-o-que-significa-qualidade.html">← Etapa 1</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <a class="next" href="03-o-que-deveria-acontecer.html">Etapa 3 →</a>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

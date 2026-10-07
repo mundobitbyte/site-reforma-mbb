@@ -1,0 +1,158 @@
+/* Controle de versões — ajustes visuais específicos da prática TIA */
+.tia-controle-page .hero-card,
+.tia-controle-page .section-card,
+.tia-controle-page .activity-box,
+.tia-controle-page .example-box,
+.tia-controle-page .notice,
+.tia-controle-page .section-head,
+.tia-controle-page .section-head > div{
+  min-width:0;
+  max-width:100%;
+}
+
+.tia-controle-page pre{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin:12px 0;
+  padding:13px 14px;
+  border-radius:12px;
+  font-family:Consolas,"Courier New",monospace;
+  font-size:14px;
+  line-height:1.45;
+}
+
+/* O que o aluno digita no Prompt de Comando */
+.tia-controle-page pre.terminal{
+  background:#111827;
+  color:#f8fafc;
+  border:1px solid #273449;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  overflow-x:hidden;
+}
+
+/* Comandos com botão Copiar. A quebra é apenas visual: o texto copiado permanece intacto. */
+.tia-controle-page .terminal-shell{
+  width:100%;
+  max-width:100%;
+  margin:12px 0;
+  background:#111827;
+  border:1px solid #273449;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.tia-controle-page .terminal-shell pre.terminal{
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  padding-top:8px;
+}
+
+.tia-controle-page .terminal-copy{
+  display:block;
+  margin:8px 8px 0 auto;
+  padding:5px 9px;
+  border:1px solid #64748b;
+  border-radius:8px;
+  background:#1e293b;
+  color:#f8fafc;
+  font:700 12px Arial,Helvetica,sans-serif;
+  line-height:1.2;
+  cursor:pointer;
+}
+
+.tia-controle-page .terminal-copy:hover,
+.tia-controle-page .terminal-copy:focus-visible{
+  background:#334155;
+  outline:none;
+}
+
+.tia-controle-page .terminal-copy.copiado{
+  border-color:#86efac;
+  color:#bbf7d0;
+}
+
+/* Conteúdo de arquivos/documentos: pode quebrar linha sem alterar o sentido */
+.tia-controle-page pre.documento,
+.tia-controle-page pre.arquivo{
+  background:#f8fbff;
+  color:#102033;
+  border:1px solid #d3e0ef;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+.tia-controle-page code{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+
+.tia-controle-page .terminal-hint{
+  margin:10px 0 4px;
+  color:#40546b;
+  font-size:13px;
+  line-height:1.4;
+}
+
+.tia-controle-page .terminal-key{
+  display:inline-block;
+  width:12px;
+  height:12px;
+  margin-right:6px;
+  border-radius:3px;
+  background:#111827;
+  vertical-align:-1px;
+}
+
+.tia-controle-page .table-wrap{
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.tia-controle-page .comparison-table{
+  min-width:560px;
+}
+
+.tia-controle-page .call-link{
+  max-width:100%;
+  white-space:normal;
+  text-align:center;
+}
+
+@media(max-width:720px){
+  .tia-controle-page pre{
+    font-size:13px;
+    padding:12px;
+  }
+
+  .tia-controle-page pre.terminal{
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    overflow-x:hidden;
+  }
+
+  .tia-controle-page pre.documento,
+  .tia-controle-page pre.arquivo{
+    white-space:pre-wrap;
+  }
+
+  .tia-controle-page .activity-box,
+  .tia-controle-page .example-box{
+    overflow:hidden;
+  }
+
+  .tia-controle-page .section-head{
+    align-items:flex-start;
+  }
+
+  .tia-controle-page .section-head h2{
+    overflow-wrap:anywhere;
+  }
+}

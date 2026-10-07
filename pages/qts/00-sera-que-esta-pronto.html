@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 0 de Qualidade e Teste de Software: explore a Cantina Horizonte e descubra por que um sistema que funciona ainda pode não estar pronto.">
+<title>0 — Será que está pronto? | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="0">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Observar</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 0</span>
+        <h1>Será que está pronto?</h1>
+        <p>A Cantina Horizonte ganhou um sistema novo. Ele abre, mostra os produtos, calcula o pedido e parece funcionar. Antes de colocá-lo em uso, porém, alguém precisa olhar para ele com um pouco mais de atenção.</p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>Um intervalo que ficou difícil de organizar</h3>
+          <p>A Cantina Horizonte atende alunos e funcionários nos intervalos. Durante muito tempo, os pedidos foram anotados em papel. Quando o movimento aumentava, apareciam pedidos repetidos, contas refeitas às pressas e dúvidas sobre o que ainda havia em estoque.</p>
+          <p>A escola então criou um pequeno sistema para organizar esse trabalho.</p>
+        </div>
+
+        <h2>A equipe terminou o sistema</h2>
+        <p>Depois de algumas semanas, chega a notícia:</p>
+        <div class="card quote-card"><p><strong>“Terminamos. O sistema já está funcionando.”</strong></p></div>
+        <p>Na tela há produtos, preços, estoque, quantidade, carrinho, cupom e o botão <strong>Finalizar pedido</strong>. Nada parece fora do lugar.</p>
+        <p>Agora você recebe uma tarefa simples:</p>
+        <div class="card question-card"><h3>Use o sistema como um cliente usaria</h3><p>Não tente adivinhar onde está o problema. Primeiro faça uma compra normal, observe o resultado e forme sua própria impressão.</p></div>
+        <div class="card tool-card">
+          <h3>Abra a Cantina Horizonte</h3>
+          <p><a class="action" href="../../qts/cantina-horizonte-v1/frontend/index.html?demo=1" target="_blank" rel="noopener">Abrir a Cantina Horizonte v1 →</a></p>
+          <p class="small">O laboratório abre em outra aba. Se quiser voltar aos dados iniciais durante esta etapa, basta recarregar essa aba.</p>
+        </div>
+
+        <h2>Antes do roteiro, explore por alguns minutos</h2>
+        <p>Olhe a tela como alguém que acabou de receber o sistema. Escolha produtos, altere quantidades, use o carrinho, experimente o cupom e observe as mensagens. Não existe uma sequência obrigatória nesta primeira exploração.</p>
+        <div class="card practice-card">
+          <h3>Exploração livre</h3>
+          <p>Durante alguns minutos, tente caminhos que não foram indicados aqui. Anote apenas aquilo que chamar sua atenção e a ação que levou até esse resultado.</p>
+        </div>
+        <p>Essa forma de aprender sobre o sistema enquanto testamos, criando novas tentativas a partir do que acabamos de observar, é conhecida como <strong>teste exploratório</strong>. Isso não significa clicar sem propósito: observação, curiosidade e raciocínio orientam os próximos passos.</p>
+
+        <h2>Agora faça algo completamente normal</h2>
+        <div class="card practice-card">
+          <h3>Experimento 1 · Um pedido comum</h3>
+          <ol>
+            <li>Adicione <strong>2 salgados</strong>.</li>
+            <li>Adicione <strong>1 suco</strong>.</li>
+            <li>Observe subtotal e total.</li>
+            <li>Finalize o pedido.</li>
+          </ol>
+        </div>
+        <p>Se tudo aconteceu normalmente, ótimo. É exatamente isso que esperamos na primeira tentativa.</p>
+        <p>Mas uma tentativa bem-sucedida responde apenas a uma pergunta:</p>
+        <div class="card evidence-card"><p><strong>Esse caminho funcionou nessa situação.</strong></p></div>
+        <p>Ela ainda não responde se o sistema continuará se comportando bem quando a situação mudar.</p>
+
+        <h2>Agora experimente sair um pouco do caminho esperado</h2>
+        <p>Um sistema real não recebe apenas entradas bonitas e previsíveis. Pessoas se enganam, digitam valores inesperados, clicam em momentos diferentes e tentam comprar aquilo que veem na tela.</p>
+        <p>Vamos apenas observar. Ainda não precisamos dar nome técnico a nada.</p>
+
+        <div class="grid2">
+          <div class="card practice-card"><h3>Experimento 2 · Quantidade zero</h3><p>Escolha um produto, informe <strong>0</strong> e tente adicioná-lo ao carrinho.</p><p><strong>O que aconteceu?</strong></p></div>
+          <div class="card practice-card"><h3>Experimento 3 · Quantidade negativa</h3><p>Escolha um produto, informe <strong>-2</strong> e tente adicioná-lo.</p><p><strong>O resultado faz sentido para uma compra?</strong></p></div>
+          <div class="card practice-card"><h3>Experimento 4 · Mais do que existe</h3><p>O Sanduíche começa com estoque 8. Tente pedir <strong>9 unidades</strong>.</p><p><strong>O sistema impediu a operação?</strong></p></div>
+          <div class="card practice-card"><h3>Experimento 5 · Um cupom</h3><p>Monte um pedido pequeno, com valor abaixo de R$ 30,00, e experimente o cupom <strong>MBB10</strong>.</p><p><strong>Anote o que ocorreu. Ainda não conclua se está certo ou errado.</strong></p></div>
+        </div>
+
+        <h2>Não chame tudo de defeito ainda</h2>
+        <p>Talvez alguns resultados tenham parecido claramente estranhos. Outros podem ter deixado dúvida.</p>
+        <p>Essa diferença é importante. Para afirmar que algo está errado, precisamos ter alguma referência sobre <strong>o que deveria acontecer</strong>.</p>
+        <div class="card question-card"><h3>Uma pergunta que vai voltar mais adiante</h3><p>Se o sistema aceita determinada situação, como sabemos se isso é um defeito ou uma regra que ainda não conhecemos?</p></div>
+
+        <h2>Registre apenas o que você observou</h2>
+        <p>Por enquanto, não precisamos de um relatório formal. Use uma tabela simples:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>O que fiz</th><th>O que aconteceu</th><th>Chamou minha atenção?</th></tr></thead>
+            <tbody>
+              <tr><td>Pedido comum</td><td>Preencha com o que você observou.</td><td>Sim / Não</td></tr>
+              <tr><td>Quantidade 0</td><td>Preencha com o que você observou.</td><td>Sim / Não</td></tr>
+              <tr><td>Quantidade -2</td><td>Preencha com o que você observou.</td><td>Sim / Não</td></tr>
+              <tr><td>Quantidade acima do estoque</td><td>Preencha com o que você observou.</td><td>Sim / Não</td></tr>
+              <tr><td>Cupom MBB10 em pedido pequeno</td><td>Preencha com o que você observou.</td><td>Sim / Não / Ainda não sei</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Então o sistema funciona ou não?</h2>
+        <p>Essa pergunta agora ficou mais interessante.</p>
+        <p>O sistema abriu. Os botões responderam. Um pedido comum pôde ser finalizado.</p>
+        <p>Ao mesmo tempo, algumas situações podem ter produzido resultados que merecem investigação.</p>
+        <div class="card evidence-card"><h3>Primeira descoberta</h3><p><strong>Um programa executar sem travar não é suficiente para dizer que ele está pronto.</strong></p><p>Precisamos olhar também para a qualidade do comportamento que ele apresenta.</p></div>
+
+        <h2>Mas o que significa “ter qualidade”?</h2>
+        <p>Se os cálculos estiverem certos, isso basta?</p>
+        <p>E se o sistema for correto, mas demorar demais? E se funcionar bem no computador, mas ficar difícil de usar no celular? E se perder um pedido que já havia sido registrado?</p>
+        <p>Essas perguntas ampliam bastante aquilo que estamos observando.</p>
+        <div class="card next-card"><h3>A seguir: o que significa qualidade?</h3><p>Antes de aprender técnicas de teste, precisamos responder a uma pergunta maior: <strong>quando podemos dizer que um software tem qualidade?</strong></p></div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar, com suas próprias palavras:</p>
+          <ul>
+            <li>por que um único pedido bem-sucedido não demonstra que o sistema inteiro está correto;</li>
+            <li>o que caracteriza a exploração inicial que você fez sem roteiro fechado;</li>
+            <li>qual comportamento você observou que mais chamou sua atenção;</li>
+            <li>por que algumas situações ainda exigem conhecer a regra antes de afirmar que existe um defeito.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="index.html">← Visão geral</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <a class="next" href="01-o-que-significa-qualidade.html">Etapa 1 →</a>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

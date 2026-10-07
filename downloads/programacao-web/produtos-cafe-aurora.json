@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cafe-coado",
+    "nome": "Café coado",
+    "categoria": "bebida",
+    "preco": 8,
+    "imagem": "cafe-coado.webp",
+    "alt": "Xícara de café coado ao lado de uma pequena jarra",
+    "descricao": "Preparado na hora com grãos selecionados."
+  },
+  {
+    "id": "pao-artesanal",
+    "nome": "Pão artesanal",
+    "categoria": "comida",
+    "preco": 12,
+    "imagem": "pao-artesanal.webp",
+    "alt": "Pão artesanal cortado sobre uma mesa de madeira",
+    "descricao": "Fermentação lenta e produção diária."
+  },
+  {
+    "id": "bolo-laranja",
+    "nome": "Bolo de laranja",
+    "categoria": "comida",
+    "preco": 9,
+    "imagem": "bolo-caseiro.webp",
+    "alt": "Bolo caseiro de laranja com uma fatia servida",
+    "descricao": "Receita da casa com laranjas frescas."
+  }
+]

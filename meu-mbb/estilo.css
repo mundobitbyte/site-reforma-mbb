@@ -1,0 +1,39 @@
+.mbb-header-link { color: #fff; font-size: 13px; font-weight: 800; white-space: nowrap; }
+.mbb-pagina { width: min(820px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0; }
+.mbb-pagina h2 { color: #114b9e; font-size: clamp(22px, 4vw, 30px); margin-bottom: 8px; }
+.mbb-pagina > p { color: #506078; line-height: 1.5; margin-bottom: 20px; }
+.mbb-curta { max-width: 510px; }
+.mbb-campo, .mbb-formulario label { display: grid; gap: 6px; font-weight: 700; margin: 14px 0; }
+.mbb-campo input, .mbb-formulario input, .mbb-piloto textarea { width: 100%; padding: 11px; border: 1px solid #bacbe1; border-radius: 8px; font: inherit; background: #fff; color: #132033; }
+.mbb-resultados { display: grid; gap: 12px; }
+.mbb-resultado, .mbb-bloco, .mbb-formulario { border: 1px solid #d6e0ee; border-radius: 12px; padding: 17px; background: #fff; }
+.mbb-resultado a, .mbb-bloco a { color: #114b9e; font-weight: 800; }
+.mbb-resultado p { color: #506078; font-size: 13px; margin: 5px 0 0; }
+.mbb-resultado .mbb-resultado-trecho { color: #33445d; font-size: 14px; line-height: 1.5; margin-top: 9px; }
+.mbb-resultado mark { background: #fff1a8; color: inherit; border-radius: 3px; padding: 0 2px; }
+.mbb-formulario { margin-top: 12px; }
+.mbb-form-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+.mbb-formulario[hidden], .mbb-abas[hidden], #painel[hidden] { display: none; }
+.mbb-formulario .mbb-confirmacao { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+.mbb-formulario .mbb-confirmacao input { width: auto; }
+.mbb-abas, .mbb-titulo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.mbb-abas { justify-content: flex-start; margin-top: 18px; }
+.mbb-pagina button { border: 1px solid #1967d2; border-radius: 7px; background: #1967d2; color: #fff; padding: 9px 13px; cursor: pointer; font: inherit; font-weight: 700; }
+.mbb-pagina button[aria-pressed="false"], .mbb-pagina .mbb-secundario { background: #fff; color: #114b9e; }
+.mbb-pagina button:disabled { opacity: .6; cursor: wait; }
+.mbb-bloco { margin: 16px 0; }
+.mbb-bloco h3 { color: #114b9e; margin: 0 0 10px; }
+.mbb-bloco p { margin: 8px 0; line-height: 1.45; }
+.mbb-bloco .mbb-explicacao { color: #506078; font-size: 13px; }
+.mbb-bloco > button { margin-top: 10px; }
+.mbb-nota { border-top: 1px solid #d6e0ee; padding: 9px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.mbb-piloto { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; padding: 10px; border: 1px solid #d6e0ee; border-radius: 9px; background: #f8fbff; }
+.mbb-piloto button { padding: 7px 9px; border: 1px solid #b9d3f6; border-radius: 7px; background: #fff; color: #114b9e; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+.mbb-piloto textarea { flex-basis: 100%; resize: vertical; font-size: 13px; }
+.mbb-piloto .mbb-lista-notas { flex-basis: 100%; }
+.mbb-piloto .mbb-lista-notas .mbb-nota button { margin-right: 8px; }
+.mbb-piloto span { font-size: 12px; color: #506078; }
+@media (max-width: 640px) {
+  .mbb-pagina { padding: 18px 0; }
+  .mbb-piloto { align-items: stretch; }
+}

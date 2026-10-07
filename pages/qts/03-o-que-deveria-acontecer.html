@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 3 de Qualidade e Teste de Software: entenda como necessidades, regras de negócio, requisitos e critérios de aceitação definem o comportamento esperado.">
+<title>3 — O que deveria acontecer? | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="3">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Definir o esperado</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 3</span>
+        <h1>O que deveria acontecer?</h1>
+        <p>Na etapa anterior, usamos várias vezes a expressão <strong>resultado esperado</strong>. Agora precisamos responder à pergunta que ficou aberta: <strong>esperado segundo qual regra?</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>“Quantidade adequada” parece claro?</h3>
+          <p>Imagine que a única orientação entregue ao desenvolvedor fosse esta:</p>
+          <p><strong>“O sistema deve aceitar quantidades adequadas.”</strong></p>
+          <p>Agora tente decidir se 0, 1, 10, 11 ou 20 devem ser aceitos.</p>
+        </div>
+        <p>Não dá para saber com segurança.</p>
+        <p>A palavra <strong>adequadas</strong> parece simples, mas deixa espaço demais para interpretação.</p>
+
+        <h2>Quando a intenção vira uma regra clara</h2>
+        <p>A cantina então explica:</p>
+        <div class="card evidence-card"><p><strong>Cada item do pedido deve ter de 1 a 10 unidades, inclusive.</strong></p></div>
+        <p>Agora conseguimos comparar situações concretas:</p>
+        <div class="table-wrap"><table><thead><tr><th>Quantidade</th><th>Comportamento esperado</th></tr></thead><tbody>
+          <tr><td>0</td><td>Rejeitar</td></tr><tr><td>1</td><td>Aceitar</td></tr><tr><td>5</td><td>Aceitar</td></tr><tr><td>10</td><td>Aceitar</td></tr><tr><td>11</td><td>Rejeitar</td></tr>
+        </tbody></table></div>
+        <p>Uma frase mais precisa tornou o comportamento <strong>verificável</strong>.</p>
+
+        <h2>Requisito: uma referência para construir e testar</h2>
+        <p>Um <strong>requisito</strong> descreve uma necessidade, uma condição, uma capacidade ou um comportamento esperado do sistema.</p>
+        <p>Na Cantina Horizonte, podemos registrar:</p>
+        <div class="card tool-card"><h3>RF-03 · Quantidade</h3><p>O prefixo <strong>RF</strong> significa <strong>Requisito Funcional</strong>. O número 03 serve apenas para identificar o requisito.</p><p><strong>Cada item deve ter quantidade inteira entre 1 e 10 unidades, inclusive.</strong></p></div>
+        <p>Agora o testador, o desenvolvedor e quem pediu o sistema têm uma mesma referência para conversar.</p>
+
+        <h2>E o que é uma regra de negócio?</h2>
+        <p>Nem toda regra nasce da tecnologia.</p>
+        <p>O Python não decidiu que o máximo deveria ser 10. O banco de dados também não. Essa é uma decisão da própria cantina.</p>
+        <div class="card tool-card"><h3>Regra de negócio</h3><p>É uma regra que vem do funcionamento da organização, do serviço ou da atividade que o sistema precisa apoiar.</p></div>
+        <p>Exemplos:</p>
+        <ul><li>não vender mais unidades do que existem em estoque;</li><li>permitir no máximo 10 unidades do mesmo produto por item;</li><li>aceitar um cupom somente dentro das condições definidas pela cantina;</li><li>não permitir que um pedido entregue volte para “Em preparação”.</li></ul>
+        <p>O software transforma essas regras em comportamento.</p>
+
+        <h2>Necessidade, regra e requisito não são a mesma coisa</h2>
+        <p>Veja como uma ideia pode ganhar precisão aos poucos:</p>
+        <div class="path" aria-label="Da necessidade ao teste"><span>Necessidade</span><b>→</b><span>Regra de negócio</span><b>→</b><span>Requisito</span><b>→</b><span>Critério de aceitação</span><b>→</b><span>Teste</span></div>
+        <div class="card context-card"><p><strong>Necessidade:</strong> evitar vendas impossíveis.</p><p><strong>Regra de negócio:</strong> não vender mais do que existe em estoque.</p><p><strong>Requisito:</strong> o sistema deve rejeitar quantidade superior ao estoque disponível.</p><p><strong>Critério de aceitação:</strong> com estoque 8, uma tentativa de pedir 9 deve ser rejeitada.</p><p><strong>Teste:</strong> preparar estoque 8, solicitar 9 e observar o resultado.</p></div>
+
+        <h2>Critério de aceitação: como reconhecer que ficou certo?</h2>
+        <p>Um requisito pode estar claro e ainda precisar de exemplos objetivos para orientar a aceitação.</p>
+        <div class="card tool-card"><h3>Critério de aceitação</h3><p>É uma condição observável que ajuda a decidir se determinado comportamento atende ao que foi combinado.</p></div>
+        <p>Para o requisito de quantidade, podemos ter:</p>
+        <ul><li>quantidade menor que 1 deve ser rejeitada;</li><li>quantidade entre 1 e 10 deve ser aceita, desde que haja estoque;</li><li>quantidade maior que 10 deve ser rejeitada;</li><li>quantidade superior ao estoque deve ser rejeitada.</li></ul>
+        <p>Perceba que já estamos quase escrevendo testes — mas ainda estamos esclarecendo o comportamento esperado.</p>
+
+        <h2>Requisito funcional</h2>
+        <p>Um <strong>requisito funcional</strong> descreve algo que o sistema deve fazer ou uma regra de comportamento que ele precisa executar.</p>
+        <p>Exemplos da Cantina Horizonte:</p>
+        <div class="grid2"><div class="card evidence-card"><h3>Calcular</h3><p>O sistema deve calcular o total do pedido.</p></div><div class="card evidence-card"><h3>Validar</h3><p>O sistema deve rejeitar quantidade acima do estoque.</p></div><div class="card evidence-card"><h3>Registrar</h3><p>Ao finalizar, o pedido deve ser gravado.</p></div><div class="card evidence-card"><h3>Atualizar</h3><p>O estoque deve diminuir pela quantidade vendida.</p></div></div>
+
+        <h2>E quando a preocupação é a qualidade do comportamento?</h2>
+        <p>Algumas exigências não descrevem uma nova função, mas uma característica que o sistema precisa apresentar.</p>
+        <p>Você pode encontrar a expressão <strong>requisito não funcional</strong>. Neste módulo, também vamos chamá-lo de <strong>requisito relacionado à qualidade</strong> quando isso deixar a ideia mais clara.</p>
+        <p>Nos documentos da Cantina Horizonte, esse tipo de requisito recebe o prefixo <strong>RQ</strong>, que significa <strong>Requisito de Qualidade</strong>.</p>
+        <div class="grid2"><div class="card evidence-card"><h3>Mensagem compreensível</h3><p>Quando uma operação for rejeitada, a mensagem deve explicar o motivo para o usuário.</p></div><div class="card evidence-card"><h3>Uso em tela pequena</h3><p>As funções principais devem continuar utilizáveis em uma tela estreita, sem exigir rolagem horizontal da página.</p></div></div>
+        <p>Mais adiante vamos separar também <strong>testes funcionais</strong> e <strong>testes não funcionais</strong>. Por enquanto, basta perceber que requisitos podem tratar tanto do que o sistema faz quanto de características de qualidade.</p>
+
+        <h2>Uma frase bonita pode ser um requisito ruim</h2>
+        <p>Compare:</p>
+        <div class="grid2"><div class="card practice-card"><h3>“O sistema deve ser rápido.”</h3><p>Quanto é rápido? Em qual operação? Em que condição?</p></div><div class="card practice-card"><h3>“O sistema deve ser intuitivo.”</h3><p>Como vamos observar isso? Para qual pessoa? Em qual tarefa?</p></div></div>
+        <p>O problema não é a intenção. O problema é tentar testar uma frase que ainda não diz claramente o que observar.</p>
+        <div class="card evidence-card"><p><strong>Um bom requisito reduz ambiguidades e fornece informação suficiente para que seu atendimento possa ser verificado.</strong></p></div>
+
+        <h2>O cupom mostra como lacunas aparecem</h2>
+        <p>Imagine receber apenas esta frase:</p>
+        <div class="card quote-card"><p><strong>“O cupom MBB10 dá 10% de desconto em compras de R$ 30.”</strong></p></div>
+        <p>Parece claro até começarmos a perguntar:</p>
+        <ul><li>R$ 30,00 exatamente recebe desconto?</li><li>é R$ 30,00 antes ou depois de outro desconto?</li><li>o cupom pode estar vencido?</li><li>pode ser usado mais de uma vez?</li></ul>
+        <p>Tentar imaginar os testes nos ajuda a perceber o que ainda falta esclarecer.</p>
+
+        <h2>Uma versão melhor da regra</h2>
+        <div class="card evidence-card"><p><strong>O cupom MBB10 concede 10% de desconto quando o subtotal for maior ou igual a R$ 30,00, o cupom estiver dentro da validade e ainda não tiver sido utilizado.</strong></p></div>
+        <p>Agora temos três condições explícitas. Mais adiante, quando essas combinações começarem a ficar difíceis de organizar, surgirá uma técnica própria para isso.</p>
+
+        <h2>Abra a especificação-base do projeto</h2>
+        <p>A partir de agora, a Cantina Horizonte passa a ter uma pequena referência escrita. Ela não é um documento gigante: contém somente as regras necessárias para sabermos o que estamos avaliando.</p>
+        <p>O arquivo termina em <code>.md</code>. Essa extensão indica um arquivo <strong>Markdown</strong>, um formato de texto simples muito usado em documentação de projetos. Não é necessário aprender a sintaxe do Markdown agora; nesta etapa, vamos apenas ler o conteúdo.</p>
+        <div class="card tool-card"><h3>Documento de referência</h3><p><a class="action" href="../../qts/cantina-horizonte-v1/docs/requisitos-base.md" target="_blank" rel="noopener">Abrir requisitos-base da Cantina Horizonte →</a></p><p class="small">Leia principalmente RF-03, RF-04 e RF-05. RF significa Requisito Funcional; RQ significa Requisito de Qualidade.</p></div>
+
+        <h2>Prática · torne a frase testável</h2>
+        <p>Reescreva estas frases de modo que outra pessoa tenha uma referência melhor para testar:</p>
+        <div class="card practice-card"><ol><li>“A quantidade deve ser normal.”</li><li>“O sistema deve responder rápido.”</li><li>“Pedidos grandes recebem desconto.”</li><li>“A mensagem de erro deve ser boa.”</li></ol></div>
+        <p>Não existe uma única redação perfeita. O importante é perguntar: <strong>outra pessoa consegue observar objetivamente se isso foi atendido?</strong></p>
+
+        <h2>Mas existe uma surpresa</h2>
+        <p>Agora que temos documentos, podemos compará-los.</p>
+        <p>Imagine encontrar estas duas frases em lugares diferentes:</p>
+        <div class="grid2"><div class="card quote-card"><h3>Documento A</h3><p>Cupom MBB10 a partir de <strong>R$ 30,00</strong>.</p></div><div class="card quote-card"><h3>Documento B</h3><p>Cupom MBB10 a partir de <strong>R$ 40,00</strong>.</p></div></div>
+        <p>Nem sequer executamos o programa e já existe um problema que precisa ser resolvido.</p>
+        <div class="card question-card"><p><strong>Será que também podemos encontrar defeitos antes de executar o software?</strong></p></div>
+
+        <div class="card next-card"><h3>A seguir: encontrar problemas antes de executar</h3><p>Vamos revisar requisitos e código sem executar a Cantina Horizonte e descobrir a diferença entre <strong>teste estático</strong> e <strong>teste dinâmico</strong>.</p></div>
+        <div class="checkpoint"><h3>Antes de seguir</h3><p>Você deve conseguir explicar:</p><ul><li>por que precisamos de uma referência para definir o resultado esperado;</li><li>a diferença básica entre necessidade, regra de negócio, requisito e critério de aceitação;</li><li>o que significam RF e RQ nos documentos da Cantina Horizonte;</li><li>por que uma frase vaga pode dificultar tanto o desenvolvimento quanto os testes.</li></ul></div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas"><a href="02-erro-defeito-falha-teste.html">← Etapa 2</a><a class="all" href="index.html">Todas as etapas</a><span class="disabled">Próxima etapa</span></nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

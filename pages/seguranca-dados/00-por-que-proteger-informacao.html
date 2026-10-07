@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Etapa 0 de Segurança de Dados e Informação: por que precisamos proteger a informação?"><title>0 — Por que precisamos proteger a informação? | Segurança de Dados e Informação</title><link rel="stylesheet" href="../../css/seguranca-dados.css"></head>
+<body data-stage="0">
+<header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Segurança de Dados e Informação</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Valor da informação</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 0</span><h1>Por que precisamos proteger a informação?</h1><p>Segurança começa antes da ferramenta. Primeiro precisamos entender <strong>o que perderíamos</strong> se uma informação fosse exposta, alterada ou ficasse indisponível.</p></section>
+<article class="chapter">
+<h2>O computador custa dinheiro. A informação pode custar muito mais.</h2>
+<p>A Conecta Serviços possui oito funcionários, seis computadores, um notebook, servidor MySQL, rede Wi-Fi, e-mail, documentos e backups. Se um teclado quebrar, compramos outro. Se um computador parar, podemos substituir a máquina.</p>
+<p>Agora pense em uma planilha com salários, no cadastro de clientes ou no histórico de pedidos. Se esses dados forem divulgados para quem não deveria, alterados sem autorização ou simplesmente desaparecerem no momento em que a empresa precisa deles, trocar o computador não resolve o problema.</p>
+<div class="card question-card"><h3>Primeira mudança de olhar</h3><p>Em segurança, o equipamento é importante. Mas muitas vezes o valor que estamos tentando preservar está <strong>na informação que passa por ele</strong>.</p></div>
+<h2>Dados ainda não contam a história inteira</h2>
+<p>Veja quatro registros soltos: <code>Cliente Alfa</code>, <code>30/09/2026</code>, <code>R$ 18.450,00</code> e <code>Produto X</code>. Cada um é um dado. Sozinhos, dizem pouco.</p>
+<p>Quando organizamos esses registros e entendemos que “o Cliente Alfa comprou R$ 18.450,00 do Produto X em setembro”, os dados passam a comunicar algo útil. É isso que chamamos, de forma didática, de <strong>informação</strong>. Quando alguém interpreta essa informação, relaciona com experiência e usa para decidir, chegamos ao <strong>conhecimento</strong>.</p>
+<div class="path"><span>dados</span><b>→</b><span>contexto</span><b>→</b><span>informação</span><b>→</b><span>interpretação</span><b>→</b><span>conhecimento</span><b>→</b><span>decisão</span></div>
+<p>Essa sequência não é uma fórmula rígida. Na vida real, voltamos aos dados, corrigimos interpretações e mudamos decisões. O ponto importante é perceber que registros ganham valor quando passam a orientar ações.</p>
+<h2>Então o que significa “proteger”?</h2>
+<p>Imagine três situações na Conecta Serviços.</p>
+<div class="grid2">
+<div class="card question-card"><h3>1. Alguém leu o que não deveria</h3><p>Uma pessoa sem autorização acessou a planilha de salários. Aqui o problema principal é de <strong>confidencialidade</strong>: a informação deveria ser conhecida apenas por quem possui autorização.</p></div>
+<div class="card question-card"><h3>2. Alguém mudou o que não deveria</h3><p>O valor de uma transferência foi alterado sem autorização. Aqui o problema principal é de <strong>integridade</strong>: precisamos confiar que a informação continua correta e não sofreu alteração indevida.</p></div>
+<div class="card question-card"><h3>3. Ninguém consegue usar quando precisa</h3><p>O servidor parou em pleno expediente. Aqui o problema principal é de <strong>disponibilidade</strong>: pessoas autorizadas precisam acessar a informação e o serviço no momento necessário.</p></div>
+</div>
+<p>As três ideias formam a conhecida <strong>tríade CID — Confidencialidade, Integridade e Disponibilidade</strong>. Ela não apareceu para decorar três palavras; apareceu porque esses três tipos de problema surgem o tempo todo quando uma organização depende de informação.</p>
+<div class="card evidence-card"><h3>Repare em uma diferença importante</h3><p>Uma informação apagada pode, às vezes, ser recuperada de uma cópia. Uma informação confidencial já revelada para a pessoa errada não pode ser “desrevelada”. Por isso, tipos diferentes de problema exigem controles diferentes.</p></div>
+<h2>Por onde a segurança acontece?</h2>
+<p>Para organizar o raciocínio, neste módulo vamos observar a proteção por três frentes que se complementam. Elas não competem entre si: um mesmo risco pode exigir as três.</p>
+<div class="grid2">
+<div class="card"><h3>Segurança Humana</h3><p>Prepara as pessoas para agir com segurança: conscientização, treinamento, cuidado com informações, confirmação de pedidos e prevenção contra engenharia social.</p></div>
+<div class="card"><h3>Segurança Física</h3><p>Protege ambientes, equipamentos e suportes: salas, portas, armários, controle de entrada e saída, visitantes, energia, documentos e mídias.</p></div>
+<div class="card"><h3>Segurança Tecnológica</h3><p>Protege sistemas e comunicações com controles como atualização, autenticação, permissões, criptografia, firewall, backup, monitoramento e configuração segura.</p></div>
+</div>
+<div class="card evidence-card"><h3>A CID atravessa as três frentes</h3><p>Segurança Humana, Segurança Física e Segurança Tecnológica são um mapa didático para enxergar <strong>onde agir</strong>. A CID ajuda a explicar <strong>o que queremos preservar</strong>. Mais adiante veremos também os controles organizacionais, que transformam essas decisões em políticas, responsabilidades e processos.</p></div>
+<div class="card question-card"><h3>Uma metáfora: a galinha dos ovos de ouro</h3><p>Na conhecida fábula, o maior valor não estava apenas no ovo de ouro, mas na galinha capaz de continuar produzindo novos ovos. Em uma organização acontece algo parecido: informações, sistemas, pessoas e processos ajudam a gerar valor continuamente. Proteger esses ativos é proteger a capacidade da organização de continuar funcionando e produzindo resultados.</p><p><small>Metáfora inspirada na fábula tradicional <em>A galinha dos ovos de ouro</em>.</small></p></div>
+<h2>Por que chamamos informação de ativo?</h2>
+<p>Um <strong>ativo</strong> é algo que possui valor para uma pessoa ou organização e que, por isso, merece cuidado. Prédios, veículos, equipamentos, sistemas, marcas e informações podem ser ativos.</p>
+<p>Essa ideia será importante na próxima etapa. Agora que sabemos <strong>por que</strong> proteger, ainda falta uma pergunta prática: <strong>onde exatamente está aquilo que tem valor?</strong></p>
+<h2>Faça agora — identifique o problema principal</h2>
+<div class="card practice-card"><p>Use CID como ferramenta de raciocínio. Classifique o problema principal em cada situação:</p><ol><li>o endereço de entrega de um cliente foi alterado sem autorização;</li><li>o servidor ficou desligado durante o expediente;</li><li>um funcionário consultou informações que não deveria acessar;</li><li>um contrato foi modificado sem que ninguém percebesse;</li><li>um ataque tornou os documentos inacessíveis.</li></ol><p>Depois escolha uma das situações, explique por que ela poderia afetar <strong>mais de uma</strong> propriedade da CID e indique se a primeira resposta exigiria Segurança Humana, Física, Tecnológica ou uma combinação delas.</p></div>
+<div class="card next-card"><h3>A próxima pergunta nasce daqui</h3><p>Sabemos que a informação tem valor. Agora precisamos encontrá-la no ambiente real: em quais equipamentos, sistemas, contas, documentos e pessoas ela está — e de que depende para continuar protegida?</p></div>
+<div class="checkpoint"><h3>Saia desta etapa sabendo</h3><p>Diferenciar dado, informação e conhecimento; explicar por que informação pode ser um ativo; usar a CID para descrever problemas reais; e reconhecer Segurança Humana, Segurança Física e Segurança Tecnológica como frentes complementares de proteção.</p></div>
+</article>
+<nav class="stage-footer"><a href="index.html">← Visão geral</a><a class="all" href="index.html">Todas as etapas</a><a class="next" href="01-o-que-proteger.html">Etapa 1 →</a></nav></div></main></div>
+<script src="../../js/seguranca-dados.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-3"></script></body></html>

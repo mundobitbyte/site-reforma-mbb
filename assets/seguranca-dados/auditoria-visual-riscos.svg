@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Escritório da Conecta Serviços com riscos de segurança</title>
+  <desc id="descricao">Cena didática de escritório com senha colada no monitor, visitante com crachá virado, pessoa observando pela janela, pendrive desconhecido, documento confidencial no lixo, notebook desacompanhado, senha de Wi-Fi exposta e tela desbloqueada.</desc>
+  <defs>
+    <linearGradient id="parede" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#e9f1fb"/></linearGradient>
+    <linearGradient id="chao" x1="0" x2="1"><stop stop-color="#d7e5f3"/><stop offset="1" stop-color="#c8d9eb"/></linearGradient>
+    <filter id="sombra" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-opacity=".16"/></filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="#eef5fb"/>
+  <rect x="30" y="30" width="1140" height="620" rx="28" fill="url(#parede)" stroke="#b9cde2" stroke-width="3" filter="url(#sombra)"/>
+  <rect x="30" y="470" width="1140" height="180" fill="url(#chao)"/>
+
+  <!-- janela -->
+  <rect x="770" y="70" width="340" height="210" rx="16" fill="#bfe0f5" stroke="#568ab2" stroke-width="5"/>
+  <line x1="940" y1="70" x2="940" y2="280" stroke="#568ab2" stroke-width="5"/>
+  <line x1="770" y1="175" x2="1110" y2="175" stroke="#568ab2" stroke-width="5"/>
+  <circle cx="1035" cy="123" r="36" fill="#34495e"/>
+  <path d="M986 198 Q1035 156 1084 198 L1100 255 L970 255 Z" fill="#34495e"/>
+  <circle cx="1021" cy="116" r="5" fill="#fff"/><circle cx="1049" cy="116" r="5" fill="#fff"/>
+  <path d="M1018 145 Q1035 156 1052 145" fill="none" stroke="#1f2937" stroke-width="4"/>
+  <text x="949" y="302" font-family="Segoe UI,Arial" font-size="22" font-weight="700" fill="#374151">alguém observando de fora</text>
+
+  <!-- mesa principal -->
+  <rect x="90" y="330" width="550" height="36" rx="12" fill="#a96f3c"/>
+  <rect x="125" y="365" width="24" height="180" fill="#7f5634"/>
+  <rect x="580" y="365" width="24" height="180" fill="#7f5634"/>
+
+  <!-- monitor desbloqueado -->
+  <rect x="210" y="160" width="260" height="160" rx="12" fill="#1f2937"/>
+  <rect x="225" y="175" width="230" height="125" rx="6" fill="#dff3ff"/>
+  <rect x="246" y="194" width="122" height="16" rx="5" fill="#2b6cb0"/>
+  <rect x="246" y="224" width="170" height="10" rx="4" fill="#8fb9d8"/>
+  <rect x="246" y="246" width="150" height="10" rx="4" fill="#8fb9d8"/>
+  <rect x="246" y="268" width="185" height="10" rx="4" fill="#8fb9d8"/>
+  <text x="245" y="188" font-family="Segoe UI,Arial" font-size="16" font-weight="800" fill="#16458f">CLIENTES</text>
+  <rect x="325" y="320" width="30" height="28" fill="#374151"/><rect x="280" y="346" width="120" height="12" rx="6" fill="#374151"/>
+
+  <!-- post-it senha -->
+  <rect x="407" y="205" width="92" height="68" rx="5" fill="#ffe46b" stroke="#c9a400" stroke-width="2" transform="rotate(4 453 239)"/>
+  <text x="420" y="227" font-family="Segoe UI,Arial" font-size="14" font-weight="800" fill="#5b4a00" transform="rotate(4 453 239)">SENHA</text>
+  <text x="418" y="250" font-family="Segoe UI,Arial" font-size="15" font-weight="800" fill="#5b4a00" transform="rotate(4 453 239)">123456</text>
+
+  <!-- funcionária digitando -->
+  <circle cx="525" cy="240" r="42" fill="#efb38d"/>
+  <path d="M487 237 Q490 180 529 187 Q565 190 565 240 Q548 214 514 213 Q497 217 487 237" fill="#4b2e24"/>
+  <rect x="483" y="280" width="92" height="105" rx="28" fill="#2b6cb0"/>
+  <path d="M498 328 L438 350" stroke="#efb38d" stroke-width="18" stroke-linecap="round"/>
+  <path d="M557 328 L614 346" stroke="#efb38d" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="437" cy="351" r="12" fill="#efb38d"/><circle cx="615" cy="347" r="12" fill="#efb38d"/>
+
+  <!-- teclado -->
+  <rect x="385" y="334" width="145" height="24" rx="7" fill="#d5dce6" stroke="#7b8794"/>
+
+  <!-- pendrive desconhecido -->
+  <rect x="110" y="295" width="70" height="28" rx="7" fill="#e11d48"/>
+  <rect x="176" y="301" width="24" height="16" fill="#c8cdd3"/>
+  <text x="118" y="314" font-family="Segoe UI,Arial" font-size="13" font-weight="800" fill="#fff">USB ?</text>
+
+  <!-- roteador + senha wifi -->
+  <rect x="650" y="302" width="125" height="62" rx="14" fill="#f7fafc" stroke="#6b7e95" stroke-width="3"/>
+  <line x1="674" y1="302" x2="664" y2="260" stroke="#6b7e95" stroke-width="5"/><line x1="748" y1="302" x2="758" y2="260" stroke="#6b7e95" stroke-width="5"/>
+  <circle cx="685" cy="337" r="5" fill="#16a34a"/><circle cx="704" cy="337" r="5" fill="#16a34a"/><circle cx="723" cy="337" r="5" fill="#f59e0b"/>
+  <rect x="650" y="372" width="155" height="64" rx="7" fill="#fff2a8" stroke="#c9a400" stroke-width="2"/>
+  <text x="665" y="396" font-family="Segoe UI,Arial" font-size="15" font-weight="800" fill="#5b4a00">Wi-Fi:</text>
+  <text x="665" y="418" font-family="Segoe UI,Arial" font-size="16" font-weight="800" fill="#5b4a00">Conecta123</text>
+
+  <!-- lixeira documento confidencial -->
+  <path d="M705 500 L770 500 L760 595 Q738 612 715 595 Z" fill="#6b7280"/>
+  <rect x="716" y="464" width="73" height="72" rx="5" fill="#fff" stroke="#aab3bd" transform="rotate(9 752 500)"/>
+  <text x="727" y="486" font-family="Segoe UI,Arial" font-size="12" font-weight="800" fill="#b91c1c" transform="rotate(9 752 500)">CONFIDENCIAL</text>
+  <line x1="725" y1="500" x2="775" y2="508" stroke="#64748b" stroke-width="3" transform="rotate(9 752 500)"/>
+
+  <!-- notebook desacompanhado -->
+  <rect x="820" y="360" width="245" height="140" rx="12" fill="#253547"/>
+  <rect x="838" y="378" width="210" height="100" rx="6" fill="#dff3ff"/>
+  <rect x="872" y="398" width="130" height="14" rx="4" fill="#2b6cb0"/>
+  <rect x="868" y="430" width="145" height="9" rx="4" fill="#8fb9d8"/>
+  <rect x="868" y="450" width="110" height="9" rx="4" fill="#8fb9d8"/>
+  <path d="M800 500 L1085 500 L1045 530 L838 530 Z" fill="#394b5f"/>
+  <rect x="806" y="342" width="140" height="34" rx="17" fill="#fff" stroke="#64748b"/>
+  <text x="825" y="364" font-family="Segoe UI,Arial" font-size="16" font-weight="700" fill="#374151">ninguém por perto</text>
+
+  <!-- visitante -->
+  <circle cx="135" cy="475" r="38" fill="#d79b74"/>
+  <path d="M102 469 Q104 424 138 426 Q170 429 170 473 Q150 449 122 449 Q110 454 102 469" fill="#2f3542"/>
+  <rect x="98" y="512" width="82" height="112" rx="28" fill="#6d28d9"/>
+  <path d="M138 512 L138 550" stroke="#111827" stroke-width="4"/>
+  <rect x="119" y="546" width="39" height="48" rx="5" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+  <rect x="126" y="553" width="25" height="34" rx="3" fill="#4b5563"/>
+  <text x="80" y="640" font-family="Segoe UI,Arial" font-size="18" font-weight="800" fill="#4c1d95">visitante — crachá virado</text>
+
+  <!-- porta sala servidor aberta -->
+  <rect x="500" y="470" width="140" height="170" rx="6" fill="#91a4b7" stroke="#53657a" stroke-width="4"/>
+  <rect x="518" y="492" width="90" height="126" fill="#223044"/>
+  <circle cx="614" cy="555" r="7" fill="#f1c40f"/>
+  <text x="520" y="520" font-family="Segoe UI,Arial" font-size="18" font-weight="800" fill="#eaf2ff">SERVIDOR</text>
+  <path d="M493 470 L435 505 L435 638 L493 640 Z" fill="#d8e0e9" stroke="#53657a" stroke-width="4"/>
+  <circle cx="450" cy="556" r="6" fill="#53657a"/>
+  <text x="434" y="664" font-family="Segoe UI,Arial" font-size="16" font-weight="800" fill="#374151">porta aberta</text>
+
+  <!-- título -->
+  <rect x="68" y="60" width="635" height="76" rx="18" fill="#173f78"/>
+  <text x="96" y="94" font-family="Segoe UI,Arial" font-size="28" font-weight="900" fill="#fff">AUDITORIA VISUAL — ENCONTRE OS RISCOS</text>
+  <text x="96" y="121" font-family="Segoe UI,Arial" font-size="17" font-weight="600" fill="#dbeafe">Observe primeiro. Não procure a resposta antes de formar sua hipótese.</text>
+</svg>

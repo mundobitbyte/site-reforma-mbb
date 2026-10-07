@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>0 — Antes do sistema | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="0"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Descobrir</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Capítulo 0 · Etapa 0</span><h1>Antes do sistema: afinal, o que é Análise de Sistemas?</h1><p>Antes de aparecer requisito, diagrama, protótipo ou qualquer sigla, existe uma pergunta bem mais simples: <strong>o que está acontecendo aqui e o que realmente precisa melhorar?</strong></p></section>
+<article class="chapter">
+
+<div class="card context-card"><h3>Vamos conversar antes de começar</h3><p>Imagine que alguém chega até você e diz: <strong>“Precisamos de um sistema.”</strong></p><p>A primeira vontade pode ser perguntar qual linguagem vamos usar, como será a tela ou onde os dados ficarão guardados.</p><p>Mas e se o problema nem estiver claro ainda?</p></div>
+
+<h2>Então analisar vem antes de programar?</h2>
+<p>Na maior parte das vezes, sim.</p>
+<p><strong>Analisar</strong> é tentar entender uma situação antes de sair construindo uma solução para ela.</p>
+<p>É quase como quando alguém leva um notebook para conserto. Um bom técnico não troca peças aleatoriamente. Primeiro pergunta o que aconteceu, observa os sintomas, testa possibilidades e procura evidências.</p>
+<p>Na Análise de Sistemas fazemos algo parecido, só que olhando para o trabalho de uma empresa, as pessoas, as informações, as regras e os problemas que aparecem no dia a dia.</p>
+<div class="card question-card"><h3>Em uma frase</h3><p><strong>Análise de Sistemas é investigar um problema, entender como o trabalho acontece e organizar o que precisa mudar antes de decidir como construir a solução.</strong></p></div>
+
+<h2>Software também precisa de planejamento</h2>
+<p>Pense em qualquer coisa que precise ser construída com cuidado: uma casa, uma ponte, uma viagem longa, um laboratório.</p>
+<p>Ninguém deveria começar pela última etapa.</p>
+<p>Antes de construir uma casa, alguém precisa entender o terreno, as necessidades de quem vai morar ali, o orçamento, as medidas, as limitações e o que realmente precisa existir.</p>
+<p>Com software não é diferente.</p>
+<p>Antes de programar, precisamos entender <strong>problemas, pessoas, processos, informações, regras, requisitos, riscos e prioridades</strong>. Depois disso fica muito mais seguro decidir o que será construído e como.</p>
+<div class="card evidence-card"><h3>Planejar não é adivinhar o futuro</h3><p>Planejar é tomar decisões melhores com o que sabemos agora — e estar preparado para revisar essas decisões quando surgirem novas evidências.</p></div>
+
+<h2>Mas por que isso virou uma área?</h2>
+<p>Nos primeiros anos da computação comercial, muitos programas cuidavam de tarefas mais isoladas: cálculos, registros, folhas de pagamento, estoques e outros trabalhos bem definidos.</p>
+<p>Com o tempo, os sistemas cresceram, passaram a envolver vários setores e começaram a representar decisões importantes das empresas.</p>
+<p>Aí ficou evidente uma coisa: <strong>programar certo não adiantava se estivéssemos programando a coisa errada.</strong></p>
+<p>Foram surgindo maneiras mais organizadas de estudar processos, dados, regras e necessidades. Vieram técnicas de análise estruturada, diagramas de fluxo de dados, modelagem de processos, linguagens de modelagem como a <strong>UML — Linguagem de Modelagem Unificada</strong>, métodos ágeis e prototipação.</p>
+<p>As ferramentas mudaram bastante. A pergunta principal, nem tanto:</p>
+<div class="card question-card"><h3>O que precisamos entender antes de construir?</h3><p>Essa pergunta vai acompanhar você pelo módulo inteiro.</p></div>
+
+<h2>Isso não vira burocracia?</h2>
+<p>Pode virar, se a equipe produzir documentos e desenhos só porque “o método manda”.</p>
+<p>Mas uma boa análise faz o contrário: ela tenta evitar retrabalho.</p>
+<p>Se uma conversa de dez minutos revela que entendemos errado uma regra, ótimo. É muito mais barato descobrir isso antes de programar dezenas de telas.</p>
+<p>Por isso, neste módulo, uma ferramenta só aparece quando existe uma pergunta que justifique usá-la.</p>
+
+<h2>A história do balanço: todo mundo ouviu, mas cada um entendeu uma coisa</h2>
+<p>Existe uma história clássica usada há muitos anos para explicar problemas de comunicação em projetos. Vamos contá-la do nosso jeito.</p>
+<div class="card context-card"><p>Uma pessoa pede algo simples: <strong>“Quero um balanço para uma criança brincar no quintal.”</strong></p></div>
+<p>Até aqui parece fácil. Mas imagine o que pode acontecer:</p>
+<div class="grid2">
+<div class="card warning-card"><h3>Quem ouviu o pedido</h3><p>Entendeu que seria melhor fazer uma estrutura grande e resistente, “para garantir”.</p></div>
+<div class="card warning-card"><h3>Quem planejou</h3><p>Imaginou várias crianças usando ao mesmo tempo e acrescentou mais coisas.</p></div>
+<div class="card warning-card"><h3>Quem construiu</h3><p>Seguiu o que recebeu, mas interpretou alguns detalhes de outra forma.</p></div>
+<div class="card warning-card"><h3>O resultado</h3><p>Ficou caro, complicado e muito diferente do que a pessoa tinha imaginado.</p></div>
+</div>
+<p>E talvez, no fim, o que a criança realmente quisesse fosse apenas <strong>um pneu preso com segurança por uma corda numa árvore</strong>.</p>
+<p>O problema não foi falta de esforço. Todo mundo trabalhou. O problema foi outro: <strong>ninguém garantiu que todos estavam entendendo a mesma necessidade.</strong></p>
+<div class="card question-card"><h3>É aqui que a análise faz diferença</h3><p>Antes de construir, precisamos descobrir o que a pessoa realmente precisa, confirmar o entendimento e transformar isso em algo claro o suficiente para que a solução entregue continue resolvendo o problema original.</p></div>
+
+<h2>Vamos trazer isso para uma situação real</h2>
+<div class="card context-card"><h3>Segunda-feira, 9h20</h3><p>Um cliente telefona para a Assistência Técnica Conecta e pergunta: <strong>“Meu notebook já ficou pronto?”</strong></p><p>O atendente procura uma ficha de papel, abre mensagens no celular e chama o técnico. Cinco minutos depois, ainda não consegue responder com segurança.</p></div>
+<p>Perceba uma coisa importante: o cliente não pediu um aplicativo. Não falou em banco de dados. Não falou em nuvem.</p>
+<p>Ele só queria saber onde estava o notebook.</p>
+<p>É aí que começa a análise.</p>
+
+<h2>O problema não é automaticamente “falta de sistema”</h2>
+<p>Talvez falte organização. Talvez a informação esteja espalhada. Talvez ninguém saiba quem deve atualizar cada etapa. Talvez existam várias causas ao mesmo tempo.</p>
+<p>Se começarmos fazendo telas agora, podemos apenas transformar um processo confuso em uma <strong>confusão digital mais bonita</strong>.</p>
+<div class="card context-card"><p>O proprietário da Conecta olha para a situação e diz: <strong>“Então precisamos de um sistema.”</strong></p></div>
+<p>Pode ser que sim. Mas essa ainda é uma hipótese de solução. Antes dela vêm as perguntas.</p>
+
+<h2>É por isso que o analista pergunta tanto</h2>
+<p>Não é para complicar. É para evitar adivinhação.</p>
+<p>Se o cliente liga várias vezes, podemos perguntar:</p>
+<div class="card tool-card"><h3>Vamos investigar juntos</h3><ol><li>Por que o cliente liga? Porque não sabe o andamento.</li><li>Por que não sabe? Porque não existe um acompanhamento confiável.</li><li>Por que o atendente demora? Porque procura em papel, mensagens e pessoas.</li><li>Por que a informação está espalhada? Porque cada etapa registra de um jeito.</li><li>Por que isso importa? Porque gera espera, retrabalho e risco de informação errada.</li></ol></div>
+<p>Esse jeito de aprofundar uma pergunta é conhecido como <strong>5 Porquês</strong>. O número cinco não é uma obrigação. A ideia é simples: <strong>não parar no primeiro sintoma</strong>.</p>
+
+<h2>Antes das ferramentas, veja o caminho que vamos percorrer</h2>
+<p>Você não precisa decorar os nomes abaixo. Eles aparecem aqui apenas para você enxergar o mapa da viagem. Mais adiante, cada um voltará quando realmente fizer falta.</p>
+<div class="grid2">
+<div class="card context-card"><h3>1. Entender o cenário</h3><p>Quem participa? Quem conhece o problema? Até onde vai o que estamos estudando?</p><p>Aqui aparecem <strong>stakeholders</strong> — as partes interessadas —, <strong>escopo</strong> e <strong>levantamento</strong>.</p></div>
+<div class="card context-card"><h3>2. Enxergar como o trabalho acontece hoje</h3><p>Onde há espera, decisão, retrabalho ou informação perdida?</p><p>Aparece o <strong>AS-IS</strong>, expressão que significa <strong>“como está”</strong>, além de fluxogramas e formas de acompanhar processos e dados.</p></div>
+<div class="card context-card"><h3>3. Pensar numa forma melhor de trabalhar</h3><p>Quem deveria fazer cada parte? Onde uma decisão precisa ficar registrada?</p><p>Aqui surge o <strong>TO-BE</strong>, <strong>“como será”</strong>, e pode aparecer a <strong>BPMN</strong>, uma notação padronizada para representar processos de negócio.</p></div>
+<div class="card context-card"><h3>4. Dizer claramente o que a solução precisa fazer</h3><p>O sistema deve fazer o quê? Que regra não pode ser quebrada? Como saberemos se funcionou?</p><p>Entram <strong>requisitos</strong>, <strong>regras de negócio</strong> e critérios de aceitação.</p></div>
+<div class="card context-card"><h3>5. Olhar o sistema por outros ângulos</h3><p>Quem usa? Para quê? Como uma ação acontece? Quais conceitos se relacionam?</p><p>É aí que aparecem <strong>Casos de Uso</strong> e diagramas da <strong>UML — Linguagem de Modelagem Unificada</strong> quando realmente ajudarem a responder uma pergunta.</p></div>
+<div class="card context-card"><h3>6. Testar ideias antes de construir tudo</h3><p>O que precisa entrar primeiro? A pessoa consegue usar? Há risco, custo ou integração complicada?</p><p>Entram o <strong>backlog</strong> — a lista organizada do que pode ser feito —, o <strong>MVP — Produto Mínimo Viável</strong>, protótipo, qualidade, viabilidade, riscos e rastreabilidade.</p></div>
+</div>
+<p>Não se preocupe se alguns nomes ainda parecem estranhos. Eles deixarão de parecer quando nascerem de uma situação que você já entendeu.</p>
+
+<h2>Agora sim: acompanhe o notebook desde que ele chega</h2>
+<div class="card context-card"><p>A cliente Ana chega à Conecta, entrega o notebook e conta que ele não liga depois de uma queda de energia. O atendente recebe o equipamento, anota os dados e registra o problema. Depois o notebook segue para diagnóstico, orçamento, possível reparo, teste e devolução.</p></div>
+<p>Repare como fica mais fácil entender quando contamos primeiro o que aconteceu:</p>
+<div class="flow"><span class="node">Cliente entrega o notebook e explica o defeito</span><span class="arrow">→</span><span class="node">Empresa registra, diagnostica e trata o atendimento</span><span class="arrow">→</span><span class="node">Cliente recebe o resultado</span></div>
+
+<h2>Recebimento não é a mesma coisa que entrada de dados</h2>
+<p>Aqui vale uma distinção importante.</p>
+<p>Quando Ana <strong>entrega o notebook</strong>, estamos falando do <strong>recebimento do equipamento</strong>, uma etapa real do atendimento.</p>
+<p>Ao mesmo tempo, quando o atendente registra nome, telefone e descrição do defeito, essas informações passam a ser <strong>dados de entrada</strong> para o registro do atendimento.</p>
+<div class="grid2"><div class="card evidence-card"><h3>Recebimento do equipamento</h3><p>É o acontecimento no processo: o notebook chega à assistência e passa a ficar sob responsabilidade da empresa.</p></div><div class="card tool-card"><h3>Entrada de dados</h3><p>São as informações fornecidas ou registradas para que o sistema consiga trabalhar: nome, telefone, equipamento, defeito relatado etc.</p></div></div>
+<p>Assim evitamos misturar duas ideias diferentes só porque a palavra “entrada” poderia servir para ambas.</p>
+
+<h2>E o que acontece com essas informações?</h2>
+<p>O atendente registra. O técnico diagnostica. A empresa prepara um orçamento. Ana decide se aprova. Se aprovar, o reparo pode continuar. Depois o equipamento é testado e entregue.</p>
+<p>Quando os dados são usados para produzir alguma coisa nova — uma situação da ordem, um diagnóstico, um orçamento ou uma decisão registrada — existe algum tipo de <strong>processamento</strong>.</p>
+<p>E quando o trabalho produz um resultado que pode ser consultado ou entregue, temos uma <strong>saída</strong>. Por exemplo: “orçamento aguardando decisão”, “equipamento pronto para retirada” ou o próprio equipamento devolvido ao cliente.</p>
+<p>Por enquanto basta enxergar a diferença entre <strong>o equipamento chegando</strong>, <strong>as informações entrando</strong>, <strong>o trabalho acontecendo</strong> e <strong>um resultado sendo produzido</strong>.</p>
+
+<h2>E se alguma coisa fizer o caminho voltar?</h2>
+<p>Imagine que o teste final falhou. O notebook não pode simplesmente ser entregue. Ele volta para o reparo.</p>
+<p>Ou Ana recusa o orçamento. Essa decisão muda o caminho da ordem.</p>
+<p>Quando um resultado retorna e influencia o que acontece depois, podemos falar em <strong>feedback</strong>, palavra inglesa que significa <strong>retorno</strong>.</p>
+<p>Perceba como o nome aparece só depois de entendermos a situação.</p>
+
+<h2>Do problema ao software funcionando</h2>
+<p>Se colocarmos a viagem inteira em uma linha, ela se parece mais ou menos com isto:</p>
+<div class="flow"><span class="node">Problema real</span><span class="arrow">→</span><span class="node">Analisar e entender</span><span class="arrow">→</span><span class="node">Planejar e modelar</span><span class="arrow">→</span><span class="node">Definir requisitos</span><span class="arrow">→</span><span class="node">Construir e testar</span><span class="arrow">→</span><span class="node">Usar de verdade</span></div>
+<p>O software funcionando é importante, claro. Mas ele não é o ponto em que paramos de aprender.</p>
+
+<h2>A análise não acaba quando o sistema entra no ar</h2>
+<p>Depois que as pessoas começam a usar o software, aparecem informações que antes simplesmente não existiam.</p>
+<ul><li>um botão pode confundir usuários;</li><li>uma regra da empresa pode mudar;</li><li>um erro pode aparecer só em determinada situação;</li><li>um serviço externo pode mudar;</li><li>o volume de clientes pode crescer;</li><li>uma tecnologia pode ficar obsoleta;</li><li>uma nova necessidade pode surgir.</li></ul>
+<p>Isso significa que um produto pode terminar uma <strong>versão</strong>, uma <strong>entrega</strong> ou uma <strong>fase</strong>, mas a necessidade de analisar continua existindo.</p>
+<div class="flow"><span class="node">Software em uso</span><span class="arrow">→</span><span class="node">Novas evidências</span><span class="arrow">→</span><span class="node">Nova análise</span><span class="arrow">→</span><span class="node">Ajuste ou evolução</span><span class="arrow">↺</span></div>
+<div class="card question-card"><h3>Por isso a análise é um ciclo</h3><p>Entendemos, decidimos, construímos, observamos o resultado e voltamos a analisar quando a realidade muda ou revela algo novo.</p></div>
+
+<h2>É esse o jeito que vamos estudar</h2>
+<div class="card question-card"><h3>Primeiro o problema. Depois o nome.</h3><p>Se aparecer uma sigla, um símbolo ou um diagrama, procure primeiro responder: <strong>que dúvida da Conecta fez isso se tornar necessário?</strong></p></div>
+<p>Você não precisa entrar neste módulo já sabendo Análise de Sistemas. A ideia é justamente construir esse olhar aos poucos.</p>
+
+<h2>Uma pergunta simples sobre viabilidade</h2>
+<p>Antes de investir tempo e dinheiro numa solução, também precisamos perguntar se vale a pena seguir.</p>
+<p><strong>Viabilidade</strong> é isso: verificar se uma ideia pode ser realizada de uma forma que faça sentido.</p>
+<p>Por enquanto, pense apenas:</p>
+<ul><li>esse problema realmente acontece?</li><li>acontece com frequência suficiente para merecer atenção?</li><li>melhorar isso ajudaria clientes e equipe?</li></ul>
+<p>Mais adiante vamos acrescentar custo, prazo, risco e questões técnicas.</p>
+
+<div class="card practice-card"><h3>Antes de seguir, tente contar com suas palavras</h3><ol><li>Por que não começamos simplesmente programando o sistema da Conecta?</li><li>O que a história do balanço ensina sobre entender uma necessidade?</li><li>Qual é a diferença entre o cliente entregar o notebook e fornecer dados para o atendimento?</li><li>O que um analista tenta descobrir antes de escolher uma solução?</li><li>Por que a análise pode continuar mesmo depois de o software estar funcionando?</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 01</div><h3>O que estamos tentando entender?</h3><p>Registre, com suas palavras, por que um software precisa de análise e planejamento antes de ser construído e por que o uso real pode iniciar uma nova rodada de análise.</p></div>
+
+<h2>Agora começa a investigação de verdade</h2>
+<p>Já sabemos por que analisar antes de construir. Mas ainda falta uma pergunta importante: <strong>quem conhece esse problema por dentro?</strong></p>
+<p>Quem recebe o equipamento? Quem diagnostica? Quem toma decisões? Quem será afetado se mudarmos o processo?</p>
+<div class="card next-card"><h3>Próximo passo</h3><p>Vamos descobrir <strong>quem precisa participar da análise</strong> e até onde vai o problema que estamos estudando.</p></div>
+</article><nav class="stage-footer" id="stageFooter" aria-label="Navegação entre etapas"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

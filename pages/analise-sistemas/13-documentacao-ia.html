@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>13 — Documentação viva e IA | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="13"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Validar e consolidar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 13</span><h1>Como evitar que o conhecimento do projeto se perca?</h1><p>Já tomamos muitas decisões. Se elas ficarem apenas em mensagens ou na cabeça das pessoas, daqui a pouco ninguém lembra <strong>por que algo foi feito daquele jeito</strong>.</p></section>
+<article class="chapter">
+<div class="card return-card"><h3>O mesmo problema pode acontecer dentro do projeto</h3><p>A Conecta sofria com informação espalhada. Imagine repetir isso na equipe: requisitos num arquivo, decisões no WhatsApp, regras em outro documento e ninguém sabendo qual versão vale.</p></div>
+
+<h2>Documentar não significa escrever um livro sobre o sistema</h2>
+<p>Também não significa guardar tudo. O objetivo é simples: <strong>preservar o conhecimento que alguém vai precisar para entender, manter ou mudar a solução</strong>.</p>
+<div class="grid2"><div class="card problem-card"><h3>Quase nada registrado</h3><p>Quando uma pessoa sai, parte do conhecimento desaparece junto.</p></div><div class="card problem-card"><h3>Documento demais</h3><p>Centenas de páginas repetidas acabam ficando desatualizadas e ninguém consulta.</p></div></div>
+<p>O melhor caminho fica no meio: documentação útil, localizada e atualizável.</p>
+
+<h2>O que não podemos esquecer?</h2>
+<ul><li>qual problema estamos resolvendo;</li><li>quem usa e quem decide;</li><li>o que está dentro e fora do escopo;</li><li>requisitos e regras importantes;</li><li>o significado dos termos;</li><li>decisões relevantes e seus motivos;</li><li>riscos e integrações;</li><li>ligações entre origem, requisito, interface e teste.</li></ul>
+
+<h2>Se cada pessoa usa uma palavra diferente, nasce outro problema</h2>
+<p>O atendente fala “OS”. O desenvolvedor fala “ticket”. O analista fala “atendimento”. Será que estão falando da mesma coisa?</p>
+<p><strong>OS</strong> é a abreviação de <strong>Ordem de Serviço</strong>. <strong>Ticket</strong> é uma palavra inglesa muito usada para chamado ou registro de atendimento.</p>
+<p>Quando um termo pode gerar confusão, vale registrá-lo num <strong>glossário</strong>: uma lista curta com os significados combinados pela equipe.</p>
+
+<h2>E onde fica a versão principal da informação?</h2>
+<p>Se a mesma regra for copiada para quatro lugares, uma cópia pode mudar e as outras continuar antigas. Por isso precisamos decidir <strong>qual é a fonte principal de cada informação</strong>.</p>
+<p>Os outros documentos podem apontar para essa fonte em vez de criar cópias concorrentes.</p>
+
+<h2>Documentação viva</h2>
+<p>Chamamos de <strong>documentação viva</strong> aquela que acompanha o sistema e continua útil conforme o produto muda.</p>
+<p>Ela pode ser feita em arquivos de texto simples e versionados junto com o projeto.</p>
+<div class="grid"><div class="card"><h3>Markdown</h3><p>Um formato simples de texto para escrever títulos, listas e destaques.</p></div><div class="card"><h3>Git</h3><p>Um sistema de controle de versões que registra a evolução dos arquivos.</p></div><div class="card"><h3>Commit</h3><p>Um registro de mudança no Git, normalmente acompanhado de uma mensagem explicando o que mudou.</p></div></div>
+<p>Esses nomes não são o objetivo da etapa. O importante é poder descobrir <strong>o que mudou, quando e por quê</strong>.</p>
+
+<h2>Imagine esta pergunta daqui a seis meses</h2>
+<div class="card context-card"><p><strong>“Por que decidimos usar um serviço externo de mensagens em vez de construir um?”</strong></p></div>
+<p>Se a resposta ficou apenas numa conversa antiga, perdemos o raciocínio. Para decisões importantes, podemos guardar um pequeno registro chamado <strong>ADR</strong>.</p>
+<p><strong>ADR</strong> vem de <em>Architecture Decision Record</em>, em português <strong>Registro de Decisão de Arquitetura</strong>.</p>
+<div class="card tool-card"><h3>Um ADR bem simples</h3><p><strong>Contexto:</strong> precisamos avisar clientes.</p><p><strong>Alternativas:</strong> construir internamente ou contratar um serviço.</p><p><strong>Decisão:</strong> usar serviço externo.</p><p><strong>Consequência:</strong> implantação mais simples, mas com dependência do fornecedor.</p></div>
+<p>O valor do ADR não está no nome sofisticado. Está em preservar <strong>por que a decisão foi tomada</strong>.</p>
+
+<h2>E a Inteligência Artificial, onde entra?</h2>
+<p><strong>IA</strong> significa <strong>Inteligência Artificial</strong>.</p>
+<p>Depois de muitas entrevistas e documentos, uma IA pode ajudar a organizar anotações, comparar versões, procurar contradições e sugerir perguntas.</p>
+<p>Mas existe uma regra importante: <strong>uma frase bem escrita pela IA não vira verdade só porque parece convincente</strong>.</p>
+
+<h2>Veja um exemplo</h2>
+<div class="card problem-card"><p>A IA escreve: <strong>“Todo orçamento expira em sete dias.”</strong></p></div>
+<p>Onde descobrimos isso? Quem informou? Existe documento?</p>
+<p>Se não existe fonte, a frase deve virar uma pergunta: <strong>“Existe prazo de validade do orçamento?”</strong></p>
+
+<h2>Classifique antes de aceitar</h2>
+<div class="table-wrap"><table><thead><tr><th>O que a IA produziu?</th><th>Como tratar?</th></tr></thead><tbody><tr><td>Algo apoiado numa fonte real</td><td>Evidência — preserve a origem</td></tr><tr><td>Algo possível, mas não confirmado</td><td>Hipótese — investigue</td></tr><tr><td>Uma lacuna percebida</td><td>Pergunta — leve a quem sabe</td></tr><tr><td>Uma ideia de solução</td><td>Sugestão — avalie, não transforme em requisito automaticamente</td></tr></tbody></table></div>
+
+<h2>Antes de enviar dados para uma IA</h2>
+<p>Pergunte: <strong>posso enviar isso?</strong> Há informação pessoal? Há dado confidencial? Posso remover nomes e detalhes que identificam pessoas?</p>
+<p><strong>Anonimizar</strong> significa retirar ou substituir informações que identificam alguém.</p>
+
+<h2>E quando a IA faz parte do próprio sistema?</h2>
+<p>Também começamos pelo problema, não pela moda.</p>
+<div class="grid2"><div class="card"><h3>Regra comum</h3><p>“Valor acima de determinado limite exige gerente.” Isso pode ser resolvido com uma regra clara. Não precisamos de IA.</p></div><div class="card"><h3>Possível uso de IA</h3><p>Sugerir uma categoria de defeito a partir de uma descrição livre pode exigir interpretação de linguagem e produzir apenas uma sugestão.</p></div></div>
+
+<h2>A pessoa continua participando da decisão</h2>
+<p>Quando a IA sugere e uma pessoa confirma, corrige ou rejeita, temos um <strong>humano no circuito</strong>. O termo em inglês é <strong>Human-in-the-loop</strong>.</p>
+<p>E se a IA estiver indisponível? Precisamos de um caminho alternativo. Esse caminho é chamado de <strong>fallback</strong>.</p>
+
+<h2>RAG: só se realmente precisarmos</h2>
+<p><span class="pill pill-deep">Aprofundamento</span> <strong>RAG</strong> vem de <em>Retrieval-Augmented Generation</em>, em português <strong>Geração Aumentada por Recuperação</strong>.</p>
+<p>Em linguagem simples: antes de responder, o sistema procura informações em fontes autorizadas e usa esses trechos como contexto.</p>
+<p>Mesmo assim, precisamos decidir quais fontes são confiáveis e quem pode acessá-las.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Escolha uma decisão importante da Conecta e escreva por que ela foi tomada.</li><li>Crie cinco termos para o glossário.</li><li>Explique Markdown, Git e commit sem usar definição de dicionário.</li><li>Leia uma saída de IA e diga se ela é evidência, hipótese, pergunta ou sugestão.</li><li>Transforme uma afirmação sem fonte em uma pergunta de investigação.</li><li>Escolha um possível uso de IA e diga por que uma regra comum seria ou não suficiente.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 14</div><h3>O que precisa continuar compreensível daqui a meses</h3><p>Organize as decisões, termos e fontes principais do projeto. Evite duplicar a mesma regra em vários lugares.</p></div>
+<div class="checkpoint"><h3>Checkpoint — A equipe consegue entender depois?</h3><p>Se outra pessoa entrar no projeto amanhã, ela consegue descobrir <strong>o que decidimos, por que decidimos e de onde veio a informação</strong>?</p></div>
+
+<div class="card next-card"><h3>Nova necessidade</h3><p>Chegamos ao final com vários artefatos. Agora precisamos olhar o conjunto inteiro e verificar se ele conta uma história coerente, do problema inicial até as decisões finais.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

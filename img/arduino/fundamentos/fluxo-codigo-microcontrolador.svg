@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Do código ao microcontrolador</title>
+  <desc id="desc">Fluxo didático: escrever o sketch, verificar e compilar, selecionar placa e porta, enviar, e executar no microcontrolador.</desc>
+  <rect width="1200" height="500" fill="#f6f8fa"/>
+  <text x="600" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#073f49">Como o código chega à placa física</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#475569">Na Arduino IDE, o texto precisa ser transformado em instruções e enviado ao microcontrolador.</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(45 165)"><rect width="185" height="110" rx="20" fill="#eef9fb" stroke="#8bc9d4" stroke-width="3"/><text x="92" y="42" font-size="20" font-weight="700" fill="#07515f">1. Escrever</text><text x="92" y="72" font-size="15" fill="#334155">sketch .ino</text><text x="92" y="94" font-size="14" fill="#64748b">código-fonte</text></g>
+    <g transform="translate(275 165)"><rect width="185" height="110" rx="20" fill="#eef4ff" stroke="#9fbbe8" stroke-width="3"/><text x="92" y="42" font-size="20" font-weight="700" fill="#173a70">2. Verificar</text><text x="92" y="72" font-size="15" fill="#334155">compilar</text><text x="92" y="94" font-size="14" fill="#64748b">detectar erros</text></g>
+    <g transform="translate(505 165)"><rect width="185" height="110" rx="20" fill="#fff7df" stroke="#e9bd61" stroke-width="3"/><text x="92" y="42" font-size="20" font-weight="700" fill="#92400e">3. Selecionar</text><text x="92" y="72" font-size="15" fill="#334155">placa e porta</text><text x="92" y="94" font-size="14" fill="#64748b">destino correto</text></g>
+    <g transform="translate(735 165)"><rect width="185" height="110" rx="20" fill="#f0fdf4" stroke="#86c99a" stroke-width="3"/><text x="92" y="42" font-size="20" font-weight="700" fill="#166534">4. Enviar</text><text x="92" y="72" font-size="15" fill="#334155">upload / gravação</text><text x="92" y="94" font-size="14" fill="#64748b">via USB</text></g>
+    <g transform="translate(965 165)"><rect width="185" height="110" rx="20" fill="#fdf2f8" stroke="#dea1c1" stroke-width="3"/><text x="92" y="42" font-size="20" font-weight="700" fill="#9d174d">5. Executar</text><text x="92" y="72" font-size="15" fill="#334155">microcontrolador</text><text x="92" y="94" font-size="14" fill="#64748b">controla o hardware</text></g>
+  </g>
+  <g stroke="#64748b" stroke-width="5" fill="none" stroke-linecap="round"><path d="M230 220 H265"/><path d="M460 220 H495"/><path d="M690 220 H725"/><path d="M920 220 H955"/></g>
+  <g fill="#64748b"><path d="M265 220 l-13 -9 v18z"/><path d="M495 220 l-13 -9 v18z"/><path d="M725 220 l-13 -9 v18z"/><path d="M955 220 l-13 -9 v18z"/></g>
+  <rect x="185" y="345" width="830" height="86" rx="18" fill="#fff" stroke="#dbe4e8" stroke-width="2"/>
+  <text x="600" y="377" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#073f49">Compilar não é o mesmo que enviar</text>
+  <text x="600" y="407" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#334155">A compilação transforma e verifica o programa. O upload grava o resultado na memória de programa da placa.</text>
+</svg>

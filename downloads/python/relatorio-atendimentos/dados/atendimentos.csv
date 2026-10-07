@@ -1,0 +1,13 @@
+id,categoria,prioridade,tempo_min,resolvido
+1,Rede,alta,42,sim
+2,Conta,média,18,sim
+3,Equipamento,alta,55,sim
+4,Software,baixa,12,sim
+5,Rede,média,25,sim
+6,Conta,baixa,8,sim
+7,Equipamento,alta,61,não
+8,Software,média,21,sim
+9,Rede,baixa,15,sim
+10,Conta,média,31,não
+11,Equipamento,alta,48,sim
+12,Software,baixa,10,sim

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Panorama transversal da trilha de Inteligência Artificial do Mundo bit Byte, atualizado em 12 de setembro de 2026: IA multimodal, ferramentas, agentes, segurança, proveniência, regulação e uso responsável."/>
+<link rel="canonical" href="https://www.mundobitbyte.com.br/pages/ia/panorama-2026.html"/>
+<title>Mundo bit Byte — Panorama de IA · Setembro de 2026</title>
+<link href="../../css/ia-programacao.css" rel="stylesheet"/>
+<script src="../../js/ia-trilha-modulos.js?v=3" defer></script>
+</head>
+<body>
+<div class="topbar"><div class="header-left"><a class="portal-link" href="index.html">← Voltar IA</a><h1>Panorama de IA · 2026</h1></div><div class="brand">Professor Ronaldo Lavestein</div></div>
+<div class="container">
+<section class="hero">
+<span class="badge">Atualização transversal · 12 de setembro de 2026</span>
+<h1>O que mudou — e o que continua valendo</h1>
+<p>A trilha de IA do Mundo bit Byte continua baseada em uma ideia simples: <strong>entender antes de confiar, usar antes de automatizar e validar antes de agir</strong>. Essa base permanece atual. O que mudou rapidamente foi o tipo de sistema que passou a chegar ao usuário: além de conversar e gerar conteúdo, muitas IAs hoje conseguem trabalhar com imagens, áudio, arquivos, pesquisa, ferramentas conectadas e ações em outros sistemas.</p>
+<p>Por isso, esta página não cria um sétimo módulo. Ela funciona como uma <strong>camada de atualização</strong> que atravessa os seis módulos já existentes e registra o estado dos conceitos em 12 de setembro de 2026.</p>
+<div class="note warn"><h3>Uma regra ficou ainda mais importante</h3><p>Quanto mais uma IA consegue <strong>acessar, decidir ou agir</strong>, mais importantes se tornam fonte, permissão, limite, confirmação e possibilidade de desfazer.</p></div>
+</section>
+
+<section class="card">
+<h2>1. Modelo, sistema e agente não são a mesma coisa</h2>
+<p>Em 2026, falar apenas “a IA respondeu” pode esconder componentes diferentes. Para analisar um resultado, separe três camadas:</p>
+<div class="grid-3">
+<div class="note idea"><h3>Modelo</h3><p>É o componente que reconhece padrões, prevê ou gera saídas a partir do que recebeu e do que aprendeu no treinamento.</p></div>
+<div class="note idea"><h3>Sistema de IA</h3><p>Combina o modelo com interface, instruções, arquivos, pesquisa, bases de dados, memória, regras e outras ferramentas.</p></div>
+<div class="note warn"><h3>Agente</h3><p>É um sistema que pode perseguir um objetivo e executar etapas ou ações usando ferramentas, às vezes com menor intervenção humana entre uma etapa e outra.</p></div>
+</div>
+<p>Essa distinção evita um erro comum: atribuir ao “modelo” informações que vieram de uma busca, de um arquivo conectado ou de uma ferramenta externa. Também ajuda a descobrir onde uma falha realmente ocorreu.</p>
+<figure style="margin:22px 0 4px"><img src="../../img/ia/panorama-modelo-sistema-agente.svg" alt="Diagrama em camadas: modelo dentro de um sistema de IA e sistema dentro de um agente, mostrando aumento de escopo e autonomia." style="display:block;width:100%;height:auto;border:1px solid #c8d8ee;border-radius:16px;background:#fff"/><figcaption style="margin-top:8px;color:#52657b;font-size:.92rem">Mapa visual: o modelo gera saídas; o sistema acrescenta contexto e ferramentas; o agente pode planejar e agir com permissões.</figcaption></figure>
+</section>
+
+<section class="card">
+<h2>2. Multimodal virou parte do uso cotidiano</h2>
+<p>Texto deixou de ser a única entrada importante. Sistemas atuais podem trabalhar, dependendo da ferramenta, com <strong>texto, imagem, áudio, vídeo, tela, documentos e código</strong>. O princípio MbB continua o mesmo: forneça o material real e diga o que precisa ser observado.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Uso fraco</h3><p>Enviar uma foto de uma tela e perguntar apenas “o que está errado?”.</p></div>
+<div class="note good"><h3>Uso orientado</h3><p>Explicar qual programa está aberto, o que deveria acontecer, o que aconteceu e pedir que a IA diferencie o que é visível na imagem do que é apenas hipótese.</p></div>
+</div>
+<p>Uma entrada multimodal pode aumentar o contexto disponível, mas não elimina ambiguidade, imagem incompleta, leitura incorreta ou necessidade de confirmação.</p>
+</section>
+
+<section class="card">
+<h2>3. Uma resposta pode usar treinamento, contexto e fontes externas</h2>
+<p>Modelos generativos não precisam depender apenas do que foi aprendido no treinamento. Um sistema pode pesquisar na web, consultar documentos, buscar dados numa base, chamar uma API ou usar outra ferramenta. Esse processo pode melhorar a resposta, mas cria uma nova pergunta: <strong>de onde veio cada afirmação?</strong></p>
+<div class="flow">
+<div class="step"><strong>Pedido</strong>O que você quer saber ou fazer?</div>
+<div class="step"><strong>Fonte</strong>Treinamento, arquivo, web, banco ou ferramenta?</div>
+<div class="step"><strong>Seleção</strong>Que trecho ou dado entrou no contexto?</div>
+<div class="step"><strong>Resposta</strong>O que o sistema concluiu ou gerou?</div>
+<div class="step"><strong>Conferência</strong>A fonte realmente sustenta a conclusão?</div>
+</div>
+<div class="note good"><h3>O que muda na prática</h3><p>Quando houver fonte recuperável, validar não é perguntar à própria IA se ela está certa. É voltar ao documento, dado, página ou resultado da ferramenta que sustenta a afirmação.</p></div>
+</section>
+
+<section class="card">
+<h2>4. Conteúdo recebido também pode tentar dar instruções à IA</h2>
+<p>Em sistemas que leem páginas, documentos, e-mails, repositórios ou mensagens, existe um risco chamado <strong>prompt injection</strong>: conteúdo não confiável pode conter instruções criadas para desviar o comportamento do sistema. Na edição 2025 atualmente publicada do OWASP Top 10 para LLMs e aplicações de IA generativa, <strong>Prompt Injection é o item LLM01</strong>.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Confusão perigosa</h3><p>Tratar todo texto encontrado num arquivo ou site como se fosse instrução legítima para o sistema.</p></div>
+<div class="note good"><h3>Separação necessária</h3><p>Tratar documentos e páginas como <strong>dados a analisar</strong>, não como autoridade automática para mudar objetivo, revelar informação ou executar ações.</p></div>
+</div>
+<div class="note warn"><h3>Regra prática</h3><p>Quanto maior a capacidade de agir da ferramenta, maior o cuidado com instruções escondidas ou conflitantes vindas de conteúdo externo.</p></div>
+</section>
+
+<section class="card">
+<h2>5. Agentes mudam a pergunta: de “o que respondeu?” para “o que fez?”</h2>
+<p>Um chatbot tradicional pode apenas sugerir uma mensagem. Um agente conectado pode, por exemplo, localizar o contato, criar o rascunho, anexar um arquivo e talvez enviar. A diferença é consequência real.</p>
+<div class="flow">
+<div class="step"><strong>Objetivo</strong>Qual tarefa foi autorizada?</div>
+<div class="step"><strong>Permissão</strong>Quais dados e ferramentas são realmente necessários?</div>
+<div class="step"><strong>Plano</strong>Que ações serão realizadas?</div>
+<div class="step"><strong>Confirmação</strong>Quais ações exigem aprovação humana?</div>
+<div class="step"><strong>Registro</strong>Como saber depois o que foi feito?</div>
+</div>
+<ul class="checklist">
+<li>Use a menor permissão necessária para a tarefa.</li>
+<li>Prefira rascunho antes de envio e simulação antes de ação irreversível.</li>
+<li>Exija confirmação humana para apagar, publicar, comprar, enviar, conceder acesso ou alterar algo importante.</li>
+<li>Confira o resultado real da ação; não confie apenas na mensagem “concluído”.</li>
+<li>Mantenha possibilidade de interromper, corrigir ou desfazer quando isso for viável.</li>
+</ul>
+<div class="note idea"><h3>Referência de 2026</h3><p>O NIST criou em 17 de fevereiro de 2026 a <strong>AI Agent Standards Initiative</strong>, voltada a padrões, interoperabilidade, identidade e segurança de agentes. A página oficial da iniciativa foi atualizada em 14 de agosto de 2026.</p></div>
+</section>
+
+<section class="card">
+<h2>6. Em programação, IA também passou a agir sobre projetos inteiros</h2>
+<p>Assistentes de código podem hoje compreender vários arquivos, editar projetos, executar testes e usar ferramentas do ambiente. Isso aumenta produtividade, mas também aumenta o raio de uma mudança errada.</p>
+<div class="grid-2">
+<div class="note bad"><h3>Terceirizar o projeto</h3><p>Autorizar mudanças amplas e aceitar tudo porque “os testes passaram”.</p></div>
+<div class="note good"><h3>Fluxo verificável</h3><p>Trabalhar em branch, limitar escopo, revisar diff, executar testes relevantes, conferir dependências e validar o comportamento real.</p></div>
+</div>
+<p>O princípio do Módulo 5 fica ainda mais atual: <strong>código gerado ou alterado por IA é uma proposta que precisa ser compreendida, revisada e testada</strong>.</p>
+</section>
+
+<section class="card">
+<h2>7. Proveniência ajuda, mas não é sinônimo de verdade</h2>
+<p>Com imagens, áudio e vídeo sintéticos cada vez mais convincentes, cresceu a importância de informações de proveniência: quem criou ou editou um conteúdo, com qual ferramenta e quais transformações foram registradas. O padrão C2PA/Content Credentials chegou à <strong>especificação 2.4 em abril de 2026</strong>.</p>
+<div class="note idea"><h3>O que uma credencial pode ajudar a responder</h3><p>Ela pode registrar origem e histórico de edição quando esse mecanismo foi usado corretamente.</p></div>
+<div class="note warn"><h3>O que ela não prova sozinha</h3><p>Proveniência não garante que a cena representada seja verdadeira, que o autor esteja correto ou que um conteúdo sem credencial seja falso. Ela é uma evidência a mais, não um detector universal de verdade.</p></div>
+</section>
+
+<section class="card">
+<h2>8. Transparência deixou de ser apenas recomendação em alguns contextos</h2>
+<p>Na União Europeia, as obrigações de transparência do Artigo 50 do AI Act passaram a ser aplicáveis em <strong>2 de agosto de 2026</strong>. Entre os casos previstos estão informar usuários quando interagem com determinados sistemas de IA e regras de identificação para certos conteúdos gerados ou manipulados, incluindo deepfakes.</p>
+<div class="note idea"><h3>Uma exceção datada que merece precisão</h3><p>Existe uma carência limitada para sistemas colocados no mercado antes de 2 de agosto de 2026: quanto à obrigação de marcação e detecção do Artigo 50(2), esses sistemas têm até <strong>2 de dezembro de 2026</strong> para cumprir essa parte específica. Isso não transforma a regra geral de 2 de agosto em “adiada”.</p></div>
+<p>No Brasil, o cenário é diferente. Em 12 de setembro de 2026, o <strong>PL 2338/2023</strong>, aprovado pelo Senado, continua em tramitação na Câmara dos Deputados sob análise de comissão especial e com novas proposições sendo apensadas; portanto, <strong>não é uma lei geral de IA já aprovada e vigente</strong>. A LGPD continua relevante quando há tratamento de dados pessoais.</p>
+<p>A ANPD está executando em 2026 um <strong>projeto-piloto de Sandbox Regulatório em IA e Proteção de Dados</strong>: publicou primeiros resultados em julho e a metodologia de testagem em 19 de agosto de 2026.</p>
+<div class="note warn"><h3>Como lidar com regras que mudam</h3><p>Separe <strong>princípios duráveis</strong> — privacidade, transparência, contestação, responsabilidade — de <strong>situações jurídicas datadas</strong>. Para leis e projetos em tramitação, registre a data da consulta e volte à fonte oficial.</p></div>
+</section>
+
+<section class="card">
+<h2>9. A formação em IA também ficou mais clara</h2>
+<p>O marco de competências em IA para estudantes da UNESCO organiza a formação em quatro dimensões: mentalidade centrada no ser humano, ética da IA, técnicas e aplicações e design de sistemas de IA. A progressão proposta passa por <strong>Compreender → Aplicar → Criar</strong>.</p>
+<p>Na trilha Mundo bit Byte, essa progressão aparece como <strong>Entender → Experimentar → Programar/Produzir → Aplicar</strong>. Em todas as etapas, a validação humana continua necessária para que você use IA como tecnologia a ser compreendida e julgada, não como atalho para obter respostas.</p>
+</section>
+
+<section class="card">
+<h2>10. Como esta atualização atravessa os seis módulos</h2>
+<div class="table-wrap"><table><thead><tr><th>Módulo</th><th>O que permanece</th><th>Camada 2026 a acrescentar ao raciocínio</th></tr></thead><tbody>
+<tr><td>1 · Fundamentos</td><td>Modelos, padrões, contexto, erros e validação.</td><td>Distinguir modelo, sistema e agente; reconhecer multimodalidade e ferramentas externas.</td></tr>
+<tr><td>2 · Vida Real</td><td>Situação real, material original, intenção e validação.</td><td>Perceber quando a IA apenas responde e quando também pode agir em outras ferramentas.</td></tr>
+<tr><td>3 · Comunicação</td><td>Contexto, fontes, refinamento e correção de rumo.</td><td>Separar instruções do usuário de conteúdo externo potencialmente não confiável.</td></tr>
+<tr><td>4 · Produtividade</td><td>Fonte → organização → produção → conferência.</td><td>Adicionar permissões, pontos de aprovação e registro quando o fluxo executar ações.</td></tr>
+<tr><td>5 · Programação</td><td>Entender → planejar → alterar → testar → explicar.</td><td>Revisar diffs, ações de agentes, dependências e mudanças em múltiplos arquivos.</td></tr>
+<tr><td>6 · Ética e Sociedade</td><td>Privacidade, vieses, autoria, desinformação e responsabilidade.</td><td>Incluir proveniência, transparência regulatória de 2026 e responsabilidade sobre sistemas agentivos.</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="card">
+<h2>Checklist MbB para IA em 12 de setembro de 2026</h2>
+<ul class="checklist">
+<li>Eu sei qual problema quero resolver antes de escolher a ferramenta?</li>
+<li>Consigo distinguir o que veio do modelo, da fonte externa e de uma ferramenta conectada?</li>
+<li>Se há arquivo, página ou banco consultado, conferi a fonte original?</li>
+<li>O conteúdo externo pode estar tentando instruir o sistema de forma indevida?</li>
+<li>A IA vai apenas sugerir ou também executar ações?</li>
+<li>As permissões estão limitadas ao necessário?</li>
+<li>Há confirmação humana antes de uma ação importante ou irreversível?</li>
+<li>Consigo explicar o resultado e identificar o que ainda é hipótese?</li>
+<li>Se há conteúdo sintético, existem sinais de proveniência ou rotulagem que posso verificar?</li>
+<li>Quando a questão envolve lei ou política institucional, consultei uma fonte oficial atual e registrei a data?</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Fontes oficiais para conferir e aprofundar</h2>
+<ul>
+<li><a href="https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative" target="_blank" rel="noopener">NIST — AI Agent Standards Initiative</a> (criada em fevereiro e atualizada em agosto de 2026).</li>
+<li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener">NIST — Generative AI Profile do AI Risk Management Framework</a>.</li>
+<li><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP — Top 10 2025 para LLMs e aplicações de IA generativa</a>.</li>
+<li><a href="https://www.unesco.org/pt/articles/marco-referencial-de-competencias-em-ia-para-estudantes" target="_blank" rel="noopener">UNESCO — Marco referencial de competências em IA para estudantes</a>.</li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" target="_blank" rel="noopener">Comissão Europeia — orientações sobre transparência do AI Act</a> (julho de 2026).</li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act" target="_blank" rel="noopener">Comissão Europeia — perguntas e respostas sobre o Artigo 50 e a carência limitada</a>.</li>
+<li><a href="https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html" target="_blank" rel="noopener">C2PA — Content Credentials, especificação 2.4</a> (abril de 2026).</li>
+<li><a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262" target="_blank" rel="noopener">Câmara dos Deputados — tramitação do PL 2338/2023</a>.</li>
+<li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener">Senado Federal — origem e aprovação do PL 2338/2023</a>.</li>
+<li><a href="https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-publica-metodologia-de-testagem-do-sandbox-regulatorio-em-inteligencia-artificial-e-protecao-de-dados" target="_blank" rel="noopener">ANPD — metodologia de testagem do Sandbox Regulatório em IA e Proteção de Dados</a> (19/08/2026).</li>
+<li><a href="https://www.gov.br/anpd/pt-br/assuntos/noticias/publicados-primeiros-resultados-do-sandbox-regulatorio-em-inteligencia-artificial" target="_blank" rel="noopener">ANPD — primeiros resultados do projeto-piloto</a> (02/07/2026; página atualizada em setembro).</li>
+</ul>
+<div class="note idea"><h3>Data de referência</h3><p>Esta fotografia foi conferida em <strong>12 de setembro de 2026</strong>. Produtos, modelos e legislação mudam rapidamente; conceitos e fontes oficiais devem ser revisitados periodicamente.</p></div>
+</section>
+
+<section class="card next">
+<div><strong>Trilha completa:</strong> Fundamentos → Vida Real → Comunicação → Produtividade → Programação → Ética e Sociedade.</div>
+<a href="index.html">Voltar ao painel de IA</a>
+</section>
+<div class="footer">Mundo bit Byte · Inteligência Artificial · Panorama verificado em 12/09/2026</div>
+</div>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

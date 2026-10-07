@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Corredor de datacenter com racks de servidores</title>
+  <desc id="desc">Ilustração didática de um datacenter com fileiras de racks, servidores, cabeamento, piso técnico e iluminação.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9eef3"/>
+      <stop offset="1" stop-color="#cfd8e3"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef2f5"/>
+      <stop offset="1" stop-color="#bcc8d3"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#171c22"/>
+      <stop offset="1" stop-color="#323b45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="640" fill="url(#bg)"/>
+  <rect y="420" width="960" height="220" fill="url(#floor)"/>
+
+  <g stroke="#9aa7b4" stroke-width="2" opacity="0.65">
+    <path d="M0 510H960M0 575H960"/>
+    <path d="M150 420L80 640M310 420L275 640M480 420V640M650 420L685 640M810 420L880 640"/>
+  </g>
+
+  <g fill="#fff" stroke="#c8d0d8" stroke-width="2">
+    <rect x="70" y="34" width="190" height="30" rx="6"/>
+    <rect x="385" y="34" width="190" height="30" rx="6"/>
+    <rect x="700" y="34" width="190" height="30" rx="6"/>
+  </g>
+
+  <g stroke="#596775" stroke-width="7" fill="none">
+    <path d="M105 102H855"/>
+    <path d="M140 102V136M260 102V136M380 102V136M500 102V136M620 102V136M740 102V136M820 102V136"/>
+  </g>
+
+  <g id="rackA" transform="translate(55 128)">
+    <rect width="220" height="330" rx="7" fill="url(#rack)" stroke="#0d1117" stroke-width="5"/>
+    <g fill="#11171d" stroke="#59636d" stroke-width="2">
+      <rect x="18" y="24" width="184" height="42" rx="3"/>
+      <rect x="18" y="76" width="184" height="42" rx="3"/>
+      <rect x="18" y="128" width="184" height="42" rx="3"/>
+      <rect x="18" y="180" width="184" height="42" rx="3"/>
+      <rect x="18" y="232" width="184" height="42" rx="3"/>
+      <rect x="18" y="284" width="184" height="28" rx="3"/>
+    </g>
+    <g fill="#50c878">
+      <circle cx="178" cy="45" r="4"/><circle cx="190" cy="45" r="4"/>
+      <circle cx="178" cy="97" r="4"/><circle cx="190" cy="97" r="4"/>
+      <circle cx="178" cy="149" r="4"/><circle cx="190" cy="149" r="4"/>
+      <circle cx="178" cy="201" r="4"/><circle cx="190" cy="201" r="4"/>
+      <circle cx="178" cy="253" r="4"/><circle cx="190" cy="253" r="4"/>
+    </g>
+    <g fill="#89a4be">
+      <rect x="34" y="39" width="74" height="9" rx="2"/><rect x="34" y="91" width="92" height="9" rx="2"/>
+      <rect x="34" y="143" width="68" height="9" rx="2"/><rect x="34" y="195" width="104" height="9" rx="2"/>
+      <rect x="34" y="247" width="84" height="9" rx="2"/>
+    </g>
+  </g>
+
+  <use href="#rackA" x="255" y="0"/>
+  <use href="#rackA" x="510" y="0"/>
+
+  <g fill="none" stroke-linecap="round" stroke-width="5">
+    <path d="M250 130C315 98 360 155 430 117" stroke="#2f80ed"/>
+    <path d="M490 132C545 92 600 150 680 112" stroke="#f2994a"/>
+    <path d="M725 132C775 100 810 140 875 108" stroke="#27ae60"/>
+  </g>
+
+  <rect x="0" y="0" width="960" height="640" fill="none" stroke="#5f6b76" stroke-width="3"/>
+</svg>

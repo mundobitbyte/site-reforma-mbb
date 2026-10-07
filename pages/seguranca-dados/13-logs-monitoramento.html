@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Etapa 13 de Segurança de Dados e Informação: logs, monitoramento, alertas e evidências."><title>13 — Como descobrir o que aconteceu? | Segurança de Dados e Informação</title><link rel="stylesheet" href="../../css/seguranca-dados.css"></head>
+<body data-stage="13"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Segurança de Dados e Informação</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header><div class="course-shell"><aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Evidências</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 13</span><h1>Como descobrir o que aconteceu?</h1><p>Defesa em profundidade reduz riscos, mas não elimina incidentes. Quando algo estranho acontece, precisamos trocar “acho que foi” por <strong>evidências registradas</strong>.</p></section>
+<article class="chapter">
+<h2>O problema aconteceu de madrugada. Ninguém estava olhando.</h2>
+<p>Às 8h, a equipe percebe que houve acesso incomum durante a noite. Sem registros, sobra especulação: quem entrou? de onde? o que executou? em que horário? quanto tempo permaneceu?</p>
+<p>Sistemas conseguem registrar eventos mesmo quando nenhuma pessoa está acompanhando a tela. Esses registros são os <strong>logs</strong>.</p>
+<h2>Quatro palavras parecidas, quatro funções diferentes</h2>
+<p><strong>Log</strong> é o registro de um evento. <strong>Logging</strong> é o processo de produzir esses registros. <strong>Monitoramento</strong> acompanha o ambiente ao longo do tempo. <strong>Alerta</strong> chama atenção quando uma condição exige análise ou ação.</p>
+<div class="card evidence-card"><h3>Exemplo rápido</h3><p>O sistema registra cinco tentativas de login: isso é log. Uma ferramenta acompanha continuamente essas tentativas: isso é monitoramento. Ao detectar vinte falhas em um minuto e avisar a equipe: isso é alerta.</p></div>
+<h2>Sem horário confiável, eventos não formam uma história</h2>
+<p>Imagine que o firewall registre 02:14 e o servidor registre 02:19 para o mesmo evento porque os relógios estão desalinhados. Reconstruir a sequência fica mais difícil.</p>
+<p>Por isso, <strong>sincronização de tempo</strong> importa. E os próprios logs também precisam de proteção: se o mesmo usuário investigado puder apagar ou alterar facilmente os registros, parte do valor como evidência se perde.</p>
+<h2>Prática orientada — observe consultas no MySQL</h2>
+<div class="card question-card"><h3>Use somente um MySQL de laboratório</h3><p>O <strong>general query log</strong> pode registrar grande volume de informações, incluir conteúdo presente nas consultas e produzir impacto operacional. Não ative esse recurso em produção para esta atividade.</p></div>
+<div class="card tool-card"><h3>Roteiro pronto</h3><p><a class="action" href="../../assets/seguranca-dados/mysql-general-log-lab.sql" download>Baixar mysql-general-log-lab.sql →</a></p><p class="small">A conta usada no laboratório precisa ter permissão para alterar variáveis globais. Se você não tiver esse ambiente, acompanhe o roteiro como demonstração orientada.</p></div>
+<div class="card practice-card"><h3>Observe a relação ação → registro</h3><ol><li>Confira se o <code>general_log</code> está ligado ou desligado.</li><li>Defina temporariamente a saída como tabela para facilitar a observação.</li><li>Ative o <code>general_log</code>.</li><li>Execute duas consultas de teste conhecidas.</li><li>Consulte registros recentes na tabela <code>mysql.general_log</code>.</li><li>Relacione horário, usuário, tipo de comando e consulta registrada.</li><li><strong>Desative o general query log.</strong></li><li>Confirme que ele realmente ficou desligado.</li></ol></div>
+<h2>Os comandos do laboratório</h2>
+<div class="code-block"><pre><code>SHOW VARIABLES LIKE 'general_log';
+SHOW VARIABLES LIKE 'log_output';
+
+SET GLOBAL log_output = 'TABLE';
+SET GLOBAL general_log = 'ON';
+
+SELECT NOW();
+SELECT 'Mundo bit Byte' AS origem;
+
+SELECT event_time, user_host, command_type, argument
+FROM mysql.general_log
+ORDER BY event_time DESC
+LIMIT 20;
+
+SET GLOBAL general_log = 'OFF';
+SHOW VARIABLES LIKE 'general_log';</code></pre></div>
+<p>O objetivo não é decorar esses comandos. É enxergar a relação entre <strong>uma ação executada</strong> e <strong>o registro que permite investigá-la depois</strong>.</p>
+<div class="card question-card"><h3>Registrar tudo também pode ser um problema</h3><p>Mais log não significa automaticamente mais segurança. Volume excessivo, dados sensíveis nos registros e falta de revisão podem transformar logging em custo sem benefício. Registramos o que ajuda a operar, detectar e investigar.</p></div>
+<h2>Quando a evidência aponta um incidente, observar não basta</h2>
+<p>Logs podem mostrar que algo aconteceu. A equipe então precisa decidir como conter o problema sem destruir justamente os registros necessários para entendê-lo.</p>
+<div class="card next-card"><h3>Próxima necessidade: responder com método</h3><p>O que fazemos primeiro quando encontramos um incidente — bloquear tudo imediatamente ou preservar evidências? A resposta exige equilíbrio.</p></div>
+<div class="checkpoint"><h3>Saia desta etapa sabendo</h3><p>Distinguir log, logging, monitoramento e alerta; explicar por que tempo e proteção dos logs importam; e relacionar uma ação de laboratório ao registro produzido.</p></div>
+</article><nav class="stage-footer"><a href="12-computador-rede-ambiente.html">← Etapa 12</a><a class="all" href="index.html">Todas as etapas</a><a class="next" href="14-resposta-incidente.html">Etapa 14 →</a></nav></div></main></div><script src="../../js/seguranca-dados.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-3"></script></body></html>

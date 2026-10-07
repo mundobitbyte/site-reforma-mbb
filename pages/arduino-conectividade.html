@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Conectividade em sistemas embarcados com ESP32: Bluetooth, Wi-Fi, cliente e servidor HTTP, mDNS e tunelamento."/>
+<title>6 — Conectividade | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+#arduinoModuleMenu a.module-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit!important}
+.mbb6-intro{margin-bottom:16px}
+.mbb6-intro .hero-flow{margin-top:16px}
+.mbb6-panel{display:none}
+.mbb6-panel.active-panel{display:block}
+.mbb6-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb6-summary div,.mbb6-flow-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb6-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb6-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb6-context{margin:0;padding:14px 16px;border:1px solid #bcdde4;border-radius:14px;background:#f7fcfd;line-height:1.55}
+.mbb6-context strong{color:var(--dark)}
+.mbb6-connections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:13px}
+.mbb6-connections div{border:1px solid var(--line);border-radius:10px;background:#f8fbfc;padding:10px}
+.mbb6-connections strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb6-route{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:14px}
+.mbb6-route span{background:#eaf2ff;border:1px solid #bfdbfe;color:var(--dark);border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.mbb6-route b{color:var(--dark)}
+.mbb6-note{background:#eef8fa;border:1px solid var(--line);border-radius:12px;padding:11px 13px;line-height:1.5}
+.mbb6-warning{background:#fff7df;border:1px solid #f3d68a;border-radius:12px;padding:11px 13px;line-height:1.5}
+.mbb6-subtitle{margin:0;padding:11px 13px;background:#eaf2ff;border-bottom:1px solid var(--line);font-size:15px;color:var(--dark)}
+.mbb6-terminal h3{display:flex;justify-content:space-between;align-items:center;background:#1f2937!important;color:#e5e7eb!important}
+.mbb6-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+@media(max-width:900px){.mbb6-summary,.mbb6-connections{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+  <a class="module-btn active" href="#topo">6. Conectividade</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do bloco 6">
+  <div class="stage-sidebar-head"><h3>Etapas</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b6-prep">Preparação — ESP32</a>
+    <a class="stage-link module-visible" href="#b6-1">6.1 Bluetooth</a>
+    <a class="stage-link module-visible" href="#b6-2">6.2 Wi-Fi</a>
+    <a class="stage-link module-visible" href="#b6-3">6.3 HTTP</a>
+    <a class="stage-link module-visible" href="#b6-4">6.4 mDNS</a>
+    <a class="stage-link module-visible" href="#b6-5">6.5 Tunelamento</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main id="topo">
+
+<section class="hero mbb6-intro">
+  <span class="badge">6</span>
+  <h2>Conectividade: quando outro dispositivo entra na conversa</h2>
+  <p>Até aqui, o sistema percebe o ambiente, calcula e controla componentes localmente. Agora surge uma nova necessidade: <strong>trocar informações com outros dispositivos</strong>. O mesmo projeto vai evoluir passo a passo, sem criar um circuito novo para cada tecnologia.</p>
+  <div class="hero-flow"><div>Controlar de perto</div><span>→</span><div>Entrar na rede</div><span>→</span><div>Conversar pela Web</div><span>→</span><div>Ser encontrado</div><span>→</span><div>Acessar de fora</div></div>
+  <div class="mbb6-summary">
+    <div><strong>Placa-base</strong><span>ESP32 DOIT DevKit com módulo ESP32-WROOM-32.</span></div>
+    <div><strong>Circuito-base</strong><span>Um LED externo com resistor permanece durante todo o bloco.</span></div>
+    <div><strong>Princípio MbB</strong><span>Cada tecnologia aparece somente quando resolve uma limitação percebida na etapa anterior.</span></div>
+  </div>
+</section>
+
+<section class="project mbb6-panel active-panel" id="b6-prep">
+  <div class="projectHead"><span class="badge">Preparação</span><div><h2>Do Arduino Uno ao ESP32</h2><p>A eletrônica básica não recomeça. A nova placa preserva ideias conhecidas e acrescenta conectividade.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Os projetos anteriores já conseguem ler sensores e controlar saídas. Para continuar, precisamos de uma placa que também consiga se comunicar sem fio. O ESP32 entra porque o problema mudou — não porque tudo o que foi aprendido deixou de servir.</p></article>
+    <article class="card"><h3>2. O que continua igual</h3><ul><li><code>pinMode()</code> configura o pino.</li><li><code>digitalWrite()</code> altera uma saída digital.</li><li><code>HIGH</code> e <code>LOW</code> continuam representando os estados digitais.</li><li><code>delay()</code> ainda pode ser usado em testes simples.</li></ul></article>
+    <article class="card"><h3>3. O que muda agora</h3><p>O ESP32-WROOM-32 possui recursos de comunicação sem fio integrados. Neste bloco, usaremos primeiro Bluetooth e depois Wi-Fi, mantendo a mesma lógica de programação já conhecida.</p></article>
+    <article class="card wide"><h3>4. Preparando a Arduino IDE</h3><ol><li>Abra a Arduino IDE.</li><li>Instale o suporte de placas <strong>esp32 by Espressif Systems</strong> pelo Gerenciador de Placas, caso ainda não esteja instalado.</li><li>Conecte o ESP32 ao computador com um cabo USB de dados.</li><li>Selecione uma placa compatível com <strong>DOIT ESP32 DEVKIT V1</strong> e escolha a porta serial correspondente.</li></ol><p class="mbb6-note"><strong>Se a porta não aparecer:</strong> confira primeiro o cabo USB, a conexão física e o driver USB-serial utilizado pela sua placa.</p></article>
+    <article class="card wide"><h3>5. Circuito-base</h3><div class="mbb6-connections"><div><strong>GPIO 23</strong><span>liga-se ao resistor de 220 Ω.</span></div><div><strong>Resistor 220 Ω</strong><span>liga-se ao ânodo do LED.</span></div><div><strong>Cátodo do LED</strong><span>liga-se ao GND do ESP32.</span></div><div><strong>Regra do bloco</strong><span>não mudaremos esse circuito quando a novidade for apenas comunicação.</span></div></div></article>
+    <article class="card code wide"><h3>6. Primeiro teste <button type="button" onclick="copyCode('b6-prep-code',this)">Copiar</button></h3><pre id="b6-prep-code">const int LED = 23;
+
+void setup() {
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED, HIGH);
+  delay(1000);
+
+  digitalWrite(LED, LOW);
+  delay(1000);
+}</pre></article>
+    <article class="card worked"><h3>7. Resultado esperado</h3><p>O LED acende por um segundo e apaga por um segundo continuamente. O importante é reconhecer que a lógica já conhecida continua válida no ESP32.</p></article>
+    <article class="card errors"><h3>8. Erros comuns</h3><ul><li>Selecionar uma porta diferente da placa conectada.</li><li>Usar um cabo USB que serve apenas para alimentação.</li><li>Inverter ânodo e cátodo do LED.</li><li>Ligar o LED sem resistor.</li></ul></article>
+    <article class="card worked wide mbb6-bridge"><h3>9. Próximo problema</h3><p>O ESP32 já controla o LED. Mas ainda é o próprio programa que decide quando isso acontece. <strong>Como enviar uma ordem sem fio a partir de um dispositivo próximo?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb6-panel" id="b6-1">
+  <div class="projectHead"><span class="badge">6.1</span><div><h2>Bluetooth: controlar um dispositivo próximo</h2><p>O celular envia um comando, o ESP32 interpreta e o circuito reage.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Queremos ligar e desligar o LED sem alterar o programa e sem depender de uma rede Wi-Fi. O dispositivo que envia a ordem está perto do ESP32. Essa necessidade combina com uma comunicação Bluetooth direta.</p></article>
+    <article class="card"><h3>2. Ideia central</h3><div class="mbb6-route"><span>Celular</span><b>→</b><span>Bluetooth</span><b>→</b><span>ESP32</span><b>→</b><span>LED</span></div><p>Usaremos Bluetooth clássico no modo serial. Para o programa, a experiência se parece com receber caracteres por uma porta serial sem fio.</p></article>
+    <article class="card"><h3>3. Circuito</h3><p>Não há nova montagem. Continue usando o LED no <strong>GPIO 23</strong> com resistor de 220 Ω.</p><p class="mbb6-note"><strong>Comparação:</strong> em um Arduino Uno é comum acrescentar um HC-05 ou HC-06 para obter Bluetooth serial. No ESP32 utilizado aqui, o Bluetooth já está integrado.</p></article>
+    <article class="card code wide"><h3>4. Código completo <button type="button" onclick="copyCode('b6-1-code',this)">Copiar</button></h3><pre id="b6-1-code">#include "BluetoothSerial.h"
+
+BluetoothSerial SerialBT;
+
+const int LED = 23;
+
+void setup() {
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+
+  Serial.begin(115200);
+  SerialBT.begin("MBB-ESP32");
+
+  Serial.println("Bluetooth iniciado.");
+  Serial.println("Conecte-se ao dispositivo MBB-ESP32.");
+}
+
+void loop() {
+  if (SerialBT.available()) {
+    char comando = SerialBT.read();
+
+    if (comando == 'L' || comando == 'l') {
+      digitalWrite(LED, HIGH);
+      Serial.println("LED ligado.");
+      SerialBT.println("LED LIGADO");
+    }
+
+    if (comando == 'D' || comando == 'd') {
+      digitalWrite(LED, LOW);
+      Serial.println("LED desligado.");
+      SerialBT.println("LED DESLIGADO");
+    }
+  }
+}</pre></article>
+    <article class="card wide"><h3>5. Entendendo as novidades</h3><div class="explain"><p><code>#include "BluetoothSerial.h"</code> disponibiliza a comunicação Bluetooth serial.</p><p><code>BluetoothSerial SerialBT;</code> cria o objeto usado para enviar e receber dados.</p><p><code>SerialBT.begin("MBB-ESP32")</code> inicia o Bluetooth com o nome que será procurado no celular.</p><p><code>SerialBT.available()</code> verifica se há dado recebido e <code>SerialBT.read()</code> lê um caractere.</p><p>Compare com <code>Serial.available()</code> e <code>Serial.read()</code>: a lógica é parecida; muda a origem do dado.</p></div></article>
+    <article class="card"><h3>6. Testando</h3><ol><li>Carregue o programa no ESP32.</li><li>Abra o Monitor Serial em 115200.</li><li>No celular Android, use um terminal Bluetooth compatível com Bluetooth Serial/SPP.</li><li>Localize e conecte-se a <strong>MBB-ESP32</strong>.</li><li>Envie <code>L</code> e observe o LED acender.</li><li>Envie <code>D</code> e observe o LED apagar.</li></ol></article>
+    <article class="card worked"><h3>7. Resultado esperado</h3><p>O celular envia <code>L</code> ou <code>D</code>, o ESP32 executa a ação e devolve uma confirmação. Assim, a comunicação ocorre nos dois sentidos.</p></article>
+    <article class="card errors wide"><h3>8. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>O nome MBB-ESP32 não aparece</td><td>Confirme se o programa foi carregado, se a placa é ESP32-WROOM-32 e se o Bluetooth do celular está ativo.</td></tr><tr><td>Conecta, mas o LED não responde</td><td>Envie apenas os caracteres L ou D e confira o GPIO 23.</td></tr><tr><td>O aplicativo não oferece terminal serial</td><td>Use um aplicativo compatível com Bluetooth clássico/SPP. BLE usa outro modelo de comunicação.</td></tr></table></article>
+    <article class="card worked wide mbb6-bridge"><h3>9. Próximo problema</h3><p>Bluetooth resolveu a comunicação próxima. <strong>Mas e se o ESP32 precisar fazer parte de uma rede, como um computador ou celular?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb6-panel" id="b6-2">
+  <div class="projectHead"><span class="badge">6.2</span><div><h2>Wi-Fi: colocando o sistema em uma rede</h2><p>O dispositivo deixa de depender apenas de uma conexão direta e passa a ter um endereço dentro da rede.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>O Bluetooth permite conversar com um dispositivo próximo. Agora queremos que o ESP32 entre em uma rede Wi-Fi existente. Para participar dessa rede, ele precisa se conectar e receber um endereço IP.</p></article>
+    <article class="card"><h3>2. O que precisamos descobrir</h3><ul><li>qual é o nome da rede (SSID);</li><li>qual é a senha;</li><li>se o ESP32 conseguiu se conectar;</li><li>qual endereço IP recebeu.</li></ul></article>
+    <article class="card"><h3>3. Circuito</h3><p>O circuito continua igual. O LED permanece no GPIO 23, mas nesta etapa ele não é o foco. O resultado observável será a conexão mostrada no Monitor Serial.</p><p class="mbb6-warning"><strong>Atenção:</strong> o ESP32-WROOM-32 trabalha com Wi-Fi de 2,4 GHz. Use uma rede compatível e evite, neste primeiro teste, redes que exigem login por página Web.</p></article>
+    <article class="card code wide"><h3>4. Código completo <button type="button" onclick="copyCode('b6-2-code',this)">Copiar</button></h3><pre id="b6-2-code">#include &lt;WiFi.h&gt;
+
+const char* ssid = "NOME_DA_REDE";
+const char* senha = "SENHA_DA_REDE";
+
+const int LED = 23;
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, senha);
+
+  Serial.print("Conectando ao Wi-Fi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("Wi-Fi conectado.");
+  Serial.print("Endereco IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+}</pre></article>
+    <article class="card wide"><h3>5. Entendendo as novidades</h3><div class="explain"><p><code>WiFi.mode(WIFI_STA)</code> coloca o ESP32 no papel de dispositivo que entra em uma rede existente.</p><p><code>WiFi.begin(ssid, senha)</code> inicia a tentativa de conexão.</p><p><code>WiFi.status()</code> permite verificar o estado da conexão.</p><p><code>WiFi.localIP()</code> mostra o endereço que o ESP32 recebeu dentro daquela rede.</p></div></article>
+    <article class="card"><h3>6. Testando</h3><ol><li>Substitua <code>NOME_DA_REDE</code> e <code>SENHA_DA_REDE</code>.</li><li>Carregue o programa.</li><li>Abra o Monitor Serial em 115200.</li><li>Aguarde a mensagem de conexão.</li><li>Anote o endereço IP mostrado.</li></ol></article>
+    <article class="card worked"><h3>7. Resultado esperado</h3><pre>Conectando ao Wi-Fi....
+Wi-Fi conectado.
+Endereco IP: 192.168.1.37</pre><p>O endereço será diferente em cada rede.</p></article>
+    <article class="card errors wide"><h3>8. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>Fica somente nos pontos</td><td>Nome da rede, senha, sinal e compatibilidade com 2,4 GHz.</td></tr><tr><td>Rede da escola aparece, mas não conecta</td><td>Algumas redes institucionais exigem autenticação adicional ou possuem restrições. Para o primeiro teste, prefira uma rede simples conhecida.</td></tr><tr><td>Monitor Serial mostra caracteres ilegíveis</td><td>Configure o Monitor Serial para 115200.</td></tr></table></article>
+    <article class="card wide"><h3>9. E no Wokwi?</h3><p>O Wokwi pode apoiar esta etapa usando a rede virtual <code>Wokwi-GUEST</code>. O objetivo continua o mesmo: observar a conexão e o endereço IP. A prática principal, porém, permanece escrita para o ESP32 físico.</p></article>
+    <article class="card worked wide mbb6-bridge"><h3>10. Próximo problema</h3><p>Agora o ESP32 tem um endereço dentro da rede. <strong>O que conseguimos fazer com esse endereço?</strong> O próximo passo será abrir uma página no navegador e fazer o próprio ESP32 responder.</p></article>
+  </div>
+</section>
+
+<section class="project mbb6-panel" id="b6-3">
+  <div class="projectHead"><span class="badge">6.3</span><div><h2>HTTP: cliente e servidor embarcados</h2><p>O mesmo ESP32 pode responder a pedidos e também fazer pedidos a outros servidores.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>O ESP32 já entrou na rede e recebeu um IP. Primeiro queremos usar esse endereço para controlar o LED pelo navegador. Depois inverteremos o papel: o próprio ESP32 fará uma requisição a outro servidor.</p></article>
+    <article class="card wide"><h3>2. Cliente e servidor são papéis</h3><table><tr><th>Situação</th><th>Cliente</th><th>Servidor</th></tr><tr><td>Celular abre a página do ESP32</td><td>Celular</td><td>ESP32</td></tr><tr><td>ESP32 consulta uma página na Web</td><td>ESP32</td><td>Servidor Web</td></tr></table></article>
+
+    <article class="card wide"><h3 class="mbb6-subtitle">Parte A — ESP32 como servidor HTTP</h3><div class="explain"><p><strong>Problema:</strong> pelo Bluetooth enviávamos L e D. Agora queremos abrir uma página no navegador e tocar em links para controlar o mesmo LED.</p><div class="mbb6-route"><span>Navegador</span><b>→ pedido HTTP →</b><span>ESP32</span><b>→</b><span>LED</span></div></div></article>
+    <article class="card code wide"><h3>3. Código — servidor HTTP <button type="button" onclick="copyCode('b6-3-server-code',this)">Copiar</button></h3><pre id="b6-3-server-code">#include &lt;WiFi.h&gt;
+#include &lt;WebServer.h&gt;
+
+const char* ssid = "NOME_DA_REDE";
+const char* senha = "SENHA_DA_REDE";
+
+const int LED = 23;
+
+WebServer servidor(80);
+
+String criarPagina() {
+  String estado;
+
+  if (digitalRead(LED) == HIGH) {
+    estado = "LIGADO";
+  } else {
+    estado = "DESLIGADO";
+  }
+
+  String pagina = "&lt;!DOCTYPE html&gt;";
+  pagina += "&lt;html&gt;&lt;head&gt;&lt;meta charset='UTF-8'&gt;";
+  pagina += "&lt;meta name='viewport' content='width=device-width, initial-scale=1'&gt;";
+  pagina += "&lt;title&gt;Ambiente MbB&lt;/title&gt;&lt;/head&gt;&lt;body&gt;";
+  pagina += "&lt;h1&gt;Ambiente MbB&lt;/h1&gt;";
+  pagina += "&lt;p&gt;Estado do LED: &lt;strong&gt;";
+  pagina += estado;
+  pagina += "&lt;/strong&gt;&lt;/p&gt;";
+  pagina += "&lt;p&gt;&lt;a href='/ligar'&gt;Ligar LED&lt;/a&gt;&lt;/p&gt;";
+  pagina += "&lt;p&gt;&lt;a href='/desligar'&gt;Desligar LED&lt;/a&gt;&lt;/p&gt;";
+  pagina += "&lt;/body&gt;&lt;/html&gt;";
+
+  return pagina;
+}
+
+void mostrarPagina() {
+  servidor.send(200, "text/html", criarPagina());
+}
+
+void ligarLED() {
+  digitalWrite(LED, HIGH);
+  mostrarPagina();
+}
+
+void desligarLED() {
+  digitalWrite(LED, LOW);
+  mostrarPagina();
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, senha);
+
+  Serial.print("Conectando");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.print("Abra no navegador: http://");
+  Serial.println(WiFi.localIP());
+
+  servidor.on("/", mostrarPagina);
+  servidor.on("/ligar", ligarLED);
+  servidor.on("/desligar", desligarLED);
+
+  servidor.begin();
+  Serial.println("Servidor HTTP iniciado.");
+}
+
+void loop() {
+  servidor.handleClient();
+}</pre></article>
+    <article class="card"><h3>4. O que é novo no servidor</h3><div class="explain"><p><code>WebServer servidor(80)</code> cria o servidor HTTP na porta 80.</p><p><code>servidor.on()</code> associa um endereço a uma função do programa.</p><p><code>servidor.send()</code> envia a resposta HTTP.</p><p><code>servidor.handleClient()</code> atende as requisições que chegam.</p></div></article>
+    <article class="card"><h3>5. Testando o servidor</h3><ol><li>Use celular e ESP32 na mesma rede.</li><li>Carregue o programa e copie o IP mostrado.</li><li>No navegador, abra <code>http://IP_DO_ESP32</code>.</li><li>Use os links para ligar e desligar o LED.</li></ol></article>
+    <article class="card worked wide"><h3>6. Resultado esperado</h3><p>A página mostra o estado do LED. Ao tocar em <strong>Ligar LED</strong> ou <strong>Desligar LED</strong>, o navegador faz um pedido ao ESP32, que executa a ação e devolve uma nova página.</p></article>
+
+    <article class="card wide"><h3 class="mbb6-subtitle">Parte B — ESP32 como cliente HTTP</h3><div class="explain"><p><strong>Novo problema:</strong> um sistema conectado também pode precisar buscar uma informação em outro servidor. Agora o ESP32 passa a fazer o pedido.</p><div class="mbb6-route"><span>ESP32</span><b>→ requisição GET →</b><span>Servidor Web</span><b>→ resposta →</b><span>ESP32</span></div></div></article>
+    <article class="card code wide"><h3>7. Código — cliente HTTP <button type="button" onclick="copyCode('b6-3-client-code',this)">Copiar</button></h3><pre id="b6-3-client-code">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
+
+const char* ssid = "NOME_DA_REDE";
+const char* senha = "SENHA_DA_REDE";
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, senha);
+
+  Serial.print("Conectando");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("Wi-Fi conectado.");
+
+  HTTPClient http;
+  http.begin("http://example.com/index.html");
+
+  int codigo = http.GET();
+
+  Serial.print("Codigo HTTP: ");
+  Serial.println(codigo);
+
+  if (codigo &gt; 0) {
+    String resposta = http.getString();
+    Serial.println("Resposta recebida:");
+    Serial.println(resposta);
+  }
+
+  http.end();
+}
+
+void loop() {
+}</pre></article>
+    <article class="card"><h3>8. O que é novo no cliente</h3><div class="explain"><p><code>HTTPClient http</code> cria o cliente.</p><p><code>http.begin()</code> informa o endereço que será consultado.</p><p><code>http.GET()</code> faz uma requisição GET.</p><p><code>http.getString()</code> lê o conteúdo recebido.</p><p><code>http.end()</code> encerra a conexão usada pela requisição.</p></div></article>
+    <article class="card"><h3>9. Testando o cliente</h3><ol><li>Configure a rede.</li><li>Carregue o programa.</li><li>Abra o Monitor Serial em 115200.</li><li>Observe o código HTTP e o conteúdo recebido.</li></ol><p class="mbb6-note">O endereço <code>example.com</code> é usado aqui apenas como destino simples de teste. O objetivo é compreender a requisição e a resposta, não estudar APIs ainda.</p></article>
+    <article class="card errors wide"><h3>10. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>A página do ESP32 não abre</td><td>Celular e ESP32 devem estar na mesma rede e o endereço deve usar o IP mostrado no Monitor Serial.</td></tr><tr><td>O servidor abre, mas o LED não muda</td><td>Confira o GPIO 23 e se os caminhos /ligar e /desligar estão corretos.</td></tr><tr><td>A requisição do cliente retorna erro</td><td>Confirme primeiro se o Wi-Fi está conectado e se a rede permite acesso à Internet.</td></tr></table></article>
+    <article class="card worked wide mbb6-bridge"><h3>11. Próximo problema</h3><p>O servidor funciona, mas acessar um endereço como <code>192.168.1.37</code> não é confortável — e o IP pode mudar. <strong>Seria possível encontrar o ESP32 por um nome?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb6-panel" id="b6-4">
+  <div class="projectHead"><span class="badge">6.4</span><div><h2>mDNS: acessando o ESP32 por nome</h2><p>O servidor já funciona. Agora vamos tornar o acesso local mais fácil de reconhecer.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Para abrir a página do ESP32, precisamos descobrir e digitar seu IP. Esse endereço pode mudar depois de uma reconexão. Queremos continuar na rede local, mas usar um nome mais fácil de lembrar.</p></article>
+    <article class="card"><h3>2. Antes e depois</h3><table><tr><th>Antes</th><th>Depois</th></tr><tr><td><code>192.168.1.37</code></td><td><code>ambiente-mbb.local</code></td></tr><tr><td>precisa descobrir o IP</td><td>nome reconhecível na rede local</td></tr></table></article>
+    <article class="card"><h3>3. Circuito</h3><p>Nada muda fisicamente. Continuamos com o mesmo servidor HTTP e o mesmo LED. A melhoria acontece apenas na forma de localizar o dispositivo na rede.</p></article>
+    <article class="card code wide"><h3>4. Código completo <button type="button" onclick="copyCode('b6-4-code',this)">Copiar</button></h3><pre id="b6-4-code">#include &lt;WiFi.h&gt;
+#include &lt;WebServer.h&gt;
+#include &lt;ESPmDNS.h&gt;
+
+const char* ssid = "NOME_DA_REDE";
+const char* senha = "SENHA_DA_REDE";
+
+const int LED = 23;
+
+WebServer servidor(80);
+
+String criarPagina() {
+  String estado;
+
+  if (digitalRead(LED) == HIGH) {
+    estado = "LIGADO";
+  } else {
+    estado = "DESLIGADO";
+  }
+
+  String pagina = "&lt;!DOCTYPE html&gt;";
+  pagina += "&lt;html&gt;&lt;head&gt;&lt;meta charset='UTF-8'&gt;";
+  pagina += "&lt;meta name='viewport' content='width=device-width, initial-scale=1'&gt;";
+  pagina += "&lt;title&gt;Ambiente MbB&lt;/title&gt;&lt;/head&gt;&lt;body&gt;";
+  pagina += "&lt;h1&gt;Ambiente MbB&lt;/h1&gt;";
+  pagina += "&lt;p&gt;Estado do LED: &lt;strong&gt;";
+  pagina += estado;
+  pagina += "&lt;/strong&gt;&lt;/p&gt;";
+  pagina += "&lt;p&gt;&lt;a href='/ligar'&gt;Ligar LED&lt;/a&gt;&lt;/p&gt;";
+  pagina += "&lt;p&gt;&lt;a href='/desligar'&gt;Desligar LED&lt;/a&gt;&lt;/p&gt;";
+  pagina += "&lt;/body&gt;&lt;/html&gt;";
+
+  return pagina;
+}
+
+void mostrarPagina() {
+  servidor.send(200, "text/html", criarPagina());
+}
+
+void ligarLED() {
+  digitalWrite(LED, HIGH);
+  mostrarPagina();
+}
+
+void desligarLED() {
+  digitalWrite(LED, LOW);
+  mostrarPagina();
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, senha);
+
+  Serial.print("Conectando");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("Wi-Fi conectado.");
+
+  if (!MDNS.begin("ambiente-mbb")) {
+    Serial.println("Falha ao iniciar mDNS.");
+  } else {
+    MDNS.addService("http", "tcp", 80);
+    Serial.println("mDNS iniciado.");
+    Serial.println("Abra: http://ambiente-mbb.local");
+  }
+
+  servidor.on("/", mostrarPagina);
+  servidor.on("/ligar", ligarLED);
+  servidor.on("/desligar", desligarLED);
+  servidor.begin();
+}
+
+void loop() {
+  servidor.handleClient();
+}</pre></article>
+    <article class="card wide"><h3>5. Entendendo as novidades</h3><div class="explain"><p><code>#include &lt;ESPmDNS.h&gt;</code> disponibiliza o mDNS.</p><p><code>MDNS.begin("ambiente-mbb")</code> tenta registrar o nome local.</p><p><code>MDNS.addService("http", "tcp", 80)</code> anuncia que o dispositivo oferece um serviço HTTP na porta 80.</p><p>O sufixo <code>.local</code> identifica esse acesso dentro da rede local.</p></div></article>
+    <article class="card"><h3>6. Testando</h3><ol><li>Primeiro confirme que o acesso pelo IP ainda funciona.</li><li>No mesmo dispositivo, abra <code>http://ambiente-mbb.local</code>.</li><li>Ligue e desligue o LED.</li><li>Compare a experiência com o acesso pelo IP.</li></ol></article>
+    <article class="card worked"><h3>7. Resultado esperado</h3><p>O mesmo servidor HTTP passa a ser acessado por um nome local legível, sem precisar digitar o endereço IP.</p></article>
+    <article class="card errors wide"><h3>8. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>O IP funciona, mas .local não</td><td>O servidor HTTP pode estar correto. O dispositivo, sistema operacional ou rede pode não resolver mDNS da forma esperada.</td></tr><tr><td>Nem IP nem .local funcionam</td><td>Volte ao teste de Wi-Fi e confirme que os dispositivos estão na mesma rede.</td></tr></table></article>
+    <article class="card worked wide mbb6-bridge"><h3>9. Próximo problema</h3><p><code>ambiente-mbb.local</code> facilita o acesso <strong>dentro da rede local</strong>. Mas o que acontece quando o celular sai do Wi-Fi e usa outra rede? Precisamos de outro caminho.</p></article>
+  </div>
+</section>
+
+<section class="project mbb6-panel" id="b6-5">
+  <div class="projectHead"><span class="badge">6.5</span><div><h2>Tunelamento: acesso temporário de fora da rede</h2><p>Um serviço local pode ser exposto temporariamente por meio de um túnel criado por um computador da mesma rede.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>O servidor do ESP32 funciona pelo IP e pelo nome <code>.local</code>, mas ambos dependem da rede local. Queremos fazer um teste temporário a partir de outra rede, sem transformar o ESP32 em um servidor público permanente.</p></article>
+    <article class="card wide"><h3>2. O caminho correto</h3><div class="mbb6-route"><span>Internet</span><b>→</b><span>localhost.run</span><b>→ túnel SSH →</b><span>Computador</span><b>→ rede local →</b><span>ESP32</span></div><p class="mbb6-note"><strong>Importante:</strong> o programa de tunelamento não roda dentro do ESP32. O computador da rede local cria o túnel e encaminha as requisições para o servidor HTTP da placa.</p></article>
+    <article class="card"><h3>3. Antes de criar o túnel</h3><ol><li>Deixe o servidor HTTP do ESP32 funcionando.</li><li>Anote o IP mostrado no Monitor Serial.</li><li>No computador da mesma rede, abra <code>http://IP_DO_ESP32</code>.</li><li>Somente continue se a página abrir e controlar o LED normalmente.</li></ol></article>
+    <article class="card"><h3>4. Ferramenta escolhida</h3><p>Usaremos <strong>localhost.run</strong> como experiência principal porque trabalha por SSH e permite um túnel temporário com poucos passos. <strong>ngrok</strong> é outra ferramenta da mesma categoria e pode ser apresentada como alternativa, sem duplicar toda a prática.</p></article>
+    <article class="card code wide mbb6-terminal"><h3>5. Conferir o SSH <button type="button" onclick="copyCode('b6-5-ssh-code',this)">Copiar</button></h3><pre id="b6-5-ssh-code">ssh -V</pre></article>
+    <article class="card code wide mbb6-terminal"><h3>6. Criar o túnel <button type="button" onclick="copyCode('b6-5-tunnel-code',this)">Copiar</button></h3><pre id="b6-5-tunnel-code">ssh -R 80:192.168.1.37:80 nokey@localhost.run</pre><div class="explain"><p>Troque <code>192.168.1.37</code> pelo IP real do seu ESP32.</p><p><code>-R</code> cria um encaminhamento remoto: o endereço público recebido pelo serviço será encaminhado pelo computador até a porta 80 do ESP32.</p></div></article>
+    <article class="card"><h3>7. Testando de verdade</h3><ol><li>Mantenha o terminal aberto.</li><li>Copie a URL pública exibida pelo serviço.</li><li>No celular, desligue o Wi-Fi e use a Internet móvel.</li><li>Abra a URL pública.</li><li>Ligue e desligue o LED.</li><li>Ao terminar, volte ao terminal e pressione <code>Ctrl+C</code> para encerrar o túnel.</li></ol></article>
+    <article class="card worked"><h3>8. Resultado esperado</h3><p>A página do ESP32 pode ser alcançada temporariamente a partir de outra rede enquanto o túnel estiver ativo.</p></article>
+    <article class="card errors wide"><h3>9. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>O comando SSH não existe</td><td>Confira se o cliente OpenSSH está disponível no sistema.</td></tr><tr><td>O túnel abre, mas a página não</td><td>Confirme que o computador ainda consegue abrir diretamente o IP do ESP32.</td></tr><tr><td>A URL parou de funcionar</td><td>O túnel depende do terminal aberto e a URL gratuita é temporária.</td></tr><tr><td>A rede bloqueia a conexão SSH</td><td>Teste em outra rede ou use outra ferramenta de tunelamento permitida no ambiente.</td></tr></table></article>
+    <article class="card exercise wide"><h3>10. Limite desta experiência</h3><p>Exponha somente o <strong>LED didático</strong>. Não use esta atividade para abrir temporariamente fechaduras, portões, câmeras, relés de potência ou dados pessoais. Tornar um serviço acessível externamente cria também uma nova pergunta: <strong>quem pode acessá-lo?</strong></p></article>
+    <article class="card worked wide"><h3>11. O que o Bloco 6 construiu</h3><div class="mbb6-route"><span>Bluetooth</span><b>→</b><span>Wi-Fi</span><b>→</b><span>HTTP</span><b>→</b><span>mDNS</span><b>→</b><span>Túnel</span></div><p>O sistema deixou de ser apenas local. Agora consegue conversar com dispositivos próximos, entrar em uma rede, atender ou fazer requisições Web, ser encontrado por nome e, em uma experiência controlada, ser acessado temporariamente de fora da rede.</p></article>
+    <article class="card wide mbb6-bridge"><h3>12. Ponte para Internet das Coisas</h3><p>Temos um objeto físico, um programa embarcado e conectividade. <strong>Quando esse conjunto passa a ser considerado Internet das Coisas? O que diferencia um dispositivo conectado de um sistema IoT?</strong> Essa será a próxima etapa.</p></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-conectividade.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

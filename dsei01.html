@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistemas Embarcados e IoT — Irrigação Automática</title>
+<style>
+:root{
+--primary:#1967d2;
+--primary-dark:#114b9e;
+--bg:#edf3fb;
+--panel:#ffffff;
+--line:#d6e0ee;
+--text:#132033;
+--muted:#607089;
+--note-bg:#fff7d6;
+--yellow:#ffd54f;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+header{
+background:var(--primary);
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 16px;
+position:sticky;
+top:0;
+z-index:80;
+box-shadow:0 2px 8px rgba(0,0,0,.18);
+}
+.portal-link{
+display:inline-flex;
+padding:6px 10px;
+border-radius:999px;
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.38);
+color:#fff;
+text-decoration:none;
+font-size:13px;
+font-weight:900;
+}
+.brand span{color:var(--yellow);}
+.layout{
+display:grid;
+grid-template-columns:150px minmax(0,1fr);
+min-height:calc(100vh - 44px);
+}
+nav{
+background:#fff;
+border-right:1px solid var(--line);
+padding:12px 6px;
+position:sticky;
+top:44px;
+height:calc(100vh - 44px);
+overflow-y:auto;
+}
+.nav-btn{
+display:block;
+padding:9px 8px;
+border-radius:7px;
+text-decoration:none;
+font-size:13px;
+font-weight:700;
+color:#0f172a;
+margin-bottom:4px;
+}
+.nav-btn:hover{
+background:#eaf2ff;
+color:var(--primary);
+}
+main{padding:14px;}
+.top-row{
+display:flex;
+justify-content:space-between;
+gap:12px;
+margin-bottom:10px;
+}
+.top-row h2{
+font-size:24px;
+color:var(--primary-dark);
+}
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:10px;
+overflow:hidden;
+margin-bottom:12px;
+box-shadow:0 4px 14px rgba(15,23,42,.08);
+}
+.panel-title{
+padding:8px 12px;
+background:#eaf2ff;
+border-bottom:1px solid var(--line);
+font-weight:900;
+color:var(--primary-dark);
+display:flex;
+justify-content:space-between;
+}
+.content{
+padding:18px;
+line-height:1.58;
+}
+.kicker{
+display:inline-flex;
+padding:5px 10px;
+border-radius:999px;
+background:#eaf2ff;
+border:1px solid #bfdbfe;
+font-size:12px;
+font-weight:800;
+margin-bottom:10px;
+}
+.highlight{
+background:#eff6ff;
+border-left:5px solid var(--primary);
+padding:12px 14px;
+border-radius:12px;
+margin-top:12px;
+font-size:13px;
+}
+.note{
+background:var(--note-bg);
+border-left:5px solid #f59e0b;
+padding:12px 14px;
+border-radius:10px;
+margin-top:12px;
+}
+.intro-grid,.activity-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:14px;
+margin-top:16px;
+}
+.intro-box,.activity-box{
+border:1px solid var(--line);
+border-radius:10px;
+padding:16px;
+background:#f8fbff;
+}
+.intro-box strong,.activity-box strong{
+display:block;
+margin-bottom:6px;
+color:#0f3f86;
+}
+.flow{
+text-align:center;
+background:#f8fbff;
+padding:18px;
+border-radius:12px;
+border:1px solid var(--line);
+font-weight:800;
+line-height:2;
+margin-top:14px;
+}
+ol,ul{padding-left:20px;}
+li{margin:7px 0;}
+footer{
+text-align:center;
+padding:22px 14px 32px;
+color:#607089;
+font-size:13px;
+font-weight:700;
+}
+@media(max-width:1050px){
+.layout{display:block;}
+nav{
+display:flex;
+overflow-x:auto;
+height:auto;
+top:44px;
+z-index:60;
+white-space:nowrap;
+}
+.intro-grid,.activity-grid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+header{display:block;}
+nav{top:78px;}
+main{padding:18px 10px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div>
+<a class="portal-link" href="index.html">← Mundo bit Byte</a>
+<h1>Sistemas Embarcados</h1>
+</div>
+<div class="brand">Professor Ronaldo <span>Lavestein</span></div>
+</header>
+
+<div class="layout">
+
+<nav>
+<a class="nav-btn" href="#inicio">1. Início</a>
+<a class="nav-btn" href="#problema">2. Problema</a>
+<a class="nav-btn" href="#conceitos">3. Conceitos</a>
+<a class="nav-btn" href="#componentes">4. Componentes</a>
+<a class="nav-btn" href="#funcionamento">5. Funcionamento</a>
+<a class="nav-btn" href="#atividade">6. Atividade</a>
+<a class="nav-btn" href="#relatorio">7. Relatório</a>
+</nav>
+
+<main>
+
+<div class="top-row">
+<h2>Projeto — Irrigação Automática</h2>
+<div><strong>Objetivo:</strong> compreender como sensores e Arduino podem automatizar tarefas.</div>
+</div>
+
+<section id="inicio" class="card">
+<div class="panel-title">
+<span>1. Introdução</span>
+<small>Contexto</small>
+</div>
+<div class="content">
+<div class="kicker">Arduino • Sensor • IoT</div>
+
+<p>
+Muitas tarefas do dia a dia podem ser automatizadas utilizando sensores e sistemas eletrônicos.
+</p>
+
+<p>
+Neste estudo de caso, você irá analisar um sistema simples de irrigação automática utilizando Arduino.
+</p>
+
+<div class="highlight">
+Sistemas embarcados são sistemas eletrônicos criados para executar funções específicas.
+</div>
+</div>
+</section>
+
+<section id="problema" class="card">
+<div class="panel-title">
+<span>2. Situação-Problema</span>
+<small>Estudo de caso</small>
+</div>
+
+<div class="content">
+
+<p>
+Uma pequena plantação está sofrendo porque o solo fica seco em alguns horários do dia.
+</p>
+
+<p>
+Para resolver o problema, foi criado um sistema automático de irrigação.
+</p>
+
+<div class="intro-grid">
+
+<div class="intro-box">
+<strong>Sensor</strong>
+<span>Detecta a umidade do solo.</span>
+</div>
+
+<div class="intro-box">
+<strong>Arduino</strong>
+<span>Recebe informações e toma decisões.</span>
+</div>
+
+<div class="intro-box">
+<strong>Bomba d'água</strong>
+<span>Molha as plantas automaticamente.</span>
+</div>
+
+</div>
+
+<div class="note">
+O objetivo do sistema é evitar que as plantas fiquem sem água.
+</div>
+
+</div>
+</section>
+
+<section id="conceitos" class="card">
+<div class="panel-title">
+<span>3. Conceitos Fundamentais</span>
+<small>Revisão</small>
+</div>
+
+<div class="content">
+
+<div class="intro-grid">
+
+<div class="intro-box">
+<strong>Sensor</strong>
+<span>Componente que detecta informações.</span>
+</div>
+
+<div class="intro-box">
+<strong>Atuador</strong>
+<span>Componente que executa ações.</span>
+</div>
+
+<div class="intro-box">
+<strong>Microcontrolador</strong>
+<span>Controla o funcionamento do sistema.</span>
+</div>
+
+<div class="intro-box">
+<strong>Automação</strong>
+<span>Execução automática de tarefas.</span>
+</div>
+
+<div class="intro-box">
+<strong>IoT</strong>
+<span>Objetos conectados utilizando tecnologia.</span>
+</div>
+
+<div class="intro-box">
+<strong>Entrada e saída</strong>
+<span>Informações que entram e ações que saem do sistema.</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="componentes" class="card">
+<div class="panel-title">
+<span>4. Componentes</span>
+<small>Hardware</small>
+</div>
+
+<div class="content">
+
+<p>
+O Arduino recebe os dados do sensor e decide quando ligar ou desligar a bomba d'água.
+</p>
+
+<p>
+O sensor verifica se o solo está seco ou úmido.
+</p>
+
+<p>
+A bomba envia água para as plantas quando necessário.
+</p>
+
+<div class="highlight">
+Sensor → Arduino → Bomba d'água
+</div>
+
+</div>
+</section>
+
+<section id="funcionamento" class="card">
+<div class="panel-title">
+<span>5. Funcionamento</span>
+<small>Fluxo</small>
+</div>
+
+<div class="content">
+
+<div class="flow">
+Sensor de Umidade<br>
+↓<br>
+Arduino<br>
+↓<br>
+Bomba d'água
+</div>
+
+<div class="note">
+Quando o solo está seco, o Arduino liga automaticamente a bomba.
+</div>
+
+</div>
+</section>
+
+<section id="atividade" class="card">
+<div class="panel-title">
+<span>6. Atividade</span>
+<small>Análise</small>
+</div>
+
+<div class="content">
+
+<div class="activity-grid">
+
+<div class="activity-box">
+<strong>Compreensão</strong>
+
+<ol>
+<li>Qual componente detecta a umidade do solo?</li>
+<li>Qual componente envia água para as plantas?</li>
+<li>Qual é a função do Arduino?</li>
+<li>O que acontece quando o solo está seco?</li>
+</ol>
+
+</div>
+
+<div class="activity-box">
+<strong>Análise</strong>
+
+<ol start="5">
+<li>Por que esse sistema pode ajudar uma plantação?</li>
+<li>Quais vantagens existem em automatizar a irrigação?</li>
+<li>O que aconteceria se o sensor parasse de funcionar?</li>
+<li>Qual componente pode ser considerado um atuador?</li>
+</ol>
+
+</div>
+
+<div class="activity-box">
+<strong>Raciocínio</strong>
+
+<ol start="9">
+<li>Explique o fluxo completo do sistema.</li>
+<li>Esse projeto pode ser considerado IoT? Explique.</li>
+<li>O sistema funciona sozinho?</li>
+<li>Sugira uma melhoria para o projeto.</li>
+</ol>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="relatorio" class="card">
+<div class="panel-title">
+<span>7. Relatório Final</span>
+<small>Produção</small>
+</div>
+
+<div class="content">
+
+<p>Produza um pequeno relatório explicando:</p>
+
+<ul>
+<li>qual problema o projeto resolve;</li>
+<li>quais componentes participam do sistema;</li>
+<li>como o sistema funciona;</li>
+<li>quais vantagens o sistema oferece;</li>
+<li>uma melhoria para o projeto.</li>
+</ul>
+
+<div class="highlight">
+Explique o projeto como se estivesse apresentando a ideia para outra pessoa.
+</div>
+
+</div>
+</section>
+
+<footer>
+Mundo bit Byte — Tecnologia e Educação para Todos
+</footer>
+
+</main>
+</div>
+
+<script src="js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

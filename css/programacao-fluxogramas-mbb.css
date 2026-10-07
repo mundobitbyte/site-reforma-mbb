@@ -1,0 +1,30 @@
+.flowchart-panel{margin:16px 0;padding:16px;background:#fbfdff;border:1px solid #cbd8e8;border-radius:14px;overflow:auto}
+.flowchart-panel h4{margin:0 0 10px;color:var(--dark)}
+.flowchart-svg{display:block;width:100%;height:auto;min-width:680px;background:#fff;border:1px solid #dbe5f0;border-radius:12px}
+.flowchart-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.flowchart-symbol{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px}
+.flowchart-symbol strong{display:block;color:var(--dark);margin-bottom:5px}
+.flowchart-symbol svg{display:block;width:100%;height:96px;margin:6px 0 10px}
+.flowchart-rule{background:#eef6ff;border-left:5px solid var(--primary);border-radius:10px;padding:13px 14px;margin:14px 0}
+.flowchart-reading{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.flowchart-reading>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+.flowchart-reading strong{display:block;color:var(--dark);margin-bottom:4px}
+.flowchart-check{counter-reset:fcstep;list-style:none!important;margin-left:0!important}
+.flowchart-check li{counter-increment:fcstep;position:relative;padding:10px 12px 10px 44px;border:1px solid var(--line);border-radius:10px;background:#fff;margin:8px 0!important}
+.flowchart-check li::before{content:counter(fcstep);position:absolute;left:12px;top:10px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;font-size:12px}
+.flowchart-badge{display:inline-block;border:1px solid #b9d3f6;background:#eef6ff;color:var(--dark);border-radius:999px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:8px}
+.flowchart-svg text{font-family:"Segoe UI",Arial,sans-serif;fill:#172033}
+.flowchart-svg .node{stroke-width:2.5}
+.flowchart-svg .terminal{fill:#dbeafe;stroke:#1967d2}
+.flowchart-svg .io{fill:#dcfce7;stroke:#16a34a}
+.flowchart-svg .process{fill:#fef3c7;stroke:#d97706}
+.flowchart-svg .decision{fill:#fee2e2;stroke:#dc2626}
+.flowchart-svg .connector{fill:#ede9fe;stroke:#7c3aed}
+.flowchart-svg .subprocess{fill:#e0f2fe;stroke:#0284c7}
+.flowchart-svg .arrow{stroke:#1e3a8a;stroke-width:3;fill:none}
+.flowchart-svg .branch-label{font-size:14px;font-weight:800;fill:#334155}
+.flowchart-svg .node-title{font-size:16px;font-weight:800}
+.flowchart-svg .node-text{font-size:14px}
+.flowchart-svg .caption{font-size:14px;fill:#475569}
+@media(max-width:900px){.flowchart-legend,.flowchart-reading{grid-template-columns:1fr}.flowchart-panel{padding:10px}.flowchart-svg{min-width:620px}}
+@media(max-width:760px){.flowchart-panel{margin-left:-6px;margin-right:-6px}.flowchart-svg{min-width:600px}.flowchart-symbol svg{height:82px}}

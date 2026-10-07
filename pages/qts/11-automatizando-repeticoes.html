@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 11 de Qualidade e Teste de Software: automatize testes repetitivos com Python e pytest e entenda o que a cobertura de código realmente informa.">
+<title>11 — Automatizando repetições | Qualidade e Teste de Software</title><link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="11">
+<header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside><main class="course-main"><div class="content-wrap">
+<div class="stage-progress"><span id="progressText"></span><span>Repetir com o computador</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 11</span><h1>Automatizando repetições</h1><p>Na etapa anterior, vimos que a regressão pode exigir os mesmos testes muitas vezes. Agora a pergunta é prática: <strong>quando o trabalho é repetitivo e previsível, por que não deixar o computador executar parte dele?</strong></p></section>
+<article class="chapter">
+<div class="card context-card"><h3>A mesma sequência outra vez</h3><p>Depois de cada alteração na Cantina Horizonte, alguém testa manualmente as quantidades 0, 1, 5, 10 e 11.</p><p>No começo são cinco verificações rápidas. Depois chegam cupom, estoque, total e status. O conjunto cresce.</p></div>
+<p>O problema não é que o teste manual deixou de ser útil. O problema é gastar tempo humano repetindo comparações que seguem sempre a mesma regra.</p>
+<h2>Automatizar não muda o raciocínio do teste</h2>
+<p>Veja um caso que já conhecemos:</p><div class="card evidence-card"><p><strong>Entrada:</strong> quantidade 5.</p><p><strong>Esperado:</strong> valor aceito.</p><p><strong>Obtido:</strong> resultado da função.</p><p><strong>Comparação:</strong> esperado e obtido são iguais?</p></div><p>Num teste automatizado, o computador executa a entrada e faz essa comparação por nós.</p>
+<h2>Conhecendo o pytest</h2>
+<p>A Cantina Horizonte usa Python. Para automatizar testes nessa linguagem, vamos usar <strong>pytest</strong>, uma ferramenta que encontra e executa testes escritos em Python.</p>
+<p>O projeto já possui um arquivo chamado <code>test_smoke.py</code>. A palavra inglesa <strong>smoke</strong> aparece em <em>smoke test</em>, expressão usada para uma verificação rápida de que o sistema básico continua funcionando.</p>
+<div class="code-block"><pre><code>def test_fluxo_normal_quantidade_valida():
+    assert validar_quantidade(2) is True</code></pre></div>
+<p>A palavra <code>assert</code> é um comando do Python usado aqui para declarar aquilo que esperamos que seja verdadeiro. Se a condição for verdadeira, o teste passa. Se não for, o teste falha.</p>
+<h2>Antes do primeiro teste automatizado</h2>
+<p>Até aqui foi possível experimentar boa parte do módulo apenas pelo navegador. Agora vamos executar código Python no seu computador.</p>
+<div class="card practice-card"><h3>No Windows, use o caminho mais simples</h3><ol><li>Na pasta <code>qts/cantina-horizonte-v1</code>, dê dois cliques em <code>iniciar_windows.bat</code> uma vez. Na primeira execução, ele cria o ambiente do projeto e instala as dependências.</li><li>Quando a Cantina abrir normalmente, volte à janela do servidor e pressione <strong>Ctrl+C</strong> para encerrá-lo.</li><li>Abra o terminal nessa mesma pasta.</li></ol></div>
+<p>A pasta <code>.venv</code> guarda um <strong>ambiente virtual do Python</strong>: uma instalação isolada para as dependências deste projeto, sem misturá-las com outros projetos do computador.</p>
+<p>Se você já ativou esse ambiente virtual, pode usar <code>python</code> nos comandos a seguir. Se não ativou, no Windows use diretamente <code>.venv\Scripts\python.exe</code>.</p>
+<h2>Execute os primeiros testes</h2>
+<p>Com o ambiente virtual ativado:</p><div class="code-block"><pre><code>python -m pytest</code></pre></div>
+<p>Ou, no Windows, sem ativá-lo:</p><div class="code-block"><pre><code>.venv\Scripts\python.exe -m pytest</code></pre></div>
+<p>O comando pede ao Python que execute o módulo pytest. Ele procura arquivos e funções de teste seguindo convenções de nomes, como arquivos iniciados por <code>test_</code>.</p>
+<p>No projeto inicial, as verificações básicas devem passar porque elas cobrem apenas um fluxo normal já conhecido.</p>
+<h2>Agora escreva um teste que represente a regra completa</h2>
+<p>Crie, na pasta <code>tests</code>, um arquivo chamado <code>test_quantidade.py</code> e comece com:</p>
+<div class="code-block"><pre><code>from backend.app import validar_quantidade
+
+
+def test_quantidade_zero_deve_ser_rejeitada():
+    assert validar_quantidade(0) is False</code></pre></div>
+<p>Leia o nome da função como uma frase: <strong>quantidade zero deve ser rejeitada</strong>. Um bom nome ajuda a entender qual comportamento está protegido.</p>
+<h2>Um teste vermelho pode ser uma boa notícia</h2>
+<p>Execute novamente o pytest. Na versão inicial da Cantina Horizonte, esse novo teste deve falhar.</p><div class="card question-card"><p><strong>O teste falhou porque está errado ou porque acabou de revelar o defeito que já conhecíamos?</strong></p></div><p>Neste caso, o teste está expressando corretamente o requisito. A falha é uma evidência de que o comportamento atual não atende à regra.</p>
+<h2>Corrija a regra na sua cópia do projeto</h2>
+<p>A validação correta precisa considerar os dois limites:</p><div class="code-block"><pre><code>def validar_quantidade(quantidade: int) -&gt; bool:
+    return 1 &lt;= quantidade &lt;= 10</code></pre></div><p>Execute novamente os testes. Agora o caso de quantidade zero deve passar.</p>
+<h2>Transforme a regressão em código</h2>
+<p>Não pare no caso que acabou de ser corrigido. Acrescente outros pontos importantes:</p>
+<div class="code-block"><pre><code>def test_quantidade_um_deve_ser_aceita():
+    assert validar_quantidade(1) is True
+
+
+def test_quantidade_cinco_deve_ser_aceita():
+    assert validar_quantidade(5) is True
+
+
+def test_quantidade_dez_deve_ser_aceita():
+    assert validar_quantidade(10) is True
+
+
+def test_quantidade_onze_deve_ser_rejeitada():
+    assert validar_quantidade(11) is False</code></pre></div>
+<p>Perceba como técnicas aprendidas antes continuam presentes: 0, 1, 10 e 11 vieram da análise dos limites; 5 representa uma faixa válida.</p><div class="card evidence-card"><p><strong>Automação não substituiu a técnica de teste. Ela automatizou a execução de casos escolhidos com técnica.</strong></p></div>
+<h2>Vamos provocar uma regressão de propósito</h2>
+<p>Altere temporariamente a função para:</p><div class="code-block"><pre><code>return 1 &lt;= quantidade &lt; 10</code></pre></div><p>Execute os testes novamente. O caso de quantidade 10 deve falhar.</p><p>Depois restaure:</p><div class="code-block"><pre><code>return 1 &lt;= quantidade &lt;= 10</code></pre></div><p>Essa pequena experiência mostra por que uma suíte de regressão automatizada pode detectar rapidamente um comportamento quebrado por uma alteração.</p>
+<h2>Suíte de testes</h2><div class="card tool-card"><h3>Suíte de testes</h3><p>É um conjunto de testes organizado para ser executado em conjunto. A palavra <strong>suíte</strong> aqui significa coleção ou conjunto relacionado.</p></div><p>Com o tempo, a Cantina Horizonte pode ter testes de quantidade, subtotal, cupom, estoque e outras regras. Executar o pytest pode rodar todos eles de uma vez.</p>
+<h2>Nem tudo deve ser automatizado só porque pode</h2><p>Automação costuma ser especialmente útil em testes repetitivos, estáveis e importantes para regressão.</p><p>Exploração, percepção visual, experiência de uso e situações novas ainda podem exigir bastante observação humana.</p>
+<div class="table-wrap"><table><thead><tr><th>Situação</th><th>Por que automatizar ou manter observação humana?</th></tr></thead><tbody><tr><td>Validar 0, 1, 10 e 11 em toda versão</td><td>Repetitivo e com resultado objetivo: bom candidato à automação.</td></tr><tr><td>Explorar uma tela recém-criada</td><td>A investigação humana pode descobrir situações ainda não previstas.</td></tr><tr><td>Calcular desconto do MBB10 em dezenas de execuções</td><td>Regra estável e comparação objetiva: automação ajuda muito.</td></tr><tr><td>Avaliar se uma mensagem é compreensível</td><td>Há julgamento de uso e contexto que não se resume a uma comparação numérica.</td></tr></tbody></table></div>
+<h2>Os testes passaram. Quanto do código eles realmente percorreram?</h2>
+<p>Essa pergunta nos leva à <strong>cobertura de código</strong>.</p><div class="card tool-card"><h3>Cobertura de código</h3><p>É uma medida que mostra quanto do código foi executado durante os testes. Uma forma comum é observar a porcentagem de linhas executadas.</p></div>
+<p>No projeto, instalamos o complemento <strong>pytest-cov</strong>. Ele adiciona informações de cobertura ao pytest.</p>
+<p>O nome <code>backend</code> no comando abaixo indica a pasta que contém o código Python executado no lado do servidor da Cantina Horizonte.</p>
+<div class="code-block"><pre><code>python -m pytest --cov=backend --cov-report=term-missing</code></pre></div>
+<p>Se estiver usando o Python do ambiente virtual sem ativá-lo, substitua <code>python</code> por <code>.venv\Scripts\python.exe</code>.</p>
+<p>O relatório mostra a porcentagem de linhas executadas e, com <code>term-missing</code>, também indica linhas que não foram percorridas pelos testes.</p>
+<h2>100% de cobertura não significa 100% de qualidade</h2>
+<p>Imagine esta função:</p><div class="code-block"><pre><code>def validar_quantidade(qtd):
+    return qtd &lt;= 10</code></pre></div><p>Um único teste com quantidade 5 pode executar a única linha da função e produzir cobertura de 100% dessa função.</p><p>Mesmo assim, quantidade 0 e valores negativos continuam errados.</p><div class="card question-card"><p><strong>Cobertura responde “que código foi executado?”, não “todos os comportamentos importantes foram verificados?”.</strong></p></div>
+<h2>Três ideias que precisam permanecer juntas</h2><div class="path" aria-label="Relação entre técnica, automação e cobertura"><span>Técnica escolhe bons casos</span><b>→</b><span>Automação repete</span><b>→</b><span>Cobertura mostra o que foi percorrido</span></div><p>Nenhuma dessas três coisas, sozinha, prova que o software está perfeito.</p>
+<h2>E em outras linguagens?</h2><p>A ideia não pertence ao Python. Em Java, por exemplo, é comum encontrar <strong>JUnit</strong> para testes e <strong>JaCoCo</strong> para cobertura. Em projetos JavaScript, ferramentas como <strong>Vitest</strong> podem cumprir papel semelhante.</p><p>Neste módulo seguimos uma única trilha prática com Python e pytest para não transformar QTS em três cursos paralelos.</p>
+<h2>Prática · construa uma pequena suíte</h2><div class="card practice-card"><ol><li>Execute os testes existentes.</li><li>Crie os cinco testes de quantidade: 0, 1, 5, 10 e 11.</li><li>Veja o teste de 0 falhar na versão inicial.</li><li>Corrija a validação na sua cópia e execute novamente.</li><li>Provoque a regressão trocando <code>&lt;= 10</code> por <code>&lt; 10</code> e observe qual teste acusa o problema.</li><li>Restaure a regra correta e gere o relatório de cobertura.</li></ol></div>
+<h2>Agora podemos inverter a ordem</h2><p>Até aqui o caminho foi:</p><div class="path"><span>Regra existente</span><b>→</b><span>Código</span><b>→</b><span>Teste</span></div><p>Mas imagine que a cantina peça uma nova regra que ainda não existe:</p><div class="card quote-card"><p><strong>Pedidos com subtotal a partir de R$ 100,00 terão entrega gratuita.</strong></p></div><p>Se já sabemos exatamente o comportamento esperado, será que podemos escrever o teste <strong>antes</strong> de implementar a regra?</p>
+<div class="card next-card"><h3>A seguir: escrever o teste antes do código</h3><p>Vamos conhecer o <strong>Desenvolvimento Guiado por Testes</strong>, em inglês <em>Test-Driven Development</em> — <strong>TDD</strong> — fazendo uma nova funcionalidade nascer do ciclo teste → código → melhoria.</p></div>
+<div class="checkpoint"><h3>Antes de seguir</h3><p>Você deve conseguir explicar:</p><ul><li>o que o pytest automatiza;</li><li>o que significa <code>assert</code> em um teste;</li><li>por que um teste que falha pode estar funcionando corretamente;</li><li>o que é uma suíte de testes;</li><li>o que cobertura de código informa e, principalmente, o que ela não garante.</li></ul></div>
+</article>
+<nav class="stage-footer" aria-label="Navegação entre etapas"><a href="10-encontramos-um-defeito.html">← Etapa 10</a><a class="all" href="index.html">Todas as etapas</a><span class="disabled">Próxima etapa</span></nav>
+</div></main></div><script src="../../js/qts.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script></body></html>

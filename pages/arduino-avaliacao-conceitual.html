@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Avaliação Conceitual — Arduino e IoT | Mundo bit Byte</title>
+<link href="../css/arduino.css" rel="stylesheet"/>
+<style>
+.module-menu a.module-btn{display:inline-flex;align-items:center;text-decoration:none}
+.assessment-shell{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.assessment-head{padding:18px 20px;background:linear-gradient(135deg,#fff,#eef9fb);border-bottom:1px solid var(--line)}
+.assessment-head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.assessment-head h2{margin:8px 0 0;color:var(--dark);font-size:26px}
+.assessment-head p{margin:8px 0 0;line-height:1.5;max-width:980px}
+.pdf-btn{flex:0 0 auto;background:var(--primary);color:#fff;border-radius:10px;padding:10px 13px;font-weight:900}
+.pdf-btn:hover{background:var(--dark)}
+.student-line{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:14px;font-size:13px;font-weight:800;color:#425466}
+.student-line span{display:block;border-bottom:1px solid #8ea6ad;padding:0 0 5px}
+.assessment-note{margin-top:12px;padding:11px 13px;border:1px solid #c8dfe4;border-radius:12px;background:#f8fbfc;font-size:13.5px;line-height:1.5}
+.assessment-body{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.concept-question{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;break-inside:avoid}
+.concept-question h3{margin:0;padding:10px 12px;background:#f1fbfd;border-bottom:1px solid var(--line);font-size:14px;color:var(--dark)}
+.concept-question p{margin:12px 13px 8px;font-size:14px;line-height:1.5}
+.answer-space{padding:0 13px 12px}
+.answer-space span{display:block;height:22px;border-bottom:1px solid #a5b8be}
+.page-note{margin:0;padding:0 16px 16px;color:#546670;font-size:12.5px;line-height:1.45}.stage-menu .stage-divider{height:1px;background:var(--line);margin:8px 0}
+@media(max-width:900px){.assessment-body{grid-template-columns:1fr}.student-line{grid-template-columns:1fr}.assessment-head-top{display:block}.pdf-btn{margin-top:12px}}
+@media(max-width:620px){.assessment-head{padding:14px}.assessment-head h2{font-size:22px}.assessment-body{padding:10px;gap:10px}.concept-question p{font-size:13.5px}}
+@media print{@page{size:A4 portrait;margin:9mm}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff!important;color:#111!important;font-family:Arial,sans-serif!important}header,.module-menu,.stage-sidebar,.stage-backdrop,.stage-toggle,.pdf-btn,.page-note{display:none!important}.layout.arduino-layout{display:block!important;min-height:0!important}.arduino-content main{padding:0!important;margin:0!important;max-width:none!important;width:100%!important}.assessment-shell{border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}.assessment-head{padding:0 0 3mm!important;background:#fff!important;border-bottom:1px solid #777!important}.assessment-head h2{font-size:14pt!important;margin:1mm 0 0!important;color:#000!important}.assessment-head p,.assessment-note{font-size:8.5pt!important;line-height:1.25!important}.assessment-note{padding:2mm!important;margin-top:2mm!important}.student-line{display:grid!important;grid-template-columns:2fr 1fr 1fr!important;gap:5mm!important;margin-top:2mm!important;font-size:8pt!important}.assessment-body{display:grid!important;grid-template-columns:1fr 1fr!important;gap:3mm 5mm!important;padding:3mm 0 0!important}.concept-question{border:1px solid #999!important;border-radius:2mm!important;overflow:hidden!important}.concept-question h3{padding:1.5mm 2mm!important;background:#f2f2f2!important;font-size:8.5pt!important;color:#000!important}.concept-question p{margin:1.5mm 2mm 1mm!important;font-size:8pt!important;line-height:1.2!important}.answer-space{padding:0 2mm 1.5mm!important}.answer-space span{height:4mm!important;border-bottom:1px solid #888!important}}
+</style>
+</head>
+<body>
+<header><div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Arduino</h1></div><div class="brand">Professor Ronaldo Lavestein</div></header>
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos do Arduino">
+<a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+<a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+<a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+<a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+<a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+<a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a>
+<a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a>
+<a class="module-btn" href="arduino-protocolos.html">8. RTOS e Protocolos</a>
+<a class="module-btn" href="arduino-seguranca.html">9. Proteção e Segurança</a>
+<a class="module-btn" href="arduino-projeto-iot.html">10. Projeto IoT</a>
+<a class="module-btn active" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Avaliação conceitual">
+  <div class="stage-sidebar-head"><h3>Avaliação</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar avaliação">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible stage-exercises" href="arduino-exercicios.html">← Voltar para 99 — Exercícios</a>
+    <div class="stage-divider"></div>
+    <a class="stage-link module-visible active" href="#avaliacao">Avaliação Conceitual</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Avaliação</button>
+<main id="avaliacao">
+<section class="assessment-shell active-panel">
+  <div class="assessment-head"><div class="assessment-head-top"><div><span class="badge">99</span><h2>Avaliação Conceitual — Arduino e IoT</h2><p>Atividade individual com 20 questões que percorrem o percurso completo, dos fundamentos de sistemas embarcados ao projeto IoT integrado.</p></div><button class="pdf-btn" type="button" onclick="window.print()">Salvar / Imprimir PDF</button></div>
+    <div class="student-line"><span>Nome:</span><span>Turma:</span><span>Data:</span></div>
+    <div class="assessment-note"><strong>Orientação:</strong> responda com frases simples e objetivas. Quando a questão apresentar uma situação, explique também o motivo da sua escolha. Você pode consultar os conteúdos do Mundo bit Byte ou pesquisar na Internet quando necessário. As respostas podem ser feitas em um editor de textos ou em uma folha.</div>
+  </div>
+  <div class="assessment-body">
+<article class="concept-question"><h3>1. Sistema embarcado, placa e microcontrolador</h3><p>Explique o que caracteriza um sistema embarcado e diferencie, no Arduino Uno, a placa de desenvolvimento do microcontrolador que executa o programa.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>2. Maker, tinkering e open source</h3><p>Como o ciclo “montar → testar → observar → modificar” representa tinkering? Cite também uma vantagem de hardware ou software aberto em projetos de prototipagem.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>3. Eletrônica e manuseio</h3><p>Um aluno recebe um LED, um resistor, um capacitor eletrolítico e um circuito integrado. Cite dois cuidados que devem ser verificados antes de energizar a montagem e explique por que o resistor aparece em série com o LED.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>4. Programa no microcontrolador</h3><p>Qual é o papel de <code>setup()</code> e <code>loop()</code>? Depois de escrever um sketch na Arduino IDE, o que significam verificar/compilar e enviar/gravar o programa na placa?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>5. Entrada analógica e PWM</h3><p>No Arduino Uno, explique a diferença entre <code>analogRead()</code> e <code>analogWrite()</code>. Por que <code>analogWrite()</code> não representa, nesse caso, um DAC real? Onde <code>analogReference()</code> entra nessa comparação?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>6. Controle de tempo</h3><p>Qual é a diferença prática entre usar <code>delay()</code> e controlar intervalos com <code>millis()</code>? Em que situação evitar bloquear o <code>loop()</code> é útil?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>7. Memória e programação modular</h3><p>Diferencie, em alto nível, Flash, RAM e memória persistente. Depois explique por que dividir o programa em funções e limitar o escopo de variáveis pode facilitar manutenção e reutilização.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>8. Funções predefinidas e bibliotecas</h3><p>Dê um exemplo de função matemática, trigonométrica, de texto ou aleatória usada no percurso e explique para que serve uma biblioteca como <code>Servo.h</code>.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>9. Bluetooth, Wi-Fi e HTTP</h3><p>Um celular precisa controlar um LED próximo sem rede Wi-Fi; depois o ESP32 deve oferecer uma página para outros dispositivos da rede. Qual tecnologia atende melhor cada necessidade e quem é cliente e servidor no acesso HTTP?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>10. mDNS e tunelamento</h3><p>Que problema o mDNS resolve dentro da rede local? E o que muda quando um computador cria um túnel temporário para tornar o servidor local acessível de fora da rede?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>11. Internet das Coisas</h3><p>Por que uma automação local não é automaticamente IoT? Escolha uma aplicação — residencial, industrial, urbana, monitoramento, saúde, automação ou rastreamento — e indique dado, comunicação e finalidade.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>12. RTOS e tempo real</h3><p>Em um sistema embarcado, dizer que uma tarefa é de tempo real significa apenas que ela precisa ser muito rápida? Explique por que tarefas e escalonamento podem ser úteis.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>13. I2C</h3><p>Para que servem SDA, SCL e o endereço I2C? Por que é melhor executar um scanner do que copiar automaticamente um endereço como 0x27?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>14. UART e RS-232</h3><p>O uso de TX e RX de um microcontrolador significa automaticamente que a ligação é RS-232? Explique a diferença entre UART em nível lógico e RS-232 e indique o papel de um transceptor como MAX3232.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>15. CAN</h3><p>Por que uma rede CAN é adequada para vários controladores em máquinas ou veículos? Por que CAN_H e CAN_L não devem ser ligados diretamente aos GPIOs do ESP32?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>16. TCP/IP, IEEE 802.11 e Bluetooth</h3><p>No acesso à página do ESP32, relacione HTTP, TCP, IP e Wi-Fi. Depois explique por que um ESP32-WROOM-32 b/g/n de 2,4 GHz pode não enxergar uma rede somente de 5 GHz e diferencie Bluetooth Classic de BLE em uma frase.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>17. Proteção de dados pessoais</h3><p>Um sistema IoT registra horário de entrada associado ao nome de cada pessoa. Que perguntas sobre finalidade, necessidade, acesso e retenção devem ser feitas antes de coletar e armazenar esses dados?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>18. Segurança de sistemas e informações</h3><p>Um dispositivo aceita comandos de qualquer pessoa que conheça seu endereço. Diferencie autenticação de autorização e cite mais um cuidado de segurança relacionado a credenciais, exposição ou atualização.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>19. Projeto IoT e falha de rede</h3><p>No Ambiente Inteligente MbB, o Wi-Fi fica indisponível enquanto o modo automático está ativo. O que deve continuar funcionando localmente e por quê? Qual parte do sistema deixa de estar disponível?</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+<article class="concept-question"><h3>20. Desafio de integração</h3><p>Proponha um sistema diferente do projeto final. Defina: problema, sensor ou entrada, processamento, atuador ou saída, forma de comunicação, aplicação e um teste de falha ou cuidado de segurança/dados.</p><div class="answer-space" aria-hidden="true"><span></span><span></span><span></span></div></article>
+  </div>
+  <p class="page-note">Se desejar imprimir a atividade, use o botão “Salvar / Imprimir PDF” e escolha uma impressora ou a opção “Salvar como PDF” do navegador.</p>
+</section>
+</main>
+</div>
+</div>
+<script>
+(function(){const layout=document.getElementById('arduinoLayout');const toggle=document.getElementById('stageToggle');const close=document.getElementById('stageClose');const backdrop=document.getElementById('stageBackdrop');function closeDrawer(){layout.classList.remove('drawer-open');backdrop.hidden=true;toggle.setAttribute('aria-expanded','false')}function openDrawer(){layout.classList.add('drawer-open');backdrop.hidden=false;toggle.setAttribute('aria-expanded','true')}toggle.addEventListener('click',openDrawer);close.addEventListener('click',closeDrawer);backdrop.addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});})();
+(function(){function manter(){const menu=document.getElementById('arduinoModuleMenu'),ativo=menu&&menu.querySelector('.module-btn.active');if(!menu||!ativo)return;requestAnimationFrame(()=>{const mr=menu.getBoundingClientRect(),ir=ativo.getBoundingClientRect(),alvo=menu.scrollLeft+(ir.left-mr.left)-((menu.clientWidth-ir.width)/2),max=Math.max(0,menu.scrollWidth-menu.clientWidth);menu.scrollLeft=Math.min(max,Math.max(0,alvo));});}document.addEventListener('DOMContentLoaded',manter);window.addEventListener('pageshow',manter);window.addEventListener('resize',manter);})();
+</script>
+<script src="../js/arduino-destaques-mbb.js?v=20260926-3"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

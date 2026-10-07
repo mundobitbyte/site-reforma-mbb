@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Internet das Coisas: fundamentos, histórico, conceitos, definições e aplicações em sistemas embarcados."/>
+<title>7 — Internet das Coisas | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+#arduinoModuleMenu a.module-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit!important}
+.mbb7-intro{margin-bottom:16px}
+.mbb7-intro .hero-flow{margin-top:16px}
+.mbb7-panel{display:none}
+.mbb7-panel.active-panel{display:block}
+.mbb7-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb7-summary div{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb7-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb7-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb7-note{margin:0;padding:12px 14px;border:1px solid #bcdde4;border-radius:12px;background:#f7fcfd;line-height:1.55}
+.mbb7-system{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:15px}
+.mbb7-system span{background:#eaf2ff;border:1px solid #bfdbfe;color:var(--dark);border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.mbb7-system b{color:var(--dark)}
+.mbb7-parts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;padding:13px}
+.mbb7-parts div{border:1px solid var(--line);border-radius:11px;background:#f8fbfc;padding:10px}
+.mbb7-parts strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb7-timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:13px}
+.mbb7-timeline article{border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}
+.mbb7-timeline strong{display:block;color:var(--dark);margin-bottom:6px}
+.mbb7-compare{width:100%;border-collapse:collapse}
+.mbb7-compare th,.mbb7-compare td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+.mbb7-compare th{background:#eef9fb;color:var(--dark)}
+.mbb7-apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mbb7-app{border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px}
+.mbb7-app h3{margin:0 0 8px;color:var(--dark);font-size:16px}
+.mbb7-app p{margin:5px 0;line-height:1.5}
+.mbb7-app strong{color:var(--dark)}
+.mbb7-diagnosis details{border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:8px;padding:10px 12px}
+.mbb7-diagnosis summary{cursor:pointer;font-weight:850;color:var(--dark)}
+.mbb7-diagnosis details p{margin:8px 0 0;line-height:1.5}
+.mbb7-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+@media(max-width:1000px){.mbb7-parts{grid-template-columns:1fr 1fr}.mbb7-timeline{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.mbb7-summary,.mbb7-apps,.mbb7-parts,.mbb7-timeline{grid-template-columns:1fr}.mbb7-compare{font-size:13px}.mbb7-compare th,.mbb7-compare td{padding:7px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+  <a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a>
+  <a class="module-btn active" href="#topo">7. Internet das Coisas</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do bloco 7">
+  <div class="stage-sidebar-head"><h3>Etapas</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b7-1">7.1 Fundamentos</a>
+    <a class="stage-link module-visible" href="#b7-2">7.2 Histórico</a>
+    <a class="stage-link module-visible" href="#b7-3">7.3 Conceitos e definições</a>
+    <a class="stage-link module-visible" href="#b7-4">7.4 Aplicações</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main id="topo">
+
+<section class="hero mbb7-intro">
+  <span class="badge">7</span>
+  <h2>Internet das Coisas: quando o objeto passa a fazer parte de um sistema conectado</h2>
+  <p>No bloco anterior, o ESP32 ganhou Bluetooth, Wi-Fi e comunicação HTTP. Agora precisamos responder a uma pergunta maior: <strong>o que faz um objeto conectado participar de um sistema de Internet das Coisas?</strong></p>
+  <div class="hero-flow"><div>Objeto físico</div><span>→</span><div>Dados e ações</div><span>→</span><div>Rede</div><span>→</span><div>Aplicação</div><span>→</span><div>Finalidade</div></div>
+  <div class="mbb7-summary">
+    <div><strong>Sem novo circuito obrigatório</strong><span>Vamos interpretar sistemas que já conhecemos antes de acrescentar novos componentes.</span></div>
+    <div><strong>Foco</strong><span>Entender o conjunto, não decorar uma definição isolada.</span></div>
+    <div><strong>Objetivo</strong><span>Reconhecer, comparar e explicar aplicações de IoT em diferentes contextos.</span></div>
+  </div>
+</section>
+
+<section class="project mbb7-panel active-panel" id="b7-1">
+  <div class="projectHead"><span class="badge">7.1</span><div><h2>Fundamentos: nosso ESP32 já é IoT?</h2><p>Wi-Fi sozinho não transforma qualquer equipamento em IoT. Precisamos observar como o dispositivo interage com o mundo físico e com a rede.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>No Bloco 6, um navegador enviou comandos pela rede e o ESP32 ligou ou desligou um LED físico. O sistema tinha processamento, uma interface de rede, um atuador e uma aplicação simples no navegador. Isso já reúne características de um <strong>dispositivo IoT simples dentro de um sistema conectado</strong>.</p><p>O ponto importante não é o nome da placa nem a presença de Wi-Fi isoladamente. É a ligação entre <strong>mundo físico e mundo digital</strong>.</p></article>
+    <article class="card wide"><h3>2. Uma regra prática para este curso</h3><p class="mbb7-note">Há diferentes definições de IoT. Para analisar nossos projetos, considere como <strong>dispositivo IoT</strong> um equipamento que interage com o mundo físico por sensores ou atuadores e possui uma interface de rede para trocar informações. Quando olhamos o conjunto completo, um <strong>sistema IoT</strong> pode incluir também aplicativos, serviços, pessoas e processos que usam esses dados ou comandos.</p></article>
+    <article class="card wide"><h3>3. Enxergando o sistema inteiro</h3><div class="mbb7-system"><span>Ambiente físico</span><b>↔</b><span>Sensor / atuador</span><b>↔</b><span>ESP32</span><b>↔</b><span>Rede</span><b>↔</b><span>Aplicação</span><b>↔</b><span>Pessoa ou processo</span></div><p>O fluxo pode ocorrer nos dois sentidos. Um sensor envia dados para uma aplicação; uma aplicação também pode enviar um comando que provoca uma ação física.</p></article>
+    <article class="card wide"><h3>4. Cinco perguntas que ajudam a reconhecer IoT</h3><div class="mbb7-parts"><div><strong>O que é físico?</strong><span>Qual objeto, máquina ou ambiente está sendo observado ou controlado?</span></div><div><strong>O que percebe ou age?</strong><span>Existe sensor, atuador ou ambos?</span></div><div><strong>Quem processa?</strong><span>Qual controlador executa a lógica?</span></div><div><strong>Como se comunica?</strong><span>Que interface de rede permite a troca de informações?</span></div><div><strong>Para quê?</strong><span>Como os dados ou comandos serão utilizados?</span></div></div></article>
+    <article class="card"><h3>5. Exemplo de monitoramento</h3><p>Um LDR mede luminosidade. O ESP32 processa a leitura e envia o valor pela rede. Uma aplicação permite acompanhar o ambiente. O sensor não está apenas lendo: sua informação passou a integrar outro sistema.</p></article>
+    <article class="card"><h3>6. Exemplo de controle</h3><p>O navegador envia um comando pela rede. O ESP32 recebe e aciona o LED. Aqui o caminho parte do mundo digital e termina em uma ação física.</p></article>
+    <article class="card worked wide mbb7-bridge"><h3>7. Próxima pergunta</h3><p>Hoje é comum encontrar objetos conectados. Mas isso não aconteceu de uma vez. <strong>Que mudanças tornaram possível colocar sensores, processamento e rede em tantos equipamentos?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb7-panel" id="b7-2">
+  <div class="projectHead"><span class="badge">7.2</span><div><h2>Histórico: de equipamentos isolados a objetos conectados</h2><p>A história interessa porque mostra quais limitações precisaram ser superadas para que a IoT se tornasse viável.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Antes do nome IoT</h3><p>Equipamentos eletrônicos já utilizavam controle embarcado e algumas máquinas já trocavam informações por redes. O que ainda não existia em grande escala era a combinação acessível de <strong>sensores, processamento pequeno, comunicação sem fio e Internet</strong> dentro de muitos objetos do cotidiano.</p></article>
+    <article class="card wide"><h3>2. Uma linha do tempo útil</h3><div class="mbb7-timeline"><article><strong>Antes dos anos 2000</strong><span>Microcontroladores e sistemas embarcados já automatizavam equipamentos; redes conectavam principalmente computadores e sistemas especializados.</span></article><article><strong>1999</strong><span>A expressão <em>Internet of Things</em> ficou associada a Kevin Ashton ao discutir maneiras de ligar informações de objetos físicos à Internet.</span></article><article><strong>Anos 2000</strong><span>Processadores, sensores e interfaces sem fio ficaram menores e mais acessíveis, enquanto redes IP e Wi-Fi se tornaram mais presentes.</span></article><article><strong>Anos 2010 em diante</strong><span>Smartphones, serviços on-line e plataformas conectadas facilitaram visualizar dados e controlar dispositivos de muitos lugares.</span></article></div></article>
+    <article class="card"><h3>3. O que realmente mudou</h3><p>Não foi uma única invenção. A IoT cresceu porque várias tecnologias amadureceram juntas: eletrônica embarcada, sensores, redes, software e serviços digitais.</p></article>
+    <article class="card"><h3>4. O que não precisamos decorar</h3><p>O objetivo não é memorizar uma lista de datas. Use a história para entender a progressão: <strong>controlar localmente → conectar → trocar dados → usar esses dados em aplicações</strong>.</p></article>
+    <article class="card worked wide mbb7-bridge"><h3>5. Próxima pergunta</h3><p>Se várias tecnologias podem aparecer juntas, precisamos evitar outra confusão: <strong>circuito eletrônico, sistema embarcado, automação, dispositivo conectado e IoT significam a mesma coisa?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb7-panel" id="b7-3">
+  <div class="projectHead"><span class="badge">7.3</span><div><h2>Conceitos e definições: as categorias podem se combinar</h2><p>Um sistema IoT também pode ser embarcado e automatizado. Os nomes não formam caixas exclusivas; eles destacam características diferentes.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Comparando situações que já conhecemos</h3><table class="mbb7-compare"><thead><tr><th>Situação</th><th>Como podemos classificá-la</th><th>Por quê</th></tr></thead><tbody><tr><td>LED ligado a uma pilha</td><td>Circuito eletrônico</td><td>Existe uma função elétrica, mas não há programa nem comunicação em rede.</td></tr><tr><td>Arduino + botão + LED</td><td>Sistema embarcado local</td><td>Um microcontrolador executa um programa e interage com entradas e saídas.</td></tr><tr><td>LDR + Arduino que acende o LED quando escurece</td><td>Sistema embarcado + automação local</td><td>O próprio sistema percebe uma condição e age automaticamente, sem depender de rede.</td></tr><tr><td>ESP32 + LED controlado por página Web</td><td>Sistema embarcado + dispositivo conectado + exemplo simples de IoT</td><td>Há um atuador físico, processamento, interface de rede e uma aplicação que envia comandos.</td></tr><tr><td>Sensor + ESP32 + rede + aplicação de acompanhamento</td><td>Sistema IoT</td><td>O mundo físico gera dados que são processados, transmitidos e usados por outra parte do sistema.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>2. Automação não é sinônimo de IoT</h3><p>A <strong>lixeira automática</strong> estudada anteriormente detecta aproximação com o HC-SR04 e movimenta o servo. Ela é uma automação embarcada local: percebe e age sozinha, mas não precisa de uma rede para cumprir sua função.</p><p>Se acrescentarmos, por exemplo, registro do número de aberturas e envio desse dado para uma aplicação de acompanhamento, passamos a integrar a automação a um sistema conectado.</p></article>
+    <article class="card wide mbb7-diagnosis"><h3>3. Diagnóstico: pense antes de abrir a resposta</h3><details><summary>Uma lâmpada acende automaticamente quando um LDR detecta pouca luz. É IoT?</summary><p>Não necessariamente. Se tudo acontece apenas no circuito local, é uma automação embarcada. Pode tornar-se parte de um sistema IoT quando passa a trocar informações por uma rede com outros componentes do sistema.</p></details><details><summary>Um sensor envia o nível de um reservatório para uma aplicação pela rede. É IoT?</summary><p>Sim, é um exemplo típico: existe interação com uma grandeza física, processamento, comunicação em rede e utilização do dado em outra parte do sistema.</p></details><details><summary>Um equipamento possui Wi-Fi, mas o programa nunca usa a rede. O Wi-Fi sozinho basta?</summary><p>Não. Ter o recurso disponível na placa não significa que o sistema esteja usando conectividade. Precisamos analisar o comportamento real do dispositivo.</p></details></article>
+    <article class="card"><h3>4. Dado não é informação útil automaticamente</h3><p>Receber <code>18</code> é apenas um valor. Saber que ele representa <strong>18 cm de distância</strong>, registrar seu contexto e decidir o que fazer com ele transforma o dado em algo útil para o sistema.</p></article>
+    <article class="card"><h3>5. IoT também pode receber comandos</h3><p>Nem todo sistema IoT existe apenas para coletar. A aplicação pode enviar comandos de volta para um atuador, desde que isso faça sentido para a finalidade do sistema.</p></article>
+    <article class="card worked wide mbb7-bridge"><h3>6. Próxima pergunta</h3><p>Já conseguimos reconhecer a estrutura. Agora precisamos enxergar <strong>onde esse mesmo padrão aparece em situações reais diferentes</strong>.</p></article>
+  </div>
+</section>
+
+<section class="project mbb7-panel" id="b7-4">
+  <div class="projectHead"><span class="badge">7.4</span><div><h2>Aplicações: o mesmo princípio em contextos diferentes</h2><p>Em vez de decorar setores, observe sempre o que é percebido, o que circula pela rede e para que a informação ou o comando serve.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Um padrão para analisar qualquer aplicação</h3><div class="mbb7-system"><span>O que acontece no mundo físico?</span><b>→</b><span>Que dado ou comando existe?</span><b>→</b><span>Como ele circula?</span><b>→</b><span>Quem usa?</span><b>→</b><span>Qual resultado se espera?</span></div></article>
+    <article class="card wide"><h3>2. Exemplos por área</h3><div class="mbb7-apps"><section class="mbb7-app"><h3>Residencial</h3><p><strong>Situação:</strong> um sensor detecta vazamento de água em um ponto da casa.</p><p><strong>Dado:</strong> presença de água.</p><p><strong>Uso:</strong> enviar um aviso para que o morador possa verificar o problema.</p></section><section class="mbb7-app"><h3>Industrial</h3><p><strong>Situação:</strong> sensores acompanham temperatura e vibração de uma máquina.</p><p><strong>Dado:</strong> medições periódicas do equipamento.</p><p><strong>Uso:</strong> apoiar acompanhamento de operação e manutenção.</p></section><section class="mbb7-app"><h3>Planejamento urbano</h3><p><strong>Situação:</strong> sensores instalados em pontos da cidade medem fluxo de veículos.</p><p><strong>Dado:</strong> quantidade ou intensidade do tráfego em diferentes horários.</p><p><strong>Uso:</strong> apoiar análise de mobilidade e planejamento de intervenções.</p></section><section class="mbb7-app"><h3>Sistemas de monitoramento</h3><p><strong>Situação:</strong> um reservatório fica em um local distante.</p><p><strong>Dado:</strong> nível medido por um sensor.</p><p><strong>Uso:</strong> acompanhar a condição sem precisar estar fisicamente ao lado do tanque.</p></section><section class="mbb7-app"><h3>Saúde</h3><p><strong>Situação:</strong> um dispositivo conectado registra uma medida destinada ao acompanhamento de uma pessoa.</p><p><strong>Dado:</strong> medição coletada pelo dispositivo.</p><p><strong>Uso:</strong> disponibilizar a informação de forma controlada para acompanhamento autorizado. Dados de saúde exigem cuidado especial com privacidade e proteção.</p></section><section class="mbb7-app"><h3>Automação</h3><p><strong>Situação:</strong> uma estufa mede umidade do solo e pode acionar irrigação.</p><p><strong>Dado:</strong> umidade medida e estado da irrigação.</p><p><strong>Uso:</strong> automatizar a ação e permitir acompanhamento do processo.</p></section><section class="mbb7-app"><h3>Rastreamento</h3><p><strong>Situação:</strong> um ativo de uma operação logística informa sua posição durante o transporte.</p><p><strong>Dado:</strong> localização do ativo.</p><p><strong>Uso:</strong> acompanhar deslocamento, rota e chegada ao destino.</p></section></div></article>
+    <article class="card"><h3>3. As áreas podem se sobrepor</h3><p>Uma aplicação residencial pode também ser automação e monitoramento. Uma aplicação industrial pode incluir rastreamento. As categorias indicam <strong>contextos e finalidades</strong>, não fronteiras rígidas.</p></article>
+    <article class="card"><h3>4. A pergunta que evita exemplos rasos</h3><p>Não basta dizer “sensor conectado”. Pergunte sempre: <strong>qual dado é produzido, quem precisa dele e que decisão ou ação ele permite?</strong></p></article>
+    <article class="card wide"><h3>5. Aplicando ao que já construímos</h3><p>Escolha um projeto anterior — LDR, HC-SR04, servo ou lixeira automática — e descreva uma evolução conectada usando cinco itens: <strong>objeto físico, sensor/atuador, dado ou comando, forma de comunicação e aplicação/finalidade</strong>.</p><p>Não é necessário montar outro circuito agora. O objetivo é provar que você consegue transformar componentes conhecidos em uma arquitetura de sistema coerente.</p></article>
+    <article class="card worked wide"><h3>6. O que aprendemos</h3><ul><li>IoT conecta o mundo físico ao digital por meio de sensores ou atuadores e comunicação em rede.</li><li>Um dispositivo IoT é apenas uma parte possível de um sistema maior.</li><li>Automação local e IoT podem coexistir, mas não são sinônimos.</li><li>As aplicações mudam, mas o raciocínio de observar dados, comunicação e finalidade continua útil.</li></ul></article>
+    <article class="card wide mbb7-bridge"><h3>7. Ponte para o próximo bloco</h3><p>Nos exemplos deste bloco, sensores, microcontroladores, atuadores, computadores e redes precisam trocar informações — e nem todos se comunicam da mesma maneira. Além disso, algumas tarefas precisam acontecer dentro de um tempo previsível. <strong>Como organizar essas comunicações e essas tarefas?</strong> O próximo bloco entra em RTOS, interfaces e protocolos.</p></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-iot.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

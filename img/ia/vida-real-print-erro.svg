@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+<title id="title">Captura de tela didática com erro FileNotFoundError</title>
+<desc id="desc">Editor fictício mostrando um arquivo Python tentando abrir dados/alunos.csv e a saída FileNotFoundError, para diferenciar evidência visível de hipótese.</desc>
+<defs><style>
+.ui{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;fill:#172235}.mono{font-family:'Courier New',monospace;fill:#1b2433}.s{font-size:15px}.m{font-size:17px}.h{font-size:19px;font-weight:700}.line{stroke:#d7e0eb;stroke-width:2}.red{fill:#b42318}.green{fill:#147a2a}.blue{fill:#1d5ed6}.panel{fill:#fff;stroke:#ccd8e6;stroke-width:2}
+</style></defs>
+<rect width="1400" height="620" rx="22" fill="#edf2f7"/>
+<rect x="24" y="24" width="1352" height="572" rx="16" class="panel"/>
+<rect x="24" y="24" width="1352" height="46" rx="16" fill="#f5f7fa"/>
+<text x="46" y="53" class="ui s">Arquivo   Editar   Exibir   Executar   Terminal   Ajuda</text>
+<line x1="24" y1="70" x2="1376" y2="70" class="line"/>
+<rect x="24" y="70" width="250" height="340" fill="#f8fafc"/><line x1="274" y1="70" x2="274" y2="410" class="line"/>
+<text x="46" y="105" class="ui h">Explorador</text><text x="54" y="140" class="ui m">▾ projeto</text><text x="74" y="174" class="ui m">▾ dados</text><text x="94" y="206" class="ui m">exemplo.csv</text><rect x="42" y="220" width="214" height="38" rx="8" fill="#dcecff"/><text x="67" y="245" class="ui m">cadastro_alunos.py</text><text x="67" y="285" class="ui m">funcoes.py</text><text x="67" y="323" class="ui m">leia_me.txt</text>
+<rect x="274" y="70" width="1102" height="340" fill="#fff"/><rect x="294" y="82" width="248" height="40" rx="8" fill="#f5f7fa"/><text x="314" y="108" class="ui h">cadastro_alunos.py</text><line x1="344" y1="122" x2="344" y2="410" class="line"/>
+<g class="mono m"><text x="306" y="156">1</text><text x="365" y="156" class="green"># Programa para ler a lista de alunos</text><text x="306" y="198">3</text><text x="365" y="198"><tspan class="blue">print</tspan>("Iniciando o cadastro de alunos...")</text><rect x="350" y="222" width="980" height="42" rx="7" fill="#fff0f0"/><text x="306" y="248" class="red">5</text><text x="365" y="248"><tspan class="blue">with</tspan> open("dados/alunos.csv", "r", encoding="utf-8") as arquivo:</text><text x="306" y="290">6</text><text x="405" y="290">linhas = arquivo.readlines()</text><text x="306" y="350">8</text><text x="365" y="350"><tspan class="blue">print</tspan>(f"Total de linhas lidas: {len(linhas)}")</text></g>
+<line x1="24" y1="410" x2="1376" y2="410" class="line"/><rect x="24" y="410" width="1352" height="186" fill="#fff"/><text x="46" y="444" class="ui h">Saída</text><text x="118" y="444" class="ui m">Terminal</text><text x="220" y="444" class="ui m">Problemas</text><rect x="42" y="458" width="1316" height="118" rx="10" fill="#fff1f1"/>
+<g class="mono m"><text x="62" y="488" font-weight="700">Executando cadastro_alunos.py</text><text x="62" y="516">Traceback (most recent call last):</text><text x="82" y="544">File "cadastro_alunos.py", line 5, in &lt;module&gt;</text><text x="82" y="570" class="red">FileNotFoundError: arquivo não encontrado → dados/alunos.csv</text></g>
+</svg>

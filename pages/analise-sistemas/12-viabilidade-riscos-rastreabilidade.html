@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>12 — Viabilidade, riscos e rastreabilidade | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="12"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Validar e consolidar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 12</span><h1>A ideia é boa. Mas vale a pena fazer desse jeito?</h1><p>Agora já conhecemos o processo, os requisitos, o protótipo e as integrações. Chegou a hora de perguntar <strong>se a solução faz sentido, o que pode dar errado e o que muda quando uma decisão muda</strong>.</p></section>
+<article class="chapter">
+<div class="card return-card"><h3>Pense numa decisão real</h3><p>A Conecta quer enviar mensagens automáticas. Podemos construir nosso próprio mecanismo? Contratar um serviço? Integrar algo pronto? Cada opção muda custo, prazo e dependência.</p></div>
+
+<h2>“Dá para fazer?” é uma pergunta grande demais</h2>
+<p>Vamos quebrá-la em perguntas menores:</p>
+<div class="grid"><div class="card"><h3>Técnica</h3><p>Temos tecnologia e conhecimento para construir e manter?</p></div><div class="card"><h3>Econômica</h3><p>O benefício justifica o custo?</p></div><div class="card"><h3>Operacional</h3><p>As pessoas realmente conseguirão usar esse novo processo?</p></div><div class="card"><h3>Prazo</h3><p>Conseguimos entregar no tempo necessário?</p></div><div class="card"><h3>Legal</h3><p>Existe alguma obrigação que precisa ser respeitada?</p></div><div class="card"><h3>Organizacional</h3><p>Quem ficará responsável pela solução e pelos dados?</p></div></div>
+<p>Olhar essas dimensões é analisar a <strong>viabilidade</strong> da solução.</p>
+
+<h2>Construir, comprar ou integrar?</h2>
+<p>Essas três opções aparecem muito em tecnologia:</p>
+<ul><li><strong>Build — construir:</strong> fazer nós mesmos;</li><li><strong>Buy — comprar ou assinar:</strong> usar um produto ou serviço pronto;</li><li><strong>Integrate — integrar:</strong> conectar nossa solução a algo externo.</li></ul>
+<p>Na Conecta, podemos construir o núcleo da Ordem, contratar um serviço de mensagens e integrá-lo ao sistema.</p>
+<p>Nenhuma opção é automaticamente melhor. Precisamos comparar custo, prazo, manutenção, dependência e adequação ao processo.</p>
+
+<h2>E se ainda não soubermos se uma ideia funciona?</h2>
+<div class="card context-card"><p>Imagine que queremos receber confirmação de pagamento de um serviço externo. Antes de prometer isso no produto, podemos fazer um pequeno experimento para descobrir se a integração realmente funciona.</p></div>
+<p>Esse pequeno experimento pode ser chamado de <strong>PoC — Proof of Concept</strong>, em português <strong>Prova de Conceito</strong>.</p>
+<p>Ela não é o produto pronto. É apenas uma forma de responder uma dúvida técnica importante antes de apostar muito tempo nela.</p>
+<p>Uma investigação curta com objetivo parecido também pode ser chamada de <strong>spike</strong>.</p>
+
+<h2>Agora pense no que pode dar errado</h2>
+<p>O serviço de mensagens pode ficar fora do ar. Um usuário pode deixar de atualizar a situação. Uma cópia de segurança pode falhar justamente quando for necessária.</p>
+<p>Enquanto isso ainda é uma possibilidade, chamamos de <strong>risco</strong>. Quando já aconteceu, virou <strong>problema</strong>.</p>
+<div class="grid2"><div class="card"><h3>Risco</h3><p>“O serviço de mensagens pode ficar indisponível.”</p></div><div class="card problem-card"><h3>Problema</h3><p>“O serviço de mensagens está indisponível agora.”</p></div></div>
+
+<h2>Nem todo risco merece a mesma atenção</h2>
+<p>Para decidir o que cuidar primeiro, fazemos duas perguntas: <strong>qual a chance de acontecer?</strong> e <strong>quanto prejudica se acontecer?</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Risco</th><th>Chance</th><th>Impacto</th><th>O que podemos fazer</th></tr></thead><tbody><tr><td>R01</td><td>Serviço de mensagens indisponível</td><td>Média</td><td>Baixo/Médio</td><td>Registrar pendência e tentar depois</td></tr><tr><td>R02</td><td>Usuários não atualizarem a situação</td><td>Média</td><td>Alto</td><td>Simplificar o fluxo, treinar e acompanhar</td></tr><tr><td>R03</td><td>Perda de dados</td><td>Baixa</td><td>Alto</td><td>Cópia de segurança e restauração testada</td></tr><tr><td>R04</td><td>Pagamento duplicado</td><td>Baixa</td><td>Alto</td><td>Evitar duplicação e manter auditoria</td></tr></tbody></table></div>
+<p>O código <strong>R01</strong> significa apenas “Risco 1”.</p>
+
+<h2>O que fazemos antes e o que fazemos se acontecer?</h2>
+<div class="grid2"><div class="card"><h3>Mitigação</h3><p>O que fazemos antes para reduzir a chance ou o impacto.</p></div><div class="card"><h3>Contingência</h3><p>O que faremos se o risco realmente acontecer.</p></div></div>
+<p>Fazer e testar cópias de segurança é uma forma de mitigação. Ter um procedimento de recuperação é contingência.</p>
+
+<h2>Agora imagine uma mudança aparentemente pequena</h2>
+<div class="card context-card"><p>O cliente pede: <strong>“Quero aprovar o orçamento diretamente pelo portal.”</strong></p></div>
+<p>Parece só um botão novo. Mas pense no que muda: quem pode aprovar? como confirmar que é realmente o cliente? como registrar a decisão? o Caso de Uso muda? o protótipo muda? os testes mudam?</p>
+<p>Descobrir tudo que uma mudança afeta é fazer uma <strong>análise de impacto</strong>.</p>
+
+<h2>Como lembrar de onde cada coisa veio?</h2>
+<p>Pegue o requisito “Consultar situação”. Ele nasceu porque os clientes ligavam para perguntar o andamento. Depois virou objetivo do cliente, apareceu na tela de consulta e ganhou testes.</p>
+<div class="flow"><span class="node">Cliente não sabe andamento</span><span class="arrow">→</span><span class="node">RF04 Consultar situação</span><span class="arrow">→</span><span class="node">História/Caso de Uso</span><span class="arrow">→</span><span class="node">Tela de consulta</span><span class="arrow">→</span><span class="node">Teste</span></div>
+<p>Essa capacidade de seguir o caminho para trás e para frente é chamada de <strong>rastreabilidade</strong>.</p>
+<p>Ela responde duas perguntas muito úteis:</p>
+<ul><li><strong>Por que isso existe?</strong></li><li><strong>Se isso mudar, o que mais pode ser afetado?</strong></li></ul>
+
+<h2>Quando existem muitas ligações, uma tabela ajuda</h2>
+<div class="table-wrap"><table><thead><tr><th>Origem</th><th>Requisito</th><th>Regra</th><th>História/Caso</th><th>Tela</th><th>Teste</th></tr></thead><tbody><tr><td>Cliente não sabe andamento</td><td>RF04</td><td>—</td><td>Consultar andamento</td><td>Consulta da ordem</td><td>CT08</td></tr><tr><td>Gerência exige aprovação</td><td>RF07</td><td>RN01</td><td>Registrar decisão</td><td>Orçamento</td><td>CT12</td></tr></tbody></table></div>
+<p><strong>CT</strong> significa Caso de Teste. A tabela não existe para criar burocracia; existe para nos ajudar a encontrar origem, cobertura e impacto.</p>
+
+<h2>Premissa, restrição e dependência</h2>
+<p>Essas palavras ficam mais fáceis quando ligadas a perguntas:</p>
+<ul><li><strong>Premissa:</strong> o que estamos assumindo como verdadeiro?</li><li><strong>Restrição:</strong> o que limita nossas escolhas?</li><li><strong>Dependência:</strong> de que precisamos para conseguir avançar?</li></ul>
+<p>Depender de um fornecedor é uma dependência. Esse fornecedor ficar indisponível é um risco possível.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Escolha uma decisão da Conecta e avalie se faz sentido técnica, econômica e operacionalmente.</li><li>Explique construir, comprar e integrar usando um exemplo do projeto.</li><li>Escolha um risco e diga chance, impacto e resposta.</li><li>Explique a diferença entre mitigação e contingência.</li><li>Pegue RF04 e conte a história desde o problema até o teste.</li><li>Imagine uma mudança no portal e descubra o que mais precisaria ser revisto.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 13</div><h3>Vale a pena, o que pode dar errado e o que muda junto</h3><p>Registre decisões de viabilidade, riscos importantes e as ligações entre origem, requisito, interface e teste.</p></div>
+<div class="checkpoint"><h3>Checkpoint 8 — Você consegue enxergar as consequências?</h3><p>Quando uma ideia muda, você consegue dizer <strong>o que mais pode precisar de revisão e por quê</strong>?</p></div>
+
+<div class="card next-card"><h3>Nova necessidade</h3><p>Já produzimos muito conhecimento. Se ele ficar espalhado em mensagens, planilhas e memória das pessoas, vamos criar dentro do projeto o mesmo problema que encontramos na Conecta. Precisamos organizar esse conhecimento.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

@@ -1,0 +1,65 @@
+name: Validação pesquisa global
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'pages/**'
+      - 'fundamentos-informatica/**'
+      - 'js/**'
+      - 'meu-mbb/catalogo.json'
+      - 'meu-mbb/catalogo-core.js'
+      - 'meu-mbb/catalogo.test.cjs'
+      - 'meu-mbb/atualizar-pesquisa.cjs'
+      - 'meu-mbb/pesquisar.html'
+      - 'meu-mbb/pesquisar.js'
+      - 'meu-mbb/painel.js'
+      - 'meu-mbb/conta.js'
+      - 'meu-mbb/entrar.js'
+      - 'meu-mbb/entrar.html'
+      - 'meu-mbb/privacidade.html'
+      - 'meu-mbb/piloto-git.js'
+      - 'meu-mbb/firebase-config.js'
+      - 'meu-mbb/firestore.rules'
+      - 'meu-mbb/falha-firebase.test.cjs'
+      - 'meu-mbb/visitas-pesquisa.test.cjs'
+      - 'meu-mbb/retomada.test.cjs'
+      - 'meu-mbb/visitas-diretas.js'
+      - 'meu-mbb/visitas-diretas.json'
+      - 'meu-mbb/gerar-visitas.cjs'
+      - 'meu-mbb/visitas-diretas.test.cjs'
+      - 'meu-mbb/acoes-estudo.css'
+      - 'meu-mbb/limpeza.test.cjs'
+      - 'meu-mbb/cadastro.test.cjs'
+      - 'meu-mbb/conta-exclusao.test.cjs'
+      - 'meu-mbb/notas.test.cjs'
+      - 'meu-mbb/index.html'
+      - 'meu-mbb/estilo.css'
+      - '.github/workflows/pesquisa-global-validacao.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validar-indice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verificar se o índice acompanha o conteúdo atual
+        run: node meu-mbb/atualizar-pesquisa.cjs --check
+
+      - name: Verificar índice de visitas diretas
+        run: node meu-mbb/gerar-visitas.cjs --check
+
+      - name: Testar pesquisa global
+        run: node --test meu-mbb/*.test.cjs

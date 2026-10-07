@@ -1,0 +1,94 @@
+/* Camada visual da reforma pedagógica — aplicada apenas ao DS Matemática. */
+.lesson-opening{margin-bottom:20px}
+.lesson-kicker{display:inline-block;color:var(--primary);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.lesson-opening h3{margin:0 0 6px!important;font-size:25px!important;line-height:1.2}
+.comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.comparison-card{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.comparison-card strong{display:block;color:var(--primary-dark);font-size:17px;margin:5px 0}
+.comparison-tag{display:inline-block;font-size:11px;font-weight:900;border-radius:999px;padding:4px 8px;background:var(--primary-soft);color:var(--primary-dark)}
+.key-question{border-radius:12px;padding:14px 16px;background:#fff7dd;border:1px solid #f4d78d;border-left:5px solid #d49a00}
+
+.teacher-box{margin:18px 0 26px;border:1px solid #b9d3f6;border-radius:12px;background:#f8fbff;overflow:hidden}
+.teacher-box>summary{cursor:pointer;padding:12px 15px;color:var(--primary-dark);font-weight:900;background:#eef5ff;list-style-position:inside}
+.teacher-box[open]>summary{border-bottom:1px solid #cdddf1}
+.teacher-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px}
+.teacher-grid>div{background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px 12px}
+.teacher-grid strong{display:block;color:var(--primary-dark);margin-bottom:4px}
+.teacher-grid p{margin:0}
+
+.discovery-box,.contrast-box,.misconception-box,.self-check-box{border-radius:12px;padding:15px 16px;margin:14px 0}
+.discovery-box{background:#eefbf6;border-left:5px solid var(--ok)}
+.contrast-box{background:#fff7dd;border-left:5px solid #d49a00}
+.misconception-box{background:#fff4f2;border:1px solid #ffd4ce;border-left:5px solid var(--danger)}
+.self-check-box{background:#f2f8ff;border:1px solid #bfd8f6}
+.self-check-box ul{margin-bottom:0}
+
+.lab-panel{margin:15px 0 22px;border:1px solid #b8d1f0;border-radius:14px;padding:16px;background:linear-gradient(180deg,#f8fbff,#fff)}
+.lab-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:12px}
+.lab-controls label{display:block;font-size:13px;font-weight:800;color:var(--primary-dark)}
+.lab-controls input[type="range"]{width:100%;margin-top:8px}
+.lab-equation{text-align:center;margin:8px 0 12px;font-weight:800}
+.lab-grid{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(360px,1.2fr);gap:14px;align-items:start}
+.visual-box.compact{margin:0;padding:10px}
+.lab-conclusion{margin:8px 6px 4px!important}
+.micro-task{margin-top:12px;padding:11px 12px;border-radius:9px;background:#eef5ff;border:1px dashed #9fbfe6}
+
+.concept-map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.concept-map-card{border:1px solid var(--line);border-radius:11px;background:#fff;padding:13px}
+.concept-map-card strong{display:block;color:var(--primary-dark);font-size:16px;margin-bottom:4px}
+.concept-map-card p{margin:0}
+.concept-map-card.highlight{background:#eef5ff;border-color:#9fc1eb}
+
+.representation-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.representation-strip article{position:relative;border:1px solid var(--line);border-radius:12px;background:#fff;padding:15px 14px 14px 48px;min-height:115px}
+.representation-strip strong{display:block;color:var(--primary-dark);font-size:16px}
+.representation-strip p{margin:4px 0 0}
+.rep-number{position:absolute;left:13px;top:14px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#fff;font-size:12px;font-weight:900}
+
+.worked-path{margin:14px 0 20px;display:grid;gap:8px}
+.worked-step{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff}
+.worked-step>span{width:26px;height:26px;border-radius:8px;background:var(--primary-soft);color:var(--primary-dark);display:grid;place-items:center;font-weight:900}
+.worked-step p{margin:3px 0 0}
+
+.application-scenario{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin:10px 0;background:#fff}
+.application-icon{width:38px;height:38px;border-radius:10px;background:#eef5ff;color:var(--primary-dark);display:grid;place-items:center;font-size:11px;font-weight:900}
+.application-scenario strong{color:var(--primary-dark)}
+.application-scenario p{margin:3px 0}
+
+.choice-question{border:1px solid var(--line);border-radius:13px;padding:15px 16px;margin:14px 0;background:#fff}
+.choice-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.choice-list.vertical{display:grid;grid-template-columns:1fr}
+.choice-list button{border:1px solid #b9d3f6;border-radius:9px;background:#fff;color:var(--text);padding:9px 11px;text-align:left;cursor:pointer;font-weight:700}
+.choice-list button:hover{background:#f3f8ff}
+.choice-list button.choice-selected{box-shadow:0 0 0 2px rgba(25,103,210,.12)}
+.choice-list button.choice-correct{border-color:#64b89b;background:#eefbf6;color:#075e43}
+.choice-list button.choice-wrong{border-color:#e99b91;background:#fff3f1;color:#8b1e13}
+.choice-feedback{display:none;margin-top:12px;border-radius:9px;padding:10px 12px}
+.choice-feedback.is-correct{display:block;background:#eefbf6;border-left:4px solid var(--ok)}
+.choice-feedback.is-wrong{display:block;background:#fff7dd;border-left:4px solid #d49a00}
+
+.exam-problem{background:#f7f4ff;border-color:#d8cfff}
+.exam-label{display:inline-block;border-radius:999px;background:#ece7ff;color:#5532b5;padding:4px 8px;font-size:11px;font-weight:900;margin-bottom:6px}
+
+.recall-path{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:14px 0}
+.recall-path>div{border:1px solid var(--line);border-radius:10px;background:#fff;padding:11px;text-align:center}
+.recall-path span{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;font-size:12px}
+.recall-path p{font-size:13px;margin:7px 0 0}
+
+.lesson-next-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.secondary-link{font-weight:800;text-decoration:none}
+.secondary-link:hover{text-decoration:underline}
+
+@media(max-width:1050px){
+  .lab-grid{grid-template-columns:1fr}
+  .recall-path{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .comparison-grid,.teacher-grid,.lab-controls,.concept-map-grid,.representation-strip{grid-template-columns:1fr}
+  .recall-path{grid-template-columns:1fr 1fr}
+  .lesson-opening h3{font-size:21px!important}
+  .lesson-next-actions{align-items:stretch;flex-direction:column}
+}
+@media(max-width:480px){
+  .recall-path{grid-template-columns:1fr}
+}

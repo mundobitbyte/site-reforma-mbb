@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 8 de Qualidade e Teste de Software: use risco, probabilidade, impacto, severidade e prioridade para decidir onde concentrar o esforço de teste.">
+<title>8 — Não dá para testar tudo | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="8">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Priorizar</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 8</span>
+        <h1>Não dá para testar tudo</h1>
+        <p>Até agora, cada nova técnica aumentou nossa capacidade de enxergar o sistema. O problema é que também aumentou a quantidade de coisas que poderíamos testar. <strong>Quando o tempo é limitado, precisamos decidir onde olhar primeiro.</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>Faltam duas horas para a cantina abrir</h3>
+          <p>A equipe tem uma versão nova da Cantina Horizonte e apenas duas horas para fazer uma verificação final.</p>
+          <p>Há dezenas de casos possíveis: quantidade, estoque, cupom, total, status, mensagens, celular, tempo de resposta e várias combinações entre eles.</p>
+        </div>
+        <p>Uma resposta seria tentar fazer tudo rapidamente.</p>
+        <p>Outra seria escolher ao acaso.</p>
+        <p>Mas existe uma pergunta melhor:</p>
+        <div class="card question-card"><p><strong>Se alguma coisa der errado, quais problemas têm maior chance de causar consequências importantes?</strong></p></div>
+
+        <h2>Risco: olhar para o que pode acontecer</h2>
+        <p>Em qualidade de software, podemos usar a ideia de <strong>risco</strong> para orientar decisões.</p>
+        <div class="card tool-card"><h3>Risco</h3><p>É a possibilidade de acontecer algo indesejado e as consequências que esse acontecimento pode trazer.</p></div>
+        <p>Não estamos tentando prever o futuro com certeza. Estamos tentando organizar o esforço de maneira mais consciente.</p>
+
+        <h2>Duas perguntas ajudam bastante</h2>
+        <div class="grid2">
+          <div class="card evidence-card"><h3>Qual a chance de acontecer?</h3><p>A <strong>probabilidade</strong> representa a chance de o problema ocorrer. Em projetos pequenos, podemos começar com avaliações simples como baixa, média ou alta.</p></div>
+          <div class="card evidence-card"><h3>Se acontecer, qual será a consequência?</h3><p>O <strong>impacto</strong> representa o tamanho do efeito para o usuário, para o negócio ou para o próprio sistema.</p></div>
+        </div>
+        <p>Não precisamos fingir uma precisão que não temos. Muitas vezes, uma classificação simples e bem justificada ajuda mais do que um número inventado.</p>
+
+        <h2>Compare dois problemas</h2>
+        <div class="grid2">
+          <div class="card practice-card"><h3>Problema A</h3><p>O texto de um botão está dois pixels desalinhado.</p></div>
+          <div class="card practice-card"><h3>Problema B</h3><p>Ao finalizar o pedido, o estoque não é reduzido e a cantina continua vendendo um produto que já acabou.</p></div>
+        </div>
+        <p>Os dois podem merecer correção. Mas, com apenas duas horas disponíveis, provavelmente não receberão a mesma atenção.</p>
+
+        <h2>Uma matriz simples de risco</h2>
+        <p>Podemos cruzar <strong>probabilidade</strong> e <strong>impacto</strong> para visualizar prioridades de teste.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Probabilidade \ Impacto</th><th>Baixo</th><th>Alto</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Baixa</strong></td><td>Acompanhar</td><td>Testar com atenção</td></tr>
+              <tr><td><strong>Alta</strong></td><td>Testar quando possível</td><td><strong>Prioridade elevada</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Essa matriz é propositalmente simples. Em projetos reais, as organizações podem usar escalas maiores, critérios próprios e outras formas de análise.</p>
+        <p>A ideia principal é esta:</p>
+        <div class="card evidence-card"><p><strong>Quanto maior a chance e maior o impacto, maior tende a ser a necessidade de testar cedo e com cuidado.</strong></p></div>
+
+        <h2>Vamos aplicar à Cantina Horizonte</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Situação</th><th>Probabilidade</th><th>Impacto</th><th>Atenção sugerida</th></tr></thead>
+            <tbody>
+              <tr><td>Estoque não diminui depois da venda.</td><td>Média</td><td>Alto</td><td>Alta</td></tr>
+              <tr><td>Cupom é aplicado duas vezes.</td><td>Média</td><td>Alto</td><td>Alta</td></tr>
+              <tr><td>Botão possui pequeno desalinhamento visual.</td><td>Alta</td><td>Baixo</td><td>Menor</td></tr>
+              <tr><td>Pedido entregue volta para “Em preparação”.</td><td>Baixa ou média</td><td>Alto</td><td>Alta</td></tr>
+              <tr><td>Mensagem de erro usa uma palavra pouco clara.</td><td>Média</td><td>Médio</td><td>Média</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Essas classificações não são verdades universais. Outra equipe pode conhecer dados que mudem a avaliação.</p>
+        <p>O que importa é conseguir responder:</p>
+        <div class="card question-card"><p><strong>Por que este teste merece vir antes daquele?</strong></p></div>
+
+        <h2>Prioridade não nasce apenas do risco técnico</h2>
+        <p>Imagine que o cupom será usado em uma promoção que começa hoje. Mesmo que o defeito tenha baixa probabilidade, o negócio pode decidir que esse comportamento precisa ser testado imediatamente.</p>
+        <div class="card tool-card"><h3>Prioridade</h3><p>É a ordem de atenção que a equipe decide dar a uma atividade, teste ou correção considerando risco, prazo, valor para o negócio, dependências e outros fatores.</p></div>
+        <p>Por isso, duas situações tecnicamente parecidas podem receber prioridades diferentes.</p>
+
+        <h2>Severidade e prioridade não são a mesma coisa</h2>
+        <p>Essas duas palavras aparecem muito quando começamos a registrar problemas.</p>
+        <div class="grid2">
+          <div class="card tool-card"><h3>Severidade</h3><p>Indica o tamanho do dano ou da consequência provocada por um defeito quando ele acontece.</p></div>
+          <div class="card tool-card"><h3>Prioridade</h3><p>Indica quão cedo a equipe pretende tratar aquilo dentro do trabalho atual.</p></div>
+        </div>
+        <p>Um erro de ortografia na página inicial pode ter baixa severidade, mas ganhar prioridade alta na véspera de uma apresentação pública. Já um problema grave em uma função que ainda não será liberada pode ter alta severidade e, temporariamente, prioridade menor.</p>
+        <p>Mais adiante vamos usar esses conceitos ao registrar defeitos reais.</p>
+
+        <h2>Testar com base em risco não significa ignorar o resto</h2>
+        <p>Priorizar não quer dizer que áreas de menor risco “não precisam de qualidade”. Quer dizer apenas que, diante de recursos limitados, algumas verificações devem receber atenção primeiro ou com maior profundidade.</p>
+        <p>Depois que os riscos mais importantes estiverem cobertos, ampliamos o alcance conforme tempo, contexto e necessidade.</p>
+
+        <h2>Prática · você tem 30 minutos</h2>
+        <p>Considere que a Cantina Horizonte será usada no próximo intervalo e você possui apenas 30 minutos.</p>
+        <div class="card practice-card">
+          <p>Escolha a ordem em que você testaria estes cinco pontos e justifique:</p>
+          <ol>
+            <li>estoque depois da finalização;</li>
+            <li>cor do título da página;</li>
+            <li>aplicação do cupom MBB10;</li>
+            <li>transição de “Pronto” para “Entregue”;</li>
+            <li>mensagem exibida para quantidade inválida.</li>
+          </ol>
+        </div>
+        <p>Não existe uma sequência única obrigatória. Sua resposta precisa mostrar <strong>qual risco você enxergou e por que ele influenciou sua decisão</strong>.</p>
+
+        <h2>Agora surgiu outro problema</h2>
+        <p>Já sabemos quais áreas merecem mais atenção. Mas a equipe ainda precisa combinar o trabalho:</p>
+        <p>o que será testado, o que ficará de fora, em qual ambiente, com quais dados, quem registrará os resultados e como saberemos o que já foi executado.</p>
+        <div class="card question-card"><p><strong>Como transformar nossas decisões em um trabalho de teste organizado e rastreável?</strong></p></div>
+
+        <div class="card next-card">
+          <h3>A seguir: planejar e documentar os testes</h3>
+          <p>Vamos criar um <strong>plano de testes</strong>, escrever <strong>casos de teste</strong>, guardar evidências e ligar cada teste à regra que ele verifica.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar:</p>
+          <ul>
+            <li>o que risco significa neste contexto;</li>
+            <li>a diferença entre probabilidade e impacto;</li>
+            <li>por que prioridade não depende apenas da severidade;</li>
+            <li>por que testar com base em risco ajuda quando tempo e recursos são limitados.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="07-o-que-estamos-testando.html">← Etapa 7</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <span class="disabled">Próxima etapa</span>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

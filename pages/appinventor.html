@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Programação Mobile com App Inventor</title>
+<link rel="stylesheet" href="../css/appinventor.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="header-left">
+    <a class="portal-link" href="../index.html">← Mundo bit Byte</a>
+    <h1>App Inventor</h1>
+  </div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="appInventorModuleMenu" aria-label="Módulos do App Inventor">
+  <button class="module-btn active" type="button" data-module="fundamentos" data-target="#inicio">1. Fundamentos e Interface</button>
+  <button class="module-btn" type="button" data-module="logica" data-target="#blocos">2. Lógica e Programação em Blocos</button>
+  <button class="module-btn" type="button" data-module="recursos" data-target="#lab-voz">3. Recursos do Smartphone e Dados</button>
+  <button class="module-btn" type="button" data-module="internet" data-target="#usando-api">4. Internet, APIs e Publicação</button>
+</div>
+
+<div class="layout appinventor-layout" id="appInventorLayout">
+<aside class="side-nav" id="stageSidebar" aria-label="Etapas do módulo">
+  <div class="stage-sidebar-head">
+    <h3>Etapas</h3>
+    <button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button>
+  </div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="nav-btn active" data-module="fundamentos" href="#inicio">Início</a>
+    <a class="nav-btn" data-module="fundamentos" href="#fundamentos">1 - Fundamentos</a>
+    <a class="nav-btn" data-module="fundamentos" href="#problema">2 - Problema</a>
+    <a class="nav-btn" data-module="fundamentos" href="#appinventor">3 - App Inventor</a>
+    <a class="nav-btn" data-module="fundamentos" href="#designer">4 - Designer</a>
+    <a class="nav-btn" data-module="fundamentos" href="#interface">5 - Interface</a>
+    <a class="nav-btn" data-module="fundamentos" href="#execucao">6 - Executando</a>
+    <a class="nav-btn" data-module="fundamentos" href="#exercicios">99 - Exercícios de Interface</a>
+
+    <a class="nav-btn" data-module="logica" href="#blocos">Blocos</a>
+    <a class="nav-btn" data-module="logica" href="#exercicio-lampada">1 - Lâmpada</a>
+    <a class="nav-btn" data-module="logica" href="#exercicio-login">2 - Login</a>
+    <a class="nav-btn" data-module="logica" href="#exercicio-imc">3 - IMC</a>
+    <a class="nav-btn" data-module="logica" href="#exercicio-adivinhacao">4 - Adivinhação</a>
+
+    <a class="nav-btn" data-module="recursos" href="#lab-voz">Lab 1 - Voz: falar e reconhecer</a>
+
+    <a class="nav-btn" data-module="internet" href="#usando-api">Usando API</a>
+    <a class="nav-btn" data-module="internet" href="#exercicios-api-appinventor">99 - Exercícios de APIs</a>
+    <a class="nav-btn" data-module="internet" href="#publicacao-app">Publicação APP</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+<div class="appinventor-content">
+  <button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main class="content">
+
+<section id="inicio" class="hero-card">
+  <span class="eyebrow">Programação Mobile</span>
+  <h2>Construindo um aplicativo Agenda de Contatos</h2>
+  <p>
+    Neste tutorial, vamos estudar os fundamentos da programação mobile e construir, passo a passo,
+    a interface de um aplicativo de agenda de contatos usando o App Inventor.
+  </p>
+  <div class="hero-grid">
+    <div>
+      <h3>O que será construído?</h3>
+      <p>
+        A primeira versão do projeto será focada na construção visual da interface,
+        utilizando a aba <strong>Designer</strong> do App Inventor.
+      </p>
+      <div class="flow-line"><span>Entender</span><b>→</b><span>Planejar</span><b>→</b><span>Organizar</span><b>→</b><span>Montar a interface</span></div>
+    </div>
+    <figure class="phone-preview">
+      <img src="../img/appinventor/etapa_tela_completa.webp" alt="Tela final da Agenda de Contatos" loading="lazy" decoding="async">
+      <figcaption>Resultado visual da interface que será construída.</figcaption>
+    </figure>
+  </div>
+  <div class="notice">
+    <strong>Importante:</strong> primeiro vamos construir a interface no <strong>Designer</strong>. Depois,
+    aprenderemos a executar o aplicativo com o <strong>MIT AI2 Companion</strong> e a programar seu comportamento usando <strong>Blocos</strong>.
+  </div>
+</section>
+
+<section id="fundamentos" class="section-card">
+  <div class="section-head"><span class="badge">1</span><div><h2>Fundamentos da Programação Mobile</h2><p>Antes de construir um aplicativo, é preciso entender o que ele é e por que ele existe.</p></div></div>
+
+  <div class="concept-grid">
+    <article><h3>O que é um app?</h3><p>Um aplicativo é um software criado para rodar em dispositivos móveis. Ele possui telas, comandos, dados e uma finalidade.</p></article>
+    <article><h3>Por que aplicativos existem?</h3><p>Aplicativos existem para resolver problemas, facilitar tarefas e atender necessidades de pessoas, empresas e serviços.</p></article>
+    <article><h3>Usuário x desenvolvedor</h3><p>O usuário utiliza o aplicativo. O desenvolvedor pensa em como o aplicativo será construído e como cada etapa funcionará.</p></article>
+  </div>
+
+  <div class="two-col">
+    <div class="text-panel">
+      <h3>Pensar em fluxo</h3>
+      <p>Ao criar um app, não basta pensar na aparência. É preciso entender o caminho: telas, ações, dados e resultados.</p>
+      <div class="mini-flow"><span>Problema</span><b>→</b><span>Fluxo</span><b>→</b><span>Telas</span><b>→</b><span>Ações</span></div>
+    </div>
+    <div class="text-panel blue">
+      <h3>Interface, lógica e dados</h3>
+      <p>Um aplicativo combina interface visual, lógica de funcionamento e dados que podem ser digitados, processados, salvos ou enviados.</p>
+    </div>
+  </div>
+
+  <div class="activity-box">
+    <h3>Exercício mental</h3>
+    <p>Escolha um aplicativo que você utiliza no dia a dia e responda:</p>
+    <ul>
+      <li>Que problema ele resolve?</li>
+      <li>Qual é a ação principal?</li>
+      <li>Quais telas aparecem?</li>
+      <li>Quais dados ele utiliza?</li>
+    </ul>
+  </div>
+</section>
+
+<section id="problema" class="section-card">
+  <div class="section-head"><span class="badge">2</span><div><h2>Do problema à solução</h2><p>Todo aplicativo começa com um problema que precisa ser compreendido.</p></div></div>
+
+  <div class="story-panel">
+    <h3>O problema da agenda em papel</h3>
+    <p>Uma agenda de contatos em papel pode funcionar, mas apresenta limitações: dificuldade para alterar dados, localizar contatos, organizar informações e evitar rasuras.</p>
+    <p>A solução proposta será transformar essa necessidade em um aplicativo simples de agenda de contatos.</p>
+  </div>
+
+  <div class="planning-grid">
+    <article><h3>1. Levantar requisitos</h3><p>Conversar com o usuário para entender o que o aplicativo precisa fazer.</p></article>
+    <article><h3>2. Planejar a tela</h3><p>Desenhar a interface antes de construir, usando um wireframe.</p></article>
+    <article><h3>3. Construir</h3><p>Montar a tela no Designer e, depois, adicionar comportamento com blocos.</p></article>
+  </div>
+
+  <div class="image-pair">
+    <figure class="compact-figure wireframe-figure">
+      <img src="../img/appinventor/wireframe.webp" alt="Wireframe da Agenda de Contatos" loading="lazy" decoding="async">
+      <figcaption>Wireframe: rascunho visual da interface antes da implementação.</figcaption>
+    </figure>
+    <figure class="compact-figure">
+      <img src="../img/appinventor/analise_sistema.webp" alt="Planejamento e aplicativo" loading="lazy" decoding="async">
+      <figcaption>Da ideia ao aplicativo: levantamento, desenho da solução e construção.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="appinventor" class="section-card">
+  <div class="section-head"><span class="badge">3</span><div><h2>Conhecendo o App Inventor</h2><p>O App Inventor permite construir aplicativos por meio de componentes visuais e blocos.</p></div></div>
+
+  <div class="two-col">
+    <div class="text-panel"><h3>Acesso ao ambiente</h3><ul><li><strong>ai2.appinventor.mit.edu</strong> - acesso com conta Google.</li><li><strong>code.appinventor.mit.edu</strong> - acesso por código, sem conta Google.</li></ul></div>
+    <div class="text-panel"><h3>Designer e Blocos</h3><p>O <strong>Designer</strong> monta a interface. Os <strong>Blocos</strong> programam o comportamento.</p><figure class="inline-figure"><img src="../img/appinventor/aba_designer_blocos.webp" alt="Abas Designer e Blocos" loading="lazy" decoding="async"></figure></div>
+  </div>
+
+  <div class="toolbox">
+    <h3>Caixa de ferramentas usada neste projeto</h3>
+    <p>Nesta primeira versão, usaremos componentes das áreas Interface de Usuário e Organização.</p>
+    <div class="toolbox-grid">
+      <figure><img src="../img/appinventor/componentes_interface.webp" alt="Interface de Usuário" loading="lazy" decoding="async"><figcaption>Interface de Usuário: botões, imagens, legendas e caixas de texto.</figcaption></figure>
+      <figure><img src="../img/appinventor/componentes_organizacao.webp" alt="Organização" loading="lazy" decoding="async"><figcaption>Organização: componentes usados para estruturar a tela.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="designer" class="section-card">
+  <div class="section-head"><span class="badge">4</span><div><h2>Entendendo a estrutura do Designer</h2><p>Antes de montar a tela, precisamos entender como os componentes serão organizados.</p></div></div>
+
+  <figure class="compact-figure layout-figure">
+    <img src="../img/appinventor/layout_organizacoes.webp" alt="Layout com organizações horizontais e verticais" loading="lazy" decoding="async">
+    <figcaption>Organizações horizontais e verticais controlam a posição dos componentes na tela.</figcaption>
+  </figure>
+
+<figure class="compact-figure layout-figure hierarchy-tree-figure">
+    <img
+        src="../img/appinventor/arvore_hierarquica_interface.webp"
+        alt="Árvore hierárquica da interface">
+</figure>
+</section>
+
+<section id="interface" class="section-card">
+  <div class="section-head"><span class="badge">5</span><div><h2>Construindo a interface da Agenda</h2><p>A tela será construída por etapas. Em cada etapa, veja o que inserir, quais propriedades alterar e qual será o resultado.</p></div></div>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 1</span>
+      <h3>Projeto recém-criado</h3>
+      <p>A tela inicial aparece vazia, com o título padrão <strong>Screen1</strong>.</p>
+      <div class="properties">
+        <h4>Estado inicial</h4>
+        <ul>
+          <li>Tela principal: <strong>Screen1</strong></li>
+          <li>Ainda sem componentes visuais</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/screen_inicial.webp" alt="Screen1 vazia" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 2</span>
+      <h3>Configurando a Screen1</h3>
+      <p>Antes de inserir os componentes, configure a tela principal do aplicativo.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Selecione <strong>Screen1</strong>.</li>
+          <li>Altere o título do aplicativo.</li>
+          <li>Ajuste o alinhamento e a orientação da tela.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades</h4>
+        <ul>
+          <li><strong>Título:</strong> Agenda de Contatos</li>
+          <li><strong>AlinhamentoHorizontal:</strong> Centro</li>
+          <li><strong>AlinhamentoVertical:</strong> Superior</li>
+          <li><strong>Rolável:</strong> falso</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/screen_configurada.webp" alt="Screen1 configurada" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 3</span>
+      <h3>Inserindo OrgTopoTitulo</h3>
+      <p>Agora será criada a faixa superior da interface, onde aparece o título da agenda.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Na aba <strong>Organização</strong>, arraste uma <strong>OrganizaçãoHorizontal</strong> para a Screen1.</li>
+          <li>Renomeie o componente para <strong>OrgTopoTitulo</strong>.</li>
+          <li>Na aba <strong>Interface de Usuário</strong>, arraste uma <strong>Legenda</strong> para dentro de OrgTopoTitulo.</li>
+          <li>Renomeie a legenda para <strong>LegTitulo</strong>.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades</h4>
+        <ul>
+          <li><strong>OrgTopoTitulo - Largura:</strong> Preencher principal</li>
+          <li><strong>OrgTopoTitulo - Altura:</strong> Automático</li>
+          <li><strong>OrgTopoTitulo - AlinhamentoHorizontal:</strong> Centro</li>
+          <li><strong>OrgTopoTitulo - AlinhamentoVertical:</strong> Centro</li>
+          <li><strong>LegTitulo - Texto:</strong> Agenda de Contatos</li>
+          <li><strong>LegTitulo - Largura:</strong> Preencher principal</li>
+          <li><strong>LegTitulo - AlinhamentoTexto:</strong> Centro</li>
+          <li><strong>LegTitulo - FonteNegrito:</strong> verdadeiro</li>
+          <li><strong>LegTitulo - TamanhoDaFonte:</strong> 20</li>
+          <li><strong>LegTitulo - CorDoTexto:</strong> azul escuro</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/etapa_topo_titulo.webp" alt="Topo com título" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 4</span>
+      <h3>Inserindo OrgFotoDados</h3>
+      <p>Esta etapa cria a área principal da tela, dividindo foto e dados pessoais.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Arraste uma <strong>OrganizaçãoHorizontal</strong> para a Screen1.</li>
+          <li>Renomeie para <strong>OrgFotoDados</strong>.</li>
+          <li>Dentro dela, insira duas organizações verticais: <strong>OrgFoto</strong> e <strong>OrgDadosPessoais</strong>.</li>
+          <li>Dentro de OrgFoto, insira uma <strong>Imagem</strong> e renomeie para <strong>ImgFoto</strong>.</li>
+          <li>Dentro de OrgDadosPessoais, insira as legendas e caixas de texto de Nome, Telefone e E-mail.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades principais</h4>
+        <ul>
+          <li><strong>OrgFotoDados - Largura:</strong> Preencher principal</li>
+          <li><strong>OrgFotoDados - Altura:</strong> Automático</li>
+          <li><strong>OrgFoto - Largura:</strong> 120 px</li>
+          <li><strong>OrgFoto - Altura:</strong> 120 px</li>
+          <li><strong>ImgFoto - Imagem:</strong> Foto.png</li>
+          <li><strong>ImgFoto - Largura:</strong> Preencher principal</li>
+          <li><strong>ImgFoto - Altura:</strong> Preencher principal</li>
+          <li><strong>ImgFoto - RedimensionarParaCaber:</strong> verdadeiro</li>
+          <li><strong>OrgDadosPessoais - Largura:</strong> Preencher principal</li>
+          <li><strong>LegNome - Texto:</strong> Nome:</li>
+          <li><strong>CxTNome - Largura:</strong> Preencher principal</li>
+          <li><strong>LegTelefone - Texto:</strong> Telefone:</li>
+          <li><strong>CxTTelefone - Largura:</strong> Preencher principal</li>
+          <li><strong>LegEmail - Texto:</strong> E-mail</li>
+          <li><strong>CxTEmail - Largura:</strong> Preencher principal</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/etapa_foto_dados.webp" alt="Foto e dados" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 5</span>
+      <h3>Inserindo OrgBotoes1</h3>
+      <p>A primeira área de botões reúne ações rápidas do contato.</p>
+      <div class="added-box">
+        <h4>Componentes adicionados nesta etapa</h4>
+        <ul>
+          <li>OrgBotoes1</li>
+          <li>btWhatsApp</li>
+          <li>btEmail</li>
+          <li>btEndereco</li>
+          <li>btNotas</li>
+        </ul>
+      </div>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Insira uma <strong>OrganizaçãoHorizontal</strong> abaixo da área de foto e dados.</li>
+          <li>Renomeie para <strong>OrgBotoes1</strong>.</li>
+          <li>Dentro dela, insira quatro botões.</li>
+          <li>Renomeie os botões para <strong>btWhatsApp</strong>, <strong>btEmail</strong>, <strong>btEndereco</strong> e <strong>btNotas</strong>.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades</h4>
+        <ul>
+          <li><strong>OrgBotoes1 - Largura:</strong> Preencher principal</li>
+          <li><strong>btWhatsApp - Texto:</strong> WhatsApp</li>
+          <li><strong>btWhatsApp - Largura:</strong> Preencher principal</li>
+          <li><strong>btWhatsApp - Altura:</strong> Automático</li>
+          <li><strong>btWhatsApp - CorDoTexto:</strong> verde</li>
+          <li><strong>btEmail - Texto:</strong> E-Mail</li>
+          <li><strong>btEmail - Largura:</strong> Preencher principal</li>
+          <li><strong>btEndereco - Texto:</strong> Endereço</li>
+          <li><strong>btEndereco - Largura:</strong> Preencher principal</li>
+          <li><strong>btNotas - Texto:</strong> Notas</li>
+          <li><strong>btNotas - Largura:</strong> Preencher principal</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/etapa_botoes_acao.webp" alt="Botões de ação" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 6</span>
+      <h3>Inserindo OrgCidadeEstado</h3>
+      <p>A área de cidade e estado é formada por uma organização horizontal com duas colunas verticais.</p>
+      <div class="added-box">
+        <h4>Componentes adicionados nesta etapa</h4>
+        <ul>
+          <li>OrgCidadeEstado</li>
+          <li>OrgCidade, LegCidade, CxTCidade</li>
+          <li>OrgEstado, LegEstado, CxTEstado</li>
+        </ul>
+      </div>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Insira uma <strong>OrganizaçãoHorizontal</strong> e renomeie para <strong>OrgCidadeEstado</strong>.</li>
+          <li>Dentro dela, insira duas <strong>OrganizaçõesVerticais</strong>.</li>
+          <li>Renomeie para <strong>OrgCidade</strong> e <strong>OrgEstado</strong>.</li>
+          <li>Em cada coluna, insira uma legenda e uma caixa de texto.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades</h4>
+        <ul>
+          <li><strong>OrgCidadeEstado - Largura:</strong> Preencher principal</li>
+          <li><strong>OrgCidade - Largura:</strong> 50%</li>
+          <li><strong>LegCidade - Texto:</strong> Cidade:</li>
+          <li><strong>LegCidade - FonteNegrito:</strong> verdadeiro</li>
+          <li><strong>CxTCidade - Largura:</strong> Preencher principal</li>
+          <li><strong>CxTCidade - Altura:</strong> Automático</li>
+          <li><strong>OrgEstado - Largura:</strong> 50%</li>
+          <li><strong>LegEstado - Texto:</strong> Estado:</li>
+          <li><strong>LegEstado - FonteNegrito:</strong> verdadeiro</li>
+          <li><strong>CxTEstado - Largura:</strong> Preencher principal</li>
+          <li><strong>CxTEstado - Altura:</strong> Automático</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/etapa_cidade_estado.webp" alt="Cidade e estado" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 7</span>
+      <h3>Inserindo OrgBotoes2</h3>
+      <p>A última organização da interface contém os botões principais: Salvar e Cancelar.</p>
+      <div class="added-box">
+        <h4>Componentes adicionados nesta etapa</h4>
+        <ul>
+          <li>OrgBotoes2</li>
+          <li>btSalvar</li>
+          <li>btCancelar</li>
+        </ul>
+      </div>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Insira uma <strong>OrganizaçãoHorizontal</strong> e renomeie para <strong>OrgBotoes2</strong>.</li>
+          <li>Dentro dela, insira dois botões.</li>
+          <li>Renomeie para <strong>btSalvar</strong> e <strong>btCancelar</strong>.</li>
+        </ol>
+      </div>
+      <div class="properties">
+        <h4>Propriedades</h4>
+        <ul>
+          <li><strong>OrgBotoes2 - Largura:</strong> Preencher principal</li>
+          <li><strong>btSalvar - Texto:</strong> Salvar</li>
+          <li><strong>btSalvar - Largura:</strong> 50%</li>
+          <li><strong>btSalvar - Altura:</strong> 50 px</li>
+          <li><strong>btSalvar - CorDeFundo:</strong> verde</li>
+          <li><strong>btSalvar - CorDoTexto:</strong> branco</li>
+          <li><strong>btCancelar - Texto:</strong> Cancelar</li>
+          <li><strong>btCancelar - Largura:</strong> 50%</li>
+          <li><strong>btCancelar - Altura:</strong> 50 px</li>
+          <li><strong>btCancelar - CorDeFundo:</strong> vermelho</li>
+          <li><strong>btCancelar - CorDoTexto:</strong> branco</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="../img/appinventor/etapa_tela_completa.webp" alt="Tela completa" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <div class="notice">Até aqui, a interface está montada. Antes de programar os blocos, vamos aprender a executar o aplicativo no celular usando o MIT AI2 Companion.</div>
+</section>
+
+
+<section id="execucao" class="section-card">
+  <div class="section-head">
+    <span class="badge">6</span>
+    <div>
+      <h2>Executando o Aplicativo</h2>
+      <p>Agora vamos testar a Agenda de Contatos no celular usando o MIT AI2 Companion.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Importante:</strong> o MIT AI2 Companion deve ser instalado diretamente no celular que será usado para testar o aplicativo.
+    No Android, abra a <strong>Play Store no próprio celular</strong> e procure por <strong>MIT AI2 Companion</strong>.
+    No iPhone, verifique a disponibilidade do aplicativo na App Store e instale pelo próprio aparelho.
+  </div>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 1</span>
+      <h3>Instalar o MIT AI2 Companion</h3>
+      <p>O MIT AI2 Companion é o aplicativo que permite testar o projeto do App Inventor no celular sem gerar um APK a cada alteração.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Abra a loja de aplicativos no celular.</li>
+          <li>Procure por <strong>MIT AI2 Companion</strong>.</li>
+          <li>Toque em <strong>Instalar</strong>.</li>
+          <li>Aguarde a instalação ser concluída.</li>
+        </ol>
+      </div>
+      <div class="notice">
+        O Companion funciona como uma ponte entre o App Inventor e o smartphone. Assim, o aluno consegue testar o aplicativo instantaneamente.
+      </div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 50%; max-width: 550px; min-width: 320px; height: auto;" src="../img/appinventor/ai2_companion.webp" alt="MIT AI2 Companion na Play Store" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 2</span>
+      <h3>Abrir o Companion e chamar o Assistente AI</h3>
+      <p>Com o aplicativo instalado no celular, volte ao App Inventor no computador para iniciar a conexão.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Abra o <strong>MIT AI2 Companion</strong> no celular.</li>
+          <li>No App Inventor, clique no menu <strong>Conectar</strong>.</li>
+          <li>Escolha a opção <strong>Assistente AI</strong>.</li>
+        </ol>
+      </div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 50%; max-width: 550px; min-width: 0px; height: auto;" src="../img/appinventor/conectar_assistente_ai.webp" alt="Menu Conectar e opção Assistente AI" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 3</span>
+      <h3>Ler o QR Code com o celular</h3>
+      <p>O App Inventor exibirá um QR Code. Esse código será lido pelo Companion para conectar o projeto ao celular.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>No celular, escolha a opção para ler o QR Code.</li>
+          <li>Aponte a câmera para o QR Code mostrado na tela do computador.</li>
+          <li>Aguarde o início da conexão.</li>
+        </ol>
+      </div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 50%; max-width: 550px; min-width: 0px; height: auto;" src="../img/appinventor/qrcode_assistente_ai.webp" alt="QR Code do Assistente AI" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 4</span>
+      <h3>Aguardar terminar a execução da simulação</h3>
+      <p>Depois da leitura do QR Code, o App Inventor envia temporariamente o projeto para o celular.</p>
+      <div class="howto">
+        <h4>Faça assim</h4>
+        <ol>
+          <li>Aguarde a barra de progresso terminar.</li>
+          <li>Não feche o navegador durante esse processo.</li>
+          <li>Não feche o aplicativo Companion no celular.</li>
+        </ol>
+      </div>
+      <div class="notice">
+        O tempo de carregamento pode variar de acordo com a internet, o computador e o celular utilizados.
+      </div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 50%; max-width: 550px; min-width: 0px; height: auto;" src="../img/appinventor/transferindo_projeto.webp" alt="Barra de progresso do projeto no Companion" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 5</span>
+      <h3>Aplicativo aberto no celular</h3>
+      <p>Quando a conexão terminar, a Agenda de Contatos aparecerá no celular.</p>
+      <div class="properties">
+        <h4>Agora você pode testar</h4>
+        <ul>
+          <li>Preencher os campos da tela.</li>
+          <li>Verificar o layout criado no Designer.</li>
+          <li>Observar se os botões aparecem na posição correta.</li>
+          <li>Preparar o aplicativo para receber os blocos de programação.</li>
+        </ul>
+      </div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 25%; max-width: 250px; min-width: 150px; height: auto;" src="../img/appinventor/app_agenda_execucao.webp" alt="Agenda de Contatos em execução no celular" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <div class="notice">
+    Com o aplicativo em execução, podemos avançar para a programação dos blocos. É nos blocos que a interface ganha comportamento.
+  </div>
+</section>
+
+<section id="blocos" class="section-card">
+  <div class="section-head">
+    <span class="badge">7</span>
+    <div>
+      <h2>Blocos da Agenda de Contatos</h2>
+      <p>Agora vamos programar o comportamento da interface seguindo a mesma ordem visual do aplicativo.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Importante:</strong> nesta etapa, o aplicativo ainda não grava contatos em banco de dados e não abre aplicativos externos.
+    Os botões de WhatsApp, E-mail, Endereço, Notas, Salvar e Cancelar apenas simulam ações por meio de mensagens.
+    O objetivo é aprender eventos, mensagens, procedimentos, chamadas de procedimento e validações.
+  </div>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 1</span>
+      <h3>Campos: destacando o campo ativo</h3>
+      <p>Antes de programar os botões, vamos melhorar a interação dos campos de texto.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>Quando um campo recebe foco, ele muda a cor do texto e do fundo.</li>
+          <li>Quando o campo perde foco, as cores voltam ao padrão.</li>
+          <li>A mesma lógica é aplicada em Nome, Telefone, E-mail, Cidade e Estado.</li>
+        </ul>
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> troque as cores usadas quando o campo recebe foco.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 1000px; height: auto;" src="../img/appinventor/blocos_foco_campos.webp" alt="Blocos RecebeuFoco e PerdeuFoco dos campos" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 2</span>
+      <h3>Botão WhatsApp</h3>
+      <p>O botão WhatsApp será programado para mostrar uma mensagem com o nome e o telefone digitados.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>O evento usado é <strong>Quando btWhatsApp.Clique</strong>.</li>
+          <li>O Notificador exibe uma mensagem juntando o nome do contato com o telefone.</li>
+          <li>Nesta primeira versão, o botão não abre o WhatsApp de verdade.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        Este bloco é uma simulação de consulta. Ele serve para treinar eventos de clique e mensagens no App Inventor.
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> personalize o texto mostrado na mensagem do WhatsApp.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_whatsapp.webp" alt="Blocos do botão WhatsApp" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 3</span>
+      <h3>Botão E-mail</h3>
+      <p>O botão E-mail será programado para mostrar uma mensagem com o nome e o e-mail digitados.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>O evento usado é <strong>Quando btEmail.Clique</strong>.</li>
+          <li>O Notificador exibe uma mensagem juntando o nome do contato com o e-mail.</li>
+          <li>Nesta primeira versão, o botão não envia e-mail de verdade.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        Assim como o WhatsApp, este botão apenas simula uma consulta aos dados digitados na tela.
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> altere a mensagem para aparecer em duas linhas.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_email.webp" alt="Blocos do botão E-mail" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 4</span>
+      <h3>Botão Endereço</h3>
+      <p>O botão Endereço exibe uma mensagem reunindo os dados de localização do contato.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>Mostra o nome do contato.</li>
+          <li>Mostra a cidade digitada.</li>
+          <li>Mostra o estado digitado.</li>
+          <li>Também funciona como uma consulta simulada.</li>
+        </ul>
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> altere a ordem das informações exibidas na mensagem.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_endereco.webp" alt="Blocos do botão Endereço" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 5</span>
+      <h3>Botão Notas</h3>
+      <p>O botão Notas informa que o contato ainda não possui nenhuma nota cadastrada.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>Mostra o nome do contato.</li>
+          <li>Exibe uma mensagem simples sobre ausência de notas.</li>
+          <li>Não salva nem consulta informações em banco de dados nesta etapa.</li>
+        </ul>
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> personalize a mensagem exibida no botão Notas.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_notas.webp" alt="Blocos do botão Notas" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 6</span>
+      <h3>Procedimento Limpar</h3>
+      <p>Antes de programar os botões finais, vamos criar um procedimento para limpar os campos da tela.</p>
+      <div class="properties">
+        <h4>Por que criar um procedimento?</h4>
+        <ul>
+          <li>Um procedimento reúne vários blocos em uma única ação com nome.</li>
+          <li>O procedimento <strong>Limpar</strong> apaga Nome, Telefone, E-mail, Cidade e Estado.</li>
+          <li>Depois da limpeza, ele devolve o foco para o campo Nome.</li>
+          <li>Assim, não precisamos repetir os mesmos blocos em vários botões.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        Primeiro criamos o procedimento. Depois, quando precisarmos limpar a tela, apenas chamamos o procedimento <strong>Limpar</strong>.
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> faça o procedimento Limpar também mostrar uma mensagem ao final.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_limpar.webp" alt="Procedimento Limpar no App Inventor" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 7</span>
+      <h3>Botão Salvar</h3>
+      <p>O botão Salvar verifica os campos obrigatórios antes de simular o cadastro do contato.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>Se o campo Nome estiver vazio, mostra uma mensagem de aviso e volta o foco para Nome.</li>
+          <li>Se o campo Telefone estiver vazio, mostra outra mensagem de aviso e volta o foco para Telefone.</li>
+          <li>Se os dois campos estiverem preenchidos, mostra uma mensagem de contato salvo com sucesso.</li>
+          <li>Ao final, chama o procedimento <strong>Limpar</strong> criado na etapa anterior.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        Nesta etapa, o contato ainda não é gravado permanentemente. O botão apenas simula o cadastro e limpa a tela.
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> acrescente a cidade na mensagem de confirmação.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 800px; height: auto;" src="../img/appinventor/blocos_salvar.webp" alt="Blocos do botão Salvar" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+  <article class="step-card">
+    <div class="step-text">
+      <span class="step-label">Etapa 8</span>
+      <h3>Botão Cancelar</h3>
+      <p>O botão Cancelar mostra uma mensagem de cancelamento e limpa os campos da tela.</p>
+      <div class="properties">
+        <h4>Funcionamento</h4>
+        <ul>
+          <li>Mostra que o contato não será salvo.</li>
+          <li>Chama o procedimento <strong>Limpar</strong>.</li>
+          <li>Reaproveita os blocos de limpeza sem precisar repetir tudo dentro do botão.</li>
+        </ul>
+      </div>
+      <div class="notice">
+        Observe que o botão Cancelar não limpa os campos manualmente. Ele chama o procedimento <strong>Limpar</strong>, que já foi criado para isso.
+      </div>
+      <div class="challenge"><strong>Experimente:</strong> personalize a mensagem de cancelamento.</div>
+    </div>
+    <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+      <img style="width: 100%; max-width: 760px; height: auto;" src="../img/appinventor/bloco_cancelar.webp" alt="Blocos do botão Cancelar" loading="lazy" decoding="async">
+    </figure>
+  </article>
+
+<article class="step-card">
+  <div class="step-text">
+    <span class="step-label">Etapa 9</span>
+    <h3>Testando a Agenda de Contatos</h3>
+    <p>Agora que todos os blocos foram programados, é hora de validar o funcionamento do aplicativo. Em desenvolvimento de software, programar é apenas uma parte do trabalho. Também é necessário testar para verificar se tudo funciona conforme o esperado.</p>
+
+<div class="properties">
+  <h4>Por que testar?</h4>
+  <ul>
+    <li>Confirmar que os blocos executam as ações corretas.</li>
+    <li>Identificar erros antes que o aplicativo seja entregue ao usuário.</li>
+    <li>Verificar se as mensagens aparecem corretamente.</li>
+    <li>Garantir que as validações estão funcionando.</li>
+    <li>Comprovar que o aplicativo se comporta da maneira planejada.</li>
+  </ul>
+</div>
+
+<div class="howto">
+  <h4>Faça assim</h4>
+  <ol>
+    <li>Abra novamente o aplicativo <strong>MIT AI2 Companion</strong> no celular.</li>
+    <li>No computador, volte ao App Inventor.</li>
+    <li>Clique em <strong>Conectar → Assistente AI</strong>.</li>
+    <li>Leia o QR Code com o celular, caso a conexão não esteja ativa.</li>
+    <li>Aguarde o carregamento da versão atualizada do projeto.</li>
+    <li>Realize todos os testes descritos abaixo.</li>
+  </ol>
+</div>
+
+<div class="properties">
+  <h4>Procedimentos de teste</h4>
+  <ul>
+    <li><strong>Teste 1:</strong> clique em cada campo de texto e verifique se as cores mudam quando o campo recebe foco.</li>
+    <li><strong>Teste 2:</strong> clique fora do campo e confirme se as cores retornam ao padrão.</li>
+    <li><strong>Teste 3:</strong> preencha Nome e Telefone e clique em <strong>WhatsApp</strong>. Verifique se a mensagem exibe os dados corretamente.</li>
+    <li><strong>Teste 4:</strong> preencha Nome e E-mail e clique em <strong>E-mail</strong>. Verifique se as informações aparecem corretamente.</li>
+    <li><strong>Teste 5:</strong> preencha Cidade e Estado e clique em <strong>Endereço</strong>. Verifique se a mensagem mostra os dados digitados.</li>
+    <li><strong>Teste 6:</strong> clique em <strong>Notas</strong> e confirme se a mensagem é exibida.</li>
+    <li><strong>Teste 7:</strong> tente salvar deixando o campo Nome vazio.</li>
+    <li><strong>Teste 8:</strong> tente salvar deixando o campo Telefone vazio.</li>
+    <li><strong>Teste 9:</strong> preencha os campos obrigatórios e clique em <strong>Salvar</strong>. Verifique se a mensagem de sucesso aparece.</li>
+    <li><strong>Teste 10:</strong> confirme se os campos são limpos após o salvamento.</li>
+    <li><strong>Teste 11:</strong> clique em <strong>Cancelar</strong> e verifique se os campos são limpos.</li>
+    <li><strong>Teste 12:</strong> confirme se o foco retorna ao campo Nome após a limpeza.</li>
+  </ul>
+</div>
+
+<div class="notice">
+  Os testes não servem apenas para encontrar erros. Eles ajudam o desenvolvedor a entender melhor o comportamento do sistema e a garantir que cada funcionalidade realmente atende ao objetivo para o qual foi criada.
+</div>
+
+<div class="challenge">
+  <strong>Experimente:</strong> peça para outra pessoa utilizar o aplicativo e observe se ela consegue entender o funcionamento sem receber explicações. Anote sugestões de melhoria que possam tornar a interface mais clara e intuitiva.
+</div>
+
+  </div>
+
+  <figure style="grid-column: 1 / -1; position: static; overflow-x: auto; text-align: center;">
+    <img style="width: 25%; max-width: 250px; min-width: 150px; height: auto;" src="../img/appinventor/app_agenda_execucao.webp" alt="Agenda de Contatos em execução para testes" loading="lazy" decoding="async">
+  </figure>
+</article>
+
+<div class="notice">
+  Com os testes concluídos, podemos avançar para os desafios finais. Eles servirão para reforçar os conceitos estudados e incentivar melhorias na primeira versão da Agenda de Contatos.
+</div>
+
+
+  <div class="activity-box">
+    <h3>Desafios finais dos blocos</h3>
+    <ol>
+      <li>Adicione uma validação para o campo Cidade.</li>
+      <li>Adicione uma validação para o campo Estado.</li>
+      <li>Personalize todas as mensagens exibidas pelo Notificador.</li>
+      <li>Altere as cores dos campos quando recebem foco.</li>
+      <li>Explique por que o procedimento Limpar evita repetição de blocos.</li>
+    </ol>
+  </div>
+
+  <div class="notice">
+    Com os blocos, o aplicativo passa a reagir às ações do usuário. Ainda assim, esta é uma primeira versão funcional:
+    ela simula cadastro e consultas, mas ainda não armazena contatos de forma permanente.
+  </div>
+</section>
+
+
+
+<section id="lab-voz" class="section-card voice-lab">
+  <div class="section-head">
+    <span class="badge">Lab 1</span>
+    <div>
+      <h2>Voz — o celular fala e escuta</h2>
+      <p>Use reconhecimento de voz e síntese de fala para explorar dois recursos reais do smartphone.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Foco deste laboratório:</strong> conhecer componentes não visíveis do App Inventor e entender o fluxo <strong>falar → reconhecer → mostrar o texto → reproduzir o texto em voz</strong>.
+  </div>
+
+  <div class="concept-grid">
+    <article>
+      <h3>Objetivo</h3>
+      <ul>
+        <li>Capturar a fala do usuário.</li>
+        <li>Mostrar o texto reconhecido na tela.</li>
+        <li>Transformar um texto em fala.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>O que você vai aprender</h3>
+      <ul>
+        <li>Componentes visíveis e não visíveis.</li>
+        <li>Eventos antes e depois de uma ação.</li>
+        <li>Passagem de valores entre componentes.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Componentes especiais</h3>
+      <ul>
+        <li><strong>ReconhecedorDeVoz</strong> — converte fala em texto.</li>
+        <li><strong>TextoParaFalar</strong> — converte texto em fala.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="two-col">
+    <div class="exercise-group">
+      <h3>1. Componentes utilizados</h3>
+      <div class="table-wrap">
+        <table class="content-table">
+          <thead><tr><th>Componente</th><th>Nome</th><th>Função</th></tr></thead>
+          <tbody>
+            <tr><td>Tela</td><td>Screen1</td><td>Tela principal.</td></tr>
+            <tr><td>Legenda</td><td>legTitulo</td><td>Orienta o usuário.</td></tr>
+            <tr><td>Caixa de Texto</td><td>cxtTexto</td><td>Recebe texto digitado ou reconhecido.</td></tr>
+            <tr><td>Legendas</td><td>legEspaco01, legEspaco02 e legEspaco03</td><td>Criam espaçamento vertical.</td></tr>
+            <tr><td>Botão</td><td>btReconhecerVoz</td><td>Inicia o reconhecimento de voz.</td></tr>
+            <tr><td>Botão</td><td>btFalarTexto</td><td>Faz o aparelho falar o texto.</td></tr>
+            <tr><td>Texto para Falar</td><td>TextoParaFalar1</td><td>Componente não visível de síntese de fala.</td></tr>
+            <tr><td>Reconhecedor de Voz</td><td>ReconhecedorDeVoz1</td><td>Componente não visível de reconhecimento.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <figure class="compact-figure hierarchy-tree-figure">
+      <img src="../img/appinventor/voz_arvore_componentes.webp" alt="Árvore de componentes do laboratório de voz" loading="lazy" decoding="async">
+      <figcaption>Árvore de componentes utilizada no projeto.</figcaption>
+    </figure>
+  </div>
+
+  <div class="exercise-group">
+    <h3>2. Configure a Screen1</h3>
+    <p>Centralize os componentes e mantenha a tela em orientação retrato.</p>
+    <div class="table-wrap">
+      <table class="content-table">
+        <thead><tr><th>Propriedade</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>AlinhamentoHorizontal</td><td>Centro</td></tr>
+          <tr><td>AlinhamentoVertical</td><td>Centro</td></tr>
+          <tr><td>OrientaçãoDaTela</td><td>Retrato</td></tr>
+          <tr><td>Título</td><td>Texto para falar</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="compact-figure" style="max-width:390px;margin-top:16px;">
+      <img src="../img/appinventor/voz_screen1_propriedades.webp" alt="Propriedades da Screen1 do laboratório de voz" loading="lazy" decoding="async">
+      <figcaption>Propriedades principais da Screen1.</figcaption>
+    </figure>
+  </div>
+
+  <div class="exercise-group">
+    <h3>3. Monte a interface</h3>
+    <p>Use a legenda <strong>Digite o texto para falar</strong>, a caixa <strong>cxtTexto</strong> e os botões <strong>Reconhecer voz</strong> e <strong>Falar texto</strong>. As três legendas de espaço permanecem sem texto e servem apenas para separar visualmente os elementos.</p>
+    <div class="image-pair">
+      <figure class="compact-figure">
+        <img src="../img/appinventor/voz_interface_final.webp" alt="Interface final do aplicativo de voz" loading="lazy" decoding="async">
+        <figcaption>Resultado esperado no celular.</figcaption>
+      </figure>
+      <div class="text-panel blue">
+        <h3>Propriedades importantes</h3>
+        <ul>
+          <li><strong>legTitulo:</strong> texto “Digite o texto para falar”, negrito e tamanho 14.</li>
+          <li><strong>btReconhecerVoz:</strong> texto “Reconhecer voz”.</li>
+          <li><strong>btFalarTexto:</strong> texto “Falar texto”.</li>
+          <li><strong>TextoParaFalar1:</strong> altura 1.0 e velocidade da fala 1.0.</li>
+          <li><strong>ReconhecedorDeVoz1:</strong> mantenha <em>UseLegacy</em> marcado, conforme o projeto.</li>
+        </ul>
+        <p>Os componentes <strong>TextoParaFalar1</strong> e <strong>ReconhecedorDeVoz1</strong> aparecem abaixo da tela no Designer porque não possuem representação visual dentro do aplicativo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="blocks-section">
+    <h3>4. Programação dos blocos</h3>
+
+    <article class="block-card">
+      <div>
+        <h4>Bloco 1 — Reconhecer voz</h4>
+        <p>Ao clicar em <strong>btReconhecerVoz</strong>, o aplicativo solicita ao componente de reconhecimento que obtenha um texto falado pelo usuário.</p>
+      </div>
+      <figure><img src="../img/appinventor/voz_blocos_reconhecer_clique.webp" alt="Bloco do botão Reconhecer voz" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card">
+      <div>
+        <h4>Bloco 2 — Antes de ouvir</h4>
+        <p>Antes de iniciar o reconhecimento, o aplicativo limpa <strong>cxtTexto.Texto</strong>. Assim, o resultado anterior não permanece na caixa.</p>
+      </div>
+      <figure><img src="../img/appinventor/voz_blocos_antes_obter_texto.webp" alt="Bloco AntesDeObterTexto do reconhecedor de voz" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card">
+      <div>
+        <h4>Bloco 3 — Depois de ouvir</h4>
+        <p>Quando o reconhecimento termina, o valor <strong>resultado</strong> recebido pelo evento é colocado em <strong>cxtTexto.Texto</strong>.</p>
+        <p>O parâmetro <strong>resultado</strong> contém o texto que foi reconhecido.</p>
+      </div>
+      <figure><img src="../img/appinventor/voz_blocos_depois_obter_texto.webp" alt="Bloco DepoisDeObterTexto do reconhecedor de voz" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card">
+      <div>
+        <h4>Bloco 4 — Falar o texto</h4>
+        <p>Ao clicar em <strong>btFalarTexto</strong>, o componente <strong>TextoParaFalar1</strong> recebe como mensagem o conteúdo atual de <strong>cxtTexto.Texto</strong> e o reproduz em voz.</p>
+      </div>
+      <figure><img src="../img/appinventor/voz_blocos_falar_clique.webp" alt="Bloco do botão Falar texto" loading="lazy" decoding="async"></figure>
+    </article>
+  </div>
+
+  <div class="activity-box">
+    <h3>5. Entenda o fluxo</h3>
+    <div class="mini-flow">
+      <span>Usuário fala</span><strong>→</strong><span>Reconhecedor de Voz</span><strong>→</strong><span>cxtTexto</span><strong>→</strong><span>Texto para Falar</span><strong>→</strong><span>Celular fala</span>
+    </div>
+    <p>Uma mesma caixa de texto funciona como saída do reconhecimento e como entrada da síntese de fala. Isso deixa o projeto pequeno e facilita visualizar a passagem dos dados entre os componentes.</p>
+  </div>
+
+  <div class="exercise-group">
+    <h3>6. Testando no celular</h3>
+    <ol>
+      <li>Conecte o projeto ao <strong>MIT AI2 Companion</strong>.</li>
+      <li>Toque em <strong>Reconhecer voz</strong> e diga uma frase curta.</li>
+      <li>Confira se a frase reconhecida aparece em <strong>cxtTexto</strong>.</li>
+      <li>Toque em <strong>Falar texto</strong> e confira se o aparelho reproduz a frase.</li>
+      <li>Digite manualmente outra frase e teste novamente o botão <strong>Falar texto</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="challenge">
+    <strong>Desafio:</strong> altere a propriedade <strong>VelocidadeDaFala</strong> do componente TextoParaFalar1, teste valores diferentes e observe como a reprodução muda. Depois, retorne ao valor 1.0.
+  </div>
+</section>
+
+
+<section id="usando-api" class="section-card cep-api-project">
+  <div class="section-head">
+    <span class="badge">8</span>
+    <div>
+      <h2>Projeto 2 — Usando API: Consulta CEP</h2>
+      <p>Agora o aplicativo passa a buscar informações na internet usando o componente Web do App Inventor.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Foco deste projeto:</strong> aprender como um aplicativo consulta uma API, recebe uma resposta em JSON e atualiza a tela com os dados retornados. O App Inventor será a ferramenta para praticar esse fluxo.
+  </div>
+
+  <div class="story-panel">
+    <h4>Contextualização</h4>
+    <p>Muitos aplicativos não possuem todas as informações dentro do próprio celular. Eles consultam serviços disponíveis na internet para buscar dados atualizados, como CEP, clima, mapas, cotação de moedas, notícias e informações de produtos.</p>
+    <p>Neste projeto, o aplicativo enviará um CEP para o serviço ViaCEP e receberá como resposta dados de endereço. Para manter o foco, serão exibidos apenas a <strong>cidade</strong> e o <strong>estado</strong>.</p>
+  </div>
+
+  <div class="story-panel">
+    <h4>Situação-problema</h4>
+    <p>Imagine que uma empresa precisa criar uma tela simples para facilitar o preenchimento de cadastros. Em vez de pedir que o usuário digite cidade e estado manualmente, o aplicativo pode consultar essas informações automaticamente a partir do CEP.</p>
+    <p>Seu desafio é criar um aplicativo no App Inventor que leia um CEP, consulte a API ViaCEP e mostre na tela a cidade e o estado encontrados.</p>
+  </div>
+
+  <div class="concept-grid">
+    <article>
+      <h4>O que é uma API?</h4>
+      <p>API é uma forma organizada de comunicação entre sistemas. Um aplicativo faz um pedido, um serviço processa esse pedido e devolve uma resposta em um formato que o programa consegue interpretar.</p>
+    </article>
+    <article>
+      <h4>Cliente e servidor</h4>
+      <p>No nosso exemplo, o aplicativo feito no App Inventor é o cliente. O ViaCEP é o serviço consultado. A internet faz a ponte entre os dois.</p>
+    </article>
+    <article>
+      <h4>Fluxo do projeto</h4>
+      <p>Digitar CEP → montar URL → consultar API → receber JSON → extrair cidade e estado → atualizar a tela.</p>
+    </article>
+  </div>
+
+  <div class="exercise-group">
+    <h4>Conhecendo o ViaCEP</h4>
+    <p>O ViaCEP é um serviço gratuito para consulta de CEPs brasileiros. A consulta é feita por meio de uma URL organizada.</p>
+    <div class="table-wrap">
+      <table class="content-table">
+        <thead>
+          <tr><th>Parte</th><th>Significado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>https://viacep.com.br/ws/</strong></td><td>Endereço base do serviço.</td></tr>
+          <tr><td><strong>01001000</strong></td><td>CEP enviado para consulta.</td></tr>
+          <tr><td><strong>/json/</strong></td><td>Formato da resposta solicitada.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="compact-figure" style="max-width:900px;margin:1.5rem auto;text-align:center;">
+      <img src="../img/reactnative/api_cep_site_inicio.webp" alt="Site ViaCEP" loading="lazy" decoding="async" style="width:100%;height:auto;">
+      <figcaption>ViaCEP: serviço usado para consultar dados de endereço.</figcaption>
+    </figure>
+    <div class="notice">No aplicativo, o CEP digitado será encaixado no meio da URL: <strong>https://viacep.com.br/ws/CEP/json/</strong>.</div>
+  </div>
+
+  <div class="exercise-group">
+    <h4>Entendendo o JSON</h4>
+    <p>JSON é um formato de dados baseado em pares de <strong>chave</strong> e <strong>valor</strong>. No retorno do ViaCEP, cada informação possui um nome.</p>
+    <figure class="compact-figure" style="max-width:900px;margin:1.5rem auto;text-align:center;">
+      <img src="../img/reactnative/api_cep_json_viacep.webp" alt="Resposta JSON do ViaCEP" loading="lazy" decoding="async" style="width:100%;height:auto;">
+      <figcaption>Resposta JSON retornada pela API.</figcaption>
+    </figure>
+    <div class="concept-grid">
+      <article><h4>uf</h4><p>Indica o estado retornado pela API. Exemplo: <strong>SP</strong>.</p></article>
+      <article><h4>localidade</h4><p>Indica a cidade retornada pela API. Exemplo: <strong>São Paulo</strong>.</p></article>
+      <article><h4>conteúdoDaResposta</h4><p>No App Inventor, é o texto recebido pelo componente Web depois da consulta.</p></article>
+    </div>
+  </div>
+
+  <div class="lampada-layout">
+    <div class="exercise-text">
+      <h4>Construindo a interface</h4>
+      <p>Monte uma tela simples para digitar o CEP, pesquisar e mostrar os campos de resultado.</p>
+      <div class="table-wrap">
+        <table class="content-table">
+          <thead><tr><th>Componente</th><th>Nome</th><th>Função</th></tr></thead>
+          <tbody>
+            <tr><td>Legenda</td><td>LegCEP</td><td>Orientar o usuário sobre o CEP.</td></tr>
+            <tr><td>CaixaDeTexto</td><td>CxCEP</td><td>Receber o CEP digitado.</td></tr>
+            <tr><td>Botão</td><td>BtPesquisar</td><td>Iniciar a consulta na API.</td></tr>
+            <tr><td>Legenda</td><td>LegEstado</td><td>Identificar o campo de estado.</td></tr>
+            <tr><td>CaixaDeTexto</td><td>CxEstado</td><td>Mostrar o estado retornado.</td></tr>
+            <tr><td>Legenda</td><td>LegCidade</td><td>Identificar o campo de cidade.</td></tr>
+            <tr><td>CaixaDeTexto</td><td>CxCidade</td><td>Mostrar a cidade retornada.</td></tr>
+            <tr><td>Web</td><td>Web1</td><td>Consultar a API e receber a resposta.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <figure class="lampada-interface-figure">
+      <img src="../img/appinventor/cep_interface_final.webp" alt="Tela do aplicativo Consulta Cidade por CEP no App Inventor" loading="lazy" decoding="async">
+      <figcaption>Modelo da interface do aplicativo Consulta Cidade por CEP.</figcaption>
+    </figure>
+  </div>
+
+  <div class="blocks-section">
+    <h4>Componentes utilizados</h4>
+    <article class="block-card">
+      <div>
+        <h5>Interface de Usuário</h5>
+        <p>Os componentes visuais ficam na categoria Interface de Usuário: legenda, caixa de texto e botão.</p>
+      </div>
+      <figure><img src="../img/appinventor/cep_interface_usuario.webp" alt="Categoria Interface de Usuário no App Inventor" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card">
+      <div>
+        <h5>Árvore de componentes</h5>
+        <p>A tela utiliza poucos componentes visuais e um componente invisível: <strong>Web1</strong>.</p>
+      </div>
+      <figure><img src="../img/appinventor/cep_componentes_arvore.webp" alt="Árvore de componentes do aplicativo Consulta CEP" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card">
+      <div>
+        <h5>O componente Web</h5>
+        <p>O componente <strong>Web</strong> fica na categoria Conectividade. Ele permite acessar endereços da internet, enviar requisições e receber respostas.</p>
+        <p>Ao ser inserido, ele aparece na parte inferior como componente invisível.</p>
+      </div>
+      <figure><img src="../img/appinventor/cep_componente_web.webp" alt="Componente Web na categoria Conectividade" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card block-card-wide">
+      <div>
+        <h5>Enviando a consulta</h5>
+        <p>Quando o botão <strong>BtPesquisar</strong> for clicado, o aplicativo monta a URL juntando o endereço base do ViaCEP, o CEP digitado e o final <strong>/json/</strong>.</p>
+        <p>Depois disso, o bloco chama <strong>Web1.Obter</strong> para fazer a consulta.</p>
+      </div>
+      <figure><img src="../img/appinventor/cep_bloco_botao_pesquisar.webp" alt="Bloco do botão Pesquisar montando a URL do ViaCEP" loading="lazy" decoding="async"></figure>
+    </article>
+
+    <article class="block-card block-card-wide">
+      <div>
+        <h5>Recebendo a resposta</h5>
+        <p>Quando o componente Web recebe a resposta, o evento <strong>Web1.RecebeuTexto</strong> é executado automaticamente.</p>
+        <p>O texto recebido é decodificado como JSON. Em seguida, o aplicativo busca as chaves <strong>uf</strong> e <strong>localidade</strong> para preencher estado e cidade.</p>
+      </div>
+      <figure><img src="../img/appinventor/cep_bloco_web_recebeu_texto.webp" alt="Bloco Web1.RecebeuTexto lendo o JSON do ViaCEP" loading="lazy" decoding="async"></figure>
+    </article>
+  </div>
+
+  <div class="exercise-group">
+    <h4>Testando o aplicativo</h4>
+    <ul class="checklist">
+      <li>Execute o aplicativo usando o MIT AI2 Companion.</li>
+      <li>Digite um CEP válido no campo <strong>CxCEP</strong>.</li>
+      <li>Clique em <strong>Pesquisar</strong>.</li>
+      <li>Verifique se o estado aparece em <strong>CxEstado</strong>.</li>
+      <li>Verifique se a cidade aparece em <strong>CxCidade</strong>.</li>
+      <li>Teste outro CEP e observe se os dados mudam.</li>
+    </ul>
+    <figure class="compact-figure" style="max-width:360px;margin:1.5rem auto;text-align:center;">
+      <img src="../img/appinventor/cep_interface_final.webp" alt="Resultado final do aplicativo Consulta CEP" loading="lazy" decoding="async" style="width:100%;height:auto;">
+      <figcaption>Resultado visual esperado do aplicativo.</figcaption>
+    </figure>
+  </div>
+
+  <div class="challenge">
+    <strong>Desafios:</strong>
+    <ol>
+      <li>Mostre também o bairro retornado pela API.</li>
+      <li>Mostre também o logradouro.</li>
+      <li>Crie um botão Limpar para apagar CEP, cidade e estado.</li>
+      <li>Pesquise o que acontece quando o CEP não é encontrado.</li>
+    </ol>
+  </div>
+
+  <div class="activity-box">
+    <h4>Você acabou de aprender</h4>
+    <ul>
+      <li>Que uma API permite a comunicação entre sistemas.</li>
+      <li>Como montar uma URL de consulta.</li>
+      <li>Como usar o componente Web do App Inventor.</li>
+      <li>Como receber uma resposta em JSON.</li>
+      <li>Como buscar valores por chave dentro de um dicionário.</li>
+      <li>Como atualizar a interface com dados vindos da internet.</li>
+    </ul>
+  </div>
+
+  <div class="notice">
+    <strong>Conclusão:</strong> neste projeto, o aplicativo deixou de trabalhar apenas com dados digitados na tela e passou a consultar informações externas. Esse é um passo importante para criar aplicativos mais úteis e conectados. No próximo avanço, esse conhecimento ajudará a transformar uma ideia criada com auxílio de IA em um aplicativo real: <strong>Do Assistente ao Aplicativo</strong>.
+  </div>
+
+</section>
+
+<section id="exercicios-api-appinventor" class="section-card api-exercises-section">
+  <div class="section-head">
+    <span class="badge">99</span>
+    <div>
+      <h2>Exercícios — Web Services e APIs</h2>
+      <p>Pratique o mesmo fluxo aprendido no Consulta CEP, aumentando gradualmente a autonomia na construção do aplicativo.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Como trabalhar:</strong> o primeiro exercício oferece mais pistas. A cada novo desafio, algumas decisões ficam por sua conta. O objetivo não é copiar blocos prontos, mas reaplicar o caminho <strong>entrada → requisição → JSON → dados → tela</strong>.
+  </div>
+
+  <div class="api-exercise-tabs" role="tablist" aria-label="Exercícios de APIs">
+    <button class="api-exercise-tab active" type="button" data-api-target="api-ex-cep" aria-selected="true">
+      <span>1. Busca CEP+</span>
+      <img src="../img/reactnative/cep_expandido.webp" alt="Modelo visual do exercício Busca CEP expandido" loading="lazy" decoding="async">
+    </button>
+    <button class="api-exercise-tab" type="button" data-api-target="api-ex-moedas" aria-selected="false">
+      <span>2. Cotação do Dólar</span>
+      <img src="../img/reactnative/cotacao_dolar.webp" alt="Modelo visual do exercício Cotação do Dólar" loading="lazy" decoding="async">
+    </button>
+    <button class="api-exercise-tab" type="button" data-api-target="api-ex-clima" aria-selected="false">
+      <span>3. Clima Atual</span>
+      <img src="../img/reactnative/clima_atual.webp" alt="Modelo visual do exercício Clima Atual" loading="lazy" decoding="async">
+    </button>
+    <button class="api-exercise-tab" type="button" data-api-target="api-ex-paises" aria-selected="false">
+      <span>4. Países</span>
+      <div class="api-country-thumb" aria-hidden="true"><b>Países</b><i></i><i></i><em>Buscar</em><small>Capital<br>População<br>Região</small></div>
+    </button>
+  </div>
+
+  <article id="api-ex-cep" class="api-exercise-detail active">
+    <div class="api-exercise-copy">
+      <span class="api-level">Mais orientado</span>
+      <h3>1. Expandindo o Busca CEP</h3>
+      <p>O projeto principal mostra apenas cidade e estado. Agora aproveite melhor o JSON retornado pelo ViaCEP e amplie o aplicativo sem trocar de API.</p>
+
+      <div class="api-requirements">
+        <h4>Seu aplicativo deverá</h4>
+        <ul>
+          <li>Continuar recebendo um CEP e realizando a consulta.</li>
+          <li>Mostrar também <strong>logradouro</strong>, <strong>bairro</strong>, <strong>DDD</strong> e <strong>IBGE</strong>.</li>
+          <li>Manter o botão <strong>Pesquisar</strong>.</li>
+          <li>Acrescentar um botão <strong>Limpar</strong> que apague entrada e resultados.</li>
+        </ul>
+      </div>
+
+      <h4>Componentes sugeridos</h4>
+      <div class="table-wrap">
+        <table class="content-table api-component-table">
+          <thead><tr><th>Componente</th><th>Uso</th></tr></thead>
+          <tbody>
+            <tr><td>Caixa de Texto (TextBox)</td><td>CEP e campos de resultado.</td></tr>
+            <tr><td>Legenda (Label)</td><td>Identificar cada informação exibida.</td></tr>
+            <tr><td>Botão (Button)</td><td>Pesquisar e Limpar.</td></tr>
+            <tr><td>Web</td><td>Consultar o ViaCEP.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="api-hints">
+        <div><strong>Pista 1</strong><span>Você não precisa alterar a forma como a URL é montada.</span></div>
+        <div><strong>Pista 2</strong><span>Procure no dicionário as chaves <code>logradouro</code>, <code>bairro</code>, <code>ddd</code> e <code>ibge</code>.</span></div>
+        <div><strong>Pista 3</strong><span>Reaproveite o evento <strong>Web1.RecebeuTexto</strong> do projeto principal.</span></div>
+      </div>
+    </div>
+    <figure class="api-exercise-visual">
+      <img src="../img/reactnative/cep_expandido.webp" alt="Interface esperada do Busca CEP expandido" loading="lazy" decoding="async">
+      <figcaption>Referência visual: mantenha a ideia da interface, adaptando-a aos componentes do App Inventor.</figcaption>
+    </figure>
+  </article>
+
+  <article id="api-ex-moedas" class="api-exercise-detail">
+    <div class="api-exercise-copy">
+      <span class="api-level">Orientação intermediária</span>
+      <h3>2. Cotação do Dólar</h3>
+      <p>Crie um novo aplicativo que consulte a cotação do dólar em relação ao real. Agora você muda de API, mas reaproveita o mesmo raciocínio do Consulta CEP.</p>
+
+      <div class="api-requirements">
+        <h4>Seu aplicativo deverá</h4>
+        <ul>
+          <li>Ter os botões <strong>Consultar</strong> e <strong>Limpar</strong>.</li>
+          <li>Consultar <code>https://economia.awesomeapi.com.br/json/last/USD-BRL</code>.</li>
+          <li>Mostrar o <strong>valor atual</strong>, a <strong>maior cotação</strong> e a <strong>menor cotação</strong>.</li>
+        </ul>
+      </div>
+
+      <h4>Componentes necessários</h4>
+      <p><strong>Legenda (Label)</strong>, <strong>Caixa de Texto (TextBox)</strong> ou legendas para os resultados, <strong>Botão (Button)</strong> e <strong>Web</strong>. A organização e os nomes dos componentes ficam por sua conta.</p>
+
+      <div class="api-hints two-hints">
+        <div><strong>Pista</strong><span>Depois de decodificar o JSON, procure primeiro o objeto <code>USDBRL</code>.</span></div>
+        <div><strong>Depois</strong><span>Dentro dele, investigue os campos <code>bid</code>, <code>high</code> e <code>low</code>.</span></div>
+      </div>
+
+      <div class="challenge"><strong>Desafio:</strong> acrescente “R$” aos valores exibidos sem alterar os dados recebidos da API.</div>
+    </div>
+    <figure class="api-exercise-visual">
+      <img src="../img/reactnative/cotacao_dolar.webp" alt="Interface esperada do aplicativo Cotação do Dólar" loading="lazy" decoding="async">
+      <figcaption>Referência visual usada também no módulo React Native.</figcaption>
+    </figure>
+  </article>
+
+  <article id="api-ex-clima" class="api-exercise-detail">
+    <div class="api-exercise-copy">
+      <span class="api-level">Menos ajuda</span>
+      <h3>3. Clima Atual</h3>
+      <p>Crie um aplicativo que consulte as condições atuais de uma localidade a partir de latitude e longitude. Neste exercício, parte da montagem da interface já deve ser decidida por você.</p>
+
+      <div class="api-requirements">
+        <h4>Requisitos</h4>
+        <ul>
+          <li>Use inicialmente as coordenadas de São Paulo: latitude <strong>-23.5505</strong> e longitude <strong>-46.6333</strong>.</li>
+          <li>Consulte <code>https://api.open-meteo.com/v1/forecast?latitude=-23.5505&amp;longitude=-46.6333&amp;current=temperature_2m,wind_speed_10m</code>.</li>
+          <li>Exiba <strong>temperatura atual</strong> e <strong>velocidade do vento</strong>.</li>
+          <li>Inclua uma identificação da cidade na interface.</li>
+        </ul>
+      </div>
+
+      <h4>O que você decide</h4>
+      <p>Escolha quantas <strong>Legendas (Label)</strong> serão usadas, como os resultados serão organizados e quais nomes dará aos componentes. O componente <strong>Web</strong> continua responsável pela consulta.</p>
+
+      <div class="api-hints two-hints">
+        <div><strong>Observe</strong><span>Agora existem parâmetros na própria URL da consulta.</span></div>
+        <div><strong>Investigue</strong><span>Depois de decodificar a resposta, localize o objeto <code>current</code> e identifique os valores pedidos.</span></div>
+      </div>
+
+      <div class="challenge"><strong>Desafio:</strong> substitua as coordenadas por outra cidade e confirme se os valores retornados mudam.</div>
+    </div>
+    <figure class="api-exercise-visual">
+      <img src="../img/reactnative/clima_atual.webp" alt="Interface esperada do aplicativo Clima Atual" loading="lazy" decoding="async">
+      <figcaption>O modelo indica o resultado esperado; a montagem no Designer é responsabilidade do aluno.</figcaption>
+    </figure>
+  </article>
+
+  <article id="api-ex-paises" class="api-exercise-detail">
+    <div class="api-exercise-copy">
+      <span class="api-level">Mais autônomo</span>
+      <h3>4. Consultando Países</h3>
+      <p>Construa um aplicativo que receba o nome de um país e apresente informações obtidas pela REST Countries. Aqui o JSON traz uma dificuldade nova: o resultado principal é uma <strong>lista de dicionários</strong>.</p>
+
+      <div class="api-requirements">
+        <h4>Enunciado</h4>
+        <ul>
+          <li>Receba o nome do país em uma <strong>Caixa de Texto (TextBox)</strong>.</li>
+          <li>Use um <strong>Botão (Button)</strong> para iniciar a busca.</li>
+          <li>Monte a consulta a partir de <code>https://restcountries.com/v3.1/name/PAIS?fields=name,capital,population,region,flags</code>.</li>
+          <li>Mostre pelo menos <strong>capital</strong>, <strong>população</strong> e <strong>região</strong>.</li>
+          <li>Use <strong>Legendas (Label)</strong> para organizar os resultados.</li>
+        </ul>
+      </div>
+
+      <div class="api-hints one-hint">
+        <div><strong>Única pista</strong><span>A resposta não começa diretamente por um dicionário. Primeiro você terá uma lista; depois deverá acessar o país retornado e, só então, suas informações.</span></div>
+      </div>
+
+      <div class="challenge"><strong>Desafio extra:</strong> pesquise no JSON como obter a bandeira do país e exiba-a usando o componente <strong>Imagem (Image)</strong>.</div>
+    </div>
+    <figure class="api-exercise-visual api-country-model">
+      <div class="api-phone-model">
+        <div class="api-phone-bar">Consulta de Países</div>
+        <div class="api-phone-body">
+          <span>Nome do país</span>
+          <div class="api-input-model">brazil</div>
+          <div class="api-button-model">Buscar País</div>
+          <div class="api-result-model"><b>Capital</b><span>Brasília</span></div>
+          <div class="api-result-model"><b>População</b><span>...</span></div>
+          <div class="api-result-model"><b>Região</b><span>Americas</span></div>
+        </div>
+      </div>
+      <figcaption>Tela-modelo: neste último exercício, a referência é intencionalmente mais simples.</figcaption>
+    </figure>
+  </article>
+
+  <div class="activity-box api-exercise-close">
+    <h4>Progressão dos exercícios</h4>
+    <p><strong>CEP+</strong> reaproveita uma solução conhecida → <strong>Moedas</strong> troca a API → <strong>Clima</strong> exige interpretar parâmetros → <strong>Países</strong> acrescenta JSON em lista. A dificuldade aumenta sem abandonar o mesmo fluxo fundamental.</p>
+  </div>
+</section>
+
+<section id="publicacao-app" class="section-card cep-api-project">
+  <div class="section-head">
+    <span class="badge">9</span>
+    <div>
+      <h2>Publicação APP</h2>
+      <p>Depois de testar o aplicativo no Companion, o App Inventor permite gerar arquivos para instalação ou publicação.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Importante:</strong> esta etapa não substitui os testes. Primeiro o aplicativo deve funcionar corretamente no MIT AI2 Companion. Depois disso, ele pode ser compilado.
+  </div>
+
+  <div class="exercise-group">
+    <h4>Compilando o aplicativo</h4>
+    <p>O menu <strong>Compilar</strong> oferece formatos diferentes para distribuir o aplicativo Android.</p>
+    <div class="image-pair">
+      <figure class="compact-figure"><img src="../img/appinventor/cep_compilar_apk.webp" alt="Opção Android App APK" loading="lazy" decoding="async"><figcaption>APK: usado para instalar diretamente em aparelhos Android.</figcaption></figure>
+      <figure class="compact-figure"><img src="../img/appinventor/cep_compilar_aab.webp" alt="Opção Android App Bundle AAB" loading="lazy" decoding="async"><figcaption>AAB: formato usado para publicação na Google Play.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="concept-grid">
+    <article>
+      <h4>APK</h4>
+      <p>Arquivo usado para instalar o aplicativo diretamente em um dispositivo Android. É útil para testes, demonstrações e instalação manual.</p>
+    </article>
+    <article>
+      <h4>AAB</h4>
+      <p>Formato utilizado para publicação na Google Play. Ele é indicado quando o objetivo é distribuir o aplicativo oficialmente pela loja.</p>
+    </article>
+    <article>
+      <h4>Antes de publicar</h4>
+      <p>Revise interface, textos, funcionamento, permissões, imagens e testes. Publicar é uma etapa posterior ao desenvolvimento.</p>
+    </article>
+  </div>
+</section>
+<section id="exercicios" class="section-card exercises-interface">
+  <div class="section-head">
+    <span class="badge">99</span>
+    <div>
+      <h2>Exercícios de Interface</h2>
+      <p>Pratique a construção de telas no App Inventor usando organizações, componentes visuais e propriedades.</p>
+    </div>
+  </div>
+
+  <div class="exercise-showcase">
+    <button class="exercise-tab active" data-target="ex-tarefas">
+      <img src="../img/appinventor/ex_tarefas.webp" alt="Interface Minhas Tarefas" loading="lazy" decoding="async">
+      <span>1. Tarefas</span>
+    </button>
+    <button class="exercise-tab" data-target="ex-produtos">
+      <img src="../img/appinventor/ex_produtos.webp" alt="Interface Cadastro de Produtos" loading="lazy" decoding="async">
+      <span>2. Produtos</span>
+    </button>
+    <button class="exercise-tab" data-target="ex-gastos">
+      <img src="../img/appinventor/ex_gastos.webp" alt="Interface Controle de Gastos" loading="lazy" decoding="async">
+      <span>3. Gastos</span>
+    </button>
+    <button class="exercise-tab" data-target="ex-atendimento">
+      <img src="../img/appinventor/ex_atendimento.webp" alt="Interface Agendar Atendimento" loading="lazy" decoding="async">
+      <span>4. Atendimento</span>
+    </button>
+    <button class="exercise-tab" data-target="ex-biblioteca">
+      <img src="../img/appinventor/ex_biblioteca.webp" alt="Interface Biblioteca Escolar" loading="lazy" decoding="async">
+      <span>5. Biblioteca</span>
+    </button>
+  </div>
+
+  <article id="ex-tarefas" class="exercise-detail active">
+    <div class="exercise-text">
+      <div class="panel-title">Enunciado</div>
+      <h3>Minhas Tarefas</h3>
+      <p>Construa a interface de um aplicativo simples para registrar tarefas de estudo.</p>
+      <ul>
+        <li>Barra superior roxa com título.</li>
+        <li>Ícone de tarefa à esquerda.</li>
+        <li>Campos: Título, Categoria, Prioridade e Data Limite.</li>
+        <li>Campo maior para Descrição.</li>
+        <li>Botões: Adicionar, Editar e Excluir.</li>
+      </ul>
+      <div class="exercise-steps">
+        <div><strong>1. Observe</strong><br/>Analise o layout antes de montar.</div>
+        <div><strong>2. Divida</strong><br/>Identifique organizações horizontais e verticais.</div>
+        <div><strong>3. Construa</strong><br/>Monte uma parte por vez no Designer.</div>
+      </div>
+      <div class="challenge"><strong>Desafio:</strong> use uma organização horizontal para colocar imagem e campos lado a lado.</div>
+    </div>
+    <figure><img src="../img/appinventor/ex_tarefas.webp" alt="Exercício Minhas Tarefas" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article id="ex-produtos" class="exercise-detail">
+    <div class="exercise-text">
+      <div class="panel-title">Enunciado</div>
+      <h3>Cadastro de Produtos</h3>
+      <p>Construa uma interface para cadastrar produtos de uma loja ou estoque.</p>
+      <ul>
+        <li>Barra superior azul com título.</li>
+        <li>Imagem de produto à esquerda.</li>
+        <li>Campos: Produto, Código, Preço e Qtd.</li>
+        <li>Área separada para Categoria e Fornecedor.</li>
+        <li>Botões: Novo, Salvar e Limpar.</li>
+      </ul>
+      <div class="exercise-steps">
+        <div><strong>1. Planeje</strong><br/>Separe dados principais e dados complementares.</div>
+        <div><strong>2. Organize</strong><br/>Use caixas agrupadas por assunto.</div>
+        <div><strong>3. Ajuste</strong><br/>Distribua os botões com larguras semelhantes.</div>
+      </div>
+      <div class="challenge"><strong>Desafio:</strong> crie grupos visuais usando bordas e cores diferentes.</div>
+    </div>
+    <figure><img src="../img/appinventor/ex_produtos.webp" alt="Exercício Cadastro de Produtos" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article id="ex-gastos" class="exercise-detail">
+    <div class="exercise-text">
+      <div class="panel-title">Enunciado</div>
+      <h3>Controle de Gastos</h3>
+      <p>Construa uma interface para registrar gastos pessoais ou familiares.</p>
+      <ul>
+        <li>Barra superior verde com título.</li>
+        <li>Ícone de dinheiro à esquerda.</li>
+        <li>Campos: Descrição, Valor, Data e Tipo.</li>
+        <li>Área de Resumo com dois campos.</li>
+        <li>Botões: Registrar e Cancelar.</li>
+      </ul>
+      <div class="exercise-steps">
+        <div><strong>1. Agrupe</strong><br/>Separe entrada de dados e resumo.</div>
+        <div><strong>2. Compare</strong><br/>Veja o que fica em linha e o que fica em coluna.</div>
+        <div><strong>3. Finalize</strong><br/>Use dois botões grandes no rodapé.</div>
+      </div>
+      <div class="challenge"><strong>Desafio:</strong> mantenha o botão Registrar mais destacado que o Cancelar.</div>
+    </div>
+    <figure><img src="../img/appinventor/ex_gastos.webp" alt="Exercício Controle de Gastos" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article id="ex-atendimento" class="exercise-detail">
+    <div class="exercise-text">
+      <div class="panel-title">Enunciado</div>
+      <h3>Agendar Atendimento</h3>
+      <p>Construa uma interface para agendar um atendimento, reunião ou consulta.</p>
+      <ul>
+        <li>Barra superior laranja com título.</li>
+        <li>Imagem de usuário à esquerda.</li>
+        <li>Campos: Nome, Telefone, Data e Horário.</li>
+        <li>Campo maior para Observações.</li>
+        <li>Botões: Agendar, Alterar e Cancelar.</li>
+      </ul>
+      <div class="exercise-steps">
+        <div><strong>1. Estruture</strong><br/>Monte a área de identificação.</div>
+        <div><strong>2. Destaque</strong><br/>Separe observações dos demais campos.</div>
+        <div><strong>3. Distribua</strong><br/>Coloque três botões no final.</div>
+      </div>
+      <div class="challenge"><strong>Desafio:</strong> deixe o botão Agendar com a mesma cor do cabeçalho.</div>
+    </div>
+    <figure><img src="../img/appinventor/ex_atendimento.webp" alt="Exercício Agendar Atendimento" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <article id="ex-biblioteca" class="exercise-detail">
+    <div class="exercise-text">
+      <div class="panel-title">Enunciado</div>
+      <h3>Biblioteca Escolar</h3>
+      <p>Construa uma interface para registrar livros e empréstimos de uma biblioteca.</p>
+      <ul>
+        <li>Barra superior escura com título.</li>
+        <li>Ícone de livros à esquerda.</li>
+        <li>Campos: Título, Autor, Código e Situação.</li>
+        <li>Área separada para Aluno / Turma.</li>
+        <li>Botões: Cadastrar, Emprestar e Devolver.</li>
+      </ul>
+      <div class="exercise-steps">
+        <div><strong>1. Identifique</strong><br/>Separe livro e aluno.</div>
+        <div><strong>2. Monte</strong><br/>Use organizações para criar blocos visuais.</div>
+        <div><strong>3. Revise</strong><br/>Confira alinhamentos e proporções.</div>
+      </div>
+      <div class="challenge"><strong>Desafio:</strong> use três botões com cores diferentes sem perder legibilidade.</div>
+    </div>
+    <figure><img src="../img/appinventor/ex_biblioteca.webp" alt="Exercício Biblioteca Escolar" loading="lazy" decoding="async"></figure>
+  </article>
+
+  <div class="exercise-group">
+    <h3>Parte 1 - Fundamentos da Programação Mobile</h3>
+    <ol>
+      <li>Escolha três aplicativos que você utiliza e escreva qual problema cada um resolve.</li>
+      <li>Para cada aplicativo escolhido, identifique uma tela, uma ação do usuário e um dado utilizado.</li>
+      <li>Explique por que um desenvolvedor precisa pensar no fluxo do aplicativo.</li>
+    </ol>
+  </div>
+
+  <div class="exercise-group">
+    <h3>Parte 2 - Planejamento e wireframe</h3>
+    <ol>
+      <li>Escreva cinco requisitos funcionais para um aplicativo de tarefas, produtos, gastos, atendimento ou biblioteca.</li>
+      <li>Desenhe um wireframe simples para uma das interfaces propostas acima.</li>
+      <li>Compare o seu wireframe com a interface final escolhida e explique o que mudou.</li>
+    </ol>
+  </div>
+
+  <div class="exercise-group">
+    <h3>Parte 3 - Designer e organizações</h3>
+    <ol>
+      <li>Explique a diferença entre Organização Horizontal e Organização Vertical.</li>
+      <li>Escolha uma das interfaces acima e escreva sua árvore de componentes.</li>
+      <li>Monte a interface escolhida usando apenas o Designer do App Inventor.</li>
+      <li>Renomeie todos os componentes com nomes claros.</li>
+      <li>Altere cores, títulos e textos sem desorganizar o layout.</li>
+    </ol>
+  </div>
+
+  <div class="notice">
+    Estes exercícios reforçam a construção visual da interface. Depois de praticar o Designer, avance para os exercícios com eventos e lógica.
+  </div>
+
+  <div id="mini-projetos-appinventor" class="logic-exercises">
+    <div class="section-subhead">
+      <h3>Exercícios com Eventos e Lógica</h3>
+      <p>Agora que você já praticou a construção de interfaces no Designer do App Inventor, chegou o momento de desenvolver aplicativos que respondem às ações do usuário.</p>
+    </div>
+
+    <article id="exercicio-lampada" class="logic-card lampada-exercise">
+      <div class="panel-title">Exercício 1</div>
+      <h3>Controle de Lâmpada</h3>
+
+      <div class="story-panel">
+        <h4>Situação-Problema</h4>
+        <p>Imagine que você trabalha em uma empresa que desenvolve soluções para casas inteligentes. Um dos primeiros recursos que os clientes desejam é controlar lâmpadas pelo celular.</p>
+        <p>Embora neste exercício a lâmpada seja apenas uma imagem na tela, a mesma lógica poderá ser utilizada futuramente para controlar uma lâmpada real por meio de um microcontrolador, como Arduino ou ESP32.</p>
+        <p>Esse tipo de projeto combina Programação Mobile, Sistemas Embarcados e Internet das Coisas (IoT), permitindo que dispositivos físicos sejam controlados por aplicativos.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article>
+          <h4>Objetivo</h4>
+          <ul>
+            <li>Acender uma lâmpada virtual.</li>
+            <li>Apagar uma lâmpada virtual.</li>
+            <li>Alternar o estado ao clicar na imagem.</li>
+            <li>Habilitar e desabilitar botões.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>O que você vai aprender</h4>
+          <ul>
+            <li>Eventos de clique.</li>
+            <li>Manipulação de imagens.</li>
+            <li>Propriedades dos componentes.</li>
+            <li>Estrutura condicional.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Arquivos necessários</h4>
+          <ul>
+            <li><strong>Acesa.jpg</strong></li>
+            <li><strong>Apagada.jpg</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Componentes utilizados</h4>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Componente</th><th>Nome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tela</td><td>Screen1</td></tr>
+              <tr><td>Imagem</td><td>imgLampada</td></tr>
+              <tr><td>Botão</td><td>btnAcesa</td></tr>
+              <tr><td>Botão</td><td>btnApagada</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Configurando a Screen1</h4>
+        <p>Antes de inserir os componentes, configure a tela principal do aplicativo.</p>
+        <div class="howto">
+          <h5>Faça assim</h5>
+          <ol>
+            <li>Selecione <strong>Screen1</strong>.</li>
+            <li>Localize a área de propriedades.</li>
+            <li>Configure os valores abaixo.</li>
+          </ol>
+        </div>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Propriedade</th><th>Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Título</td><td>Controle de Lâmpada</td></tr>
+              <tr><td>AlinhamentoHorizontal</td><td>Centro</td></tr>
+              <tr><td>AlinhamentoVertical</td><td>Superior</td></tr>
+              <tr><td>Orientação da Tela</td><td>Retrato</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="lampada-layout">
+        <div class="exercise-text">
+          <h4>Montando a interface</h4>
+          <p>Monte uma tela semelhante ao modelo apresentado. Ela deve conter uma imagem da lâmpada e dois botões: um para acender e outro para apagar.</p>
+          <div class="table-wrap">
+            <table class="content-table">
+              <thead>
+                <tr><th>Componente</th><th>Nome</th><th>Configuração</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Image</td><td>imgLampada</td><td>Clicável = Verdadeiro</td></tr>
+                <tr><td>Button</td><td>btnAcesa</td><td>Texto = Acesa</td></tr>
+                <tr><td>Button</td><td>btnApagada</td><td>Texto = Apagada</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice">
+            <strong>Atenção:</strong> a propriedade <strong>Clicável</strong> da imagem deve estar configurada como <strong>Verdadeiro</strong>. Sem isso, o usuário não conseguirá clicar diretamente na lâmpada.
+          </div>
+        </div>
+        <figure class="lampada-interface-figure">
+          <img src="../img/appinventor/lampada_interface.webp" alt="Interface do aplicativo Controle de Lâmpada" loading="lazy" decoding="async">
+          <figcaption>Modelo da interface do aplicativo.</figcaption>
+        </figure>
+      </div>
+
+      <div class="blocks-section">
+        <h4>Programação dos Blocos</h4>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 1 — Inicialização da Tela</h5>
+            <p>Define o estado inicial do aplicativo quando ele for aberto.</p>
+            <ul>
+              <li>Botão Acesa habilitado.</li>
+              <li>Botão Apagada desabilitado.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/lampada_screen1_inicializar.webp" alt="Blocos de inicialização da Screen1" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 2 — Botão Acesa</h5>
+            <p>Quando o usuário clicar em <strong>Acesa</strong>, o aplicativo passa para o estado ligado.</p>
+            <ul>
+              <li>A imagem muda para <strong>Acesa.jpg</strong>.</li>
+              <li>O botão Acesa é desabilitado.</li>
+              <li>O botão Apagada é habilitado.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/lampada_btn_acesa.webp" alt="Blocos do botão Acesa" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 3 — Botão Apagada</h5>
+            <p>Quando o usuário clicar em <strong>Apagada</strong>, o aplicativo retorna ao estado desligado.</p>
+            <ul>
+              <li>A imagem muda para <strong>Apagada.jpg</strong>.</li>
+              <li>O botão Apagada é desabilitado.</li>
+              <li>O botão Acesa é habilitado.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/lampada_btn_apagada.webp" alt="Blocos do botão Apagada" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 4 — Clique na Lâmpada</h5>
+            <p>Quando o usuário clicar diretamente na imagem, o aplicativo verifica o estado atual da lâmpada e alterna entre acesa e apagada.</p>
+            <p>Este bloco usa a estrutura <strong>se / então / senão</strong>, permitindo que o aplicativo tome uma decisão.</p>
+          </div>
+          <figure><img src="../img/appinventor/lampada_img_clique.webp" alt="Blocos do clique na imagem da lâmpada" loading="lazy" decoding="async"></figure>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Testando o aplicativo</h4>
+        <ul class="checklist">
+          <li>A lâmpada inicia apagada.</li>
+          <li>O botão Acesa inicia habilitado.</li>
+          <li>O botão Apagada inicia desabilitado.</li>
+          <li>Ao clicar em Acesa, a imagem muda corretamente.</li>
+          <li>Ao clicar em Apagada, a imagem retorna ao estado apagado.</li>
+          <li>Ao clicar na lâmpada, ela alterna seu estado.</li>
+          <li>Os botões são habilitados e desabilitados corretamente.</li>
+        </ul>
+      </div>
+
+      <div class="notice">
+        <strong>Aplicação no mundo real:</strong> a mesma lógica pode ser aplicada em automação residencial, tomadas inteligentes, ventiladores, projetos com Arduino, ESP32 e soluções de Internet das Coisas.
+      </div>
+
+      <div class="challenge">
+        <strong>Desafio Extra — Botão Único:</strong> remova os botões Acesa e Apagada e crie apenas um botão chamado <strong>Alternar Estado</strong>. Ao clicar, se a lâmpada estiver apagada, ela deverá acender; se estiver acesa, ela deverá apagar.
+      </div>
+
+      <div class="activity-box">
+        <h4>Para pensar</h4>
+        <p>Além das lâmpadas, quais outros equipamentos de uma casa inteligente poderiam ser controlados por um aplicativo semelhante?</p>
+        <p>Como você faria para que esse aplicativo controlasse uma lâmpada real utilizando um Arduino ou ESP32?</p>
+      </div>
+    </article>
+
+    <article id="exercicio-login" class="logic-card login-exercise">
+      <div class="panel-title">Exercício 2</div>
+      <h3>Sistema de Login</h3>
+
+      <div class="story-panel">
+        <h4>Situação-Problema</h4>
+        <p>Imagine que você foi contratado para desenvolver a tela de acesso de um sistema acadêmico. Antes de utilizar os recursos do sistema, os usuários precisam informar um nome de usuário e uma senha.</p>
+        <p>Além de validar as informações digitadas, o sistema deve limitar a quantidade de tentativas incorretas para evitar acessos indevidos.</p>
+        <p>Seu desafio é desenvolver um aplicativo de login utilizando o App Inventor, aplicando conceitos de interface, eventos, validação de dados, procedimentos e variáveis.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article>
+          <h4>Objetivo</h4>
+          <ul>
+            <li>Receber usuário e senha.</li>
+            <li>Validar os dados digitados.</li>
+            <li>Permitir visualizar ou ocultar a senha.</li>
+            <li>Controlar tentativas incorretas.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>O que você vai aprender</h4>
+          <ul>
+            <li>Eventos de foco e clique.</li>
+            <li>Caixa de senha e caixa de seleção.</li>
+            <li>Variável global.</li>
+            <li>Procedimento e validação.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Arquivos necessários</h4>
+          <ul>
+            <li><strong>login.png</strong></li>
+            <li><strong>identificador.png</strong></li>
+            <li><strong>senha.png</strong></li>
+            <li><strong>exibirSenha.png</strong> e <strong>ocultarSenha.png</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Componentes utilizados</h4>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Componente</th><th>Nome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tela</td><td>Screen1</td></tr>
+              <tr><td>Caixa de Texto</td><td>cxtUsuario</td></tr>
+              <tr><td>Caixa de Senha</td><td>cxtSenha</td></tr>
+              <tr><td>Caixa de Seleção</td><td>cxsMostraSenha</td></tr>
+              <tr><td>Botão</td><td>botOK</td></tr>
+              <tr><td>Imagem</td><td>imgMostraSenha</td></tr>
+              <tr><td>Notificador</td><td>Notifier1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Configurando a Screen1</h4>
+        <p>Antes de inserir os componentes, configure a tela principal do aplicativo.</p>
+        <div class="howto">
+          <h5>Faça assim</h5>
+          <ol>
+            <li>Selecione <strong>Screen1</strong>.</li>
+            <li>Localize a área de propriedades.</li>
+            <li>Configure os valores abaixo.</li>
+          </ol>
+        </div>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Propriedade</th><th>Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Título</td><td>Sistema de Login</td></tr>
+              <tr><td>AlinhamentoHorizontal</td><td>Centro</td></tr>
+              <tr><td>AlinhamentoVertical</td><td>Superior</td></tr>
+              <tr><td>Orientação da Tela</td><td>Retrato</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="lampada-layout">
+        <div class="exercise-text">
+          <h4>Montando a interface</h4>
+          <p>Monte uma tela semelhante ao modelo apresentado. Ela deve conter o título do aplicativo, ícone de login, campo de usuário, campo de senha, opção para mostrar ou ocultar a senha, botão OK e Notificador.</p>
+          <div class="table-wrap">
+            <table class="content-table">
+              <thead>
+                <tr><th>Componente</th><th>Nome</th><th>Função</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CaixaDeTexto</td><td>cxtUsuario</td><td>Receber o nome do usuário.</td></tr>
+                <tr><td>CaixaDeSenha</td><td>cxtSenha</td><td>Receber a senha digitada.</td></tr>
+                <tr><td>CaixaDeSeleção</td><td>cxsMostraSenha</td><td>Alternar entre mostrar e ocultar a senha.</td></tr>
+                <tr><td>Botão</td><td>botOK</td><td>Confirmar os dados informados.</td></tr>
+                <tr><td>Imagem</td><td>imgMostraSenha</td><td>Exibir o ícone visual de mostrar ou ocultar senha.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice">
+            <strong>Atenção:</strong> a CaixaDeSenha já oculta os caracteres digitados. A caixa de seleção será usada para alternar a propriedade que permite visualizar ou esconder a senha.
+          </div>
+        </div>
+        <figure class="lampada-interface-figure">
+          <img src="../img/appinventor/login_interface.webp" alt="Interface do aplicativo Sistema de Login" loading="lazy" decoding="async">
+          <figcaption>Modelo da interface do aplicativo.</figcaption>
+        </figure>
+      </div>
+
+      <div class="blocks-section">
+        <h4>Programação dos Blocos</h4>
+
+        <article class="block-card">
+          <div>
+            <h5>Variável global — tentativas</h5>
+            <p>Crie a variável <strong>global tentativas</strong> com valor inicial <strong>0</strong>.</p>
+            <p>Ela será usada para contar quantas vezes o usuário informou dados incorretos.</p>
+          </div>
+          <figure><img src="../img/appinventor/login_variavel_tentativas.webp" alt="Bloco da variável global tentativas" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 1 — Inicialização da Tela</h5>
+            <p>Prepara o aplicativo quando a tela é aberta.</p>
+            <ul>
+              <li>Configura o estado inicial dos componentes.</li>
+              <li>Garante que o botão OK esteja disponível para uso.</li>
+              <li>Deixa a tela pronta para receber usuário e senha.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/login_screen1_inicializar.webp" alt="Blocos de inicialização do sistema de login" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 2 — Eventos de Foco</h5>
+            <p>Quando o usuário entra ou sai dos campos, o aplicativo altera as cores para destacar o campo em uso.</p>
+            <ul>
+              <li>Ao receber foco: fundo amarelo e texto azul.</li>
+              <li>Ao perder foco: fundo branco e texto preto.</li>
+              <li>Esse comportamento vale para usuário e senha.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/login_blocos_foco.webp" alt="Blocos de foco dos campos usuário e senha" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 3 — Botão OK</h5>
+            <p>Quando o usuário clicar no botão <strong>OK</strong>, o aplicativo chama o procedimento <strong>VerificarCredencial</strong>.</p>
+            <p>Assim, a lógica principal fica organizada em um procedimento separado.</p>
+          </div>
+          <figure><img src="../img/appinventor/login_bot_ok.webp" alt="Bloco do clique no botão OK" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Bloco 4 — Mostrar e Ocultar Senha</h5>
+            <p>Quando a caixa de seleção for alterada, o aplicativo mostra ou oculta a senha digitada.</p>
+            <ul>
+              <li>Se estiver marcada, a senha fica visível.</li>
+              <li>Se estiver desmarcada, a senha volta a ficar oculta.</li>
+              <li>O texto da opção e a imagem também são atualizados.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/login_mostrar_senha.webp" alt="Blocos para mostrar e ocultar a senha" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card block-card-wide">
+          <div>
+            <h5>Bloco 5 — Procedimento VerificarCredencial</h5>
+            <p>Este é o bloco principal do aplicativo. Ele valida campos vazios, verifica usuário e senha, controla as tentativas e bloqueia o acesso quando o limite é atingido.</p>
+            <ul>
+              <li>Se algum campo estiver vazio, exibe uma mensagem de aviso.</li>
+              <li>Se usuário e senha estiverem corretos, libera o acesso.</li>
+              <li>Se estiverem incorretos, soma uma tentativa.</li>
+              <li>Ao atingir o limite, desabilita o botão e encerra o aplicativo.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/login_procedimento_verificarcredencial.webp" alt="Procedimento VerificarCredencial" loading="lazy" decoding="async"></figure>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Testando o aplicativo</h4>
+        <ul class="checklist">
+          <li>O campo usuário recebe destaque ao ganhar foco.</li>
+          <li>O campo senha recebe destaque ao ganhar foco.</li>
+          <li>A senha é ocultada inicialmente.</li>
+          <li>A opção Mostrar Senha funciona corretamente.</li>
+          <li>Os campos vazios são validados.</li>
+          <li>O login correto é aceito.</li>
+          <li>O login incorreto incrementa as tentativas.</li>
+          <li>O sistema informa quantas tentativas restam.</li>
+          <li>O sistema bloqueia após três erros.</li>
+        </ul>
+      </div>
+
+      <div class="notice">
+        <strong>Aplicação no mundo real:</strong> sistemas de autenticação são usados em aplicativos bancários, redes sociais, sistemas escolares, lojas virtuais, sistemas corporativos e aplicativos governamentais. Em sistemas reais, as credenciais normalmente são verificadas em servidores ou bancos de dados, com mecanismos adicionais de segurança.
+      </div>
+
+      <div class="challenge">
+        <strong>Desafio Extra — Administrador:</strong> modifique o aplicativo para aceitar dois usuários diferentes: <strong>aluno / 123456</strong> e <strong>admin / 654321</strong>. O sistema deverá permitir o acesso para qualquer uma das combinações válidas.
+      </div>
+
+      <div class="activity-box">
+        <h4>Para pensar</h4>
+        <p>Em sistemas reais, é seguro armazenar usuários e senhas diretamente no aplicativo?</p>
+        <p>Como grandes sistemas verificam credenciais sem expor as senhas dos usuários?</p>
+      </div>
+    </article>
+    <article id="exercicio-imc" class="logic-card imc-exercise">
+      <div class="panel-title">Exercício 3</div>
+      <h3>Calculadora de IMC</h3>
+
+      <div class="story-panel">
+        <h4>Situação-Problema</h4>
+        <p>Imagine que você foi contratado para desenvolver um aplicativo simples para auxiliar profissionais da área da saúde no cálculo do Índice de Massa Corporal (IMC).</p>
+        <p>O IMC é uma medida utilizada para relacionar peso e altura, permitindo uma avaliação inicial da condição corporal de uma pessoa.</p>
+        <p>Seu desafio é criar um aplicativo capaz de calcular automaticamente o IMC e informar a classificação correspondente de acordo com uma tabela de referência.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article>
+          <h4>Objetivo</h4>
+          <ul>
+            <li>Informar peso e altura.</li>
+            <li>Calcular o IMC.</li>
+            <li>Identificar a situação correspondente.</li>
+            <li>Exibir o resultado em uma mensagem.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>O que você vai aprender</h4>
+          <ul>
+            <li>Entrada de dados numéricos.</li>
+            <li>Operações matemáticas.</li>
+            <li>Variáveis globais.</li>
+            <li>Procedimentos e condicionais.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Arquivo necessário</h4>
+          <ul>
+            <li><strong>IMC.png</strong></li>
+          </ul>
+          <figure class="inline-logo-figure">
+            <img src="../img/appinventor/imc_logo.webp" alt="Imagem de referência para o aplicativo de IMC" loading="lazy" decoding="async">
+          </figure>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Componentes utilizados</h4>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Componente</th><th>Nome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tela</td><td>Screen1</td></tr>
+              <tr><td>Organização Vertical</td><td>OrgTopo</td></tr>
+              <tr><td>Organização Vertical</td><td>OrgMeio</td></tr>
+              <tr><td>Organização Horizontal</td><td>OrgBase</td></tr>
+              <tr><td>Imagem</td><td>ImgLogo</td></tr>
+              <tr><td>Legenda</td><td>legPeso</td></tr>
+              <tr><td>Caixa de Texto</td><td>cxPeso</td></tr>
+              <tr><td>Legenda</td><td>legAltura</td></tr>
+              <tr><td>Caixa de Texto</td><td>cxAltura</td></tr>
+              <tr><td>Botão</td><td>btCalcular</td></tr>
+              <tr><td>Botão</td><td>btLimpar</td></tr>
+              <tr><td>Notificador</td><td>Notificador1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Configurando a Screen1</h4>
+        <p>Antes de inserir os componentes, configure a tela principal do aplicativo.</p>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Propriedade</th><th>Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Título</td><td>IMC</td></tr>
+              <tr><td>AlinhamentoHorizontal</td><td>Esquerda</td></tr>
+              <tr><td>AlinhamentoVertical</td><td>Topo</td></tr>
+              <tr><td>Orientação da Tela</td><td>Retrato</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="lampada-layout">
+        <div class="exercise-text">
+          <h4>Montando a interface</h4>
+          <p>Monte uma tela semelhante ao modelo apresentado. Ela deve conter o logo do IMC, os campos para peso e altura e os botões Calcular e Limpar.</p>
+          <div class="table-wrap">
+            <table class="content-table">
+              <thead>
+                <tr><th>Componente</th><th>Nome</th><th>Função</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>ImgLogo</td><td>ImgLogo</td><td>Exibir a imagem principal do aplicativo.</td></tr>
+                <tr><td>Legenda</td><td>legPeso</td><td>Orientar a digitação do peso.</td></tr>
+                <tr><td>CaixaDeTexto</td><td>cxPeso</td><td>Receber o peso em kg.</td></tr>
+                <tr><td>Legenda</td><td>legAltura</td><td>Orientar a digitação da altura.</td></tr>
+                <tr><td>CaixaDeTexto</td><td>cxAltura</td><td>Receber a altura em metros.</td></tr>
+                <tr><td>Botão</td><td>btCalcular</td><td>Calcular o IMC.</td></tr>
+                <tr><td>Botão</td><td>btLimpar</td><td>Limpar os campos.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="lampada-interface-figure">
+          <img src="../img/appinventor/imc_interface.webp" alt="Interface do aplicativo Calculadora de IMC" loading="lazy" decoding="async">
+          <figcaption>Modelo da interface do aplicativo.</figcaption>
+        </figure>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Tabela de Classificação do IMC</h4>
+        <p>Utilize a tabela abaixo para determinar a situação do usuário.</p>
+        <figure class="table-image-figure">
+          <img src="../img/appinventor/imc_tabela_resultado.webp" alt="Tabela de classificação do IMC" loading="lazy" decoding="async">
+        </figure>
+        <div class="notice">
+          Esta tabela é utilizada neste exercício para fins didáticos e não substitui avaliação médica profissional.
+        </div>
+      </div>
+
+      <div class="blocks-section">
+        <h4>Programação dos Blocos</h4>
+
+        <article class="block-card">
+          <div>
+            <h5>Variáveis Globais</h5>
+            <p>Crie as variáveis <strong>global IMC</strong> e <strong>global Situacao</strong>.</p>
+            <ul>
+              <li><strong>IMC</strong> armazenará o valor calculado.</li>
+              <li><strong>Situacao</strong> armazenará a classificação encontrada.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/imc_variaveis.webp" alt="Variáveis globais do aplicativo Calculadora de IMC" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card block-card-wide">
+          <div>
+            <h5>Procedimento VerificarSituacao</h5>
+            <p>Crie um procedimento chamado <strong>VerificarSituacao</strong>. Ele será responsável por analisar o valor calculado do IMC e determinar a classificação correspondente.</p>
+            <p>O exemplo apresentado mostra apenas parte das classificações. Complete o procedimento usando todas as faixas da tabela de IMC.</p>
+          </div>
+          <figure><img src="../img/appinventor/imc_procedimento_verificar_situacao.webp" alt="Procedimento VerificarSituacao da Calculadora de IMC" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card block-card-wide">
+          <div>
+            <h5>Botão Calcular</h5>
+            <p>Calcula o IMC, chama o procedimento <strong>VerificarSituacao</strong> e mostra o resultado com duas casas decimais no Notificador.</p>
+          </div>
+          <figure><img src="../img/appinventor/imc_botao_calcular.webp" alt="Blocos do botão Calcular do aplicativo de IMC" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Botão Limpar</h5>
+            <p>Limpa os campos de peso e altura e posiciona o cursor novamente em <strong>cxPeso</strong>.</p>
+          </div>
+          <figure><img src="../img/appinventor/imc_botao_limpar.webp" alt="Blocos do botão Limpar do aplicativo de IMC" loading="lazy" decoding="async"></figure>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Testando o aplicativo</h4>
+        <ul class="checklist">
+          <li>O peso é digitado corretamente.</li>
+          <li>A altura é digitada corretamente.</li>
+          <li>O IMC é calculado corretamente.</li>
+          <li>O resultado aparece com duas casas decimais.</li>
+          <li>A situação exibida corresponde à tabela.</li>
+          <li>O botão Limpar apaga os campos.</li>
+          <li>O cursor retorna para o campo peso.</li>
+        </ul>
+      </div>
+
+      <div class="notice">
+        <strong>Aplicação no mundo real:</strong> aplicativos semelhantes são utilizados em academias, clínicas, consultórios de nutrição, aplicativos de saúde, smartwatches e programas de acompanhamento físico.
+      </div>
+
+      <div class="challenge">
+        <strong>Desafio Extra — Validação de Dados:</strong> impeça o cálculo quando o peso estiver vazio, a altura estiver vazia ou a altura for igual a zero. Nesses casos, exiba uma mensagem orientando o usuário a preencher corretamente os campos.
+      </div>
+
+      <div class="activity-box">
+        <h4>Para pensar</h4>
+        <p>O IMC considera apenas peso e altura. Duas pessoas com o mesmo IMC podem ter condições físicas diferentes?</p>
+        <p>Quais outras informações poderiam ser utilizadas para complementar uma avaliação física?</p>
+      </div>
+    </article>
+
+
+    <article id="exercicio-adivinhacao" class="logic-card adivinhacao-exercise">
+      <div class="panel-title">Exercício 4</div>
+      <h3>Jogo de Adivinhação</h3>
+
+      <div class="story-panel">
+        <h4>Situação-Problema</h4>
+        <p>Imagine que você foi contratado para desenvolver um jogo simples para dispositivos móveis.</p>
+        <p>O desafio do jogador é descobrir um número secreto gerado aleatoriamente pelo aplicativo. A cada tentativa, o aplicativo informa se o número digitado é maior ou menor que o número correto.</p>
+        <p>Esse tipo de jogo é muito utilizado para ensinar conceitos fundamentais de programação, como variáveis, tomada de decisão, repetição de tentativas e controle do estado de um sistema.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article>
+          <h4>Objetivo</h4>
+          <ul>
+            <li>Gerar um número aleatório entre 1 e 100.</li>
+            <li>Receber palpites do jogador.</li>
+            <li>Informar se o número correto é maior ou menor.</li>
+            <li>Controlar a quantidade de tentativas.</li>
+            <li>Permitir reiniciar a partida.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>O que você vai aprender</h4>
+          <ul>
+            <li>Variáveis globais.</li>
+            <li>Procedimentos.</li>
+            <li>Eventos.</li>
+            <li>Números aleatórios.</li>
+            <li>Estruturas de decisão.</li>
+            <li>Controle de tentativas.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Conceito principal</h4>
+          <p>Este projeto apresenta a ideia de <strong>estado do jogo</strong>. A variável <strong>gameOver</strong> indica se a partida está em andamento ou se já terminou.</p>
+        </article>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Componentes utilizados</h4>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Componente</th><th>Nome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tela</td><td>Screen1</td></tr>
+              <tr><td>Legenda</td><td>legTitulo</td></tr>
+              <tr><td>Caixa de Texto</td><td>cxtPalpite</td></tr>
+              <tr><td>Botão</td><td>btAdvinhar</td></tr>
+              <tr><td>Legenda</td><td>legTentativas</td></tr>
+              <tr><td>Legenda</td><td>lblMensagem</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exercise-group">
+        <h4>Configurando a Screen1</h4>
+        <p>Antes de inserir os componentes, configure a tela principal do aplicativo.</p>
+        <div class="table-wrap">
+          <table class="content-table">
+            <thead>
+              <tr><th>Propriedade</th><th>Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Título</td><td>Jogo de Adivinhação</td></tr>
+              <tr><td>AlinhamentoHorizontal</td><td>Centro</td></tr>
+              <tr><td>AlinhamentoVertical</td><td>Centro</td></tr>
+              <tr><td>Orientação da Tela</td><td>Retrato</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="lampada-layout">
+        <div class="exercise-text">
+          <h4>Montando a interface</h4>
+          <p>Monte uma tela semelhante ao modelo apresentado. Ela deve conter o título do jogo, o campo para digitar o palpite, o botão para confirmar e os rótulos para exibir tentativas e mensagens.</p>
+          <div class="table-wrap">
+            <table class="content-table">
+              <thead>
+                <tr><th>Componente</th><th>Nome</th><th>Função</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Legenda</td><td>legTitulo</td><td>Exibir o título Adivinhe o Número!</td></tr>
+                <tr><td>CaixaDeTexto</td><td>cxtPalpite</td><td>Receber o palpite digitado.</td></tr>
+                <tr><td>Botão</td><td>btAdvinhar</td><td>Confirmar o palpite ou reiniciar o jogo.</td></tr>
+                <tr><td>Legenda</td><td>legTentativas</td><td>Mostrar a quantidade de tentativas restantes.</td></tr>
+                <tr><td>Legenda</td><td>lblMensagem</td><td>Mostrar mensagens de orientação ao jogador.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="lampada-interface-figure">
+          <img src="../img/appinventor/adivinhacao_interface.webp" alt="Interface do aplicativo Jogo de Adivinhação" loading="lazy" decoding="async">
+          <figcaption>Modelo da interface do aplicativo.</figcaption>
+        </figure>
+      </div>
+
+      <div class="blocks-section">
+        <h4>Programação dos Blocos</h4>
+
+        <article class="block-card">
+          <div>
+            <h5>Variáveis Globais</h5>
+            <p>Crie três variáveis globais para controlar a partida.</p>
+            <ul>
+              <li><strong>gameOver</strong>: indica se o jogo terminou.</li>
+              <li><strong>randomNumber</strong>: armazena o número secreto.</li>
+              <li><strong>tentativas</strong>: controla as tentativas restantes.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_variaveis.webp" alt="Variáveis globais do Jogo de Adivinhação" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Procedimento gerarNumeroAleatorio</h5>
+            <p>Este procedimento recebe um valor inicial e um valor final, retornando um número inteiro aleatório dentro desse intervalo.</p>
+            <p>No jogo, ele será usado para gerar o número secreto entre <strong>1</strong> e <strong>100</strong>.</p>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_gerar_numero_aleatorio.webp" alt="Procedimento gerarNumeroAleatorio" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card block-card-wide">
+          <div>
+            <h5>Procedimento reiniciarJogo</h5>
+            <p>Este procedimento prepara uma nova partida.</p>
+            <ul>
+              <li>Gera um novo número aleatório.</li>
+              <li>Reinicia as tentativas para 5.</li>
+              <li>Define <strong>gameOver</strong> como falso.</li>
+              <li>Limpa o campo de palpite e a mensagem.</li>
+              <li>Atualiza o texto do botão para <strong>ADIVINHAR</strong>.</li>
+              <li>Devolve o foco para o campo de palpite.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_reiniciar_jogo.webp" alt="Procedimento reiniciarJogo do Jogo de Adivinhação" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Screen1.Inicializar</h5>
+            <p>Quando o aplicativo iniciar, a tela chama o procedimento <strong>reiniciarJogo</strong>.</p>
+            <p>Assim, toda a configuração inicial da partida fica organizada em um único procedimento.</p>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_screen1_inicializar.webp" alt="Bloco Screen1.Inicializar do Jogo de Adivinhação" loading="lazy" decoding="async"></figure>
+        </article>        
+
+        <article class="block-card block-card-wide">
+          <div>
+            <h5>Procedimento checarPalpite</h5>
+            <p>Este é o procedimento principal do jogo. Ele analisa o palpite digitado pelo usuário e decide o que deve acontecer.</p>
+            <ul>
+              <li>Se o campo estiver vazio, exibe uma mensagem de aviso.</li>
+              <li>Se o jogador acertar, encerra a partida.</li>
+              <li>Se errar, reduz uma tentativa.</li>
+              <li>Informa se o jogador deve tentar um número maior ou menor.</li>
+              <li>Quando as tentativas chegam a zero, mostra o número correto e permite jogar novamente.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_checar_palpite.webp" alt="Procedimento checarPalpite do Jogo de Adivinhação" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="block-card">
+          <div>
+            <h5>Botão ADIVINHAR</h5>
+            <p>O botão possui duas funções.</p>
+            <ul>
+              <li>Se o jogo já terminou, ele chama <strong>reiniciarJogo</strong>.</li>
+              <li>Se o jogo ainda está em andamento, ele chama <strong>checarPalpite</strong>.</li>
+            </ul>
+          </div>
+          <figure><img src="../img/appinventor/adivinhacao_botao_advinhar.webp" alt="Bloco do botão ADIVINHAR" loading="lazy" decoding="async"></figure>
+        </article>        
+      </div>
+
+      <div class="exercise-group">
+        <h4>Testando o aplicativo</h4>
+        <ul class="checklist">
+          <li>O aplicativo inicia com 5 tentativas.</li>
+          <li>O número secreto é gerado automaticamente.</li>
+          <li>Campo vazio exibe mensagem de aviso.</li>
+          <li>O aplicativo informa se o número correto é maior.</li>
+          <li>O aplicativo informa se o número correto é menor.</li>
+          <li>O contador de tentativas é atualizado.</li>
+          <li>O jogo encerra quando o número é descoberto.</li>
+          <li>O jogo encerra quando as tentativas acabam.</li>
+          <li>O botão reinicia a partida.</li>
+        </ul>
+      </div>
+
+      <div class="notice">
+        <strong>Aplicação no mundo real:</strong> embora seja um jogo simples, este projeto usa conceitos presentes em jogos digitais, aplicativos educacionais, simulações, sistemas de sorteio e sistemas que precisam controlar estados internos.
+      </div>
+
+      <div class="challenge">
+        <strong>Desafio Extra — Níveis de Dificuldade:</strong> modifique o jogo para permitir que o usuário escolha o nível: fácil, com número entre 1 e 50; médio, com número entre 1 e 100; ou difícil, com número entre 1 e 500.
+      </div>
+
+      <div class="activity-box">
+        <h4>Para pensar</h4>
+        <p>O computador consegue gerar números verdadeiramente aleatórios ou apenas números pseudoaleatórios?</p>
+        <p>Por que números aleatórios são importantes em jogos, sorteios e sistemas de segurança?</p>
+      </div>
+    </article>
+
+
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/appinventor.js"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

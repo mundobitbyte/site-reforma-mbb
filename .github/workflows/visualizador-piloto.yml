@@ -1,0 +1,60 @@
+name: Validação visual global MbB
+
+on:
+  push:
+    branches:
+      - main
+      - visualizador-global-seletivo-mbb
+    paths:
+      - 'MODO_MBB.md'
+      - '*.html'
+      - 'pages/**'
+      - 'fundamentos-informatica/**'
+      - 'ds-*/**'
+      - 'academia/**'
+      - 'js/**'
+      - 'css/**'
+      - 'meu-mbb/visitas-diretas.js'
+      - 'tools/visualizador-piloto/**'
+      - '.github/workflows/visualizador-piloto.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'MODO_MBB.md'
+      - '*.html'
+      - 'pages/**'
+      - 'fundamentos-informatica/**'
+      - 'ds-*/**'
+      - 'academia/**'
+      - 'js/**'
+      - 'css/**'
+      - 'meu-mbb/visitas-diretas.js'
+      - 'tools/visualizador-piloto/**'
+      - '.github/workflows/visualizador-piloto.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser validation tool
+        run: npm install --no-save --no-package-lock puppeteer-core@24
+
+      - name: Validate Modo MbB visual rules in real Chromium
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/mbb-visualizador-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          node tools/visualizador-piloto/smoke.mjs
+          node tools/visualizador-piloto/regra-mbb-global.mjs

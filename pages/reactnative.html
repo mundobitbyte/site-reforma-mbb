@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apostila Interativa — React Native com Snack</title>
+<link href="../css/reactnative.css" rel="stylesheet"/></head>
+<body>
+<header>
+<div class="header-left">
+<a class="portal-link" href="../index.html">← Mundo bit Byte</a>
+<h1>React Native</h1>
+</div>
+<div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+<div class="module-menu" id="moduleMenu"><button class="module-btn active" id="module-fundamentosMobile">0. Fundamentos</button><button class="module-btn" id="module-javascriptEssencial">JS Essencial</button><button class="module-btn" id="module-interfaceBasica">1. Interfaces</button><button class="module-btn" id="module-state">2. React e Hooks</button><button class="module-btn" id="module-apiCep">3. Web Services/APIs</button><button class="module-btn" id="module-navegacao">4. Navegação entre Telas</button></div>
+<div class="layout">
+<nav id="menu"><h3>Etapas</h3><button class="nav-btn active" id="btn-interfaceBasica-0">Intro</button><button class="nav-btn" id="btn-interfaceBasica-1">1 Fundo</button><button class="nav-btn" id="btn-interfaceBasica-2">2 Cartão</button><button class="nav-btn" id="btn-interfaceBasica-3">3 Barra</button><button class="nav-btn" id="btn-interfaceBasica-4">4 Título</button><button class="nav-btn" id="btn-interfaceBasica-5">5 Foto</button><button class="nav-btn" id="btn-interfaceBasica-6">6 Imagem</button><button class="nav-btn" id="btn-interfaceBasica-7">7 Dados</button><button class="nav-btn" id="btn-interfaceBasica-8">8 Área</button><button class="nav-btn" id="btn-interfaceBasica-9">9 Botões</button><button class="nav-btn" id="btn-interfaceBasica-10">10 Final</button><button class="nav-btn" id="btn-interfaceBasica-11">11 Glossário</button><button class="nav-btn" id="btn-interfaceBasica-exercicios-interface">99. Exercícios</button></nav>
+<main>
+<div class="top-row">
+<h2 id="stepTitle">Construindo a Interface por Partes</h2>
+<div class="objective" id="objective"><strong>Objetivo:</strong> Aprender React Native montando uma Agenda de Contatos no Snack.</div>
+</div>
+<div class="workspace" id="workspace">
+<section class="code-card card" id="codeCard" style="display:none !important;">
+<div class="panel-title">
+<span>Código completo — App.js</span>
+<button class="btn-copy" onclick="copyText('fullCode')">Copiar</button>
+</div>
+<pre id="fullCode"></pre>
+</section>
+<section class="result-card card snack-result-mode" id="resultCard" style="display:flex !important;">
+<div class="panel-title">Tela do snack.expo.dev</div>
+<div class="preview-area">
+<div class="device">
+<div class="screen" id="preview">
+<div class="snack-intro-top-layout">
+<section class="snack-top-guide-card">
+<div class="snack-top-guide-title">Como abrir o Snack</div>
+<div class="snack-top-guide-list">
+<div class="snack-top-step"><span class="snack-top-num">1</span><span>Acesse:<br/><span class="snack-top-url">snack.expo.dev</span></span></div>
+<div class="snack-top-step"><span class="snack-top-num">2</span><span>Faça login com sua conta Google.</span></div>
+<div class="snack-top-step"><span class="snack-top-num">3</span><span>Avatar → <b>My Snacks</b> → <b>+ New Snack</b>.</span></div>
+<div class="snack-top-step"><span class="snack-top-num">4</span><span>Apague o código inicial.</span></div>
+<div class="snack-top-step"><span class="snack-top-num">5</span><span>Cole o código da aula.</span></div>
+<div class="snack-top-step"><span class="snack-top-num">6</span><span>O preview aparece automaticamente.</span></div>
+<div class="snack-top-step"><span class="snack-top-num">7</span><span>Clique no botão azul <span class="snack-top-save">Save</span>.</span></div>
+</div>
+</section>
+<div class="snack-large-image-box"><img alt="Tela do Snack Expo" src="../img/reactnative/tela_do_snack_expo_8803449d.webp" loading="lazy" decoding="async"></div>
+</div></div>
+</div>
+</div>
+<aside class="side-bottom" id="noteWrap" style="display:grid !important;"><div class="note" id="note"><strong>Observação:</strong> Nesta introdução, o foco é entender a lógica estrutural das interfaces: componentes, containers, estilos e caixas dentro de caixas.</div></aside>
+</section>
+<section class="new-code card" id="newCodeCard" style="display:none !important;">
+<div class="panel-title"><span>O que foi adicionado</span><button class="btn-copy" onclick="copyText('newCode')">Copiar</button></div>
+<pre id="newCode"></pre>
+</section>
+<section class="intro-view" id="introView">
+<div class="intro-kicker">Fundamentos de interface em React Native</div>
+<h3>Como o React Native constrói uma interface</h3>
+<p class="intro-lead">Antes de escrever muitos comandos, você precisa entender uma ideia central: a interface de um aplicativo é formada por componentes organizados dentro de outros componentes.</p>
+<div class="intro-highlight">No React Native, a tela funciona como um conjunto de caixas agrupadas. Cada parte visual normalmente fica dentro de uma <b>View</b>. Essas caixas podem ficar uma dentro da outra, lado a lado ou empilhadas verticalmente. Programar interface é aprender a organizar essas caixas com clareza.</div>
+<h4 class="intro-section-title">1. A ideia principal: caixas dentro de caixas</h4>
+<div class="intro-two-cols"><div class="intro-step-card"><strong>Como pensar a tela</strong><span>Primeiro observe o aplicativo como blocos: fundo, cartão, título, área da foto, área dos dados e área dos botões.</span></div><div class="intro-step-card"><strong>Como o código representa isso</strong><span>Cada bloco visual é montado com componentes. A <b>View</b> é o container principal para agrupar outros componentes.</span></div></div>
+<div style="margin-top:14px;padding:14px;border:1px solid #dbe3ef;border-radius:12px;background:#f8fbff;"><div style="border:2px solid #93c5fd;border-radius:10px;padding:10px;background:white;font-size:13px;font-weight:800;color:#0f3f86;">viewTela<div style="margin-top:10px;border:2px solid #bfdbfe;border-radius:10px;padding:10px;background:#eff6ff;">viewCartao<div style="margin-top:10px;border:2px solid #60a5fa;border-radius:10px;padding:10px;background:white;">viewTitulo</div><div style="margin-top:10px;border:2px solid #60a5fa;border-radius:10px;padding:10px;background:white;">viewCorpo<div style="margin-top:10px;display:flex;gap:10px;"><div style="flex:1;border:2px solid #f59e0b;border-radius:10px;padding:10px;background:#fff7ed;">viewFoto</div><div style="flex:1;border:2px solid #f472b6;border-radius:10px;padding:10px;background:#fdf2f8;">viewDados</div></div><div style="margin-top:10px;border:2px solid #22c55e;border-radius:10px;padding:10px;background:#f0fdf4;">viewBotoesOperacao</div></div></div></div></div>
+<h4 class="intro-section-title">2. Componentes mais usados nesta aula</h4>
+<div class="intro-steps-grid"><div class="intro-step-card"><strong>View</strong><span>É o principal container. Serve para organizar e agrupar outros componentes.</span></div><div class="intro-step-card"><strong>Text</strong><span>Exibe textos na tela, como títulos, rótulos e informações.</span></div><div class="intro-step-card"><strong>TextInput</strong><span>Cria campos para digitação de dados.</span></div><div class="intro-step-card"><strong>Image</strong><span>Mostra imagens dentro da interface.</span></div><div class="intro-step-card"><strong>TouchableOpacity</strong><span>Representa ações do aplicativo, quando usado em etapas futuras.</span></div><div class="intro-step-card"><strong>StyleSheet</strong><span>Organiza a aparência visual: cores, tamanhos, margens, bordas e alinhamentos.</span></div></div>
+<h4 class="intro-section-title">3. Estrutura e estilo trabalham juntos</h4>
+<div class="intro-two-cols"><div class="intro-step-card"><strong>Componentes</strong><span>Dizem o que existe na tela: View, Text, TextInput, Image e outros elementos.</span></div><div class="intro-step-card"><strong>Estilos</strong><span>Dizem como esses elementos aparecem: cor, tamanho, posição, espaçamento, borda e alinhamentos.</span></div></div>
+<div class="intro-highlight">Exemplo: uma <b>View</b> cria uma caixa. O <b>style</b> dessa View define se ela será grande, pequena, azul, arredondada, centralizada, em linha ou em coluna.</div>
+<h4 class="intro-section-title">4. Como o código vira interface</h4>
+<div class="intro-steps-grid"><div class="intro-step-card"><strong>1. Criar a estrutura</strong><span>Montamos os componentes na ordem correta.</span></div><div class="intro-step-card"><strong>2. Agrupar os blocos</strong><span>Colocamos componentes dentro de Views para formar áreas visuais.</span></div><div class="intro-step-card"><strong>3. Aplicar estilos</strong><span>Usamos StyleSheet para definir aparência e organização.</span></div><div class="intro-step-card"><strong>4. Observar o resultado</strong><span>O preview mostra como o código aparece na tela do aplicativo.</span></div><div class="intro-step-card"><strong>5. Ajustar aos poucos</strong><span>Melhoramos alinhamento, tamanho, espaçamento e hierarquia visual.</span></div><div class="intro-step-card"><strong>6. Consolidar</strong><span>Ao final, você entende a tela como blocos organizados.</span></div></div>
+<h4 class="intro-section-title">5. Onde o Snack Expo entra</h4>
+<div class="intro-highlight">O <b>Snack Expo</b> permite escrever, testar e visualizar o app React Native direto no navegador. O arquivo principal é o <b>App.js</b>.</div>
+</section>
+</div>
+</main>
+</div>
+<script src="../js/reactnative.js?v=mbb-busca-5"></script>
+<script src="../js/reactnative-hooks-mbb.js"></script>
+<script src="../js/reactnative-lapidacao-mbb.js"></script>
+<script src="../js/reactnative-ajustes-finais-mbb.js"></script>
+<script src="../js/reactnative-navegacao-mbb.js?v=20260921-3"></script>
+<script src="../js/reactnative-navegacao-ajustes-finais.js?v=20260921-4"></script>
+<script src="../js/reactnative-codigo-didatico-mbb.js?v=20260919-3"></script>
+<script src="../js/reactnative-livro-dados-cap0.js?v=20260919-3"></script>
+<script src="../js/reactnative-livro-dados-cap1a.js?v=20260919-3"></script>
+<script src="../js/reactnative-livro-dados-cap1b.js?v=20260919-3"></script>
+<script src="../js/reactnative-navegacao-iniciante-mbb.js?v=20260921-5"></script>
+<script src="../js/reactnative-navegacao-layout-mbb.js?v=20260921-2"></script>
+<script src="../js/reactnative-explicacoes-visiveis-mbb.js?v=20260921-2"></script>
+<script src="../js/reactnative-explicacoes-lapidacao-mbb.js?v=20260921-1"></script>
+<script src="../js/reactnative-navegacao-notebook-mbb.js?v=20260922-3"></script>
+<script src="../js/reactnative-navegacao-mobile-frame-mbb.js?v=20260926-2"></script>
+<script src="../js/reactnative-interface-acoes-praticas-20260926.js?v=20260926-1"></script>
+<script src="../js/reactnative-react-hooks-acoes-praticas-20260926.js?v=20260926-1"></script>
+<script src="../js/reactnative-react-hooks-coerencia-visual-20261005.js?v=20261005-1"></script>
+<script src="../js/reactnative-coerencia-visual-geral-20261005.js?v=20261005-1"></script>
+<script src="../js/reactnative-react-hooks-sem-flash-20261005.js?v=20261005-1"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

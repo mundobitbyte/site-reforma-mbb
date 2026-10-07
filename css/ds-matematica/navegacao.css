@@ -1,0 +1,22 @@
+.site-header .module-back{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  white-space:nowrap;
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(255,255,255,.14);
+  border-radius:999px;
+  padding:6px 10px;
+}
+.site-header .module-back:hover{background:rgba(255,255,255,.24)}
+#backToSeries,#backToSeries2{display:none}
+@media(max-width:720px){
+  .site-header .module-back{
+    font-size:12px;
+    padding:5px 9px;
+  }
+}

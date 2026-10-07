@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 9 de Qualidade e Teste de Software: organize o trabalho com plano de testes, casos de teste, evidências e rastreabilidade.">
+<title>9 — Planejar e documentar | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="9">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Organizar evidências</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 9</span>
+        <h1>Planejar e documentar</h1>
+        <p>Na etapa anterior, escolhemos onde concentrar atenção. Agora surge uma necessidade prática: <strong>como fazer várias pessoas testarem a mesma versão sem depender da memória de cada uma?</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>“Eu testei isso ontem.”</h3>
+          <p>Na Cantina Horizonte, três pessoas ajudam na verificação final.</p>
+          <p>Uma testa quantidade. Outra olha o cupom. A terceira verifica estoque. No fim, alguém pergunta:</p>
+          <p><strong>“A quantidade 10 foi testada? Em qual navegador? Passou? Temos alguma evidência?”</strong></p>
+        </div>
+        <p>Ninguém lembra com certeza.</p>
+        <p>O problema agora não é falta de técnica. É falta de organização.</p>
+
+        <h2>Documentar só faz sentido quando resolve um problema</h2>
+        <p>Não queremos produzir papéis enormes apenas porque “processo de teste usa documentos”.</p>
+        <p>Queremos registrar o suficiente para responder perguntas simples:</p>
+        <div class="grid2">
+          <div class="card question-card"><h3>O que vamos testar?</h3><p>Quais áreas e regras estão dentro desta rodada?</p></div>
+          <div class="card question-card"><h3>O que não vamos testar agora?</h3><p>Quais partes ficaram fora e por quê?</p></div>
+          <div class="card question-card"><h3>Como vamos executar?</h3><p>Ambiente, dados, sequência e resultado esperado.</p></div>
+          <div class="card question-card"><h3>O que aconteceu?</h3><p>Resultado obtido, situação do teste e evidência.</p></div>
+        </div>
+
+        <h2>Plano de testes: combinar o trabalho antes de começar</h2>
+        <div class="card tool-card"><h3>Plano de testes</h3><p>É um registro que organiza o objetivo, o escopo, o ambiente, as prioridades e a forma de execução de uma atividade de teste.</p></div>
+        <p><strong>Escopo</strong> significa aquilo que faz parte do trabalho naquele momento. Também é importante registrar o que está fora do escopo para evitar falsas expectativas.</p>
+        <p>Para uma rodada da Cantina Horizonte, poderíamos ter:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>Definição da rodada</th></tr></thead>
+            <tbody>
+              <tr><td>Objetivo</td><td>Avaliar uma versão candidata antes do uso na cantina.</td></tr>
+              <tr><td>Dentro do escopo</td><td>Quantidade, estoque, cupom, total e finalização.</td></tr>
+              <tr><td>Fora do escopo</td><td>Pagamento, autenticação e testes especializados de segurança.</td></tr>
+              <tr><td>Ambiente</td><td>Navegador definido, aplicação local e banco de teste.</td></tr>
+              <tr><td>Prioridade</td><td>Estoque, total, quantidade e cupom recebem atenção primeiro.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Versão candidata</strong> é uma versão que está sendo avaliada para uma possível liberação. Um plano pequeno e compreensível é melhor do que um documento enorme que ninguém usa.</p>
+
+        <h2>O plano diz o rumo; o caso de teste diz como verificar</h2>
+        <p>Na Etapa 6 já usamos a identificação <strong>CT</strong>, de <strong>Caso de Teste</strong>. Agora vamos estruturar um caso de forma um pouco mais completa.</p>
+        <div class="card evidence-card">
+          <h3>CT-QTD-01 · Rejeitar quantidade zero</h3>
+          <p><strong>Requisito relacionado:</strong> RF-03</p>
+          <p><strong>Pré-condição:</strong> produto disponível para venda.</p>
+          <p><strong>Dados de entrada:</strong> quantidade 0.</p>
+          <p><strong>Ação:</strong> tentar adicionar o produto ao pedido.</p>
+          <p><strong>Resultado esperado:</strong> rejeitar a operação e informar o motivo.</p>
+        </div>
+        <p><strong>Pré-condição</strong> é uma condição que precisa existir antes da execução do caso. Se o teste depende de um produto com estoque, por exemplo, isso deve estar preparado antes.</p>
+
+        <h2>Depois da execução, o caso ganha novos campos</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Campo</th><th>Para que serve</th></tr></thead>
+            <tbody>
+              <tr><td>Resultado obtido</td><td>Registra o que realmente aconteceu.</td></tr>
+              <tr><td>Situação</td><td>Indica se o caso ainda não foi executado, passou, falhou ou ficou bloqueado.</td></tr>
+              <tr><td>Evidência</td><td>Guarda informação que ajuda a comprovar e compreender o resultado.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Quatro situações simples para acompanhar a execução</h2>
+        <div class="grid2">
+          <div class="card tool-card"><h3>Não executado</h3><p>O caso está planejado, mas ainda não foi realizado.</p></div>
+          <div class="card evidence-card"><h3>Passou</h3><p>O resultado obtido correspondeu ao resultado esperado.</p></div>
+          <div class="card practice-card"><h3>Falhou</h3><p>O resultado obtido foi diferente do esperado e precisa ser investigado.</p></div>
+          <div class="card context-card"><h3>Bloqueado</h3><p>O caso não pôde ser concluído porque alguma dependência ou condição impediu a execução.</p></div>
+        </div>
+        <p>“Bloqueado” não significa necessariamente que o software falhou. Pode significar, por exemplo, que o banco de teste não iniciou ou que os dados necessários não estavam disponíveis.</p>
+
+        <h2>Evidência não é sinônimo de tirar print de tudo</h2>
+        <div class="card tool-card"><h3>Evidência de teste</h3><p>É uma informação que ajuda outra pessoa a compreender ou confirmar o que ocorreu durante a execução.</p></div>
+        <p>Dependendo do caso, uma boa evidência pode ser:</p>
+        <ul>
+          <li>uma captura de tela;</li>
+          <li>uma mensagem exibida pela aplicação;</li>
+          <li>um trecho do registro técnico do sistema, chamado também de <strong>log</strong>;</li>
+          <li>um valor salvo no banco;</li>
+          <li>a saída de um teste automatizado.</li>
+        </ul>
+        <p>O importante é guardar aquilo que realmente ajuda a sustentar o resultado.</p>
+
+        <h2>Da regra até o resultado: rastreabilidade</h2>
+        <p>Agora imagine encontrar um caso chamado <strong>CT-QTD-03</strong>. Meses depois, alguém pergunta:</p>
+        <div class="card question-card"><p><strong>Qual requisito esse caso protege?</strong></p></div>
+        <p>Se não houver ligação entre requisito e teste, a resposta pode depender novamente da memória.</p>
+        <div class="card tool-card"><h3>Rastreabilidade</h3><p>É a capacidade de acompanhar a ligação entre elementos relacionados, como requisito, critério, caso de teste, execução, resultado e defeito.</p></div>
+        <p>Na Cantina Horizonte:</p>
+        <div class="path" aria-label="Cadeia de rastreabilidade">
+          <span>RF-03</span><b>→</b><span>Critério de quantidade</span><b>→</b><span>CT-QTD-01</span><b>→</b><span>Execução</span><b>→</b><span>Resultado</span>
+        </div>
+        <p>Se o caso falhar e um defeito for registrado, essa cadeia pode continuar até o registro do problema e sua correção.</p>
+
+        <h2>Uma matriz simples ajuda a enxergar lacunas</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Requisito</th><th>Regra observada</th><th>Caso</th><th>Situação</th></tr></thead>
+            <tbody>
+              <tr><td>RF-03</td><td>Rejeitar quantidade 0</td><td>CT-QTD-01</td><td>Não executado</td></tr>
+              <tr><td>RF-03</td><td>Aceitar quantidade 1</td><td>CT-QTD-02</td><td>Não executado</td></tr>
+              <tr><td>RF-03</td><td>Aceitar quantidade 10</td><td>CT-QTD-03</td><td>Não executado</td></tr>
+              <tr><td>RF-03</td><td>Rejeitar quantidade 11</td><td>CT-QTD-04</td><td>Não executado</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Se existe um requisito importante sem nenhum caso relacionado, encontramos uma possível lacuna antes mesmo de executar.</p>
+
+        <h2>Planilha, documento ou ferramenta específica?</h2>
+        <p>Para este projeto, uma planilha ou um documento simples já resolve boa parte do trabalho.</p>
+        <p>Mais importante que a ferramenta é manter informação clara, atualizada e fácil de consultar.</p>
+        <div class="card evidence-card"><p><strong>A ferramenta deve ajudar o processo. O processo não deve existir apenas para alimentar a ferramenta.</strong></p></div>
+
+        <h2>Abra o modelo da Cantina Horizonte</h2>
+        <p>Preparei um modelo curto com plano, riscos, casos de teste, situação de execução e rastreabilidade.</p>
+        <div class="card tool-card">
+          <h3>Documento de apoio</h3>
+          <p><a class="action" href="../../qts/cantina-horizonte-v1/docs/modelo-plano-casos-testes.md" target="_blank" rel="noopener">Abrir modelo de plano e casos de teste →</a></p>
+          <p class="small">Use como ponto de partida. Não transforme o modelo em burocracia: adapte ao que realmente precisa ser registrado.</p>
+        </div>
+
+        <h2>Prática · planeje uma pequena rodada</h2>
+        <div class="card practice-card">
+          <ol>
+            <li>Escolha três áreas da Cantina Horizonte para testar.</li>
+            <li>Defina o que está dentro e fora do escopo dessa rodada.</li>
+            <li>Escreva pelo menos quatro casos de teste ligados a requisitos conhecidos.</li>
+            <li>Indique o resultado esperado e a prioridade de cada caso.</li>
+            <li>Execute os casos e registre Passou, Falhou ou Bloqueado.</li>
+            <li>Guarde uma evidência apenas onde ela realmente ajudar a explicar o resultado.</li>
+          </ol>
+        </div>
+
+        <h2>Um caso falhou. Agora precisamos contar a história do problema</h2>
+        <p>Suponha que CT-QTD-01 tenha falhado: quantidade 0 foi aceita.</p>
+        <p>Escrever apenas:</p>
+        <div class="card quote-card"><p><strong>“Quantidade está bugada.”</strong></p></div>
+        <p>não ajuda outra pessoa a reproduzir, investigar e corrigir.</p>
+        <div class="card question-card"><p><strong>Que informações um bom registro de defeito precisa ter para que outra pessoa consiga repetir exatamente o problema?</strong></p></div>
+
+        <div class="card next-card">
+          <h3>A seguir: registrar e tratar um defeito</h3>
+          <p>Vamos transformar uma falha observada em um <strong>registro de defeito reproduzível</strong>, acompanhar a correção e entender a diferença entre <strong>confirmação</strong> e <strong>regressão</strong>.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar:</p>
+          <ul>
+            <li>para que serve um plano de testes;</li>
+            <li>quais informações tornam um caso de teste reproduzível;</li>
+            <li>o que significa evidência de teste;</li>
+            <li>como a rastreabilidade liga requisito, caso e resultado;</li>
+            <li>por que documentação útil deve apoiar o trabalho, e não virar um fim em si mesma.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="08-nao-da-para-testar-tudo.html">← Etapa 8</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <span class="disabled">Próxima etapa</span>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

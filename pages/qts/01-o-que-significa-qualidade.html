@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 1 de Qualidade e Teste de Software: descubra por que qualidade não significa apenas funcionar e conheça, sem decoreba, referências como ISO/IEC 25010, CMMI e MPS.BR.">
+<title>1 — O que significa qualidade? | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="1">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Ampliar o olhar</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 1</span>
+        <h1>O que significa qualidade?</h1>
+        <p>Na etapa anterior, a Cantina Horizonte mostrou uma coisa importante: um sistema pode abrir, responder aos cliques e ainda assim deixar dúvidas. Agora vamos ampliar o olhar. <strong>Qualidade não é apenas “não travar”.</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>Uma nova conversa na Cantina Horizonte</h3>
+          <p>Depois das primeiras observações, a equipe faz alguns ajustes e pergunta: <strong>“Agora está bom?”</strong></p>
+          <p>Antes de responder, imagine quatro situações diferentes. Em todas elas o sistema continua abrindo e aceitando pedidos.</p>
+        </div>
+
+        <h2>Situação 1 · O resultado está certo, mas demora</h2>
+        <p>O atendente finaliza um pedido. O valor está correto, mas a confirmação leva 15 segundos para aparecer.</p>
+        <div class="card question-card"><p><strong>O sistema funcionou?</strong> Sim. <strong>Essa demora seria aceitável no intervalo, com uma fila de alunos esperando?</strong></p></div>
+        <p>Perceba a diferença: o resultado pode estar correto e, mesmo assim, a experiência ser ruim.</p>
+
+        <h2>Situação 2 · O sistema percebe o problema, mas ninguém entende a mensagem</h2>
+        <p>Um usuário digita uma quantidade inválida e recebe:</p>
+        <div class="card quote-card"><p><strong>Erro 1047</strong></p></div>
+        <p>O sistema percebeu que algo não está certo, mas não ajudou a pessoa a entender o que fazer.</p>
+        <p>Compare com:</p>
+        <div class="card evidence-card"><p><strong>A quantidade deve estar entre 1 e 10.</strong></p></div>
+        <p>As duas mensagens podem nascer do mesmo problema técnico. Para o usuário, porém, a diferença é enorme.</p>
+
+        <h2>Situação 3 · No computador está ótimo</h2>
+        <p>No computador da cantina, os botões aparecem perfeitamente. No celular, o botão <strong>Finalizar pedido</strong> fica apertado, parte do conteúdo sai da tela e é preciso arrastar para os lados.</p>
+        <div class="card question-card"><p>O sistema deixou de existir? Não. Mas ele continua adequado ao ambiente em que as pessoas realmente vão usá-lo?</p></div>
+
+        <h2>Situação 4 · Ontem estava lá</h2>
+        <p>No fim do dia, os pedidos aparecem normalmente. Na manhã seguinte, alguns sumiram.</p>
+        <p>Agora a pergunta fica ainda mais fácil:</p>
+        <div class="card question-card"><p><strong>Um sistema pode ser considerado de boa qualidade se não conseguimos confiar que ele manterá os dados registrados?</strong></p></div>
+
+        <h2>Qualidade é um conjunto de características</h2>
+        <p>Esses exemplos mostram por que a palavra <strong>qualidade</strong> é maior do que “o cálculo deu certo”.</p>
+        <p>Quando avaliamos um software, podemos observar perguntas diferentes:</p>
+        <div class="grid2">
+          <div class="card evidence-card"><h3>Ele faz o que precisa fazer?</h3><p>Os cálculos, regras e funções entregam o resultado esperado?</p></div>
+          <div class="card evidence-card"><h3>Ele responde bem?</h3><p>O tempo de resposta é adequado para a situação real?</p></div>
+          <div class="card evidence-card"><h3>As pessoas conseguem usar?</h3><p>A interface e as mensagens ajudam, em vez de atrapalhar?</p></div>
+          <div class="card evidence-card"><h3>Podemos confiar nele?</h3><p>O sistema mantém seu funcionamento e seus dados de forma consistente?</p></div>
+          <div class="card evidence-card"><h3>Convive com o ambiente?</h3><p>Funciona onde precisa funcionar e conversa corretamente com outras partes?</p></div>
+          <div class="card evidence-card"><h3>Consegue evoluir?</h3><p>Uma mudança pode ser feita sem transformar cada correção em um novo problema?</p></div>
+        </div>
+        <p>Você não precisa decorar uma lista agora. O objetivo é perceber que <strong>qualidade tem várias dimensões</strong>.</p>
+
+        <h2>Existe uma referência internacional para organizar esse olhar</h2>
+        <p>Quando profissionais precisam conversar sobre qualidade, ajuda ter uma linguagem comum.</p>
+        <p>Uma referência importante é a <strong>ISO/IEC 25010:2023</strong>.</p>
+        <div class="card tool-card">
+          <h3>Antes da sigla, o significado</h3>
+          <p><strong>ISO</strong> é o nome curto internacional da <em>International Organization for Standardization</em>, a Organização Internacional de Normalização.</p>
+          <p><strong>IEC</strong> é a sigla de <em>International Electrotechnical Commission</em>, a Comissão Eletrotécnica Internacional.</p>
+          <p>A ISO/IEC 25010:2023 apresenta um modelo de qualidade de produto com <strong>nove características</strong>. Não vamos transformar essas características em uma lista para decorar. Vamos voltar a elas quando situações reais do módulo pedirem esse olhar.</p>
+        </div>
+        <p>O ponto principal por enquanto é simples:</p>
+        <div class="card evidence-card"><p><strong>Qualidade pode ser especificada, observada e avaliada por características — não apenas por uma impressão de que “parece bom”.</strong></p></div>
+
+        <h2>Mas qualidade não começa quando o sistema fica pronto</h2>
+        <p>Imagine duas equipes.</p>
+        <div class="grid2">
+          <div class="card practice-card"><h3>Equipe A</h3><p>Cada pessoa trabalha de um jeito. Testes são feitos quando sobra tempo. Decisões importantes ficam em mensagens soltas. Quando alguém sai do projeto, parte do conhecimento vai embora junto.</p></div>
+          <div class="card evidence-card"><h3>Equipe B</h3><p>As regras importantes são registradas. Alterações têm histórico. Defeitos são acompanhados. Há revisões, testes e formas de verificar se o processo está melhorando.</p></div>
+        </div>
+        <p>Mesmo antes de olhar para o produto final, já existe uma diferença importante na forma de trabalhar.</p>
+        <p>Isso nos leva a outra ideia:</p>
+        <div class="card question-card"><p><strong>Qualidade também depende de como o software é produzido, acompanhado e melhorado.</strong></p></div>
+
+        <h2>Duas expressões que você pode encontrar no mercado</h2>
+        <p>Em equipes de software, é comum aparecerem as expressões <strong>QA</strong> e <strong>QC</strong>. Vamos apresentá-las sem transformar isso em disputa de siglas.</p>
+        <div class="grid2">
+          <div class="card tool-card"><h3>QA · Quality Assurance</h3><p><strong>Garantia da Qualidade.</strong> Olha fortemente para processos e práticas que ajudam a prevenir problemas e produzir software de maneira mais controlada.</p></div>
+          <div class="card tool-card"><h3>QC · Quality Control</h3><p><strong>Controle da Qualidade.</strong> Olha para o produto e para as evidências que ajudam a descobrir se ele atende ao esperado. Testar software é uma atividade importante dentro desse trabalho.</p></div>
+        </div>
+        <p>Na prática, nomes e responsabilidades variam entre empresas. Para nós, a mensagem essencial é esta: <strong>qualidade não começa no último teste.</strong></p>
+
+        <h2>E onde entram CMMI e MPS.BR?</h2>
+        <p>Esses nomes aparecem na formação de Qualidade e Teste de Software porque ajudam a olhar para a <strong>capacidade e a melhoria dos processos de uma organização</strong>, e não apenas para uma tela ou uma função específica.</p>
+        <div class="grid2">
+          <div class="card context-card"><h3>CMMI</h3><p><strong>Capability Maturity Model Integration</strong>, ou Modelo Integrado de Maturidade e Capacidade. É um modelo usado para apoiar melhoria de desempenho e de processos organizacionais. A linha atual é o <strong>CMMI V3.0</strong>.</p></div>
+          <div class="card context-card"><h3>MPS.BR</h3><p><strong>Melhoria de Processo do Software Brasileiro.</strong> É uma iniciativa brasileira coordenada pela Softex. Quando aparece <strong>MPS-SW</strong>, o <strong>SW</strong> indica a referência voltada a <em>software</em>. A versão de referência atual é o <strong>MPS-SW:2024</strong>.</p></div>
+        </div>
+        <p>Não vamos decorar níveis nem transformar esta etapa em um curso de modelos de maturidade. Por enquanto, guarde a diferença:</p>
+        <div class="card evidence-card"><p><strong>ISO/IEC 25010</strong> nos ajuda a organizar características da qualidade do produto. <strong>CMMI e MPS.BR</strong> ajudam a olhar para a forma como a organização estrutura e melhora seus processos.</p></div>
+
+        <h2>Vamos voltar à Cantina Horizonte</h2>
+        <p>Leia cada situação e diga <strong>qual pergunta sobre qualidade ela provoca</strong>. Não precisa usar um nome técnico perfeito.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Situação</th><th>O que você perguntaria?</th></tr></thead>
+            <tbody>
+              <tr><td>O total calculado está errado.</td><td>O sistema faz corretamente aquilo que deveria fazer?</td></tr>
+              <tr><td>Finalizar um pedido leva 15 segundos.</td><td>O tempo de resposta é adequado?</td></tr>
+              <tr><td>Uma mensagem mostra apenas “Erro 1047”.</td><td>A pessoa consegue entender o que aconteceu e como agir?</td></tr>
+              <tr><td>No celular, parte da tela fica escondida.</td><td>O sistema funciona adequadamente no ambiente esperado?</td></tr>
+              <tr><td>Pedidos desaparecem no dia seguinte.</td><td>Podemos confiar que os dados serão mantidos?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Agora aparece uma pergunta que não dá para evitar</h2>
+        <p>Volte ao experimento da quantidade zero da etapa anterior.</p>
+        <p>Você pode achar estranho comprar zero salgados. Mas imagine que o desenvolvedor responda:</p>
+        <div class="card quote-card"><p><strong>“Ninguém me disse qual era a quantidade mínima.”</strong></p></div>
+        <p>Então precisamos separar duas coisas:</p>
+        <p><strong>o que uma pessoa fez durante o desenvolvimento</strong> e <strong>o comportamento que apareceu quando o sistema foi executado</strong>.</p>
+        <p>É nesse ponto que palavras como <strong>erro</strong>, <strong>defeito</strong> e <strong>falha</strong> deixam de ser sinônimos e começam a ajudar de verdade.</p>
+
+        <div class="card next-card">
+          <h3>A seguir: erro, defeito, falha e teste</h3>
+          <p>Vamos pegar problemas que você já viu na Cantina Horizonte e descobrir a diferença entre <strong>erro humano, defeito no software e falha observada durante o uso</strong>.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar, com suas próprias palavras:</p>
+          <ul>
+            <li>por que “funciona” não é sinônimo de “tem qualidade”;</li>
+            <li>por que qualidade envolve tanto o produto quanto a forma de produzi-lo;</li>
+            <li>o que representam, em linhas gerais, ISO/IEC 25010, CMMI e MPS.BR;</li>
+            <li>por que testar é importante, mas não resume sozinho todo o trabalho de qualidade.</li>
+          </ul>
+        </div>
+
+        <div class="card reference-card">
+          <h3>Referências desta etapa</h3>
+          <p><a href="https://www.iso.org/standard/78176.html" target="_blank" rel="noopener">ISO/IEC 25010:2023 — modelo de qualidade do produto</a></p>
+          <p><a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2023/cmmi-updates-take-performance-improvements-to-the-next-level" target="_blank" rel="noopener">ISACA — apresentação do CMMI V3.0</a></p>
+          <p><a href="https://mpsbr.softex.br/comunicado-01-2024-novas-versoes-mps-sw2024-mps-sv-2024-e-guia-de-avaliacao-2024-2/" target="_blank" rel="noopener">Softex — MPS-SW:2024</a></p>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="00-sera-que-esta-pronto.html">← Etapa 0</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <a class="next" href="02-erro-defeito-falha-teste.html">Etapa 2 →</a>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

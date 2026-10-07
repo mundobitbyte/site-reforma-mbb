@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa didático de entrada da Feira</title>
+  <desc id="desc">A entrada fica na Rua das Flores, conduz ao pátio e recepção, com o Bloco A à esquerda e o Bloco B à direita.</desc>
+  <rect width="1200" height="700" fill="#f4fafb"/>
+  <rect x="60" y="520" width="1080" height="130" rx="20" fill="#e4f5f5" stroke="#156b76" stroke-width="5"/>
+  <text x="600" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0d4b55">RUA DAS FLORES</text>
+  <rect x="470" y="430" width="260" height="90" rx="16" fill="#fff6dd" stroke="#d38a16" stroke-width="5"/>
+  <text x="600" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#6f4c0a">ENTRADA</text>
+  <path d="M600 430V350M600 350L260 320M600 350V320M600 350L940 320" fill="none" stroke="#156b76" stroke-width="10"/>
+  <path d="M580 375L600 340L620 375Z" fill="#156b76"/>
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0d4b55" text-anchor="middle">
+    <rect x="110" y="100" width="300" height="220" rx="18" fill="#fff" stroke="#156b76" stroke-width="5"/><text x="260" y="220">BLOCO A</text>
+    <rect x="450" y="100" width="300" height="220" rx="18" fill="#fff" stroke="#156b76" stroke-width="5"/><text x="600" y="205">PÁTIO</text><text x="600" y="240">RECEPÇÃO</text>
+    <rect x="790" y="100" width="300" height="220" rx="18" fill="#fff" stroke="#156b76" stroke-width="5"/><text x="940" y="220">BLOCO B</text>
+  </g>
+</svg>

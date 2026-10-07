@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestão de Dados Comerciais — Mundo bit Byte</title>
+
+  <style>
+    :root {
+      --primary: #1967d2;
+      --primary-dark: #114b9e;
+      --bg: #edf3fb;
+      --panel: #ffffff;
+      --line: #d6e0ee;
+      --text: #132033;
+      --muted: #607089;
+      --code-bg: #171717;
+      --code-head: #2b2b2b;
+      --code-text: #f3f4f6;
+      --note-bg: #fff7d6;
+      --success: #00853b;
+      --danger: #d11a1a;
+      --soft-blue: #eaf2ff;
+      --yellow: #ffd54f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 44px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+      position: sticky;
+      top: 0;
+      z-index: 80;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .portal-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      border: 1px solid rgba(255,255,255,.38);
+      background: rgba(255,255,255,.14);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .portal-link:hover {
+      background: rgba(255,255,255,.24);
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.2px;
+      line-height: 1.2;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--yellow);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      min-height: calc(100vh - 44px);
+    }
+
+    nav {
+      background: #ffffff;
+      border-right: 1px solid var(--line);
+      padding: 12px 6px;
+      overflow-y: auto;
+      position: sticky;
+      top: 44px;
+      height: calc(100vh - 44px);
+    }
+
+    nav h3 {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin: 8px 6px 10px;
+    }
+
+    .nav-btn {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #0f172a;
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 8px;
+      border-radius: 7px;
+      margin-bottom: 4px;
+    }
+
+    .nav-btn:hover {
+      background: #eaf2ff;
+      color: var(--primary);
+    }
+
+    main {
+      padding: 14px;
+      min-width: 0;
+    }
+
+    .top-row {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .top-row h2 {
+      font-size: 24px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: -.4px;
+      line-height: 1.15;
+    }
+
+    .objective {
+      font-size: 14px;
+      color: #111827;
+      text-align: right;
+      max-width: 520px;
+    }
+
+    .objective strong {
+      color: #000;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(15,23,42,.08);
+      margin-bottom: 12px;
+    }
+
+    .panel-title {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 12px;
+      font-size: 15px;
+      font-weight: 900;
+      background: #eaf2ff;
+      color: var(--primary-dark);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title small {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .content {
+      padding: 18px;
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .content p {
+      margin-bottom: 12px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eaf2ff;
+      color: #0f3f86;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #334155;
+      max-width: 980px;
+      margin-bottom: 14px;
+    }
+
+    .highlight {
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #1e293b;
+      line-height: 1.45;
+      margin-top: 12px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 5px solid #f59e0b;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+      box-shadow: 0 4px 14px rgba(15,23,42,.08);
+      margin-top: 12px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .intro-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      background: #f8fbff;
+      line-height: 1.5;
+    }
+
+    .intro-box strong {
+      display: block;
+      color: #0f3f86;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .intro-box span {
+      color: #334155;
+      font-size: 13px;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: -.2px;
+      margin: 18px 0 10px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin: 10px 0 18px;
+      background: #ffffff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th {
+      background: #eaf2ff;
+      color: var(--primary-dark);
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      color: #1e293b;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fbff;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .ok {
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .baixo {
+      color: var(--danger);
+      font-weight: 900;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .activity-box {
+      border: 1px solid #dbe3ef;
+      background: #f8fbff;
+      border-radius: 12px;
+      padding: 14px;
+      line-height: 1.45;
+    }
+
+    .activity-box strong {
+      display: block;
+      color: #0f3f86;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    ol, ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+      color: #334155;
+      font-size: 13.5px;
+    }
+
+    .report-box {
+      border: 1px solid #f3d27a;
+      background: #fff7d6;
+      border-left: 5px solid #f59e0b;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+
+    section {
+      scroll-margin-top: 120px;
+    }
+
+    @media (max-width: 1050px) {
+      section {
+        scroll-margin-top: 140px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      color: #607089;
+      padding: 22px 14px 32px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1050px) {
+      .layout {
+        display: block;
+      }
+
+      nav {
+        position: sticky;
+        top: 44px;
+        z-index: 60;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 8px;
+        white-space: nowrap;
+      }
+
+      nav h3 {
+        display: none;
+      }
+
+      .nav-btn {
+        width: auto;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+
+      .intro-grid,
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .top-row {
+        display: block;
+      }
+
+      .objective {
+        text-align: left;
+        margin-top: 5px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        display: block;
+        padding: 8px 10px;
+      }
+
+      .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      header h1 {
+        font-size: 15px;
+      }
+
+      .brand {
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      main {
+        padding: 16px 10px 10px;
+      }
+
+      .top-row h2 {
+        font-size: 20px;
+      }
+
+      .content {
+        padding: 14px;
+      }
+
+      .panel-title {
+        font-size: 14px;
+      }
+      .nav-btn {
+        font-size: 12px;
+      }
+
+
+      nav {
+        top: 78px;
+      }
+
+      main {
+        padding-top: 18px;
+      }
+
+
+      table {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a class="portal-link" href="tia.html">← Mundo bit Byte</a>
+    <h1>Gestão de Dados</h1>
+  </div>
+  <div class="brand">Professor Ronaldo <span>Lavestein</span></div>
+</header>
+
+
+
+<div class="layout">
+  <nav>
+    <h3>Etapas</h3>
+    <a class="nav-btn" href="#inicio">1. Início</a>
+    <a class="nav-btn" href="#situacao">2. Situação</a>
+    <a class="nav-btn" href="#conceitos">3. Conceitos</a>
+    <a class="nav-btn" href="#dados">4. Dados</a>
+    <a class="nav-btn" href="#analise">5. Atividade</a>
+    <a class="nav-btn" href="#relatorio">6. Relatório</a>
+    <a class="nav-btn" href="#fechamento">7. Fechamento</a>
+  </nav>
+
+  <main>
+    <div class="top-row">
+      <h2>Estudo de Caso — Controle Comercial</h2>
+      <div class="objective">
+        <strong>Objetivo:</strong> interpretar dados de produtos, categorias, fornecedores e estoque para apoiar decisões administrativas.
+      </div>
+    </div>
+
+    <section id="inicio" class="card">
+      <div class="panel-title">
+        <span>1. O papel dos dados na administração</span>
+        <small>Contexto</small>
+      </div>
+
+      <div class="content">
+        <div class="kicker">Banco de Dados • Administração • Tomada de Decisão</div>
+
+        <p class="lead">
+          Empresas lidam diariamente com informações sobre produtos, fornecedores, categorias,
+          estoque, compras e vendas. Quando esses dados estão espalhados ou mal organizados,
+          a administração passa a depender de memória, improviso e conferências manuais.
+        </p>
+
+        <p>
+          Um banco de dados ajuda a organizar essas informações de forma estruturada. Assim,
+          os dados deixam de ser apenas anotações isoladas e passam a apoiar decisões reais,
+          como repor mercadorias, acompanhar fornecedores, evitar falta de produtos e melhorar
+          o controle comercial.
+        </p>
+
+        <div class="highlight">
+          <strong>Ideia principal:</strong> banco de dados não é apenas tecnologia. É organização inteligente
+          da informação para apoiar decisões.
+        </div>
+      </div>
+    </section>
+
+    <section id="situacao" class="card">
+      <div class="panel-title">
+        <span>2. Situação empresarial</span>
+        <small>Estudo de caso</small>
+      </div>
+
+      <div class="content">
+        <p>
+          O mercado <strong>Comercial Nova Esperança</strong> está realizando uma análise de seus dados
+          comerciais para melhorar o controle de estoque e a organização administrativa.
+        </p>
+
+        <p>
+          A empresa possui produtos de diferentes categorias e compra mercadorias de diversos
+          fornecedores. Alguns itens estão com quantidade adequada, enquanto outros estão abaixo
+          do estoque mínimo e exigem atenção.
+        </p>
+
+        <p>
+          Sua função será observar os dados apresentados, identificar situações importantes e
+          produzir uma análise gerencial que possa auxiliar a administração da empresa.
+        </p>
+
+        <div class="note">
+          Um produto abaixo do estoque mínimo pode causar perda de vendas, atraso na reposição
+          e insatisfação dos clientes.
+        </div>
+      </div>
+    </section>
+
+    <section id="conceitos" class="card">
+      <div class="panel-title">
+        <span>3. Conceitos fundamentais</span>
+        <small>Revisão</small>
+      </div>
+
+      <div class="content">
+        <p>
+          Antes da análise, revise os principais conceitos usados em bancos de dados aplicados
+          à gestão comercial.
+        </p>
+
+        <div class="intro-grid">
+          <div class="intro-box">
+            <strong>Tabela</strong>
+            <span>Organiza informações sobre um assunto, como produtos, fornecedores ou categorias.</span>
+          </div>
+
+          <div class="intro-box">
+            <strong>Campo</strong>
+            <span>Representa uma característica da tabela, como produto, quantidade ou fornecedor.</span>
+          </div>
+
+          <div class="intro-box">
+            <strong>Registro</strong>
+            <span>É uma linha preenchida da tabela. Cada produto cadastrado é um registro.</span>
+          </div>
+
+          <div class="intro-box">
+            <strong>Relacionamento</strong>
+            <span>Conecta informações de tabelas diferentes, como produto, categoria e fornecedor.</span>
+          </div>
+
+          <div class="intro-box">
+            <strong>Consulta</strong>
+            <span>Permite localizar informações específicas, como produtos abaixo do estoque mínimo.</span>
+          </div>
+
+          <div class="intro-box">
+            <strong>Relatório</strong>
+            <span>Organiza resultados para facilitar leitura, análise e tomada de decisão.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dados" class="card">
+      <div class="panel-title">
+        <span>4. Base de dados para análise</span>
+        <small>Tabelas</small>
+      </div>
+
+      <div class="content">
+        <p>
+          Observe as tabelas a seguir. Elas representam parte dos dados comerciais da empresa
+          e serão usadas nas questões e no relatório final.
+        </p>
+
+        <h3>Tabela Categoria</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>ID</th><th>Categoria</th></tr>
+            <tr><td>1</td><td>DOCE</td></tr>
+            <tr><td>2</td><td>SALGADO</td></tr>
+            <tr><td>3</td><td>BEBIDA</td></tr>
+            <tr><td>4</td><td>LIMPEZA</td></tr>
+            <tr><td>5</td><td>PERFUMARIA</td></tr>
+            <tr><td>12</td><td>HIGIENE</td></tr>
+          </table>
+        </div>
+
+        <h3>Tabela Fornecedor</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>ID</th><th>Fornecedor</th></tr>
+            <tr><td>4</td><td>COCA-COLA FEMSA</td></tr>
+            <tr><td>5</td><td>NESTLE BRASIL</td></tr>
+            <tr><td>6</td><td>AMBEV DISTRIBUIDORA</td></tr>
+            <tr><td>9</td><td>YPE PRODUTOS</td></tr>
+            <tr><td>10</td><td>UNILEVER BRASIL</td></tr>
+            <tr><td>13</td><td>CASA DO MERCADO</td></tr>
+            <tr><td>27</td><td>TOP BEBIDAS</td></tr>
+          </table>
+        </div>
+
+        <h3>Tabela Produto</h3>
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Estoque mínimo</th>
+              <th>Situação</th>
+              <th>Categoria</th>
+              <th>Fornecedor</th>
+            </tr>
+            <tr>
+              <td>COCA COLA LATA</td>
+              <td>120</td>
+              <td>20</td>
+              <td class="ok">Adequado</td>
+              <td>BEBIDA</td>
+              <td>COCA-COLA FEMSA</td>
+            </tr>
+            <tr>
+              <td>ENERGETICO</td>
+              <td>3</td>
+              <td>5</td>
+              <td class="baixo">Abaixo do mínimo</td>
+              <td>BEBIDA</td>
+              <td>AMBEV DISTRIBUIDORA</td>
+            </tr>
+            <tr>
+              <td>AGUA MINERAL</td>
+              <td>18</td>
+              <td>30</td>
+              <td class="baixo">Abaixo do mínimo</td>
+              <td>BEBIDA</td>
+              <td>TOP BEBIDAS</td>
+            </tr>
+            <tr>
+              <td>DETERGENTE</td>
+              <td>25</td>
+              <td>10</td>
+              <td class="ok">Adequado</td>
+              <td>LIMPEZA</td>
+              <td>YPE PRODUTOS</td>
+            </tr>
+            <tr>
+              <td>SABAO EM PO</td>
+              <td>5</td>
+              <td>8</td>
+              <td class="baixo">Abaixo do mínimo</td>
+              <td>LIMPEZA</td>
+              <td>YPE PRODUTOS</td>
+            </tr>
+            <tr>
+              <td>SHAMPOO</td>
+              <td>12</td>
+              <td>5</td>
+              <td class="ok">Adequado</td>
+              <td>PERFUMARIA</td>
+              <td>UNILEVER BRASIL</td>
+            </tr>
+            <tr>
+              <td>DESODORANTE</td>
+              <td>2</td>
+              <td>5</td>
+              <td class="baixo">Abaixo do mínimo</td>
+              <td>PERFUMARIA</td>
+              <td>UNILEVER BRASIL</td>
+            </tr>
+            <tr>
+              <td>PAPEL HIGIENICO</td>
+              <td>8</td>
+              <td>10</td>
+              <td class="baixo">Abaixo do mínimo</td>
+              <td>HIGIENE</td>
+              <td>UNILEVER BRASIL</td>
+            </tr>
+            <tr>
+              <td>BOMBOM</td>
+              <td>15</td>
+              <td>10</td>
+              <td class="ok">Adequado</td>
+              <td>DOCE</td>
+              <td>NESTLE BRASIL</td>
+            </tr>
+            <tr>
+              <td>COXINHA</td>
+              <td>20</td>
+              <td>5</td>
+              <td class="ok">Adequado</td>
+              <td>SALGADO</td>
+              <td>CASA DO MERCADO</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="analise" class="card">
+      <div class="panel-title">
+        <span>5. Análise de dados comerciais</span>
+        <small>Atividade</small>
+      </div>
+
+      <div class="content">
+        <p>
+          Responda às questões observando as tabelas. Sempre que a pergunta envolver interpretação
+          administrativa, justifique sua resposta.
+        </p>
+
+        <div class="activity-grid">
+          <div class="activity-box">
+            <strong>Verificação de estoque</strong>
+            <ol>
+              <li>Quais produtos estão abaixo do estoque mínimo?</li>
+              <li>Qual produto apresenta a situação mais crítica de estoque?</li>
+              <li>Quais categorias possuem produtos abaixo do estoque mínimo?</li>
+              <li>Qual fornecedor possui mais produtos que necessitam reposição?</li>
+            </ol>
+          </div>
+
+          <div class="activity-box">
+            <strong>Organização das informações</strong>
+            <ol start="5">
+              <li>Qual categoria possui maior quantidade de produtos apresentados?</li>
+              <li>Quais produtos pertencem à categoria BEBIDA?</li>
+              <li>Quais produtos são fornecidos pela empresa UNILEVER BRASIL?</li>
+              <li>Explique por que a organização por categorias facilita o gerenciamento de uma empresa.</li>
+            </ol>
+          </div>
+
+          <div class="activity-box">
+            <strong>Interpretação administrativa</strong>
+            <ol start="9">
+              <li>Quais problemas podem ocorrer quando um produto fica abaixo do estoque mínimo?</li>
+              <li>Por que é importante acompanhar fornecedores e produtos ao mesmo tempo?</li>
+              <li>De que maneira relatórios podem auxiliar gestores na tomada de decisão?</li>
+              <li>Explique como um banco de dados pode ajudar no controle comercial de uma empresa.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="relatorio" class="card">
+      <div class="panel-title">
+        <span>6. Relatório gerencial</span>
+        <small>Produção final</small>
+      </div>
+
+      <div class="content">
+        <p>
+          Com base na análise realizada, produza um relatório descrevendo os pontos mais importantes
+          observados nos dados da empresa.
+        </p>
+
+        <div class="report-box">
+          <p><strong>Seu relatório deve apresentar:</strong></p>
+          <ul>
+            <li>os principais problemas encontrados;</li>
+            <li>os produtos que precisam de maior atenção;</li>
+            <li>possíveis riscos para a empresa;</li>
+            <li>sugestões de melhoria para o controle comercial.</li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <strong>Orientação:</strong> escreva como se estivesse entregando uma análise para a administração da empresa.
+        </div>
+      </div>
+    </section>
+
+    <section id="fechamento" class="card">
+      <div class="panel-title">
+        <span>7. Fechamento</span>
+        <small>Conclusão</small>
+      </div>
+
+      <div class="content">
+        <p>
+          A análise de dados comerciais permite que empresas organizem melhor suas informações,
+          acompanhem o estoque com mais eficiência e tomem decisões administrativas mais seguras.
+        </p>
+
+        <p>
+          Tabelas, consultas e relatórios não são apenas recursos técnicos. Eles ajudam a transformar
+          registros em conhecimento útil para a gestão.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Mundo bit Byte — Tecnologia e Educação para Todos
+    </footer>
+  </main>
+</div>
+
+<script src="../js/bd-gestao-destaques-mbb.js?v=20260927-1"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

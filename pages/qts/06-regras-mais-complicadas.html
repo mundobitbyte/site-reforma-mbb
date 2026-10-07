@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 6 de Qualidade e Teste de Software: organize regras com várias condições usando tabela de decisão e teste mudanças de estado com transição de estados.">
+<title>6 — Regras mais complicadas | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="6">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Combinar condições</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 6</span>
+        <h1>Regras mais complicadas</h1>
+        <p>Na etapa anterior, valores-limite ajudaram bastante quando a regra dependia de um número. Agora o cupom MBB10 traz outro tipo de desafio: <strong>o resultado depende de várias condições ao mesmo tempo.</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>O cupom parece simples até começarmos a perguntar</h3>
+          <p>A regra combinada da Cantina Horizonte é esta:</p>
+          <p><strong>O MBB10 concede 10% de desconto quando o subtotal for maior ou igual a R$ 30,00, o cupom estiver dentro da validade e ainda não tiver sido utilizado.</strong></p>
+        </div>
+        <p>Testar R$ 29,99, R$ 30,00 e R$ 30,01 continua sendo útil para o limite do valor.</p>
+        <p>Mas isso não responde sozinho o que acontece quando o cupom está vencido ou já foi usado.</p>
+
+        <h2>Uma condição sozinha não conta a história inteira</h2>
+        <p>Podemos separar a regra em três perguntas:</p>
+        <div class="grid2">
+          <div class="card question-card"><h3>Subtotal suficiente?</h3><p>O valor é pelo menos R$ 30,00?</p></div>
+          <div class="card question-card"><h3>Cupom válido?</h3><p>A data atual ainda está dentro da validade?</p></div>
+          <div class="card question-card"><h3>Ainda não utilizado?</h3><p>O cupom permanece disponível para uso?</p></div>
+        </div>
+        <p>O desconto só deve acontecer quando as três respostas forem favoráveis.</p>
+
+        <h2>Se começarmos a testar de cabeça, é fácil esquecer uma combinação</h2>
+        <p>Imagine alguém anotando apenas:</p>
+        <div class="card quote-card"><p>“Testar um pedido de R$ 50,00 com o cupom MBB10.”</p></div>
+        <p>Esse caso verifica uma situação possível, mas não deixa claro se o cupom estava vencido ou se já tinha sido usado.</p>
+        <p>Quando várias condições influenciam uma mesma decisão, precisamos de uma forma melhor de organizar as combinações.</p>
+
+        <h2>A tabela nasce da necessidade</h2>
+        <p>Vamos colocar as condições nas linhas e diferentes combinações nas colunas. O resultado fica assim:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Condição / ação</th><th>Regra 1</th><th>Regra 2</th><th>Regra 3</th><th>Regra 4</th></tr></thead>
+            <tbody>
+              <tr><td>Subtotal ≥ R$ 30,00?</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Não</td></tr>
+              <tr><td>Cupom dentro da validade?</td><td>Sim</td><td>Não</td><td>Sim</td><td>Sim</td></tr>
+              <tr><td>Cupom ainda não utilizado?</td><td>Sim</td><td>Sim</td><td>Não</td><td>Sim</td></tr>
+              <tr><td><strong>Aplicar 10%?</strong></td><td><strong>Sim</strong></td><td><strong>Não</strong></td><td><strong>Não</strong></td><td><strong>Não</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Agora fica muito mais difícil esquecer que um cupom vencido ou já utilizado precisa produzir outro resultado.</p>
+        <div class="card tool-card"><h3>Tabela de decisão</h3><p>É uma técnica usada para organizar condições e ações quando o resultado depende de combinações de regras.</p></div>
+        <p>Uma tabela completa poderia mostrar todas as combinações possíveis. Para aprender o raciocínio, começamos pelas combinações que realmente ajudam a separar os comportamentos importantes.</p>
+
+        <h2>O teste continua precisando de dados concretos</h2>
+        <p>A tabela organiza a lógica, mas ainda precisamos transformar cada coluna em uma situação executável.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Caso</th><th>Subtotal</th><th>Validade</th><th>Uso anterior</th><th>Esperado</th></tr></thead>
+            <tbody>
+              <tr><td>CT-CUP-01</td><td>R$ 50,00</td><td>Válido</td><td>Não usado</td><td>Aplicar 10%</td></tr>
+              <tr><td>CT-CUP-02</td><td>R$ 50,00</td><td>Vencido</td><td>Não usado</td><td>Não aplicar</td></tr>
+              <tr><td>CT-CUP-03</td><td>R$ 50,00</td><td>Válido</td><td>Já usado</td><td>Não aplicar</td></tr>
+              <tr><td>CT-CUP-04</td><td>R$ 20,00</td><td>Válido</td><td>Não usado</td><td>Não aplicar</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>CT</strong> significa <strong>Caso de Teste</strong>. Estamos começando a identificar os casos porque eles já são numerosos o bastante para precisarem de organização.</p>
+
+        <h2>Agora aparece um segundo tipo de regra</h2>
+        <p>Nem todo comportamento depende apenas de valores e condições atuais. Alguns dependem também de <strong>onde o processo está neste momento</strong>.</p>
+        <p>Veja o caminho normal de um pedido:</p>
+        <div class="path" aria-label="Estados do pedido">
+          <span>Novo</span><b>→</b><span>Confirmado</span><b>→</b><span>Em preparação</span><b>→</b><span>Pronto</span><b>→</b><span>Entregue</span>
+        </div>
+        <p>Cada posição desse caminho representa um <strong>estado</strong> do pedido.</p>
+
+        <h2>Estado e transição</h2>
+        <p>Se o pedido está em <strong>Novo</strong> e passa para <strong>Confirmado</strong>, houve uma mudança de estado.</p>
+        <div class="card tool-card"><h3>Transição de estado</h3><p>É a passagem de um estado para outro. Quando as regras dizem quais mudanças são permitidas, podemos testar tanto transições válidas quanto inválidas.</p></div>
+        <p>Por exemplo, estas mudanças fazem sentido:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado atual</th><th>Próximo estado</th><th>Esperado</th></tr></thead>
+            <tbody>
+              <tr><td>Novo</td><td>Confirmado</td><td>Permitir</td></tr>
+              <tr><td>Confirmado</td><td>Em preparação</td><td>Permitir</td></tr>
+              <tr><td>Em preparação</td><td>Pronto</td><td>Permitir</td></tr>
+              <tr><td>Pronto</td><td>Entregue</td><td>Permitir</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>As mudanças inválidas também são importantes</h2>
+        <p>Agora experimente pensar nas situações abaixo:</p>
+        <div class="grid2">
+          <div class="card practice-card"><h3>Novo → Entregue</h3><p>O pedido pulou todas as etapas intermediárias. Isso deveria ser permitido?</p></div>
+          <div class="card practice-card"><h3>Entregue → Em preparação</h3><p>O pedido voltou para um estado anterior depois de ter sido entregue.</p></div>
+        </div>
+        <p>Esses casos não são encontrados apenas escolhendo números próximos a um limite. O que importa é a <strong>sequência de estados</strong>.</p>
+        <div class="card tool-card"><h3>Teste de transição de estados</h3><p>É uma técnica útil quando o comportamento permitido depende do estado atual e das mudanças possíveis a partir dele.</p></div>
+
+        <h2>Uma técnica não substitui a outra</h2>
+        <p>Até aqui já vimos problemas diferentes pedindo técnicas diferentes:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Problema</th><th>Técnica que ajuda</th></tr></thead>
+            <tbody>
+              <tr><td>Faixas de valores com comportamento semelhante</td><td>Particionamento de equivalência</td></tr>
+              <tr><td>Pontos em que o comportamento muda</td><td>Análise de valores-limite</td></tr>
+              <tr><td>Várias condições combinadas</td><td>Tabela de decisão</td></tr>
+              <tr><td>Comportamento depende do estado atual</td><td>Transição de estados</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Na prática, as técnicas também podem ser combinadas. O cupom, por exemplo, tem uma condição de valor que merece análise de limite e outras condições que ficam mais claras numa tabela de decisão.</p>
+
+        <h2>Prática · escolha a técnica pelo problema</h2>
+        <div class="card practice-card">
+          <ol>
+            <li>A quantidade aceita vai de 1 a 10. Qual técnica ajuda a observar as bordas?</li>
+            <li>O cupom depende de valor mínimo, validade e uso anterior. Qual técnica ajuda a organizar as combinações?</li>
+            <li>Um pedido não pode voltar de Entregue para Em preparação. Qual técnica ajuda a representar isso?</li>
+            <li>Uma regra diz que notas de 0 a 100 são válidas e valores fora da faixa são inválidos. Que duas técnicas podem se complementar?</li>
+          </ol>
+        </div>
+        <p>O objetivo não é decorar nomes. É reconhecer <strong>que tipo de problema estamos tentando organizar</strong>.</p>
+
+        <h2>Mas ainda falta uma pergunta</h2>
+        <p>Até aqui falamos muito sobre <strong>como escolher bons casos</strong>. Porém uma mesma regra pode ser testada em lugares diferentes.</p>
+        <p>A quantidade 0 pode ser verificada numa função isolada, na comunicação entre partes ou no sistema completo visto pelo usuário.</p>
+        <div class="card question-card"><p><strong>Quando dizemos “testar a quantidade”, o que exatamente estamos testando?</strong></p></div>
+
+        <div class="card next-card">
+          <h3>A seguir: níveis e tipos de teste</h3>
+          <p>Vamos organizar os <strong>níveis de teste</strong> e separar duas ideias que costumam se misturar: <strong>onde estamos testando</strong> e <strong>que característica estamos avaliando</strong>.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar:</p>
+          <ul>
+            <li>por que valores-limite não organizam sozinhos uma regra com várias condições;</li>
+            <li>para que serve uma tabela de decisão;</li>
+            <li>o que significa transição de estado;</li>
+            <li>por que técnicas diferentes podem ser usadas no mesmo sistema.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="05-bons-valores-de-teste.html">← Etapa 5</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <span class="disabled">Próxima etapa</span>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

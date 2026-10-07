@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 5 de Qualidade e Teste de Software: aprenda a escolher bons dados de teste com particionamento de equivalência e análise de valores-limite.">
+<title>5 — Bons valores de teste | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="5">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Escolher com método</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 5</span>
+        <h1>Bons valores de teste</h1>
+        <p>Agora que conhecemos a regra de quantidade e já revisamos o código, chegou a hora de executar. Mas surge um problema prático: <strong>quais valores realmente vale a pena testar?</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>“Testei 5 e funcionou”</h3>
+          <p>Um colega abre a Cantina Horizonte, informa quantidade <strong>5</strong>, adiciona o produto e conclui:</p>
+          <p><strong>“A quantidade está funcionando.”</strong></p>
+        </div>
+        <p>O teste mostrou que 5 funciona. Isso é útil.</p>
+        <p>Mas a regra é:</p>
+        <div class="card evidence-card"><p><strong>A quantidade deve ser um número inteiro entre 1 e 10, inclusive.</strong></p></div>
+        <p>Testar apenas 5 não diz o que acontece com 0, 1, 10, 11, -3 ou 100.</p>
+
+        <h2>Testar tudo parece seguro — até olharmos os números</h2>
+        <p>Se o campo aceitar números inteiros, existem muitos valores possíveis. E, em outros campos, podemos ter textos, datas, combinações e diferentes estados.</p>
+        <p>Precisamos escolher dados que representem comportamentos diferentes, em vez de tentar tudo.</p>
+
+        <h2>Comece separando grupos que deveriam se comportar do mesmo jeito</h2>
+        <p>Para a quantidade de 1 a 10, temos três grupos bem naturais:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Grupo</th><th>Exemplos</th><th>Esperado</th></tr></thead>
+            <tbody>
+              <tr><td>Menor que 1</td><td>-3, -1, 0</td><td>Rejeitar</td></tr>
+              <tr><td>De 1 a 10</td><td>1, 5, 10</td><td>Aceitar, se houver estoque</td></tr>
+              <tr><td>Maior que 10</td><td>11, 20, 100</td><td>Rejeitar</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Se todos os valores de um grupo deveriam receber o mesmo tratamento, podemos começar escolhendo representantes.</p>
+        <div class="card tool-card"><h3>Particionamento de equivalência</h3><p>É uma técnica que divide os dados de entrada em grupos — ou partições — que deveriam ser tratados de maneira equivalente pelo sistema.</p></div>
+        <p>Em vez de testar -1, -2, -3, -4 e -5 só porque são diferentes, podemos escolher um representante dessa região e dedicar esforço a outras regiões importantes.</p>
+
+        <h2>Mas alguns pontos merecem atenção especial</h2>
+        <p>Defeitos aparecem com frequência justamente onde o comportamento muda.</p>
+        <p>Na regra de 1 a 10, os pontos mais interessantes ficam perto de 1 e de 10:</p>
+        <div class="path" aria-label="Valores próximos aos limites">
+          <span>0</span><b>→</b><span>1</span><b>→</b><span>2</span><span>...</span><span>9</span><b>→</b><span>10</span><b>→</b><span>11</span>
+        </div>
+        <p>É fácil imaginar um erro como usar <code>&lt; 10</code> quando a regra deveria aceitar 10, ou esquecer completamente o limite inferior.</p>
+        <div class="card tool-card"><h3>Análise de valores-limite</h3><p>É uma técnica que concentra atenção nas bordas das faixas e nos valores imediatamente próximos, porque é ali que o comportamento costuma mudar.</p></div>
+
+        <h2>Partição e limite respondem perguntas diferentes</h2>
+        <div class="grid2">
+          <div class="card evidence-card"><h3>Particionamento</h3><p><strong>Quais grupos deveriam receber o mesmo tratamento?</strong></p></div>
+          <div class="card evidence-card"><h3>Valores-limite</h3><p><strong>Em quais pontos o comportamento muda?</strong></p></div>
+        </div>
+        <p>As duas técnicas se complementam.</p>
+
+        <h2>Aplicando à Cantina Horizonte</h2>
+        <p>Um conjunto pequeno e bem justificado para quantidade poderia ser:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Valor</th><th>Por que testar?</th><th>Esperado</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>Logo abaixo do mínimo</td><td>Rejeitar</td></tr>
+              <tr><td>1</td><td>Limite mínimo válido</td><td>Aceitar</td></tr>
+              <tr><td>2</td><td>Logo acima do mínimo</td><td>Aceitar</td></tr>
+              <tr><td>9</td><td>Logo abaixo do máximo</td><td>Aceitar</td></tr>
+              <tr><td>10</td><td>Limite máximo válido</td><td>Aceitar</td></tr>
+              <tr><td>11</td><td>Logo acima do máximo</td><td>Rejeitar</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Observe que agora conseguimos explicar por que cada valor está ali.</p>
+
+        <h2>O estoque cria outro limite</h2>
+        <p>Suponha que existam 8 sanduíches em estoque.</p>
+        <p>Mesmo que a quantidade máxima geral seja 10, o estoque cria uma borda concreta naquele momento.</p>
+        <div class="card question-card"><p><strong>Quais valores seriam interessantes perto de estoque 8?</strong></p></div>
+        <p>Uma boa sequência é 7, 8 e 9: logo abaixo, exatamente no limite e logo acima.</p>
+
+        <h2>O cupom também tem uma borda</h2>
+        <p>Se o MBB10 exige subtotal maior ou igual a R$ 30,00, podemos observar:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Subtotal</th><th>Relação com o limite</th></tr></thead>
+            <tbody>
+              <tr><td>R$ 29,99</td><td>Logo abaixo</td></tr>
+              <tr><td>R$ 30,00</td><td>Exatamente no limite</td></tr>
+              <tr><td>R$ 30,01</td><td>Logo acima</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Agora estamos reutilizando a mesma forma de pensar em outra regra.</p>
+
+        <h2>E se alguém digitar letras ou deixar vazio?</h2>
+        <p>Esses casos não devem ser inventados automaticamente sem olhar para a especificação e para o tipo de campo.</p>
+        <p>Se a interface aceita apenas números, talvez parte da entrada já seja restringida. Se uma comunicação direta com o servidor aceitar dados diferentes, a situação muda.</p>
+        <p>A resposta depende da especificação e da forma como a entrada é construída. O ponto é perceber que <strong>tipos diferentes de entrada também podem formar partições diferentes</strong>.</p>
+
+        <h2>Prática · monte um conjunto pequeno, mas justificável</h2>
+        <div class="card practice-card">
+          <p>Para cada regra abaixo, escolha valores de teste e explique por que escolheu cada um:</p>
+          <ol>
+            <li>Quantidade permitida: 1 a 10.</li>
+            <li>Estoque disponível: 8 unidades.</li>
+            <li>Cupom válido a partir de R$ 30,00.</li>
+            <li>Uma futura regra permite nota de 0 a 100.</li>
+          </ol>
+        </div>
+        <p>A resposta vale mais quando contém a justificativa do que quando contém muitos números.</p>
+
+        <h2>O número de testes não mede sozinho a qualidade dos testes</h2>
+        <p>Uma pessoa pode executar 30 valores escolhidos quase iguais e ainda deixar de verificar os pontos importantes.</p>
+        <p>Outra pode escolher 6 valores bem pensados e revelar um defeito rapidamente.</p>
+        <div class="card question-card"><p><strong>O objetivo não é “testar muito”. É testar com intenção.</strong></p></div>
+
+        <h2>Agora as regras começam a ficar mais interessantes</h2>
+        <p>Quantidade e estoque têm limites relativamente simples.</p>
+        <p>Mas o cupom MBB10 possui mais de uma condição:</p>
+        <ul>
+          <li>subtotal mínimo;</li>
+          <li>data de validade;</li>
+          <li>uso anterior do cupom.</li>
+        </ul>
+        <p>Quando condições começam a se combinar, escolher casos apenas por limite já não organiza tudo tão bem.</p>
+        <div class="card question-card"><p><strong>Como testar uma regra quando o resultado depende de várias condições ao mesmo tempo?</strong></p></div>
+
+        <div class="card next-card">
+          <h3>A seguir: testar regras com várias condições</h3>
+          <p>Vamos organizar combinações com <strong>tabelas de decisão</strong> e, depois, testar comportamentos que dependem de uma sequência de estados.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar:</p>
+          <ul>
+            <li>por que não é necessário testar todos os valores possíveis;</li>
+            <li>o que é uma partição de equivalência;</li>
+            <li>por que valores próximos aos limites merecem atenção especial;</li>
+            <li>a diferença entre escolher um representante de um grupo e testar uma borda.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="04-antes-de-executar.html">← Etapa 4</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <a class="next" href="06-regras-mais-complicadas.html">Etapa 6 →</a>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

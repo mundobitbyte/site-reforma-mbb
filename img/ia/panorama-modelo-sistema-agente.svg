@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Modelo, Sistema de IA e Agente</title>
+<desc id="desc">Diagrama compacto mostrando o modelo dentro de um sistema de IA e o sistema como parte de um agente, com maior capacidade de ação exigindo mais controle humano.</desc>
+<defs>
+<style>
+.t{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;fill:#10213d}.h{font-weight:800;fill:#0f4c9b}
+.s{font-size:15px}.m{font-size:19px}.l{font-size:28px}
+.box{fill:#fff;stroke:#b9d5f5;stroke-width:2}.agent{fill:#e8f3ff;stroke:#6fa8e8;stroke-width:3}.system{fill:#f5f9ff;stroke:#6ba4e7;stroke-width:3}.accent{fill:#286dcc}.soft{fill:#f1f7ff;stroke:#d5e4f6;stroke-width:2}.green{fill:#eafff6;stroke:#72cfac;stroke-width:2}.line{stroke:#286dcc;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</defs>
+<rect width="1200" height="500" rx="24" fill="#fbfdff"/>
+<text x="46" y="38" class="t h l">Modelo → Sistema de IA → Agente</text>
+<text x="48" y="63" class="t s">Mais capacidade de agir exige mais limites, confirmação e revisão humana.</text>
+<rect x="42" y="82" width="1116" height="300" rx="24" class="agent"/>
+<text x="68" y="113" class="t h l">Agente</text>
+<text x="188" y="113" class="t s">persegue um objetivo e pode executar etapas usando ferramentas autorizadas</text>
+<g transform="translate(68 128)"><rect width="322" height="54" rx="14" class="box"/><circle cx="34" cy="27" r="18" class="accent"/><text x="34" y="33" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="800" fill="#fff">1</text><text x="68" y="23" class="t h m">Planeja etapas</text><text x="68" y="43" class="t s">decompõe o objetivo</text></g>
+<g transform="translate(439 128)"><rect width="322" height="54" rx="14" class="box"/><circle cx="34" cy="27" r="18" class="accent"/><text x="34" y="33" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="800" fill="#fff">2</text><text x="68" y="23" class="t h m">Usa ferramentas</text><text x="68" y="43" class="t s">somente com permissão</text></g>
+<g transform="translate(810 128)"><rect width="322" height="54" rx="14" class="box"/><circle cx="34" cy="27" r="18" class="accent"/><text x="34" y="33" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="800" fill="#fff">3</text><text x="68" y="23" class="t h m">Pede confirmação</text><text x="68" y="43" class="t s">antes de ações importantes</text></g>
+<rect x="68" y="200" width="1064" height="154" rx="20" class="system"/>
+<text x="90" y="228" class="t h m">Sistema de IA</text>
+<text x="225" y="228" class="t s">combina modelo, contexto, dados, regras e ferramentas</text>
+<g transform="translate(90 244)"><rect width="160" height="88" rx="14" class="box"/><text x="80" y="34" text-anchor="middle" class="t h m">Interface</text><text x="80" y="59" text-anchor="middle" class="t s">onde você interage</text></g>
+<g transform="translate(266 244)"><rect width="160" height="88" rx="14" class="box"/><text x="80" y="34" text-anchor="middle" class="t h m">Contexto</text><text x="80" y="57" text-anchor="middle" class="t s">conversa e</text><text x="80" y="76" text-anchor="middle" class="t s">arquivos</text></g>
+<g transform="translate(442 244)"><rect width="316" height="88" rx="16" fill="#eaf3ff" stroke="#4e93df" stroke-width="3"/><text x="158" y="27" text-anchor="middle" class="t h m">Modelo</text><text x="34" y="61" class="t s">entrada</text><path d="M90 56h42" class="line"/><path d="M122 49l11 7-11 7" class="line"/><rect x="143" y="39" width="62" height="34" rx="8" class="accent"/><text x="174" y="62" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="800" fill="#fff">IA</text><path d="M214 56h42" class="line"/><path d="M246 49l11 7-11 7" class="line"/><text x="271" y="61" class="t s">saída</text><text x="158" y="82" text-anchor="middle" class="t s">recebe entradas e gera saídas</text></g>
+<g transform="translate(774 244)"><rect width="160" height="88" rx="14" class="box"/><text x="80" y="34" text-anchor="middle" class="t h m">Busca</text><text x="80" y="57" text-anchor="middle" class="t s">fontes e dados</text></g>
+<g transform="translate(950 244)"><rect width="160" height="88" rx="14" class="box"/><text x="80" y="34" text-anchor="middle" class="t h m">Ferramentas</text><text x="80" y="57" text-anchor="middle" class="t s">apps e serviços</text></g>
+<text x="600" y="407" text-anchor="middle" class="t h s">A diferença prática</text>
+<g transform="translate(82 423)"><rect width="456" height="56" rx="16" class="soft"/><text x="24" y="25" class="t h m">Chat responde</text><text x="24" y="44" class="t s">você pergunta e recebe uma resposta</text></g>
+<path d="M553 451h94" class="line"/><path d="M637 443l13 8-13 8" class="line"/>
+<g transform="translate(662 423)"><rect width="456" height="56" rx="16" class="green"/><text x="24" y="25" class="t h m">Agente responde e age</text><text x="24" y="44" class="t s">com limites, permissão e confirmação</text></g>
+</svg>

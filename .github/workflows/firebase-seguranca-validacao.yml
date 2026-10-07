@@ -1,0 +1,55 @@
+name: Validação segurança Meu MbB
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'meu-mbb/firebase-config.js'
+      - 'meu-mbb/conta.js'
+      - 'meu-mbb/falha-firebase.test.cjs'
+      - 'meu-mbb/firestore.rules'
+      - 'firebase.meu-mbb.json'
+      - 'meu-mbb/tests/firestore-rules.test.cjs'
+      - '.github/workflows/firebase-seguranca-validacao.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'meu-mbb/firebase-config.js'
+      - 'meu-mbb/conta.js'
+      - 'meu-mbb/falha-firebase.test.cjs'
+      - 'meu-mbb/firestore.rules'
+      - 'firebase.meu-mbb.json'
+      - 'meu-mbb/tests/firestore-rules.test.cjs'
+      - '.github/workflows/firebase-seguranca-validacao.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  regras:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Instalar ferramentas de teste
+        run: npm install --no-save --no-package-lock firebase@12.19.0 @firebase/rules-unit-testing@5.0.2 firebase-tools@15.30.2
+
+      - name: Validar isolamento e integração do Meu MbB
+        run: node --test meu-mbb/falha-firebase.test.cjs
+
+      - name: Validar regras do Meu MbB
+        run: npx firebase emulators:exec --config firebase.meu-mbb.json --only firestore --project demo-mbb-meu "node --test meu-mbb/tests/firestore-rules.test.cjs"

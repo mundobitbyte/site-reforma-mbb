@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Aprenda a desenvolver com Inteligência Artificial acompanhando a evolução de um projeto real: compreender código, planejar mudanças, testar, depurar, persistir dados, revisar, proteger informações e controlar agentes de programação."/>
+<link rel="canonical" href="https://www.mundobitbyte.com.br/pages/ia/programacao.html"/>
+<title>Mundo bit Byte — IA e Programação</title>
+<link href="../../css/ia-programacao.css" rel="stylesheet"/>
+<script src="../../js/ia-programacao.js" defer></script>
+</head>
+<body>
+<div class="topbar"><div class="header-left"><a class="portal-link" href="index.html">← Voltar IA</a><h1>IA e Programação</h1></div><div class="brand">Professor Ronaldo Lavestein</div></div>
+<div class="container">
+
+<section class="hero">
+<span class="badge">Módulo 5 · IA e Programação</span>
+<h1>Você herdou um programa que funciona. Agora precisa fazê-lo evoluir sem perder o controle.</h1>
+<p>O laboratório de informática da escola empresta notebooks, kits Arduino e câmeras para aulas e projetos. Um aluno começou um pequeno programa em Python para registrar os empréstimos, mas deixou o curso antes de terminar. O código funciona para um caso simples — e agora ficou com você.</p>
+<p>Durante este módulo, o mesmo projeto receberá novos pedidos, apresentará erros, precisará guardar dados, ganhará testes e será preparado para outra pessoa continuar. A IA participará de todas essas etapas, mas com uma regra: <strong>ela ajuda a investigar e modificar; você continua responsável por compreender, decidir e comprovar.</strong></p>
+<div class="note warn"><h3>Regra central</h3><p>Se você não consegue explicar <strong>o que mudou, por que mudou e como comprovou que funciona</strong>, a tarefa ainda não terminou — mesmo que o código tenha sido escrito pela IA.</p></div>
+</section>
+
+<section class="card">
+<h2>Antes de começar — este módulo não ensina Python do zero</h2>
+<p>Você não precisa ser especialista, mas precisa reconhecer o básico para que a IA não vire um atalho que esconda aquilo que você ainda não aprendeu.</p>
+<ul class="checklist">
+<li>Variáveis e entrada/saída com <code>input</code> e <code>print</code>.</li>
+<li>Decisões com <code>if</code>, <code>elif</code> e <code>else</code>.</li>
+<li>Funções simples com parâmetros e <code>return</code>.</li>
+<li>Listas ou dicionários em situações básicas.</li>
+<li>Executar um programa e localizar uma mensagem de erro.</li>
+</ul>
+<div class="note idea"><h3>Se isso ainda estiver novo demais</h3><p>Volte primeiro para <a href="../programacao.html"><strong>Programação de Computadores</strong></a>. Aqui vamos aprender a trabalhar <em>com IA durante o desenvolvimento</em>, não substituir os fundamentos da linguagem.</p></div>
+</section>
+
+<section class="card">
+<h2>Como seguir esta aula sem se perder</h2>
+<p>A partir daqui, cada etapa diz explicitamente o que você deve fazer. Não avance no automático.</p>
+<div class="grid-2">
+<div class="note idea"><h3>LEIA</h3><p>É explicação ou contexto. <strong>Não altere nem execute nada</strong> a menos que a própria caixa mande.</p></div>
+<div class="note good"><h3>FAÇA AGORA</h3><p>É uma ação sua: editar arquivo, executar programa, criar pasta, testar ou anotar resultado.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA</h3><p>Copie o texto da caixa e envie à IA junto com o contexto pedido. Depois confira a resposta; não a aceite automaticamente.</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Não siga enquanto você não conseguir verificar o resultado indicado.</p></div>
+</div>
+</section>
+
+<section class="card">
+<h2>1. Segunda-feira — o projeto chega às suas mãos</h2>
+<p>O professor entrega um arquivo chamado <code>app.py</code>. Antes de pedir “melhore esse código”, você precisa descobrir o que já existe e o que realmente funciona.</p>
+<div class="lab">
+<pre class="code">equipamentos = {
+    "NB01": {"nome": "Notebook 01", "disponivel": True},
+    "CAM01": {"nome": "Câmera 01", "disponivel": True},
+    "ARD01": {"nome": "Kit Arduino 01", "disponivel": True}
+}
+
+
+def emprestar(codigo):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+
+    if not item["disponivel"]:
+        return "Equipamento indisponível."
+
+    item["disponivel"] = False
+    return f'{item["nome"]} emprestado com sucesso.'
+
+
+codigo = input("Código do equipamento: ")
+print(emprestar(codigo))</pre>
+</div>
+<div class="note good"><h3>FAÇA AGORA — confirme o ponto de partida</h3><ol><li>Crie ou abra <code>app.py</code> com exatamente o código acima.</li><li>Execute com <code>NB01</code>.</li><li>Execute novamente com <code>nb01</code>.</li><li>Execute novamente com <code>XX99</code>.</li><li>Anote as três mensagens exibidas.</li></ol><p><strong>Não altere o código ainda.</strong></p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p><code>NB01</code> e <code>nb01</code> devem ser reconhecidos como o mesmo código; <code>XX99</code> deve ser recusado como inexistente. Se isso não aconteceu, corrija primeiro a digitação do programa inicial.</p></div>
+</section>
+
+<section class="card">
+<h2>2. Antes de modificar, faça a IA ajudá-lo a ler o que já existe</h2>
+<p>Você poderia perguntar “esse código está bom?”. Isso convida uma avaliação genérica. O objetivo agora é construir um mapa do comportamento.</p>
+<div class="note idea"><h3>PROMPT PARA A IA — copie e envie agora</h3><div class="prompt">Ainda não altere o código. Explique este programa para alguém que conhece variáveis, if e funções, mas está aprendendo dicionários. Responda em quatro partes:
+1. quais dados o programa guarda;
+2. o que a função emprestar recebe;
+3. quais decisões ela toma;
+4. o que muda nos dados quando um empréstimo é aceito.
+Depois proponha três entradas para eu prever o resultado antes de executar.</div></div>
+<div class="note good"><h3>FAÇA AGORA — confira a explicação no código</h3><p>Volte ao <code>app.py</code> e localize onde aparecem: o dicionário <code>equipamentos</code>, o parâmetro <code>codigo</code>, as duas decisões com <code>if</code> e a alteração de <code>disponivel</code> para <code>False</code>.</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Se você não consegue apontar no código a evidência de uma afirmação da IA, ainda não trate essa afirmação como entendimento.</p></div>
+</section>
+
+<section class="card">
+<h2>3. Terça-feira — chega o primeiro pedido real de mudança</h2>
+<p>O responsável pelo laboratório testa o protótipo e identifica duas limitações: o programa precisa registrar <strong>para quem</strong> o equipamento foi emprestado e também precisa permitir a <strong>devolução</strong>.</p>
+<div class="note bad"><h3>LEIA — este é o impulso que queremos evitar</h3><div class="prompt">Adicione nome do aluno, devolução, menu e deixe tudo profissional.</div><p>Esse pedido mistura requisitos, não define casos problemáticos e dá liberdade demais para reconstruir o projeto.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA — transforme o pedido em regras</h3><div class="prompt">Não escreva código ainda. Para o programa atual, precisamos:
+- registrar o nome de quem recebe um equipamento;
+- impedir novo empréstimo enquanto ele estiver indisponível;
+- permitir devolução;
+- após devolver, o equipamento deve voltar a ficar disponível e deixar de ter responsável.
+Liste as alterações necessárias nos dados e nas funções. Depois proponha casos de teste. Preserve a estrutura atual sempre que possível.</div></div>
+<div class="note good"><h3>FAÇA AGORA</h3><p>Leia a resposta da IA e verifique se ela manteve o programa atual como base. Neste ponto, <strong>não aceite código ainda</strong>. O resultado desta etapa é apenas uma lista de mudanças e casos de teste.</p></div>
+</section>
+
+<section class="card">
+<h2>4. Antes do novo código, registre o comportamento esperado</h2>
+<div class="note idea"><h3>LEIA — não execute nada nesta etapa</h3><p>A tabela abaixo ainda não é um teste automatizado e não é para ser “rodada”. Ela funciona como um contrato: registra o que deverá acontecer <strong>depois</strong> da mudança.</p></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Situação</th><th>Resultado esperado</th><th>O que comprova?</th></tr></thead>
+<tbody>
+<tr><td>Emprestar NB01 para Ana</td><td>Empréstimo aceito; NB01 fica indisponível e ligado a Ana.</td><td>Caminho principal.</td></tr>
+<tr><td>Emprestar NB01 novamente</td><td>Operação recusada.</td><td>Não permite dois empréstimos simultâneos.</td></tr>
+<tr><td>Devolver NB01</td><td>NB01 volta a ficar disponível e sem responsável.</td><td>Regra de devolução completa.</td></tr>
+<tr><td>Usar código XX99</td><td>Equipamento não encontrado.</td><td>Entrada inexistente.</td></tr>
+<tr><td>Digitar “ nb01 ”</td><td>Código é normalizado e reconhecido.</td><td>Entrada equivalente.</td></tr>
+</tbody></table></div>
+<div class="note good"><h3>FAÇA AGORA — responda antes de seguir</h3><p>Sem executar o programa, responda para si mesmo: <strong>(1)</strong> o que deve acontecer se NB01 já estiver emprestado? <strong>(2)</strong> depois de uma devolução, quais dois dados precisam mudar?</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Você deve conseguir responder: o segundo empréstimo é recusado; na devolução, <code>disponivel</code> volta a <code>True</code> e o responsável deixa de existir.</p></div>
+</section>
+
+<section class="card">
+<h2>5. Faça a primeira alteração pequena — em partes</h2>
+<p>Agora você vai modificar o programa pela primeira vez. <strong>Não substitua tudo por um programa novo.</strong> Vamos alterar a versão existente em etapas curtas.</p>
+
+<div class="note good"><h3>FAÇA AGORA — Parte A: amplie os dados</h3><p>Substitua somente o dicionário <code>equipamentos</code> pelo bloco abaixo. O novo campo registra quem está com cada item; <code>None</code> significa que não há responsável.</p></div>
+<pre class="code">equipamentos = {
+    "NB01": {
+        "nome": "Notebook 01",
+        "disponivel": True,
+        "emprestado_para": None
+    },
+    "CAM01": {
+        "nome": "Câmera 01",
+        "disponivel": True,
+        "emprestado_para": None
+    },
+    "ARD01": {
+        "nome": "Kit Arduino 01",
+        "disponivel": True,
+        "emprestado_para": None
+    }
+}</pre>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Cada equipamento deve ter agora exatamente três informações: <code>nome</code>, <code>disponivel</code> e <code>emprestado_para</code>.</p></div>
+
+<div class="note good"><h3>FAÇA AGORA — Parte B: troque a função de empréstimo e acrescente a devolução</h3><p>Substitua a função <code>emprestar()</code> antiga pelo bloco abaixo e coloque <code>devolver()</code> logo depois. <strong>Copie exatamente como está, mesmo que você desconfie de alguma coisa. Ainda existe um comportamento que vamos investigar.</strong></p></div>
+<pre class="code">def emprestar(codigo, aluno):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if not item["disponivel"]:
+        return "Equipamento indisponível."
+
+    item["disponivel"] = False
+    item["emprestado_para"] = aluno
+    return f'{item["nome"]} emprestado para {aluno}.'
+
+
+def devolver(codigo):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if item["disponivel"]:
+        return "Este equipamento já está disponível."
+
+    item["emprestado_para"] = None
+    return f'{item["nome"]} devolvido com sucesso.'</pre>
+
+<div class="note good"><h3>FAÇA AGORA — Parte C: atualize a chamada da função</h3><p>A função <code>emprestar()</code> agora precisa de dois valores. Substitua somente as linhas finais do programa por:</p></div>
+<pre class="code">codigo = input("Código do equipamento: ")
+aluno = input("Nome do aluno: ")
+print(emprestar(codigo, aluno))</pre>
+<div class="note good"><h3>FAÇA AGORA — primeiro teste da nova versão</h3><p>Salve e execute uma vez. Digite <code>NB01</code> e depois <code>Ana</code>. Você deve receber uma mensagem dizendo que Notebook 01 foi emprestado para Ana.</p></div>
+
+<div class="note idea"><h3>Agora faremos um teste temporário</h3><p>As três linhas de interação acima não estão erradas. Vamos apenas retirá-las por alguns minutos para testar várias operações <strong>na mesma execução</strong>.</p></div>
+<div class="note good"><h3>FAÇA AGORA — substitua temporariamente as três linhas finais por estas</h3></div>
+<pre class="code">print(emprestar("NB01", "Ana"))
+print(emprestar("NB01", "Bruno"))
+print(devolver("NB01"))
+print(emprestar("NB01", "Bruno"))</pre>
+<p>Execute uma única vez.</p>
+<div class="note warn"><h3>PARE E OBSERVE — não corrija ainda</h3><p>O primeiro empréstimo é aceito e o segundo é recusado, como esperado. Depois a função informa que a devolução aconteceu, mas o novo empréstimo para Bruno continua sendo recusado. Não há erro de sintaxe; há um <strong>estado incoerente</strong>. Esse defeito é proposital nesta etapa.</p></div>
+</section>
+
+<section class="card">
+<h2>6. Quarta-feira — investigue o bug antes de corrigir</h2>
+<p>Agora existe uma evidência concreta: depois de devolver, o equipamento continua indisponível. Em vez de pedir “arruma”, vamos localizar exatamente onde a regra deixa de ser verdadeira.</p>
+<div class="note idea"><h3>PROMPT PARA A IA — investigue sem corrigir</h3><div class="prompt">Não corrija ainda. Simule esta sequência usando o código atual:
+1. emprestar("NB01", "Ana");
+2. emprestar("NB01", "Bruno");
+3. devolver("NB01");
+4. emprestar("NB01", "Bruno").
+Depois de cada etapa, mostre os valores de disponivel e emprestado_para de NB01. Identifique em qual etapa o estado deixa de representar a regra esperada.</div></div>
+<div class="note good"><h3>FAÇA AGORA — confirme no programa, não apenas na resposta da IA</h3><p>Troque temporariamente as quatro chamadas finais pelo bloco abaixo. Ele mostra o estado real de NB01 depois de cada operação.</p></div>
+<pre class="code">print(emprestar("NB01", "Ana"))
+print(equipamentos["NB01"])
+
+print(emprestar("NB01", "Bruno"))
+print(equipamentos["NB01"])
+
+print(devolver("NB01"))
+print(equipamentos["NB01"])
+
+print(emprestar("NB01", "Bruno"))
+print(equipamentos["NB01"])</pre>
+<div class="note warn"><h3>PARE E LOCALIZE</h3><p>O segundo empréstimo é corretamente recusado. O problema aparece depois de <code>devolver("NB01")</code>: <code>emprestado_para</code> volta a <code>None</code>, mas <code>disponivel</code> continua <code>False</code>. É nessa etapa que o estado deixa de representar a regra esperada.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA — agora sim peça a menor correção</h3><div class="prompt">Agora proponha a menor correção possível. Não altere nomes, estrutura ou mensagens fora do necessário. Depois diga quais testes da tabela anterior precisam ser repetidos.</div></div>
+<div class="note good"><h3>FAÇA AGORA — aplique somente a correção necessária</h3><p>Dentro de <code>devolver()</code>, antes de limpar o responsável, acrescente:</p></div>
+<pre class="code">item["disponivel"] = True</pre>
+<p>Repita o teste completo. O segundo empréstimo deve continuar recusado enquanto NB01 está emprestado, e Bruno deve conseguir recebê-lo depois da devolução.</p>
+<div class="note good"><h3>Checkpoint 1 — versão aprovada em memória</h3><p>Depois de comprovar a correção, remova os <code>print</code> temporários de investigação e deixe seu <code>app.py</code> assim:</p></div>
+<pre class="code">equipamentos = {
+    "NB01": {
+        "nome": "Notebook 01",
+        "disponivel": True,
+        "emprestado_para": None
+    },
+    "CAM01": {
+        "nome": "Câmera 01",
+        "disponivel": True,
+        "emprestado_para": None
+    },
+    "ARD01": {
+        "nome": "Kit Arduino 01",
+        "disponivel": True,
+        "emprestado_para": None
+    }
+}
+
+
+def emprestar(codigo, aluno):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if not item["disponivel"]:
+        return "Equipamento indisponível."
+
+    item["disponivel"] = False
+    item["emprestado_para"] = aluno
+    return f'{item["nome"]} emprestado para {aluno}.'
+
+
+def devolver(codigo):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if item["disponivel"]:
+        return "Este equipamento já está disponível."
+
+    item["disponivel"] = True
+    item["emprestado_para"] = None
+    return f'{item["nome"]} devolvido com sucesso.'
+
+
+acao = input("Digite E para emprestar ou D para devolver: ").strip().upper()
+codigo = input("Código do equipamento: ")
+
+if acao == "E":
+    aluno = input("Nome do aluno: ")
+    print(emprestar(codigo, aluno))
+elif acao == "D":
+    print(devolver(codigo))
+else:
+    print("Opção inválida.")</pre>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>No teste temporário você comprovou empréstimo, bloqueio de segundo empréstimo, devolução e novo empréstimo. Agora vamos descobrir um problema diferente: o programa esquece tudo quando termina.</p></div>
+</section>
+
+<section class="card">
+<h2>7. Quinta-feira — o programa funciona, mas esquece tudo quando fecha</h2>
+<div class="note good"><h3>FAÇA AGORA — reproduza o problema</h3><ol><li>Com o Checkpoint 1, execute o programa e empreste <code>NB01</code> para Ana.</li><li>O programa termina.</li><li>Execute novamente e tente emprestar <code>NB01</code> para Bruno.</li></ol><p>O segundo empréstimo será aceito porque o dicionário é recriado toda vez que o programa começa.</p></div>
+<p>Agora existe uma necessidade concreta: o estado precisa sobreviver ao encerramento. A equipe decide usar <code>dados/equipamentos.json</code>.</p>
+<div class="note idea"><h3>PROMPT PARA A IA — planeje antes de escrever código</h3><div class="prompt">O programa atual guarda equipamentos em um dicionário e perde as alterações ao encerrar. Quero persistir esse estado em dados/equipamentos.json usando apenas a biblioteca padrão do Python. Antes de escrever código, proponha:
+1. quando os dados devem ser carregados;
+2. quando devem ser salvos;
+3. o que deve acontecer na primeira execução, quando o arquivo ainda não existe;
+4. quais erros não devemos esconder silenciosamente.</div></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>A resposta precisa distinguir <strong>primeira execução</strong> de <strong>arquivo existente com problema</strong>. “Se der qualquer erro, começar do zero” esconderia defeitos reais.</p></div>
+</section>
+
+<section class="card">
+<h2>8. Reproduza a primeira falha de persistência</h2>
+<p>Antes de alterar a versão aprovada, vamos reproduzir o problema de abertura do arquivo em um arquivo temporário.</p>
+<div class="note good"><h3>FAÇA AGORA — crie <code>teste_json.py</code></h3><p>Na mesma pasta do projeto, crie um arquivo chamado <code>teste_json.py</code> com:</p></div>
+<pre class="code">import json
+
+ARQUIVO_DADOS = "dados/equipamentos.json"
+
+
+def carregar_dados():
+    with open(ARQUIVO_DADOS, "r", encoding="utf-8") as arquivo:
+        return json.load(arquivo)
+
+
+equipamentos = carregar_dados()
+print(equipamentos)</pre>
+<div class="note good"><h3>FAÇA AGORA</h3><p>Garanta que a pasta <code>dados</code> e o arquivo <code>equipamentos.json</code> ainda não existam e execute <code>teste_json.py</code>.</p></div>
+<pre class="code">FileNotFoundError: [Errno 2] No such file or directory:
+'dados/equipamentos.json'</pre>
+<div class="note idea"><h3>PROMPT PARA A IA — explique antes de corrigir</h3><div class="prompt">Na primeira execução do projeto, carregar_dados() gera FileNotFoundError para dados/equipamentos.json. O comportamento desejado é: se ainda não houver arquivo, iniciar com os equipamentos padrão; se existir, carregar os dados salvos. Explique a causa antes de propor a menor alteração.</div></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>O erro não significa que “JSON não funciona”. Significa apenas que o programa tentou abrir para leitura um arquivo que ainda não existe.</p></div>
+</section>
+
+<section class="card">
+<h2>9. Verifique a API antes de confiar em um nome convincente</h2>
+<div class="note bad"><h3>LEIA — exemplo proposital de sugestão errada da IA</h3><p>Imagine que a IA sugira <code>Path.makedirs()</code> para criar a pasta. <strong>Não coloque isso no projeto.</strong> O nome parece plausível, mas esse método não existe em <code>pathlib.Path</code>.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA — exija verificabilidade</h3><div class="prompt">Você sugeriu Path.makedirs(). Antes de alterar meu código, indique a classe e o método exatos que está assumindo, os parâmetros relevantes e o que devo confirmar na documentação oficial do Python. Se o método sugerido não existir, corrija a orientação sem inventar outro.</div></div>
+<p>Para este caso, o método correto é <code>Path.mkdir()</code>. Antes de salvar, podemos criar a pasta com <code>ARQUIVO_DADOS.parent.mkdir(parents=True, exist_ok=True)</code>.</p>
+
+<div class="note good"><h3>FAÇA AGORA — aplique a persistência em quatro partes</h3><ol><li>No <code>app.py</code>, importe <code>json</code> e <code>Path</code>.</li><li>Transforme os dados iniciais em uma função <code>criar_dados_iniciais()</code>.</li><li>Crie <code>carregar_dados()</code> e <code>salvar_dados()</code>.</li><li>Carregue no início e salve depois de uma ação de empréstimo ou devolução.</li></ol><p>Depois compare sua versão com o checkpoint completo abaixo.</p></div>
+
+<div class="lab">
+<h3>Checkpoint 2 — persistência funcionando</h3>
+<pre class="code">import json
+from pathlib import Path
+
+ARQUIVO_DADOS = Path("dados/equipamentos.json")
+
+
+def criar_dados_iniciais():
+    return {
+        "NB01": {
+            "nome": "Notebook 01",
+            "disponivel": True,
+            "emprestado_para": None
+        },
+        "CAM01": {
+            "nome": "Câmera 01",
+            "disponivel": True,
+            "emprestado_para": None
+        },
+        "ARD01": {
+            "nome": "Kit Arduino 01",
+            "disponivel": True,
+            "emprestado_para": None
+        }
+    }
+
+
+def carregar_dados():
+    if not ARQUIVO_DADOS.exists():
+        return criar_dados_iniciais()
+
+    with ARQUIVO_DADOS.open("r", encoding="utf-8") as arquivo:
+        return json.load(arquivo)
+
+
+def salvar_dados(dados):
+    ARQUIVO_DADOS.parent.mkdir(parents=True, exist_ok=True)
+
+    with ARQUIVO_DADOS.open("w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, ensure_ascii=False, indent=2)
+
+
+equipamentos = carregar_dados()
+
+
+def emprestar(codigo, aluno):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if not item["disponivel"]:
+        return "Equipamento indisponível."
+
+    item["disponivel"] = False
+    item["emprestado_para"] = aluno
+    return f'{item["nome"]} emprestado para {aluno}.'
+
+
+def devolver(codigo):
+    codigo = codigo.strip().upper()
+    item = equipamentos.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if item["disponivel"]:
+        return "Este equipamento já está disponível."
+
+    item["disponivel"] = True
+    item["emprestado_para"] = None
+    return f'{item["nome"]} devolvido com sucesso.'
+
+
+acao = input("Digite E para emprestar ou D para devolver: ").strip().upper()
+codigo = input("Código do equipamento: ")
+
+if acao == "E":
+    aluno = input("Nome do aluno: ")
+    resultado = emprestar(codigo, aluno)
+elif acao == "D":
+    resultado = devolver(codigo)
+else:
+    resultado = "Opção inválida."
+
+if acao in ("E", "D"):
+    salvar_dados(equipamentos)
+
+print(resultado)</pre>
+</div>
+<div class="note good"><h3>FAÇA AGORA — teste de continuidade</h3><ol><li>Apague o <code>teste_json.py</code>; ele não faz parte da versão final.</li><li>Execute <code>app.py</code> e empreste NB01 para Ana.</li><li>Encerre o programa.</li><li>Execute novamente e tente emprestar NB01 para Bruno.</li></ol><p>Agora o segundo empréstimo deve ser recusado. O arquivo JSON deve ter sido criado automaticamente.</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Se o JSON existir mas estiver corrompido, o erro ainda deve aparecer para ser investigado. Nesta etapa tratamos a ausência esperada do arquivo, não “qualquer erro de arquivo”.</p></div>
+</section>
+
+<section class="card">
+<h2>10. Segunda semana — separe o necessário para poder testar</h2>
+<p>O <code>app.py</code> agora lê teclado, altera dados, salva arquivo e contém regras de negócio. Se outro arquivo importar <code>app.py</code> para testar uma função, os <code>input()</code> também serão executados. A separação agora tem motivo.</p>
+<div class="note idea"><h3>PROMPT PARA A IA — planeje a divisão mínima</h3><div class="prompt">Revise a estrutura atual sem reescrever tudo. Quero separar apenas o necessário para que as regras de empréstimo e devolução possam ser testadas sem executar input(). Identifique responsabilidades misturadas e proponha uma divisão mínima de arquivos. Preserve o comportamento já aprovado.</div></div>
+<p>A estrutura aprovada para continuar será:</p>
+<pre class="code">projeto_emprestimos/
+├── app.py
+├── emprestimos.py
+├── dados/
+│   └── equipamentos.json
+└── test_emprestimos.py</pre>
+<div class="note good"><h3>FAÇA AGORA — crie <code>emprestimos.py</code></h3><p>Crie o arquivo e coloque nele somente os dados iniciais e as regras abaixo. Note a mudança importante: as funções recebem explicitamente o dicionário <code>dados</code>, em vez de depender de uma variável global.</p></div>
+<pre class="code">def criar_dados_iniciais():
+    return {
+        "NB01": {
+            "nome": "Notebook 01",
+            "disponivel": True,
+            "emprestado_para": None
+        },
+        "CAM01": {
+            "nome": "Câmera 01",
+            "disponivel": True,
+            "emprestado_para": None
+        },
+        "ARD01": {
+            "nome": "Kit Arduino 01",
+            "disponivel": True,
+            "emprestado_para": None
+        }
+    }
+
+
+def emprestar(dados, codigo, aluno):
+    codigo = codigo.strip().upper()
+    item = dados.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if not item["disponivel"]:
+        return "Equipamento indisponível."
+
+    item["disponivel"] = False
+    item["emprestado_para"] = aluno
+    return f'{item["nome"]} emprestado para {aluno}.'
+
+
+def devolver(dados, codigo):
+    codigo = codigo.strip().upper()
+    item = dados.get(codigo)
+
+    if item is None:
+        return "Equipamento não encontrado."
+    if item["disponivel"]:
+        return "Este equipamento já está disponível."
+
+    item["disponivel"] = True
+    item["emprestado_para"] = None
+    return f'{item["nome"]} devolvido com sucesso.'</pre>
+<div class="note idea"><h3>Por enquanto, preserve o <code>app.py</code></h3><p>Nesta etapa você está apenas criando o núcleo testável. <strong>Não remova ainda as funções do <code>app.py</code></strong>. Depois que o primeiro teste automatizado estiver funcionando, o Checkpoint 3 mostrará exatamente como adaptar o arquivo principal sem deixar o projeto quebrado no meio do caminho.</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p><code>emprestimos.py</code> não deve conter <code>input()</code>, <code>print()</code> da interface nem leitura/escrita do JSON. Ele contém apenas criação dos dados iniciais e regras de empréstimo/devolução.</p></div>
+</section>
+
+<section class="card">
+<h2>11. Transforme os testes escritos em testes automatizados</h2>
+<p>Agora cada teste pode criar seus próprios dados sem depender do que outro teste fez antes. Para automatizar as verificações, vamos usar <strong>pytest</strong>, que é uma dependência externa.</p>
+
+<div class="note good"><h3>FAÇA AGORA — Parte A: crie o ambiente virtual</h3></div>
+<pre class="code">python -m venv .venv</pre>
+<p>Ative somente com o comando correspondente ao seu terminal:</p>
+<pre class="code"># Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+
+# Windows Prompt de Comando (cmd)
+.venv\Scripts\activate.bat
+
+# Linux/macOS
+source .venv/bin/activate</pre>
+<div class="note good"><h3>FAÇA AGORA — Parte B: instale o pytest no ambiente ativado</h3></div>
+<pre class="code">python -m pip install pytest</pre>
+<div class="note good"><h3>FAÇA AGORA — Parte C: crie o primeiro teste</h3><p>Crie <code>test_emprestimos.py</code> com:</p></div>
+<pre class="code">from emprestimos import criar_dados_iniciais, emprestar, devolver
+
+
+def test_devolver_libera_equipamento():
+    dados = criar_dados_iniciais()
+
+    emprestar(dados, "NB01", "Ana")
+    devolver(dados, "NB01")
+
+    assert dados["NB01"]["disponivel"] is True
+    assert dados["NB01"]["emprestado_para"] is None</pre>
+<div class="note good"><h3>FAÇA AGORA — Parte D: execute</h3></div>
+<pre class="code">python -m pytest -q</pre>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>O primeiro teste precisa passar antes de você criar os demais. Se falhar, investigue a falha; não altere o teste apenas para deixá-lo verde.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA — amplie a proteção sem inventar regras</h3><div class="prompt">Com base nas regras já aprovadas do projeto, proponha testes para: empréstimo válido, segundo empréstimo recusado, devolução, código inexistente e normalização do código. Para cada teste, explique qual regra ele protege. Não crie regras novas.</div></div>
+<div class="note good"><h3>FAÇA AGORA</h3><p>Revise os testes propostos e copie para o mesmo <code>test_emprestimos.py</code> somente as funções de teste que correspondem à tabela de requisitos. Execute novamente <code>python -m pytest -q</code>.</p></div>
+
+<div class="lab">
+<h3>Checkpoint 3 — projeto preparado para testes</h3>
+<p>Seu <code>emprestimos.py</code> já é o mostrado na etapa anterior. Agora substitua o conteúdo do <code>app.py</code> pela versão abaixo, que deixa a interface e a persistência no arquivo principal e importa as regras do núcleo:</p>
+<pre class="code">import json
+from pathlib import Path
+
+from emprestimos import criar_dados_iniciais, emprestar, devolver
+
+ARQUIVO_DADOS = Path("dados/equipamentos.json")
+
+
+def carregar_dados():
+    if not ARQUIVO_DADOS.exists():
+        return criar_dados_iniciais()
+
+    with ARQUIVO_DADOS.open("r", encoding="utf-8") as arquivo:
+        return json.load(arquivo)
+
+
+def salvar_dados(dados):
+    ARQUIVO_DADOS.parent.mkdir(parents=True, exist_ok=True)
+
+    with ARQUIVO_DADOS.open("w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, ensure_ascii=False, indent=2)
+
+
+dados = carregar_dados()
+acao = input("Digite E para emprestar ou D para devolver: ").strip().upper()
+codigo = input("Código do equipamento: ")
+
+if acao == "E":
+    aluno = input("Nome do aluno: ")
+    resultado = emprestar(dados, codigo, aluno)
+elif acao == "D":
+    resultado = devolver(dados, codigo)
+else:
+    resultado = "Opção inválida."
+
+if acao in ("E", "D"):
+    salvar_dados(dados)
+
+print(resultado)</pre>
+</div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Neste ponto: <code>emprestimos.py</code> contém regras; <code>app.py</code> contém interface e persistência; <code>test_emprestimos.py</code> protege comportamentos já aprovados. Execute os testes mais uma vez antes de seguir.</p></div>
+</section>
+
+<section class="card">
+<h2>12. “Na minha máquina funciona” — ambiente também faz parte do projeto</h2>
+<div class="note idea"><h3>LEIA — situação simulada</h3><p>Você não precisa trocar de computador para continuar a aula. Imagine que um colega copie a pasta e, ao executar os testes, receba:</p></div>
+<pre class="code">ModuleNotFoundError: No module named 'pytest'</pre>
+<p>A regra de empréstimo não ficou errada. O novo ambiente ainda não possui a dependência usada para executar os testes.</p>
+<div class="note idea"><h3>PROMPT PARA A IA — diagnostique o ambiente</h3><div class="prompt">Os testes rodam em outro computador, mas neste laboratório Python 3.12 informa ModuleNotFoundError: No module named 'pytest'. Antes de mandar instalar qualquer coisa, explique o que preciso verificar sobre interpretador selecionado, ambiente virtual, instalação do pacote e registro de dependências do projeto.</div></div>
+<div class="note good"><h3>FAÇA AGORA — registre a dependência</h3><p>Como você criou um ambiente virtual controlado para este projeto, gere o arquivo:</p></div>
+<pre class="code">python -m pip freeze &gt; requirements.txt</pre>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Abra <code>requirements.txt</code> e confirme que o pytest e suas dependências aparecem. O objetivo é tornar o ambiente reproduzível, não apenas “funcionar na sua máquina”.</p></div>
+</section>
+
+<section class="card">
+<h2>13. O projeto agora contém dados de pessoas — nem todo contexto deve ir para a IA</h2>
+<div class="note idea"><h3>LEIA — nenhuma alteração de código nesta etapa</h3><p>Os testes da turma começam a usar nomes reais e alguém pensa em enviar o <code>equipamentos.json</code> inteiro para pedir ajuda. A IA não precisa de identidades reais para compreender a regra.</p></div>
+<div class="grid-2">
+<div class="note bad"><h3>Evite</h3><pre class="code">"emprestado_para": "Nome completo do aluno real"</pre></div>
+<div class="note good"><h3>Prefira</h3><pre class="code">"emprestado_para": "ALUNO_TESTE_01"</pre></div>
+</div>
+<ul class="checklist">
+<li>Use dados fictícios ou anonimizados nos exemplos enviados à IA.</li>
+<li>Compartilhe apenas os arquivos e trechos necessários para o problema.</li>
+<li>Se futuramente houver API, nunca envie chaves, tokens ou arquivo <code>.env</code> com valores reais.</li>
+<li>Se um segredo real for exposto, trate-o como comprometido e siga o procedimento de revogação do serviço.</li>
+</ul>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Antes de anexar um arquivo a uma IA, pergunte: “ela realmente precisa destes dados para resolver este problema?”</p></div>
+</section>
+
+<section class="card">
+<h2>14. Revise o projeto antes de outra pessoa continuar</h2>
+<div class="note good"><h3>FAÇA AGORA — prepare somente o contexto necessário</h3><p>Use o estado do Checkpoint 3. Envie à IA <code>emprestimos.py</code>, <code>app.py</code> e <code>test_emprestimos.py</code>. <strong>Não envie o JSON real</strong> se ele contiver nomes.</p></div>
+<div class="note idea"><h3>PROMPT PARA A IA — revisar sem editar</h3><div class="prompt">Revise este projeto sem editar ainda. Organize os achados em:
+- CORREÇÃO: comportamento que pode estar errado;
+- LEGIBILIDADE: algo que dificulta entender;
+- DUPLICAÇÃO: lógica repetida que aumenta risco de inconsistência;
+- TRATAMENTO DE ERROS: falhas que hoje não têm resposta adequada;
+- TESTABILIDADE: pontos difíceis de isolar ou testar.
+Para cada achado, cite o arquivo e o trecho. Não proponha mudanças apenas cosméticas.</div></div>
+<div class="note good"><h3>FAÇA AGORA</h3><p>Escolha <strong>uma única melhoria</strong> que tenha justificativa concreta. Faça uma alteração pequena e execute novamente todos os testes existentes.</p></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Se um comportamento mudou sem intenção, não foi apenas refatoração. Reverta ou investigue antes de continuar.</p></div>
+</section>
+
+<section class="card">
+<h2>15. Uma IA com acesso ao repositório pode agir — e por isso exige mais controle</h2>
+<p>Até aqui você poderia copiar trechos para um chatbot. Agora imagine um agente conectado ao projeto, capaz de localizar arquivos, editá-los e executar testes.</p>
+<div class="note idea"><h3>LEIA — dois termos</h3><p><strong>Branch</strong> é uma linha separada de trabalho: permite experimentar uma mudança sem alterar diretamente a versão principal.</p><p><strong>Diff</strong> é a comparação que mostra exatamente o que foi adicionado, removido ou alterado. Para aprofundar, consulte <a href="../git.html"><strong>Git/GitHub</strong></a>.</p></div>
+<div class="note warn"><h3>Novo pedido do laboratório</h3><p>Além de emprestar e devolver, o sistema deve permitir <strong>reservar</strong> um equipamento disponível para uma aula futura. A reserva não pode marcar o equipamento como emprestado e deve poder ser cancelada.</p></div>
+<div class="note good"><h3>FAÇA AGORA — antes de autorizar qualquer edição</h3><ol><li>Crie ou selecione uma branch separada.</li><li>Peça apenas o plano.</li><li>Revise os arquivos que o agente pretende alterar.</li><li>Só depois autorize implementação.</li><li>Leia o diff e execute testes antigos e novos.</li></ol></div>
+<div class="note idea"><h3>PROMPT PARA O AGENTE</h3><div class="prompt">Antes de editar, analise o projeto e liste quais arquivos precisam mudar para implementar reserva e cancelamento de reserva. Explique por quê. Não altere nada ainda.
+Depois da minha aprovação, faça somente as mudanças necessárias. Preserve empréstimo, devolução e persistência existentes. Acrescente testes para as novas regras e execute também os testes antigos. Ao final, mostre resumo do diff, testes executados, riscos restantes e qualquer decisão de requisito que ainda precise de resposta humana.</div></div>
+<div class="note warn"><h3>PARE E CONFIRA</h3><p>Não aceite “concluído” como evidência. A evidência é: escopo compreendido, diff revisado e testes executados.</p></div>
+</section>
+
+<section class="card">
+<h2>16. Laboratório final — implemente a reserva sem terceirizar a decisão</h2>
+<p>Agora você assume o fluxo completo. Cada etapa produz algo que precisa ser entendido antes da próxima.</p>
+<h3>Etapa A — escreva as regras antes da IA</h3>
+<div class="note good"><p><strong>FAÇA AGORA:</strong> escreva com suas palavras quando uma reserva pode ser criada, o que acontece se o equipamento já estiver emprestado ou reservado e como uma reserva é cancelada. <strong>Pare aqui antes da Etapa B.</strong></p></div>
+<h3>Etapa B — peça perguntas sobre lacunas</h3>
+<div class="prompt">Estas são minhas regras de reserva. Antes de propor código, identifique no máximo cinco decisões que ainda estejam ambíguas e que possam alterar a implementação. Não invente respostas para elas.</div>
+<div class="note warn"><p><strong>PARE E CONFIRA:</strong> responda você mesmo às ambiguidades relevantes. A IA não decide a regra do laboratório.</p></div>
+<h3>Etapa C — transforme regras em testes</h3>
+<div class="note good"><p><strong>FAÇA AGORA:</strong> registre pelo menos reservar disponível, impedir segunda reserva, impedir reserva de emprestado, cancelar reserva e comprovar que empréstimo/devolução continuam funcionando.</p></div>
+<h3>Etapa D — planeje a alteração</h3>
+<div class="prompt">Com base apenas nas regras aprovadas e no projeto atual, liste arquivos e funções que precisam mudar. Preserve o restante. Não escreva código ainda.</div>
+<div class="note warn"><p><strong>PARE E CONFIRA:</strong> cada arquivo listado precisa ter uma justificativa ligada a uma regra.</p></div>
+<h3>Etapa E — implemente pouco e revise o diff</h3>
+<div class="note good"><p><strong>FAÇA AGORA:</strong> autorize a implementação apenas depois de entender o plano. Compare antes/depois e procure requisito novo que ninguém pediu.</p></div>
+<h3>Etapa F — execute os testes e investigue qualquer falha</h3>
+<div class="note good"><p><strong>FAÇA AGORA:</strong> rode os testes antigos e novos. Se houver falha, primeiro descubra qual regra, teste ou implementação está errada. Não peça simplesmente para “fazer passar”.</p></div>
+<h3>Etapa G — explique sem a IA</h3>
+<div class="note good"><p><strong>FAÇA AGORA:</strong> feche a conversa e responda: quais arquivos mudaram, qual estado representa uma reserva, como ela é cancelada e quais testes comprovam que as regras antigas continuam válidas?</p></div>
+<div class="note warn"><h3>Critério de conclusão</h3><p>Você não terminou quando a ferramenta escreveu o código. Terminou quando consegue <strong>defender a mudança com requisitos, diff, testes e explicação própria</strong>.</p></div>
+</section>
+
+<section class="card">
+<h2>17. Desafio de transferência — aplique o processo em um código seu</h2>
+<p>Escolha um programa pequeno que você realmente consiga executar — em Python, JavaScript, Java, VisuAlg ou outra linguagem estudada. Não copie o projeto do laboratório; transfira o método.</p>
+<ol>
+<li>Explique o comportamento atual sem IA.</li>
+<li>Execute e registre pelo menos dois casos reais.</li>
+<li>Peça à IA para mapear o código sem alterá-lo.</li>
+<li>Defina uma mudança pequena e escreva o comportamento esperado.</li>
+<li>Crie casos de teste antes da mudança.</li>
+<li>Peça um plano antes de pedir código.</li>
+<li>Faça ou autorize uma alteração limitada.</li>
+<li>Compare antes/depois e execute os testes.</li>
+<li>Se houver falha, investigue com evidência antes de corrigir.</li>
+<li>Explique você mesmo o que mudou e como comprovou.</li>
+</ol>
+<div class="note warn"><h3>Se a única explicação for “a IA fez”</h3><p>Volte uma etapa. O propósito do módulo é usar IA para aumentar sua capacidade de desenvolver e revisar software — não esconder o desenvolvimento atrás da ferramenta.</p></div>
+</section>
+
+<section class="card">
+<h2>O que você aprendeu neste projeto</h2>
+<div class="flow">
+<div class="step"><strong>Entender</strong>Ler código e comportamento antes de modificar.</div>
+<div class="step"><strong>Especificar</strong>Transformar pedidos em regras e casos verificáveis.</div>
+<div class="step"><strong>Alterar</strong>Mudar pouco e preservar o que já funciona.</div>
+<div class="step"><strong>Investigar</strong>Usar estado, erro e testes como evidências.</div>
+<div class="step"><strong>Controlar</strong>Revisar contexto, dados, diff, dependências e ações da IA.</div>
+</div>
+<ul class="checklist">
+<li>Código gerado pela IA é proposta, não autoridade.</li>
+<li>Requisitos e testes vêm antes da confiança na implementação.</li>
+<li>Erros de lógica e erros de execução exigem investigação diferente.</li>
+<li>Persistência, ambiente e dependências fazem parte do software real.</li>
+<li>Documentação oficial e execução confirmam APIs e bibliotecas.</li>
+<li>Revisão e refatoração precisam de código concreto e objetivo claro.</li>
+<li>Dados pessoais e segredos não devem ser enviados por conveniência.</li>
+<li>Quanto mais autonomia a ferramenta recebe, maior deve ser o controle sobre escopo, diff, testes e possibilidade de desfazer.</li>
+</ul>
+<div class="note idea"><h3>A ideia que fecha o módulo</h3><p><strong>Programar com IA não é trocar conhecimento por velocidade. É usar velocidade sem abrir mão de entendimento, evidência e controle.</strong></p></div>
+</section>
+
+<section class="card next">
+<div><strong>Próximo passo:</strong> IA, Ética e Sociedade — quando a questão deixa de ser apenas “o software funciona?” e passa a incluir “quem é afetado, quais dados entraram e quem responde pela decisão?”.</div>
+<a href="index.html">Voltar ao painel de IA</a>
+</section>
+<div class="footer">Mundo bit Byte · Inteligência Artificial · IA e Programação</div>
+</div>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

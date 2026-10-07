@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>10 — Jornada e protótipo | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="10"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Validar e consolidar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 10</span><h1>Antes de programar, será que alguém entende o que imaginamos?</h1><p>No papel tudo pode parecer claro. Agora precisamos colocar nossa ideia diante de uma pessoa e descobrir se ela consegue <strong>realizar a tarefa sem o professor ou o analista explicar o caminho</strong>.</p></section>
+<article class="chapter">
+<div class="card return-card"><h3>Vamos voltar a Ana mais uma vez</h3><p>Ana deixou o notebook e quer uma coisa muito simples: <strong>saber em que situação ele está</strong>. Ela não quer “navegar por um sistema”; quer resolver essa necessidade.</p></div>
+
+<h2>Antes da tela, pense no que Ana vive</h2>
+<p>Ana entrega o equipamento, espera, recebe um orçamento, decide e depois retira o notebook. Essa sequência de momentos forma a <strong>jornada do usuário</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Momento</th><th>O que Ana tenta fazer</th><th>O problema atual</th></tr></thead><tbody><tr><td>Entrega</td><td>Explicar o problema</td><td>Informação pode ficar espalhada.</td></tr><tr><td>Espera</td><td>Saber se houve avanço</td><td>Precisa telefonar ou mandar mensagem.</td></tr><tr><td>Orçamento</td><td>Decidir</td><td>A decisão pode ficar solta numa conversa.</td></tr><tr><td>Retirada</td><td>Confirmar o que foi feito</td><td>Nem sempre tudo está reunido.</td></tr></tbody></table></div>
+<p>Chamamos isso de jornada porque estamos olhando a experiência inteira, e não apenas uma tela.</p>
+
+<h2>Agora aproxime a lupa de uma única tarefa</h2>
+<p>Vamos observar apenas a consulta da ordem. O caminho pode ser:</p>
+<div class="flow"><span class="node">Abrir consulta</span><span class="arrow">→</span><span class="node">Informar dados</span><span class="arrow">→</span><span class="node">Confirmar identidade</span><span class="arrow">→</span><span class="node">Ver situação</span></div>
+<p>Essa sequência é o <strong>fluxo do usuário</strong>: os passos que a pessoa percorre para alcançar um objetivo.</p>
+
+<h2>Antes de caprichar no visual, rabisque a estrutura</h2>
+<p>Não precisamos começar escolhendo cor, fonte ou ícone. Primeiro queremos saber: <strong>o que Ana precisa enxergar e onde ela precisa agir?</strong></p>
+<p>Um esboço simples dessa estrutura é chamado de <strong>wireframe</strong>.</p>
+<div class="visual"><div style="max-width:390px;margin:auto;border:2px solid #334155;border-radius:20px;padding:16px;background:#fff"><div style="height:10px;width:70px;background:#cbd5e1;border-radius:999px;margin:0 auto 18px"></div><h3 style="margin:0 0 8px">Consultar minha ordem</h3><p class="small">Acompanhe a situação do equipamento.</p><label style="display:block;font-weight:800;margin:14px 0 5px">Número da ordem</label><div style="height:42px;border:2px solid #94a3b8;border-radius:9px"></div><label style="display:block;font-weight:800;margin:14px 0 5px">Dado de confirmação</label><div style="height:42px;border:2px solid #94a3b8;border-radius:9px"></div><div style="margin-top:16px;background:#1967d2;color:#fff;padding:12px;border-radius:9px;text-align:center;font-weight:900">Consultar</div><div style="margin-top:18px;border-top:1px solid #e2e8f0;padding-top:14px"><strong>Situação</strong><p style="margin:5px 0">Aguardando aprovação do orçamento</p></div></div></div>
+<p>É um desenho de <strong>baixa fidelidade</strong>: simples de propósito, porque ainda estamos discutindo organização e compreensão.</p>
+
+<h2>Protótipo: uma simulação que podemos experimentar</h2>
+<p>Agora queremos clicar, mudar a situação da ordem e observar o que acontece. Para isso usamos um <strong>protótipo</strong>: uma simulação da solução antes de construir o sistema completo.</p>
+<p>Ele não precisa ter banco de dados real, segurança completa ou todas as integrações. Ele serve para responder perguntas sobre a experiência e o comportamento.</p>
+<div class="card question-card"><h3>Wireframe × protótipo</h3><p>O wireframe ajuda a discutir <strong>como a informação está organizada</strong>. O protótipo permite experimentar <strong>o que acontece quando alguém usa</strong>.</p></div>
+
+<h2>Não pergunte “você gostou?”</h2>
+<p>Se perguntarmos apenas se a pessoa gostou, podemos receber uma opinião educada e aprender pouco.</p>
+<div class="card evidence-card"><h3>Dê uma tarefa real</h3><p><strong>Instrução ao participante:</strong> “Imagine que você deixou seu notebook na assistência ontem. Descubra em que situação está a ordem.”</p></div>
+<p>Depois observe. Onde a pessoa para? O que tenta clicar? Qual palavra não entende? Que informação procura?</p>
+<p>Não ensine o caminho durante o teste. Se você mostrar onde clicar, não saberá se a interface conseguiria orientar a pessoa sozinha.</p>
+
+<h2>Uma sugestão não vira requisito automaticamente</h2>
+<p>Se alguém disser “coloque um botão vermelho”, não anote imediatamente “botão vermelho” como requisito. Primeiro descubra o problema por trás da sugestão.</p>
+<p>Talvez a pessoa esteja dizendo: <strong>“eu não consegui perceber onde deveria clicar”</strong>. Essa é a evidência que importa.</p>
+
+<h2>Acessibilidade também aparece na conversa com o usuário</h2>
+<p>Se a pessoa não consegue ler, distinguir ou acionar um elemento, a interface falhou para ela. Por isso devemos observar contraste, tamanho, rótulos claros, uso de teclado e mensagens compreensíveis desde cedo.</p>
+<div class="card question-card"><h3>Exemplo simples</h3><p>Não mostre apenas uma cor verde ou vermelha. Escreva também <strong>Aprovado</strong> ou <strong>Recusado</strong>. A cor reforça a informação; não deve ser a única forma de transmiti-la.</p></div>
+
+<h2>E se o protótipo mostrar que nossa ideia estava errada?</h2>
+<p>Ótimo: descobrimos antes de programar tudo. Se Ana não entende uma palavra ou não consegue localizar a situação da ordem, voltamos ao requisito, ao fluxo ou ao próprio texto da interface e corrigimos.</p>
+<p>O protótipo não serve para provar que estávamos certos. Serve para <strong>aprender antes de gastar mais</strong>.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Abra o protótipo da Conecta, leia a contextualização inicial e siga o <strong>roteiro principal</strong> da OS #1042 até “Pronto para retirada”.</li><li>Teste os caminhos complementares: orçamento recusado e abertura de uma nova ordem.</li><li>Conclua os três desafios da <strong>validação guiada</strong>, registrando evidência, artefato de origem, decisão justificada e forma de reteste.</li><li>Agora volte ao seu próprio backlog e escolha uma história prioritária.</li><li>Descreva a jornada e o fluxo do usuário dessa história.</li><li>Crie um wireframe de baixa fidelidade.</li><li>Defina uma tarefa realista para outra pessoa tentar executar sem receber instruções de uso.</li><li>Observe o teste e registre pelo menos três evidências antes de decidir se algo precisa mudar.</li><li>Faça uma revisão básica de acessibilidade e reteste o que foi alterado.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 11</div><h3>O que a pessoa tentou fazer</h3><p>Registre o que aconteceu durante o teste, onde houve dificuldade e o que a evidência realmente justifica alterar.</p></div>
+<div class="checkpoint"><h3>Checkpoint 7 — A pessoa consegue sozinha?</h3><p>Seu protótipo consegue orientar o usuário sem você explicar onde clicar? E, quando algo falha, você consegue voltar à origem e corrigir o entendimento?</p></div>
+
+<h2>O protótipo ainda não prova tudo</h2>
+<p>A interface pode parecer ótima e, mesmo assim, o sistema real ser lento, inseguro ou falhar ao conversar com outros serviços.</p>
+<div class="card next-card"><h3>Nova necessidade</h3><p>Agora precisamos olhar para qualidades que não aparecem só na tela e para as conversas entre a Conecta e outros sistemas.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+<script>
+(()=>{
+  const titulos=[...document.querySelectorAll('.chapter h2')];
+  const titulo=titulos.find(el=>el.textContent.trim()==='Protótipo: uma simulação que podemos experimentar');
+  if(titulo){
+    const paragrafos=[...titulo.parentElement.children];
+    const indice=paragrafos.indexOf(titulo);
+    const alvo=paragrafos.slice(indice+1).find(el=>el.tagName==='P');
+    if(alvo){
+      const card=document.createElement('div');
+      card.className='card tool-card';
+      card.innerHTML='<h3>Vamos acompanhar uma ordem do começo ao fim</h3><p>O protótipo da Conecta possui um roteiro para você seguir sozinho. Primeiro entenda o caso e os papéis. Depois acompanhe a mesma OS em ordem cronológica, veja a regra bloquear ações indevidas e só então faça os desafios de validação.</p><p><a href="prototipo-assistencia-tecnica-conecta.html"><strong>Abrir o protótipo da Conecta →</strong></a></p><p class="small"><strong>Ordem recomendada:</strong> roteiro principal → caminhos complementares → validação guiada → aplicação no seu próprio caso.</p>';
+      alvo.insertAdjacentElement('afterend',card);
+    }
+  }
+})();
+</script>
+</body></html>

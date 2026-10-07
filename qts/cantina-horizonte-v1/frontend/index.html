@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cantina Horizonte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <p class="eyebrow">Escola Horizonte</p>
+      <h1>Cantina Horizonte</h1>
+      <p>Escolha os produtos, monte seu pedido e finalize.</p>
+    </div>
+    <span class="versao">v1.0</span>
+  </header>
+
+  <main class="layout">
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Cardápio</p>
+          <h2>Produtos disponíveis</h2>
+        </div>
+        <button id="recarregar" class="ghost">Atualizar estoque</button>
+      </div>
+      <div id="produtos" class="produtos" aria-live="polite"></div>
+    </section>
+
+    <aside class="carrinho">
+      <p class="eyebrow">Seu pedido</p>
+      <h2>Carrinho</h2>
+      <div id="itensCarrinho" class="itens-vazios">Nenhum item adicionado.</div>
+
+      <label for="cupom">Cupom</label>
+      <div class="cupom-linha">
+        <input id="cupom" type="text" placeholder="Ex.: MBB10" autocomplete="off">
+        <button id="aplicarCupom" class="secondary">Aplicar</button>
+      </div>
+      <p id="cupomMsg" class="hint"></p>
+
+      <dl class="totais">
+        <div><dt>Subtotal</dt><dd id="subtotal">R$ 0,00</dd></div>
+        <div><dt>Desconto</dt><dd id="desconto">R$ 0,00</dd></div>
+        <div class="total"><dt>Total</dt><dd id="total">R$ 0,00</dd></div>
+      </dl>
+
+      <button id="finalizar" class="primary">Finalizar pedido</button>
+      <p id="mensagem" class="mensagem" aria-live="polite"></p>
+    </aside>
+  </main>
+
+  <template id="produtoTemplate">
+    <article class="produto-card">
+      <div class="produto-topo">
+        <div>
+          <h3 class="nome"></h3>
+          <p class="estoque"></p>
+        </div>
+        <strong class="preco"></strong>
+      </div>
+      <label>Quantidade
+        <input class="quantidade" type="number" step="1" value="1">
+      </label>
+      <button class="adicionar primary">Adicionar</button>
+    </article>
+  </template>
+
+  <script src="demo-api.js"></script>
+  <script src="app.js"></script>
+  <script src="../../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.art-opening{margin-bottom:18px}
+.lesson-kicker{display:inline-block;color:var(--primary);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.central-question{margin-top:12px!important;padding-top:10px;border-top:1px solid #e2d3dc}
+.two-col,.three-col,.comparison-grid{display:grid;gap:12px;margin:14px 0}
+.two-col,.comparison-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.three-col{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mini-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px}.mini-card strong{display:block;color:var(--primary-dark);margin-bottom:5px}
+.quick-question,.source-box,.challenge-box,.studio-box,.artwork-card{border-radius:12px;margin:15px 0}
+.quick-question{border:1px solid var(--line);border-left:5px solid var(--primary);padding:14px;background:#fff}.quick-question>strong{display:block;color:var(--primary-dark);margin-bottom:4px}
+.choice-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.choice-row button{border:1px solid #d5c7d0;background:#fff;border-radius:9px;padding:9px 12px;color:var(--text);font-weight:800;cursor:pointer}.choice-row button:hover{background:var(--primary-soft)}.choice-row button.is-correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}.choice-row button.is-wrong{background:var(--danger-bg);border-color:var(--danger);color:var(--danger)}
+.choice-feedback{font-size:13px}.choice-feedback.is-correct{color:var(--ok)}.choice-feedback.is-wrong{color:var(--danger)}
+.source-box{padding:15px;border:1px solid var(--line);background:var(--surface-soft);border-left:5px solid var(--accent)}
+.challenge-box{background:#fff4ed;border:1px solid #eed5c7;border-left:5px solid var(--accent);padding:15px}.challenge-box details{margin-top:10px}.challenge-box summary{cursor:pointer;font-weight:800;color:var(--primary-dark)}
+.studio-box{border:1px solid #dac7d6;background:linear-gradient(135deg,#faf3f9,#fff);padding:15px}.studio-box strong{color:var(--primary-dark)}
+.art-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}
+.artwork-card{overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 5px 15px rgba(78,36,74,.08)}
+.artwork-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#eee}
+.artwork-card.portrait img{aspect-ratio:3/4}
+.artwork-meta{padding:11px 12px}.artwork-meta strong{display:block;color:var(--primary-dark);margin-bottom:3px}.artwork-meta small{display:block;color:var(--muted);line-height:1.35}.artwork-meta a{font-size:11px;font-weight:800}
+.visual-prompt{display:grid;grid-template-columns:minmax(200px,320px) 1fr;gap:16px;align-items:center;margin:16px 0;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.visual-prompt img{width:100%;max-height:330px;object-fit:contain;border-radius:9px;background:#f4f0f2}
+.art-dimensions{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.art-dimensions span{border-radius:999px;padding:6px 9px;background:var(--primary-soft);border:1px solid #ddc9d8;color:var(--primary-dark);font-size:11px;font-weight:850}
+.waveform{display:flex;align-items:center;justify-content:center;gap:4px;height:72px;padding:8px;border-radius:12px;background:linear-gradient(135deg,var(--primary-dark),var(--primary));margin:13px 0}.waveform span{width:5px;border-radius:999px;background:#fff;opacity:.85}.waveform span:nth-child(1),.waveform span:nth-child(9){height:18px}.waveform span:nth-child(2),.waveform span:nth-child(8){height:34px}.waveform span:nth-child(3),.waveform span:nth-child(7){height:50px}.waveform span:nth-child(4),.waveform span:nth-child(6){height:28px}.waveform span:nth-child(5){height:60px}
+.chapter-checkpoint{margin-top:28px;padding-top:18px;border-top:2px solid var(--line)}
+@media(max-width:850px){.art-gallery{grid-template-columns:1fr 1fr}.visual-prompt{grid-template-columns:1fr}}
+@media(max-width:720px){.two-col,.three-col,.comparison-grid,.art-gallery{grid-template-columns:1fr}.choice-row{display:grid;grid-template-columns:1fr}.choice-row button{text-align:left}.artwork-card img{aspect-ratio:16/10}.artwork-card.portrait img{aspect-ratio:4/5}}

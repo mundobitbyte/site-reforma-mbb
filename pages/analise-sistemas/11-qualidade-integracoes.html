@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>11 — Qualidade e integrações | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="11"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Validar e consolidar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 11</span><h1>Funcionar é suficiente?</h1><p>Ana conseguiu consultar a ordem no protótipo. Ótimo. Mas agora aparecem outras perguntas: <strong>e se estiver lento? e se outra pessoa enxergar os dados dela? e se o serviço de mensagens falhar?</strong></p></section>
+<article class="chapter">
+<div class="card return-card"><h3>O protótipo mostrou a tarefa. Agora olhe a qualidade.</h3><p>Até aqui validamos se a pessoa consegue usar. Agora precisamos pensar em <strong>como essa função deve se comportar no sistema real</strong>.</p></div>
+
+<h2>“Tem que ser rápido e seguro” parece bom, mas ainda não ajuda</h2>
+<p>Imagine que alguém diga: <strong>“a consulta precisa ser rápida.”</strong> Rápida quanto? Em qual situação? Com quantas pessoas usando?</p>
+<p>Ou: <strong>“o sistema precisa ser seguro.”</strong> Seguro contra o quê? Quem pode ver qual informação?</p>
+<p>Essas características são chamadas de <strong>Requisitos Não Funcionais</strong>, ou <strong>RNFs</strong>. Eles descrevem qualidades e condições de funcionamento.</p>
+
+<h2>Vamos partir de situações reais da Conecta</h2>
+<div class="grid"><div class="card"><h3>Desempenho</h3><p>O atendente não pode ficar esperando tanto tempo a ponto de atrasar o atendimento.</p></div><div class="card"><h3>Segurança</h3><p>Um técnico não deve ter acesso a funções administrativas só porque conseguiu entrar no sistema.</p></div><div class="card"><h3>Privacidade</h3><p>A consulta do cliente não precisa mostrar dados internos que não ajudam Ana a acompanhar o notebook.</p></div><div class="card"><h3>Acessibilidade</h3><p>A interface precisa continuar compreensível para pessoas com diferentes formas de interação.</p></div><div class="card"><h3>Confiabilidade</h3><p>Uma falha temporária não pode deixar a ordem numa situação incoerente.</p></div><div class="card"><h3>Auditoria</h3><p>Em ações importantes, precisamos conseguir descobrir quem fez, quando e o que mudou.</p></div></div>
+<p>Perceba como os nomes técnicos aparecem <strong>depois</strong> das situações.</p>
+
+<h2>Quem é você? E o que você pode fazer?</h2>
+<p>Essas são duas perguntas diferentes.</p>
+<div class="grid2"><div class="card"><h3>Autenticação</h3><p><strong>“Quem é você?”</strong> É confirmar a identidade da pessoa.</p></div><div class="card"><h3>Autorização</h3><p><strong>“O que você pode fazer?”</strong> É definir o que aquela pessoa tem permissão para acessar.</p></div></div>
+<p>O Técnico pode entrar no sistema e registrar diagnóstico, mas isso não significa que ele deva administrar usuários ou acessar tudo.</p>
+
+<h2>Precisamos mesmo mostrar todos os dados?</h2>
+<p>Se Ana quer saber a situação do notebook, não faz sentido exibir CPF completo, endereço e observações internas só porque esses dados existem.</p>
+<p>Aliás, <strong>CPF</strong> significa <strong>Cadastro de Pessoas Físicas</strong>.</p>
+<p>Privacidade começa com uma pergunta simples: <strong>“este dado é realmente necessário para esta tarefa?”</strong></p>
+
+<h2>Agora imagine que queremos avisar Ana automaticamente</h2>
+<div class="card context-card"><p>O notebook ficou pronto. A Conecta quer mandar uma mensagem para Ana. Só que o envio será feito por outro serviço.</p></div>
+<p>A partir daqui, o nosso sistema precisa conversar com outro sistema.</p>
+<div class="flow"><span class="node">Conecta</span><span class="arrow">pedido de envio →</span><span class="node">Serviço de mensagens</span><span class="arrow">resultado →</span><span class="node">Conecta</span></div>
+<p>Antes de pensar em tecnologia, precisamos saber: <strong>o que enviamos? o que recebemos de volta? o que acontece se o outro serviço não responder?</strong></p>
+
+<h2>API: o nome dessa “porta de conversa”</h2>
+<p><strong>API</strong> vem de <em>Application Programming Interface</em>, em português <strong>Interface de Programação de Aplicações</strong>.</p>
+<p>A ideia básica é simples: uma API define <strong>como um sistema pede ou envia informações para outro</strong>.</p>
+<div class="card question-card"><h3>No nosso caso</h3><p>A Conecta envia telefone e mensagem. O serviço externo responde algo como “enviado” ou “erro”. Isso já é uma conversa entre sistemas.</p></div>
+
+<h2>E se o serviço de mensagens estiver fora do ar?</h2>
+<p>O notebook não deixa de estar pronto só porque a mensagem não foi enviada. A situação da Ordem continua correta; apenas o aviso falhou.</p>
+<div class="flow"><span class="node">Ordem pronta</span><span class="arrow">→</span><span class="node">Solicitar notificação</span><span class="arrow">→</span><span class="node">Registrar sucesso ou falha</span></div>
+<p>Esse raciocínio é mais importante do que decorar nomes de integração.</p>
+
+<h2>Alguns nomes que podem aparecer depois</h2>
+<div class="grid"><div class="card"><h3>REST</h3><p>Um estilo muito comum para organizar APIs na Web. O nome completo é <em>Representational State Transfer</em>. Por enquanto, basta reconhecer que é uma forma comum de estruturar essa conversa.</p></div><div class="card"><h3>JSON</h3><p><em>JavaScript Object Notation</em>. É um formato de texto muito usado para representar dados trocados entre sistemas.</p></div><div class="card"><h3>Webhook</h3><p>É quando outro serviço avisa nosso sistema que algo aconteceu, em vez de esperarmos consultando o tempo todo.</p></div><div class="card"><h3>Timeout</h3><p>Tempo limite de espera por uma resposta.</p></div><div class="card"><h3>Retry</h3><p>Nova tentativa depois de uma falha que pode ser temporária.</p></div><div class="card"><h3>Idempotência</h3><p>Evita que uma mesma operação repetida gere efeitos duplicados indevidos.</p></div></div>
+
+<h2>Idempotência parece difícil até vermos o problema</h2>
+<div class="card problem-card"><p>Imagine que uma confirmação de pagamento chegue duas vezes. O sistema não pode registrar dois pagamentos iguais só porque recebeu a mesma mensagem de novo.</p></div>
+<p>É para evitar situações desse tipo que esse conceito existe.</p>
+
+<h2>Síncrono ou assíncrono?</h2>
+<div class="grid2"><div class="card"><h3>Síncrono</h3><p>Precisamos da resposta agora para continuar.</p></div><div class="card"><h3>Assíncrono</h3><p>Podemos registrar ou disparar algo e seguir, sem ficar parado esperando.</p></div></div>
+<p>Enviar a notificação de “equipamento pronto” pode ser tratado separadamente do estado principal da Ordem. Isso ajuda a evitar que uma falha externa pare o processo inteiro.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Pegue a consulta da ordem e escreva duas perguntas sobre qualidade que realmente importam.</li><li>Explique a diferença entre autenticação e autorização usando Atendente e Técnico.</li><li>Diga quais dados Ana realmente precisa ver na consulta.</li><li>Conte com suas palavras como a Conecta conversa com um serviço de mensagens.</li><li>Explique o que deve acontecer se esse serviço falhar.</li><li>Escolha uma ação importante e diga que informação de auditoria deveria ficar registrada.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 12</div><h3>Qualidade e conversa com outros sistemas</h3><p>Registre as qualidades que realmente precisam ser garantidas e os riscos que aparecem quando a Conecta depende de serviços externos.</p></div>
+<div class="checkpoint"><h3>Checkpoint — Você consegue começar pelo risco real?</h3><p>Antes de usar palavras como API, autenticação ou idempotência, você consegue explicar <strong>qual problema concreto estamos tentando evitar</strong>?</p></div>
+
+<div class="card next-card"><h3>Nova necessidade</h3><p>A solução parece útil e tecnicamente possível. Mas ainda falta perguntar: <strong>vale a pena fazer? o que pode dar errado? e o que será afetado se alguma coisa mudar?</strong></p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

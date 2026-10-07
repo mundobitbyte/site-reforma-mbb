@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Projeto integrador IoT com ESP32: monitoramento de luminosidade, controle de iluminação, aplicação Web, testes e segurança."/>
+<title>10 — Projeto IoT | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+#arduinoModuleMenu a.module-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit!important}
+.mbb10-intro{margin-bottom:16px}
+.mbb10-intro .hero-flow{margin-top:16px}
+.mbb10-panel{display:none}
+.mbb10-panel.active-panel{display:block}
+.mbb10-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb10-summary div{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb10-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb10-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb10-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:15px}
+.mbb10-flow span{background:#eaf2ff;border:1px solid #bfdbfe;color:var(--dark);border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.mbb10-flow b{color:var(--dark)}
+.mbb10-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:13px}
+.mbb10-grid>div,.mbb10-grid>article{border:1px solid var(--line);border-radius:11px;background:#f8fbfc;padding:11px}
+.mbb10-grid strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb10-compare{width:100%;border-collapse:collapse}
+.mbb10-compare th,.mbb10-compare td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+.mbb10-compare th{background:#eef9fb;color:var(--dark)}
+.mbb10-warning{border-left:4px solid #b45309;padding:11px 13px;margin:12px;background:#fff7df;border-radius:8px;line-height:1.5}
+.mbb10-good{border-left:4px solid #0f766e;padding:11px 13px;margin:12px;background:#e8f5ee;border-radius:8px;line-height:1.5}
+.mbb10-check{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:13px}
+.mbb10-check div{border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px}
+.mbb10-check strong{display:block;color:var(--dark);margin-bottom:4px}
+.mbb10-result{background:#e8f5ee}
+.mbb10-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+.mbb10-step{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:start;padding:11px 13px;border-bottom:1px solid var(--line)}
+.mbb10-step:last-child{border-bottom:0}
+.mbb10-step b{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#eaf2ff;color:var(--dark)}
+.mbb10-step p{margin:2px 0 0;line-height:1.5}
+@media(max-width:900px){.mbb10-grid{grid-template-columns:1fr 1fr}.mbb10-check{grid-template-columns:1fr}}
+@media(max-width:760px){.mbb10-summary,.mbb10-grid{grid-template-columns:1fr}.mbb10-compare{font-size:13px}.mbb10-compare th,.mbb10-compare td{padding:7px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+  <a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a>
+  <a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a>
+  <a class="module-btn" href="arduino-protocolos.html">8. RTOS e Protocolos</a>
+  <a class="module-btn" href="arduino-seguranca.html">9. Proteção e Segurança</a>
+  <a class="module-btn active" href="#topo">10. Projeto IoT</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do projeto IoT">
+  <div class="stage-sidebar-head"><h3>Projeto</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b10-1">10.1 Problema e requisitos</a>
+    <a class="stage-link module-visible" href="#b10-2">10.2 Arquitetura e montagem</a>
+    <a class="stage-link module-visible" href="#b10-3">10.3 Teste local</a>
+    <a class="stage-link module-visible" href="#b10-4">10.4 Aplicação Web</a>
+    <a class="stage-link module-visible" href="#b10-5">10.5 Integração final</a>
+    <a class="stage-link module-visible" href="#b10-6">10.6 Segurança e dados</a>
+    <a class="stage-link module-visible" href="#b10-7">10.7 Testes e entrega</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Projeto</button>
+<main id="topo">
+
+<section class="hero mbb10-intro">
+  <span class="badge">10</span>
+  <h2>Projeto IoT — Ambiente Inteligente MbB</h2>
+  <p>Chegou a hora de juntar o percurso. O sistema vai <strong>perceber a luminosidade do ambiente, decidir quando a iluminação deve ser acionada, permitir controle pela rede e apresentar o estado em uma aplicação Web</strong>. O objetivo não é adicionar tecnologias por quantidade, mas integrar corretamente o que já foi aprendido.</p>
+  <div class="hero-flow"><div>Sensor</div><span>→</span><div>ESP32</div><span>→</span><div>Decisão</div><span>→</span><div>Atuador</div><span>→</span><div>Rede</div><span>→</span><div>Aplicação</div></div>
+  <div class="mbb10-summary">
+    <div><strong>Entender</strong><span>Começar por um problema e transformar a necessidade em requisitos observáveis.</span></div>
+    <div><strong>Experimentar e programar</strong><span>Validar sensor e atuador antes de adicionar Wi-Fi e aplicação.</span></div>
+    <div><strong>Aplicar</strong><span>Integrar controle, monitoramento, segurança, testes e documentação.</span></div>
+  </div>
+</section>
+
+<section class="project mbb10-panel active-panel" id="b10-1">
+  <div class="projectHead"><span class="badge">10.1</span><div><h2>Problema e requisitos — O que o sistema precisa resolver?</h2><p>Um projeto começa pela necessidade, não pelo componente.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Em uma sala pequena, a iluminação pode permanecer acesa mesmo quando há claridade suficiente. Também pode ser útil acompanhar o nível de luz e, quando necessário, assumir o controle manual pelo celular ou notebook conectado à mesma rede.</p></article>
+    <article class="card"><h3>2. Entrada</h3><p>Um <strong>LDR</strong> percebe a luminosidade e gera um valor analógico para o ESP32.</p></article>
+    <article class="card"><h3>3. Saída</h3><p>Um <strong>LED</strong> representa a lâmpada do projeto. Não usaremos rede elétrica nesta atividade.</p></article>
+    <article class="card"><h3>4. Automação</h3><p>No modo automático, o ESP32 decide o estado da iluminação a partir da leitura do LDR e de um limiar calibrado.</p></article>
+    <article class="card"><h3>5. Aplicação</h3><p>Uma página Web mostra a leitura, o modo e o estado da iluminação e permite escolher <strong>Ligar, Desligar ou Automático</strong>.</p></article>
+    <article class="card wide"><h3>6. Critérios de sucesso</h3><div class="mbb10-check"><div><strong>Monitorar</strong><span>A leitura de luminosidade aparece no Monitor Serial e na página.</span></div><div><strong>Controlar</strong><span>O usuário consegue ligar e desligar o LED pela rede local.</span></div><div><strong>Automatizar</strong><span>No modo automático, a iluminação responde à condição de claridade.</span></div><div><strong>Explicar</strong><span>O aluno consegue descrever o caminho sensor → processamento → rede → aplicação → atuador.</span></div></div></article>
+    <article class="card worked wide mbb10-bridge"><h3>7. Regra do projeto</h3><p>Primeiro faremos cada parte funcionar sozinha. <strong>Só depois integraremos tudo.</strong> Se sensor, LED e rede forem testados ao mesmo tempo, fica mais difícil descobrir onde está um erro.</p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-2">
+  <div class="projectHead"><span class="badge">10.2</span><div><h2>Arquitetura e montagem — Antes do código, desenhe o caminho</h2><p>A arquitetura mostra o papel de cada parte do sistema.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Visão do sistema</h3><div class="mbb10-flow"><span>LDR</span><b>→</b><span>GPIO 34</span><b>→</b><span>ESP32</span><b>→</b><span>Wi-Fi</span><b>→</b><span>Página Web</span><b>↔</b><span>Comando</span><b>→</b><span>GPIO 23 + LED</span></div></article>
+    <article class="card wide"><h3>2. Componentes do núcleo</h3><table class="mbb10-compare"><thead><tr><th>Componente</th><th>Função</th><th>Ligação-base</th></tr></thead><tbody><tr><td>ESP32</td><td>Processamento, Wi-Fi e servidor HTTP.</td><td>Placa central do projeto.</td></tr><tr><td>LDR</td><td>Perceber a luminosidade.</td><td>Divisor de tensão ligado ao GPIO 34.</td></tr><tr><td>Resistor 10 kΩ</td><td>Completar o divisor de tensão do LDR.</td><td>Entre o ponto de leitura e GND.</td></tr><tr><td>LED + resistor 220 Ω</td><td>Representar a iluminação.</td><td>GPIO 23 → resistor → LED → GND.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>3. Divisor do LDR</h3><div class="mbb10-flow"><span>3,3 V</span><b>→</b><span>LDR</span><b>→</b><span>ponto de leitura / GPIO 34</span><b>→</b><span>10 kΩ</span><b>→</b><span>GND</span></div><p>Com essa orientação, a leitura tende a aumentar com mais luz e diminuir no escuro. O valor exato depende do LDR, do resistor e do ambiente; por isso o limiar será <strong>calibrado</strong>, não tratado como número universal.</p></article>
+    <article class="card wide mbb10-warning"><strong>Segurança elétrica:</strong> este projeto trabalha somente com baixa tensão do ESP32. O LED representa uma lâmpada. Não conecte relé, tomada ou rede elétrica de 127/220 V nesta atividade.</article>
+    <article class="card"><h3>4. Por que GPIO 34?</h3><p>No ESP32 clássico, o GPIO 34 pode ser usado como entrada analógica. Como ele é somente entrada, combina bem com o LDR e não será usado para acionar componentes.</p></article>
+    <article class="card"><h3>5. Por que manter GPIO 23?</h3><p>É o mesmo pino do LED usado no percurso com ESP32. Reutilizar a montagem reduz mudanças desnecessárias e facilita a comparação com os blocos anteriores.</p></article>
+    <article class="card worked wide mbb10-bridge"><h3>6. Próximo passo</h3><p>Antes de Wi-Fi, navegador ou página Web, precisamos responder algo mais simples: <strong>o ESP32 consegue medir a luz e controlar o LED corretamente?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-3">
+  <div class="projectHead"><span class="badge">10.3</span><div><h2>Teste local — Sensor e atuador primeiro</h2><p>Uma etapa pequena produz evidência antes da integração.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Primeiro teste</h3><p>Carregue o código abaixo, abra o Monitor Serial em <strong>115200</strong> e altere a iluminação sobre o LDR. Observe os valores. O número <code>2000</code> é apenas um ponto inicial: ajuste <code>LIMIAR</code> entre um valor claramente escuro e um valor claramente iluminado medidos na sua montagem.</p></article>
+    <article class="card wide code"><h3>Código completo — teste local <button type="button" onclick="copyCode('b10-local', this)">Copiar</button></h3><pre id="b10-local">const int LDR = 34;
+const int LED = 23;
+const int LIMIAR = 2000; // ajuste após observar as leituras reais
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+}
+
+void loop() {
+  int luminosidade = analogRead(LDR);
+  bool escuro = luminosidade &lt; LIMIAR;
+
+  digitalWrite(LED, escuro ? HIGH : LOW);
+
+  Serial.print("Luminosidade: ");
+  Serial.print(luminosidade);
+  Serial.print(" | Ambiente: ");
+  Serial.println(escuro ? "escuro" : "claro");
+
+  delay(500);
+}</pre></article>
+    <article class="card"><h3>2. Evidência esperada</h3><p>Ao iluminar o LDR, a leitura deve mudar de forma perceptível. Ao reduzir a luz abaixo do limiar, o LED deve acender.</p></article>
+    <article class="card"><h3>3. Se o comportamento estiver invertido</h3><p>Confira a posição do LDR e do resistor no divisor. Se você montou o divisor ao contrário, a relação entre claridade e leitura também se inverte.</p></article>
+    <article class="card wide mbb10-good"><strong>Checkpoint:</strong> não avance enquanto não houver duas evidências simples: o valor do sensor muda com a luz e o LED responde ao limiar. Só então a rede entra no projeto.</article>
+    <article class="card worked wide mbb10-bridge"><h3>4. Próxima necessidade</h3><p>Localmente o sistema já percebe e age. Agora queremos <strong>ver o estado e controlar o modo a partir de outro dispositivo da rede</strong>.</p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-4">
+  <div class="projectHead"><span class="badge">10.4</span><div><h2>Aplicação Web — Monitorar e comandar pela rede local</h2><p>O navegador deixa de ser apenas teste de HTTP e passa a ser a interface do projeto.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. O que já sabemos</h3><p>No Bloco 6, o ESP32 entrou no Wi-Fi e funcionou como servidor HTTP. Aqui reutilizamos esse conhecimento com uma finalidade maior: a página mostra <strong>luminosidade, estado da iluminação e modo de operação</strong>.</p></article>
+    <article class="card"><h3>2. Cliente</h3><p>Celular ou notebook abre a página e envia comandos.</p></article>
+    <article class="card"><h3>3. Servidor</h3><p>O ESP32 recebe as requisições, monta a página e altera o estado do projeto.</p></article>
+    <article class="card wide"><h3>4. Rotas que a aplicação terá</h3><table class="mbb10-compare"><thead><tr><th>Rota</th><th>Ação</th></tr></thead><tbody><tr><td><code>/</code></td><td>Mostra o painel atual.</td></tr><tr><td><code>/ligar</code></td><td>Seleciona modo manual e liga o LED.</td></tr><tr><td><code>/desligar</code></td><td>Seleciona modo manual e desliga o LED.</td></tr><tr><td><code>/auto</code></td><td>Ativa a decisão automática pelo LDR.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>5. Rede local primeiro</h3><p>O núcleo do projeto funciona na mesma rede Wi-Fi. Não precisamos expor o dispositivo à Internet para provar que houve integração IoT. Primeiro valide o sistema no ambiente controlado.</p></article>
+    <article class="card worked wide mbb10-bridge"><h3>6. Agora sim: integrar</h3><p>Sensor, decisão, atuador e HTTP já foram estudados. A próxima etapa junta essas partes em <strong>um único programa cumulativo</strong>.</p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-5">
+  <div class="projectHead"><span class="badge">10.5</span><div><h2>Integração final — Ambiente Inteligente MbB funcionando como sistema</h2><p>O código final não introduz outra tecnologia: ele integra peças já compreendidas.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Antes de carregar</h3><p>Troque <code>NOME_DA_REDE</code> e <code>SENHA_DA_REDE</code> pelos dados da rede utilizada. Ajuste também <code>LIMIAR</code> com base nas leituras reais obtidas no teste local.</p></article>
+    <article class="card wide code"><h3>Código completo — projeto integrado <button type="button" onclick="copyCode('b10-final', this)">Copiar</button></h3><pre id="b10-final">#include &lt;WiFi.h&gt;
+#include &lt;WebServer.h&gt;
+
+const char* ssid = "NOME_DA_REDE";
+const char* senha = "SENHA_DA_REDE";
+
+const int LDR = 34;
+const int LED = 23;
+const int LIMIAR = 2000; // calibre na sua montagem
+
+WebServer servidor(80);
+
+enum Modo { MANUAL, AUTOMATICO };
+Modo modo = AUTOMATICO;
+bool ledLigado = false;
+
+void definirLed(bool estado) {
+  ledLigado = estado;
+  digitalWrite(LED, estado ? HIGH : LOW);
+}
+
+void atualizarAutomacao() {
+  if (modo != AUTOMATICO) return;
+
+  int luminosidade = analogRead(LDR);
+  bool escuro = luminosidade &lt; LIMIAR;
+  definirLed(escuro);
+}
+
+String montarPagina() {
+  int luminosidade = analogRead(LDR);
+
+  String pagina = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;";
+  pagina += "&lt;meta charset='utf-8'&gt;";
+  pagina += "&lt;meta name='viewport' content='width=device-width,initial-scale=1'&gt;";
+  pagina += "&lt;meta http-equiv='refresh' content='2'&gt;";
+  pagina += "&lt;title&gt;Ambiente MbB&lt;/title&gt;";
+  pagina += "&lt;style&gt;body{font-family:Arial;max-width:520px;margin:30px auto;padding:16px}";
+  pagina += "a{display:inline-block;margin:6px;padding:12px 16px;background:#07515f;color:white;text-decoration:none;border-radius:8px}";
+  pagina += ".painel{padding:16px;border:1px solid #ccc;border-radius:12px}&lt;/style&gt;";
+  pagina += "&lt;/head&gt;&lt;body&gt;&lt;div class='painel'&gt;";
+  pagina += "&lt;h1&gt;Ambiente MbB&lt;/h1&gt;";
+  pagina += "&lt;p&gt;Luminosidade: " + String(luminosidade) + "&lt;/p&gt;";
+  pagina += "&lt;p&gt;Iluminacao: " + String(ledLigado ? "LIGADA" : "DESLIGADA") + "&lt;/p&gt;";
+  pagina += "&lt;p&gt;Modo: " + String(modo == AUTOMATICO ? "AUTOMATICO" : "MANUAL") + "&lt;/p&gt;";
+  pagina += "&lt;a href='/ligar'&gt;Ligar&lt;/a&gt;";
+  pagina += "&lt;a href='/desligar'&gt;Desligar&lt;/a&gt;";
+  pagina += "&lt;a href='/auto'&gt;Automatico&lt;/a&gt;";
+  pagina += "&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;";
+
+  return pagina;
+}
+
+void voltarParaInicio() {
+  servidor.sendHeader("Location", "/");
+  servidor.send(303, "text/plain", "");
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+  definirLed(false);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, senha);
+
+  Serial.print("Conectando ao Wi-Fi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.print("Abra no navegador: http://");
+  Serial.println(WiFi.localIP());
+
+  servidor.on("/", []() {
+    servidor.send(200, "text/html", montarPagina());
+  });
+
+  servidor.on("/ligar", []() {
+    modo = MANUAL;
+    definirLed(true);
+    voltarParaInicio();
+  });
+
+  servidor.on("/desligar", []() {
+    modo = MANUAL;
+    definirLed(false);
+    voltarParaInicio();
+  });
+
+  servidor.on("/auto", []() {
+    modo = AUTOMATICO;
+    atualizarAutomacao();
+    voltarParaInicio();
+  });
+
+  servidor.begin();
+  Serial.println("Servidor HTTP iniciado.");
+}
+
+void loop() {
+  servidor.handleClient();
+  atualizarAutomacao();
+  delay(20);
+}</pre></article>
+    <article class="card"><h3>2. Teste manual</h3><p>Abra o IP mostrado no Monitor Serial. Use <strong>Ligar</strong> e <strong>Desligar</strong>. O modo deve mudar para MANUAL e o LED deve obedecer ao comando.</p></article>
+    <article class="card"><h3>3. Teste automático</h3><p>Escolha <strong>Automático</strong> e altere a luz sobre o LDR. A página atualiza a leitura e o LED deve acompanhar a regra definida pelo limiar.</p></article>
+    <article class="card wide mbb10-result"><h3>4. O que foi integrado</h3><div class="mbb10-grid"><div><strong>Sensoriamento</strong><span>LDR mede uma condição física.</span></div><div><strong>Processamento</strong><span>ESP32 lê, compara e decide.</span></div><div><strong>Atuação</strong><span>LED representa a iluminação controlada.</span></div><div><strong>Conectividade</strong><span>ESP32 participa da rede Wi-Fi.</span></div><div><strong>Aplicação</strong><span>Navegador monitora e envia comandos HTTP.</span></div><div><strong>Integração</strong><span>Manual e automático convivem no mesmo sistema.</span></div></div></article>
+    <article class="card wide"><h3>5. O que não entrou só para aumentar o projeto</h3><p>RTOS, CAN, RS-232, BLE e LCD I2C foram estudados porque são importantes no percurso, mas <strong>não precisam aparecer obrigatoriamente no projeto final</strong>. Uma integração boa usa apenas o que resolve o problema. O LCD I2C pode ser acrescentado depois como extensão local, após validar eletricamente o módulo disponível.</p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-6">
+  <div class="projectHead"><span class="badge">10.6</span><div><h2>Segurança e dados — Revisar antes de chamar o projeto de concluído</h2><p>O Bloco 9 agora deixa de ser teoria e vira critério de projeto.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Quais dados existem?</h3><p>O núcleo do Ambiente MbB trabalha com <strong>valor de luminosidade, modo de operação e estado do LED</strong>. Ele não precisa de nome, localização de pessoa, biometria ou histórico de usuários para cumprir sua finalidade.</p></article>
+    <article class="card"><h3>2. Necessidade</h3><p>Não crie cadastro de pessoas ou logs pessoais se eles não forem necessários para o objetivo do projeto.</p></article>
+    <article class="card"><h3>3. Credenciais</h3><p>A senha do Wi-Fi é usada no código apenas como simplificação de laboratório. Não publique o arquivo com uma senha real nem mostre a credencial em capturas de tela.</p></article>
+    <article class="card"><h3>4. Exposição</h3><p>Para o projeto-base, mantenha o servidor na rede local. Um túnel público só deve ser usado quando houver uma necessidade definida e controles compatíveis com a exposição.</p></article>
+    <article class="card"><h3>5. Autorização</h3><p>O servidor didático não implementa login. Portanto, qualquer dispositivo autorizado a entrar naquela rede local e alcançar o ESP32 pode tentar acessar as rotas. Isso deve ser reconhecido como limitação do protótipo.</p></article>
+    <article class="card wide mbb10-warning"><strong>Limite do protótipo:</strong> este código é adequado para aprendizagem em rede controlada. Ele não deve ser tratado como solução pronta para controlar fechaduras, portões, equipamentos críticos ou cargas elétricas reais.</article>
+    <article class="card wide"><h3>6. Registro de decisão</h3><p>Antes da entrega, complete esta frase no relatório: <strong>“O projeto coleta apenas __________ porque sua finalidade é __________. Ele fica acessível somente __________. A principal limitação de segurança é __________.”</strong></p></article>
+    <article class="card worked wide mbb10-bridge"><h3>7. Última etapa</h3><p>Um projeto não termina quando “funciona uma vez”. Precisamos de <strong>testes reproduzíveis e evidências de que cada requisito foi atendido</strong>.</p></article>
+  </div>
+</section>
+
+<section class="project mbb10-panel" id="b10-7">
+  <div class="projectHead"><span class="badge">10.7</span><div><h2>Testes e entrega — Provar que o sistema funciona</h2><p>A entrega final é pequena, objetiva e baseada em evidências.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Roteiro de testes</h3><table class="mbb10-compare"><thead><tr><th>Teste</th><th>Ação</th><th>Resultado esperado</th></tr></thead><tbody><tr><td>T1 — Sensor</td><td>Alterar a luz sobre o LDR.</td><td>Leitura muda de forma perceptível.</td></tr><tr><td>T2 — Manual ligar</td><td>Abrir <code>/ligar</code> pelo painel.</td><td>Modo MANUAL e LED ligado.</td></tr><tr><td>T3 — Manual desligar</td><td>Abrir <code>/desligar</code>.</td><td>Modo MANUAL e LED desligado.</td></tr><tr><td>T4 — Automático claro</td><td>Ativar Automático e iluminar o LDR.</td><td>Leitura indica condição clara e o LED responde à regra calibrada.</td></tr><tr><td>T5 — Automático escuro</td><td>Reduzir a luz sobre o LDR.</td><td>Ao cruzar o limiar, o LED acende.</td></tr><tr><td>T6 — Rede</td><td>Acessar o IP por outro dispositivo da mesma rede.</td><td>Painel abre e os comandos chegam ao ESP32.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>2. Entrega mínima</h3><div class="mbb10-step"><b>1</b><p><strong>Diagrama:</strong> mostrar sensor, ESP32, rede, aplicação e atuador.</p></div><div class="mbb10-step"><b>2</b><p><strong>Código:</strong> entregar a versão final sem expor senha real de Wi-Fi.</p></div><div class="mbb10-step"><b>3</b><p><strong>Evidência:</strong> registrar o painel funcionando e pelo menos quatro testes da tabela.</p></div><div class="mbb10-step"><b>4</b><p><strong>Explicação:</strong> descrever em poucas linhas o que é automático, o que é comandado pelo usuário e como os dados percorrem o sistema.</p></div><div class="mbb10-step"><b>5</b><p><strong>Segurança:</strong> registrar a decisão de dados e a principal limitação do protótipo.</p></div></article>
+    <article class="card wide"><h3>3. Extensões opcionais — Só depois do núcleo</h3><p>Quem concluir o projeto-base pode escolher <strong>uma</strong> evolução que tenha propósito: exibir estado em LCD I2C, acrescentar outro sensor, representar uma abertura com servo ou reorganizar tarefas com RTOS. A extensão deve responder a uma necessidade clara e ser testada separadamente antes de entrar no sistema.</p></article>
+    <article class="card wide mbb10-result"><h3>4. Fechamento do percurso</h3><p>Ao concluir este projeto, o aluno não apenas “montou um circuito”. Ele passou por <strong>entrada e saída, sensores, atuadores, programação, conectividade, IoT, protocolos, proteção e segurança</strong> e usou esse conhecimento para construir e justificar um sistema integrado.</p><div class="mbb10-flow"><span>Entender</span><b>→</b><span>Experimentar</span><b>→</b><span>Programar</span><b>→</b><span>Aplicar</span></div></article>
+    <article class="card wide mbb10-good"><strong>Projeto curricular fechado:</strong> o núcleo cobre monitoramento e controle de iluminação com sistema embarcado integrado a uma aplicação em rede. Abertura automática de portas pode ser trabalhada como evolução com servo, sem transformar um exemplo do PTD em obrigação de usar rede elétrica ou mecanismo real de acesso.</article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-projeto-iot.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

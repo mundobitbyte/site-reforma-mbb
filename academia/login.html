@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Academia Mundo bit Byte</title>
+  <link rel="stylesheet" href="css/academia.css">
+</head>
+<body class="account-body">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">mbb</span><span><strong>Academia</strong><small>by Mundo bit Byte</small></span></a>
+    <nav class="topnav"><a href="index.html">Cursos</a><a href="privacidade.html">Privacidade</a></nav>
+  </header>
+  <main class="account-shell">
+    <section class="account-intro">
+      <p class="brandline">Continuidade entre dispositivos</p>
+      <h1>Entre e continue exatamente do ponto em que parou.</h1>
+      <p>O conteúdo permanece público. A conta é necessária somente para sincronizar progresso, pontos, checkpoints e conquistas.</p>
+      <ul class="checklist">
+        <li>Nome e e-mail como identidade mínima.</li>
+        <li>Progresso educacional e última aula.</li>
+        <li>Nenhum ranking público.</li>
+      </ul>
+    </section>
+    <section class="account-card">
+      <div class="account-tabs" role="tablist">
+        <button class="active" type="button" data-account-tab="login">Entrar</button>
+        <button type="button" data-account-tab="cadastro">Criar conta</button>
+      </div>
+      <div class="account-warning" data-firebase-warning hidden><strong>Sincronização ainda não configurada</strong><p>O curso continua disponível, mas criação de conta e login dependem da ativação do Firebase.</p></div>
+      <form class="account-form" data-account-panel="login" data-login-form>
+        <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+        <label>Senha<input type="password" name="senha" autocomplete="current-password" minlength="6" required></label>
+        <button class="btn primary" type="submit">Entrar</button>
+        <button class="text-button" type="button" data-reset-password>Esqueci minha senha</button>
+      </form>
+      <form class="account-form" data-account-panel="cadastro" data-register-form hidden>
+        <label>Nome<input type="text" name="nome" autocomplete="name" minlength="2" maxlength="80" required></label>
+        <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+        <label>Senha<input type="password" name="senha" autocomplete="new-password" minlength="6" required></label>
+        <p class="form-note">Ao criar a conta, você usa esses dados somente para acesso e continuidade da aprendizagem.</p>
+        <button class="btn primary" type="submit">Criar conta</button>
+      </form>
+      <p class="account-message" data-account-message role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/academia-storage.js"></script>
+  <script src="js/academia-conta.js"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-1"></script>
+</body>
+</html>

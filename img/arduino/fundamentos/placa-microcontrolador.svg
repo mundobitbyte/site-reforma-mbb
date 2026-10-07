@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Placa Arduino Uno R3 e microcontrolador</title>
+  <desc id="desc">Diagrama didático mostrando que a placa Arduino Uno R3 contém um microcontrolador, além de interface USB, alimentação e pinos de entrada e saída.</desc>
+  <rect width="1200" height="720" fill="#f6f8fa"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#073f49">Placa de desenvolvimento ≠ microcontrolador</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#475569">A placa reúne vários recursos; o microcontrolador é o chip que executa o programa.</text>
+
+  <rect x="150" y="145" width="900" height="445" rx="45" fill="#158aa4" stroke="#0c6376" stroke-width="6"/>
+  <circle cx="205" cy="200" r="18" fill="#e5e7eb" stroke="#64748b" stroke-width="4"/>
+  <circle cx="995" cy="200" r="18" fill="#e5e7eb" stroke="#64748b" stroke-width="4"/>
+  <circle cx="205" cy="535" r="18" fill="#e5e7eb" stroke="#64748b" stroke-width="4"/>
+  <circle cx="995" cy="535" r="18" fill="#e5e7eb" stroke="#64748b" stroke-width="4"/>
+
+  <rect x="180" y="250" width="150" height="100" rx="14" fill="#d1d5db" stroke="#64748b" stroke-width="4"/>
+  <rect x="170" y="270" width="35" height="60" rx="6" fill="#94a3b8"/>
+  <text x="255" y="375" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#ffffff">USB</text>
+
+  <rect x="850" y="248" width="145" height="110" rx="18" fill="#111827" stroke="#020617" stroke-width="4"/>
+  <circle cx="922" cy="303" r="28" fill="#475569"/>
+  <text x="922" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#ffffff">Alimentação</text>
+
+  <rect x="430" y="255" width="330" height="150" rx="16" fill="#1f2937" stroke="#020617" stroke-width="5"/>
+  <g fill="#fbbf24">
+    <rect x="410" y="270" width="20" height="14"/><rect x="410" y="298" width="20" height="14"/><rect x="410" y="326" width="20" height="14"/><rect x="410" y="354" width="20" height="14"/>
+    <rect x="760" y="270" width="20" height="14"/><rect x="760" y="298" width="20" height="14"/><rect x="760" y="326" width="20" height="14"/><rect x="760" y="354" width="20" height="14"/>
+  </g>
+  <text x="595" y="318" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#ffffff">ATmega328P</text>
+  <text x="595" y="351" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#cbd5e1">microcontrolador</text>
+  <rect x="405" y="230" width="380" height="200" rx="25" fill="none" stroke="#fbbf24" stroke-width="6" stroke-dasharray="14 10"/>
+  <text x="595" y="455" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#fff7df">É aqui que o programa é executado</text>
+
+  <g fill="#111827">
+    <rect x="300" y="165" width="600" height="38" rx="9"/>
+    <rect x="300" y="530" width="600" height="38" rx="9"/>
+  </g>
+  <g fill="#cbd5e1">
+    <circle cx="330" cy="184" r="7"/><circle cx="370" cy="184" r="7"/><circle cx="410" cy="184" r="7"/><circle cx="450" cy="184" r="7"/><circle cx="490" cy="184" r="7"/><circle cx="530" cy="184" r="7"/><circle cx="570" cy="184" r="7"/><circle cx="610" cy="184" r="7"/><circle cx="650" cy="184" r="7"/><circle cx="690" cy="184" r="7"/><circle cx="730" cy="184" r="7"/><circle cx="770" cy="184" r="7"/><circle cx="810" cy="184" r="7"/><circle cx="850" cy="184" r="7"/>
+    <circle cx="330" cy="549" r="7"/><circle cx="370" cy="549" r="7"/><circle cx="410" cy="549" r="7"/><circle cx="450" cy="549" r="7"/><circle cx="490" cy="549" r="7"/><circle cx="530" cy="549" r="7"/><circle cx="570" cy="549" r="7"/><circle cx="610" cy="549" r="7"/><circle cx="650" cy="549" r="7"/><circle cx="690" cy="549" r="7"/><circle cx="730" cy="549" r="7"/><circle cx="770" cy="549" r="7"/><circle cx="810" cy="549" r="7"/><circle cx="850" cy="549" r="7"/>
+  </g>
+  <text x="600" y="625" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#073f49">Placa Arduino Uno R3</text>
+  <text x="600" y="655" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#475569">microcontrolador + USB + alimentação + pinos + componentes de apoio</text>
+</svg>

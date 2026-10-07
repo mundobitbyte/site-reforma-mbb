@@ -1,0 +1,89 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function validProfile() {
+      return request.resource.data.keys().hasOnly(['displayName', 'email', 'createdAt', 'updatedAt'])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() >= 2
+        && request.resource.data.displayName.size() <= 80
+        && request.resource.data.email is string
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function validCourse(courseId) {
+      return request.resource.data.keys().hasOnly(['courseId', 'courseVersion', 'lastLessonId', 'updatedAt'])
+        && request.resource.data.courseId == courseId
+        && request.resource.data.courseVersion is int
+        && request.resource.data.courseVersion >= 1
+        && request.resource.data.lastLessonId is string
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function validPoints(type, points) {
+      return (type == 'aula' && points == 10)
+        || (type == 'pratica' && points == 20)
+        || (type == 'checkpoint' && points == 30)
+        || (type == 'desafio' && points == 40)
+        || (type == 'miniprojeto' && points == 60)
+        || (type == 'projeto-final' && points == 150);
+    }
+
+    function validActivity(courseId, activityId) {
+      return request.resource.data.keys().hasOnly([
+          'activityId', 'courseId', 'courseVersion', 'state', 'type',
+          'points', 'updatedAt', 'completedAt'
+        ])
+        && request.resource.data.activityId == activityId
+        && request.resource.data.courseId == courseId
+        && request.resource.data.courseVersion is int
+        && request.resource.data.courseVersion >= 1
+        && request.resource.data.state in ['em-andamento', 'concluida']
+        && request.resource.data.type in ['aula', 'pratica', 'checkpoint', 'desafio', 'miniprojeto', 'projeto-final']
+        && validPoints(request.resource.data.type, request.resource.data.points)
+        && request.resource.data.updatedAt == request.time
+        && (request.resource.data.state != 'concluida' || request.resource.data.completedAt == request.time)
+        && (!exists(/databases/$(database)/documents/users/$(request.auth.uid)/courses/$(courseId)/activities/$(activityId))
+          || resource.data.state != 'concluida'
+          || request.resource.data.state == 'concluida');
+    }
+
+    function validAchievement(achievementId) {
+      return request.resource.data.keys().hasOnly(['achievementId', 'unlockedAt'])
+        && request.resource.data.achievementId == achievementId
+        && request.resource.data.unlockedAt == request.time;
+    }
+
+    match /users/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid) && validProfile();
+
+      match /courses/{courseId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && validCourse(courseId);
+
+        match /activities/{activityId} {
+          allow read, delete: if isOwner(uid);
+          allow create, update: if isOwner(uid) && validActivity(courseId, activityId);
+        }
+
+        match /achievements/{achievementId} {
+          allow read, delete: if isOwner(uid);
+          allow create, update: if isOwner(uid) && validAchievement(achievementId);
+        }
+      }
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

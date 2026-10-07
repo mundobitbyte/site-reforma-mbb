@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>Meu MbB — Mundo bit Byte</title>
+  <link rel="stylesheet" href="../css/home.css"><link rel="stylesheet" href="estilo.css?v=mbb-privacidade-1">
+</head>
+<body>
+  <header><h1>Mundo bit Byte</h1><a class="mbb-header-link" href="../index.html">← Estudar</a></header>
+  <main class="mbb-pagina">
+    <div class="mbb-titulo"><div><h2>Meu MbB</h2><p>Seu espaço para retomar estudos e guardar o que importa.</p></div><button id="sair" class="mbb-secundario" hidden>Sair</button></div>
+    <p id="mensagem" role="status" aria-live="polite">Carregando sua conta…</p>
+    <section id="verificacao" class="mbb-bloco" hidden><h3>Confirme seu e-mail</h3><p>Abra o link de confirmação enviado ao endereço cadastrado e depois volte aqui. Se não recebeu o link, use “Reenviar”; verifique também a pasta de spam.</p><button id="verificar-email" type="button">Já confirmei meu e-mail</button> <button id="reenviar-email" type="button" class="mbb-secundario">Reenviar link</button><p>Os conteúdos públicos continuam disponíveis mesmo sem a confirmação.</p></section>
+    <div id="painel" hidden>
+      <section class="mbb-bloco"><h3>Continuar de onde parei</h3><div id="continuar"></div></section>
+      <section class="mbb-bloco"><h3>Meu progresso</h3><p class="mbb-explicacao">Suas conclusões ficam salvas até você desmarcar ou zerar.</p><div id="progresso"></div><button id="limpar-progresso" class="mbb-secundario" type="button" hidden>Zerar progresso</button></section>
+      <section class="mbb-bloco"><h3>Recentes</h3><p class="mbb-explicacao">Até cinco conteúdos visitados antes do atual. Ao limpar esta lista, o conteúdo em “Continuar de onde parei” permanece.</p><div id="recentes"></div><button id="limpar-recentes" class="mbb-secundario" type="button" hidden>Limpar recentes</button></section>
+      <section class="mbb-bloco"><h3>Favoritos</h3><p class="mbb-explicacao">Ficam salvos até você remover ou limpar.</p><div id="favoritos"></div><button id="limpar-favoritos" class="mbb-secundario" type="button" hidden>Limpar favoritos</button></section>
+      <section class="mbb-bloco"><h3>Minhas anotações</h3><p class="mbb-explicacao">Até dez por conteúdo, com até 2.000 caracteres cada. Você pode editar ou apagar cada uma na página do conteúdo. Elas ficam salvas até você apagar ou limpar.</p><div id="anotacoes"></div><button id="limpar-anotacoes" class="mbb-secundario" type="button" hidden>Limpar anotações</button></section>
+    </div>
+    <section id="conta-dados" class="mbb-bloco" hidden><h3>Minha conta e meus dados</h3><p class="mbb-explicacao">Leia como seus dados são usados na <a href="privacidade.html">página de privacidade</a>.</p><details><summary>Excluir minha conta</summary><p>Essa ação apaga sua conta e os registros do Meu MbB. Não pode ser desfeita. Os conteúdos públicos continuam disponíveis.</p><form id="excluir-conta" class="mbb-formulario"><label>Confirme sua senha<input type="password" name="senha" autocomplete="current-password" required></label><label class="mbb-confirmacao"><input type="checkbox" name="confirmacao" required> Entendo que perderei meus dados do Meu MbB.</label><button type="submit">Excluir conta e dados</button></form></details></section>
+  </main>
+  <script src="firebase-config.js?v=mbb-prod-1"></script><script src="catalogo-core.js"></script><script src="conta.js?v=mbb-privacidade-1"></script><script src="painel.js?v=mbb-privacidade-1"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

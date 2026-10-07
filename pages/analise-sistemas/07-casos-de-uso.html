@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7 — Casos de Uso | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="7"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Especificar e planejar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 7</span><h1>Quem usa o sistema e o que essa pessoa quer conseguir fazer?</h1><p>Já sabemos o que o sistema precisa atender. Agora vamos olhar para essas funções pela perspectiva de quem realmente usa a Conecta.</p></section>
+<article class="chapter">
+<div class="card return-card"><h3>Volte ao atendimento</h3><p>O atendente precisa abrir uma ordem. O técnico precisa registrar o diagnóstico. Ana quer saber em que situação está o notebook. Cada pessoa entra em contato com o sistema por um motivo diferente.</p><p>Então surge uma pergunta simples: <strong>quem está tentando fazer o quê?</strong></p></div>
+
+<h2>Comecemos por uma única situação</h2>
+<div class="card context-card"><p>O atendente recebe Ana e precisa registrar o atendimento. Para ele, o objetivo naquele momento é <strong>abrir a ordem</strong>.</p></div>
+<p>Em Análise de Sistemas, chamamos de <strong>ator</strong> o papel que interage com o sistema. Aqui, o papel é <strong>Atendente</strong>.</p>
+<p>E chamamos de <strong>Caso de Uso</strong> o objetivo que esse ator quer alcançar usando o sistema. Aqui, o objetivo é <strong>Abrir ordem</strong>.</p>
+
+<h2>Agora o bonequinho faz sentido</h2>
+<div class="card" style="overflow:auto"><svg viewBox="0 0 520 200" role="img" aria-label="Atendente associado ao Caso de Uso Abrir ordem" style="width:100%;min-width:420px"><g font-family="Segoe UI,Arial"><g stroke="#334155" stroke-width="2.5" fill="none"><circle cx="90" cy="52" r="16"/><path d="M90 68 V110 M60 83 H120 M90 110 L68 145 M90 110 L112 145"/><line x1="120" y1="83" x2="235" y2="100"/></g><text x="90" y="172" text-anchor="middle" font-size="14" font-weight="700">Atendente</text><rect x="215" y="25" width="275" height="145" rx="10" fill="#fbfdff" stroke="#1967d2" stroke-width="2"/><text x="352" y="49" text-anchor="middle" font-size="13" font-weight="700">Assistência Técnica Conecta</text><ellipse cx="350" cy="103" rx="90" ry="29" fill="#fff" stroke="#334155" stroke-width="2"/><text x="350" y="108" text-anchor="middle" font-size="14">Abrir ordem</text></g></svg></div>
+<p>Leia o desenho como uma frase: <strong>“O Atendente usa a Conecta para abrir uma ordem.”</strong></p>
+<p>Pronto. Agora os símbolos deixam de ser enfeite:</p>
+<ul><li>o <strong>bonequinho</strong> representa o papel de quem usa ou interage com o sistema;</li><li>a <strong>elipse</strong> representa o objetivo que essa pessoa quer alcançar;</li><li>o <strong>retângulo grande</strong> mostra a fronteira do sistema;</li><li>a <strong>linha</strong> mostra que aquele ator participa daquele Caso de Uso.</li></ul>
+
+<h2>Use o mesmo raciocínio com outras pessoas</h2>
+<div class="grid"><div class="card"><h3>Técnico</h3><p>O técnico precisa <strong>registrar diagnóstico</strong>.</p></div><div class="card"><h3>Cliente</h3><p>Ana quer <strong>consultar andamento</strong>.</p></div><div class="card"><h3>Atendente</h3><p>O atendente precisa <strong>gerar orçamento</strong> e <strong>registrar a decisão</strong> recebida do cliente.</p></div></div>
+<p>Perceba que não estamos começando pelas telas. Estamos começando pelos <strong>objetivos das pessoas</strong>.</p>
+
+<h2>Agora podemos ler o mapa completo</h2>
+<p>Escolha uma pessoa, siga a linha e diga o que ela pretende fazer no sistema.</p><div class="visual visual-scroll"><svg viewBox="0 0 980 610" role="img" aria-label="Diagrama de Casos de Uso da Assistência Técnica Conecta"><g font-family="Segoe UI,Arial"><rect x="245" y="35" width="560" height="535" rx="14" fill="#fbfdff" stroke="#1967d2" stroke-width="2"/><text x="525" y="68" text-anchor="middle" font-size="18" font-weight="800" fill="#114b9e">Assistência Técnica Conecta</text><g fill="#fff" stroke="#334155" stroke-width="2"><ellipse cx="430" cy="140" rx="110" ry="34"/><ellipse cx="620" cy="215" rx="110" ry="34"/><ellipse cx="430" cy="300" rx="110" ry="34"/><ellipse cx="620" cy="385" rx="110" ry="34"/><ellipse cx="430" cy="470" rx="110" ry="34"/></g><g text-anchor="middle" font-size="15"><text x="430" y="146">Abrir ordem</text><text x="620" y="221">Registrar diagnóstico</text><text x="430" y="306">Gerar orçamento</text><text x="620" y="391">Registrar decisão</text><text x="430" y="476">Consultar andamento</text></g><g stroke="#334155" stroke-width="2" fill="none"><circle cx="105" cy="160" r="20"/><path d="M105 180 V240 M70 205 H140 M105 240 L78 285 M105 240 L132 285"/><circle cx="105" cy="390" r="20"/><path d="M105 410 V470 M70 435 H140 M105 470 L78 515 M105 470 L132 515"/><circle cx="875" cy="255" r="20"/><path d="M875 275 V335 M840 300 H910 M875 335 L848 380 M875 335 L902 380"/><line x1="140" y1="205" x2="320" y2="150"/><line x1="140" y1="215" x2="320" y2="292"/><line x1="140" y1="225" x2="510" y2="385"/><line x1="140" y1="435" x2="320" y2="465"/><line x1="840" y1="300" x2="730" y2="225"/></g><g font-size="14" font-weight="700" text-anchor="middle"><text x="105" y="310">Atendente</text><text x="105" y="540">Cliente</text><text x="875" y="405">Técnico</text></g></g></svg></div>
+<div class="card question-card"><h3>Vamos ler juntos</h3><p>O <strong>Cliente</strong> está ligado a <strong>Consultar andamento</strong>. Isso significa que ele usa o sistema com esse objetivo. O <strong>Técnico</strong> está ligado a <strong>Registrar diagnóstico</strong>. O <strong>Atendente</strong> participa de abrir ordem, gerar orçamento e registrar a decisão recebida do cliente.</p><p>A linha não quer dizer “depois”. Ela quer dizer apenas: <strong>esse ator participa desse objetivo</strong>.</p></div>
+
+<h2>Por que os nomes começam com verbos?</h2>
+<p>Porque estamos descrevendo objetivos. “Abrir ordem”, “Registrar diagnóstico” e “Consultar andamento” dizem claramente o que a pessoa quer conseguir.</p>
+<div class="grid2"><div class="card evidence-card"><h3>Ajuda</h3><p>Abrir ordem<br>Registrar diagnóstico<br>Consultar andamento</p></div><div class="card problem-card"><h3>Confunde</h3><p>Tela de cadastro<br>Botão orçamento<br>Módulo técnico</p></div></div>
+<p>“Tela de cadastro” descreve uma possível interface. “Abrir ordem” descreve o objetivo.</p>
+
+<h2>UC04: de onde veio esse código?</h2>
+<p>Alguns projetos usam <strong>UC</strong>, de <em>Use Case</em> — “Caso de Uso” em inglês — como código curto. Assim, <strong>UC04</strong> significa apenas <strong>Caso de Uso número 4</strong>.</p>
+
+<h2>O desenho mostra o objetivo, mas ainda não conta todos os passos</h2>
+<p>Pegue o Caso de Uso <strong>Registrar decisão do orçamento</strong>. O desenho mostra quem participa, mas não explica o que acontece por dentro.</p>
+<div class="card tool-card"><h3>UC04 — Registrar decisão do orçamento</h3><p><strong>Objetivo:</strong> registrar se o cliente aprovou ou recusou.</p><p><strong>Quem executa:</strong> Atendente.</p><p><strong>Antes de começar:</strong> precisa existir um orçamento aguardando decisão.</p><p><strong>Caminho normal:</strong></p><ol><li>Atendente localiza a ordem.</li><li>O sistema mostra o orçamento pendente.</li><li>O atendente registra a decisão informada pelo cliente.</li><li>O sistema guarda a decisão, quem registrou e quando.</li><li>A situação da ordem é atualizada.</li></ol><p><strong>Outro caminho:</strong> se o cliente recusar, a recusa é registrada e o reparo não começa.</p><p><strong>Ao terminar:</strong> a decisão fica registrada e a ordem fica em situação coerente.</p></div>
+<p>Os nomes técnicos para essas partes são <strong>pré-condição</strong>, <strong>fluxo principal</strong>, <strong>fluxo alternativo</strong> e <strong>pós-condição</strong>. Mas perceba que você já entendeu a ideia antes de precisar decorar os nomes.</p>
+
+<h2>Caso de Uso não é tela</h2>
+<p>O objetivo “Abrir ordem” pode usar uma ou várias telas. O desenho não está dizendo como a interface será; está dizendo <strong>o que a pessoa precisa conseguir fazer</strong>.</p>
+
+<h2>E aquelas relações include e extend?</h2>
+<p>Elas existem, mas não precisamos delas para entender o caso básico.</p>
+<div class="card warning-card"><p><strong>&lt;&lt;include&gt;&gt;</strong> significa “incluir”: um Caso de Uso sempre reaproveita outro comportamento. <strong>&lt;&lt;extend&gt;&gt;</strong> significa “estender”: um comportamento adicional aparece apenas em certa condição.</p><p>Use isso somente quando realmente ajudar a explicar o caso. Não complique o desenho só para ele parecer mais técnico.</p></div>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Olhe o desenho e diga, em voz alta, quem é ator e qual objetivo cada pessoa busca.</li><li>Explique o significado do bonequinho, da elipse, do retângulo grande e da linha usando um exemplo da Conecta.</li><li>Explique o que significa UC04.</li><li>Escolha um requisito funcional e descubra qual pessoa usa o sistema por causa dele.</li><li>Escreva um Caso de Uso simples começando pelo objetivo da pessoa, não pela tela.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 08</div><h3>Quem usa e para quê</h3><p>Registre os principais atores e seus objetivos. Se aparecer um Caso de Uso que não tem origem em requisito ou necessidade, volte e investigue.</p></div>
+<div class="checkpoint"><h3>Checkpoint — O desenho fala com você?</h3><p>Ao olhar um Caso de Uso simples, você consegue dizer <strong>quem é a pessoa, o que ela quer conseguir e qual parte pertence ao sistema</strong> sem depender de decorar símbolos?</p></div>
+
+<h2>Agora apareceu outra pergunta</h2>
+<p>Sabemos que o técnico quer registrar diagnóstico e que o atendente quer registrar a decisão. Mas alguns desses objetivos ainda escondem passos, mensagens, mudanças de estado e conceitos do negócio.</p>
+<div class="card next-card"><h3>Nova necessidade</h3><p>Quando a pergunta ficar mais detalhada, vamos escolher outros diagramas somente se eles ajudarem a enxergar algo que ainda está escondido.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

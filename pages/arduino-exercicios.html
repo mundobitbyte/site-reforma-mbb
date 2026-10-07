@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Central de exercícios, revisões e avaliações dos módulos 1 a 9 de Arduino, Sistemas Embarcados e IoT."/>
+<title>99 — Exercícios | Arduino — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+/* Cabeçalho do 99 igual ao padrão estável dos módulos 1 a 4. */
+body > header{height:46px!important;min-height:46px!important;max-height:46px!important;padding:0 16px!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;text-align:left!important}
+body > header .header-left{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;min-width:0!important;flex:1 1 auto!important;text-align:left!important}
+body > header h1{margin:0!important;text-align:left!important}
+body > header .brand{margin-left:auto!important;text-align:right!important}
+#arduinoModuleMenu .module-btn{font-family:inherit!important}
+@media(max-width:760px){body > header{padding:0 10px!important;gap:8px!important}body > header .header-left{gap:8px!important}body > header .brand{display:none!important}}
+
+.module-menu a.module-btn{display:inline-flex;align-items:center;text-decoration:none}
+.exercise-hub{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.hub-head{padding:20px;background:linear-gradient(135deg,#fff,#eef9fb);border-bottom:1px solid var(--line)}
+.hub-head h2{margin:8px 0 0;color:var(--dark);font-size:28px}.hub-head p{margin:8px 0 0;line-height:1.55;max-width:980px}
+.hub-section{padding:18px 20px}.hub-section+.hub-section{border-top:1px solid var(--line)}.hub-section h3{margin:0 0 6px;color:var(--dark);font-size:19px}.hub-section>p{margin:0 0 14px;color:#52656d;line-height:1.5}
+.hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hub-card{display:flex;flex-direction:column;min-height:168px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px;text-decoration:none;color:inherit;transition:.18s ease}
+.hub-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#a8d8e2}.hub-card .number{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-width:34px;height:28px;padding:0 8px;border-radius:999px;background:#eaf2ff;color:var(--dark);font-weight:900;font-size:13px}.hub-card h4{margin:10px 0 6px;color:var(--dark);font-size:16px}.hub-card p{margin:0;color:#52656d;line-height:1.45;font-size:13.5px;flex:1}.hub-card strong{display:block;margin-top:12px;color:var(--primary);font-size:13px}
+.hub-card.eval{min-height:145px;background:#f8fbfc}.hub-note{margin:14px 0 0;padding:11px 13px;border:1px solid #c8dfe4;border-radius:12px;background:#f8fbfc;color:#425466;font-size:13.5px;line-height:1.5}
+.stage-menu .stage-divider{height:1px;background:var(--line);margin:8px 0}
+@media(max-width:980px){.hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.hub-head,.hub-section{padding:14px}.hub-head h2{font-size:23px}.hub-grid{grid-template-columns:1fr}.hub-card{min-height:0}}
+</style>
+</head>
+<body>
+<header><div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Arduino</h1></div><div class="brand">Professor Ronaldo Lavestein</div></header>
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos do Arduino">
+<a class="module-btn" href="arduino.html#intro">1. Fundamentos</a><a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a><a class="module-btn" href="arduino.html#p6">3. Sensores</a><a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a><a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a><a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a><a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a><a class="module-btn" href="arduino-protocolos.html">8. RTOS e Protocolos</a><a class="module-btn" href="arduino-seguranca.html">9. Proteção e Segurança</a><a class="module-btn" href="arduino-projeto-iot.html">10. Projeto IoT</a><a class="module-btn active" href="#topo">99. Exercícios</a>
+</div>
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Exercícios por módulo"><div class="stage-sidebar-head"><h3>Exercícios</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar exercícios">×</button></div><div class="stage-menu" id="stageMenu">
+<a class="stage-link module-visible" href="arduino.html#ex-fundamentos">1. Fundamentos</a><a class="stage-link module-visible" href="arduino.html#ex-blink">2. Entrada/Saída</a><a class="stage-link module-visible" href="arduino.html#ex-ldr">3. Sensores</a><a class="stage-link module-visible" href="arduino.html#ex-led-rgb">4. Atuadores/Automação</a><a class="stage-link module-visible" href="arduino-revisao-modulos.html#rev-funcoes">5. Programação Aplicada</a><a class="stage-link module-visible" href="arduino-revisao-modulos.html#rev-conectividade">6. Conectividade</a><a class="stage-link module-visible" href="arduino-revisao-modulos.html#rev-iot">7. Internet das Coisas</a><a class="stage-link module-visible" href="arduino-revisao-modulos.html#rev-protocolos">8. RTOS e Protocolos</a><a class="stage-link module-visible" href="arduino-revisao-modulos.html#rev-seguranca">9. Proteção e Segurança</a>
+<div class="stage-divider"></div><a class="stage-link module-visible" href="arduino-avaliacoes-bimestrais.html">Avaliações Bimestrais</a><a class="stage-link module-visible" href="arduino-avaliacao-conceitual.html">Avaliação Conceitual</a>
+</div></aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+<div class="arduino-content"><button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Exercícios</button><main id="topo">
+<section class="exercise-hub active-panel">
+<div class="hub-head"><span class="badge">99</span><h2>Exercícios, revisão e avaliação</h2><p>Esta é a central de atividades do percurso principal de <strong>80 horas</strong>. Os módulos aparecem na mesma ordem do aprendizado: do 1. Fundamentos ao 9. Proteção e Segurança. Entre pelo conteúdo que deseja praticar ou use as avaliações ao final.</p></div>
+<div class="hub-section"><h3>Exercícios por módulo</h3><p>Nos módulos 1 a 4, os exercícios permanecem junto aos projetos em que foram aprendidos. Nos módulos 5 a 9, a revisão está organizada por conteúdo, sem misturar módulos e tipos de avaliação.</p><div class="hub-grid">
+<a class="hub-card" href="arduino.html#ex-fundamentos"><span class="number">1</span><h4>Fundamentos</h4><p>Arduino, eletricidade, protoboard, componentes, LED protegido e conceitos iniciais.</p><strong>Abrir exercícios →</strong></a>
+<a class="hub-card" href="arduino.html#ex-blink"><span class="number">2</span><h4>Entrada/Saída</h4><p>Blink, botão + LED, buzzer, potenciômetro, PWM e Monitor Serial.</p><strong>Abrir exercícios →</strong></a>
+<a class="hub-card" href="arduino.html#ex-ldr"><span class="number">3</span><h4>Sensores</h4><p>LDR, leitura do ambiente, sensor de distância e sensor de ré.</p><strong>Abrir exercícios →</strong></a>
+<a class="hub-card" href="arduino.html#ex-led-rgb"><span class="number">4</span><h4>Atuadores/Automação</h4><p>LED RGB, botões, Servo Motor e lixeira automática.</p><strong>Abrir exercícios →</strong></a>
+<a class="hub-card" href="arduino-revisao-modulos.html#rev-funcoes"><span class="number">5</span><h4>Programação Aplicada</h4><p>Funções matemáticas e trigonométricas, texto, números aleatórios e bibliotecas.</p><strong>Abrir revisão →</strong></a>
+<a class="hub-card" href="arduino-revisao-modulos.html#rev-conectividade"><span class="number">6</span><h4>Conectividade</h4><p>ESP32, Bluetooth, Wi‑Fi, HTTP, mDNS e tunelamento.</p><strong>Abrir revisão →</strong></a>
+<a class="hub-card" href="arduino-revisao-modulos.html#rev-iot"><span class="number">7</span><h4>Internet das Coisas</h4><p>Fundamentos, conceitos, aplicações e diferença entre automação local e IoT.</p><strong>Abrir revisão →</strong></a>
+<a class="hub-card" href="arduino-revisao-modulos.html#rev-protocolos"><span class="number">8</span><h4>RTOS e Protocolos</h4><p>RTOS, I2C, UART/RS‑232, CAN, TCP/IP, IEEE 802.11 e Bluetooth.</p><strong>Abrir revisão →</strong></a>
+<a class="hub-card" href="arduino-revisao-modulos.html#rev-seguranca"><span class="number">9</span><h4>Proteção e Segurança</h4><p>Dados pessoais, finalidade, necessidade, autenticação, autorização e segurança em camadas.</p><strong>Abrir revisão →</strong></a>
+</div><p class="hub-note"><strong>Projeto IoT:</strong> o módulo 10 continua disponível no menu superior como extensão do percurso, mas não faz parte da organização principal das 80 horas e, por isso, não aparece nesta sequência de exercícios 1 a 9.</p></div>
+<div class="hub-section"><h3>Avaliações</h3><p>As avaliações ficam separadas dos módulos para deixar claro quando o objetivo é praticar, revisar ou avaliar.</p><div class="hub-grid">
+<a class="hub-card eval" href="arduino-avaliacoes-bimestrais.html"><span class="number">4×20</span><h4>Avaliações Bimestrais</h4><p>Quatro avaliações com 20 questões cada, alinhadas aos quatro bimestres de 20 horas.</p><strong>Abrir avaliações →</strong></a>
+<a class="hub-card eval" href="arduino-avaliacao-conceitual.html"><span class="number">20</span><h4>Avaliação Conceitual</h4><p>Avaliação abrangente para verificar a compreensão do percurso como um todo.</p><strong>Abrir avaliação →</strong></a>
+</div></div>
+</section>
+</main></div></div>
+<script>
+(function(){const layout=document.getElementById('arduinoLayout'),toggle=document.getElementById('stageToggle'),close=document.getElementById('stageClose'),backdrop=document.getElementById('stageBackdrop');function closeDrawer(){layout.classList.remove('drawer-open');if(backdrop)backdrop.hidden=true;if(toggle)toggle.setAttribute('aria-expanded','false')}function openDrawer(){layout.classList.add('drawer-open');if(backdrop)backdrop.hidden=false;if(toggle)toggle.setAttribute('aria-expanded','true')}if(toggle)toggle.addEventListener('click',openDrawer);if(close)close.addEventListener('click',closeDrawer);if(backdrop)backdrop.addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});function manter(){const menu=document.getElementById('arduinoModuleMenu'),ativo=menu&&menu.querySelector('.module-btn.active');if(!menu||!ativo)return;requestAnimationFrame(()=>{const mr=menu.getBoundingClientRect(),ir=ativo.getBoundingClientRect(),alvo=menu.scrollLeft+(ir.left-mr.left)-((menu.clientWidth-ir.width)/2),max=Math.max(0,menu.scrollWidth-menu.clientWidth);menu.scrollLeft=Math.min(max,Math.max(0,alvo));});}manter();window.addEventListener('pageshow',manter);window.addEventListener('resize',manter);})();
+</script>
+<script src="../js/arduino-destaques-mbb.js?v=20260927-1"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

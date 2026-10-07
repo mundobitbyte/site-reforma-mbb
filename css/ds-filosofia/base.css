@@ -1,0 +1,108 @@
+:root{
+  --primary:#5a4b86;
+  --primary-dark:#35295e;
+  --primary-soft:#f0ecfa;
+  --bg:#f1eff5;
+  --surface:#ffffff;
+  --surface-soft:#faf9fc;
+  --line:#dad4e6;
+  --text:#272431;
+  --muted:#706b79;
+  --ok:#087f5b;
+  --ok-bg:#eefbf6;
+  --warn:#946200;
+  --warn-bg:#fff8dc;
+  --danger:#b42318;
+  --danger-bg:#fff2f1;
+  --accent:#7a5a2f;
+  --shadow:0 6px 18px rgba(53,41,94,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.58}
+button,input,select{font:inherit}button{touch-action:manipulation}a{color:var(--primary-dark)}[hidden]{display:none!important}
+.site-header{height:50px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 18px;box-shadow:0 2px 8px #0002;position:relative;z-index:50}
+.site-header .module-back{display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:13px;font-weight:900;white-space:nowrap;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.14);border-radius:999px;padding:6px 10px}
+.site-header .module-back:hover{background:rgba(255,255,255,.24)}
+.site-header>strong{font-size:15px}
+#backToSeries{display:none}
+.series-home{max-width:1080px;margin:0 auto;padding:34px 18px 46px}
+.intro-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow);margin-bottom:22px}
+.eyebrow{display:inline-block;background:var(--primary-soft);border:1px solid #d2c8e6;color:var(--primary-dark);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800;margin-bottom:10px}
+.intro-card h1{font-size:34px;line-height:1.1;color:var(--primary-dark);margin:0 0 9px}
+.intro-card p{max-width:880px;font-size:16px;margin:0}
+.series-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.series-card{min-height:165px;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;box-shadow:var(--shadow)}
+.series-card.active{cursor:pointer;background:linear-gradient(135deg,#fff,#f3effb);border-color:#d2c8e6;transition:.18s ease}
+.series-card.active:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(90,75,134,.16)}
+.series-card.disabled{opacity:.58}
+.series-label{font-size:24px;font-weight:900;color:var(--primary-dark)}
+.series-card strong{color:var(--primary);font-size:15px}
+.course-view{height:calc(100vh - 50px);height:calc(100dvh - 50px);min-height:0;overflow:hidden}
+.course-toolbar{height:48px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:7px 14px;position:relative;z-index:45}
+.pill-button,.series-pill{border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:800;white-space:nowrap}
+.pill-button{border:1px solid #cec5df;background:#fff;color:var(--primary-dark);cursor:pointer}
+.pill-button:hover{background:var(--primary-soft)}
+.series-pill{background:var(--primary);color:#fff;border:1px solid var(--primary)}
+.menu-toggle{display:none;margin-left:auto}
+.course-layout{height:calc(100vh - 98px);height:calc(100dvh - 98px);display:grid;grid-template-columns:280px 1fr;min-width:0;min-height:0}
+.lesson-menu{background:#fff;border-right:1px solid var(--line);overflow-y:auto;padding:10px 8px}
+.menu-group-title{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:900;padding:10px 8px 5px}
+.menu-item{width:100%;display:block;border:0;background:transparent;text-align:left;color:#302c38;font-size:12.5px;font-weight:700;line-height:1.25;padding:9px;border-radius:8px;margin:2px 0;cursor:pointer}
+.menu-item:hover{background:var(--primary-soft);color:var(--primary-dark)}
+.menu-item.active{background:var(--primary);color:#fff;box-shadow:0 2px 7px rgba(90,75,134,.27)}
+.menu-item.pending{cursor:default;color:#aaa5b1}
+.menu-item.pending:hover{background:transparent;color:#aaa5b1}
+.content-area{padding:13px;overflow:hidden;min-width:0;min-height:0}
+.lesson-heading{min-height:70px;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:9px}
+.lesson-heading h2{font-size:24px;line-height:1.15;color:var(--primary-dark);margin:2px 0 0}
+.unit-name{font-size:11px;font-weight:900;color:var(--primary);text-transform:uppercase;letter-spacing:.06em}
+.technical-title{font-size:12px;font-weight:800;color:var(--muted);margin-top:2px}
+.lesson-objective{font-size:13px;line-height:1.4;max-width:530px;text-align:right;margin:2px 0 0}
+.lesson-content{height:calc(100vh - 203px);height:calc(100dvh - 203px);overflow-y:auto;overscroll-behavior:contain;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:24px;box-shadow:var(--shadow)}
+.lesson-content h3{font-size:21px;color:var(--primary-dark);margin:24px 0 8px}
+.lesson-content h3:first-child{margin-top:0}
+.lesson-content p{margin:7px 0}
+.lesson-content strong{font-weight:800}
+.hero-box,.note-box,.ok-box,.concept-box{border-radius:12px;padding:15px 16px;margin:14px 0}
+.hero-box{background:linear-gradient(135deg,var(--primary-soft),#fff);border:1px solid #d8cee9}
+.note-box{background:var(--warn-bg);border-left:5px solid #d59b00}
+.ok-box{background:var(--ok-bg);border-left:5px solid var(--ok)}
+.concept-box{background:var(--surface-soft);border:1px solid var(--line)}
+.card-title{display:block;color:var(--primary-dark);font-weight:900;margin-bottom:5px}
+.diagnostic-intro{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.diagnostic-intro .mini-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px}
+.diagnostic-intro .mini-card strong{display:block;color:var(--primary-dark);margin-bottom:4px}
+.quiz-item{border:1px solid var(--line);border-radius:11px;padding:14px;margin:11px 0;background:#fff}
+.quiz-item>p{font-weight:800;margin:0 0 8px}
+.quiz-item label{display:flex;align-items:flex-start;gap:8px;padding:7px 8px;border-radius:8px;cursor:pointer}
+.quiz-item label:hover{background:var(--surface-soft)}
+.quiz-item input{margin-top:4px}
+.quiz-item.is-unscored{border-left:5px solid var(--accent);background:#fcf8f2}
+.question-tag{display:inline-block;margin-bottom:7px;border-radius:999px;padding:3px 7px;background:#f5eadc;color:#6e4f28;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.quiz-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.action-button{border:1px solid #cec5df;background:#fff;color:var(--primary-dark);font-weight:800;border-radius:8px;padding:10px 13px;cursor:pointer}
+.action-button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.quiz-result{margin-top:14px}
+.review-panel{margin:16px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface-soft);padding:14px}
+.review-panel h3{margin-top:0}
+.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px}
+.review-card strong{display:block;color:var(--primary-dark);margin-bottom:5px}
+@media(max-width:900px){
+  .menu-toggle{display:inline-block}
+  .course-layout{display:block;height:calc(100vh - 98px);height:calc(100dvh - 98px)}
+  .lesson-menu{display:none;position:fixed;inset:98px 0 0;z-index:40;border-right:0;padding:12px;overflow:auto}
+  .lesson-menu.open{display:block}
+  .content-area{height:100%;display:flex;flex-direction:column;overflow:hidden;padding:10px}
+  .lesson-heading{flex:0 0 auto;min-height:0;flex-direction:column;gap:3px;margin-bottom:10px}
+  .lesson-objective{max-width:none;text-align:left}
+  .lesson-content{flex:1 1 auto;height:auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:720px){
+  .site-header{padding:0 10px}.site-header .module-back{font-size:12px;padding:5px 9px}.site-header>strong{font-size:13px}
+  .series-home{padding:18px 10px 30px}.intro-card{padding:20px}.intro-card h1{font-size:27px}
+  .series-grid,.diagnostic-intro,.review-grid{grid-template-columns:1fr}
+  .series-card{min-height:125px}.course-toolbar{padding:6px 8px}.content-area{padding:8px}
+  .lesson-heading h2{font-size:20px}.lesson-content{padding:16px;border-radius:10px}.lesson-content h3{font-size:19px}
+}

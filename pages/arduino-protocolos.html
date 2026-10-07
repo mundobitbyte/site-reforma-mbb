@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="RTOS, I2C, CAN, RS-232, TCP/IP, IEEE 802.11 e Bluetooth em sistemas embarcados e IoT."/>
+<title>8 — RTOS e Protocolos | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+#arduinoModuleMenu a.module-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit!important}
+.mbb8-intro{margin-bottom:16px}
+.mbb8-intro .hero-flow{margin-top:16px}
+.mbb8-panel{display:none}
+.mbb8-panel.active-panel{display:block}
+.mbb8-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb8-summary div{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb8-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb8-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb8-note{margin:13px;padding:12px 14px;border:1px solid #bcdde4;border-radius:12px;background:#f7fcfd;line-height:1.55}
+.mbb8-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:15px}
+.mbb8-flow span{background:#eaf2ff;border:1px solid #bfdbfe;color:var(--dark);border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.mbb8-flow b{color:var(--dark)}
+.mbb8-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:13px}
+.mbb8-grid>div,.mbb8-grid>article{border:1px solid var(--line);border-radius:11px;background:#f8fbfc;padding:11px}
+.mbb8-grid strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb8-compare{width:100%;border-collapse:collapse}
+.mbb8-compare th,.mbb8-compare td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+.mbb8-compare th{background:#eef9fb;color:var(--dark)}
+.mbb8-check{border-left:4px solid var(--primary);padding:11px 13px;margin:12px;background:#f8fbff;border-radius:8px;line-height:1.5}
+.mbb8-warning{border-left:4px solid #b45309;padding:11px 13px;margin:12px;background:#fff7df;border-radius:8px;line-height:1.5}
+.mbb8-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:13px}
+.mbb8-path div{border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px;text-align:center}
+.mbb8-path strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb8-layer{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:8px;padding:13px}
+.mbb8-layer strong,.mbb8-layer span{border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.mbb8-layer strong{background:#eaf2ff;color:var(--dark);text-align:center}
+.mbb8-layer span{background:#fff}
+.mbb8-mini{font-size:13px;color:#475569}
+.mbb8-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+.mbb8-result{background:#e8f5ee}
+@media(max-width:1000px){.mbb8-grid{grid-template-columns:1fr 1fr}.mbb8-path{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.mbb8-summary,.mbb8-grid,.mbb8-path{grid-template-columns:1fr}.mbb8-layer{grid-template-columns:1fr}.mbb8-compare{font-size:13px}.mbb8-compare th,.mbb8-compare td{padding:7px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+  <a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a>
+  <a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a>
+  <a class="module-btn active" href="#topo">8. RTOS e Protocolos</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do bloco 8">
+  <div class="stage-sidebar-head"><h3>Etapas</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b8-prep">Preparação</a>
+    <a class="stage-link module-visible" href="#b8-1">8.1 RTOS</a>
+    <a class="stage-link module-visible" href="#b8-2">8.2 I2C</a>
+    <a class="stage-link module-visible" href="#b8-3">8.3 UART e RS-232</a>
+    <a class="stage-link module-visible" href="#b8-4">8.4 CAN</a>
+    <a class="stage-link module-visible" href="#b8-5">8.5 TCP/IP</a>
+    <a class="stage-link module-visible" href="#b8-6">8.6 IEEE 802.11</a>
+    <a class="stage-link module-visible" href="#b8-7">8.7 Bluetooth</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main id="topo">
+
+<section class="hero mbb8-intro">
+  <span class="badge">8</span>
+  <h2>Sistemas Embarcados: tempo, interfaces e protocolos</h2>
+  <p>No Bloco 7, enxergamos o sistema IoT como um conjunto. Agora ele cresceu: pode medir sensores, atender a rede, atualizar informações e acionar componentes. Duas perguntas aparecem naturalmente: <strong>como organizar tarefas que precisam acontecer no tempo certo e como fazer partes diferentes se comunicarem?</strong></p>
+  <div class="hero-flow"><div>Tarefas</div><span>→</span><div>Tempo</div><span>→</span><div>Interfaces</div><span>→</span><div>Protocolos</div><span>→</span><div>Sistema integrado</div></div>
+  <div class="mbb8-summary">
+    <div><strong>Entender antes da sigla</strong><span>Cada tecnologia nasce de um problema de comunicação ou de tempo.</span></div>
+    <div><strong>Experimentar quando faz sentido</strong><span>RTOS e I2C têm práticas observáveis; os demais conceitos usam comparações e arquiteturas reais.</span></div>
+    <div><strong>Sem tecnologia por decoração</strong><span>Não vamos transformar o bloco em uma lista de nomes para decorar.</span></div>
+  </div>
+</section>
+
+<section class="project mbb8-panel active-panel" id="b8-prep">
+  <div class="projectHead"><span class="badge">→</span><div><h2>Preparação — Dispositivos precisam combinar como conversar</h2><p>Conectar componentes não é apenas colocar fios. As partes precisam compartilhar regras compatíveis.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Imagine um ESP32 ligado a um display, a outro controlador e a uma rede Wi-Fi. Todos trocam dados, mas não da mesma forma. O display pode usar dois fios e um endereço; outro equipamento pode usar comunicação serial; a rede usa uma pilha de protocolos.</p></article>
+    <article class="card"><h3>2. Interface</h3><p>É a forma pela qual partes do sistema se conectam e trocam sinais. Pode envolver pinos, níveis elétricos e funções específicas, como TX/RX ou SDA/SCL.</p></article>
+    <article class="card"><h3>3. Protocolo</h3><p>É um conjunto de regras para a comunicação. Ele define como os participantes organizam e interpretam a troca de informações.</p></article>
+    <article class="card wide"><h3>4. Não force uma caixa rígida</h3><p>I2C, CAN, RS-232, TCP/IP, IEEE 802.11 e Bluetooth descrevem aspectos diferentes da comunicação. Algumas tecnologias envolvem mais de uma camada. Por isso, neste bloco vamos perguntar sempre: <strong>que problema esta tecnologia resolve e em que parte do sistema ela atua?</strong></p></article>
+    <article class="card worked wide mbb8-bridge"><h3>5. Primeira necessidade</h3><p>Antes de comparar meios de comunicação, nosso sistema tem outro problema: <strong>várias tarefas precisam avançar sem transformar o programa em um único <code>loop()</code> enorme e bloqueante.</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-1">
+  <div class="projectHead"><span class="badge">8.1</span><div><h2>RTOS — Quando o sistema tem vários trabalhos</h2><p>Tempo real não significa simplesmente “muito rápido”. Significa projetar o sistema para responder a requisitos de tempo de forma previsível.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>O Ambiente MbB precisa piscar um LED, acompanhar sensores e manter a comunicação funcionando. Se uma parte do programa ficar esperando por muito tempo, outra atividade pode atrasar. Conforme o sistema cresce, precisamos organizar o trabalho.</p></article>
+    <article class="card"><h3>2. O que é RTOS</h3><p>Um <strong>RTOS</strong> — sistema operacional de tempo real — oferece mecanismos para organizar tarefas e decidir quando elas recebem tempo de processamento. No ESP32, o ambiente de desenvolvimento da Espressif utiliza FreeRTOS.</p></article>
+    <article class="card"><h3>3. Tarefa não é outro programa</h3><p>Uma tarefa representa uma atividade do mesmo sistema. Várias tarefas podem avançar de forma concorrente, cada uma com sua função e seu ritmo.</p></article>
+    <article class="card wide"><h3>4. Experimento</h3><p>Vamos manter o LED externo no <strong>GPIO 23</strong>, já usado anteriormente. Uma tarefa alterna o LED a cada 1 segundo. Outra escreve uma mensagem no Monitor Serial a cada 2 segundos. O objetivo é observar dois ritmos independentes dentro do mesmo programa.</p></article>
+    <article class="card wide code"><h3>Código completo <button type="button" onclick="copyCode('b8-rtos-code', this)">Copiar</button></h3><pre id="b8-rtos-code">const int LED = 23;
+
+void tarefaLed(void *parametro) {
+  bool estado = false;
+
+  while (true) {
+    estado = !estado;
+    digitalWrite(LED, estado);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+  }
+}
+
+void tarefaMonitor(void *parametro) {
+  while (true) {
+    Serial.println("Tarefa Monitor: sistema ativo");
+    vTaskDelay(pdMS_TO_TICKS(2000));
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+
+  xTaskCreate(
+    tarefaLed,
+    "LED",
+    2048,
+    NULL,
+    1,
+    NULL
+  );
+
+  xTaskCreate(
+    tarefaMonitor,
+    "Monitor",
+    2048,
+    NULL,
+    1,
+    NULL
+  );
+}
+
+void loop() {
+  vTaskDelay(pdMS_TO_TICKS(1000));
+}</pre></article>
+    <article class="card"><h3>5. Observe</h3><p>O LED continua mudando de estado em seu ritmo, enquanto o Monitor Serial publica outra mensagem em intervalo diferente. O escalonador organiza quando cada tarefa executa.</p></article>
+    <article class="card"><h3>6. O que é novidade</h3><p><code>xTaskCreate()</code> cria uma tarefa. <code>vTaskDelay()</code> suspende a tarefa pelo período indicado e permite que outras avancem. <code>pdMS_TO_TICKS()</code> converte milissegundos para a unidade usada pelo RTOS.</p></article>
+    <article class="card wide"><h3>7. Limite desta etapa</h3><p>Usar um RTOS não garante sozinho que qualquer prazo será cumprido. O projeto das tarefas, prioridades, tempos de execução e recursos compartilhados também importa. Aqui queremos apenas compreender <strong>tarefas e escalonamento</strong>; mutex, semáforos, filas e análise de deadlines ficam para estudos posteriores.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>8. Próxima necessidade</h3><p>Organizamos o tempo. Agora surge uma questão de conexão: <strong>como conversar com um display sem gastar muitos GPIOs?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-2">
+  <div class="projectHead"><span class="badge">8.2</span><div><h2>I2C — Vários dispositivos compartilhando dois sinais</h2><p>O LCD 16x2 tradicional usa várias conexões. Com um módulo I2C, o mesmo tipo de display pode ser controlado por um barramento de dois sinais.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. O problema aparece no próprio LCD</h3><p>Um LCD 16x2 paralelo possui vários pinos de controle e dados. Ao acrescentar uma pequena interface I2C ao display, a comunicação passa a usar principalmente <strong>SDA</strong> e <strong>SCL</strong>. Isso economiza GPIOs e permite que outros dispositivos I2C compartilhem o mesmo barramento.</p></article>
+    <article class="card"><h3>2. SDA</h3><p><strong>SDA</strong> é a linha de dados. É por ela que os bits da comunicação são enviados e recebidos.</p></article>
+    <article class="card"><h3>3. SCL</h3><p><strong>SCL</strong> é a linha de clock. No nosso uso, o ESP32 atua como controlador do barramento e gera o ritmo da comunicação.</p></article>
+    <article class="card wide"><h3>4. Endereços</h3><p>Vários dispositivos podem compartilhar SDA e SCL porque cada participante responde a um <strong>endereço I2C</strong>. Os endereços mais vistos em módulos de LCD não devem ser adivinhados: primeiro vamos perguntar ao barramento quem está presente.</p><div class="mbb8-flow"><span>ESP32</span><b>↔</b><span>SDA + SCL</span><b>↔</b><span>LCD I2C: endereço próprio</span><b>+</b><span>Outro I2C: outro endereço</span></div></article>
+    <article class="card wide"><h3>5. Conexões lógicas para o ESP32 deste percurso</h3><table class="mbb8-compare"><thead><tr><th>Sinal do módulo</th><th>ESP32</th><th>Função</th></tr></thead><tbody><tr><td>SDA</td><td>GPIO 21</td><td>Dados do barramento I2C.</td></tr><tr><td>SCL</td><td>GPIO 22</td><td>Clock do barramento I2C.</td></tr><tr><td>GND</td><td>GND</td><td>Referência elétrica comum.</td></tr><tr><td>VCC</td><td>Conforme o módulo</td><td>Confira a tensão do conjunto LCD + interface e os níveis de SDA/SCL antes de energizar.</td></tr></tbody></table><div class="mbb8-warning"><strong>Atenção elétrica:</strong> os GPIOs do ESP32 trabalham em 3,3 V. Alguns módulos de LCD são alimentados em 5 V e podem ter resistores de pull-up de SDA/SCL ligados a 5 V. Nesse caso, não ligue essas linhas diretamente aos GPIOs sem a adaptação de nível adequada. Primeiro confirme seu módulo.</div></article>
+    <article class="card wide"><h3>6. Primeiro teste — Scanner I2C</h3><p>O scanner percorre os endereços possíveis e mostra quais responderam. Abra o Monitor Serial em <strong>115200</strong> e observe o endereço encontrado.</p></article>
+    <article class="card wide code"><h3>Código completo — Scanner I2C <button type="button" onclick="copyCode('b8-i2c-scanner', this)">Copiar</button></h3><pre id="b8-i2c-scanner">#include &lt;Wire.h&gt;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(21, 22);
+
+  Serial.println("Procurando dispositivos I2C...");
+
+  int encontrados = 0;
+
+  for (byte endereco = 1; endereco &lt; 127; endereco++) {
+    Wire.beginTransmission(endereco);
+    byte erro = Wire.endTransmission();
+
+    if (erro == 0) {
+      Serial.print("Dispositivo encontrado em 0x");
+      if (endereco &lt; 16) Serial.print("0");
+      Serial.println(endereco, HEX);
+      encontrados++;
+    }
+  }
+
+  if (encontrados == 0) {
+    Serial.println("Nenhum dispositivo I2C encontrado.");
+  }
+}
+
+void loop() {
+}</pre></article>
+    <article class="card"><h3>7. Resultado esperado</h3><p>Em vez de copiar um endereço de um tutorial, você obtém o endereço do <strong>seu</strong> módulo. Um resultado como <code>0x27</code> ou <code>0x3F</code> é apenas exemplo; o valor real é o que o scanner encontrar.</p></article>
+    <article class="card"><h3>8. Se nada aparecer</h3><p>Confira alimentação, GND comum, SDA/SCL, tensão dos sinais e se o módulo realmente está energizado. Um display aceso, mas sem comunicação, também pode indicar ligação ou endereço incorretos.</p></article>
+    <article class="card wide"><h3>9. Segundo teste — Escrever no LCD</h3><p>No Gerenciador de Bibliotecas da Arduino IDE, procure <strong>LiquidCrystal_I2C</strong> de Martin Kubovčík e Frank de Brabander. Depois substitua no código abaixo o endereço de exemplo pelo endereço encontrado no scanner.</p></article>
+    <article class="card wide code"><h3>Código completo — LCD 16x2 I2C <button type="button" onclick="copyCode('b8-i2c-lcd', this)">Copiar</button></h3><pre id="b8-i2c-lcd">#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+
+const byte ENDERECO_LCD = 0x27; // troque pelo endereço encontrado
+
+LiquidCrystal_I2C lcd(ENDERECO_LCD, 16, 2);
+
+void setup() {
+  Wire.begin(21, 22);
+
+  lcd.init();
+  lcd.backlight();
+
+  lcd.setCursor(0, 0);
+  lcd.print("Ambiente MbB");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Sistema ativo");
+}
+
+void loop() {
+}</pre></article>
+    <article class="card wide mbb8-result"><h3>10. O que ficou concreto</h3><p>O aluno não apenas leu “I2C usa SDA e SCL”. Ele viu um problema de pinos, compartilhou um barramento, descobriu um endereço e usou esse endereço para enviar informação a um dispositivo real.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>11. Próxima pergunta</h3><p>I2C é uma comunicação serial, mas nós já usamos também o Monitor Serial. <strong>Isso quer dizer que UART, Serial e RS-232 são a mesma coisa?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-3">
+  <div class="projectHead"><span class="badge">8.3</span><div><h2>UART e RS-232 — Comunicação serial não é tudo igual</h2><p>O Monitor Serial é um ótimo ponto de partida, mas não deve ser confundido com a interface elétrica RS-232.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. O que já usamos</h3><p>Quando escrevemos <code>Serial.begin(115200)</code> e usamos TX/RX, trabalhamos com uma <strong>UART</strong>: uma interface de comunicação serial assíncrona. Ela organiza bits, velocidade, bits de dados, paridade e bits de parada.</p></article>
+    <article class="card wide"><h3>2. Então o que é RS-232?</h3><p>RS-232 é um padrão de interface serial que define características próprias, inclusive níveis elétricos. Esses níveis não são os mesmos níveis lógicos de um GPIO do ESP32. Por isso, <strong>uma porta UART TTL de 3,3 V não deve ser chamada de RS-232</strong>.</p></article>
+    <article class="card wide"><h3>3. A diferença em uma visão</h3><table class="mbb8-compare"><thead><tr><th>Elemento</th><th>UART do ESP32</th><th>RS-232</th></tr></thead><tbody><tr><td>Função</td><td>Comunicação serial assíncrona.</td><td>Padrão de interface serial com características elétricas próprias.</td></tr><tr><td>Sinais usuais no exemplo básico</td><td>TX e RX em níveis lógicos do microcontrolador.</td><td>TX e RX em níveis próprios do padrão RS-232.</td></tr><tr><td>Ligação direta ao GPIO</td><td>Somente com outro dispositivo compatível em nível lógico.</td><td><strong>Não.</strong> É necessário um transceptor apropriado.</td></tr></tbody></table></article>
+    <article class="card"><h3>4. Onde entra o MAX3232</h3><p>Um circuito transceptor, como o <strong>MAX3232</strong>, pode fazer a adaptação entre a UART em nível lógico e uma interface RS-232 verdadeira.</p></article>
+    <article class="card"><h3>5. E o HC-05/HC-06?</h3><p>Esses módulos são normalmente usados como <strong>Bluetooth Classic com interface UART TTL</strong>. O fato de transmitirem dados serialmente não os transforma em RS-232.</p></article>
+    <article class="card wide"><h3>6. Arquitetura correta</h3><div class="mbb8-flow"><span>ESP32 UART</span><b>↔</b><span>transceptor de níveis</span><b>↔</b><span>interface RS-232</span><b>↔</b><span>equipamento RS-232</span></div><p class="mbb8-mini">A montagem física depende do transceptor e do equipamento utilizado. O conceito principal aqui é não ligar uma interface RS-232 diretamente aos GPIOs.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>7. Próxima necessidade</h3><p>UART costuma ligar participantes de forma direta. Mas e quando vários módulos de uma máquina ou veículo precisam compartilhar um barramento robusto? <strong>É aí que CAN ganha sentido.</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-4">
+  <div class="projectHead"><span class="badge">8.4</span><div><h2>CAN — Quando vários nós precisam trocar mensagens com robustez</h2><p>Em veículos e ambientes industriais, vários controladores podem precisar compartilhar informações em um ambiente eletricamente exigente.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Imagine uma máquina com um módulo de sensores, outro de acionamento e outro de supervisão. Em vez de criar uma ligação exclusiva entre cada par, os nós podem compartilhar um barramento e trocar mensagens identificadas.</p></article>
+    <article class="card"><h3>2. Nós e mensagens</h3><p>No CAN, os participantes observam o mesmo barramento. As mensagens possuem identificadores que ajudam a indicar conteúdo e prioridade; não é simplesmente “um fio para cada aparelho”.</p></article>
+    <article class="card"><h3>3. Arbitragem</h3><p>Quando mais de um nó tenta transmitir, o protocolo possui mecanismo de arbitragem. Isso permite resolver a disputa sem tratar a rede como uma conversa desordenada.</p></article>
+    <article class="card wide"><h3>4. CAN no ESP32</h3><p>O controlador compatível com CAN clássico do ESP32 é chamado pela Espressif de <strong>TWAI</strong>. O chip possui o controlador, mas <strong>não possui o transceptor físico do barramento integrado</strong>. Para uma rede CAN real, é necessário um transceptor externo compatível com a camada física escolhida.</p></article>
+    <article class="card wide"><h3>5. Não pule o transceptor</h3><div class="mbb8-flow"><span>ESP32</span><b>→</b><span>controlador TWAI</span><b>→</b><span>transceptor CAN</span><b>→</b><span>CAN_H / CAN_L</span><b>→</b><span>outros nós</span></div><div class="mbb8-warning"><strong>Erro a evitar:</strong> CAN_H e CAN_L não são pinos que devem ser ligados diretamente aos GPIOs do ESP32. O transceptor faz parte da interface física com o barramento.</div></article>
+    <article class="card"><h3>6. Por que usar</h3><p>CAN é adequado quando precisamos de comunicação robusta entre vários controladores, com mecanismos próprios para arbitragem e tratamento de falhas.</p></article>
+    <article class="card"><h3>7. Profundidade necessária</h3><p>Neste momento basta compreender barramento, nós, identificadores, arbitragem e a necessidade do transceptor. Bit timing avançado, CAN FD e análise detalhada de quadros ficam fora do objetivo desta etapa.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>8. Próxima pergunta</h3><p>I2C, UART/RS-232 e CAN tratam comunicações próximas ao equipamento. No Bloco 6, porém, o ESP32 já conversou pela rede. <strong>O que estava por baixo do HTTP?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-5">
+  <div class="projectHead"><span class="badge">8.5</span><div><h2>TCP/IP — O que estava por baixo do HTTP</h2><p>Vamos voltar a uma experiência conhecida em vez de começar com uma pilha abstrata de rede.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Retomando o Bloco 6</h3><p>Quando um navegador acessou a página do ESP32 por um endereço como <code>http://192.168.1.37</code>, vimos HTTP funcionando. Mas a requisição precisou ser transportada e endereçada até o dispositivo.</p></article>
+    <article class="card wide"><h3>2. Pilha simplificada do nosso exemplo</h3><div class="mbb8-layer"><strong>HTTP</strong><span>Organiza a requisição e a resposta da aplicação Web.</span><strong>TCP</strong><span>No nosso exemplo HTTP, fornece o transporte confiável da conexão entre cliente e servidor.</span><strong>IP</strong><span>Usa endereços para encaminhar os pacotes entre dispositivos e redes.</span><strong>Wi-Fi</strong><span>No nosso projeto, realiza a comunicação sem fio com a rede local.</span></div></article>
+    <article class="card"><h3>3. TCP/IP não é um único protocolo</h3><p>O nome <strong>TCP/IP</strong> é usado para uma família de protocolos de rede. TCP e IP cumprem funções diferentes e trabalham em conjunto em muitas aplicações.</p></article>
+    <article class="card"><h3>4. Nem toda aplicação IP usa TCP</h3><p>Aqui voltamos ao HTTP que já conhecemos, por isso TCP aparece naturalmente. Outros sistemas podem usar protocolos de transporte diferentes. Não precisamos estudá-los agora para compreender o caminho do nosso projeto.</p></article>
+    <article class="card wide"><h3>5. Diagnóstico</h3><p>Se o ESP32 possui Wi-Fi, mas não recebeu endereço IP, o navegador não tem como alcançar o servidor usando aquele endereço. Se o IP funciona e a página responde, então várias camadas já estão trabalhando juntas, mesmo que o aluno não as tivesse nomeado antes.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>6. Próxima pergunta</h3><p>Já usamos Wi-Fi como caminho físico e de enlace. Mas <strong>todo Wi-Fi é igual?</strong> É hora de entender a família IEEE 802.11.</p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-6">
+  <div class="projectHead"><span class="badge">8.6</span><div><h2>IEEE 802.11 — Entendendo a família Wi-Fi</h2><p>“Wi-Fi” reúne diferentes gerações e características. O objetivo não é decorar velocidades máximas, e sim compreender diferenças relevantes.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Um notebook moderno pode enxergar redes e frequências que o nosso ESP32 clássico não utiliza. Então a frase “tem Wi-Fi” não informa tudo sobre compatibilidade.</p></article>
+    <article class="card wide"><h3>2. Padrões previstos neste percurso</h3><table class="mbb8-compare"><thead><tr><th>Padrão</th><th>Faixa associada</th><th>Leitura prática</th></tr></thead><tbody><tr><td>IEEE 802.11a</td><td>5 GHz</td><td>Uma das primeiras famílias a operar em 5 GHz.</td></tr><tr><td>IEEE 802.11b</td><td>2,4 GHz</td><td>Teve forte papel na popularização inicial das redes Wi-Fi.</td></tr><tr><td>IEEE 802.11g</td><td>2,4 GHz</td><td>Evoluiu o desempenho mantendo operação na faixa de 2,4 GHz.</td></tr><tr><td>IEEE 802.11n</td><td>2,4 e 5 GHz</td><td>Introduziu recursos para maior desempenho, incluindo MIMO.</td></tr><tr><td>IEEE 802.11ac</td><td>5 GHz</td><td>Ampliou capacidade e desempenho principalmente na faixa de 5 GHz.</td></tr></tbody></table></article>
+    <article class="card"><h3>3. E o ESP32-WROOM-32?</h3><p>O ESP32 clássico usado neste percurso trabalha com <strong>802.11 b/g/n em 2,4 GHz</strong>. Por isso, uma rede disponível somente em 5 GHz não é uma rede compatível para essa placa.</p></article>
+    <article class="card"><h3>4. O que não vamos decorar</h3><p>Taxas máximas teóricas variam conforme padrão, largura de canal, número de fluxos e outras condições. Para este módulo, a informação útil é reconhecer <strong>família, faixa de frequência e compatibilidade</strong>.</p></article>
+    <article class="card wide mbb8-result"><h3>5. Aplicando</h3><p>Quando o ESP32 não encontra uma rede, não conclua imediatamente que “o Wi-Fi está quebrado”. Verifique se a rede possui 2,4 GHz habilitado, se o nome e a senha estão corretos e se o dispositivo está dentro da cobertura.</p></article>
+    <article class="card worked wide mbb8-bridge"><h3>6. Próxima pergunta</h3><p>Wi-Fi atende bem uma rede local, mas no Bloco 6 também controlamos de perto usando Bluetooth. <strong>Agora vamos olhar para Bluetooth como tecnologia de comunicação, e não apenas como ferramenta pronta.</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb8-panel" id="b8-7">
+  <div class="projectHead"><span class="badge">8.7</span><div><h2>Bluetooth — Classic e BLE resolvem necessidades diferentes</h2><p>Bluetooth volta ao conteúdo com outro objetivo: antes nós o usamos; agora vamos entender melhor como essa família de tecnologias se organiza.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Retomando a experiência</h3><p>No Bloco 6, o ESP32 usou <code>BluetoothSerial</code> para receber comandos próximos. Aquela prática utilizou <strong>Bluetooth Classic</strong> com o perfil serial disponível no ESP32 clássico.</p></article>
+    <article class="card wide"><h3>2. Duas formas importantes</h3><table class="mbb8-compare"><thead><tr><th>Bluetooth Classic</th><th>Bluetooth Low Energy — BLE</th></tr></thead><tbody><tr><td>É tradicionalmente usado em cenários com comunicação mais contínua, como áudio e perfis seriais.</td><td>Foi projetado com forte foco em baixo consumo e comunicação eficiente para muitos dispositivos alimentados por bateria.</td></tr><tr><td>No nosso Bloco 6, usamos uma comunicação do tipo serial com <code>BluetoothSerial</code>.</td><td>Aplicações BLE são organizadas em serviços e características, em vez de simplesmente imitar uma porta serial.</td></tr><tr><td>Módulos como HC-05 e HC-06 são exemplos conhecidos de Bluetooth Classic com interface UART TTL.</td><td>Sensores e dispositivos de baixo consumo são usos comuns de BLE.</td></tr></tbody></table></article>
+    <article class="card"><h3>3. ESP32-WROOM-32</h3><p>O ESP32 clássico deste percurso possui suporte a <strong>Bluetooth Classic e BLE</strong>. Isso não significa que todo modelo da família ESP32 ofereça exatamente os mesmos recursos; sempre confira o chip usado no projeto.</p></article>
+    <article class="card"><h3>4. Não confunda camadas</h3><p>Um HC-05 pode trocar bytes com o microcontrolador por UART e, ao mesmo tempo, usar Bluetooth pelo rádio. UART descreve a comunicação local entre módulo e placa; Bluetooth descreve a comunicação sem fio com o outro dispositivo.</p></article>
+    <article class="card wide"><h3>5. Escolha pela necessidade</h3><div class="mbb8-grid"><div><strong>Próximo e contínuo</strong><span>Bluetooth Classic pode ser adequado em cenários compatíveis com seus perfis.</span></div><div><strong>Baixo consumo</strong><span>BLE é especialmente útil quando economia de energia é parte importante do projeto.</span></div><div><strong>Rede local / Internet</strong><span>Wi-Fi atende outro tipo de necessidade e não é substituído automaticamente por Bluetooth.</span></div></div></article>
+    <article class="card wide mbb8-result"><h3>6. Síntese do bloco</h3><div class="mbb8-path"><div><strong>RTOS</strong><span>organiza tarefas e tempo</span></div><div><strong>I2C / UART / CAN</strong><span>conectam partes do sistema de formas diferentes</span></div><div><strong>TCP/IP / 802.11</strong><span>estruturam a comunicação em rede</span></div><div><strong>Bluetooth</strong><span>oferece comunicação sem fio de curta distância em diferentes modos</span></div></div></article>
+    <article class="card wide mbb8-bridge"><h3>7. Ponte para o próximo bloco</h3><p>Nosso sistema agora possui tarefas, dispositivos, barramentos e redes. Quanto mais partes se comunicam, mais uma pergunta se torna inevitável: <strong>quem pode acessar, alterar ou usar esses dados e comandos?</strong> O próximo bloco entra em proteção de dados pessoais e segurança de sistemas e informações.</p></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-protocolos.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

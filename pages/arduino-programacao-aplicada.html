@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Programação aplicada a sistemas embarcados: funções matemáticas, trigonométricas, de texto e números aleatórios com Arduino e Tinkercad."/>
+<title>5 — Programação Aplicada | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+.mbb5-intro{margin-bottom:16px}
+.mbb5-intro .hero-flow{margin-top:16px}
+.mbb5-context{margin:0;padding:14px 16px;border:1px solid #bcdde4;border-radius:14px;background:#f7fcfd;line-height:1.55}
+.mbb5-context strong{color:var(--dark)}
+.mbb5-panel{display:none}
+.mbb5-panel.active-panel{display:block}
+.mbb5-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb5-summary div{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb5-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb5-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb5-function-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:13px}
+.mbb5-function-grid div{border:1px solid var(--line);border-radius:10px;background:#f8fbfc;padding:10px}
+.mbb5-function-grid code{display:inline-block;margin-bottom:5px;font-weight:900}
+.mbb5-function-grid p{margin:0;font-size:13.5px;line-height:1.45}
+.mbb5-link{color:var(--dark);font-weight:850}
+.mbb5-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+@media(max-width:900px){.mbb5-summary,.mbb5-function-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn active" href="#topo">5. Programação Aplicada</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do bloco 5">
+  <div class="stage-sidebar-head"><h3>Etapas</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b5-1">5.1 Funções matemáticas</a>
+    <a class="stage-link module-visible" href="#b5-2">5.2 Funções trigonométricas</a>
+    <a class="stage-link module-visible" href="#b5-3">5.3 Funções de texto</a>
+    <a class="stage-link module-visible" href="#b5-4">5.4 Números aleatórios</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main id="topo">
+
+<section class="hero mbb5-intro">
+  <span class="badge">5</span>
+  <h2>Programação aplicada ao sistema embarcado</h2>
+  <p>Você já fez o Arduino ler sensores, controlar saídas e movimentar um servo. Agora o desafio é outro: <strong>transformar leituras em informação útil, criar movimentos calculados, produzir mensagens compreensíveis e testar o programa com diferentes entradas</strong>.</p>
+  <div class="hero-flow"><div>Medir</div><span>→</span><div>Calcular</div><span>→</span><div>Comunicar</div><span>→</span><div>Testar</div></div>
+  <div class="mbb5-summary">
+    <div><strong>Sem recomeçar</strong><span>Os circuitos principais já são conhecidos e serão reaproveitados.</span></div>
+    <div><strong>Ambiente</strong><span>Arduino Uno e Tinkercad continuam sendo a base das práticas deste bloco.</span></div>
+    <div><strong>Objetivo</strong><span>Usar funções quando elas resolvem uma necessidade real do sistema.</span></div>
+  </div>
+</section>
+
+<section class="project mbb5-panel active-panel" id="b5-1">
+  <div class="projectHead"><span class="badge">5.1</span><div><h2>Quando só a distância não basta</h2><p>Funções matemáticas ajudam a transformar uma leitura isolada em informação útil para acompanhar o comportamento do sistema.</p></div></div>
+  <div class="circuitPanel">
+    <h3>Circuito reutilizado</h3>
+    <figure class="circuitFigure">
+      <img alt="Arduino Uno ligado ao sensor ultrassônico HC-SR04, com VCC em 5V, GND em GND, TRIG no pino 3 e ECHO no pino 2." class="circuitPhoto" decoding="async" loading="lazy" src="../img/arduino/projeto_7_sensor_ultrassonico_hc_sr04.webp"/>
+      <figcaption>Reutilize o circuito do sensor de distância já estudado: HC-SR04 com TRIG no D3 e ECHO no D2. Não há nova montagem nesta etapa.</figcaption>
+    </figure>
+  </div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Durante o teste de um sistema de aproximação, definimos <strong>30 cm como distância de referência</strong>. O HC-SR04 informa a distância atual, mas queremos responder a três perguntas: quanto a leitura se afastou da referência, qual foi a menor distância observada e qual foi a maior?</p><p>Essas informações permitem analisar o teste sem anotar manualmente cada leitura.</p></article>
+    <article class="card"><h3>2. O que já sabemos</h3><p>O HC-SR04 envia um pulso pelo TRIG, recebe o eco pelo ECHO e permite calcular a distância. O Monitor Serial já pode mostrar o valor medido.</p></article>
+    <article class="card"><h3>3. O que precisamos agora</h3><p>Precisamos comparar valores sem escrever toda a lógica matemática manualmente. É aí que entram funções prontas que devolvem um resultado.</p></article>
+    <article class="card wide"><h3>4. Três funções úteis neste teste</h3><div class="mbb5-function-grid">
+      <div><code>abs(valor)</code><p>Retorna o valor absoluto. Aqui mostra o tamanho da diferença para 30 cm sem importar se o objeto está antes ou depois da referência.</p></div>
+      <div><code>min(a, b)</code><p>Retorna o menor dos dois valores. Usaremos para guardar a menor distância encontrada desde o início do teste.</p></div>
+      <div><code>max(a, b)</code><p>Retorna o maior dos dois valores. Usaremos para guardar a maior distância encontrada.</p></div>
+    </div></article>
+    <article class="card code wide"><h3>5. Código completo <button type="button" onclick="copyCode('b5-1-code',this)">Copiar</button></h3><pre id="b5-1-code">const int pinoTrig = 3;
+const int pinoEcho = 2;
+const int referencia = 30;
+
+int menorDistancia = 400;
+int maiorDistancia = 0;
+
+int medirDistancia() {
+  digitalWrite(pinoTrig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinoTrig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinoTrig, LOW);
+
+  long duracao = pulseIn(pinoEcho, HIGH);
+  return duracao / 58;
+}
+
+void setup() {
+  pinMode(pinoTrig, OUTPUT);
+  pinMode(pinoEcho, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int distancia = medirDistancia();
+  int diferenca = abs(distancia - referencia);
+
+  menorDistancia = min(menorDistancia, distancia);
+  maiorDistancia = max(maiorDistancia, distancia);
+
+  Serial.print("Distancia: ");
+  Serial.print(distancia);
+  Serial.print(" cm | Diferenca para 30 cm: ");
+  Serial.print(diferenca);
+  Serial.print(" cm | Menor: ");
+  Serial.print(menorDistancia);
+  Serial.print(" cm | Maior: ");
+  Serial.print(maiorDistancia);
+  Serial.println(" cm");
+
+  delay(500);
+}</pre></article>
+    <article class="card wide"><h3>6. Entendendo as novidades</h3><div class="explain"><p><code>abs(distancia - referencia)</code> transforma uma diferença que poderia ser negativa em uma medida de afastamento sempre positiva.</p><p><code>min(menorDistancia, distancia)</code> compara a menor leitura já guardada com a leitura atual e mantém a menor.</p><p><code>max(maiorDistancia, distancia)</code> faz o mesmo para a maior leitura.</p><p>Os valores de mínimo e máximo permanecem acumulados enquanto o programa estiver executando. Reiniciar a simulação inicia um novo teste.</p></div></article>
+    <article class="card"><h3>7. Testando</h3><ol><li>Inicie a simulação e abra o Monitor Serial em 9600.</li><li>Altere a distância do objeto no HC-SR04.</li><li>Passe por valores menores e maiores que 30 cm.</li><li>Observe a diferença, o menor valor e o maior valor registrados.</li></ol></article>
+    <article class="card worked"><h3>8. Resultado esperado</h3><p>Se a leitura for 18 cm, a diferença para a referência de 30 cm será 12 cm. Se depois a leitura passar para 45 cm, a diferença será 15 cm. O programa também continuará lembrando os extremos observados.</p></article>
+    <article class="card errors wide"><h3>9. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>A distância não varia</td><td>Confira a simulação do HC-SR04 e as ligações TRIG/ECHO.</td></tr><tr><td>O mínimo parece não aumentar</td><td>Isso é esperado: ele guarda a menor leitura já observada até reiniciar o teste.</td></tr><tr><td>A diferença fica sempre positiva</td><td>Também é esperado: essa é justamente a finalidade de <code>abs()</code> neste problema.</td></tr></table></article>
+    <article class="card worked wide"><h3>10. O que foi aplicado</h3><ul><li>Funções matemáticas <code>abs()</code>, <code>min()</code> e <code>max()</code></li><li>Reutilização de leitura do HC-SR04</li><li>Transformação de dados brutos em informação de acompanhamento</li><li>Uso do Monitor Serial para observar o teste</li></ul></article>
+  </div>
+</section>
+
+<section class="project mbb5-panel" id="b5-2">
+  <div class="projectHead"><span class="badge">5.2</span><div><h2>Um movimento que não pareça feito aos saltos</h2><p>Uma função trigonométrica pode gerar um comportamento periódico e suave que se torna visível no próprio hardware.</p></div></div>
+  <div class="circuitPanel">
+    <h3>Circuito reutilizado</h3>
+    <figure class="circuitFigure">
+      <img alt="Arduino Uno ligado a um Micro Servo com sinal no pino digital 6, alimentação em 5V e GND." class="circuitPhoto" decoding="async" loading="lazy" src="../img/arduino/projeto_9_servo_motor.webp"/>
+      <figcaption>Reutilize o circuito do Servo Motor já estudado: sinal no D6, alimentação em 5V e GND. A novidade será somente a forma de calcular as posições.</figcaption>
+    </figure>
+  </div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Imagine um pequeno mecanismo que precisa fazer um movimento contínuo de um lado para o outro. Mandar o servo diretamente para 30°, depois 90° e depois 150° produz mudanças em etapas. Queremos gerar uma sequência de posições que <strong>aumente, diminua e se repita suavemente</strong>, sem escrever centenas de ângulos à mão.</p></article>
+    <article class="card"><h3>2. O que já sabemos</h3><p>O projeto anterior de Servo já ensinou a biblioteca <code>Servo</code>, o comando <code>attach()</code> e o envio de posições com <code>write()</code>. Não vamos ensinar biblioteca novamente.</p></article>
+    <article class="card"><h3>3. Por que trigonometria aparece aqui</h3><p>Seno e cosseno produzem valores que variam periodicamente. Isso permite transformar uma sequência matemática em movimento, sinal ou outra grandeza que sobe e desce de forma repetitiva.</p></article>
+    <article class="card wide"><h3>4. Funções trigonométricas no Arduino</h3><div class="mbb5-function-grid">
+      <div><code>sin(x)</code><p>Calcula o seno. Seus valores variam entre -1 e 1 e serão usados para controlar o movimento deste projeto.</p></div>
+      <div><code>cos(x)</code><p>Calcula o cosseno. Também varia periodicamente entre -1 e 1, mas começa o ciclo em outra posição.</p></div>
+      <div><code>tan(x)</code><p>Calcula a tangente. Pode crescer muito perto de certos ângulos e, por isso, não é adequada para limitar diretamente a posição deste servo.</p></div>
+    </div><div class="explain"><p><strong>Atenção:</strong> <code>sin()</code>, <code>cos()</code> e <code>tan()</code> recebem o ângulo em <strong>radianos</strong>. Por isso converteremos graus usando <code>graus * PI / 180.0</code>.</p></div></article>
+    <article class="card code wide"><h3>5. Código completo <button type="button" onclick="copyCode('b5-2-code',this)">Copiar</button></h3><pre id="b5-2-code">#include &lt;Servo.h&gt;
+
+Servo meuServo;
+const int pinoServo = 6;
+
+void setup() {
+  meuServo.attach(pinoServo);
+}
+
+void loop() {
+  for (int graus = 0; graus &lt;= 360; graus += 5) {
+    float radianos = graus * PI / 180.0;
+    float valorSeno = sin(radianos);
+
+    int anguloServo = 90 + valorSeno * 60;
+    meuServo.write(anguloServo);
+
+    delay(30);
+  }
+}</pre></article>
+    <article class="card wide"><h3>6. Entendendo as novidades</h3><div class="explain"><p><code>graus * PI / 180.0</code> converte graus para radianos.</p><p><code>sin(radianos)</code> gera valores entre aproximadamente -1 e 1 ao longo do ciclo.</p><p><code>90 + valorSeno * 60</code> transforma essa faixa em posições aproximadas entre 30° e 150° para o servo.</p><p>O <code>for</code> percorre um ciclo de 0° a 360° da função matemática. Ele não representa diretamente o ângulo físico do servo; quem define a posição física é <code>anguloServo</code>.</p></div></article>
+    <article class="card"><h3>7. Testando</h3><ol><li>Inicie a simulação.</li><li>Observe o servo completar um ciclo contínuo de ida e volta.</li><li>Troque <code>60</code> por <code>30</code> e compare a amplitude do movimento.</li><li>Volte para <code>60</code> antes de seguir.</li></ol></article>
+    <article class="card worked"><h3>8. Resultado esperado</h3><p>O eixo deverá oscilar aproximadamente entre 30° e 150°, passando pela região de 90° durante o ciclo. A posição muda em pequenos passos calculados, em vez de usar uma lista fixa de ângulos.</p></article>
+    <article class="card errors wide"><h3>9. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>O servo não se move</td><td>Confira sinal no D6, 5V, GND, <code>#include &lt;Servo.h&gt;</code> e <code>attach()</code>.</td></tr><tr><td>Os valores de seno parecem errados em outro teste</td><td>Verifique se o ângulo foi convertido de graus para radianos.</td></tr><tr><td>O servo tenta ultrapassar sua faixa</td><td>Não aumente a amplitude sem calcular antes os limites de posição.</td></tr></table></article>
+    <article class="card worked wide"><h3>10. O que foi aplicado</h3><ul><li>Funções trigonométricas <code>sin()</code>, <code>cos()</code> e <code>tan()</code> em seu papel correto</li><li>Conversão de graus para radianos</li><li>Uso prático de <code>sin()</code> para gerar movimento periódico</li><li>Reutilização do Servo e de sua biblioteca sem repetir conteúdo já aprendido</li></ul></article>
+  </div>
+</section>
+
+<section class="project mbb5-panel" id="b5-3">
+  <div class="projectHead"><span class="badge">5.3</span><div><h2>O sistema precisa explicar o que está acontecendo</h2><p>Uma leitura numérica é útil para a máquina; uma mensagem organizada é muito mais útil para quem acompanha o sistema.</p></div></div>
+  <div class="circuitPanel">
+    <h3>Mesmo circuito, nova finalidade</h3>
+    <figure class="circuitFigure">
+      <img alt="Arduino Uno ligado ao sensor ultrassônico HC-SR04, com VCC em 5V, GND em GND, TRIG no pino 3 e ECHO no pino 2." class="circuitPhoto" decoding="async" loading="lazy" src="../img/arduino/projeto_7_sensor_ultrassonico_hc_sr04.webp"/>
+      <figcaption>O circuito continua exatamente o mesmo da etapa 5.1. Agora o trabalho está na forma de organizar e comunicar a informação.</figcaption>
+    </figure>
+  </div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>No Monitor Serial, ver apenas <strong>18</strong> obriga a pessoa a lembrar o que esse número significa e se ele exige atenção. Queremos que o próprio programa produza algo como <strong>DISTANCIA: 18 cm | ESTADO: MUITO PROXIMO</strong>.</p><p>Além de facilitar o acompanhamento agora, essa mensagem já prepara uma ideia importante para o próximo bloco: informações que poderão ser enviadas a outro dispositivo.</p></article>
+    <article class="card"><h3>2. O que já sabemos</h3><p>Já sabemos medir a distância e usar condições para tomar decisões. Também sabemos mostrar valores com <code>Serial.print()</code>.</p></article>
+    <article class="card"><h3>3. O que precisamos agora</h3><p>Precisamos criar textos, juntar texto com números e medir o tamanho da mensagem produzida. Para isso usaremos o tipo <code>String</code> e funções associadas a ele.</p></article>
+    <article class="card wide"><h3>4. Recursos de texto usados</h3><div class="mbb5-function-grid">
+      <div><code>String(valor)</code><p>Converte um valor numérico para texto, permitindo incluí-lo em uma mensagem.</p></div>
+      <div><code>+</code><p>Quando trabalhamos com <code>String</code>, permite concatenar partes e formar uma mensagem maior.</p></div>
+      <div><code>.length()</code><p>Informa quantos caracteres a mensagem possui. Isso permite conhecer o tamanho do texto que estamos produzindo.</p></div>
+    </div></article>
+    <article class="card code wide"><h3>5. Código completo <button type="button" onclick="copyCode('b5-3-code',this)">Copiar</button></h3><pre id="b5-3-code">const int pinoTrig = 3;
+const int pinoEcho = 2;
+
+int medirDistancia() {
+  digitalWrite(pinoTrig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinoTrig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinoTrig, LOW);
+
+  long duracao = pulseIn(pinoEcho, HIGH);
+  return duracao / 58;
+}
+
+String classificarDistancia(int distancia) {
+  if (distancia &lt;= 15) {
+    return "MUITO PROXIMO";
+  }
+  if (distancia &lt;= 40) {
+    return "PROXIMO";
+  }
+  return "AREA LIVRE";
+}
+
+void setup() {
+  pinMode(pinoTrig, OUTPUT);
+  pinMode(pinoEcho, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int distancia = medirDistancia();
+  String estado = classificarDistancia(distancia);
+
+  String mensagem = "DISTANCIA: " + String(distancia)
+                  + " cm | ESTADO: " + estado;
+
+  Serial.println(mensagem);
+  Serial.print("Caracteres da mensagem: ");
+  Serial.println(mensagem.length());
+
+  delay(500);
+}</pre></article>
+    <article class="card wide"><h3>6. Entendendo as novidades</h3><div class="explain"><p><code>String classificarDistancia(...)</code> cria uma função que devolve texto de acordo com a leitura.</p><p><code>String(distancia)</code> converte o número medido para que ele possa fazer parte da mensagem.</p><p>O operador <code>+</code> junta as partes do texto.</p><p><code>mensagem.length()</code> informa a quantidade de caracteres da mensagem final.</p></div></article>
+    <article class="card"><h3>7. Testando</h3><ol><li>Abra o Monitor Serial.</li><li>Teste uma distância de até 15 cm.</li><li>Teste uma distância entre 16 e 40 cm.</li><li>Teste uma distância acima de 40 cm.</li><li>Observe como o texto e seu tamanho mudam.</li></ol></article>
+    <article class="card worked"><h3>8. Resultado esperado</h3><p>Em vez de receber apenas números, a pessoa passa a enxergar uma leitura com unidade e estado. O sistema começa a separar <strong>dado</strong> de <strong>informação compreensível</strong>.</p></article>
+    <article class="card errors wide"><h3>9. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>Erro ao montar a mensagem</td><td>Confira a conversão <code>String(distancia)</code> e os sinais de <code>+</code>.</td></tr><tr><td>Estado diferente do esperado</td><td>Confira a ordem e os limites das condições: até 15, até 40 e acima de 40.</td></tr><tr><td>O número de caracteres muda</td><td>Isso é normal: valores com mais dígitos e estados com tamanhos diferentes alteram o comprimento da mensagem.</td></tr></table></article>
+    <article class="card worked wide"><h3>10. O que foi aplicado</h3><ul><li>Criação e conversão de textos com <code>String</code></li><li>Concatenação de texto e valores</li><li>Uso de <code>length()</code></li><li>Transformação de leitura numérica em mensagem de estado</li></ul></article>
+  </div>
+</section>
+
+<section class="project mbb5-panel" id="b5-4">
+  <div class="projectHead"><span class="badge">5.4</span><div><h2>Como testar situações que não estão acontecendo agora?</h2><p>Números pseudoaleatórios podem funcionar como entradas de teste quando queremos verificar rapidamente vários comportamentos do programa.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Para conferir a classificação de distância, podemos mover o objeto repetidamente no simulador. Mas, antes de evoluir o sistema, queremos executar muitos testes de lógica sem depender de uma posição física específica do sensor a cada vez.</p><p>Nesta etapa, <strong>o circuito deixa de ser necessário</strong>: o próprio programa fornecerá leituras simuladas para verificar as decisões.</p></article>
+    <article class="card"><h3>2. Por que não há imagem de circuito</h3><p>Não existe uma nova montagem para executar. Inserir um desenho ou uma imagem decorativa não ajudaria a realizar a prática. Basta um Arduino no Tinkercad e o Monitor Serial.</p></article>
+    <article class="card"><h3>3. O novo recurso</h3><p><code>random(minimo, maximo)</code> gera números pseudoaleatórios. O limite mínimo pode aparecer; o limite máximo fica de fora.</p><p>Assim, <code>random(5, 81)</code> pode gerar valores de 5 até 80.</p></article>
+    <article class="card code wide"><h3>4. Código completo <button type="button" onclick="copyCode('b5-4-code',this)">Copiar</button></h3><pre id="b5-4-code">void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int distanciaTeste = random(5, 81);
+
+  String estado;
+
+  if (distanciaTeste &lt;= 15) {
+    estado = "MUITO PROXIMO";
+  } else if (distanciaTeste &lt;= 40) {
+    estado = "PROXIMO";
+  } else {
+    estado = "AREA LIVRE";
+  }
+
+  Serial.print("Distancia simulada: ");
+  Serial.print(distanciaTeste);
+  Serial.print(" cm | Estado: ");
+  Serial.println(estado);
+
+  delay(700);
+}</pre></article>
+    <article class="card wide"><h3>5. Entendendo as novidades</h3><div class="explain"><p><code>random(5, 81)</code> fornece uma entrada de teste entre 5 e 80 cm.</p><p>A lógica de classificação é a mesma que seria usada com uma distância recebida do sensor. Isso permite testar o <strong>programa</strong> separadamente da montagem física.</p><p>Os valores são <strong>pseudoaleatórios</strong>: são produzidos por um algoritmo. Neste laboratório, isso é suficiente porque o objetivo não é segurança nem sorteio real; é exercitar diferentes faixas de entrada.</p></div></article>
+    <article class="card"><h3>6. Testando</h3><ol><li>Crie um circuito novo no Tinkercad apenas com o Arduino Uno.</li><li>Cole o código e inicie a simulação.</li><li>Abra o Monitor Serial em 9600.</li><li>Observe se aparecem casos das três faixas.</li><li>Confira se cada valor recebe o estado correto.</li></ol></article>
+    <article class="card worked"><h3>7. Resultado esperado</h3><p>O Monitor Serial exibirá diferentes distâncias simuladas e classificará cada uma. O foco não é prever qual número virá, mas confirmar se a regra responde corretamente a diferentes entradas.</p></article>
+    <article class="card errors wide"><h3>8. Erros comuns</h3><table><tr><th>Problema</th><th>O que conferir</th></tr><tr><td>Esperar o valor 81</td><td>O segundo argumento de <code>random()</code> não entra na faixa gerada.</td></tr><tr><td>Usar <code>random()</code> como se fosse um sensor real</td><td>Aqui ele serve apenas para teste de software. No sistema real, a entrada volta a vir do sensor.</td></tr><tr><td>Achar que pseudoaleatório significa imprevisível para qualquer finalidade</td><td>Não. Este recurso não deve ser confundido com geração adequada para segurança ou criptografia.</td></tr></table></article>
+    <article class="card worked wide"><h3>9. O que foi aplicado</h3><ul><li>Geração de números pseudoaleatórios com <code>random()</code></li><li>Uso correto dos limites mínimo e máximo</li><li>Simulação de entradas para teste de lógica</li><li>Reutilização das regras de classificação trabalhadas anteriormente</li></ul></article>
+    <article class="card wide mbb5-bridge"><h3>10. Próximo problema</h3><p>Até aqui, o sistema mede, calcula, organiza informações e pode testar sua própria lógica. Mas tudo continua acontecendo no Arduino e no computador ligado a ele. <strong>Como acompanhar ou controlar esse sistema a partir de outro dispositivo?</strong></p><p>Essa necessidade abre o próximo bloco: <strong>Conectividade</strong>.</p></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-programacao-aplicada.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

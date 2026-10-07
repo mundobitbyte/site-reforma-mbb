@@ -1,0 +1,7 @@
+.generated-number-field{display:flex;align-items:stretch;gap:6px;flex:1;min-width:0}
+.generated-number-field input{flex:1;min-width:0}
+.generated-sign-button{width:44px;min-width:44px;border:1px solid #b9cbe2;border-radius:9px;background:#fff;color:var(--primary-dark);font-size:22px;font-weight:900;cursor:pointer;line-height:1}
+.generated-sign-button:hover{background:var(--primary-soft);border-color:var(--primary)}
+.generated-sign-button:focus{outline:3px solid rgba(25,103,210,.14);border-color:var(--primary)}
+.generated-sign-button[aria-pressed="true"]{background:var(--primary-soft);border-color:var(--primary)}
+@media(max-width:560px){.generated-number-field{width:100%}}

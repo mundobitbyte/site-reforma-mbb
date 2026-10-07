@@ -1,0 +1,31 @@
+.flowchart-panel-v3{max-width:620px;margin:16px auto;padding:12px 14px;background:#fbfdff;border:1px solid #cbd8e8;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #0f172a0d}
+.flowchart-panel-v3 .flowchart-panel-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin:0 0 10px}
+.flowchart-panel-v3 .flowchart-panel-heading strong{color:var(--dark);font-size:15px}
+.flowchart-panel-v3 .flowchart-panel-heading span{color:var(--muted);font-size:12px}
+.flowchart-svg-v3{display:block;width:100%!important;max-width:570px!important;min-width:0!important;height:auto;margin:0 auto!important;background:#fff;border:1px solid #dbe5f0;border-radius:11px}
+.flowchart-svg-v3 text{font-family:"Segoe UI",Arial,sans-serif;fill:#172033}
+.flowchart-svg-v3 .node{stroke-width:2.4}
+.flowchart-svg-v3 .terminal{fill:#dbeafe;stroke:#1967d2}
+.flowchart-svg-v3 .manual-input{fill:#e0f2fe;stroke:#0284c7}
+.flowchart-svg-v3 .display{fill:#f3e8ff;stroke:#7e22ce}
+.flowchart-svg-v3 .process{fill:#fef3c7;stroke:#d97706}
+.flowchart-svg-v3 .decision{fill:#fee2e2;stroke:#dc2626}
+.flowchart-svg-v3 .connector{fill:#ede9fe;stroke:#7c3aed}
+.flowchart-svg-v3 .arrow{stroke:#1e3a8a;stroke-width:2.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.flowchart-svg-v3 .node-title{font-size:17px;font-weight:800}
+.flowchart-svg-v3 .node-text{font-size:15px}
+.flowchart-svg-v3 .branch-label{font-size:14px;font-weight:900;fill:#334155}
+.flowchart-symbols-v3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.flowchart-symbol-v3{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px}
+.flowchart-symbol-v3 strong{display:block;color:var(--dark);margin-bottom:5px}
+.flowchart-symbol-v3 p{font-size:13px;line-height:1.45;color:#475569;margin:7px 0 0}
+.flowchart-symbol-v3 svg{display:block;width:100%;max-width:240px;height:88px;margin:5px auto}
+.flowchart-symbol-v3 svg text{font-family:"Segoe UI",Arial,sans-serif;fill:#172033;font-size:13px;font-weight:800}
+.flowchart-rule-v3{background:#eef6ff;border-left:5px solid var(--primary);border-radius:10px;padding:12px 14px;margin:14px 0}
+.flowchart-step-chain{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:12px 0}
+.flowchart-step-chain span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12.5px;font-weight:800;color:#334155}
+.flowchart-step-chain b{color:#64748b}
+.flowchart-convention{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+.flowchart-convention code{font-size:13px}
+@media(max-width:900px){.flowchart-symbols-v3{grid-template-columns:1fr}.flowchart-panel-v3{max-width:600px}}
+@media(max-width:760px){.flowchart-panel-v3{width:calc(100% - 12px);max-width:none;margin:14px auto;padding:8px;box-sizing:border-box;overflow:hidden}.flowchart-svg-v3{width:100%!important;max-width:100%!important;min-width:0!important;margin-left:auto!important;margin-right:auto!important}.flowchart-panel-v3 .flowchart-panel-heading{padding:0 2px}.flowchart-panel-v3 .flowchart-panel-heading strong{font-size:14px}.flowchart-symbol-v3 svg{height:78px}.flowchart-symbols-v3{margin-left:0;margin-right:0}}

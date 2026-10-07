@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Proteção de dados pessoais e segurança de sistemas e informações em projetos IoT."/>
+<title>9 — Proteção e Segurança em IoT | Sistemas Embarcados e IoT — Mundo bit Byte</title>
+<link href="../css/arduino.css?v=20261005-2" rel="stylesheet"/>
+<style>
+#arduinoModuleMenu a.module-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:inherit!important}
+.mbb9-intro{margin-bottom:16px}
+.mbb9-intro .hero-flow{margin-top:16px}
+.mbb9-panel{display:none}
+.mbb9-panel.active-panel{display:block}
+.mbb9-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 0}
+.mbb9-summary div{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px}
+.mbb9-summary strong{display:block;color:var(--dark);font-size:13px;margin-bottom:4px}
+.mbb9-summary span{font-size:13px;line-height:1.4;color:#334155}
+.mbb9-note{margin:13px;padding:12px 14px;border:1px solid #bcdde4;border-radius:12px;background:#f7fcfd;line-height:1.55}
+.mbb9-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:15px}
+.mbb9-flow span{background:#eaf2ff;border:1px solid #bfdbfe;color:var(--dark);border-radius:999px;padding:8px 11px;font-size:13px;font-weight:850}
+.mbb9-flow b{color:var(--dark)}
+.mbb9-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:13px}
+.mbb9-grid>div,.mbb9-grid>article{border:1px solid var(--line);border-radius:11px;background:#f8fbfc;padding:11px}
+.mbb9-grid strong{display:block;color:var(--dark);margin-bottom:5px}
+.mbb9-compare{width:100%;border-collapse:collapse}
+.mbb9-compare th,.mbb9-compare td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+.mbb9-compare th{background:#eef9fb;color:var(--dark)}
+.mbb9-warning{border-left:4px solid #b45309;padding:11px 13px;margin:12px;background:#fff7df;border-radius:8px;line-height:1.5}
+.mbb9-good{border-left:4px solid #0f766e;padding:11px 13px;margin:12px;background:#e8f5ee;border-radius:8px;line-height:1.5}
+.mbb9-diagnosis details{border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:8px;padding:10px 12px}
+.mbb9-diagnosis summary{cursor:pointer;font-weight:850;color:var(--dark)}
+.mbb9-diagnosis details p{margin:8px 0 0;line-height:1.5}
+.mbb9-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:13px}
+.mbb9-checklist div{border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px}
+.mbb9-checklist strong{display:block;color:var(--dark);margin-bottom:4px}
+.mbb9-bridge{border:1px solid #b9dfe6;background:#eef9fb}
+.mbb9-source a{color:var(--dark);font-weight:800}
+@media(max-width:900px){.mbb9-grid{grid-template-columns:1fr 1fr}.mbb9-checklist{grid-template-columns:1fr}}
+@media(max-width:760px){.mbb9-summary,.mbb9-grid{grid-template-columns:1fr}.mbb9-compare{font-size:13px}.mbb9-compare th,.mbb9-compare td{padding:7px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Sistemas Embarcados e IoT</h1></div>
+  <div class="brand">Professor Ronaldo Lavestein</div>
+</header>
+
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos de Sistemas Embarcados e IoT">
+  <a class="module-btn" href="arduino.html#intro">1. Fundamentos</a>
+  <a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a>
+  <a class="module-btn" href="arduino.html#p6">3. Sensores</a>
+  <a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a>
+  <a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a>
+  <a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a>
+  <a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a>
+  <a class="module-btn" href="arduino-protocolos.html">8. RTOS e Protocolos</a>
+  <a class="module-btn active" href="#topo">9. Proteção e Segurança</a>
+  <a class="module-btn" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Etapas do bloco 9">
+  <div class="stage-sidebar-head"><h3>Etapas</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar etapas">×</button></div>
+  <div class="stage-menu" id="stageMenu">
+    <a class="stage-link module-visible active" href="#b9-prep">Preparação</a>
+    <a class="stage-link module-visible" href="#b9-1">9.1 Proteção de dados pessoais</a>
+    <a class="stage-link module-visible" href="#b9-2">9.2 Segurança de sistemas e informações</a>
+  </div>
+</aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+
+<div class="arduino-content">
+<button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Etapas</button>
+<main id="topo">
+
+<section class="hero mbb9-intro">
+  <span class="badge">9</span>
+  <h2>Proteção e Segurança em IoT: conectar não é suficiente</h2>
+  <p>Nos blocos anteriores, fizemos dispositivos perceberem o ambiente, agirem e trocarem informações. Agora surge uma responsabilidade nova: <strong>decidir quais dados realmente precisam existir e quem pode acessar dados, dispositivos e comandos.</strong></p>
+  <div class="hero-flow"><div>Finalidade</div><span>→</span><div>Dados necessários</div><span>→</span><div>Acesso</div><span>→</span><div>Proteção</div><span>→</span><div>Uso responsável</div></div>
+  <div class="mbb9-summary">
+    <div><strong>Proteção de dados</strong><span>Pergunta por que coletar, quais dados são necessários e como respeitar as pessoas relacionadas a eles.</span></div>
+    <div><strong>Segurança da informação</strong><span>Protege dados e sistemas contra acesso, alteração, perda ou indisponibilidade indevidos.</span></div>
+    <div><strong>Projeto desde o início</strong><span>Segurança e privacidade não devem aparecer somente depois que o sistema já está pronto.</span></div>
+  </div>
+</section>
+
+<section class="project mbb9-panel active-panel" id="b9-prep">
+  <div class="projectHead"><span class="badge">→</span><div><h2>Preparação — O sistema ficou útil; agora ele também pode criar riscos</h2><p>Quanto mais dados e acessos adicionamos, maior a responsabilidade de projetar o sistema com critérios.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Retomando o Ambiente MbB</h3><p>No Bloco 6, um ESP32 pôde receber comandos por rede e até ser acessado por um túnel. No Bloco 7, vimos que sistemas IoT podem monitorar ambientes, pessoas, máquinas e ativos. No Bloco 8, entendemos como diferentes partes se comunicam. Agora imagine que o sistema registre nomes, horários, localização ou medições ligadas a uma pessoa. <strong>Conectar passou a envolver também proteção.</strong></p></article>
+    <article class="card"><h3>2. Primeira pergunta</h3><p><strong>Precisamos mesmo deste dado?</strong> Antes de armazenar qualquer informação, defina a finalidade e verifique se o projeto pode funcionar com menos dados.</p></article>
+    <article class="card"><h3>3. Segunda pergunta</h3><p><strong>Quem pode acessar ou comandar?</strong> Um sistema disponível na rede não deve tratar qualquer pessoa como usuário autorizado.</p></article>
+    <article class="card wide"><h3>4. Duas áreas relacionadas, mas diferentes</h3><table class="mbb9-compare"><thead><tr><th>Proteção de dados pessoais</th><th>Segurança de sistemas e informações</th></tr></thead><tbody><tr><td>Cuida do tratamento responsável de informações relacionadas a pessoas.</td><td>Cuida da proteção de sistemas, redes, dispositivos e informações contra eventos indevidos.</td></tr><tr><td>Pergunta finalidade, necessidade, transparência e direitos das pessoas.</td><td>Pergunta quem pode acessar, alterar, interromper ou obter informações.</td></tr></tbody></table></article>
+    <article class="card worked wide mbb9-bridge"><h3>5. Começando pelos dados</h3><p>Antes de falar de senhas, redes e ataques, precisamos reconhecer <strong>quando uma informação do nosso projeto passa a ser um dado relacionado a uma pessoa.</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb9-panel" id="b9-1">
+  <div class="projectHead"><span class="badge">9.1</span><div><h2>Proteção de dados pessoais — Colete porque precisa, não porque pode</h2><p>A LGPD protege dados pessoais de pessoas naturais. Em IoT, sensores e registros podem produzir esses dados mesmo quando o projeto parece apenas “técnico”.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>Um sensor mede a temperatura de uma sala. Isso, isoladamente e sem vínculo com uma pessoa identificada ou identificável, não descreve alguém. Mas o projeto muda se passarmos a registrar <strong>quem entrou, em que horário, onde estava ou qual medição pertence a determinada pessoa</strong>.</p></article>
+    <article class="card"><h3>2. Dado pessoal</h3><p>Para a LGPD, dado pessoal é a informação relacionada a uma pessoa natural identificada ou identificável. Nome é um exemplo óbvio, mas outros dados podem permitir identificar ou individualizar alguém quando analisados no contexto.</p></article>
+    <article class="card"><h3>3. Dado pessoal sensível</h3><p>A lei dá proteção especial a categorias como dados de saúde, biométricos e genéticos, além de outras categorias definidas pela LGPD. Em IoT de saúde, portanto, a atenção precisa ser maior.</p></article>
+    <article class="card wide"><h3>4. Nem todo dado de sensor é igual</h3><table class="mbb9-compare"><thead><tr><th>Situação</th><th>Leitura para o projeto</th></tr></thead><tbody><tr><td>Temperatura ambiente sem vínculo com pessoa</td><td>É um dado do ambiente; sozinho, não identifica uma pessoa.</td></tr><tr><td>Registro “Ronaldo entrou às 19:02”</td><td>Relaciona uma ação a uma pessoa identificada: é dado pessoal.</td></tr><tr><td>Batimento cardíaco associado ao usuário de um dispositivo</td><td>É dado relacionado à saúde e exige cuidado especial.</td></tr><tr><td>Localização de um rastreador associado a uma pessoa</td><td>Pode revelar onde aquela pessoa está ou esteve e deve ser tratada com proteção adequada.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>5. Finalidade e necessidade</h3><p>Uma boa pergunta de projeto é: <strong>qual resultado queremos obter e qual é o menor conjunto de dados necessário para isso?</strong> A LGPD inclui os princípios da finalidade e da necessidade. Portanto, “talvez seja útil um dia” não é uma boa razão para coletar tudo.</p><div class="mbb9-flow"><span>Objetivo do sistema</span><b>→</b><span>Dado realmente necessário</span><b>→</b><span>Uso definido</span><b>→</b><span>Proteção</span><b>→</b><span>Eliminação quando aplicável</span></div></article>
+    <article class="card wide mbb9-diagnosis"><h3>6. Diagnóstico de projeto</h3><details><summary>Uma lixeira IoT precisa guardar o nome de quem abriu a tampa?</summary><p>Em uma aplicação comum de contagem de uso, provavelmente não. Se a finalidade é saber quantas aberturas ocorreram, associar cada abertura a uma pessoa acrescentaria dado sem necessidade para esse objetivo.</p></details><details><summary>Um sistema de acesso pode registrar quem entrou?</summary><p>Pode haver uma finalidade legítima para esse registro, mas o dado passa a estar relacionado a pessoas. O projeto deve definir finalidade, acesso, retenção e demais requisitos aplicáveis, em vez de tratar o log como um detalhe técnico sem consequências.</p></details><details><summary>Guardar a senha do Wi-Fi é proteção de dados pessoais?</summary><p>É principalmente uma questão de segurança do sistema e das credenciais. Proteção de dados e segurança se relacionam, mas não são sinônimos.</p></details></article>
+    <article class="card wide mbb9-good"><strong>Regra MbB para o projeto final:</strong> antes de criar uma variável, planilha, banco ou log que identifique pessoas, escreva em uma frase por que aquele dado é necessário. Se a finalidade puder ser atingida sem ele, prefira não coletá-lo.</article>
+    <article class="card worked wide mbb9-bridge"><h3>7. Próxima pergunta</h3><p>Mesmo coletando apenas o necessário, ainda existe outro problema: <strong>como impedir acesso, alteração, perda ou controle indevido do sistema e das informações?</strong></p></article>
+  </div>
+</section>
+
+<section class="project mbb9-panel" id="b9-2">
+  <div class="projectHead"><span class="badge">9.2</span><div><h2>Segurança de sistemas e informações — Proteja o caminho inteiro</h2><p>Um projeto IoT não é apenas a placa. Dispositivo, rede, aplicação, credenciais e dados formam uma cadeia.</p></div></div>
+  <div class="cards">
+    <article class="card wide"><h3>1. Situação</h3><p>No Bloco 6, um túnel pôde tornar um serviço local acessível de fora da rede. Isso foi útil para compreender conectividade, mas também revelou uma pergunta de segurança: <strong>se alguém obtiver o endereço, essa pessoa deve conseguir controlar o dispositivo?</strong> Em um sistema real, a resposta não pode ser “sim, porque conhece a URL”.</p></article>
+    <article class="card wide"><h3>2. Três objetivos clássicos</h3><div class="mbb9-grid"><div><strong>Confidencialidade</strong><span>Informações só devem ser acessadas por quem tem autorização.</span></div><div><strong>Integridade</strong><span>Dados e comandos não devem ser alterados de forma indevida.</span></div><div><strong>Disponibilidade</strong><span>O sistema e as informações precisam estar disponíveis quando necessários, dentro dos requisitos do projeto.</span></div></div></article>
+    <article class="card"><h3>3. Autenticar</h3><p>É verificar quem está tentando acessar. Senha, chave, certificado ou outro mecanismo pode participar dessa verificação conforme o sistema.</p></article>
+    <article class="card"><h3>4. Autorizar</h3><p>Depois de saber quem é o usuário ou sistema, ainda precisamos decidir <strong>o que ele pode fazer</strong>. Ler um sensor e acionar uma porta podem exigir permissões diferentes.</p></article>
+    <article class="card"><h3>5. Registrar</h3><p>Em sistemas que exigem rastreabilidade, registros podem ajudar a saber que operação ocorreu e quando. Mas logs também podem conter dados pessoais e precisam ser protegidos.</p></article>
+    <article class="card wide"><h3>6. O projeto precisa de proteção em várias partes</h3><table class="mbb9-compare"><thead><tr><th>Parte</th><th>Risco simples</th><th>Decisão de projeto</th></tr></thead><tbody><tr><td>Dispositivo</td><td>Configuração padrão ou software desatualizado.</td><td>Manter configuração controlada e atualizar componentes quando necessário.</td></tr><tr><td>Credenciais</td><td>Senha fraca, repetida ou publicada no código.</td><td>Usar credenciais adequadas e não expor segredos em repositórios ou páginas.</td></tr><tr><td>Rede</td><td>Serviço exposto além do necessário.</td><td>Limitar exposição e permitir somente os acessos necessários.</td></tr><tr><td>Aplicação</td><td>Comandos aceitos sem verificar autorização.</td><td>Implementar autenticação e autorização compatíveis com o risco.</td></tr><tr><td>Dados</td><td>Coleta, armazenamento ou compartilhamento excessivo.</td><td>Coletar o necessário, controlar acesso e definir proteção e retenção.</td></tr></tbody></table></article>
+    <article class="card wide"><h3>7. Segurança desde a concepção</h3><p>A LGPD determina que medidas de segurança relacionadas a dados pessoais sejam observadas desde a fase de concepção do produto ou serviço até sua execução. Em termos de projeto, isso significa que segurança não deve ser uma “última tela” acrescentada depois.</p><div class="mbb9-flow"><span>Planejar</span><b>→</b><span>Reduzir exposição</span><b>→</b><span>Controlar acesso</span><b>→</b><span>Testar</span><b>→</b><span>Manter</span></div></article>
+    <article class="card wide mbb9-diagnosis"><h3>8. Revisando o nosso sistema</h3><details><summary>O SSID e a senha reais do Wi-Fi devem ficar publicados no GitHub?</summary><p>Não. Credenciais reais não devem ser expostas em código público. No material didático usamos valores como <code>NOME_DA_REDE</code> e <code>SENHA_DA_REDE</code> justamente para separar exemplo de segredo real.</p></details><details><summary>Trocar a URL do ESP32 por um endereço difícil de adivinhar resolve autenticação?</summary><p>Não. Esconder o endereço não substitui um mecanismo de autenticação e autorização.</p></details><details><summary>Se o sistema não coleta dados pessoais, segurança deixa de importar?</summary><p>Não. Um atuador controlado sem autorização, um dispositivo indisponível ou um comando alterado podem causar problemas mesmo sem dados pessoais.</p></details></article>
+    <article class="card wide"><h3>9. Checklist para o projeto IoT</h3><div class="mbb9-checklist"><div><strong>Finalidade</strong><span>Está claro o que o sistema deve fazer?</span></div><div><strong>Dados</strong><span>Estamos coletando apenas o necessário?</span></div><div><strong>Credenciais</strong><span>Segredos reais estão fora do código público?</span></div><div><strong>Acesso</strong><span>Está definido quem pode ler e quem pode comandar?</span></div><div><strong>Exposição</strong><span>O serviço está acessível somente onde precisa estar?</span></div><div><strong>Atualização</strong><span>Bibliotecas, firmware e dependências podem ser mantidos?</span></div><div><strong>Falhas</strong><span>O sistema possui comportamento seguro quando rede ou serviço falha?</span></div><div><strong>Revisão</strong><span>Testamos o projeto também pensando em uso indevido, e não apenas no caminho feliz?</span></div></div></article>
+    <article class="card wide mbb9-warning"><strong>Limite didático:</strong> esta etapa apresenta princípios de proteção de dados e segurança aplicados ao projeto. Ela não substitui análise jurídica, política institucional ou projeto profissional de cibersegurança quando o sistema envolver pessoas, patrimônio, saúde ou funções críticas.</article>
+    <article class="card wide mbb9-source"><h3>10. Referências oficiais para aprofundamento</h3><p><a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/perguntas-frequentes" target="_blank" rel="noopener noreferrer">ANPD — Perguntas Frequentes sobre LGPD</a></p><p><a href="https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte" target="_blank" rel="noopener noreferrer">ANPD — Guia Orientativo sobre Segurança da Informação</a></p></article>
+    <article class="card wide mbb9-bridge"><h3>11. Ponte para o projeto final</h3><p>Agora temos sensores, atuadores, programação, conectividade, IoT, RTOS, interfaces, protocolos e critérios de proteção. O próximo passo deixa de ser estudar partes isoladas: <strong>vamos integrá-las em um projeto IoT completo, com problema, requisitos, implementação, testes e entrega.</strong></p></article>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+<script src="../js/arduino-seguranca.js?v=20261005-1"></script>
+<script src="../js/arduino-header-5a10-20261005.js?v=20261005-3"></script>\n<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.mbb-estudo-abrir,
+.mbb-estudo-acoes button {
+  border: 1px solid #114b9e;
+  border-radius: 8px;
+  background: #114b9e;
+  color: #fff;
+  padding: 9px 12px;
+  font: 700 14px/1.3 Arial, sans-serif;
+  cursor: pointer;
+}
+.mbb-estudo-abrir {
+  position: fixed;
+  z-index: 10000;
+  right: 16px;
+  bottom: 16px;
+  box-shadow: 0 3px 12px #0f172a40;
+}
+.mbb-estudo-acoes {
+  position: fixed;
+  z-index: 10001;
+  right: 16px;
+  bottom: 62px;
+  width: min(360px, calc(100vw - 32px));
+  max-height: calc(100vh - 90px);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid #cbd9eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #132033;
+  box-shadow: 0 6px 28px #0f172a40;
+  font: 14px/1.4 Arial, sans-serif;
+}
+.mbb-estudo-acoes[hidden] { display: none !important; }
+.mbb-estudo-acoes h2 { margin: 0 0 8px; color: #114b9e; font: 700 20px/1.2 Arial, sans-serif; }
+.mbb-estudo-acoes p { margin: 6px 0 12px; color: #33445d; }
+.mbb-estudo-acoes .mbb-estudo-ajuda { font-size: 12px; }
+.mbb-estudo-acoes button { display: block; width: 100%; margin: 8px 0; text-align: left; background: #fff; color: #114b9e; }
+.mbb-estudo-acoes button[hidden] { display: none; }
+.mbb-estudo-acoes .mbb-lista-notas { border-top: 1px solid #d6e0ee; margin-top: 12px; }
+.mbb-estudo-acoes .mbb-lista-notas .mbb-nota { border-top: 1px solid #edf1f7; padding: 8px 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.mbb-estudo-acoes .mbb-lista-notas .mbb-nota button { display: inline-block; width: auto; margin: 0 8px 0 0; padding: 5px 8px; }
+.mbb-estudo-acoes button:disabled { opacity: .55; cursor: wait; }
+.mbb-estudo-acoes textarea { display: block; box-sizing: border-box; width: 100%; padding: 8px; border: 1px solid #bacbe1; border-radius: 8px; font: inherit; resize: vertical; }
+.mbb-estudo-acoes [role="status"] { display: block; min-height: 1.5em; color: #33445d; }
+.mbb-estudo-acoes a { color: #114b9e; font-weight: 700; }
+@media print { .mbb-estudo-abrir, .mbb-estudo-acoes { display: none !important; } }

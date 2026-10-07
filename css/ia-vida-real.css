@@ -1,0 +1,74 @@
+@import url("./ia-vida-real-base.css");
+
+/* Lapidação visual — 12/09/2026
+   Mantém a proposta prática e reduz a abertura ao essencial. */
+.hero{
+  padding:20px 24px;
+  margin-bottom:14px;
+}
+.hero-grid{display:block;}
+.hero h1{
+  font-size:clamp(1.9rem,3vw,2.65rem);
+  margin-bottom:7px;
+}
+.hero .lead{
+  max-width:1180px;
+  margin-bottom:0;
+  font-size:1rem;
+  line-height:1.5;
+}
+.hero-actions,
+.hero .mini-panel{display:none !important;}
+
+/* Um painel por vez. As duas seções sem id pertencem conceitualmente ao Início. */
+main > #inicio{display:block;}
+main.panel-nav-ready > section[id]{display:none;}
+main.panel-nav-ready > section[id].active-panel{display:block;}
+main.panel-nav-ready:has(> section[id].active-panel:not(#inicio)) > section:not([id]){
+  display:none;
+}
+
+@media(max-width:980px){
+  :root{--topo:46px;}
+  .hero{padding:18px 20px;}
+  .layout{padding-top:46px;}
+
+  aside{
+    position:sticky !important;
+    top:46px !important;
+    z-index:45;
+    width:100% !important;
+    max-width:100%;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+  }
+
+  /* Mobile: .active-panel e :target funcionam como rotas equivalentes.
+     Isso evita tela parada mesmo se o navegador estiver entre versões de cache. */
+  main > section[id],
+  main.panel-nav-ready > section[id]{display:none !important;}
+  main > #inicio,
+  main > section[id].active-panel,
+  main > section[id]:target{display:block !important;}
+
+  main:has(> section[id]:target:not(#inicio)) > #inicio:not(:target):not(.active-panel),
+  main:has(> section[id].active-panel:not(#inicio)) > #inicio:not(.active-panel){
+    display:none !important;
+  }
+
+  /* Jornada + instruções pertencem ao painel Início e somem nos demais tópicos. */
+  main:has(> section[id]:target:not(#inicio)) > section:not([id]),
+  main:has(> section[id].active-panel:not(#inicio)) > section:not([id]){
+    display:none !important;
+  }
+
+  main > section[id]{scroll-margin-top:112px;}
+}
+
+@media(max-width:560px){
+  .hero{padding:16px;}
+  .hero h1{font-size:1.85rem;}
+  .hero .lead{font-size:.98rem;}
+}

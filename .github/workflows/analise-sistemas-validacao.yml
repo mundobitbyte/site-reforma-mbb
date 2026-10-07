@@ -1,0 +1,58 @@
+name: Validação módulo Análise de Sistemas
+
+on:
+  push:
+    branches:
+      - main
+      - analise-sistemas-mbb
+    paths:
+      - 'pages/analise-sistemas/**'
+      - 'js/analise-sistemas.js'
+      - 'js/analise-sistemas-prototipo.js'
+      - 'css/analise-sistemas.css'
+      - 'css/analise-sistemas-final.css'
+      - 'css/analise-sistemas-prototipo.css'
+      - 'tools/analise-sistemas-validacao/**'
+      - '.github/workflows/analise-sistemas-validacao.yml'
+      - 'index.html'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'pages/analise-sistemas/**'
+      - 'js/analise-sistemas.js'
+      - 'js/analise-sistemas-prototipo.js'
+      - 'css/analise-sistemas.css'
+      - 'css/analise-sistemas-final.css'
+      - 'css/analise-sistemas-prototipo.css'
+      - 'tools/analise-sistemas-validacao/**'
+      - '.github/workflows/analise-sistemas-validacao.yml'
+      - 'index.html'
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser validation tool
+        run: npm install --no-save --no-package-lock puppeteer-core@24
+
+      - name: Validate module in real Chromium
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/mbb-analise-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          node tools/analise-sistemas-validacao/smoke.mjs
+          node tools/analise-sistemas-validacao/smoke-prototipo.mjs
+          node tools/analise-sistemas-validacao/smoke-prototipo-autonomo.mjs
+          node tools/analise-sistemas-validacao/smoke-finalizacao.mjs

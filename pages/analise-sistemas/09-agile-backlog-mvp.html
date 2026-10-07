@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>9 — Backlog e MVP | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="9"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Especificar e planejar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 9</span><h1>Se não dá para fazer tudo de uma vez, por onde começamos?</h1><p>Já entendemos muita coisa da Conecta. Agora aparece uma decisão bem prática: <strong>o que precisa entrar primeiro para que a primeira versão já seja útil?</strong></p></section>
+<article class="chapter">
+<div class="card return-card"><h3>Olhe tudo o que já apareceu</h3><p>Abrir ordem, registrar diagnóstico, gerar orçamento, registrar decisão, controlar reparo, consultar situação, usar peças, enviar mensagens, gerar relatórios...</p><p>Se tentarmos construir tudo de uma vez, vamos demorar muito para descobrir se as decisões principais estavam certas.</p></div>
+
+<h2>Primeiro vamos separar o que é grande do que é pequeno</h2>
+<p>Pense em “acompanhar atendimento”. Isso é grande demais para virar uma única pequena entrega. Podemos quebrar em partes menores.</p>
+<div class="table-wrap"><table><thead><tr><th>Nome</th><th>Pense assim</th><th>Exemplo na Conecta</th></tr></thead><tbody><tr><td><strong>Épico</strong></td><td>Um objetivo grande que ainda precisa ser dividido.</td><td>Acompanhar atendimento</td></tr><tr><td><strong>Feature</strong></td><td>Uma funcionalidade importante dentro desse objetivo.</td><td>Consulta da ordem pelo cliente</td></tr><tr><td><strong>História de Usuário</strong></td><td>Uma necessidade pequena escrita pela perspectiva de quem recebe valor.</td><td>Como cliente, quero consultar a situação da ordem para saber se houve avanço.</td></tr><tr><td><strong>Tarefa</strong></td><td>Um trabalho técnico necessário para construir alguma coisa.</td><td>Validar o número da ordem</td></tr></tbody></table></div>
+<p><strong>Feature</strong> é uma palavra inglesa para funcionalidade. <strong>User Story</strong> significa História de Usuário.</p>
+<div class="card question-card"><h3>Uma diferença importante</h3><p>“Cliente consulta a situação” fala de valor para quem usa. “Criar campo no banco” fala de trabalho técnico. Os dois podem ser necessários, mas não são a mesma coisa.</p></div>
+
+<h2>Como escrever uma História de Usuário sem complicar?</h2>
+<p>Use três perguntas: <strong>quem precisa, o que precisa e para quê?</strong></p>
+<div class="card tool-card"><p>Como <strong>atendente</strong>, quero <strong>localizar rapidamente uma ordem</strong>, para <strong>responder ao cliente sem procurar em várias fontes</strong>.</p></div>
+<p>Perceba como a frase se conecta ao problema que vimos lá no começo. Ela não nasceu de uma reunião abstrata; nasceu do retrabalho do atendente.</p>
+
+<h2>Uma frase curta não substitui conversa</h2>
+<p>Se escrevermos só a História de Usuário e nunca mais conversarmos sobre ela, muita coisa fica escondida. Por isso algumas equipes usam a ideia dos <strong>3 Cs</strong>:</p>
+<ul><li><strong>Card — cartão:</strong> o registro curto da necessidade;</li><li><strong>Conversation — conversa:</strong> o diálogo para esclarecer a situação;</li><li><strong>Confirmation — confirmação:</strong> como vamos verificar se aquilo funcionou.</li></ul>
+<p>Você não precisa decorar “3 Cs”. Basta lembrar: <strong>anotar, conversar e confirmar</strong>.</p>
+
+<h2>Agora temos vários itens. Onde colocamos tudo?</h2>
+<p>Precisamos de uma lista organizada do que ainda pode ser feito no produto. Essa lista é chamada de <strong>Backlog</strong>.</p>
+<p><strong>Backlog</strong> é uma palavra inglesa usada para indicar trabalho ainda pendente. No nosso caso, é uma lista ordenada do que pode entrar no sistema.</p>
+<div class="table-wrap"><table><thead><tr><th>Ordem</th><th>Item</th><th>Por que vem cedo?</th></tr></thead><tbody><tr><td>1</td><td>Abrir ordem</td><td>Sem ordem, o atendimento nem começa.</td></tr><tr><td>2</td><td>Registrar diagnóstico</td><td>O orçamento depende dele.</td></tr><tr><td>3</td><td>Gerar e registrar decisão do orçamento</td><td>Isso libera ou impede o reparo.</td></tr><tr><td>4</td><td>Atualizar situação da ordem</td><td>Resolve o problema central de acompanhamento.</td></tr><tr><td>5</td><td>Consulta do cliente</td><td>Entrega valor visível para Ana.</td></tr></tbody></table></div>
+<p>Essa ordem não é “o que parece mais legal”. Ela leva em conta dependência, valor, risco e aprendizado.</p>
+
+<h2>Chegamos à pergunta que realmente importa</h2>
+<div class="card question-card"><h3>Qual é a menor versão que já resolve o problema principal?</h3><p>Não queremos uma versão enorme. Também não queremos algo tão pequeno que não sirva para nada.</p></div>
+<p>É aqui que aparece o conceito de <strong>MVP</strong>.</p>
+<h2>MVP — Produto Mínimo Viável</h2>
+<p><strong>MVP</strong> vem de <em>Minimum Viable Product</em>, em português <strong>Produto Mínimo Viável</strong>.</p>
+<p>Pense assim: é a <strong>menor versão coerente que já entrega valor e permite aprender com uso real</strong>.</p>
+<div class="card warning-card"><h3>Mínimo não é malfeito</h3><p>O MVP pode ter menos funções, mas aquilo que ele oferece precisa funcionar de forma adequada. Segurança básica, integridade dos dados e regras importantes não viram “luxo para depois”.</p></div>
+
+<h2>O que precisa existir para Ana acompanhar o notebook?</h2>
+<div class="flow"><span class="node">Cliente/equipamento</span><span class="arrow">→</span><span class="node">Ordem</span><span class="arrow">→</span><span class="node">Diagnóstico</span><span class="arrow">→</span><span class="node">Orçamento/decisão</span><span class="arrow">→</span><span class="node">Situação</span><span class="arrow">→</span><span class="node">Consulta</span></div>
+<div class="grid2"><div class="card evidence-card"><h3>Poderia entrar no MVP</h3><ul><li>cliente e equipamento;</li><li>ordem;</li><li>diagnóstico;</li><li>orçamento e decisão;</li><li>situação;</li><li>consulta simples.</li></ul></div><div class="card problem-card"><h3>Poderia esperar</h3><ul><li>pagamento integrado;</li><li>notificações automáticas;</li><li>relatórios avançados;</li><li>IA de triagem.</li></ul></div></div>
+<p>Perceba a lógica: primeiro garantimos uma cadeia completa de valor. Depois aprofundamos.</p>
+
+<h2>Story Map: enxergar essa fatia de ponta a ponta</h2>
+<p><strong>Story Map</strong> significa <strong>Mapa de Histórias</strong>. Ele ajuda a organizar as necessidades seguindo a jornada do usuário.</p>
+<div class="table-wrap"><table><thead><tr><th>Receber</th><th>Diagnosticar</th><th>Orçar</th><th>Reparar</th><th>Entregar</th></tr></thead><tbody><tr><td>Abrir ordem</td><td>Registrar diagnóstico</td><td>Gerar proposta</td><td>Registrar reparo</td><td>Marcar entregue</td></tr><tr><td>Foto do equipamento</td><td>Anexar evidência</td><td>Enviar mensagem</td><td>Controlar peças</td><td>Registrar pagamento</td></tr></tbody></table></div>
+<p>Leia a primeira linha inteira: ela percorre o atendimento de ponta a ponta de forma simples. A segunda linha acrescenta detalhes. Isso ajuda a escolher uma primeira versão sem construir “um pedaço enorme de um setor” e esquecer o resto do caminho.</p>
+
+<h2>E o INVEST?</h2>
+<p><span class="pill pill-deep">Aprofundamento</span> Algumas equipes usam <strong>INVEST</strong> como lembrete para revisar Histórias de Usuário. As letras vêm de palavras em inglês como independente, negociável, valiosa, estimável, pequena e testável.</p>
+<p>Para começar, guarde a ideia principal: <strong>uma boa história deve ser pequena o suficiente para entender, discutir e testar</strong>.</p>
+
+<h2>Ready e Done, em português claro</h2>
+<div class="grid2"><div class="card"><h3>Ready — pronto para começar</h3><p>Temos informação suficiente para iniciar este trabalho?</p></div><div class="card"><h3>Done — concluído</h3><p>Quais condições precisam estar satisfeitas para dizer que terminou de verdade?</p></div></div>
+<p>Um critério de aceitação verifica um comportamento específico. A definição de concluído pode incluir coisas que valem para vários itens, como revisão e testes.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Escolha um problema real da Conecta e escreva uma História de Usuário ligada a ele.</li><li>Explique com suas palavras o que é backlog.</li><li>Olhe os cinco primeiros itens e explique por que alguns dependem dos anteriores.</li><li>Explique o que MVP significa e por que “mínimo” não quer dizer “malfeito”.</li><li>Monte uma primeira fatia do sistema que percorra o atendimento inteiro.</li><li>Diga conscientemente o que ficou de fora e por quê.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 10</div><h3>O que entra primeiro</h3><p>Guarde o backlog, o recorte do MVP e a justificativa das prioridades. Cada item importante deve continuar ligado à necessidade que o originou.</p></div>
+<div class="checkpoint"><h3>Checkpoint 6 — Você consegue escolher sem perder o problema?</h3><p>Você consegue explicar <strong>o que deve entrar primeiro, por que entra e qual necessidade isso resolve</strong>?</p></div>
+
+<div class="card next-card"><h3>Nova necessidade</h3><p>Agora sabemos o que queremos colocar na primeira versão. Antes de programar, precisamos descobrir se uma pessoa consegue <strong>entender e usar</strong> a interface que estamos imaginando.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

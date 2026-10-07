@@ -1,0 +1,9 @@
+.history-figure{margin:18px 0 22px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 5px 16px rgba(57,40,24,.08)}
+.history-figure-link{display:block;background:#eee8e1;text-decoration:none}
+.history-figure img{display:block;width:100%;max-height:560px;object-fit:contain;margin:0 auto;background:#eee8e1}
+.history-figure figcaption{display:grid;gap:5px;padding:13px 15px 14px;border-top:1px solid var(--line);font-size:13px;line-height:1.45;color:var(--text)}
+.history-figure figcaption strong{color:var(--primary-dark);font-size:14px}
+.history-figure figcaption span{color:var(--text)}
+.history-figure figcaption small{color:var(--muted);font-size:11.5px}
+.history-figure figcaption a{color:var(--primary-dark);font-weight:800}
+@media(max-width:720px){.history-figure{margin:15px 0 18px}.history-figure img{max-height:420px}.history-figure figcaption{padding:11px 12px 12px}}

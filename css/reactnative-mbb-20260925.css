@@ -1,0 +1,90 @@
+/* Mundo bit Byte — React Native — lapidação pedagógica 25/09/2026 */
+
+.mbb-js-preview{
+  height:100%;display:flex;align-items:center;justify-content:center;
+  padding:18px;background:#f3f7fc;font-family:"Segoe UI",Arial,sans-serif;
+}
+.mbb-js-preview-card{
+  width:min(88%,290px);background:#fff;border:1px solid #cbd5e1;border-radius:16px;
+  padding:18px;box-shadow:0 8px 24px rgba(15,23,42,.10);
+}
+.mbb-js-preview-title{font-size:20px;font-weight:900;color:#0f3f86;margin-bottom:12px}
+.mbb-js-preview-line{font-size:14px;color:#334155;line-height:1.5;margin:3px 0}
+.mbb-js-preview-highlight{margin-top:12px;padding:8px 10px;border-radius:9px;background:#eff6ff;color:#0f4a9c;font-size:13px;font-weight:800}
+
+.mbb-challenge-page{
+  height:100%;overflow:auto;padding:4px 4px 28px;color:#1e293b;
+  font-family:"Segoe UI",Arial,sans-serif;
+}
+.mbb-challenge-hero{
+  background:linear-gradient(135deg,#eff6ff,#ffffff);border:1px solid #bfdbfe;
+  border-radius:16px;padding:20px 22px;margin-bottom:18px;
+}
+.mbb-challenge-kicker{
+  display:inline-flex;padding:5px 10px;border-radius:999px;background:#dbeafe;color:#0f4a9c;
+  font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;
+}
+.mbb-challenge-hero h2{font-size:24px;line-height:1.2;color:#0f3f86;margin:0 0 8px}
+.mbb-challenge-hero p{font-size:15px;line-height:1.55;color:#334155;max-width:980px}
+.mbb-challenge-rule{
+  margin-top:14px;padding:12px 14px;border-left:5px solid #1967d2;background:#fff;
+  border-radius:10px;font-size:14px;line-height:1.5;
+}
+.mbb-challenge-section{margin-top:24px}
+.mbb-section-heading{margin-bottom:12px}
+.mbb-section-heading>span{font-size:12px;font-weight:900;color:#1967d2;text-transform:uppercase;letter-spacing:.05em}
+.mbb-section-heading h3{font-size:21px;color:#0f3f86;margin:3px 0 3px}
+.mbb-section-heading p{font-size:14px;color:#64748b;line-height:1.45}
+.mbb-challenge-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;
+}
+.mbb-challenge-card{
+  min-width:0;background:#fff;border:1px solid #d7e2f0;border-radius:14px;padding:17px 18px;
+  box-shadow:0 4px 14px rgba(15,23,42,.06);
+}
+.mbb-challenge-card h3{font-size:18px;color:#0f3f86;margin:5px 0 10px}
+.mbb-challenge-card p,.mbb-challenge-card li{font-size:14px;line-height:1.5;color:#334155}
+.mbb-challenge-card p+p{margin-top:8px}
+.mbb-challenge-card ul{margin:10px 0 0 20px}
+.mbb-challenge-card li+li{margin-top:5px}
+.mbb-level{font-size:11px;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.04em}
+.mbb-challenge-wide{grid-column:1/-1}
+.mbb-final-challenge{border:2px solid #93c5fd;background:#f8fbff}
+.mbb-resource-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.mbb-resource-tags span{
+  padding:5px 8px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe;
+  color:#0f4a9c;font-size:11px;font-weight:800;
+}
+.mbb-challenge-card details{margin-top:12px;border-top:1px solid #e2e8f0;padding-top:9px}
+.mbb-challenge-card summary{cursor:pointer;font-size:13px;font-weight:800;color:#0f4a9c}
+.mbb-challenge-card details p{margin-top:7px;font-size:13px}
+.mbb-challenge-check{margin-top:12px!important;padding:9px 10px;border-radius:9px;background:#f8fafc;border-left:4px solid #64748b}
+
+.mbb-wireframe{
+  margin:12px 0;padding:13px;border:1px dashed #94a3b8;border-radius:11px;background:#f8fafc;
+  display:flex;flex-direction:column;gap:10px;text-align:center;color:#334155;
+}
+.mbb-wireframe-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mbb-wireframe-column{align-items:center}
+.mbb-wireframe-profile{display:flex;align-items:center;gap:12px;text-align:left}
+.mbb-wireframe-profile>span:last-child{display:flex;flex:1;flex-direction:column;gap:3px}
+.mbb-wire-avatar{width:56px;height:56px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#0f4a9c;flex:0 0 auto}
+.mbb-wire-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mbb-wire-grid span,.mbb-wire-big{padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:#fff}
+.mbb-wire-image{height:72px;border-radius:8px;background:#e2e8f0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#64748b}
+.mbb-wireframe button{border:0;border-radius:7px;padding:7px 12px;background:#1967d2;color:#fff;font-weight:800;font-size:12px}
+.mbb-wireframe-reference{max-width:640px;margin-left:auto;margin-right:auto;padding:0;overflow:hidden;gap:0}
+.mbb-wireframe-reference header{padding:10px;background:#1967d2;color:#fff;font-weight:900}
+.mbb-wireframe-reference main{padding:14px;display:grid;gap:12px}
+.mbb-wireframe small{font-size:11px;color:#64748b}
+
+/* A antiga grade de mini-cards não deve comprimir a nova experiência. */
+.exercise-native:has(.mbb-challenge-page),
+.exercise-clean:has(.mbb-challenge-page){height:auto!important;min-height:100%!important;overflow:visible!important}
+
+@media (max-width:900px){
+  .mbb-challenge-grid{grid-template-columns:1fr}
+  .mbb-challenge-wide{grid-column:auto}
+  .mbb-challenge-hero{padding:17px}
+  .mbb-challenge-hero h2{font-size:21px}
+}

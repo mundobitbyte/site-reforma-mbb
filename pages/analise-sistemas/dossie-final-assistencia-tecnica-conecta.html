@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dossiê Final da Assistência Técnica Conecta — consolidação da análise pronta para passagem ao desenvolvimento.">
+  <title>Dossiê Final — Assistência Técnica Conecta | Análise de Sistemas</title>
+  <link rel="stylesheet" href="../../css/analise-sistemas.css">
+  <link rel="stylesheet" href="../../css/analise-sistemas-final.css">
+</head>
+<body class="dossier-page">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="14-integracao-final.html">← Etapa 14</a><span class="course-title">Análise de Sistemas</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span></div>
+</header>
+<main class="dossier-shell">
+  <article class="dossier-document" id="dossie-final">
+    <section class="dossier-cover">
+      <span class="kicker">Produto final do percurso</span>
+      <h1>Dossiê Final da Assistência Técnica Conecta</h1>
+      <p>Consolidação da análise construída ao longo das etapas. O objetivo deste documento é permitir que uma equipe de desenvolvimento compreenda <strong>o problema, as regras, o escopo, as decisões, os riscos e o que já está suficientemente definido para começar</strong> — sem repetir todos os artefatos do percurso.</p>
+      <div class="dossier-meta"><span>Projeto: Assistência Técnica Conecta</span><span>Uso: passagem para desenvolvimento</span><span>Status: análise consolidada com pendências explícitas</span></div>
+      <div class="dossier-actions"><button class="dossier-button" type="button" onclick="window.print()">Imprimir / salvar em PDF</button><a class="dossier-button secondary" href="14-integracao-final.html">Voltar ao fechamento</a></div>
+      <p class="print-note">Ao imprimir pelo navegador, escolha “Salvar como PDF” se quiser arquivar ou entregar uma cópia.</p>
+    </section>
+
+    <section class="dossier-section" id="problema-contexto">
+      <h2>1. Problema e contexto</h2>
+      <a class="source-ref" href="00-antes-do-sistema.html">Origem: Etapa 0</a>
+      <p>Clientes precisam telefonar para descobrir o andamento do equipamento. O atendente consulta papel, mensagens e pessoas e nem sempre consegue responder com segurança. A causa principal identificada é a <strong>informação dispersa, registrada de formas diferentes e sem uma situação única e confiável da ordem</strong>.</p>
+      <div class="grid2"><div class="card problem-card"><h3>Consequências observadas</h3><ul><li>espera e retrabalho no atendimento;</li><li>risco de informação incorreta;</li><li>dificuldade de rastrear aprovações;</li><li>histórico incompleto de peças e mudanças;</li><li>dependência de pessoas e anotações paralelas.</li></ul></div><div class="card evidence-card"><h3>Objetivo da solução</h3><p>Manter uma referência confiável para o atendimento, registrar as principais decisões do ciclo da ordem e permitir acompanhamento coerente sem digitalizar a desorganização atual.</p></div></div>
+    </section>
+
+    <section class="dossier-section" id="stakeholders-escopo">
+      <h2>2. Stakeholders e escopo</h2>
+      <a class="source-ref" href="01-stakeholders-escopo.html">Origem: Etapa 1</a>
+      <div class="table-wrap"><table><thead><tr><th>Stakeholder</th><th>Necessidade principal</th><th>Conhecimento/decisão relevante</th></tr></thead><tbody><tr><td>Cliente</td><td>Acompanhar atendimento e decidir sobre orçamento</td><td>Experiência de comunicação e decisão</td></tr><tr><td>Atendente</td><td>Abrir, localizar e acompanhar ordens</td><td>Entrada, entrega e contato com cliente</td></tr><tr><td>Técnico</td><td>Registrar diagnóstico, reparo e teste</td><td>Exceções técnicas e necessidade de peças</td></tr><tr><td>Gerência</td><td>Controlar regras, prazos e operação</td><td>Prioridades, políticas e aprovações</td></tr><tr><td>Estoque</td><td>Controlar peças usadas e faltantes</td><td>Disponibilidade e movimentação de peças</td></tr><tr><td>Fornecedor</td><td>Atender solicitações de peça quando necessário</td><td>Prazo e disponibilidade externa</td></tr></tbody></table></div>
+      <div class="grid2"><div class="card evidence-card"><h3>Dentro do escopo inicial</h3><ul><li>cliente e equipamento;</li><li>ordem de serviço;</li><li>diagnóstico e orçamento;</li><li>aprovação/recusa;</li><li>reparo, teste e entrega;</li><li>situação da ordem e consulta.</li></ul></div><div class="card problem-card"><h3>Fora do escopo inicial</h3><ul><li>folha de pagamento e RH;</li><li>contabilidade completa;</li><li>e-commerce de peças;</li><li>relatórios avançados não ligados ao problema central;</li><li>funções sem origem validada.</li></ul></div></div>
+      <p><strong>Premissa a confirmar:</strong> atendentes terão acesso à Internet no expediente. <strong>Restrição conhecida:</strong> a operação deve continuar nos computadores já disponíveis.</p>
+    </section>
+
+    <section class="dossier-section" id="levantamento">
+      <h2>3. Levantamento e evidências</h2>
+      <a class="source-ref" href="02-levantamento.html">Origem: Etapa 2</a>
+      <p>As evidências foram obtidas combinando entrevistas, observação e documentos. A origem de cada achado deve permanecer registrada; pedido de tela ou tecnologia não é aceito como requisito sem investigar a necessidade que o motivou.</p>
+      <div class="table-wrap"><table><thead><tr><th>Achado consolidado</th><th>Origem</th><th>Tratamento</th></tr></thead><tbody><tr><td>Reparo que exige orçamento só começa após aprovação</td><td>Gerência + técnico</td><td>Regra de negócio crítica</td></tr><tr><td>Cliente liga para saber andamento</td><td>Observação</td><td>Problema confirmado</td></tr><tr><td>Peça usada pode ser anotada fora da ordem</td><td>Técnico / estoque</td><td>Problema de rastreabilidade</td></tr><tr><td>Há registros em papel, mensagens e memória das pessoas</td><td>Observação + entrevistas</td><td>Causa da baixa confiabilidade da situação</td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="as-is">
+      <h2>4. Processo AS-IS</h2>
+      <a class="source-ref" href="03-processo-as-is.html">Origem: Etapa 3</a>
+      <div class="flow"><span class="node">Receber equipamento</span><span class="arrow">→</span><span class="node">Diagnosticar</span><span class="arrow">→</span><span class="node">Orçar</span><span class="arrow">→</span><span class="node">Decisão</span><span class="arrow">→</span><span class="node">Reparar</span><span class="arrow">→</span><span class="node">Testar</span><span class="arrow">→</span><span class="node">Entregar</span></div>
+      <p>O fluxo atual possui esperas, retorno ao reparo quando o teste falha, encerramento sem reparo em caso de recusa e pontos de informação fragmentada. Os gargalos principais são <strong>aprovação, consulta da situação e registro do histórico</strong>.</p>
+    </section>
+
+    <section class="dossier-section" id="analise-estruturada">
+      <h2>5. Análise estruturada</h2>
+      <a class="source-ref" href="04-analise-estruturada.html">Origem: Etapa 4</a>
+      <p>O Diagrama de Contexto delimita a Conecta e suas trocas externas; o DFD Nível 0 organiza atendimento, diagnóstico, orçamento e reparo/entrega. Os depósitos conceituais principais são <strong>Clientes, Ordens e Orçamentos</strong>.</p>
+      <div class="table-wrap"><table><thead><tr><th>Elemento</th><th>Significado compartilhado</th></tr></thead><tbody><tr><td>Situação da ordem</td><td>Estado atual reconhecido do atendimento.</td></tr><tr><td>Diagnóstico</td><td>Conclusão técnica que fundamenta o reparo/orçamento.</td></tr><tr><td>Decisão do orçamento</td><td>Resposta do cliente à proposta: aprovado ou recusado.</td></tr></tbody></table></div>
+      <p>Decisões envolvendo garantia, aprovação e disponibilidade de peça devem permanecer explicitáveis por regra/tabela de decisão quando a combinação de condições ficar difícil de visualizar.</p>
+    </section>
+
+    <section class="dossier-section" id="to-be">
+      <h2>6. Processo TO-BE</h2>
+      <a class="source-ref" href="05-processo-to-be-bpmn.html">Origem: Etapa 5</a>
+      <p>A ordem passa a ser a referência compartilhada. O diagnóstico é registrado uma vez, o orçamento nasce desse diagnóstico, a decisão do cliente fica vinculada à ordem e as mudanças de situação passam a refletir eventos reais do processo.</p>
+      <div class="table-wrap"><table><thead><tr><th>Problema do AS-IS</th><th>Mudança no TO-BE</th><th>Resultado esperado</th></tr></thead><tbody><tr><td>Situação pouco confiável</td><td>Uma ordem com estado reconhecido</td><td>Consulta consistente</td></tr><tr><td>Aprovação difícil de rastrear</td><td>Decisão vinculada à ordem</td><td>Histórico e bloqueio coerentes</td></tr><tr><td>Peça usada sem histórico claro</td><td>Registro vinculado ao reparo</td><td>Rastreabilidade da execução</td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="requisitos">
+      <h2>7. Requisitos funcionais, regras e critérios de aceitação</h2>
+      <a class="source-ref" href="06-requisitos.html">Origem: Etapa 6</a>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Requisito funcional consolidado</th><th>Critério de aceitação essencial</th></tr></thead><tbody><tr><td>RF01</td><td>Cadastrar cliente e equipamento.</td><td>Dados mínimos são registrados e vinculados sem duplicar o atendimento atual.</td></tr><tr><td>RF02</td><td>Abrir ordem de serviço ligada ao cliente e ao equipamento.</td><td>A ordem recebe identificador e situação inicial válida.</td></tr><tr><td>RF03</td><td>Registrar diagnóstico técnico.</td><td>Diagnóstico fica associado à ordem e disponível para gerar orçamento.</td></tr><tr><td>RF04</td><td>Consultar situação atual da ordem.</td><td>Consulta exibe a situação permitida ao perfil/cliente sem expor dados indevidos.</td></tr><tr><td>RF05</td><td>Gerar orçamento a partir do diagnóstico.</td><td>Orçamento pendente fica ligado à ordem e disponível para decisão.</td></tr><tr><td>RF06</td><td>Registrar reparo, teste e uso de peças.</td><td>Histórico técnico fica ligado à mesma ordem e teste reprovado retorna ao fluxo de reparo.</td></tr><tr><td>RF07</td><td>Registrar aprovação ou recusa do orçamento.</td><td>Decisão registra autor/data e altera a situação de forma coerente.</td></tr><tr><td>RF08</td><td>Registrar entrega/encerramento.</td><td>Entrega só ocorre a partir de situação compatível e permanece no histórico.</td></tr></tbody></table></div>
+      <h3>Regras de negócio críticas</h3>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Regra</th></tr></thead><tbody><tr><td>RN01</td><td>Reparo que exige orçamento não pode começar antes da aprovação.</td></tr><tr><td>RN02</td><td>Recusa do orçamento impede início do reparo e encaminha encerramento sem reparo.</td></tr><tr><td>RN03</td><td>Teste reprovado devolve a ordem ao reparo; não marca a ordem como pronta.</td></tr><tr><td>RN04</td><td>Mudanças críticas de situação/decisão devem manter autor e data/hora.</td></tr><tr><td>RN05</td><td>Falha de notificação externa não altera retroativamente a situação real da ordem.</td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="rnfs">
+      <h2>8. Requisitos não funcionais</h2>
+      <a class="source-ref" href="11-qualidade-integracoes.html">Origem: Etapa 11</a>
+      <div class="table-wrap"><table><thead><tr><th>Área</th><th>Condição consolidada</th><th>Status</th></tr></thead><tbody><tr><td>Usabilidade móvel</td><td>A consulta do cliente deve funcionar adequadamente em smartphone.</td><td><span class="mini-status known">Conhecido</span></td></tr><tr><td>Autenticação/autorização</td><td>Perfis internos acessam apenas funções necessárias ao papel exercido.</td><td><span class="mini-status known">Conhecido</span></td></tr><tr><td>Privacidade</td><td>Consulta do cliente mostra apenas dados necessários ao acompanhamento.</td><td><span class="mini-status known">Conhecido</span></td></tr><tr><td>Auditabilidade</td><td>Alterações sensíveis registram usuário, data/hora e mudança realizada.</td><td><span class="mini-status known">Conhecido</span></td></tr><tr><td>Acessibilidade</td><td>Rótulos claros, navegação adequada, contraste e informação não dependente apenas de cor.</td><td><span class="mini-status known">Conhecido</span></td></tr><tr><td>Desempenho</td><td>Limites mensuráveis devem ser definidos com base em necessidade/medição, não inventados.</td><td><span class="mini-status pending">A definir</span></td></tr><tr><td>Disponibilidade/recuperação</td><td>Metas e tempos aceitáveis de indisponibilidade/restauração precisam de decisão do negócio.</td><td><span class="mini-status pending">A definir</span></td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="casos-uml">
+      <h2>9. Casos de Uso e modelos UML necessários</h2>
+      <a class="source-ref" href="07-casos-de-uso.html">Casos de Uso: Etapa 7</a> <a class="source-ref" href="08-uml-essencial.html">UML: Etapa 8</a>
+      <div class="table-wrap"><table><thead><tr><th>Ator</th><th>Objetivos principais</th></tr></thead><tbody><tr><td>Atendente</td><td>Abrir ordem, registrar decisão, consultar andamento e concluir entrega.</td></tr><tr><td>Técnico</td><td>Registrar diagnóstico, reparo, teste e necessidade/uso de peças.</td></tr><tr><td>Cliente</td><td>Consultar andamento e tomar decisão sobre orçamento.</td></tr><tr><td>Gerente</td><td>Acompanhar operação e administrar decisões/regras de maior privilégio.</td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Modelo mantido</th><th>Pergunta que responde</th><th>Por que permanece no dossiê</th></tr></thead><tbody><tr><td>Atividades</td><td>Como uma decisão/funcionalidade flui?</td><td>Esclarece aprovação/recusa e retornos.</td></tr><tr><td>Sequência</td><td>Quem troca mensagens em qual ordem?</td><td>Ajuda em interações críticas como registrar decisão.</td></tr><tr><td>Modelo de Domínio</td><td>Quais conceitos existem e se relacionam?</td><td>Alinha Cliente, Equipamento, Ordem, Diagnóstico, Orçamento e Item de Peça.</td></tr><tr><td>Estados da Ordem</td><td>Como a ordem muda durante sua vida?</td><td>Evita transições inválidas e sustenta regras/consulta.</td></tr></tbody></table></div>
+      <p><strong>Estados principais:</strong> Aberta → Em diagnóstico → Aguardando aprovação → Em reparo → Em teste → Pronta → Entregue, com alternativas como recusada, aguardando peça, cancelada e retorno ao reparo.</p>
+    </section>
+
+    <section class="dossier-section" id="produto">
+      <h2>10. Backlog, MVP e Story Map</h2>
+      <a class="source-ref" href="09-agile-backlog-mvp.html">Origem: Etapa 9</a>
+      <div class="table-wrap"><table><thead><tr><th>Prioridade</th><th>Item</th><th>Justificativa</th></tr></thead><tbody><tr><td>1</td><td>Abrir ordem</td><td>Sem ordem, o fluxo não começa.</td></tr><tr><td>2</td><td>Registrar diagnóstico</td><td>Base para orçamento.</td></tr><tr><td>3</td><td>Gerar e registrar decisão do orçamento</td><td>Libera ou impede reparo.</td></tr><tr><td>4</td><td>Atualizar situação da ordem</td><td>Ataca o problema central de acompanhamento.</td></tr><tr><td>5</td><td>Consulta do cliente</td><td>Entrega valor visível e reduz chamadas.</td></tr></tbody></table></div>
+      <div class="grid2"><div class="card evidence-card"><h3>MVP</h3><ul><li>cliente/equipamento;</li><li>ordem;</li><li>diagnóstico;</li><li>orçamento e decisão;</li><li>situação;</li><li>consulta simples.</li></ul></div><div class="card problem-card"><h3>Depois do MVP</h3><ul><li>pagamento integrado;</li><li>notificações automáticas avançadas;</li><li>relatórios avançados;</li><li>IA de triagem.</li></ul></div></div>
+      <h3>Story Map</h3><div class="table-wrap"><table><thead><tr><th>Receber</th><th>Diagnosticar</th><th>Orçar</th><th>Reparar</th><th>Entregar</th></tr></thead><tbody><tr><td>Abrir ordem</td><td>Registrar diagnóstico</td><td>Gerar proposta</td><td>Registrar reparo</td><td>Marcar entregue</td></tr><tr><td>Foto do equipamento</td><td>Anexar evidência</td><td>Enviar mensagem</td><td>Controlar peças</td><td>Registrar pagamento</td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="prototipo">
+      <h2>11. Protótipo e validações</h2>
+      <a class="source-ref" href="10-ux-prototipo.html">Origem: Etapa 10</a>
+      <p>Fluxos prioritários para prototipação: <strong>abrir ordem</strong> e <strong>consultar situação</strong>. A consulta móvel deve pedir apenas os dados necessários, apresentar a situação em linguagem compreensível e não depender apenas de cor.</p>
+      <div class="pending-box"><strong>Evidência que deve acompanhar o dossiê:</strong> registro do teste de tarefa com usuários, incluindo onde hesitaram, o que interpretaram errado e quais mudanças foram justificadas. O modelo não inventa resultados que ainda não foram observados.</div>
+    </section>
+
+    <section class="dossier-section" id="seguranca-integracoes">
+      <h2>12. Segurança, privacidade, acessibilidade e integrações</h2>
+      <a class="source-ref" href="11-qualidade-integracoes.html">Origem: Etapa 11</a>
+      <ul><li>autenticação identifica o usuário; autorização limita o que cada perfil pode fazer;</li><li>menor privilégio para Atendente, Técnico e Gerente;</li><li>consulta externa não exibe CPF completo, endereço ou observações internas sem necessidade;</li><li>mudanças críticas precisam de trilha de auditoria;</li><li>notificação pode ser assíncrona e falhar sem alterar o estado real da ordem;</li><li>integrações devem definir dados, erros, autenticação, versionamento e comportamento de falha;</li><li>operações repetidas, como confirmação de pagamento, precisam evitar efeitos duplicados.</li></ul>
+    </section>
+
+    <section class="dossier-section" id="viabilidade-riscos">
+      <h2>13. Viabilidade e riscos</h2>
+      <a class="source-ref" href="12-viabilidade-riscos-rastreabilidade.html">Origem: Etapa 12</a>
+      <div class="table-wrap"><table><thead><tr><th>Dimensão</th><th>Leitura atual</th><th>Ponto ainda necessário</th></tr></thead><tbody><tr><td>Técnica</td><td>Núcleo do MVP é compatível com infraestrutura comum de aplicação web.</td><td>PoC/Spike para integrações críticas quando houver fornecedor definido.</td></tr><tr><td>Econômica</td><td>Problema recorrente e redução de retrabalho indicam valor potencial.</td><td>Custos reais de desenvolvimento, serviços e manutenção.</td></tr><tr><td>Operacional</td><td>TO-BE reduz registros paralelos e centraliza a ordem.</td><td>Validar adoção e treinamento com usuários reais.</td></tr><tr><td>Prazo</td><td>MVP reduz escopo inicial.</td><td>Estimar com equipe e capacidade disponíveis.</td></tr><tr><td>Legal/privacidade</td><td>Minimização e controle de acesso já foram identificados.</td><td>Validar obrigações específicas do contexto real.</td></tr><tr><td>Organizacional</td><td>Papéis e responsabilidades principais foram identificados.</td><td>Definir responsáveis operacionais pelo sistema e pelos dados.</td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Risco</th><th>Probabilidade</th><th>Impacto</th><th>Resposta</th></tr></thead><tbody><tr><td>R01</td><td>Serviço de mensagens indisponível</td><td>Média</td><td>Baixo/Médio</td><td>Registrar pendência e tentar depois.</td></tr><tr><td>R02</td><td>Usuários não atualizarem a situação</td><td>Média</td><td>Alto</td><td>Simplificar fluxo, treinar e acompanhar.</td></tr><tr><td>R03</td><td>Perda de dados</td><td>Baixa</td><td>Alto</td><td>Backup, restauração testada e controle.</td></tr><tr><td>R04</td><td>Pagamento duplicado</td><td>Baixa</td><td>Alto</td><td>Idempotência e auditoria.</td></tr></tbody></table></div>
+    </section>
+
+    <section class="dossier-section" id="rastreabilidade">
+      <h2>14. Rastreabilidade</h2>
+      <a class="source-ref" href="12-viabilidade-riscos-rastreabilidade.html">Origem: Etapa 12</a>
+      <div class="table-wrap"><table><thead><tr><th>Necessidade/origem</th><th>Requisito</th><th>Regra</th><th>História/Caso</th><th>Interface</th><th>Teste</th></tr></thead><tbody><tr><td>Cliente não sabe andamento</td><td>RF04 Consultar situação</td><td>—</td><td>Consulta do cliente / UC Consultar andamento</td><td>Consulta da ordem</td><td>Validar situação visível e acesso permitido</td></tr><tr><td>Gerência exige aprovação</td><td>RF07 Registrar decisão</td><td>RN01</td><td>Registrar decisão / UC Registrar decisão</td><td>Orçamento</td><td>Bloquear reparo sem aprovação</td></tr><tr><td>Peça usada sem histórico claro</td><td>RF06 Registrar reparo/peças</td><td>—</td><td>Registrar reparo</td><td>Execução técnica</td><td>Peça permanece vinculada à ordem</td></tr></tbody></table></div>
+      <p>A matriz deve ser expandida para itens críticos, não usada como burocracia automática para cada detalhe.</p>
+    </section>
+
+    <section class="dossier-section" id="decisoes">
+      <h2>15. Decisões importantes</h2>
+      <a class="source-ref" href="13-documentacao-ia.html">Origem documental: Etapa 13</a>
+      <div class="decision-list"><div class="decision-item"><strong>Uma ordem é a referência do atendimento.</strong><p>Diagnóstico, orçamento, decisão, reparo e entrega se conectam à mesma ordem.</p></div><div class="decision-item"><strong>Aprovação é regra, não detalhe de tela.</strong><p>Sem aprovação quando exigida, o reparo não avança.</p></div><div class="decision-item"><strong>Modelos são proporcionais.</strong><p>Só permanecem os que respondem a uma pergunta real e ajudam comunicação/decisão.</p></div><div class="decision-item"><strong>MVP entrega o núcleo antes das integrações avançadas.</strong><p>Pagamento integrado, automações e IA ficam depois do problema central estar bem resolvido.</p></div><div class="decision-item"><strong>Falha externa não reescreve o fato do negócio.</strong><p>Notificação falhar não muda uma ordem pronta para “em reparo”.</p></div><div class="decision-item"><strong>Fonte principal evita versões concorrentes.</strong><p>Regra, requisito e decisão devem ter referência única e rastreável.</p></div></div>
+    </section>
+
+    <section class="dossier-section" id="pendencias">
+      <h2>16. Pendências conhecidas</h2>
+      <div class="pending-box"><ul><li>definir limites mensuráveis de desempenho e disponibilidade com base em necessidade real;</li><li>confirmar a premissa de conectividade e capacidade dos computadores existentes;</li><li>selecionar/validar fornecedores de mensagens e pagamento antes de fechar contratos de integração;</li><li>confirmar se orçamento possui validade e qual regra se aplica;</li><li>definir política de retenção, backup, restauração e responsabilidades pelos dados;</li><li>anexar resultados reais dos testes de usabilidade do protótipo;</li><li>validar obrigações legais e de privacidade no contexto real da organização.</li></ul></div>
+      <p>Pendência conhecida não é falha do dossiê. O problema é escondê-la ou tratá-la como fato resolvido.</p>
+    </section>
+
+    <section class="dossier-section" id="condicoes-desenvolvimento">
+      <h2>17. Condições para início do desenvolvimento</h2>
+      <div class="handoff-box"><h3>Passagem liberada quando</h3><ul><li>problema e objetivo estão claros;</li><li>MVP e escopo inicial estão acordados;</li><li>regras críticas não possuem contradição conhecida;</li><li>requisitos prioritários possuem origem e critérios verificáveis;</li><li>estados/transições principais da ordem são compreendidos;</li><li>protótipo dos fluxos de maior risco foi revisado;</li><li>perfis, exposição de dados e auditoria estão definidos no nível necessário;</li><li>riscos e dependências críticas possuem resposta ou experimento planejado;</li><li>integrações de alto risco têm contrato conhecido ou PoC/Spike previsto;</li><li>pendências abertas estão registradas com responsável/decisão futura, sem serem tratadas como requisitos confirmados.</li></ul></div>
+      <p><strong>Critério de passagem:</strong> não é “saber tudo”; é saber o suficiente para começar a próxima fatia com risco aceitável e capacidade de revisar o entendimento quando novas evidências aparecerem.</p>
+    </section>
+
+    <section class="dossier-section" id="handoff-final">
+      <h2>18. Entrega para a equipe de desenvolvimento</h2>
+      <p>Este dossiê é a visão consolidada. Os artefatos detalhados continuam nas etapas de origem e só devem ser consultados quando a equipe precisar aprofundar uma decisão, requisito, risco ou modelo específico.</p>
+      <div class="card evidence-card"><h3>Resumo de passagem</h3><p><strong>Problema compreendido → escopo definido → processo atual conhecido → solução futura justificada → requisitos/rules testáveis → modelos essenciais → MVP priorizado → protótipo validável → qualidade/integrações analisadas → riscos e pendências explícitos → base pronta para desenvolvimento incremental e revisão contínua.</strong></p></div>
+    </section>
+  </article>
+</main>
+<script src="../../js/mbb-visualizador-site.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

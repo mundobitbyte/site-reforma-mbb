@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Revisão por conteúdo dos módulos de Programação Aplicada, Conectividade, IoT, RTOS, Protocolos e Segurança."/>
+<title>Revisão por conteúdo — Arduino e IoT | Mundo bit Byte</title>
+<link href="../css/arduino.css" rel="stylesheet"/>
+<style>
+.module-menu a.module-btn{display:inline-flex;align-items:center;text-decoration:none}
+.review-panel{display:none}.review-panel.active-panel{display:block}
+.review-shell{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.review-head{padding:18px 20px;background:linear-gradient(135deg,#fff,#eef9fb);border-bottom:1px solid var(--line)}
+.review-head h2{margin:8px 0 0;color:var(--dark);font-size:26px}.review-head p{margin:8px 0 0;line-height:1.5;max-width:930px}
+.review-body{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.review-question{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;break-inside:avoid}
+.review-question h4{margin:0;padding:10px 12px;background:#f1fbfd;border-bottom:1px solid var(--line);font-size:14px;color:var(--dark)}
+.review-question p{margin:10px 12px;font-size:13.5px;line-height:1.45}.review-question code{font-family:Consolas,'Courier New',monospace;background:#edf6f8;border:1px solid #cce5ea;border-radius:5px;padding:1px 4px;color:#12343b}
+.answer-line{display:block;border-bottom:1px solid #9fb3ba;height:22px;margin:8px 12px 12px}.answer-line.tall{height:42px}.choice-line{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 12px 12px;font-size:13px;line-height:1.4}.match-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5px 12px;margin:8px 12px 12px;font-size:13px;line-height:1.4}
+.review-note{margin:0;padding:0 16px 16px;color:#546670;font-size:12.5px;line-height:1.45}
+.stage-menu .stage-divider{height:1px;background:var(--line);margin:8px 0}
+@media(max-width:900px){.review-body{grid-template-columns:1fr}.review-head h2{font-size:22px}}
+@media print{@page{size:A4 portrait;margin:9mm}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}header,.module-menu,.stage-sidebar,.stage-backdrop,.stage-toggle,.review-note{display:none!important}.review-panel{display:none!important}.review-panel.active-panel{display:block!important}.layout.arduino-layout{display:block!important;min-height:0!important}.arduino-content main{padding:0!important;margin:0!important;max-width:none!important;width:100%!important}.review-shell{border:0!important;border-radius:0!important;box-shadow:none!important}.review-head{padding:0 0 3mm!important;background:#fff!important;border-bottom:1px solid #777!important}.review-head h2{font-size:14pt!important;color:#000!important}.review-head p{font-size:8.5pt!important}.review-body{grid-template-columns:1fr 1fr!important;gap:3mm 5mm!important;padding:3mm 0 0!important}.review-question{border:1px solid #999!important;border-radius:2mm!important}.review-question h4{padding:1.5mm 2mm!important;background:#f2f2f2!important;font-size:8.5pt!important;color:#000!important}.review-question p{margin:1.5mm 2mm!important;font-size:8pt!important;line-height:1.2!important}.answer-line{height:4mm!important;margin:1mm 2mm 2mm!important}.answer-line.tall{height:7mm!important}}
+</style>
+</head>
+<body>
+<header><div class="header-left"><a class="portal-link" href="../index.html">← Mundo bit Byte</a><h1>Arduino</h1></div><div class="brand">Professor Ronaldo Lavestein</div></header>
+<div class="module-menu" id="arduinoModuleMenu" aria-label="Módulos do Arduino">
+<a class="module-btn" href="arduino.html#intro">1. Fundamentos</a><a class="module-btn" href="arduino.html#p2">2. Entrada/Saída</a><a class="module-btn" href="arduino.html#p6">3. Sensores</a><a class="module-btn" href="arduino.html#p8">4. Atuadores/Automação</a><a class="module-btn" href="arduino-programacao-aplicada.html">5. Programação Aplicada</a><a class="module-btn" href="arduino-conectividade.html">6. Conectividade</a><a class="module-btn" href="arduino-iot.html">7. Internet das Coisas</a><a class="module-btn" href="arduino-protocolos.html">8. RTOS e Protocolos</a><a class="module-btn" href="arduino-seguranca.html">9. Proteção e Segurança</a><a class="module-btn" href="arduino-projeto-iot.html">10. Projeto IoT</a><a class="module-btn active" href="arduino-exercicios.html">99. Exercícios</a>
+</div>
+<div class="layout arduino-layout" id="arduinoLayout">
+<aside class="stage-sidebar" id="stageSidebar" aria-label="Revisão por conteúdo"><div class="stage-sidebar-head"><h3>Revisão</h3><button class="stage-close" id="stageClose" type="button" aria-label="Fechar revisão">×</button></div><div class="stage-menu" id="stageMenu">
+<a class="stage-link module-visible stage-exercises" href="arduino-exercicios.html">← Voltar para 99 — Exercícios</a><div class="stage-divider"></div>
+<a class="stage-link module-visible active" href="#rev-funcoes">5. Programação Aplicada</a><a class="stage-link module-visible" href="#rev-conectividade">6. Conectividade</a><a class="stage-link module-visible" href="#rev-iot">7. Internet das Coisas</a><a class="stage-link module-visible" href="#rev-protocolos">8. RTOS e Protocolos</a><a class="stage-link module-visible" href="#rev-seguranca">9. Proteção e Segurança</a>
+</div></aside>
+<div class="stage-backdrop" id="stageBackdrop" hidden></div>
+<div class="arduino-content"><button class="stage-toggle" id="stageToggle" type="button" aria-controls="stageSidebar" aria-expanded="false">☰ Revisão</button><main id="topo">
+<section class="review-panel active-panel" id="rev-funcoes"><div class="review-shell"><div class="review-head"><span class="badge">5</span><h2>Revisão — Programação Aplicada</h2><p>Retome as funções usadas quando o sistema precisa calcular, produzir texto, testar entradas e reutilizar recursos prontos.</p></div><div class="review-body">
+<article class="review-question"><h4>1. Funções matemáticas</h4><p>Funções prontas ajudam a tratar valores de sensores. <code>abs()</code> retorna o valor absoluto, <code>min()</code> retorna o menor entre dois valores e <code>max()</code> retorna o maior.</p><p><strong>Associe:</strong> a) <code>abs()</code> &nbsp; b) <code>min()</code> &nbsp; c) <code>max()</code></p><p>( ) Maior valor &nbsp;&nbsp; ( ) Menor valor &nbsp;&nbsp; ( ) Valor absoluto</p></article>
+<article class="review-question"><h4>2. Funções trigonométricas</h4><p><code>sin()</code>, <code>cos()</code> e <code>tan()</code> representam seno, cosseno e tangente.</p><p><strong>Complete:</strong> Seno: ______ &nbsp; Cosseno: ______ &nbsp; Tangente: ______</p></article>
+<article class="review-question"><h4>3. Texto</h4><p><code>String palavra = "LED";</code> &nbsp; <code>palavra.length();</code></p><p><strong>Qual será o resultado e o que <code>length()</code> está medindo?</strong></p><span class="answer-line"></span></article>
+<article class="review-question"><h4>4. Números aleatórios</h4><p>Em <code>random(5, 81)</code>, quais são o menor e o maior valor possíveis?</p><span class="answer-line"></span></article>
+<article class="review-question"><h4>5. Bibliotecas</h4><p>No projeto com Servo, aparece <code>#include &lt;Servo.h&gt;</code>. Explique por que uma biblioteca é útil.</p><span class="answer-line"></span></article>
+</div></div></section>
+<section class="review-panel" id="rev-conectividade"><div class="review-shell"><div class="review-head"><span class="badge">6</span><h2>Revisão — Conectividade</h2><p>Revise Bluetooth, Wi‑Fi, cliente e servidor HTTP, mDNS e tunelamento.</p></div><div class="review-body">
+<article class="review-question"><h4>1. Bluetooth e Wi‑Fi</h4><p>a) Celular comunicando diretamente com um dispositivo próximo: __________</p><p>b) ESP32 entrando em uma rede local para hospedar uma página: __________</p></article>
+<article class="review-question"><h4>2. Cliente e servidor HTTP</h4><p>Um celular abre a página hospedada pelo ESP32. Identifique os papéis.</p><p><strong>Cliente:</strong> __________ &nbsp;&nbsp; <strong>Servidor:</strong> __________</p></article>
+<article class="review-question"><h4>3. mDNS e tunelamento</h4><p>a) Qual problema o mDNS resolve em uma rede local?</p><span class="answer-line"></span><p>b) O que uma ferramenta de tunelamento faz com um serviço que estava apenas local?</p><span class="answer-line"></span></article>
+</div></div></section>
+<section class="review-panel" id="rev-iot"><div class="review-shell"><div class="review-head"><span class="badge">7</span><h2>Revisão — Internet das Coisas</h2><p>Revise o que diferencia automação local, dispositivo conectado e sistema IoT e como analisar aplicações.</p></div><div class="review-body">
+<article class="review-question"><h4>1. O que torna um sistema IoT?</h4><p>Marque a situação mais completa.</p><div class="choice-line"><span>( ) LED ligado a uma pilha</span><span>( ) LDR acendendo um LED apenas localmente</span><span>( ) Sensor + dispositivo conectado + aplicação para monitorar ou agir</span></div></article>
+<article class="review-question"><h4>2. Aplicações</h4><p>Escolha duas áreas — residencial, industrial, planejamento urbano, monitoramento, saúde, automação ou rastreamento — e dê um exemplo de IoT para cada uma.</p><span class="answer-line tall"></span></article>
+</div></div></section>
+<section class="review-panel" id="rev-protocolos"><div class="review-shell"><div class="review-head"><span class="badge">8</span><h2>Revisão — RTOS e Protocolos</h2><p>Revise tarefas, barramentos, interfaces e protocolos estudados com foco na arquitetura do sistema.</p></div><div class="review-body">
+<article class="review-question"><h4>1. RTOS</h4><p>Um programa precisa ler sensor, atender a rede e atualizar um atuador. Por que separar trabalhos em tarefas pode ser útil? E por que “tempo real” não significa apenas “muito rápido”?</p><span class="answer-line tall"></span></article>
+<article class="review-question"><h4>2. I2C</h4><p>Um LCD 16x2 com interface I2C usa SDA, SCL e um endereço. Qual é a função do endereço quando vários dispositivos compartilham o barramento?</p><span class="answer-line"></span><p><strong>Antes de assumir 0x27 ou 0x3F, o que devemos fazer?</strong> ______________________________</p></article>
+<article class="review-question"><h4>3. UART não é RS-232</h4><p>Classifique como verdadeiro (V) ou falso (F).</p><p>( ) Usar o Monitor Serial significa que o circuito é RS-232.</p><p>( ) HC-05/HC-06 podem trocar dados pela UART em níveis lógicos.</p><p>( ) Uma ligação RS-232 real pode exigir um transceptor adequado, como MAX3232.</p></article>
+<article class="review-question"><h4>4. CAN</h4><p>Por que não devemos ligar CANH e CANL diretamente aos GPIOs do ESP32? Qual componente existe entre o controlador e o barramento físico?</p><span class="answer-line"></span></article>
+<article class="review-question"><h4>5. TCP/IP por baixo do HTTP</h4><p>Ordene do nível da aplicação em direção ao meio de acesso usado no nosso exemplo:</p><p>Wi‑Fi — IP — HTTP — TCP</p><p><strong>Ordem:</strong> __________________________________________</p></article>
+<article class="review-question"><h4>6. Família IEEE 802.11</h4><p>O ESP32-WROOM-32 usado no percurso trabalha com Wi‑Fi 2,4 GHz e 802.11 b/g/n. O que pode acontecer se a rede disponível aceitar somente 5 GHz?</p><span class="answer-line"></span></article>
+<article class="review-question"><h4>7. Bluetooth Classic e BLE</h4><p>O controle serial estudado anteriormente se aproxima do uso de Bluetooth Classic/SPP. Em poucas palavras, qual é a diferença de proposta em relação ao BLE?</p><span class="answer-line"></span></article>
+</div></div></section>
+<section class="review-panel" id="rev-seguranca"><div class="review-shell"><div class="review-head"><span class="badge">9</span><h2>Revisão — Proteção e Segurança</h2><p>Revise proteção de dados pessoais e segurança do dispositivo, das credenciais, da rede, da aplicação e dos dados.</p></div><div class="review-body">
+<article class="review-question"><h4>1. Dado do ambiente ou dado pessoal?</h4><p>Classifique:</p><p>a) Temperatura da sala sem vínculo com uma pessoa: __________________</p><p>b) Registro “Ana entrou às 19:05”: __________________</p><p>c) Batimento cardíaco associado ao usuário: __________________</p></article>
+<article class="review-question"><h4>2. Finalidade e necessidade</h4><p>Uma lixeira inteligente precisa saber quantas vezes foi usada. Alguém propõe gravar também o nome de cada pessoa que abriu a tampa. Qual pergunta deve ser feita antes de coletar esse dado?</p><span class="answer-line tall"></span></article>
+<article class="review-question"><h4>3. Segurança da informação</h4><p>Associe:</p><div class="match-grid"><div><strong>a)</strong> Confidencialidade</div><div>( ) Informação continua disponível quando necessária</div><div><strong>b)</strong> Integridade</div><div>( ) Apenas pessoas autorizadas acessam</div><div><strong>c)</strong> Disponibilidade</div><div>( ) Informação não é alterada indevidamente</div></div></article>
+<article class="review-question"><h4>4. Autenticação, autorização e exposição</h4><p>Um servidor do ESP32 foi exposto à Internet por um túnel e qualquer pessoa com o endereço consegue acionar o dispositivo. Cite <strong>duas</strong> melhorias de segurança que deveriam ser consideradas.</p><span class="answer-line tall"></span></article>
+</div></div></section>
+<section class="review-panel" id="rev-projeto"><div class="review-shell"><div class="review-head"><span class="badge">10</span><h2>Revisão — Projeto IoT</h2><p>Este material foi preservado como complemento do Projeto IoT, mas o módulo 10 não integra a organização principal das 80 horas nem aparece no menu de 99 — Exercícios.</p></div><div class="review-body">
+<article class="review-question"><h4>1. Integração e calibração</h4><p>No Ambiente Inteligente MbB, organize o caminho principal:</p><p>Aplicação Web — LDR — ESP32 — LED — Wi‑Fi</p><p><strong>Ordem lógica:</strong> _______________________________________</p><p>Por que o valor de <code>LIMIAR</code> do LDR deve ser calibrado na montagem real?</p><span class="answer-line"></span></article>
+<article class="review-question"><h4>2. Diagnóstico do projeto</h4><p>O LED funciona no teste local, mas depois da integração a página não abre. Qual parte você investigaria primeiro: sensor, atuador, conectividade/aplicação ou tudo ao mesmo tempo? Justifique.</p><span class="answer-line tall"></span></article>
+<article class="review-question"><h4>3. Desafio de transferência</h4><p>Escolha um sistema diferente do projeto final — por exemplo, monitoramento de reservatório, abertura de porta ou rastreamento. Defina: <strong>sensor/entrada, processamento, comunicação, aplicação ou saída e um cuidado de segurança ou dados</strong>.</p><span class="answer-line tall"></span><span class="answer-line tall"></span></article>
+</div></div></section>
+<p class="review-note">A revisão principal acompanha os módulos 5 a 9. Os exercícios dos módulos 1 a 4 continuam junto aos projetos e são acessados pela central 99 — Exercícios.</p>
+</main></div></div>
+<script>
+(function(){
+ const layout=document.getElementById('arduinoLayout'),toggle=document.getElementById('stageToggle'),close=document.getElementById('stageClose'),backdrop=document.getElementById('stageBackdrop');
+ const links=Array.from(document.querySelectorAll('#stageMenu a[href^="#"]')),panels=Array.from(document.querySelectorAll('.review-panel'));
+ function closeDrawer(){layout.classList.remove('drawer-open');if(backdrop)backdrop.hidden=true;if(toggle)toggle.setAttribute('aria-expanded','false')}
+ function openDrawer(){layout.classList.add('drawer-open');if(backdrop)backdrop.hidden=false;if(toggle)toggle.setAttribute('aria-expanded','true')}
+ function show(hash,update){let panel=document.querySelector(hash);if(!panel||!panel.classList.contains('review-panel'))panel=document.querySelector('#rev-funcoes');panels.forEach(p=>p.classList.toggle('active-panel',p===panel));links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+panel.id));if(update)history.replaceState(null,'','#'+panel.id);closeDrawer();window.scrollTo(0,0)}
+ links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.getAttribute('href'),true)}));if(toggle)toggle.addEventListener('click',openDrawer);if(close)close.addEventListener('click',closeDrawer);if(backdrop)backdrop.addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});show(location.hash||'#rev-funcoes',false);
+ function manter(){const menu=document.getElementById('arduinoModuleMenu'),ativo=menu&&menu.querySelector('.module-btn.active');if(!menu||!ativo)return;requestAnimationFrame(()=>{const mr=menu.getBoundingClientRect(),ir=ativo.getBoundingClientRect(),alvo=menu.scrollLeft+(ir.left-mr.left)-((menu.clientWidth-ir.width)/2),max=Math.max(0,menu.scrollWidth-menu.clientWidth);menu.scrollLeft=Math.min(max,Math.max(0,alvo));});}
+ manter();window.addEventListener('pageshow',manter);window.addEventListener('resize',manter);
+})();
+</script>
+<script src="../js/arduino-destaques-mbb.js?v=20260926-3"></script>
+<script src="../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

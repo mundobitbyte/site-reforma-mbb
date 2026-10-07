@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Etapa 9 de Segurança de Dados e Informação: SQL Injection e consultas parametrizadas."><title>9 — Quando aquilo que digitamos vira parte de um comando | Segurança de Dados e Informação</title><link rel="stylesheet" href="../../css/seguranca-dados.css"></head>
+<body data-stage="9"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Segurança de Dados e Informação</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header><div class="course-shell"><aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Entrada segura</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 9</span><h1>Quando aquilo que digitamos vira parte de um comando</h1><p>Até agora protegemos arquivos, conexões e acesso. Agora vamos olhar para uma falha criada <strong>pela própria aplicação</strong> quando ela confunde aquilo que o usuário digitou com a estrutura de uma instrução SQL.</p></section>
+<article class="chapter">
+<h2>O campo pede um nome. O programa espera receber apenas um nome.</h2>
+<p>Na Conecta Serviços, uma tela de busca deveria receber algo simples, como <code>Ana</code>. O programa precisa usar esse valor para procurar clientes no banco.</p>
+<p>Uma consulta normal poderia ser:</p><div class="code-block"><pre><code>SELECT * FROM clientes WHERE nome = 'Ana';</code></pre></div>
+<p>Aqui existem duas coisas diferentes: a <strong>estrutura do comando</strong> e o <strong>valor procurado</strong>.</p>
+<h2>O problema começa quando o programa mistura essas duas coisas</h2>
+<div class="code-block"><pre><code>nome = input("Digite o nome: ")
+sql = "SELECT * FROM clientes WHERE nome = '" + nome + "'"</code></pre></div>
+<p>Esse código concatena diretamente o texto recebido com o comando SQL. Enquanto a entrada for apenas <code>Ana</code>, tudo parece funcionar. Mas o programa está confiando que o usuário sempre entregará um valor inocente.</p>
+<p>Se a entrada conseguir modificar a estrutura interpretada pelo banco, temos uma classe de vulnerabilidade chamada <strong>SQL Injection</strong>, ou injeção de SQL.</p>
+<div class="card evidence-card"><h3>A ideia que vale mais do que decorar um ataque</h3><p><strong>Entrada externa é dado. Dado não deve ganhar o poder de reescrever a estrutura do comando.</strong></p></div>
+<h2>Veja acontecer em um ambiente seguro</h2>
+<p>O laboratório usa apenas <code>sqlite3</code>, que acompanha o Python. Ele cria um banco temporário no próprio computador e coloca lado a lado uma consulta vulnerável e uma consulta parametrizada.</p>
+<div class="card tool-card"><h3>Baixe o laboratório</h3><p><a class="action" href="../../assets/seguranca-dados/sql-injection-local.py" download>Baixar sql-injection-local.py →</a></p><p class="small">Use somente este arquivo didático. Não teste entradas de injeção em sistemas de terceiros ou sem autorização.</p></div>
+<div class="card practice-card"><ol><li>Crie uma pasta chamada <code>sql-injection-mbb</code> e coloque nela o arquivo baixado.</li><li>Abra a pasta no Explorador de Arquivos, clique na barra de endereços, digite <code>powershell</code> e pressione <strong>Enter</strong>.</li><li>Confirme que o Python está disponível:</li></ol><div class="code-block"><pre><code>python --version</code></pre></div><p>Se o Windows usar o lançador <code>py</code>, teste <code>py --version</code>.</p><ol start="4"><li>Execute <code>python .\sql-injection-local.py</code> ou <code>py .\sql-injection-local.py</code>.</li><li>Pesquise primeiro por <code>Ana</code>. As duas versões devem localizar apenas Ana.</li><li>Depois use, <strong>somente nesse laboratório local</strong>, a entrada indicada pelo próprio programa: <code>' OR 1=1 --</code>.</li><li>Compare a consulta montada e o resultado das duas versões.</li><li>Digite <code>SAIR</code> para encerrar.</li></ol></div>
+<h2>O que mudou na versão segura?</h2>
+<p>Na versão vulnerável, o programa monta a instrução unindo pedaços de texto. Na versão parametrizada, comando e valor seguem caminhos separados.</p>
+<div class="code-block"><pre><code>cursor.execute(
+    "SELECT * FROM clientes WHERE nome = ?",
+    (nome,)
+)</code></pre></div>
+<p>O <code>?</code> não é a lição principal. Outras linguagens e bibliotecas usam sintaxes diferentes. O conceito é que a aplicação entrega a <strong>estrutura do comando</strong> separadamente dos <strong>valores</strong>.</p>
+<div class="card question-card"><h3>Validação de entrada ajuda, mas não substitui parametrização</h3><p>Verificar formato, tamanho e tipo de entrada é útil por vários motivos. Mas a defesa central contra SQL Injection continua sendo não construir SQL por concatenação de dados externos.</p></div>
+<h2>Mesmo um sistema bem programado ainda pode perder dados</h2>
+<p>Eliminar SQL Injection não elimina falha de disco, exclusão acidental, corrupção, ransomware ou erro humano. Segurança também precisa responder ao momento em que a prevenção falha.</p>
+<div class="card next-card"><h3>Próxima necessidade: recuperação</h3><p>Se os dados desaparecerem hoje, a empresa consegue restaurá-los de maneira comprovada — ou apenas espera que o backup funcione?</p></div>
+<div class="checkpoint"><h3>Saia desta etapa sabendo</h3><p>Explicar onde nasce SQL Injection, observar a diferença em laboratório e justificar por que consultas parametrizadas mantêm dados separados da estrutura do comando.</p></div>
+</article><nav class="stage-footer"><a href="08-esteganografia.html">← Etapa 8</a><a class="all" href="index.html">Todas as etapas</a><a class="next" href="10-backup-recuperacao.html">Etapa 10 →</a></nav></div></main></div><script src="../../js/seguranca-dados.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-3"></script></body></html>

@@ -1,0 +1,47 @@
+.mbb-comic {
+  margin: 1.5rem 0 2rem;
+}
+
+.mbb-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .55rem;
+  padding: .55rem;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, .12);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, .08);
+}
+
+.mbb-comic-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.mbb-comic-takeaway {
+  margin-top: .7rem;
+  padding: .85rem 1rem;
+  border-radius: 12px;
+  background: #fff4bf;
+  border: 1px solid rgba(146, 96, 0, .18);
+  color: #3b2b00;
+  line-height: 1.55;
+}
+
+.mbb-comic-takeaway strong {
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .mbb-comic-grid {
+    grid-template-columns: 1fr;
+    gap: .45rem;
+    padding: .4rem;
+  }
+
+  .mbb-comic {
+    margin: 1.2rem 0 1.6rem;
+  }
+}

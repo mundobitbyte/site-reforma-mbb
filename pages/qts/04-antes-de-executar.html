@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 4 de Qualidade e Teste de Software: descubra como revisar requisitos e código antes de executar o software e diferencie teste estático de teste dinâmico.">
+<title>4 — Antes de executar | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="4">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Revisar antes de executar</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      <section class="hero"><span class="kicker">Etapa 4</span><h1>Antes de executar</h1><p>Na etapa anterior encontramos uma contradição entre documentos sem abrir a Cantina Horizonte. Isso muda nossa pergunta: <strong>será que testar sempre exige executar o software?</strong></p></section>
+      <article class="chapter">
+        <div class="card context-card"><h3>O servidor está parado, mas o trabalho não precisa parar</h3><p>A equipe da Cantina Horizonte está fazendo manutenção no ambiente. Por algumas horas, ninguém consegue abrir o sistema.</p><p>Mesmo assim, chegaram para revisão uma especificação de requisitos e alguns trechos de código.</p><p>Você pode simplesmente esperar o sistema voltar — ou pode começar a procurar problemas agora.</p></div>
+        <h2>Primeiro, revise sem executar nada</h2>
+        <p>Abra o material abaixo e leia com calma. Não tente rodar código. Não procure uma ferramenta automática. Apenas observe os textos e compare cada trecho com aquilo que já sabemos da Cantina Horizonte.</p>
+        <div class="card practice-card"><h3>Prática · revisão inicial</h3><p><a class="action" href="../../qts/cantina-horizonte-v1/docs/artefatos-revisao-estatica.md" target="_blank" rel="noopener">Abrir os materiais para revisão →</a></p><p class="small">Anote o que chamou sua atenção, por que pode ser um problema e o que precisaria ser esclarecido.</p></div>
+        <h2>Você acabou de testar sem executar o programa</h2>
+        <p>Se você percebeu que dois documentos trazem valores diferentes para o cupom, encontrou um problema antes da execução.</p>
+        <p>Se leu o código abaixo e percebeu que ele aceita 0 e valores negativos, também encontrou um problema sem executar a função:</p>
+        <div class="code-block"><pre><code>def validar_quantidade(quantidade):
+    return quantidade &lt;= 10</code></pre></div>
+        <p>A regra conhecida é:</p><div class="card evidence-card"><p><strong>A quantidade deve estar entre 1 e 10, inclusive.</strong></p></div><p>O código verifica apenas o limite superior. Só a leitura já revelou que uma parte da regra ficou de fora.</p>
+        <h2>Esse tipo de trabalho tem um nome</h2>
+        <div class="card tool-card"><h3>Teste estático</h3><p><strong>Teste estático</strong> é a avaliação de produtos de trabalho sem executar o software que está sendo analisado.</p><p>Esses produtos podem ser requisitos, regras de negócio, documentos, diagramas, código-fonte, configurações e outros artefatos do projeto.</p></div>
+        <p>A palavra <strong>artefato</strong>, aqui, significa simplesmente um produto do trabalho da equipe: algo criado durante o projeto e que pode ser revisado.</p>
+        <h2>E quando executamos?</h2>
+        <div class="card tool-card"><h3>Teste dinâmico</h3><p><strong>Teste dinâmico</strong> acontece quando executamos o software ou uma parte dele e observamos seu comportamento.</p></div>
+        <div class="grid2"><div class="card evidence-card"><h3>Estático</h3><p>Ler o requisito do cupom e perceber uma contradição.</p><p>Revisar o código de quantidade e notar que falta o limite mínimo.</p></div><div class="card evidence-card"><h3>Dinâmico</h3><p>Abrir a Cantina Horizonte, digitar 0 e observar se o sistema aceita.</p><p>Executar uma função e comparar o resultado obtido com o esperado.</p></div></div>
+        <p>Um não substitui o outro. Eles encontram problemas de maneiras diferentes.</p>
+        <h2>Por que procurar cedo?</h2>
+        <p>Imagine que a regra do cupom esteja contraditória desde a documentação.</p><p>Se ninguém perceber, o desenvolvedor escolhe uma interpretação, escreve o código, o testador cria casos baseados em outra interpretação e a discussão só aparece depois.</p><p>Ao revisar cedo, podemos perguntar antes:</p><div class="card question-card"><p><strong>A regra correta é R$ 30,00 ou R$ 40,00?</strong></p></div><p>Resolver a dúvida nesse momento evita que várias partes do projeto avancem sobre uma base diferente.</p>
+        <h2>Revisar não é apenas caçar erro de digitação</h2>
+        <p>Durante uma revisão, vale procurar problemas de vários tipos:</p><div class="grid2"><div class="card practice-card"><h3>Ambiguidade</h3><p>“O sistema deve responder rápido.” Quanto é rápido?</p></div><div class="card practice-card"><h3>Contradição</h3><p>Um documento diz R$ 30,00 e outro diz R$ 40,00.</p></div><div class="card practice-card"><h3>Omissão</h3><p>A regra fala em máximo 10, mas esquece de informar o mínimo.</p></div><div class="card practice-card"><h3>Inconsistência</h3><p>O requisito diz uma coisa e o código representa outra.</p></div></div><p>Também podemos encontrar duplicações desnecessárias, trechos difíceis de entender, informações sem fonte e regras impossíveis de verificar.</p>
+        <h2>Uma revisão pode ser simples</h2>
+        <p>Nem toda revisão precisa de uma reunião formal ou de um documento enorme.</p><p>Para um projeto pequeno, uma lista de perguntas já ajuda bastante:</p><div class="card practice-card"><h3>Checklist de revisão</h3><ul><li>Existe alguma frase com mais de uma interpretação possível?</li><li>Dois trechos dizem coisas diferentes sobre a mesma regra?</li><li>Falta algum limite, condição ou exceção importante?</li><li>O requisito pode ser verificado de forma objetiva?</li><li>O código representa toda a regra conhecida?</li></ul></div><p><strong>Checklist</strong> significa uma lista de verificação: perguntas ou itens que ajudam a lembrar o que precisa ser observado.</p>
+        <h2>Revisão humana e análise automática não enxergam as mesmas coisas</h2>
+        <p>Uma pessoa consegue perceber que “R$ 30,00” e “R$ 40,00” representam uma contradição de negócio porque entende o contexto.</p><p>Uma ferramenta de <strong>análise estática</strong> pode examinar código sem executá-lo e apontar outros sinais, como problemas de sintaxe, trechos nunca usados, padrões perigosos ou violações de regras de código.</p><div class="card evidence-card"><p><strong>A ferramenta conhece a estrutura do código. A equipe conhece a intenção do negócio.</strong> Por isso, as duas formas de revisão se complementam.</p></div><p>Mais adiante, quando surgir uma necessidade concreta, poderemos usar ferramentas desse tipo. Aqui o mais importante é entender o raciocínio.</p>
+        <h2>Nem tudo que parece estranho é um defeito</h2>
+        <p>Considere este código:</p><div class="code-block"><pre><code>def calcular_subtotal(preco, quantidade):
+    resultado = preco * quantidade
+    valor = resultado
+    return valor</code></pre></div><p>Ele pode produzir o resultado correto. Ainda assim, a variável <code>valor</code> não acrescenta informação e pode ser eliminada.</p><p>Uma revisão também pode melhorar <strong>clareza, simplicidade e manutenibilidade</strong>, mesmo quando não encontramos uma falha funcional.</p>
+        <h2>Prática · estático ou dinâmico?</h2>
+        <div class="table-wrap"><table><thead><tr><th>Situação</th><th>Estático ou dinâmico?</th><th>Por quê?</th></tr></thead><tbody><tr><td>Ler RF-03 e notar que falta uma condição.</td><td>Estático</td><td>O software não foi executado.</td></tr><tr><td>Digitar 11 na tela e observar a resposta.</td><td>Dinâmico</td><td>O sistema foi executado.</td></tr><tr><td>Comparar dois documentos que descrevem o cupom.</td><td>Estático</td><td>Estamos revisando artefatos.</td></tr><tr><td>Executar uma função de cálculo com quantidade 2.</td><td>Dinâmico</td><td>Há execução do código.</td></tr><tr><td>Ler um trecho de código e perceber que aceita valores negativos.</td><td>Estático</td><td>A conclusão veio da revisão do código.</td></tr></tbody></table></div>
+        <h2>Agora o problema muda novamente</h2>
+        <p>A revisão estática ajudou a encontrar contradições, omissões e diferenças entre regra e código.</p><p>Depois que esses pontos forem esclarecidos, ainda precisaremos executar o sistema.</p><p>Só que aparece uma nova dificuldade: para uma quantidade inteira, poderíamos testar 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 — e também 0, -1, -2, 11, 12, 100...</p><div class="card question-card"><p><strong>Como escolher poucos valores que tenham boa chance de revelar problemas?</strong></p></div>
+        <div class="card next-card"><h3>A seguir: escolher bons valores de teste</h3><p>Vamos parar de escolher números ao acaso e aprender duas técnicas muito úteis: <strong>particionamento de equivalência</strong> e <strong>análise de valores-limite</strong>.</p></div>
+        <div class="checkpoint"><h3>Antes de seguir</h3><p>Você deve conseguir explicar:</p><ul><li>por que é possível encontrar problemas antes de executar o software;</li><li>a diferença básica entre teste estático e teste dinâmico;</li><li>o que significa artefato e checklist neste contexto;</li><li>por que revisão humana e análise automática podem se complementar.</li></ul></div>
+      </article>
+      <nav class="stage-footer" aria-label="Navegação entre etapas"><a href="03-o-que-deveria-acontecer.html">← Etapa 3</a><a class="all" href="index.html">Todas as etapas</a><a class="next" href="05-bons-valores-de-teste.html">Etapa 5 →</a></nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.philo-opening{margin-bottom:18px}
+.lesson-kicker{display:inline-block;color:var(--primary);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.central-question{margin-top:12px!important;padding-top:10px;border-top:1px solid #d8cee9}
+.two-col,.three-col,.four-col,.comparison-grid,.evidence-grid,.perspective-grid{display:grid;gap:12px;margin:14px 0}
+.two-col,.comparison-grid,.evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.three-col,.perspective-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.four-col{grid-template-columns:repeat(4,minmax(0,1fr))}
+.mini-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px}
+.mini-card strong{display:block;color:var(--primary-dark);margin-bottom:5px}
+.quick-question,.source-box,.field-box,.challenge-box{border-radius:12px;margin:15px 0}
+.quick-question{border:1px solid var(--line);border-left:5px solid var(--primary);padding:14px;background:#fff}
+.quick-question>strong{display:block;color:var(--primary-dark);margin-bottom:4px}
+.choice-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.choice-row button{border:1px solid #cec5df;background:#fff;border-radius:9px;padding:9px 12px;color:var(--text);font-weight:800;cursor:pointer}
+.choice-row button:hover{background:var(--primary-soft)}
+.choice-row button.is-correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.choice-row button.is-wrong{background:var(--danger-bg);border-color:var(--danger);color:var(--danger)}
+.choice-feedback{min-height:0;font-size:13px}
+.choice-feedback.is-correct{color:var(--ok)}
+.choice-feedback.is-wrong{color:var(--danger)}
+.source-box,.field-box{padding:15px;border:1px solid var(--line);background:var(--surface-soft)}
+.source-box{border-left:5px solid var(--accent)}
+.field-box{border-left:5px solid var(--primary)}
+.argument-chain{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.argument-chain span{background:var(--primary-soft);border:1px solid #d6cbea;color:var(--primary-dark);font-weight:850;border-radius:999px;padding:7px 10px}
+.argument-chain b{color:var(--muted)}
+.philo-figure{margin:18px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 4px 14px rgba(53,41,94,.08)}
+.philo-figure-grid{display:grid;grid-template-columns:1fr 1fr}
+.philo-figure-panel{min-width:0;border-right:1px solid var(--line)}
+.philo-figure-panel:last-child{border-right:0}
+.philo-figure img{width:100%;height:auto;max-height:720px;display:block;object-fit:contain;background:#f1eff5}
+.philo-figure figcaption{padding:14px 15px;background:#fcfbfe}
+.philo-figure figcaption strong{display:block;color:var(--primary-dark);margin-bottom:4px}
+.philo-figure figcaption span{display:block;font-size:13px;color:var(--text);margin-bottom:5px}
+.philo-figure figcaption small{display:block;font-size:11.5px;color:var(--muted)}
+.philo-figure a{color:var(--primary-dark)}
+.chapter-checkpoint{margin-top:28px;padding-top:18px;border-top:2px solid var(--line)}
+.challenge-box{background:#f7f5fd;border:1px solid #ddd5ef;border-left:5px solid var(--primary);padding:15px}
+.challenge-box details{margin-top:10px}
+.challenge-box summary{cursor:pointer;font-weight:800;color:var(--primary-dark)}
+.curriculum-box{margin-top:20px;border:1px dashed #b9afca;border-radius:10px;padding:12px 14px;background:#fcfbfe;color:var(--muted)}
+.curriculum-box summary{cursor:pointer;color:var(--primary-dark);font-weight:800}
+.philo-chip{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--primary-soft);color:var(--primary-dark);font-size:12px;font-weight:900;margin:2px}
+@media(max-width:1050px){.four-col{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+  .two-col,.three-col,.four-col,.comparison-grid,.evidence-grid,.perspective-grid,.philo-figure-grid{grid-template-columns:1fr}
+  .philo-figure-panel{border-right:0;border-bottom:1px solid var(--line)}
+  .philo-figure-panel:last-child{border-bottom:0}
+  .philo-figure img{height:auto;max-height:none;object-fit:contain}
+  .choice-row{display:grid;grid-template-columns:1fr}
+  .choice-row button{text-align:left}
+}

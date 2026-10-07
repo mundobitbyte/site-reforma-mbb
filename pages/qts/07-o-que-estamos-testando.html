@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Etapa 7 de Qualidade e Teste de Software: entenda níveis de teste e a diferença entre testes funcionais e não funcionais usando a Cantina Horizonte.">
+<title>7 — O que estamos testando? | Qualidade e Teste de Software</title>
+<link rel="stylesheet" href="../../css/qts.css">
+</head>
+<body data-stage="7">
+<header class="course-header">
+  <div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Qualidade e Teste de Software</span></div>
+  <div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div>
+</header>
+<div class="course-shell">
+  <aside class="course-nav" id="courseNav" aria-label="Etapas do módulo"></aside>
+  <main class="course-main">
+    <div class="content-wrap">
+      <div class="stage-progress"><span id="progressText"></span><span>Escolher o foco</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+      <section class="hero">
+        <span class="kicker">Etapa 7</span>
+        <h1>O que estamos testando?</h1>
+        <p>A regra da quantidade é a mesma, mas podemos observá-la em pontos diferentes do sistema. <strong>Testar uma função isolada não responde exatamente às mesmas perguntas que testar o pedido completo na tela.</strong></p>
+      </section>
+
+      <article class="chapter">
+        <div class="card context-card">
+          <h3>A mesma regra, quatro perguntas diferentes</h3>
+          <p>A Cantina Horizonte deve rejeitar quantidade 0.</p>
+          <p>Podemos perguntar se a função que valida quantidade está correta, se essa regra continua funcionando quando outras partes conversam, se o sistema completo rejeita a operação e, por fim, se o produto atende à necessidade real de quem vai utilizá-lo.</p>
+        </div>
+        <p>As perguntas se parecem, mas o alcance de cada uma é diferente.</p>
+
+        <h2>Começando pelo menor pedaço</h2>
+        <p>Imagine uma função responsável apenas por decidir se uma quantidade é válida.</p>
+        <div class="card evidence-card"><p><strong>Entrada:</strong> quantidade 0.<br><strong>Esperado:</strong> a função deve informar que o valor é inválido.</p></div>
+        <p>Nesse caso, queremos observar uma parte pequena do software sem depender da interface, do banco de dados ou do restante do pedido.</p>
+        <div class="card tool-card"><h3>Teste de unidade</h3><p>Verifica uma pequena unidade de comportamento em isolamento, como uma função, método ou componente pequeno.</p></div>
+        <p>O significado de <strong>unidade</strong> pode variar conforme a tecnologia e o projeto. O importante é a ideia de testar uma parte pequena com poucas dependências externas.</p>
+
+        <h2>Quando duas ou mais partes precisam trabalhar juntas</h2>
+        <p>Agora suponha que a regra de quantidade esteja correta, mas o pedido precise consultar o estoque no banco antes de ser finalizado.</p>
+        <p>A pergunta deixa de ser apenas “a função calcula certo?” e passa a incluir:</p>
+        <div class="card question-card"><p><strong>Essas partes trocam informação corretamente quando trabalham juntas?</strong></p></div>
+        <div class="card tool-card"><h3>Teste de integração</h3><p>Verifica a interação entre partes do sistema, como regra de negócio, servidor, banco de dados ou outros componentes que precisam se comunicar.</p></div>
+        <p>Mais adiante vamos praticar isso diretamente na comunicação entre a aplicação e sua interface de servidor.</p>
+
+        <h2>Agora olhe para o sistema completo</h2>
+        <p>Um cliente abre a Cantina Horizonte, escolhe um produto, informa quantidade 0, tenta adicioná-lo e observa a resposta.</p>
+        <p>Nesse momento várias partes podem participar: tela, JavaScript, servidor, regras e banco.</p>
+        <div class="card tool-card"><h3>Teste de sistema</h3><p>Verifica o sistema integrado como um todo, observando seu comportamento completo em um ambiente representativo.</p></div>
+        <p>Se o sistema completo aceita quantidade 0, existe um problema observável mesmo que alguma função isolada esteja correta.</p>
+
+        <h2>E quando queremos saber se a solução atende ao uso real?</h2>
+        <p>Imagine a equipe demonstrando uma versão à responsável pela cantina. Ela confirma se o fluxo de pedido, as mensagens e as regras atendem ao trabalho que precisa ser realizado.</p>
+        <div class="card tool-card"><h3>Teste de aceitação</h3><p>Ajuda a avaliar se a solução atende às necessidades e critérios combinados para seu uso. É comum envolver pessoas que representam o negócio, o cliente ou quem receberá o produto.</p></div>
+        <p>Não significa que todos os testes anteriores deixam de ser necessários. Cada nível responde perguntas diferentes.</p>
+
+        <h2>Os níveis formam uma mudança de alcance</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Nível</th><th>Pergunta principal na Cantina Horizonte</th><th>Exemplo</th></tr></thead>
+            <tbody>
+              <tr><td>Unidade</td><td>Uma pequena regra funciona isoladamente?</td><td><code>validar_quantidade(0)</code> deve rejeitar.</td></tr>
+              <tr><td>Integração</td><td>Partes diferentes trabalham corretamente juntas?</td><td>Pedido consulta produto e atualiza estoque no banco.</td></tr>
+              <tr><td>Sistema</td><td>O produto completo se comporta como esperado?</td><td>Finalizar um pedido pelo sistema completo.</td></tr>
+              <tr><td>Aceitação</td><td>A solução atende ao uso e aos critérios combinados?</td><td>Responsável pela cantina valida o fluxo que será usado no atendimento.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>“Nível” não é a mesma coisa que “tipo”</h2>
+        <p>Aqui existe uma confusão comum.</p>
+        <p><strong>Nível de teste</strong> ajuda a responder <strong>em que alcance ou parte da solução estamos testando</strong>.</p>
+        <p>Já outra pergunta é:</p>
+        <div class="card question-card"><p><strong>Que aspecto da qualidade queremos avaliar?</strong></p></div>
+
+        <h2>Quando verificamos o que o sistema faz</h2>
+        <p>Se testamos se o sistema calcula o total, rejeita quantidade inválida, aplica o cupom corretamente ou muda o status segundo a regra, estamos verificando comportamentos funcionais.</p>
+        <div class="card tool-card"><h3>Teste funcional</h3><p>Verifica funções, regras e comportamentos esperados: o que o sistema deve fazer diante de determinadas entradas e situações.</p></div>
+
+        <h2>Quando a função pode estar certa, mas a qualidade ainda incomoda</h2>
+        <p>Lembre das situações da Etapa 1:</p>
+        <div class="grid2">
+          <div class="card practice-card"><h3>Demora</h3><p>O pedido é calculado corretamente, mas leva 15 segundos para confirmar.</p></div>
+          <div class="card practice-card"><h3>Mensagem ruim</h3><p>A operação é rejeitada, mas aparece apenas “Erro 1047”.</p></div>
+          <div class="card practice-card"><h3>Tela estreita</h3><p>No celular, parte do conteúdo fica escondida ou exige rolagem horizontal.</p></div>
+          <div class="card practice-card"><h3>Dados desaparecem</h3><p>Pedidos registrados não permanecem disponíveis depois.</p></div>
+        </div>
+        <div class="card tool-card"><h3>Teste não funcional</h3><p>Avalia características de qualidade que vão além de uma função específica, como desempenho, facilidade de uso, compatibilidade, confiabilidade, segurança e outras características relevantes ao contexto.</p></div>
+        <p>O nome <strong>não funcional</strong> não significa “menos importante”. Em alguns sistemas, desempenho, confiabilidade ou segurança são tão críticos quanto a função principal.</p>
+
+        <h2>Uma prática simples de qualidade que já podemos fazer</h2>
+        <p>Sem instalar ferramenta nova, faça três observações na Cantina Horizonte:</p>
+        <div class="card practice-card">
+          <ol>
+            <li>reduza a largura da janela do navegador e verifique se as funções principais continuam utilizáveis;</li>
+            <li>compare uma mensagem clara com uma mensagem genérica e diga qual ajuda mais a pessoa a corrigir a ação;</li>
+            <li>finalize um pedido e observe se o retorno acontece em um tempo que faria sentido durante o intervalo.</li>
+          </ol>
+        </div>
+        <p>Essa observação inicial não substitui medições profissionais. Ela apenas mostra que também podemos avaliar características além do resultado funcional.</p>
+
+        <h2>Segurança aparece aqui, mas não vamos transformar QTS em outro módulo</h2>
+        <p>Segurança é uma característica importante da qualidade. Ao longo de QTS podemos verificar comportamentos básicos, como não confiar apenas na validação da tela.</p>
+        <p>Mas assuntos como ataques, autenticação, criptografia e testes especializados de segurança exigem aprofundamento próprio e não serão o foco desta trilha.</p>
+
+        <h2>Um teste pode combinar nível e tipo</h2>
+        <p>Podemos ter, por exemplo:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Situação</th><th>Nível</th><th>Aspecto</th></tr></thead>
+            <tbody>
+              <tr><td>Função calcula subtotal de 2 salgados.</td><td>Unidade</td><td>Funcional</td></tr>
+              <tr><td>Pedido grava e reduz estoque no banco.</td><td>Integração</td><td>Funcional</td></tr>
+              <tr><td>Fluxo completo rejeita carrinho vazio.</td><td>Sistema</td><td>Funcional</td></tr>
+              <tr><td>Sistema completo continua utilizável em tela estreita.</td><td>Sistema</td><td>Não funcional</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Isso mostra por que “funcional” e “de sistema” não são categorias concorrentes. Uma expressão fala do <strong>aspecto</strong>; a outra fala do <strong>alcance</strong>.</p>
+
+        <h2>Prática · diga qual pergunta está sendo feita</h2>
+        <div class="card practice-card">
+          <ol>
+            <li>Executar apenas a função que calcula o subtotal.</li>
+            <li>Verificar se criar um pedido realmente altera o estoque salvo no banco.</li>
+            <li>Usar a aplicação completa para comprar dois salgados.</li>
+            <li>Medir se finalizar um pedido demora mais do que o aceitável.</li>
+            <li>Pedir que a responsável pela cantina confirme se o fluxo atende ao trabalho real.</li>
+          </ol>
+        </div>
+        <p>Em cada caso, tente explicar <strong>qual é o nível</strong> e, quando fizer sentido, <strong>qual aspecto da qualidade está sendo observado</strong>.</p>
+
+        <h2>Agora nosso conjunto de testes cresceu bastante</h2>
+        <p>Temos valores-limite, combinações de regras, transições de estado, diferentes níveis e características de qualidade.</p>
+        <p>Se tentarmos verificar tudo, em todos os níveis, com todos os dados e ambientes possíveis, o número de casos cresce rapidamente.</p>
+        <div class="card question-card"><p><strong>Se não dá para testar tudo, como decidir o que precisa de mais atenção?</strong></p></div>
+
+        <div class="card next-card">
+          <h3>A seguir: decidir o que testar primeiro</h3>
+          <p>Vamos usar <strong>risco, impacto e prioridade</strong> para decidir onde o esforço de teste faz mais diferença.</p>
+        </div>
+
+        <div class="checkpoint">
+          <h3>Antes de seguir</h3>
+          <p>Você deve conseguir explicar:</p>
+          <ul>
+            <li>a diferença básica entre testes de unidade, integração, sistema e aceitação;</li>
+            <li>a diferença entre nível de teste e aspecto testado;</li>
+            <li>o que caracteriza um teste funcional;</li>
+            <li>por que testes não funcionais também precisam de situações observáveis.</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="stage-footer" aria-label="Navegação entre etapas">
+        <a href="06-regras-mais-complicadas.html">← Etapa 6</a>
+        <a class="all" href="index.html">Todas as etapas</a>
+        <span class="disabled">Próxima etapa</span>
+      </nav>
+    </div>
+  </main>
+</div>
+<script src="../../js/qts.js"></script>
+<script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body>
+</html>

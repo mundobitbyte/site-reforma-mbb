@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>6 — Engenharia de Requisitos | Análise de Sistemas</title><link rel="stylesheet" href="../../css/analise-sistemas.css"></head>
+<body data-stage="6"><header class="course-header"><div class="header-left"><a class="portal-link" href="../../index.html">← Mundo bit Byte</a><span class="course-title">Análise de Sistemas</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="courseNav">☰ Etapas</button></div></header>
+<div class="course-shell"><aside class="course-nav" id="courseNav"></aside><main class="course-main"><div class="content-wrap"><div class="stage-progress"><span id="progressText"></span><span>Especificar e planejar</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<section class="hero"><span class="kicker">Etapa 6</span><h1>O que, afinal, o sistema precisa garantir?</h1><p>Já entendemos o atendimento atual e desenhamos uma forma melhor de trabalhar. Agora precisamos transformar essas ideias em <strong>frases claras que ninguém precise adivinhar</strong>.</p></section>
+<article class="chapter">
+<div class="card return-card"><h3>Volte ao caso de Ana</h3><p>Ana recebeu o orçamento e respondeu: <strong>“Pode fazer o reparo.”</strong> No processo antigo, essa aprovação podia ficar perdida numa mensagem. No processo futuro, decidimos que ela deve ficar ligada à ordem.</p><p>Agora aparece uma pergunta muito prática: <strong>o que o sistema precisa permitir para isso realmente acontecer?</strong></p></div>
+
+<h2>Vamos escrever primeiro sem usar nenhum nome técnico</h2>
+<div class="card question-card"><h3>O que precisamos conseguir fazer?</h3><p>O atendente precisa localizar a ordem de Ana, registrar que ela aprovou o orçamento e deixar essa decisão disponível para o técnico.</p></div>
+<p>Essa frase já está muito perto de um <strong>requisito</strong>.</p>
+
+<h2>Então o que é um requisito?</h2>
+<p>Um <strong>requisito</strong> é uma forma clara de dizer <strong>algo que a solução precisa permitir, garantir ou respeitar</strong>.</p>
+<p>Por exemplo:</p>
+<div class="card tool-card"><p><strong>O sistema deverá permitir registrar a aprovação ou a recusa informada pelo cliente e vinculá-la à ordem de serviço.</strong></p></div>
+<p>Perceba: não estamos inventando uma função. Ela nasceu de um problema que vimos no levantamento e no AS-IS.</p>
+
+<h2>Necessidade e requisito não são a mesma coisa</h2>
+<p>A necessidade costuma aparecer primeiro na fala das pessoas.</p>
+<div class="grid2"><div class="card"><h3>Necessidade</h3><p>“Eu preciso saber rapidamente em que situação está o notebook do cliente.”</p></div><div class="card"><h3>Requisito</h3><p>“O sistema deverá permitir consultar uma ordem e visualizar sua situação atual.”</p></div></div>
+<p>A necessidade explica <strong>por que isso importa</strong>. O requisito diz <strong>o que a solução precisa atender</strong>.</p>
+
+<h2>Agora faz sentido falar em Engenharia de Requisitos</h2>
+<p><strong>Engenharia de Requisitos</strong> é o trabalho de descobrir, organizar, escrever, revisar e validar esses requisitos.</p>
+<p>O nome parece formal, mas a ideia é simples: <strong>pegar necessidades reais e transformá-las em algo claro o suficiente para ser construído e conferido depois</strong>.</p>
+
+<h2>Nem todo requisito fala de uma ação</h2>
+<p>Veja três situações diferentes da Conecta:</p>
+<div class="grid"><div class="card"><h3>O sistema precisa fazer algo</h3><p>Permitir consultar a situação da ordem.</p><p>Isso é um <strong>Requisito Funcional</strong>.</p></div><div class="card"><h3>O sistema precisa funcionar de determinada maneira</h3><p>A consulta deve funcionar adequadamente em smartphone.</p><p>Isso é um <strong>Requisito Não Funcional</strong>.</p></div><div class="card"><h3>O negócio possui uma regra</h3><p>O reparo não pode começar antes da aprovação.</p><p>Isso é uma <strong>Regra de Negócio</strong>.</p></div></div>
+
+<h2>Por que aparecem RF, RNF e RN?</h2>
+<p>Quando a lista cresce, usamos códigos curtos para encontrar cada item com facilidade. Não há mistério:</p>
+<ul><li><strong>RF</strong> = Requisito Funcional;</li><li><strong>RNF</strong> = Requisito Não Funcional;</li><li><strong>RN</strong> = Regra de Negócio.</li></ul>
+<p>Então <strong>RF04</strong> quer dizer apenas <strong>Requisito Funcional número 4</strong>. O número não indica importância; é só um identificador.</p>
+
+<h2>Veja como as descobertas viraram requisitos</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>O que o sistema precisa atender</th><th>De onde veio</th></tr></thead><tbody><tr><td>RF01</td><td>Cadastrar cliente e equipamento.</td><td>Atendimento</td></tr><tr><td>RF02</td><td>Abrir ordem de serviço vinculada ao cliente e ao equipamento.</td><td>Processo atual</td></tr><tr><td>RF03</td><td>Registrar diagnóstico técnico da ordem.</td><td>Técnico</td></tr><tr><td>RF04</td><td>Consultar situação atual da ordem.</td><td>Problema inicial</td></tr><tr><td>RF05</td><td>Gerar orçamento a partir do diagnóstico.</td><td>Processo futuro</td></tr><tr><td>RF06</td><td>Registrar reparo, teste e uso de peças.</td><td>Técnico + estoque</td></tr><tr><td>RF07</td><td>Registrar aprovação ou recusa informada pelo cliente.</td><td>Gerência + atendimento</td></tr><tr><td>RF08</td><td>Registrar entrega ou encerramento da ordem.</td><td>Atendimento</td></tr><tr><td>RNF01</td><td>A consulta deverá funcionar adequadamente em smartphone.</td><td>Necessidade do cliente</td></tr></tbody></table></div>
+<div class="card question-card"><h3>Leia uma linha como uma história</h3><p><strong>RF07</strong> não nasceu porque alguém achou bonito ter “aprovação” no sistema. Ele nasceu porque vimos que a decisão do cliente podia ficar perdida numa mensagem. A coluna <strong>De onde veio</strong> serve justamente para não esquecer essa origem.</p></div>
+
+<h2>E as regras que o sistema não pode desrespeitar?</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Regra</th><th>De onde veio</th></tr></thead><tbody><tr><td>RN01</td><td>Reparo que exige orçamento não pode começar antes da aprovação.</td><td>Gerência + técnico</td></tr><tr><td>RN02</td><td>Recusa do orçamento impede o início do reparo e encaminha encerramento sem reparo.</td><td>Processo atual + futuro</td></tr><tr><td>RN03</td><td>Teste reprovado devolve a ordem ao reparo; não marca a ordem como pronta.</td><td>Processo atual</td></tr><tr><td>RN04</td><td>Mudanças críticas de situação e decisão devem manter autor e data/hora.</td><td>Problema de rastreabilidade</td></tr></tbody></table></div>
+<p>Neste projeto, <strong>o cliente decide</strong> sobre o orçamento e <strong>o atendente registra</strong> essa decisão no sistema. Se quisermos que o cliente aprove diretamente pelo portal, estaremos mudando o escopo e precisaremos analisar outras questões.</p>
+
+<h2>Uma frase pode parecer requisito e ainda estar ruim</h2>
+<div class="card problem-card"><p><strong>“O sistema deve ser rápido.”</strong></p></div>
+<p>Rápido em quê? Para quem? Em qual situação? A frase parece boa, mas ainda não dá para conferir se foi atendida.</p>
+<div class="card problem-card"><p><strong>“O sistema deve ser fácil.”</strong></p></div>
+<p>Fácil para qual pessoa e para qual tarefa?</p>
+<p>Um requisito útil precisa ser compreensível e permitir alguma forma de verificação.</p>
+
+<h2>Como saber se escrevemos a coisa certa?</h2>
+<div class="grid2"><div class="card"><h3>Verificação</h3><p>Pergunta: <strong>“Escrevemos isso de forma clara?”</strong></p></div><div class="card"><h3>Validação</h3><p>Pergunta: <strong>“Isso representa mesmo o que as pessoas precisam?”</strong></p></div></div>
+<p>Um requisito pode estar muito bem escrito e ainda assim descrever a coisa errada. Por isso precisamos das duas perguntas.</p>
+
+<h2>Vamos testar um requisito com uma situação real</h2>
+<p>Veja a regra do reparo. Como podemos conferir se ela foi respeitada?</p>
+<div class="card tool-card"><h3>Uma pequena história de teste</h3><p><strong>Dado que</strong> existe um orçamento pendente,<br><strong>quando</strong> o técnico tentar iniciar o reparo,<br><strong>então</strong> o sistema deverá bloquear a operação e informar que a aprovação é necessária.</p></div>
+<p>Esse tipo de frase é um <strong>critério de aceitação</strong>: algo observável que nos ajuda a confirmar se o comportamento esperado foi atendido.</p>
+
+<h2>E se tivermos requisitos demais para a primeira versão?</h2>
+<p>Aí precisamos priorizar. Uma forma simples é separar em quatro grupos:</p>
+<div class="grid"><div class="card"><h3>Must — deve ter</h3><p>Sem isso, a primeira versão não cumpre seu objetivo.</p></div><div class="card"><h3>Should — deveria ter</h3><p>É importante, mas pode existir uma solução temporária.</p></div><div class="card"><h3>Could — poderia ter</h3><p>Ajuda, mas pode esperar.</p></div><div class="card"><h3>Won't now — não agora</h3><p>Fica conscientemente fora desta entrega.</p></div></div>
+<p>Essa forma de priorização é conhecida como <strong>MoSCoW</strong>. O nome só ajuda a lembrar os quatro grupos; o mais importante é saber <strong>por que cada item entra ou fica para depois</strong>.</p>
+
+<h2>Veja o caminho inteiro até aqui</h2>
+<div class="flow"><span class="node">Problema observado</span><span class="arrow">→</span><span class="node">Necessidade</span><span class="arrow">→</span><span class="node">Requisito</span><span class="arrow">→</span><span class="node">Regra</span><span class="arrow">→</span><span class="node">Critério de aceitação</span></div>
+<p>É isso que mantém o trabalho conectado. Um requisito não deveria aparecer do nada.</p>
+
+<div class="card practice-card"><h3>Faça agora</h3><ol><li>Escolha RF07 e conte de qual problema real ele nasceu.</li><li>Explique com suas palavras a diferença entre necessidade e requisito.</li><li>Diga o que significam RF, RNF e RN.</li><li>Escolha uma necessidade encontrada no levantamento e transforme-a em um requisito.</li><li>Escreva uma regra de negócio ligada ao processo.</li><li>Crie um critério de aceitação no formato Dado — Quando — Então.</li><li>Para cada item, registre de onde ele veio.</li></ol></div>
+<div class="notebook"><div class="notebook-label">Caderno da Análise · Evidência 07</div><h3>O que o sistema precisa atender</h3><p>Guarde seus requisitos junto com a origem. Se você não consegue explicar de onde um item veio, volte ao levantamento ou ao processo e investigue.</p></div>
+<div class="checkpoint"><h3>Checkpoint 4 — Você consegue explicar antes de codificar?</h3><p>Diante de uma necessidade da Conecta, você consegue dizer <strong>o que o sistema precisa fazer, que regra precisa respeitar e como saberemos se isso funcionou</strong>?</p></div>
+
+<h2>Agora sabemos o que precisa existir. Mas quem usa isso e para quê?</h2>
+<p>Temos requisitos como “abrir ordem”, “registrar diagnóstico” e “consultar situação”. Só que ainda falta olhar para essas funções pelo ponto de vista de quem vai usar o sistema.</p>
+<div class="card next-card"><h3>Nova necessidade</h3><p>Precisamos enxergar <strong>quem interage com o sistema e qual objetivo cada pessoa tenta alcançar</strong>. É isso que vai nos levar aos Casos de Uso.</p></div>
+</article><nav class="stage-footer" id="stageFooter"></nav></div></main></div><script src="../../js/analise-sistemas.js"></script><script src="../../js/mbb-busca-global.js?v=mbb-busca-2"></script>
+</body></html>

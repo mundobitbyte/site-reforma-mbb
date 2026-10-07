@@ -1,0 +1,35 @@
+/* VisuAlg — diferencia explicação conceitual de código executável */
+.new-code{
+  background:#f8fbff;
+  color:#1f2937;
+  border-color:#cbd9ea;
+}
+
+.new-code .panel-title{
+  background:#eaf2ff;
+  color:#114b9e;
+  border-bottom:1px solid #c7daf4;
+}
+
+.new-code .btn-copy{
+  background:#1967d2;
+  color:#fff;
+}
+
+.new-code pre{
+  background:#fff;
+  color:#243247;
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-size:13.5px;
+  line-height:1.62;
+  white-space:pre-wrap;
+  padding:16px 18px;
+}
+
+@media(max-width:720px){
+  .new-code pre{
+    font-size:13px;
+    line-height:1.55;
+    padding:14px;
+  }
+}
