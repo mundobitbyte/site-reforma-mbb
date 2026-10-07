@@ -118,7 +118,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 button:disabled { opacity: .6; cursor: wait; }
 button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
-#acompanhamento { overflow-wrap: anywhere; }
+#consulta-resultado, .mensagem, #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
 </code></pre><p><a href="../../cantina-evolutiva/frontend/styles.css">Arquivo canônico frontend/styles.css</a></p></details><details><summary>frontend/app.js — código completo</summary><h3>frontend/app.js</h3><button class="copy-button" type="button" data-copy="integrado-2">Copiar código</button><pre id="integrado-2"><code>&#x27;use strict&#x27;;
 const estado = { produtos: [], carrinho: [], enviando: false, consultado: null, consultando: false, alterando: false, versaoConsulta: 0 };
