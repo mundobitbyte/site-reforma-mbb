@@ -68,6 +68,7 @@ for path,p in pages.items():
     for target in p.copies:
         copy+=1
         if target not in p.codes:errors.append((str(path),'copy missing',target))
+        elif not p.codes[target].strip():errors.append((str(path),'copy empty',target))
     if p.copies and 'copy-status' not in p.ids:errors.append((str(path),'copy status absent'))
     for tag,attr,url in p.links:
         u=urlsplit(url)
@@ -90,12 +91,15 @@ for path,p in pages.items():
                 else:valid=pages[target].ids
                 if unquote(u.fragment) not in valid:errors.append((str(path),'fragment missing',url))
 codes=[value for p in pages.values() for value in p.codes.values()]
+copy_codes=[p.codes[target] for p in pages.values() for target in p.copies if target in p.codes]
 canonical=list((BASE/'banco-de-dados/sql').glob('*.sql'))+list((BASE/'programacao/exemplos').glob('*.py'))+list((BASE/'programacao/visualg').glob('*.alg'))
 canonical += [p for p in (BASE/'web-api/exemplos').rglob('*') if p.is_file() and p.suffix in ['.html','.css','.js','.mjs']]
 canonical += [ROOT/'laboratorio/cantina-evolutiva'/n for n in ['frontend/index.html','frontend/styles.css','frontend/app.js','app.py']]
 canonical += list((BASE/'qts/exemplos').glob('*.py')) + list((BASE/'git/exemplos').glob('*.py'))
 for f in canonical:
     if f.read_text(encoding="utf-8") not in codes:errors.append((str(f.relative_to(ROOT)),'canonical code absent'))
+    if f.read_text(encoding="utf-8") not in copy_codes:errors.append((str(f.relative_to(ROOT)),'canonical copy not exact'))
+canonical_texts={f.read_text(encoding="utf-8") for f in canonical}
 prog=json.loads((BASE/'matriz-programacao.json').read_text(encoding="utf-8")); acervo=json.loads((BASE/'matriz-python-acervo.json').read_text(encoding="utf-8"))
 assert len(prog)==15 and len(acervo)==40 and set(e['id'] for e in acervo)==ids_python
 web=json.loads((BASE/'matriz-web-api.json').read_text(encoding="utf-8"))
@@ -145,5 +149,7 @@ for e in items:
         if not (ROOT/f).is_file():errors.append((e['id'],'evidence missing',f))
 result['acompanhamento']=progress['resumo']
 result['posicao_atual']=progress['posicao_atual']
+result['codigo_canonico_com_copia_exata']=sum(f.read_text(encoding="utf-8") in copy_codes for f in canonical)
+result['blocos_copiaveis_canonicos']=sum(text in canonical_texts for text in copy_codes)
 print(json.dumps(result,ensure_ascii=False))
 raise SystemExit(1 if errors else 0)

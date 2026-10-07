@@ -285,13 +285,14 @@
           "situacao": "parcial",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
-            "docs/reforma/checkpoint-28-retomada-no-celular.md"
+            "docs/reforma/checkpoint-28-retomada-no-celular.md",
+            "docs/reforma/evidencia-copia-31.json"
           ],
           "depende_de": [
             "REVISAO_VISUAL_NO_COMPUTADOR",
             "PARTICIPANTE"
           ],
-          "preparacao": "Professor relatou que a navegação orientada pareceu funcionar, sem falha percebida. Está somente no celular; zoom 200%, cópia de código e revisão com participante não confirmados. No checkpoint 28 o retorno da entrada foi corrigido a partir do 404 no log; seis entradas e retorno foram conferidos por HTTP, sem avaliação visual nova."
+          "preparacao": "Professor relatou que a navegação orientada pareceu funcionar, sem falha percebida. Está somente no celular; zoom 200%, cópia de código e revisão com participante não confirmados. No checkpoint 28 o retorno da entrada foi corrigido a partir do 404 no log; seis entradas e retorno foram conferidos por HTTP, sem avaliação visual nova. No checkpoint 31, os 104 alvos de cópia foram auditados e as 48 fontes canônicas aparecem completas em blocos associados a botão Copiar; a área de transferência real e o zoom continuam sem confirmação."
         }
       ]
     },
@@ -372,7 +373,8 @@
             "docs/reforma/registro-retomada.md",
             "docs/reforma/checkpoint-24-preparacao-do-parecer.md",
             "docs/reforma/checkpoint-29-consolidacao-do-parecer.md",
-            "docs/reforma/checkpoint-30-evidencias-no-percurso.md"
+            "docs/reforma/checkpoint-30-evidencias-no-percurso.md",
+            "docs/reforma/checkpoint-31-conferencia-da-copia.md"
           ],
           "depende_de": [
             "1.6",
@@ -384,7 +386,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes."
         }
       ]
     }
@@ -403,6 +405,6 @@
     "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 30,
-  "orientacao_atual": "Checkpoint 30: evidências UTF-8/Narrador ligadas à matriz QTS; falha real aproveitada como exemplo de investigação/regressão; QTS14 e roteiro sincronizados. Preparação 5.6; 27/31, quatro abertas. Próximos ensaios R07/R08 quando disponíveis; VisuAlg adiado."
+  "checkpoint_atualizacao": 31,
+  "orientacao_atual": "Checkpoint 31: verificação portátil passa a exigir arquivos canônicos completos em blocos com botão Copiar e a recusar comandos vazios. 104 botões auditados; 48 fontes preservadas em 52 blocos. Três casos negativos do verificador aprovados. Correção do relato histórico de pdb em PG13. Sem cópia real de navegador ou novo teste do professor; 27/31, preparação 5.6."
 }

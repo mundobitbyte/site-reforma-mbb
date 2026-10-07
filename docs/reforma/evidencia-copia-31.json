@@ -1,0 +1,657 @@
+{
+  "checkpoint": 31,
+  "base_sha": "473353927337a31e2e6606b2122ed0e7c9b7d09a",
+  "escopo": "Conteúdo dos alvos de cópia e detecção estrutural; sem acesso à área de transferência real",
+  "botoes_auditados": 104,
+  "alvos_vazios": 0,
+  "arquivos_canonicos": 48,
+  "textos_canonicos_distintos": 47,
+  "blocos_com_fonte_exata": 52,
+  "outros_blocos_de_comandos_ou_fragmentos": 52,
+  "textos_iguais": [
+    "laboratorio/percurso-mbb/web-api/exemplos/03-estilo/styles.css",
+    "laboratorio/percurso-mbb/web-api/exemplos/04-simulacao/styles.css"
+  ],
+  "casos_negativos_verificador": {
+    "comando": "python -m unittest discover -s laboratorio/percurso-mbb/tests -v",
+    "aprovados": 3,
+    "casos": [
+      "Texto extra no bloco de código",
+      "Arquivo visível sem botão associado",
+      "Comando vazio num botão existente"
+    ],
+    "isolamento": "Páginas alteradas somente em memória com mock de leitura; fontes reais preservadas"
+  },
+  "limites": [
+    "Sem teste de clipboard no navegador",
+    "Sem zoom real",
+    "Sem participante",
+    "Sem nova execução das suítes da aplicação"
+  ],
+  "alvos": [
+    {
+      "pagina": "laboratorio/percurso-mbb/acompanhamento.html",
+      "alvo": "comando-verificar",
+      "caracteres": 53,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+      "alvo": "codigo-1",
+      "caracteres": 33,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+      "alvo": "codigo-2",
+      "caracteres": 46,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+      "alvo": "codigo-3",
+      "caracteres": 67,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/01-cardapio.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+      "alvo": "codigo-4",
+      "caracteres": 49,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+      "alvo": "codigo-5",
+      "caracteres": 79,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/02-saldo-baixo.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-6",
+      "caracteres": 53,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-7",
+      "caracteres": 306,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/03-pedido-completo.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-8",
+      "caracteres": 52,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-9",
+      "caracteres": 129,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/05-nunca-vendidos.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-10",
+      "caracteres": 56,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-11",
+      "caracteres": 324,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/06-vendas-por-produto.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-12",
+      "caracteres": 47,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+      "alvo": "codigo-13",
+      "caracteres": 183,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/07-historico.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+      "alvo": "codigo-14",
+      "caracteres": 34,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+      "alvo": "codigo-15",
+      "caracteres": 31,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+      "alvo": "codigo-16",
+      "caracteres": 34,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+      "alvo": "codigo-17",
+      "caracteres": 33,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+      "alvo": "codigo-18",
+      "caracteres": 38,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/07-transacoes-acid.html",
+      "alvo": "codigo-19",
+      "caracteres": 43,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/07-transacoes-acid.html",
+      "alvo": "codigo-20",
+      "caracteres": 40,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/07-transacoes-acid.html",
+      "alvo": "codigo-21",
+      "caracteres": 41,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-22",
+      "caracteres": 54,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-23",
+      "caracteres": 135,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/09-sem-venda-exists.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-24",
+      "caracteres": 41,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-25",
+      "caracteres": 193,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/10-cte.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-26",
+      "caracteres": 47,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-27",
+      "caracteres": 251,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/11-acumulado.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-28",
+      "caracteres": 45,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-29",
+      "caracteres": 298,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/12-ranking.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-30",
+      "caracteres": 53,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+      "alvo": "codigo-31",
+      "caracteres": 123,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/13-plano-historico.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/09-integrador.html",
+      "alvo": "integrador-04-resumo-pedidos-comando",
+      "caracteres": 52,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/09-integrador.html",
+      "alvo": "integrador-04-resumo-pedidos-sql",
+      "caracteres": 152,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/04-resumo-pedidos.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/09-integrador.html",
+      "alvo": "integrador-08-cupom-comando",
+      "caracteres": 43,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/banco-de-dados/09-integrador.html",
+      "alvo": "integrador-08-cupom-sql",
+      "caracteres": 92,
+      "fonte_exata": "laboratorio/percurso-mbb/banco-de-dados/sql/08-cupom.sql"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/git/pratica.html",
+      "alvo": "git-executar",
+      "caracteres": 59,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/git/pratica.html",
+      "alvo": "git-fonte",
+      "caracteres": 7717,
+      "fonte_exata": "laboratorio/percurso-mbb/git/exemplos/pratica_git.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "pasta",
+      "caracteres": 32,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "venv",
+      "caracteres": 20,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "windows",
+      "caracteres": 22,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "unix",
+      "caracteres": 25,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "deps",
+      "caracteres": 41,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/index.html",
+      "alvo": "servidor",
+      "caracteres": 22,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
+      "alvo": "comando-0-0",
+      "caracteres": 16,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/01-sequencia.html",
+      "alvo": "arquivo-01_sequencia-py",
+      "caracteres": 220,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/01_sequencia.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/02-entrada.html",
+      "alvo": "arquivo-02_entrada-py",
+      "caracteres": 212,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/02_entrada.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/03-decisao.html",
+      "alvo": "arquivo-03_decisao-py",
+      "caracteres": 363,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/03_decisao.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/04-repeticao.html",
+      "alvo": "arquivo-04_repeticao-py",
+      "caracteres": 306,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/04_repeticao.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/05-acumulador.html",
+      "alvo": "arquivo-05_acumulador-py",
+      "caracteres": 396,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/05_acumulador.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+      "alvo": "arquivo-06_colecoes-py",
+      "caracteres": 740,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/06_colecoes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/07-funcoes.html",
+      "alvo": "arquivo-07_funcoes-py",
+      "caracteres": 323,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/08-excecoes.html",
+      "alvo": "arquivo-08_excecoes-py",
+      "caracteres": 484,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/08_excecoes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/09-modulos.html",
+      "alvo": "arquivo-regras-py",
+      "caracteres": 413,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/regras.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/09-modulos.html",
+      "alvo": "arquivo-09_modulos-py",
+      "caracteres": 187,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/09_modulos.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+      "alvo": "arquivo-10_arquivo_json-py",
+      "caracteres": 709,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/10_arquivo_json.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/11-objetos.html",
+      "alvo": "arquivo-11_objeto-py",
+      "caracteres": 343,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/11_objeto.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+      "alvo": "comando-12-0",
+      "caracteres": 27,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+      "alvo": "comando-12-1",
+      "caracteres": 27,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+      "alvo": "comando-12-2",
+      "caracteres": 39,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+      "alvo": "comando-12-3",
+      "caracteres": 30,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+      "alvo": "comando-12-4",
+      "caracteres": 51,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/13-testes.html",
+      "alvo": "arquivo-13_testes-py",
+      "caracteres": 713,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/13_testes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/13-testes.html",
+      "alvo": "comando-13-0",
+      "caracteres": 42,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/13-testes.html",
+      "alvo": "comando-13-1",
+      "caracteres": 25,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/depuracao.html",
+      "alvo": "pdb-iniciar",
+      "caracteres": 87,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/depuracao.html",
+      "alvo": "pdb-comandos",
+      "caracteres": 62,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/depuracao.html",
+      "alvo": "pdb-codigo",
+      "caracteres": 323,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "alg-sequencia",
+      "caracteres": 296,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/visualg/02_sequencia.alg"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "py-sequencia",
+      "caracteres": 212,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/02_entrada.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "alg-decisao",
+      "caracteres": 516,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/visualg/03_decisao.alg"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "py-decisao",
+      "caracteres": 363,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/03_decisao.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "alg-repeticao",
+      "caracteres": 479,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/visualg/04_repeticao.alg"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+      "alvo": "py-repeticao",
+      "caracteres": 306,
+      "fonte_exata": "laboratorio/percurso-mbb/programacao/exemplos/04_repeticao.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/00-primeira-rodada.html",
+      "alvo": "comparar",
+      "caracteres": 64,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/10-defeito.html",
+      "alvo": "comparar",
+      "caracteres": 64,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/12-tdd.html",
+      "alvo": "tdd",
+      "caracteres": 57,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/13-integracao.html",
+      "alvo": "comparar",
+      "caracteres": 64,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/codigo.html",
+      "alvo": "comando-comparar",
+      "caracteres": 64,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/codigo.html",
+      "alvo": "comando-tdd",
+      "caracteres": 57,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/codigo.html",
+      "alvo": "arquivo-qts-0",
+      "caracteres": 1171,
+      "fonte_exata": "laboratorio/percurso-mbb/qts/exemplos/ciclo_tdd.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/qts/codigo.html",
+      "alvo": "arquivo-qts-1",
+      "caracteres": 5239,
+      "fonte_exata": "laboratorio/percurso-mbb/qts/exemplos/comparar_versoes.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/01-html.html",
+      "alvo": "arquivo-1-0",
+      "caracteres": 597,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/01-estrutura/index.html"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/02-formulario.html",
+      "alvo": "arquivo-2-0",
+      "caracteres": 847,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/02-formulario/index.html"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/03-css.html",
+      "alvo": "arquivo-3-0",
+      "caracteres": 891,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/03-estilo/index.html"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/03-css.html",
+      "alvo": "arquivo-3-1",
+      "caracteres": 809,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/04-simulacao/styles.css"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/04-eventos.html",
+      "alvo": "arquivo-4-0",
+      "caracteres": 894,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/04-simulacao/index.html"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/04-eventos.html",
+      "alvo": "arquivo-4-1",
+      "caracteres": 809,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/04-simulacao/styles.css"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/04-eventos.html",
+      "alvo": "arquivo-4-2",
+      "caracteres": 632,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/04-simulacao/app.js"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/05-colecoes.html",
+      "alvo": "arquivo-5-0",
+      "caracteres": 503,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/05-colecoes.mjs"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/06-http.html",
+      "alvo": "comando-6-0",
+      "caracteres": 54,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/07-fetch.html",
+      "alvo": "arquivo-7-0",
+      "caracteres": 764,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/api.mjs"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/07-fetch.html",
+      "alvo": "arquivo-7-1",
+      "caracteres": 336,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/07-consulta.mjs"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/08-registro.html",
+      "alvo": "arquivo-8-0",
+      "caracteres": 408,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/08-pedido.mjs"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/09-estados.html",
+      "alvo": "arquivo-9-0",
+      "caracteres": 509,
+      "fonte_exata": "laboratorio/percurso-mbb/web-api/exemplos/09-estados.mjs"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/11-evidencias.html",
+      "alvo": "comando-11-0",
+      "caracteres": 60,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/11-evidencias.html",
+      "alvo": "http-repetivel",
+      "caracteres": 36,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/11-evidencias.html",
+      "alvo": "comando-11-1",
+      "caracteres": 25,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/codigo-integrado.html",
+      "alvo": "integrado-0",
+      "caracteres": 2996,
+      "fonte_exata": "laboratorio/cantina-evolutiva/frontend/index.html"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/codigo-integrado.html",
+      "alvo": "integrado-1",
+      "caracteres": 4062,
+      "fonte_exata": "laboratorio/cantina-evolutiva/frontend/styles.css"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/codigo-integrado.html",
+      "alvo": "integrado-2",
+      "caracteres": 9968,
+      "fonte_exata": "laboratorio/cantina-evolutiva/frontend/app.js"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/codigo-integrado.html",
+      "alvo": "integrado-3",
+      "caracteres": 3369,
+      "fonte_exata": "laboratorio/cantina-evolutiva/app.py"
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/contrato.html",
+      "alvo": "json-1",
+      "caracteres": 94,
+      "fonte_exata": null
+    },
+    {
+      "pagina": "laboratorio/percurso-mbb/web-api/contrato.html",
+      "alvo": "json-3",
+      "caracteres": 57,
+      "fonte_exata": null
+    }
+  ]
+}

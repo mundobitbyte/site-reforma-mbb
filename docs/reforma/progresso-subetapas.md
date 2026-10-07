@@ -123,3 +123,6 @@ A minuta reúne os resultados 25–28, identifica a versão Linux testada e a au
 
 ## Evidências no percurso — checkpoint 30
 A matriz QTS incorpora CT-SQL-UTF8 e CT-NARRADOR, ligados aos requisitos e aos registros existentes. A falha Windows virou exemplo de observação, investigação e regressão em QTS02; QTS14/exercícios/matriz foram alinhados à compreensão ainda pendente. O roteiro separa a nova sessão com participante dos ensaios técnicos encerrados. Nenhum novo teste funcional; **27/31**, quatro abertas, preparação 5.6. [Registro](checkpoint-30-evidencias-no-percurso.md).
+
+## Conferência da cópia — checkpoint 31
+Os 104 botões apontam para conteúdo não vazio. As 48 fontes canônicas aparecem completas em 52 blocos associados a Copiar; duas fontes CSS têm o mesmo texto. O verificador passou a exigir a associação ao botão e a recusar comandos vazios. Três casos negativos confirmaram a detecção. PG13 agora identifica a sessão pdb já executada. Cópia real, zoom e participante continuam pendentes; **27/31**, preparação 5.6. [Registro](checkpoint-31-conferencia-da-copia.md).

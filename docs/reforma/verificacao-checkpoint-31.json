@@ -1,0 +1,51 @@
+{
+  "etapas_qts": 17,
+  "etapas_git": 10,
+  "git_acervo": 57,
+  "testes_python_reexecutados": false,
+  "github_simulado": false,
+  "paginas_html": 108,
+  "paginas_programacao": 19,
+  "paginas_web_curriculares": 17,
+  "paginas_web_recortes": 4,
+  "etapas_web": 13,
+  "web_acervo": 23,
+  "api_acervo": 45,
+  "referencias_locais": 3413,
+  "botoes_copiar": 104,
+  "codigo_canonico": 48,
+  "etapas_programacao": 15,
+  "temas_python_mapeados": 40,
+  "erros": [],
+  "browser_tested": false,
+  "visualg_executado": false,
+  "hashes_protegidos": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352"
+  },
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 27,
+    "restantes": 4,
+    "total_etapas_ensino": 81
+  },
+  "posicao_atual": "5.6",
+  "codigo_canonico_com_copia_exata": 48,
+  "blocos_copiaveis_canonicos": 52,
+  "checkpoint": 31,
+  "base_sha": "473353927337a31e2e6606b2122ed0e7c9b7d09a",
+  "escopo": "Verificação estrutural, alvos de cópia e testes negativos do verificador; sem navegador ou participante",
+  "testes_verificador": 3,
+  "vinculos_markdown_alterados": 49,
+  "arquivos_alterados": [
+    "docs/reforma/checkpoint-31-conferencia-da-copia.md",
+    "docs/reforma/evidencia-copia-31.json",
+    "docs/reforma/guia-execucao-cantina-mbb.md",
+    "docs/reforma/progresso-subetapas.json",
+    "docs/reforma/progresso-subetapas.md",
+    "docs/reforma/verificacao-checkpoint-31.json",
+    "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "laboratorio/percurso-mbb/tests/test_verificacao_copia.py",
+    "laboratorio/percurso-mbb/verificar_percurso.py"
+  ]
+}

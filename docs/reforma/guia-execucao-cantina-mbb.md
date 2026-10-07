@@ -51,7 +51,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-30.json](verificacao-checkpoint-30.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-31.json](verificacao-checkpoint-31.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -187,3 +187,15 @@ Abra `http://127.0.0.1:8002/`. Essa sessão tem banco temporário novo e IDs pr�
 O endereço `127.0.0.1` sempre corresponde ao dispositivo em uso. A prévia iniciada no computador não fica acessível pelo mesmo endereço no celular. Não há prévia externa publicada. Pode-se revisar os enunciados/explicações pela conversa; isso não verifica as telas ou a compreensão com participante.
 
 O professor relatou navegação aparentemente correta em 07/10/2026, mas não pôde conferir possíveis falhas no momento. Quando voltar ao computador, faltam R07 (zoom 200% e copiar/conferir um bloco) e R08 (compreensão com participante), sem repetir os testes do Narrador já encerrados. VisuAlg continua adiado. [Trabalho independente realizado](checkpoint-28-retomada-no-celular.md).
+
+## Conferência portátil dos blocos para copiar — checkpoint 31
+
+O verificador exige que cada arquivo canônico esteja completo num bloco associado ao botão Copiar e recusa alvos vazios. Não acessa a área de transferência do navegador. O [registro](evidencia-copia-31.json) distingue essa conferência da cópia real ainda pendente em R07.
+
+Para conferir a detecção de três defeitos de conteúdo/associação, na raiz do repositório:
+
+```bash
+python -m unittest discover -s laboratorio/percurso-mbb/tests -v
+```
+
+Esses testes fornecem páginas modificadas somente em memória: texto extra, botão sem associação e comando vazio. Não alteram arquivos, bancos ou navegador. São três testes do verificador, separados dos 89 testes da aplicação.
