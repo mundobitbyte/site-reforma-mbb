@@ -2,13 +2,13 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**22/31 concluídas; 9 pendentes. Posição atual: Entrega 5.3 (3/6), bloqueada pelo caminho de navegador.**
+**25/31 concluídas; 6 pendentes. Posição atual: Entrega 5.3 (3/6), com leitor de tela real ainda pendente.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
-| Pedido persistente | 5/6 | 1.6 |
-| Cupom | 4/5 | 2.5 |
-| Estados do pedido | 4/5 | 3.5 |
+| Pedido persistente | **6/6** | — |
+| Cupom | **5/5** | — |
+| Estados do pedido | **5/5** | — |
 | Percurso curricular | 7/9 | 4.8, 4.9 |
 | Entrega | 2/6 | 5.3, 5.4, 5.5, 5.6 |
 
@@ -23,7 +23,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 1.3 | API e testes do servidor | Concluída |
 | 1.4 | Interface criada | Concluída |
 | 1.5 | Terminal e clientes exercitados | Concluída |
-| 1.6 | Registrar, recarregar e consultar pelo navegador | Bloqueada |
+| 1.6 | Registrar, recarregar e consultar pelo navegador | **Concluída — checkpoint 21** |
 
 ### 2. Cupom
 
@@ -33,7 +33,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 2.2 | Migração e serviço do cupom | Concluída |
 | 2.3 | API e interface criadas | Concluída |
 | 2.4 | Regras, transação e clientes exercitados | Concluída |
-| 2.5 | Aplicar e recusar cupom pela interface real | Bloqueada |
+| 2.5 | Aplicar e recusar cupom pela interface real | **Concluída — checkpoint 21** |
 
 ### 3. Estados do pedido
 
@@ -43,7 +43,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 3.2 | Migração, serviço e histórico | Concluída |
 | 3.3 | API e interface criadas | Concluída |
 | 3.4 | Transições, disputa e rollback exercitados | Concluída |
-| 3.5 | Acompanhar e avançar no navegador | Bloqueada |
+| 3.5 | Acompanhar e avançar no navegador | **Concluída — checkpoint 21** |
 
 ### 4. Percurso curricular
 
@@ -65,7 +65,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 |---|---|---|
 | 5.1 | Verificação estrutural portátil e registro reproduzível | Concluída |
 | 5.2 | Guia consolidado de execução, evidências e pendências | Concluída |
-| 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | Bloqueada |
+| 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Parcial:** 360/320 px, teclado, foco, DOM e árvore AX confirmados; leitor de tela real pendente |
 | 5.4 | Prévia em ambiente compatível | Bloqueada |
 | 5.5 | Rodada final de uso integrado e compreensão | Bloqueada |
 | 5.6 | Parecer e entrega final após os critérios de saída | Pendente |
@@ -75,9 +75,9 @@ O conteúdo central tem 81 etapas de ensino: Análise 15; Banco de Dados 11; Pro
 Interface criada não significa interface testada em navegador. Conferir estrutura não significa avaliar uso com pessoas. A contagem das cinco macroetapas continuava igual porque cada uma ainda tinha critério de conclusão pendente.
 
 ## Bloqueios e próximos ensaios
-- Acesso atual de navegador recusado entre ambientes (`net::ERR_CONNECTION_REFUSED`) após iniciar API local isolada. A restrição do guia Sites foi citada fora do seu contexto; ela não se aplica a este projeto GitHub.
-- Prévia compatível com a API Python não confirmada. Publicar só HTML não executa o serviço.
-- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. A compreensão com participante continua não executada.
+- O Chromium real foi usado no checkpoint 21. A navegação direta por URL continua bloqueada pela política gerenciada do ambiente, mas isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi exercitada no navegador e as chamadas foram encaminhadas internamente ao FastAPI real com banco SQLite temporário.
+- A prévia direta por URL continua pendente para 5.4; o iniciador integrado já foi validado por HTTP, mas a política do Chromium deste ambiente impede essa abertura direta. Publicar só HTML não executa o serviço.
+- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. Leitor de tela real e compreensão com participante continuam não executados.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
 Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização. A contagem detalhada será usada nas próximas falas; cada avanço deve ter evidência.
@@ -93,3 +93,6 @@ O professor assumiu o teste posterior do VisuAlg. A preparação da 5.3 avançou
 
 ## Avanço no checkpoint 20
 A preparação da 5.3 inclui foco após operações assíncronas e preservação do campo em edição ao atualizar produtos. A interface passou nos 17 casos de lógica (seis anteriores mais 11 novos); esse conjunto foi reexecutado porque a mesma interface mudou. Não foram repetidas as suítes do servidor/clientes ou do iniciador. [Evidência](evidencia-interface-20.json). Navegador/leitor de tela ainda sem confirmação; total 22/31, VisuAlg reservado ao professor.
+
+## Avanço no checkpoint 21
+A Cantina foi executada em Chromium real com as fontes do branch conferidas byte a byte. A rodada de acessibilidade passou **38/38** e a rodada integrada navegador + FastAPI/serviço/SQLite temporário passou **25/25**. Um overflow de texto longo em 320 px foi encontrado e corrigido no CSS canônico, com sincronização do código exibido em Web/API. Com isso, **1.6, 2.5 e 3.5 foram concluídas** e o total passou para **25/31 concluídas, 6 pendentes**. A 5.3 permanece parcial apenas porque ainda falta leitor de tela real. [Evidência](evidencia-interface-21.json) · [Checkpoint](checkpoint-21-navegador-integracao.md).
