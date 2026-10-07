@@ -1,0 +1,37 @@
+{
+  "checkpoint": 32,
+  "base_sha": "3335f69c64c351b660016bd0e955a1e137741465",
+  "ambiente_http_real": {
+    "sistema": "Linux",
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "fastapi": "0.142.3",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1"
+  },
+  "regressao": {
+    "arquivo": "laboratorio/percurso-mbb/web-api/tests/test_previa_utf8.py",
+    "antes": "Falhou: UnicodeDecodeError, byte cp1252 0xe3 em módulo Python que contém caminho João",
+    "depois": "1 teste aprovado: bytes UTF-8 decodificados e módulo compilado",
+    "simulacao": "Path.write_text usa cp1252 quando encoding é omitido; pasta temporária com João; Popen interceptado antes de iniciar o servidor",
+    "limite": "Simulação em Linux; sem sessão Windows nova"
+  },
+  "execucao_http_real": {
+    "requisicoes": 17,
+    "operacoes_openapi_conferidas": 4,
+    "pedido_agua": 1,
+    "total_agua": 600,
+    "estado_final": "Entregue",
+    "eventos": 4,
+    "pedido_cupom": 2,
+    "total_cupom": 2700,
+    "banco_temporario": true,
+    "navegador_testado": false
+  },
+  "motivacao_da_reexecucao": "O roteiro HTTP foi alterado; somente a verificação afetada foi reexecutada. Não houve nova execução das 89 verificações da aplicação.",
+  "hashes_fontes": {
+    "laboratorio/percurso-mbb/web-api/tests/verificar_http_local.py": "2da95f780243b400df7d6e81b094fa7b3ad6d13acbb987bbd9230c970af20156",
+    "laboratorio/percurso-mbb/web-api/tests/test_previa_utf8.py": "3e5191d709dab8da48bbce438da4dd12735dbe67a9ede307f237be7835d6693b"
+  },
+  "contagem": "Regressão, requisições HTTP e operações OpenAPI têm escopos distintos; não somar."
+}

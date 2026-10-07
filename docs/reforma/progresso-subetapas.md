@@ -126,3 +126,6 @@ A matriz QTS incorpora CT-SQL-UTF8 e CT-NARRADOR, ligados aos requisitos e aos r
 
 ## Conferência da cópia — checkpoint 31
 Os 104 botões apontam para conteúdo não vazio. As 48 fontes canônicas aparecem completas em 52 blocos associados a Copiar; duas fontes CSS têm o mesmo texto. O verificador passou a exigir a associação ao botão e a recusar comandos vazios. Três casos negativos confirmaram a detecção. PG13 agora identifica a sessão pdb já executada. Cópia real, zoom e participante continuam pendentes; **27/31**, preparação 5.6. [Registro](checkpoint-31-conferencia-da-copia.md).
+
+## Comandos e codificação — checkpoint 32
+Quatro páginas agora identificam pasta/ambiente ou a evidência atual de acessibilidade. O roteiro HTTP temporário gravava seu módulo Python sem definir codificação; um caminho acentuado sob cp1252 reproduziu a falha de UTF-8. Correção verificada em regressão e por 17 requisições reais/4 operações OpenAPI. Escopos separados; sem nova suíte da aplicação ou observação humana. **27/31**, preparação 5.6. [Registro](checkpoint-32-comandos-e-utf8.md).

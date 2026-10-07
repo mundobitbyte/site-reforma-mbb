@@ -51,7 +51,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-31.json](verificacao-checkpoint-31.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-32.json](verificacao-checkpoint-32.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -199,3 +199,15 @@ python -m unittest discover -s laboratorio/percurso-mbb/tests -v
 ```
 
 Esses testes fornecem páginas modificadas somente em memória: texto extra, botão sem associação e comando vazio. Não alteram arquivos, bancos ou navegador. São três testes do verificador, separados dos 89 testes da aplicação.
+
+## Roteiro HTTP e caminho com acento — checkpoint 32
+
+O iniciador de teste HTTP gera um módulo Python temporário. Esse arquivo e o contrato são lidos/gravados em UTF-8 explícito; o processo Python filho usa UTF-8 para seus diagnósticos. A saída do Node também é decodificada em UTF-8. Isso evita que um caminho com acento seja gravado como cp1252 num arquivo Python esperado em UTF-8.
+
+A regressão pode ser conferida da raiz, sem iniciar servidor ou Node:
+
+```bash
+python -m unittest discover -s laboratorio/percurso-mbb/web-api/tests -p test_previa_utf8.py -v
+```
+
+O teste simula gravação padrão cp1252 e usa caminho temporário acentuado. Intercepta a criação do processo e confere se o módulo gerado pode ser decodificado e compilado em UTF-8. É uma regressão do roteiro, separada dos testes da aplicação. A execução HTTP real depois da correção está em [evidencia-http-utf8-32.json](evidencia-http-utf8-32.json); o teste real ocorreu em Linux, não comprova uma sessão Windows nova.

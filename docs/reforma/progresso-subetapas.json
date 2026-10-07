@@ -374,7 +374,8 @@
             "docs/reforma/checkpoint-24-preparacao-do-parecer.md",
             "docs/reforma/checkpoint-29-consolidacao-do-parecer.md",
             "docs/reforma/checkpoint-30-evidencias-no-percurso.md",
-            "docs/reforma/checkpoint-31-conferencia-da-copia.md"
+            "docs/reforma/checkpoint-31-conferencia-da-copia.md",
+            "docs/reforma/checkpoint-32-comandos-e-utf8.md"
           ],
           "depende_de": [
             "1.6",
@@ -386,7 +387,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes."
         }
       ]
     }
@@ -405,6 +406,6 @@
     "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 31,
-  "orientacao_atual": "Checkpoint 31: verificação portátil passa a exigir arquivos canônicos completos em blocos com botão Copiar e a recusar comandos vazios. 104 botões auditados; 48 fontes preservadas em 52 blocos. Três casos negativos do verificador aprovados. Correção do relato histórico de pdb em PG13. Sem cópia real de navegador ou novo teste do professor; 27/31, preparação 5.6."
+  "checkpoint_atualizacao": 32,
+  "orientacao_atual": "Checkpoint 32: pastas/pré-requisitos esclarecidos em BD09, QTS/código, QTS12 e WEB11; situação de acessibilidade WEB11 atualizada. Roteiro HTTP temporário corrigido para UTF-8 em caminhos acentuados, com regressão antes/depois e 17 requisições/4 operações conferidas. 27/31, preparação 5.6; testes humanos mantidos pendentes."
 }
