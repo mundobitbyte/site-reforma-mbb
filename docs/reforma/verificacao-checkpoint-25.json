@@ -1,0 +1,26 @@
+{
+  "checkpoint": 25,
+  "escopo": "Conferência estrutural dos registros da sessão Windows; sem repetir suítes funcionais",
+  "paginas_html": 108,
+  "referencias_locais": 3403,
+  "botoes_copiar": 104,
+  "codigo_canonico": 48,
+  "erros": [],
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 26,
+    "restantes": 5,
+    "total_etapas_ensino": 81
+  },
+  "posicao_atual": "5.3",
+  "testes_python_reexecutados": false,
+  "testes_navegador_reexecutados_pelo_agente": false,
+  "leitor_de_tela_real": false,
+  "visualg_executado": false,
+  "ensaios_com_participante": false,
+  "hashes_protegidos": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352"
+  },
+  "previa_direta_observada_por_capturas": true
+}

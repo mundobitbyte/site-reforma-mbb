@@ -6,7 +6,7 @@ Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/
 - [Orientação da entrega parcial](entrega-parcial.md): leitura e encadeamento do material sem iniciar a aplicação; ensaios podem ficar para depois.
 - [Ficha curta para a próxima sessão](registro-retomada.md) · [Minuta do parecer final](parecer-final-minuta.md): registrar apenas as observações ainda pendentes, sem repetir as suítes concluídas.
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
-- [Progresso detalhado](progresso-subetapas.md): 25/31 concluídas, 6 pendentes; posição 5.6, preparação da entrega parcial; ensaios adiados.
+- [Progresso detalhado](progresso-subetapas.md): 26/31 concluídas, 5 pendentes; posição 5.3, leitor de tela real; prévia direta 5.4 confirmada no Windows do professor.
 - [Dossiê do mesmo sistema](../../laboratorio/percurso-mbb/analise/dossie-cantina.html)
 - [Aplicação, bancos e regras](../../laboratorio/cantina-evolutiva/README.md)
 - [Parecer da rodada QTS](../../laboratorio/percurso-mbb/qts/parecer.md)
@@ -51,7 +51,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-24.json](verificacao-checkpoint-24.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-25.json](verificacao-checkpoint-25.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -135,12 +135,12 @@ As práticas de Banco de Dados usam `python laboratorio_bd.py ...`: consulta é 
 Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertura percentual não foi medida. Actions permanece desativado; receita QTS é texto inerte. Não houve escrita no site oficial ou publicação nesta rodada.
 
 ## O que impede encerrar a entrega
-Subetapas ainda abertas: 4.8, 4.9, 5.3, 5.4, 5.5, 5.6. Total: **25/31 concluídas; 6 pendentes**.
-O checkpoint 21 concluiu 1.6, 2.5 e 3.5. Confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade do Chromium. Faltam leitor de tela real (5.3), abertura da prévia direta em ambiente compatível (5.4), revisão pedagógica e compreensão com participante (4.9/5.5), e parecer final (5.6).
+Subetapas ainda abertas: 4.8, 4.9, 5.3, 5.5, 5.6. Total: **26/31 concluídas; 5 pendentes**.
+O checkpoint 21 concluiu 1.6, 2.5 e 3.5. Confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade do Chromium. Faltam leitor de tela real (5.3), revisão pedagógica e compreensão com participante (4.9/5.5), e parecer final (5.6).
 O depurador pdb foi executado no checkpoint 17; o VisuAlg será testado posteriormente pelo Professor Ronaldo, conforme instrução de 07/10/2026. Essa pendência da 4.8 não impede prosseguir nas outras subetapas.
-O diagnóstico de acesso do checkpoint 17 é histórico. No checkpoint 21, a interface foi carregada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real; a navegação direta por URL continuou bloqueada no ambiente gerenciado. Esse transporte permite os ensaios funcionais registrados, mas não encerra 5.4 nem equivale a leitor de tela ou participação humana. A prévia integrada precisa executar também o serviço Python. Não houve publicação externa.
+O diagnóstico de acesso do checkpoint 17 é histórico. No checkpoint 21, a interface foi carregada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real; a navegação direta por URL continuou bloqueada no ambiente gerenciado. Esse transporte permitiu os ensaios funcionais registrados. A abertura direta da aplicação e de uma aula curricular no Windows do professor encerrou 5.4 no checkpoint 25; leitor de tela e participação humana permanecem pendentes. A prévia integrada precisa executar também o serviço Python. Não houve publicação externa.
 
-Quando o professor puder testar, o próximo ensaio será abrir a prévia local no computador que conduzirá a avaliação; registrar commit, sistema, navegador e leitor de tela. Seguir as verificações de leitura do [roteiro](../../laboratorio/percurso-mbb/qts/roteiro-manual.md), observando nomes de produtos/controles e anúncios de registro, consulta, recusa e mudança de estado. Registrar o resultado realmente ouvido. Os ensaios funcionais concluídos não precisam ser repetidos para autorizar esta rodada.
+A prévia já foi aberta no Windows do professor. Preserve a sessão; próximo ensaio: leitor de tela real. Registre commit, sistema, navegador e leitor de tela quando conhecidos. Seguir as verificações de leitura do [roteiro](../../laboratorio/percurso-mbb/qts/roteiro-manual.md), observando nomes de produtos/controles e anúncios de registro, consulta, recusa e mudança de estado. Registrar o resultado realmente ouvido. Os ensaios funcionais concluídos não precisam ser repetidos para autorizar esta rodada.
 
 Parecer atual: execução/conteúdo documentados para o laboratório; entrega completa e produto final ainda não liberados. Não existe aprovação pendente para as tarefas já autorizadas.
 

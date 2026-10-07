@@ -335,16 +335,15 @@
         {
           "id": "5.4",
           "titulo": "Prévia em ambiente compatível",
-          "situacao": "bloqueada",
+          "situacao": "concluida",
           "evidencias": [
             "docs/reforma/guia-execucao-cantina-mbb.md",
             "laboratorio/cantina-evolutiva/previa_local.py",
-            "docs/reforma/evidencia-previa-local-18.json"
+            "docs/reforma/evidencia-previa-local-18.json",
+            "docs/reforma/evidencia-previa-windows-25.json"
           ],
-          "depende_de": [
-            "PREVIA_COMPATIVEL"
-          ],
-          "preparacao": "Iniciador integrado local com banco temporário preparado; acesso real por navegador e publicação compatível ainda não confirmados."
+          "depende_de": [],
+          "preparacao": "Aplicação e página curricular abertas diretamente no Chrome do Windows do professor; capturas analisadas no checkpoint 25. Sem hospedagem externa."
         },
         {
           "id": "5.5",
@@ -385,21 +384,20 @@
       ]
     }
   ],
-  "posicao_atual": "5.6",
+  "posicao_atual": "5.3",
   "autorizacao_pendente": false,
   "bloqueios": {
-    "NAVEGADOR": "A navegação direta por URL continua bloqueada pela política gerenciada do Chromium. Isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi executada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real com SQLite temporário no checkpoint 21.",
-    "PREVIA_COMPATIVEL": "O iniciador local integrado foi verificado por HTTP no checkpoint 18. A prévia direta por URL no Chromium gerenciado continua impedida pela política do ambiente; nenhuma hospedagem externa foi feita.",
+    "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
     "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
     "LEITOR_DE_TELA": "A árvore de acessibilidade do Chromium foi conferida, mas um leitor de tela real ainda não foi executado; por isso 5.3 permanece parcial."
   },
   "resumo": {
     "total_subetapas": 31,
-    "concluidas": 25,
-    "restantes": 6,
+    "concluidas": 26,
+    "restantes": 5,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 24,
-  "orientacao_atual": "Trabalho sem novos ensaios, conforme pedido do professor em 07/10/2026. Entrega parcial preparada; testes podem ser retomados depois, a partir da 5.3."
+  "checkpoint_atualizacao": 25,
+  "orientacao_atual": "Sessão local retomada pelo professor. R01/5.4 concluído por capturas; próximo passo: leitor de tela real, R02–R06/5.3. Não repetir testes funcionais já encerrados."
 }

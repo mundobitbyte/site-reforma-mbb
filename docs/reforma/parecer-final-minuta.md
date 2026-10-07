@@ -28,11 +28,11 @@ Fonte dos novos registros: [ficha de retomada](registro-retomada.md), preenchida
 | 4.8 — VisuAlg e pdb | Pdb concluído; VisuAlg adiado pelo professor. | Não preenchido |
 | 4.9 — Percurso em uso | Revisão visual/pedagógica com participante pendente. | Não preenchido |
 | 5.3 — Acessibilidade | Chromium, 360/320 px, teclado e foco confirmados; leitor de tela real pendente. | Não preenchido |
-| 5.4 — Prévia compatível | Iniciador verificado por HTTP; abertura direta no navegador pendente. | Não preenchido |
+| 5.4 — Prévia compatível | Iniciador verificado por HTTP; abertura direta no navegador pendente. | **Concluída:** aplicação e página curricular por URL local no Windows do professor. [Evidência 25](evidencia-previa-windows-25.json). |
 | 5.5 — Uso e compreensão | Observação com participante pendente. | Não preenchido |
 | 5.6 — Parecer e entrega | Preparação documental parcial; encerramento depende dos critérios anteriores. | Não preenchido |
 
-Falhas encontradas e impacto: **a preencher**. Correções e necessidade de nova verificação: **a preencher**. Itens não executados ou adiados: **a preencher**. Contagem atualizada com evidências: **a preencher**.
+Falhas encontradas e impacto: **a preencher**. Correções e necessidade de nova verificação: **a preencher**. Itens não executados ou adiados: **a preencher**. Contagem atualizada com evidências: **26/31 concluídas; 5 pendentes**, após R01/5.4. Decisão final continua sem preenchimento.
 
 ## Decisão final — preencher somente após analisar os registros
 

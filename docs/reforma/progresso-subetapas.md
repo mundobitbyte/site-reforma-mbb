@@ -2,7 +2,7 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**25/31 concluídas; 6 pendentes. Posição atual: preparação da Entrega 5.6, parcial. Ensaios adiados; retomar pela 5.3 quando houver disponibilidade.**
+**26/31 concluídas; 5 pendentes. Posição atual: Entrega 5.3, leitor de tela real. A prévia direta 5.4 foi concluída na sessão Windows do professor.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
@@ -10,7 +10,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | Cupom | **5/5** | — |
 | Estados do pedido | **5/5** | — |
 | Percurso curricular | 7/9 | 4.8, 4.9 |
-| Entrega | 2/6 | 5.3, 5.4, 5.5, 5.6 |
+| Entrega | 3/6 | 5.3, 5.5, 5.6 |
 
 ## Cada subetapa
 
@@ -66,7 +66,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 5.1 | Verificação estrutural portátil e registro reproduzível | Concluída |
 | 5.2 | Guia consolidado de execução, evidências e pendências | Concluída |
 | 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Parcial:** 360/320 px, teclado, foco, DOM e árvore AX confirmados; leitor de tela real pendente |
-| 5.4 | Prévia em ambiente compatível | Bloqueada |
+| 5.4 | Prévia em ambiente compatível | **Concluída — checkpoint 25, Windows do professor** |
 | 5.5 | Rodada final de uso integrado e compreensão | Bloqueada |
 | 5.6 | Parecer e entrega final após os critérios de saída | Parcial: orientação da entrega preparada; encerramento aguarda critérios de saída |
 
@@ -76,7 +76,7 @@ Interface criada não significa interface testada em navegador. Conferir estrutu
 
 ## Bloqueios e próximos ensaios
 - O Chromium real foi usado no checkpoint 21. A navegação direta por URL continua bloqueada pela política gerenciada do ambiente, mas isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi exercitada no navegador e as chamadas foram encaminhadas internamente ao FastAPI real com banco SQLite temporário.
-- A prévia direta por URL continua pendente para 5.4; o iniciador integrado já foi validado por HTTP, mas a política do Chromium deste ambiente impede essa abertura direta. Publicar só HTML não executa o serviço.
+- A prévia direta 5.4 foi comprovada no Chrome do Windows do professor: aplicação e aula curricular abertas por URL local. A restrição histórica do Chromium gerenciado não bloqueia essa conclusão.
 - Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. Leitor de tela real e compreensão com participante continuam não executados.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
@@ -105,3 +105,6 @@ A preparação da 5.6 inclui revisão de oito capítulos: posições/chaves, err
 
 ## Avanço no checkpoint 24
 Preparadas a [minuta do parecer](parecer-final-minuta.md) e a [ficha curta da sessão](registro-retomada.md). Evidências já existentes identificadas; campos de resultados e decisão final permanecem vazios. A 5.6 continua parcial; total **25/31**, seis pendentes. [Registro](checkpoint-24-preparacao-do-parecer.md).
+
+## Avanço no checkpoint 25
+A sessão Windows confirmou aplicação e página curricular diretamente em `127.0.0.1:8001`. R01/5.4 passou; total **26/31**, cinco pendentes. As capturas não comprovam leitor de tela nem compreensão. [Evidência](evidencia-previa-windows-25.json). Próximo: 5.3.

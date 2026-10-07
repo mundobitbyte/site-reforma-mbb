@@ -6,7 +6,7 @@ Necessidade: conferir se uma pessoa consegue registrar, reencontrar e acompanhar
 
 Pedido (1.6), cupom (2.5) e estados (3.5) já foram concluídos no Chromium real, integrado ao FastAPI/serviço/SQLite temporário. A rodada registrou 38/38 casos de acessibilidade e 25/25 de integração; 360/320 px, teclado, foco, DOM e árvore de acessibilidade foram conferidos. [Evidência](../../../docs/reforma/evidencia-interface-21.json).
 
-O próximo ensaio é **5.3: leitor de tela real**; falta também abrir a prévia diretamente em ambiente compatível (5.4) e observar o percurso/compreensão com participante (4.9/5.5). Os casos U01–U08 podem orientar essa sessão humana, sem reabrir ou exigir repetição dos testes funcionais concluídos. As células “Não executado” abaixo se referem à sessão humana deste roteiro. A árvore de acessibilidade do Chromium não substitui os anúncios de um leitor de tela.
+O próximo ensaio é **5.3: leitor de tela real**; a prévia direta 5.4 foi concluída no Windows do professor no checkpoint 25; falta observar o percurso/compreensão com participante (4.9/5.5). Os casos U01–U08 podem orientar essa sessão humana, sem reabrir ou exigir repetição dos testes funcionais concluídos. As células “Não executado” abaixo se referem à sessão humana deste roteiro. A árvore de acessibilidade do Chromium não substitui os anúncios de um leitor de tela.
 
 ## Preparar uma rodada
 
@@ -54,4 +54,4 @@ O terminal responder a HTTP não comprova nenhum desses resultados. Um caso com 
 
 Salvar a tabela preenchida com commit e ambiente; registrar falhas e correções necessárias. Depois encerrar a prévia. VisuAlg será testado depois pelo Professor Ronaldo; não bloqueia os demais ensaios. Registrar seu resultado na 4.8 quando ocorrer. O parecer final deve identificar qualquer ensaio que permaneça pendente; não declarar verificação completa sem evidência.
 
-Situação atual: **25/31 concluídas; 6 pendentes**. Uso funcional em navegador concluído no checkpoint 21. Leitor de tela real, prévia direta compatível e participação humana continuam pendentes. VisuAlg reservado ao professor para teste posterior; não bloqueia os demais ensaios.
+Situação atual: **26/31 concluídas; 5 pendentes**. Uso funcional em navegador concluído no checkpoint 21. Prévia direta compatível concluída no checkpoint 25. Leitor de tela real e participação humana continuam pendentes. VisuAlg reservado ao professor para teste posterior; não bloqueia os demais ensaios.

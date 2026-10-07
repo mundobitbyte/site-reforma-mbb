@@ -1,0 +1,53 @@
+{
+  "checkpoint": 25,
+  "data_local": "2026-10-07",
+  "fuso": "America/Sao_Paulo",
+  "origem": "Capturas enviadas pelo Professor Ronaldo; inspeção visual dos anexos pelo agente",
+  "ambiente": {
+    "sistema": "Windows, conforme terminal informado pelo professor",
+    "python_informado": "3.10.2",
+    "navegador": "Chrome, conforme interface das capturas",
+    "versao_navegador": "não informada",
+    "commit_local_avaliado": "não confirmado",
+    "head_remoto_antes_registro": "07f124fdb11f5deffbe49e99222c1ab7b8bf51bb"
+  },
+  "anexos": [
+    {
+      "arquivo": "image(20261007-181554).png",
+      "citacao_anexo": "file_000000006630820e9beda63b86649123",
+      "sha256": "9cfb3619b00127b8ec18a35bf30ee02ba95d8ed5445c7541c4ae91bd97d5cfbf"
+    },
+    {
+      "arquivo": "image(20261007-181752).png",
+      "citacao_anexo": "file_0000000060c4820e97e3771caef50046",
+      "sha256": "9592d966d36e1288d1355a84c47ef85b2e162bbda0e95f4c1a6cb27632a527a3"
+    },
+    {
+      "arquivo": "image(20261007-181809).png",
+      "citacao_anexo": "file_000000000fcc820e90574b3acc751e4d",
+      "sha256": "9592d966d36e1288d1355a84c47ef85b2e162bbda0e95f4c1a6cb27632a527a3"
+    }
+  ],
+  "observacoes": [
+    {
+      "url": "http://127.0.0.1:8001/",
+      "observado": "Produtos carregados; confirmação do pedido #1 de R$ 65,00; consulta em Confirmado; histórico Novo → Confirmado; controle para avançar para Em preparação."
+    },
+    {
+      "url": "http://127.0.0.1:8001/curso/laboratorio/percurso-mbb/analise/00-antes-do-sistema.html",
+      "observado": "Aula 0 — Antes do sistema, de Análise de Sistemas, renderizada com texto, navegação lateral e retorno ao percurso. As duas novas capturas mostram a mesma página; não são contadas como dois testes."
+    }
+  ],
+  "caso": "R01",
+  "resultado": "passou",
+  "etapa_encerrada": "5.4",
+  "limites": [
+    "Não comprova leitor de tela ou anúncios sonoros.",
+    "Não comprova uso pedagógico/compreensão com participante ou execução no VisuAlg.",
+    "Não confirma commit exato, versões instaladas nem recarregamento/persistência na sessão Windows.",
+    "Comprova aplicação e página curricular por URL local; não houve publicação externa."
+  ],
+  "concluidas": 26,
+  "total": 31,
+  "restantes": 5
+}
