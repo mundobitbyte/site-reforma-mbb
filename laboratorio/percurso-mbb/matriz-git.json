@@ -1,0 +1,150 @@
+[
+  {
+    "etapa": 0,
+    "id": "GIT00",
+    "titulo": "Localizar o histórico certo",
+    "necessidade": "Um comando na pasta errada atinge outro projeto.",
+    "conceito": "Repositório, diretório de trabalho e estado.",
+    "pratica": "Leia status, caminho raiz e remotos antes de qualquer alteração. O script adicional cria somente pastas temporárias.",
+    "reutiliza": "RF-03; E13",
+    "origens": [
+      "pages/git.html#git-1",
+      "pages/git.html#git-2",
+      "pages/git.html#git-3",
+      "pages/git.html#git-4"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/00-localizar.html"
+  },
+  {
+    "etapa": 1,
+    "id": "GIT01",
+    "titulo": "Registrar uma mudança com sentido",
+    "necessidade": "Uma regra muda junto com seu teste e explicação.",
+    "conceito": "Arquivo, índice, commit e diff.",
+    "pratica": "Compare o documento de RF-03 antes/depois. Explique git diff e git diff --cached, depois interprete a mensagem do commit.",
+    "reutiliza": "QTS09/PG13",
+    "origens": [
+      "pages/git.html#git-5",
+      "pages/git.html#git-9"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/01-registrar.html"
+  },
+  {
+    "etapa": 2,
+    "id": "GIT02",
+    "titulo": "Encontrar a mudança problemática",
+    "necessidade": "Quantidade 11 aparece num documento antes aprovado até 10.",
+    "conceito": "Log, show e identificação do commit.",
+    "pratica": "No transcript, localize o commit do limite errado e leia a versão aprovada. A mensagem é intenção, não prova de correção.",
+    "reutiliza": "QTS10; RF-03",
+    "origens": [
+      "pages/git.html#git-6"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/02-investigar.html"
+  },
+  {
+    "etapa": 3,
+    "id": "GIT03",
+    "titulo": "Corrigir sem perder o motivo",
+    "necessidade": "É preciso distinguir edição local de erro já registrado.",
+    "conceito": "Revert, restore --staged e recuperação de conteúdo.",
+    "pratica": "Confirme três commits após revert. Depois verifique que retirar do índice preservou a edição do arquivo. Restore que descarta conteúdo só pertence a cópia didática com perda compreendida.",
+    "reutiliza": "D-Q04; QTS10",
+    "origens": [
+      "pages/git.html#git-7",
+      "pages/git.html#git-8",
+      "pages/git.html#git-10"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/03-recuperar.html"
+  },
+  {
+    "etapa": 4,
+    "id": "GIT04",
+    "titulo": "Uma proposta tem sua própria linha",
+    "necessidade": "Uma hipótese de mudança ainda não é regra aprovada.",
+    "conceito": "Branch e integração deliberada.",
+    "pratica": "Veja experimento/justificativa: o arquivo some ao visitar a base e aparece após merge. É branch de repositório temporário; a branch real do laboratório continua preparação/isolamento-inicial.",
+    "reutiliza": "QTS16; E09",
+    "origens": [
+      "pages/git.html#git-11",
+      "pages/git.html#github-8",
+      "pages/git.html#github-9"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/04-experimentar.html"
+  },
+  {
+    "etapa": 5,
+    "id": "GIT05",
+    "titulo": "Resolver pela regra, não por preferência",
+    "necessidade": "Duas propostas alteram a mesma linha de RF-03.",
+    "conceito": "Conflito, índice não resolvido e commit de decisão.",
+    "pratica": "Localize os dois limites no transcript. Preserve 1–10 por produto consolidado e explique por que 12 não foi escolhido. A resolução é exercício documental, não mudança no serviço.",
+    "reutiliza": "RF-03; QTS03",
+    "origens": [
+      "pages/git.html#github-9",
+      "pages/git.html#github-10"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/05-conflito.html"
+  },
+  {
+    "etapa": 6,
+    "id": "GIT06",
+    "titulo": "Consultar o passado sem mover o presente",
+    "necessidade": "Uma evidência precisa ser lida na versão que a produziu.",
+    "conceito": "Commit imutável e worktree destacada.",
+    "pratica": "Compare RF-03 antigo em outra pasta. O script confere que HEAD da base não mudou e remove apenas a própria worktree temporária.",
+    "reutiliza": "QTS09; E13",
+    "origens": [
+      "pages/git.html#git-12"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/06-visitar.html"
+  },
+  {
+    "etapa": 7,
+    "id": "GIT07",
+    "titulo": "Outra cópia não muda sozinha",
+    "necessidade": "Um commit novo em A ainda não chegou em B.",
+    "conceito": "Remoto, push, clone, fetch e pull --ff-only.",
+    "pratica": "Compare HEAD de B antes/depois de fetch: só a referência remota muda. Depois pull integra se avanço direto é possível. O remoto do roteiro é bare local, não GitHub.",
+    "reutiliza": "QTS15; WEB12",
+    "origens": [
+      "pages/git.html#github-1",
+      "pages/git.html#github-2",
+      "pages/git.html#github-3",
+      "pages/git.html#github-4",
+      "pages/git.html#github-5",
+      "pages/git.html#github-6",
+      "pages/git.html#github-7"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/07-sincronizar.html"
+  },
+  {
+    "etapa": 8,
+    "id": "GIT08",
+    "titulo": "Revisar escopo antes de enviar",
+    "necessidade": "Um banco criado na prática não pertence ao histórico do código.",
+    "conceito": "Ignorar arquivos, revisar diff e vincular evidência.",
+    "pratica": "Confira que ensaio.sqlite3 ficou fora do índice. Em uma revisão da Cantina, apresente RF, motivo, arquivos, validação e pendências; .gitignore não apaga arquivos já versionados.",
+    "reutiliza": "BD06; QTS16",
+    "origens": [
+      "pages/git.html#git-4",
+      "pages/git.html#github-8",
+      "pages/git.html#github-10"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/08-revisar.html"
+  },
+  {
+    "etapa": 9,
+    "id": "GIT09",
+    "titulo": "Encerrar a rodada sem declarar entrega total",
+    "necessidade": "Um marco do histórico não executa os testes por si.",
+    "conceito": "Tag, parecer e transferência entre disciplinas.",
+    "pratica": "Observe a tag didática e o parecer de QTS no transcript. Complete o caderno com commit e evidência. Tag local não publica site e não comprova GitHub Actions.",
+    "reutiliza": "E15/BD09/PG14/WEB12/QTS16",
+    "origens": [
+      "pages/git.html#github-9",
+      "pages/git.html#github-10"
+    ],
+    "destino": "laboratorio/percurso-mbb/git/09-checkpoint.html"
+  }
+]

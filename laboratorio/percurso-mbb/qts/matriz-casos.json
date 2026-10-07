@@ -1,0 +1,138 @@
+[
+  {
+    "id": "CT-PRODUTOS",
+    "requisitos": "RF-01",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_fluxo_api_interface_e_persistencia",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Integração API/banco; recursos HTTP não são uso de tela"
+  },
+  {
+    "id": "CT-AGRUPA",
+    "requisitos": "RF-02/RF-03",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_agrupa_repeticao_e_rejeita_soma_excessiva",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Soma consolidada e recusa sem efeito"
+  },
+  {
+    "id": "CT-TIPOS",
+    "requisitos": "RF-03",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_tipo_ou_quantidade_invalida_sem_efeitos",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Seis entradas estritas"
+  },
+  {
+    "id": "CT-SALDO",
+    "requisitos": "RF-04",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_disputa_pelo_ultimo_saldo",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Duas tentativas; não é teste de carga"
+  },
+  {
+    "id": "CT-CUPOM",
+    "requisitos": "RF-05",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_cupom.py",
+    "funcao": "test_minimo_inclusivo_e_codigo_normalizado",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Subtotal mínimo e código"
+  },
+  {
+    "id": "CT-DATA",
+    "requisitos": "RF-05",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_cupom.py",
+    "funcao": "test_validade_inclui_dia_final",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Relógio de teste"
+  },
+  {
+    "id": "CT-HISTORICO",
+    "requisitos": "RF-06",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_preco_historico_nao_muda",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Preço histórico"
+  },
+  {
+    "id": "CT-VAZIO",
+    "requisitos": "RF-07",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_pedido_invalido_sem_gravacao_parcial",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Pedido vazio/produto inexistente"
+  },
+  {
+    "id": "CT-TRANSACAO",
+    "requisitos": "RF-08",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_falha_durante_gravacao_reverte_tudo",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Falha induzida, não falha real em produção"
+  },
+  {
+    "id": "CT-CUPOM-ROLLBACK",
+    "requisitos": "RF-05/RF-08",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_cupom.py",
+    "funcao": "test_falha_final_reverte_uso_pedido_e_estoque",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Cupom, pedido, estoque juntos"
+  },
+  {
+    "id": "CT-ESTADOS",
+    "requisitos": "RF-09",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_estados.py",
+    "funcao": "test_sequencia_completa_historico_reabertura_e_valores_preservados",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Histórico e reabertura"
+  },
+  {
+    "id": "CT-CONSULTA-ANTIGA",
+    "requisitos": "RF-09",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_estados.py",
+    "funcao": "test_consulta_desatualizada_nao_avanca_mais_uma_etapa",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Estado esperado"
+  },
+  {
+    "id": "CT-EVENTO",
+    "requisitos": "RF-09",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_estados.py",
+    "funcao": "test_falha_de_historico_reverte_mudanca_de_status",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Mudança e evento juntos"
+  },
+  {
+    "id": "CT-MENSAGEM",
+    "requisitos": "RQ-01",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
+    "funcao": "test_tipo_ou_quantidade_invalida_sem_efeitos",
+    "situacao": "Evidência anterior: checkpoint 13",
+    "limite": "Texto retornado verificado; compreensão humana pendente"
+  },
+  {
+    "id": "CT-USO-360",
+    "requisitos": "RQ-02",
+    "arquivo": null,
+    "funcao": null,
+    "situacao": "Bloqueado: navegador",
+    "limite": "360 px e rolagem horizontal real não executados"
+  },
+  {
+    "id": "CT-COMPREENSAO",
+    "requisitos": "RQ-01",
+    "arquivo": null,
+    "funcao": null,
+    "situacao": "Não executado: sessão com participante",
+    "limite": "Mensagens não foram avaliadas com pessoa usuária"
+  },
+  {
+    "id": "CT-CI",
+    "requisitos": "Processo",
+    "arquivo": null,
+    "funcao": null,
+    "situacao": "Não executado: Actions desativado",
+    "limite": "A receita local não é pipeline remoto"
+  }
+]

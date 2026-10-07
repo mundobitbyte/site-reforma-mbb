@@ -1,0 +1,578 @@
+[
+  {
+    "grupo": "git",
+    "id": "1",
+    "titulo": "1 — Por que usar Git?",
+    "origem": "pages/git.html#git-1",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/00-localizar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "2",
+    "titulo": "2 — Preparando o Git",
+    "origem": "pages/git.html#git-2",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/00-localizar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "3",
+    "titulo": "3 — Criando e encontrando a pasta do projeto",
+    "origem": "pages/git.html#git-3",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/00-localizar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "4",
+    "titulo": "4 — Começando a controlar o projeto",
+    "origem": "pages/git.html#git-4",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/00-localizar.html",
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "5",
+    "titulo": "5 — Registrando mudanças com sentido",
+    "origem": "pages/git.html#git-5",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/01-registrar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "6",
+    "titulo": "6 — Descobrindo quando o erro entrou",
+    "origem": "pages/git.html#git-6",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/02-investigar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "7",
+    "titulo": "7 — Corrigindo um erro que já virou commit",
+    "origem": "pages/git.html#git-7",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/03-recuperar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "8",
+    "titulo": "8 — Corrigindo antes de registrar",
+    "origem": "pages/git.html#git-8",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/03-recuperar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "9",
+    "titulo": "9 — Trabalhando sem erro: o fluxo normal",
+    "origem": "pages/git.html#git-9",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/01-registrar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "10",
+    "titulo": "10 — Recuperando o conteúdo de uma versão aprovada",
+    "origem": "pages/git.html#git-10",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/03-recuperar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "11",
+    "titulo": "11 — Experimentando sem mexer na versão principal",
+    "origem": "pages/git.html#git-11",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/04-experimentar.html"
+    ]
+  },
+  {
+    "grupo": "git",
+    "id": "12",
+    "titulo": "12 — Visitando uma versão antiga sem alterar o presente",
+    "origem": "pages/git.html#git-12",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/06-visitar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "1",
+    "titulo": "GitHub 1 — Por que este projeto precisa do GitHub?",
+    "origem": "pages/git.html#github-1",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "2",
+    "titulo": "GitHub 2 — Fazendo o projeto local existir no GitHub",
+    "origem": "pages/git.html#github-2",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "3",
+    "titulo": "GitHub 3 — Uma mudança nasce no computador",
+    "origem": "pages/git.html#github-3",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "4",
+    "titulo": "GitHub 4 — Uma mudança nasce no GitHub",
+    "origem": "pages/git.html#github-4",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "5",
+    "titulo": "GitHub 5 — Criando uma segunda cópia do projeto",
+    "origem": "pages/git.html#github-5",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "6",
+    "titulo": "GitHub 6 — Uma cópia mudou. A outra ainda não.",
+    "origem": "pages/git.html#github-6",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "7",
+    "titulo": "GitHub 7 — Descobrir uma novidade não é o mesmo que recebê-la",
+    "origem": "pages/git.html#github-7",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/07-sincronizar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "8",
+    "titulo": "GitHub 8 — Fazendo uma branch local existir no GitHub",
+    "origem": "pages/git.html#github-8",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/04-experimentar.html",
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "9",
+    "titulo": "GitHub 9 — O teste foi aprovado: integrando a branch",
+    "origem": "pages/git.html#github-9",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/04-experimentar.html",
+      "laboratorio/percurso-mbb/git/05-conflito.html",
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "github",
+    "id": "10",
+    "titulo": "GitHub 10 — Quando a sincronização não acontece como esperado",
+    "origem": "pages/git.html#github-10",
+    "classificacao": "Ligação de fundamento",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/05-conflito.html",
+      "laboratorio/percurso-mbb/git/08-revisar.html",
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "inicio",
+    "titulo": "99 — Exercícios de Git e GitHub",
+    "origem": "pages/git.html#exercicios-inicio",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e1",
+    "titulo": "Exercício 1 — Preparando o projeto da feira",
+    "origem": "pages/git.html#exercicios-e1",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e2",
+    "titulo": "Exercício 2 — Começando o histórico",
+    "origem": "pages/git.html#exercicios-e2",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e3",
+    "titulo": "Exercício 3 — Registrando o primeiro estado aprovado",
+    "origem": "pages/git.html#exercicios-e3",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e4",
+    "titulo": "Exercício 4 — Descobrindo exatamente o que mudou",
+    "origem": "pages/git.html#exercicios-e4",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e5",
+    "titulo": "Exercício 5 — Registrando e investigando a segunda versão",
+    "origem": "pages/git.html#exercicios-e5",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e6",
+    "titulo": "Exercício 6 — Um rascunho que não deve virar versão",
+    "origem": "pages/git.html#exercicios-e6",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e7",
+    "titulo": "Exercício 7 — Corrigindo um erro que já virou commit",
+    "origem": "pages/git.html#exercicios-e7",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e8",
+    "titulo": "Exercício 8 — Corrigindo antes de registrar",
+    "origem": "pages/git.html#exercicios-e8",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e9",
+    "titulo": "Exercício 9 — Fazendo uma alteração sem erro",
+    "origem": "pages/git.html#exercicios-e9",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e10",
+    "titulo": "Exercício 10 — Retomando uma versão aprovada",
+    "origem": "pages/git.html#exercicios-e10",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e11",
+    "titulo": "Exercício 11 — Experimentando em uma branch",
+    "origem": "pages/git.html#exercicios-e11",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e12",
+    "titulo": "Exercício 12 — Visitando uma versão sem alterá-la",
+    "origem": "pages/git.html#exercicios-e12",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e13",
+    "titulo": "Exercício 13 — Fazendo o projeto local existir no GitHub",
+    "origem": "pages/git.html#exercicios-e13",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e14",
+    "titulo": "Exercício 14 — Uma mudança local chega ao remoto",
+    "origem": "pages/git.html#exercicios-e14",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e15",
+    "titulo": "Exercício 15 — Uma correção nasce no GitHub",
+    "origem": "pages/git.html#exercicios-e15",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e16",
+    "titulo": "Exercício 16 — Criando uma segunda cópia",
+    "origem": "pages/git.html#exercicios-e16",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e17",
+    "titulo": "Exercício 17 — Uma cópia muda e a outra fica para trás",
+    "origem": "pages/git.html#exercicios-e17",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e18",
+    "titulo": "Exercício 18 — Descobrir primeiro, receber depois",
+    "origem": "pages/git.html#exercicios-e18",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e19",
+    "titulo": "Exercício 19 — Fazendo a branch de teste existir no GitHub",
+    "origem": "pages/git.html#exercicios-e19",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e20",
+    "titulo": "Exercício 20 — O teste foi aprovado",
+    "origem": "pages/git.html#exercicios-e20",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e21",
+    "titulo": "Exercício 21 — Escolhendo o próximo passo",
+    "origem": "pages/git.html#exercicios-e21",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "exercicios",
+    "id": "e22",
+    "titulo": "Exercício 22 — Projeto completo de sobrevivência",
+    "origem": "pages/git.html#exercicios-e22",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/09-checkpoint.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "inicio",
+    "titulo": "Comandos — Mapa rápido",
+    "origem": "pages/git.html#comandos-inicio",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "checkpoint",
+    "titulo": "Comandos — Checkpoint completo",
+    "origem": "pages/git.html#comandos-checkpoint",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "cmd",
+    "titulo": "Comandos — Git CMD, arquivos e pastas",
+    "origem": "pages/git.html#comandos-cmd",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "preparar",
+    "titulo": "Comandos — Instalação e identificação",
+    "origem": "pages/git.html#comandos-preparar",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "rede",
+    "titulo": "Comandos — Rede e safe.directory",
+    "origem": "pages/git.html#comandos-rede",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "registrar",
+    "titulo": "Comandos — Criar, conferir e registrar versões",
+    "origem": "pages/git.html#comandos-registrar",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "historico",
+    "titulo": "Comandos — Investigar, corrigir e recuperar",
+    "origem": "pages/git.html#comandos-historico",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "branches",
+    "titulo": "Comandos — Trabalhar em branches",
+    "origem": "pages/git.html#comandos-branches",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "remoto",
+    "titulo": "Comandos — Conectar o projeto ao GitHub",
+    "origem": "pages/git.html#comandos-remoto",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "sincronizar",
+    "titulo": "Comandos — Receber, descobrir, clonar e integrar",
+    "origem": "pages/git.html#comandos-sincronizar",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "cafe",
+    "titulo": "Comandos — Arquivos usados na história do Café Aurora",
+    "origem": "pages/git.html#comandos-cafe",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  },
+  {
+    "grupo": "comandos",
+    "id": "diagnostico",
+    "titulo": "Comandos — Diagnóstico inicial",
+    "origem": "pages/git.html#comandos-diagnostico",
+    "classificacao": "Consulta/transferência preservada",
+    "destinos": [
+      "laboratorio/percurso-mbb/git/08-revisar.html"
+    ]
+  }
+]

@@ -1,0 +1,150 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Código das práticas adicionais | Cantina Horizonte — MbB</title><link rel="stylesheet" href="../../../css/analise-sistemas.css"><link rel="stylesheet" href="../percurso.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="course-header"><div class="header-left"><a class="portal-link" href="../index.html">← Percurso MbB</a><span class="course-title">QTS</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" type="button" aria-controls="courseNav" aria-expanded="false">☰ Etapas</button></div></header><div class="course-shell"><nav class="course-nav" id="courseNav" aria-label="Etapas de QTS"><div class="nav-project"><strong>Cantina Horizonte</strong><span>O mesmo requisito, uma evidência verificável.</span></div><a class="stage-link" href="00-primeira-rodada.html"><span class="stage-number">0</span><span>Será que está pronto?</span></a><a class="stage-link" href="01-qualidade.html"><span class="stage-number">1</span><span>Qualidade tem várias perguntas</span></a><a class="stage-link" href="02-falha-defeito.html"><span class="stage-number">2</span><span>Falha observada e causa investigada</span></a><a class="stage-link" href="03-oraculo.html"><span class="stage-number">3</span><span>O esperado vem de uma regra</span></a><a class="stage-link" href="04-revisao.html"><span class="stage-number">4</span><span>Revisar antes de executar</span></a><a class="stage-link" href="05-valores.html"><span class="stage-number">5</span><span>Valores que justificam o teste</span></a><a class="stage-link" href="06-regras.html"><span class="stage-number">6</span><span>Decisões e estados</span></a><a class="stage-link" href="07-camadas.html"><span class="stage-number">7</span><span>A camada muda o alcance da conclusão</span></a><a class="stage-link" href="08-risco.html"><span class="stage-number">8</span><span>Escolher por consequência</span></a><a class="stage-link" href="09-plano.html"><span class="stage-number">9</span><span>Planejar para poder repetir</span></a><a class="stage-link" href="10-defeito.html"><span class="stage-number">10</span><span>Registrar e confirmar</span></a><a class="stage-link" href="11-automacao.html"><span class="stage-number">11</span><span>Automatizar a repetição útil</span></a><a class="stage-link" href="12-tdd.html"><span class="stage-number">12</span><span>Um ciclo pequeno antes da regra</span></a><a class="stage-link" href="13-integracao.html"><span class="stage-number">13</span><span>Resposta e banco precisam concordar</span></a><a class="stage-link" href="14-usuario.html"><span class="stage-number">14</span><span>Agora falta o navegador</span></a><a class="stage-link" href="15-processo.html"><span class="stage-number">15</span><span>Testes e histórico trabalham juntos</span></a><a class="stage-link" href="16-parecer.html"><span class="stage-number">16</span><span>A decisão precisa respeitar o limite</span></a><a class="stage-link" href="index.html">Visão do percurso</a><a class="stage-link" href="matriz-casos.html">Casos e evidências</a><a class="stage-link" href="codigo.html">Exemplos completos</a><a class="stage-link" href="99-exercicios.html">99 · Exercícios</a><a class="stage-link" href="caderno-qts.md">Caderno de evidências</a><a class="stage-link" href="parecer.md">Parecer da rodada</a></nav><main class="course-main" id="conteudo"><div class="content-wrap"><section class="hero"><span class="kicker">Cantina Horizonte · laboratório</span><h1>Código das práticas adicionais</h1><p>Leia antes de executar; bancos de trabalho não são destinos destes exemplos.</p></section><article class="chapter"><section><h2>Reproduzir com isolamento</h2><p>Os dois arquivos são exemplos adicionais; não substituem o serviço nem a suíte de regressão.</p><button type="button" class="copy-button" data-copy="comando-comparar">Copiar</button><pre id="comando-comparar"><code>python laboratorio/percurso-mbb/qts/exemplos/comparar_versoes.py</code></pre><button type="button" class="copy-button" data-copy="comando-tdd">Copiar</button><pre id="comando-tdd"><code>python laboratorio/percurso-mbb/qts/exemplos/ciclo_tdd.py</code></pre></section><section><h2>ciclo_tdd.py</h2><a href="exemplos/ciclo_tdd.py">Abrir arquivo</a><button type="button" class="copy-button" data-copy="arquivo-qts-0">Copiar</button><pre id="arquivo-qts-0"><code>&quot;&quot;&quot;Recorte didático de RF-03. Não modifica a v1 ou o serviço integrado.
+
+RED deve falhar por uma regra incompleta, não por importação ou ambiente.
+Não afirma que a aplicação inteira tenha sido desenvolvida com TDD.
+&quot;&quot;&quot;
+import json
+
+
+def regra_red(quantidade):
+    return quantidade &lt;= 10
+
+
+def regra_green(quantidade):
+    return type(quantidade) is int and quantidade &gt;= 1 and quantidade &lt;= 10
+
+
+def regra_refactor(quantidade):
+    return type(quantidade) is int and 1 &lt;= quantidade &lt;= 10
+
+
+CASOS = [(0, False), (-1, False), (1, True), (2, True), (10, True),
+         (11, False), (True, False), (1.5, False)]
+
+
+def executar():
+    fases = []
+    for nome, regra in [(&#x27;RED&#x27;, regra_red), (&#x27;GREEN&#x27;, regra_green), (&#x27;REFACTOR&#x27;, regra_refactor)]:
+        falhas = [repr(q) for q, esperado in CASOS if regra(q) != esperado]
+        fases.append({&#x27;fase&#x27;: nome, &#x27;amostras&#x27;: len(CASOS), &#x27;falhas&#x27;: falhas})
+    assert fases[0][&#x27;falhas&#x27;] == [&#x27;0&#x27;, &#x27;-1&#x27;, &#x27;True&#x27;, &#x27;1.5&#x27;]
+    assert not fases[1][&#x27;falhas&#x27;] and not fases[2][&#x27;falhas&#x27;]
+    return {&#x27;fases&#x27;: fases, &#x27;aplicacao_modificada&#x27;: False}
+
+
+if __name__ == &#x27;__main__&#x27;:
+    print(json.dumps(executar(), ensure_ascii=False, indent=2))
+</code></pre></section><section><h2>comparar_versoes.py</h2><a href="exemplos/comparar_versoes.py">Abrir arquivo</a><button type="button" class="copy-button" data-copy="arquivo-qts-1">Copiar</button><pre id="arquivo-qts-1"><code>&quot;&quot;&quot;Compara a v1 preservada e a evolução com bancos temporários, sem navegador.
+
+Falhas conhecidas da v1 são observações esperadas do laboratório, não aprovação
+de seus requisitos. Cada cenário ganha um banco novo em cada versão.
+&quot;&quot;&quot;
+from contextlib import contextmanager
+from datetime import date
+import importlib.util
+import json
+from pathlib import Path
+import sqlite3
+import sys
+import tempfile
+
+from fastapi.testclient import TestClient
+
+ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT / &#x27;laboratorio/cantina-evolutiva&#x27;))
+from app import criar_app
+
+
+def carregar_v1():
+    spec = importlib.util.spec_from_file_location(
+        &#x27;cantina_v1_comparacao&#x27;, ROOT / &#x27;qts/cantina-horizonte-v1/backend/app.py&#x27;)
+    modulo = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = modulo
+    spec.loader.exec_module(modulo)
+    return modulo
+
+
+@contextmanager
+def ambiente(versao, pasta):
+    banco = Path(pasta) / (versao + &#x27;.sqlite3&#x27;)
+    if versao == &#x27;v1&#x27;:
+        modulo = carregar_v1()
+        modulo.DB_PATH = banco
+        app = modulo.app
+    else:
+        app = criar_app(banco, hoje=lambda: date(2026, 10, 7))
+    with TestClient(app) as client:
+        yield client, banco
+
+
+def snapshot(banco):
+    with sqlite3.connect(banco) as conn:
+        tabelas = conn.execute(
+            &quot;SELECT name FROM sqlite_master WHERE type=&#x27;table&#x27; ORDER BY name&quot;).fetchall()
+        return {nome: conn.execute(&#x27;SELECT * FROM &quot;&#x27; + nome + &#x27;&quot; ORDER BY rowid&#x27;).fetchall()
+                for (nome,) in tabelas}
+
+
+# Status da v1 são caracterização histórica; os da evolução vêm do contrato.
+CASOS = [
+    (&#x27;Q-01&#x27;, &#x27;RF-03&#x27;, &#x27;limite inferior&#x27;, [1], None, False, 201, 201),
+    (&#x27;Q-02&#x27;, &#x27;RF-03&#x27;, &#x27;limite superior&#x27;, [10], None, False, 201, 201),
+    (&#x27;Q-03&#x27;, &#x27;RF-03&#x27;, &#x27;zero&#x27;, [0], None, False, 201, 422),
+    (&#x27;Q-04&#x27;, &#x27;RF-03&#x27;, &#x27;negativa&#x27;, [-1], None, False, 201, 422),
+    (&#x27;Q-05&#x27;, &#x27;RF-03&#x27;, &#x27;acima do limite&#x27;, [11], None, False, 400, 422),
+    (&#x27;Q-06&#x27;, &#x27;RF-04/RF-08&#x27;, &#x27;saldo insuficiente&#x27;, [2], None, True, 201, 409),
+    (&#x27;Q-07&#x27;, &#x27;RF-02/RF-03&#x27;, &#x27;repetição soma 12&#x27;, [6, 6], None, False, 201, 400),
+    (&#x27;Q-08&#x27;, &#x27;RF-05&#x27;, &#x27;cupom abaixo do mínimo&#x27;, [2], &#x27;MBB10&#x27;, False, 201, 400),
+    (&#x27;Q-09&#x27;, &#x27;RF-09&#x27;, &#x27;salto Novo para Entregue&#x27;, [2], None, False, 200, 409),
+]
+
+
+def executar():
+    resultados = []
+    for codigo, rf, descricao, quantidades, cupom, saldo_baixo, http_v1, http_evolucao in CASOS:
+        for versao, esperado in [(&#x27;v1&#x27;, http_v1), (&#x27;evolucao&#x27;, http_evolucao)]:
+            with tempfile.TemporaryDirectory(prefix=&#x27;mbb-qts-&#x27;) as pasta:
+                with ambiente(versao, pasta) as (client, banco):
+                    produto = &#x27;produtos&#x27; if versao == &#x27;v1&#x27; else &#x27;produto&#x27;
+                    if saldo_baixo:
+                        with sqlite3.connect(banco) as conn:
+                            conn.execute(f&#x27;UPDATE {produto} SET estoque=1 WHERE id=1&#x27;)
+                    antes = snapshot(banco)
+                    resposta = client.post(&#x27;/api/pedidos&#x27;, json={
+                        &#x27;itens&#x27;: [{&#x27;produto_id&#x27;: 1, &#x27;quantidade&#x27;: q} for q in quantidades],
+                        &#x27;cupom&#x27;: cupom})
+                    if codigo == &#x27;Q-09&#x27;:
+                        assert resposta.status_code == 201
+                        pedido = resposta.json()
+                        antes = snapshot(banco)
+                        entrada = {&#x27;status&#x27;: &#x27;Entregue&#x27;}
+                        if versao == &#x27;evolucao&#x27;:
+                            entrada[&#x27;estado_esperado&#x27;] = &#x27;Novo&#x27;
+                        resposta = client.post(f&quot;/api/pedidos/{pedido[&#x27;id&#x27;]}/status&quot;, json=entrada)
+                    assert resposta.status_code == esperado, (codigo, versao, resposta.text)
+                    depois = snapshot(banco)
+                    recusou = resposta.status_code &gt;= 400
+                    if recusou:
+                        assert depois == antes, (codigo, versao, &#x27;recusa alterou o banco&#x27;)
+                    if codigo in [&#x27;Q-01&#x27;, &#x27;Q-02&#x27;]:
+                        with sqlite3.connect(banco) as conn:
+                            saldo = conn.execute(f&#x27;SELECT estoque FROM {produto} WHERE id=1&#x27;).fetchone()[0]
+                        assert saldo == 20 - quantidades[0]
+                        valor = resposta.json()[&#x27;total&#x27; if versao == &#x27;v1&#x27; else &#x27;total_centavos&#x27;]
+                        assert valor == quantidades[0] * (3 if versao == &#x27;v1&#x27; else 300)
+                    observacao = {&#x27;id&#x27;: codigo, &#x27;rf&#x27;: rf, &#x27;cenario&#x27;: descricao,
+                                  &#x27;versao&#x27;: versao, &#x27;http&#x27;: resposta.status_code,
+                                  &#x27;recusou&#x27;: recusou, &#x27;banco_preservado&#x27;: antes == depois,
+                                  &#x27;resposta&#x27;: resposta.json()}
+                    if codigo == &#x27;Q-09&#x27;:
+                        assert client.get(&#x27;/api/pedidos/1&#x27;).json()[&#x27;status&#x27;] == (
+                            &#x27;Entregue&#x27; if versao == &#x27;v1&#x27; else &#x27;Novo&#x27;)
+                    resultados.append(observacao)
+    return {&#x27;cenarios&#x27;: len(CASOS), &#x27;observacoes&#x27;: len(resultados),
+            &#x27;bancos_temporarios&#x27;: True, &#x27;navegador_testado&#x27;: False,
+            &#x27;v1_aprovada_para_uso&#x27;: False, &#x27;resultados&#x27;: resultados}
+
+
+if __name__ == &#x27;__main__&#x27;:
+    print(json.dumps(executar(), ensure_ascii=False, indent=2))
+</code></pre></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>

@@ -1,0 +1,25 @@
+{
+  "fases": [
+    {
+      "fase": "RED",
+      "amostras": 8,
+      "falhas": [
+        "0",
+        "-1",
+        "True",
+        "1.5"
+      ]
+    },
+    {
+      "fase": "GREEN",
+      "amostras": 8,
+      "falhas": []
+    },
+    {
+      "fase": "REFACTOR",
+      "amostras": 8,
+      "falhas": []
+    }
+  ],
+  "aplicacao_modificada": false
+}

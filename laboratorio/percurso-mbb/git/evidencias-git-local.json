@@ -1,0 +1,553 @@
+{
+  "comandos_executados": 62,
+  "conflito_resolvido": true,
+  "revert_preservou_historico": true,
+  "fetch_sem_mudar_HEAD": true,
+  "pull_ff_conferido": true,
+  "worktree_passado_conferida": true,
+  "remoto_local": true,
+  "github_testado": false,
+  "registro": [
+    {
+      "comando": [
+        "init",
+        "-b",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "Initialized empty Git repository in <temporario>/cantina-a/.git/"
+    },
+    {
+      "comando": [
+        "check-ignore",
+        "ensaio.sqlite3"
+      ],
+      "codigo": 0,
+      "saida": "ensaio.sqlite3"
+    },
+    {
+      "comando": [
+        "status",
+        "--short"
+      ],
+      "codigo": 0,
+      "saida": "?? .gitignore\n?? evidencias.md\n?? requisitos.md"
+    },
+    {
+      "comando": [
+        "add",
+        "requisitos.md",
+        "evidencias.md",
+        ".gitignore"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "diff",
+        "--cached"
+      ],
+      "codigo": 0,
+      "saida": "diff --git a/.gitignore b/.gitignore\nnew file mode 100644\nindex 0000000..d0ce507\n--- /dev/null\n+++ b/.gitignore\n@@ -0,0 +1,2 @@\n+*.sqlite3\n+.venv/\ndiff --git a/evidencias.md b/evidencias.md\nnew file mode 100644\nindex 0000000..1b19858\n--- /dev/null\n+++ b/evidencias.md\n@@ -0,0 +1 @@\n+RQ-02: navegador ainda pendente.\ndiff --git a/requisitos.md b/requisitos.md\nnew file mode 100644\nindex 0000000..22d40ad\n--- /dev/null\n+++ b/requisitos.md\n@@ -0,0 +1 @@\n+RF-03: quantidade inteira de 1 a 10."
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(RF-03): registrar quantidade e limite da evidencia"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica (root-commit) 72f44d3] docs(RF-03): registrar quantidade e limite da evidencia\n 3 files changed, 4 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 evidencias.md\n create mode 100644 requisitos.md"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "72f44d30ee38d7de46ca63bc5cd90a24fea34eff"
+    },
+    {
+      "comando": [
+        "diff"
+      ],
+      "codigo": 0,
+      "saida": "diff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..c1c10b7 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1 @@\n-RF-03: quantidade inteira de 1 a 10.\n+RF-03: quantidade inteira de 1 a 11."
+    },
+    {
+      "comando": [
+        "add",
+        "requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs: simular limite errado"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica cacc634] docs: simular limite errado\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "cacc6345f87fa73d0ffd3cfcc4c66b50e1088868"
+    },
+    {
+      "comando": [
+        "show",
+        "72f44d30ee38d7de46ca63bc5cd90a24fea34eff:requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": "RF-03: quantidade inteira de 1 a 10."
+    },
+    {
+      "comando": [
+        "log",
+        "--oneline",
+        "--",
+        "requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": "cacc634 docs: simular limite errado\n72f44d3 docs(RF-03): registrar quantidade e limite da evidencia"
+    },
+    {
+      "comando": [
+        "revert",
+        "--no-edit",
+        "cacc6345f87fa73d0ffd3cfcc4c66b50e1088868"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica 41eab47] Revert \"docs: simular limite errado\"\n Date: Wed Oct 7 06:51:01 2026 -0300\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    {
+      "comando": [
+        "rev-list",
+        "--count",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "3"
+    },
+    {
+      "comando": [
+        "add",
+        "evidencias.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "restore",
+        "--staged",
+        "evidencias.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "diff",
+        "--cached",
+        "--",
+        "evidencias.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "diff",
+        "--",
+        "evidencias.md"
+      ],
+      "codigo": 0,
+      "saida": "diff --git a/evidencias.md b/evidencias.md\nindex 1b19858..3989344 100644\n--- a/evidencias.md\n+++ b/evidencias.md\n@@ -1 +1 @@\n-RQ-02: navegador ainda pendente.\n+RQ-02: pendente; prever ensaio a 360 px."
+    },
+    {
+      "comando": [
+        "add",
+        "evidencias.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(RQ-02): planejar ensaio sem afirmar execucao"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica b4e054d] docs(RQ-02): planejar ensaio sem afirmar execucao\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    {
+      "comando": [
+        "switch",
+        "-c",
+        "experimento/justificativa"
+      ],
+      "codigo": 0,
+      "saida": "Switched to a new branch 'experimento/justificativa'"
+    },
+    {
+      "comando": [
+        "add",
+        "justificativa.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(RF-03): justificar valores de teste"
+      ],
+      "codigo": 0,
+      "saida": "[experimento/justificativa 59cf6b8] docs(RF-03): justificar valores de teste\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md"
+    },
+    {
+      "comando": [
+        "switch",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "Switched to branch 'base-didatica'"
+    },
+    {
+      "comando": [
+        "merge",
+        "--ff-only",
+        "experimento/justificativa"
+      ],
+      "codigo": 0,
+      "saida": "Updating b4e054d..59cf6b8\nFast-forward\n justificativa.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md"
+    },
+    {
+      "comando": [
+        "switch",
+        "-c",
+        "experimento/limite12"
+      ],
+      "codigo": 0,
+      "saida": "Switched to a new branch 'experimento/limite12'"
+    },
+    {
+      "comando": [
+        "add",
+        "requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs: propor outro limite"
+      ],
+      "codigo": 0,
+      "saida": "[experimento/limite12 5da1eed] docs: propor outro limite\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    {
+      "comando": [
+        "switch",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "Switched to branch 'base-didatica'"
+    },
+    {
+      "comando": [
+        "add",
+        "requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(RF-03): explicitar consolidacao"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica b3d8216] docs(RF-03): explicitar consolidacao\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    {
+      "comando": [
+        "merge",
+        "experimento/limite12"
+      ],
+      "codigo": 1,
+      "saida": "Auto-merging requisitos.md\nCONFLICT (content): Merge conflict in requisitos.md\nAutomatic merge failed; fix conflicts and then commit the result."
+    },
+    {
+      "comando": [
+        "diff",
+        "--name-only",
+        "--diff-filter=U"
+      ],
+      "codigo": 0,
+      "saida": "requisitos.md"
+    },
+    {
+      "comando": [
+        "add",
+        "requisitos.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(RF-03): resolver conflito pela regra aprovada"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica 868dbfe] docs(RF-03): resolver conflito pela regra aprovada"
+    },
+    {
+      "comando": [
+        "diff",
+        "--name-only",
+        "--diff-filter=U"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "868dbfe7f5609b12acddfbce25d979a8310f4b46"
+    },
+    {
+      "comando": [
+        "worktree",
+        "add",
+        "--detach",
+        "<temporario>/leitura-passado",
+        "72f44d30ee38d7de46ca63bc5cd90a24fea34eff"
+      ],
+      "codigo": 0,
+      "saida": "HEAD is now at 72f44d3 docs(RF-03): registrar quantidade e limite da evidencia\nPreparing worktree (detached HEAD 72f44d3)"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "868dbfe7f5609b12acddfbce25d979a8310f4b46"
+    },
+    {
+      "comando": [
+        "worktree",
+        "remove",
+        "<temporario>/leitura-passado"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "init",
+        "--bare",
+        "-b",
+        "base-didatica",
+        "<temporario>/remoto-local.git"
+      ],
+      "codigo": 0,
+      "saida": "Initialized empty Git repository in <temporario>/remoto-local.git/"
+    },
+    {
+      "comando": [
+        "remote",
+        "add",
+        "origin",
+        "<temporario>/remoto-local.git"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "push",
+        "-u",
+        "origin",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "branch 'base-didatica' set up to track 'origin/base-didatica'.\nTo <temporario>/remoto-local.git\n * [new branch]      base-didatica -> base-didatica"
+    },
+    {
+      "comando": [
+        "clone",
+        "<temporario>/remoto-local.git",
+        "<temporario>/cantina-b"
+      ],
+      "codigo": 0,
+      "saida": "Cloning into '<temporario>/cantina-b'...\ndone."
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "868dbfe7f5609b12acddfbce25d979a8310f4b46"
+    },
+    {
+      "comando": [
+        "add",
+        "parecer.md"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "commit",
+        "-m",
+        "docs(QTS): registrar limite do parecer"
+      ],
+      "codigo": 0,
+      "saida": "[base-didatica 96fb946] docs(QTS): registrar limite do parecer\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md"
+    },
+    {
+      "comando": [
+        "push",
+        "origin",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "To <temporario>/remoto-local.git\n   868dbfe..96fb946  base-didatica -> base-didatica"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "868dbfe7f5609b12acddfbce25d979a8310f4b46"
+    },
+    {
+      "comando": [
+        "fetch",
+        "origin"
+      ],
+      "codigo": 0,
+      "saida": "From <temporario>/remoto-local\n   868dbfe..96fb946  base-didatica -> origin/base-didatica"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "868dbfe7f5609b12acddfbce25d979a8310f4b46"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "origin/base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "96fb9467e7343a964d6257d2d3c05ab622578b22"
+    },
+    {
+      "comando": [
+        "diff",
+        "HEAD..origin/base-didatica",
+        "--",
+        "parecer.md"
+      ],
+      "codigo": 0,
+      "saida": "diff --git a/parecer.md b/parecer.md\nnew file mode 100644\nindex 0000000..c9fac3a\n--- /dev/null\n+++ b/parecer.md\n@@ -0,0 +1 @@\n+Nao liberar como produto final: uso visual ainda pendente."
+    },
+    {
+      "comando": [
+        "pull",
+        "--ff-only",
+        "origin",
+        "base-didatica"
+      ],
+      "codigo": 0,
+      "saida": "Updating 868dbfe..96fb946\nFast-forward\n parecer.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md\nFrom <temporario>/remoto-local\n * branch            base-didatica -> FETCH_HEAD"
+    },
+    {
+      "comando": [
+        "push",
+        "-u",
+        "origin",
+        "experimento/justificativa"
+      ],
+      "codigo": 0,
+      "saida": "branch 'experimento/justificativa' set up to track 'origin/experimento/justificativa'.\nTo <temporario>/remoto-local.git\n * [new branch]      experimento/justificativa -> experimento/justificativa"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "96fb9467e7343a964d6257d2d3c05ab622578b22"
+    },
+    {
+      "comando": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "codigo": 0,
+      "saida": "96fb9467e7343a964d6257d2d3c05ab622578b22"
+    },
+    {
+      "comando": [
+        "tag",
+        "-a",
+        "evidencia-didatica",
+        "-m",
+        "Ensaio local; nao e release de produto"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "status",
+        "--porcelain"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "status",
+        "--porcelain"
+      ],
+      "codigo": 0,
+      "saida": ""
+    },
+    {
+      "comando": [
+        "ls-files",
+        "ensaio.sqlite3"
+      ],
+      "codigo": 0,
+      "saida": ""
+    }
+  ]
+}

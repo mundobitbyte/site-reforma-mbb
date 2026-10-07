@@ -1,0 +1,297 @@
+{
+  "cenarios": 9,
+  "observacoes": 18,
+  "bancos_temporarios": true,
+  "navegador_testado": false,
+  "v1_aprovada_para_uso": false,
+  "resultados": [
+    {
+      "id": "Q-01",
+      "rf": "RF-03",
+      "cenario": "limite inferior",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 3.0,
+        "desconto": 0.0,
+        "total": 3.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-01",
+      "rf": "RF-03",
+      "cenario": "limite inferior",
+      "versao": "evolucao",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "criado_em": "2026-10-07 09:50:53",
+        "status": "Novo",
+        "cupom_codigo": null,
+        "desconto_centavos": 0,
+        "subtotal_centavos": 300,
+        "total_centavos": 300,
+        "proximo_status": "Confirmado",
+        "historico_status": [],
+        "itens": [
+          {
+            "produto_id": 1,
+            "nome": "Água",
+            "quantidade": 1,
+            "preco_unitario_centavos": 300
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q-02",
+      "rf": "RF-03",
+      "cenario": "limite superior",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 30.0,
+        "desconto": 0.0,
+        "total": 30.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-02",
+      "rf": "RF-03",
+      "cenario": "limite superior",
+      "versao": "evolucao",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "criado_em": "2026-10-07 09:50:53",
+        "status": "Novo",
+        "cupom_codigo": null,
+        "desconto_centavos": 0,
+        "subtotal_centavos": 3000,
+        "total_centavos": 3000,
+        "proximo_status": "Confirmado",
+        "historico_status": [],
+        "itens": [
+          {
+            "produto_id": 1,
+            "nome": "Água",
+            "quantidade": 10,
+            "preco_unitario_centavos": 300
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q-03",
+      "rf": "RF-03",
+      "cenario": "zero",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 0.0,
+        "desconto": 0.0,
+        "total": 0.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-03",
+      "rf": "RF-03",
+      "cenario": "zero",
+      "versao": "evolucao",
+      "http": 422,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+      }
+    },
+    {
+      "id": "Q-04",
+      "rf": "RF-03",
+      "cenario": "negativa",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": -3.0,
+        "desconto": 0.0,
+        "total": -3.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-04",
+      "rf": "RF-03",
+      "cenario": "negativa",
+      "versao": "evolucao",
+      "http": 422,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+      }
+    },
+    {
+      "id": "Q-05",
+      "rf": "RF-03",
+      "cenario": "acima do limite",
+      "versao": "v1",
+      "http": 400,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "Quantidade inválida."
+      }
+    },
+    {
+      "id": "Q-05",
+      "rf": "RF-03",
+      "cenario": "acima do limite",
+      "versao": "evolucao",
+      "http": 422,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+      }
+    },
+    {
+      "id": "Q-06",
+      "rf": "RF-04/RF-08",
+      "cenario": "saldo insuficiente",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 6.0,
+        "desconto": 0.0,
+        "total": 6.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-06",
+      "rf": "RF-04/RF-08",
+      "cenario": "saldo insuficiente",
+      "versao": "evolucao",
+      "http": 409,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "Estoque insuficiente para Água."
+      }
+    },
+    {
+      "id": "Q-07",
+      "rf": "RF-02/RF-03",
+      "cenario": "repetição soma 12",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 36.0,
+        "desconto": 0.0,
+        "total": 36.0,
+        "cupom": null,
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-07",
+      "rf": "RF-02/RF-03",
+      "cenario": "repetição soma 12",
+      "versao": "evolucao",
+      "http": 400,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "Somando os itens, cada produto pode ter no máximo 10 unidades."
+      }
+    },
+    {
+      "id": "Q-08",
+      "rf": "RF-05",
+      "cenario": "cupom abaixo do mínimo",
+      "versao": "v1",
+      "http": 201,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 6.0,
+        "desconto": 0.6,
+        "total": 5.4,
+        "cupom": "MBB10",
+        "status": "Novo"
+      }
+    },
+    {
+      "id": "Q-08",
+      "rf": "RF-05",
+      "cenario": "cupom abaixo do mínimo",
+      "versao": "evolucao",
+      "http": 400,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "O cupom exige pedido de pelo menos R$ 30,00."
+      }
+    },
+    {
+      "id": "Q-09",
+      "rf": "RF-09",
+      "cenario": "salto Novo para Entregue",
+      "versao": "v1",
+      "http": 200,
+      "recusou": false,
+      "banco_preservado": false,
+      "resposta": {
+        "id": 1,
+        "subtotal": 6.0,
+        "desconto": 0.0,
+        "total": 6.0,
+        "cupom": null,
+        "status": "Entregue"
+      }
+    },
+    {
+      "id": "Q-09",
+      "rf": "RF-09",
+      "cenario": "salto Novo para Entregue",
+      "versao": "evolucao",
+      "http": 409,
+      "recusou": true,
+      "banco_preservado": true,
+      "resposta": {
+        "detail": "O pedido em Novo só pode avançar para Confirmado."
+      }
+    }
+  ]
+}

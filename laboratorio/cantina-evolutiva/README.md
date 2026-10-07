@@ -205,3 +205,17 @@ Esse roteiro cria uma API com banco temporário novo, confere as quatro operaç�
 OpenAPI e exercita 17 requisições pelos módulos JavaScript. Encerra o servidor
 no fim e preserva os bancos de trabalho. Não executar `http-local.mjs` diretamente
 contra a aplicação de trabalho: o roteiro de vendas usa apenas o banco temporário.
+
+## QTS e Git do mesmo pedido
+
+[QTS](../percurso-mbb/qts/index.html) liga as 17 aulas preservadas aos casos reais e limites de evidência. [Git](../percurso-mbb/git/index.html) tem 10 etapas e prática de histórico isolada. Os executores usam dados/repositórios temporários e não modificam a aplicação ou bancos de trabalho.
+
+Na raiz do repositório experimental, com o ambiente da Cantina ativado:
+
+```bash
+python laboratorio/percurso-mbb/qts/exemplos/comparar_versoes.py
+python laboratorio/percurso-mbb/qts/exemplos/ciclo_tdd.py
+python laboratorio/percurso-mbb/git/exemplos/pratica_git.py
+```
+
+Git instalado é necessário para o último comando. O remoto desse exercício é uma pasta bare local, sem conexão ao GitHub. A receita de verificação em QTS é inerte; Actions continua desativado.

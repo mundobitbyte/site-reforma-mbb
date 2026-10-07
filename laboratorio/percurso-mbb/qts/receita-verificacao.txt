@@ -1,0 +1,14 @@
+RECEITA DIDÁTICA INERTE — NÃO É CONFIGURAÇÃO DO GITHUB ACTIONS
+Na raiz do repositório experimental, ambiente Python da Cantina ativado:
+python -m pytest laboratorio/cantina-evolutiva/tests -q
+node --test laboratorio/percurso-mbb/web-api/tests/clientes.test.mjs laboratorio/percurso-mbb/web-api/tests/simulacao.test.mjs
+python laboratorio/percurso-mbb/web-api/tests/verificar_http_local.py
+python laboratorio/percurso-mbb/qts/exemplos/comparar_versoes.py
+python laboratorio/percurso-mbb/qts/exemplos/ciclo_tdd.py
+python laboratorio/percurso-mbb/git/exemplos/pratica_git.py
+
+Esta receita orienta futuras rodadas completas; os testes antigos não foram repetidos para escrever o conteúdo.
+Interpretar erro de ambiente separadamente de falha de requisito.
+Registrar commit, ambiente, saídas, tempo observado e limites antes de produzir parecer.
+Actions permanece desativado na cópia isolada. Nenhum workflow foi adicionado/ativado.
+Não há teste E2E real nesta receita. Não transforma HTTP em uso de navegador.
