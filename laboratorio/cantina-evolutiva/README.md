@@ -219,3 +219,15 @@ python laboratorio/percurso-mbb/git/exemplos/pratica_git.py
 ```
 
 Git instalado é necessário para o último comando. O remoto desse exercício é uma pasta bare local, sem conexão ao GitHub. A receita de verificação em QTS é inerte; Actions continua desativado.
+
+## Guia e acompanhamento consolidado
+
+[Guia de execução e limites](../../docs/reforma/guia-execucao-cantina-mbb.md) · [Subetapas e posição atual](../percurso-mbb/acompanhamento.html).
+
+Conferência estrutural somente leitura, da raiz do laboratório:
+
+```bash
+python laboratorio/percurso-mbb/verificar_percurso.py
+```
+
+O comando confere conteúdo/links/matrizes e não executa vendas ou testes de navegador. As evidências anteriores das suítes continuam identificadas por checkpoint.

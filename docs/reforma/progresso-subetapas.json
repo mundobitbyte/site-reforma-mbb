@@ -1,0 +1,375 @@
+{
+  "versao_contagem": 1,
+  "fixada_em": "checkpoint-16",
+  "escopo": "Subetapas de trabalho organizadas agora; não eram uma contagem previamente estabelecida.",
+  "etapas_ensino": {
+    "analise": 15,
+    "banco_de_dados": 11,
+    "programacao": 15,
+    "web_api": 13,
+    "qts": 17,
+    "git": 10
+  },
+  "macroetapas": [
+    {
+      "id": 1,
+      "titulo": "Pedido persistente",
+      "subetapas": [
+        {
+          "id": "1.1",
+          "titulo": "Modelo e schema do pedido",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/schema-inicial.sql"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "1.2",
+          "titulo": "Serviço de registro e persistência",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/servico.py"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "1.3",
+          "titulo": "API e testes do servidor",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/app.py",
+            "laboratorio/cantina-evolutiva/tests/test_pedido.py"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "1.4",
+          "titulo": "Interface criada",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/frontend/app.js"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "1.5",
+          "titulo": "Terminal e clientes exercitados",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/tests/test_terminal.py",
+            "docs/reforma/checkpoint-14-web-api.md"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "1.6",
+          "titulo": "Registrar, recarregar e consultar pelo navegador",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Cupom",
+      "subetapas": [
+        {
+          "id": "2.1",
+          "titulo": "Política de mínimo, validade e uso",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/analise/dossie-cantina.html"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "2.2",
+          "titulo": "Migração e serviço do cupom",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/migracao-02-cupom.sql",
+            "laboratorio/cantina-evolutiva/servico.py"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "2.3",
+          "titulo": "API e interface criadas",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/app.py",
+            "laboratorio/cantina-evolutiva/frontend/app.js"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "2.4",
+          "titulo": "Regras, transação e clientes exercitados",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/tests/test_cupom.py",
+            "docs/reforma/checkpoint-14-web-api.md"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "2.5",
+          "titulo": "Aplicar e recusar cupom pela interface real",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Estados do pedido",
+      "subetapas": [
+        {
+          "id": "3.1",
+          "titulo": "Sequência e estado esperado definidos",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/docs/fatia-03-estados-mbb.md"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "3.2",
+          "titulo": "Migração, serviço e histórico",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/migracao-03-estados.sql",
+            "laboratorio/cantina-evolutiva/servico.py"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "3.3",
+          "titulo": "API e interface criadas",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/app.py",
+            "laboratorio/cantina-evolutiva/frontend/app.js"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "3.4",
+          "titulo": "Transições, disputa e rollback exercitados",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/cantina-evolutiva/tests/test_estados.py",
+            "docs/reforma/checkpoint-14-web-api.md"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "3.5",
+          "titulo": "Acompanhar e avançar no navegador",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Percurso curricular",
+      "subetapas": [
+        {
+          "id": "4.1",
+          "titulo": "Análise — 15 etapas de ensino",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-analise.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.2",
+          "titulo": "Banco de Dados — 11 capítulos",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-bd.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.3",
+          "titulo": "Programação — 15 etapas",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-programacao.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.4",
+          "titulo": "Web/API — 13 etapas",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-web-api.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.5",
+          "titulo": "QTS — 17 pontes",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-qts.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.6",
+          "titulo": "Git — 10 etapas",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/matriz-git.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.7",
+          "titulo": "Estrutura, links e código exibido conferidos",
+          "situacao": "concluida",
+          "evidencias": [
+            "docs/reforma/checkpoint-15-qts-git.md"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "4.8",
+          "titulo": "Ensaios ainda não executados: VisuAlg e depurador interativo",
+          "situacao": "pendente",
+          "evidencias": [
+            "laboratorio/percurso-mbb/programacao/ponte-visualg.html"
+          ],
+          "depende_de": [
+            "AMBIENTE_VISUALG_DEPURADOR"
+          ]
+        },
+        {
+          "id": "4.9",
+          "titulo": "Revisão visual e pedagógica do percurso em uso",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR",
+            "PARTICIPANTE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Entrega",
+      "subetapas": [
+        {
+          "id": "5.1",
+          "titulo": "Verificação estrutural portátil e registro reproduzível",
+          "situacao": "concluida",
+          "evidencias": [
+            "laboratorio/percurso-mbb/verificar_percurso.py",
+            "docs/reforma/verificacao-checkpoint-16.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "5.2",
+          "titulo": "Guia consolidado de execução, evidências e pendências",
+          "situacao": "concluida",
+          "evidencias": [
+            "docs/reforma/guia-execucao-cantina-mbb.md",
+            "docs/reforma/progresso-subetapas.json"
+          ],
+          "depende_de": []
+        },
+        {
+          "id": "5.3",
+          "titulo": "Acessibilidade real: 360 px, teclado, foco e leitura",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR"
+          ]
+        },
+        {
+          "id": "5.4",
+          "titulo": "Prévia em ambiente compatível",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "docs/reforma/guia-execucao-cantina-mbb.md"
+          ],
+          "depende_de": [
+            "PREVIA_COMPATIVEL"
+          ]
+        },
+        {
+          "id": "5.5",
+          "titulo": "Rodada final de uso integrado e compreensão",
+          "situacao": "bloqueada",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+          ],
+          "depende_de": [
+            "NAVEGADOR",
+            "PARTICIPANTE"
+          ]
+        },
+        {
+          "id": "5.6",
+          "titulo": "Parecer e entrega final após os critérios de saída",
+          "situacao": "pendente",
+          "evidencias": [
+            "laboratorio/percurso-mbb/qts/parecer.md"
+          ],
+          "depende_de": [
+            "1.6",
+            "2.5",
+            "3.5",
+            "4.8",
+            "4.9",
+            "5.3",
+            "5.4",
+            "5.5"
+          ]
+        }
+      ]
+    }
+  ],
+  "posicao_atual": "5.3",
+  "autorizacao_pendente": false,
+  "bloqueios": {
+    "NAVEGADOR": "Sem caminho supervisionado confirmado: prévia anterior sem dev script/configuração static compatível; conexão direta recusada; skill control-browser indisponível. Não repetir tentativa idêntica nem improvisar caminho vedado pelo guia já lido.",
+    "PREVIA_COMPATIVEL": "Não foi confirmada prévia que execute o serviço Python integrado. HTML estático sozinho não serve a API.",
+    "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
+    "AMBIENTE_VISUALG_DEPURADOR": "VisuAlg e depurador interativo constam como não executados; não são substituídos pela revisão do texto ou pelos exemplos Python."
+  },
+  "resumo": {
+    "total_subetapas": 31,
+    "concluidas": 22,
+    "restantes": 9,
+    "total_etapas_ensino": 81
+  }
+}
