@@ -1,0 +1,137 @@
+[
+  {
+    "etapa": 0,
+    "origem": "pages/analise-sistemas/00-antes-do-sistema.html",
+    "destino": "laboratorio/percurso-mbb/analise/00-antes-do-sistema.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E01: problema, consequência, termos ambíguos e dúvidas. Identifique o cenário como fictício.",
+    "reutilizacao": "A lista de dúvidas será usada no levantamento e na escolha dos primeiros testes.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 1,
+    "origem": "pages/analise-sistemas/01-stakeholders-escopo.html",
+    "destino": "laboratorio/percurso-mbb/analise/01-stakeholders-escopo.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E02: papéis, fronteira, premissas, restrições e dependências.",
+    "reutilizacao": "BD usará a fronteira para evitar entidades sem necessidade; QTS usará os papéis para definir tarefas.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 2,
+    "origem": "pages/analise-sistemas/02-levantamento.html",
+    "destino": "laboratorio/percurso-mbb/analise/02-levantamento.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E03: roteiro de levantamento e tabela afirmação/origem/situação. Deixe resultados reais em branco até investigar.",
+    "reutilizacao": "A origem acompanha o requisito, a modelagem e o caso de teste.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 3,
+    "origem": "pages/analise-sistemas/03-processo-as-is.html",
+    "destino": "laboratorio/percurso-mbb/analise/03-processo-as-is.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E04: fluxograma AS-IS hipotético, fontes e dúvidas; não apresentar como pesquisa concluída.",
+    "reutilizacao": "O ramo “sem saldo” se tornará regra RF-04 e caso de teste de recusa.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 4,
+    "origem": "pages/analise-sistemas/04-analise-estruturada.html",
+    "destino": "laboratorio/percurso-mbb/analise/04-analise-estruturada.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E05: contexto, DFD pequeno, dicionário e decisão de cupom.",
+    "reutilizacao": "Os depósitos orientam o modelo de BD; a decisão orienta testes parametrizados de RF-05.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 5,
+    "origem": "pages/analise-sistemas/05-processo-to-be-bpmn.html",
+    "destino": "laboratorio/percurso-mbb/analise/05-processo-to-be-bpmn.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E06: processo proposto e justificativa de cada mudança.",
+    "reutilizacao": "A transação e a sequência de estados devem contar a mesma história do processo.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 6,
+    "origem": "pages/analise-sistemas/06-requisitos.html",
+    "destino": "laboratorio/percurso-mbb/analise/06-requisitos.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E07: requisitos com origem, regra, critério e prioridade.",
+    "reutilizacao": "O mesmo ID acompanha dado, operação, interface e evidência de QTS.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 7,
+    "origem": "pages/analise-sistemas/07-casos-de-uso.html",
+    "destino": "laboratorio/percurso-mbb/analise/07-casos-de-uso.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E08: atores e casos com fluxo principal, alternativas e condições.",
+    "reutilizacao": "UC-01 liga RF-02/03/04/05/06/07/08 ao POST de pedido e aos testes.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 8,
+    "origem": "pages/analise-sistemas/08-uml-essencial.html",
+    "destino": "laboratorio/percurso-mbb/analise/08-uml-essencial.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E09: somente modelos úteis, com leitura em frases e limites explícitos.",
+    "reutilizacao": "BD reutiliza relações e preço histórico; Programação e QTS reutilizam o grafo de estados.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 9,
+    "origem": "pages/analise-sistemas/09-agile-backlog-mvp.html",
+    "destino": "laboratorio/percurso-mbb/analise/09-agile-backlog-mvp.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E10: backlog por dependência/valor e critérios de passagem.",
+    "reutilizacao": "As fatias de pedido, cupom e estados compartilham os artefatos anteriores.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 10,
+    "origem": "pages/analise-sistemas/10-ux-prototipo.html",
+    "destino": "laboratorio/percurso-mbb/analise/10-ux-prototipo.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E11: tarefa, instrumento de observação e, somente após a sessão, resultados.",
+    "reutilizacao": "RQ-01/RQ-02 seguem para teste com pessoa e navegador; não herdam aprovação dos testes da API.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 11,
+    "origem": "pages/analise-sistemas/11-qualidade-integracoes.html",
+    "destino": "laboratorio/percurso-mbb/analise/11-qualidade-integracoes.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E12: condições de qualidade, limites de segurança e integração.",
+    "reutilizacao": "Servidor, UI e teste usam a mesma fonte de dados; riscos novos voltam ao backlog.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 12,
+    "origem": "pages/analise-sistemas/12-viabilidade-riscos-rastreabilidade.html",
+    "destino": "laboratorio/percurso-mbb/analise/12-viabilidade-riscos-rastreabilidade.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E13: decisão, risco, resposta e mapa de impacto.",
+    "reutilizacao": "A mudança retorna aos conceitos e aos testes do mesmo sistema.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 13,
+    "origem": "pages/analise-sistemas/13-documentacao-ia.html",
+    "destino": "laboratorio/percurso-mbb/analise/13-documentacao-ia.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E14: glossário, decisão e classificação crítica de uma saída de IA.",
+    "reutilizacao": "Git acompanha análise, BD, programação e QTS desde o primeiro artefato.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  },
+  {
+    "etapa": 14,
+    "origem": "pages/analise-sistemas/14-integracao-final.html",
+    "destino": "laboratorio/percurso-mbb/analise/14-integracao-final.html",
+    "decisao": "adaptar estrutura pedagógica; preservar fonte integral",
+    "entrega": "E15: defesa do dossiê, lacunas e passagem ao modelo físico/implementação/QTS.",
+    "reutilizacao": "Continue no mesmo sistema: modelagem e SQL adicionais, algoritmos/Python, interface/API e testes.",
+    "revisao": "conteúdo e estrutura revistos; navegador e validação com pessoa pendentes"
+  }
+]

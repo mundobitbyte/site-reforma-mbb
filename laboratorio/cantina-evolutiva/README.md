@@ -100,6 +100,10 @@ do laboratório; não identifica atendentes, pois o núcleo não tem autenticaç
 
 Roteiro interdisciplinar desta fatia: [Estados no modo MbB](docs/fatia-03-estados-mbb.md).
 
+Percurso adicional de Análise: [Cantina Horizonte no MbB](../percurso-mbb/index.html),
+com 15 etapas, caderno e dossiê ligado aos mesmos requisitos, dados e testes.
+As páginas são estáticas; a aplicação continua sendo executada pelo comando acima.
+
 ## Estado da verificação
 
 34 testes novos exercitam estados/histórico, as 21 transições proibidas,

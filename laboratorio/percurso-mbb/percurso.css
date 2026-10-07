@@ -1,0 +1,16 @@
+/* Complementos do piloto; a identidade visual vem do CSS de Análise preservado. */
+.skip-link { position: fixed; top: -5rem; left: 1rem; z-index: 100; background: white; padding: .8rem; border: 2px solid #114b9e; }
+.skip-link:focus { top: .5rem; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+.chapter code, .chapter td, .chapter p, .chapter li { overflow-wrap: anywhere; }
+details { margin: 1rem 0; } summary { cursor: pointer; font-weight: 700; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #edf3fb; border-radius: 10px; }
+.copy-button { font: inherit; padding: .6rem 1rem; border-radius: 8px; border: 1px solid #114b9e; background: white; color: #114b9e; cursor: pointer; }
+.course-header { flex-wrap: wrap; }
+.portal-main { max-width: 1100px; margin: auto; padding: 1rem; }
+@media(max-width:820px) {
+  /* Navegação estática acessível antes de o JavaScript habilitar recolhimento. */
+  body:not(.menu-ready) .course-nav { position: static; transform: none; width: auto; height: auto; box-shadow: none; }
+  body:not(.menu-ready) .menu-toggle { display: none; }
+  .grid2 .card { min-width: 0; }
+}
