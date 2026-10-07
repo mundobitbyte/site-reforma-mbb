@@ -65,13 +65,12 @@
         {
           "id": "1.6",
           "titulo": "Registrar, recarregar e consultar pelo navegador",
-          "situacao": "bloqueada",
+          "situacao": "concluida",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/evidencia-interface-21.json"
           ],
-          "depende_de": [
-            "NAVEGADOR"
-          ]
+          "depende_de": []
         }
       ]
     },
@@ -121,13 +120,12 @@
         {
           "id": "2.5",
           "titulo": "Aplicar e recusar cupom pela interface real",
-          "situacao": "bloqueada",
+          "situacao": "concluida",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/evidencia-interface-21.json"
           ],
-          "depende_de": [
-            "NAVEGADOR"
-          ]
+          "depende_de": []
         }
       ]
     },
@@ -177,13 +175,12 @@
         {
           "id": "3.5",
           "titulo": "Acompanhar e avançar no navegador",
-          "situacao": "bloqueada",
+          "situacao": "concluida",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/evidencia-interface-21.json"
           ],
-          "depende_de": [
-            "NAVEGADOR"
-          ]
+          "depende_de": []
         }
       ]
     },
@@ -290,7 +287,6 @@
             "laboratorio/percurso-mbb/qts/roteiro-manual.md"
           ],
           "depende_de": [
-            "NAVEGADOR",
             "PARTICIPANTE"
           ]
         }
@@ -323,17 +319,18 @@
         {
           "id": "5.3",
           "titulo": "Acessibilidade real: 360 px, teclado, foco e leitura",
-          "situacao": "bloqueada",
+          "situacao": "parcial",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/evidencia-interface-19.json",
             "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs",
-            "docs/reforma/evidencia-interface-20.json"
+            "docs/reforma/evidencia-interface-20.json",
+            "docs/reforma/evidencia-interface-21.json"
           ],
           "depende_de": [
-            "NAVEGADOR"
+            "LEITOR_DE_TELA"
           ],
-          "preparacao": "Nomes, atalho e foco em correção/remoção implementados. Recuperação de foco após registro, consulta e avanço, preservação de campo em atualização e respeito a outra ação acrescentados; 17 casos de lógica passaram. Confirmação em navegador/leitor de tela ainda pendente."
+          "preparacao": "Chromium real confirmou 360/320 px, teclado, foco, DOM e árvore de acessibilidade. A integração navegador + FastAPI/serviço/SQLite passou 25/25; a rodada de acessibilidade passou 38/38. Leitor de tela real ainda pendente."
         },
         {
           "id": "5.4",
@@ -357,7 +354,6 @@
             "laboratorio/percurso-mbb/qts/roteiro-manual.md"
           ],
           "depende_de": [
-            "NAVEGADOR",
             "PARTICIPANTE"
           ]
         },
@@ -385,16 +381,17 @@
   "posicao_atual": "5.3",
   "autorizacao_pendente": false,
   "bloqueios": {
-    "NAVEGADOR": "Acesso confirmado com a API própria de navegador: net::ERR_CONNECTION_REFUSED, apesar da API local ter iniciado com base temporária. É bloqueio de acesso entre ambientes. A restrição da skill Sites não se aplica a este projeto GitHub.",
-    "PREVIA_COMPATIVEL": "Iniciador integrado local executado em Linux e verificado por HTTP no checkpoint 18. Acesso pelo navegador ainda não confirmado. Não houve hospedagem externa ou publicação.",
+    "NAVEGADOR": "A navegação direta por URL continua bloqueada pela política gerenciada do Chromium. Isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi executada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real com SQLite temporário no checkpoint 21.",
+    "PREVIA_COMPATIVEL": "O iniciador local integrado foi verificado por HTTP no checkpoint 18. A prévia direta por URL no Chromium gerenciado continua impedida pela política do ambiente; nenhuma hospedagem externa foi feita.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução."
+    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
+    "LEITOR_DE_TELA": "A árvore de acessibilidade do Chromium foi conferida, mas um leitor de tela real ainda não foi executado; por isso 5.3 permanece parcial."
   },
   "resumo": {
     "total_subetapas": 31,
-    "concluidas": 22,
-    "restantes": 9,
+    "concluidas": 25,
+    "restantes": 6,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 20
+  "checkpoint_atualizacao": 21
 }
