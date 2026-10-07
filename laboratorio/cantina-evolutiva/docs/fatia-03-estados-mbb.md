@@ -107,5 +107,9 @@ requisição, consulta SQL, resposta e registro do teste. Acrescente uma revisã
 do modelo motivada por uma falha observada. Não crie outro projeto para
 renomear a mesma prática.
 
-Interface no navegador real e uso a 360 px ainda não foram comprovados neste
-ambiente. Os testes de servidor não substituem essa evidência.
+Na rodada original desta fatia, interface no navegador real e uso a 360 px
+ainda não tinham sido comprovados. O checkpoint 21 posteriormente confirmou
+pedido, cupom e estados em Chromium real integrado ao serviço, incluindo
+360/320 px, teclado e foco. Os testes de servidor permanecem evidência de
+outra camada. Leitor de tela real e compreensão com participante continuam
+pendentes. [Evidência vigente](../../../docs/reforma/evidencia-interface-21.json).

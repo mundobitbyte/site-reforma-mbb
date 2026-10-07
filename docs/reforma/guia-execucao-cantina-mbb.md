@@ -3,8 +3,9 @@
 Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/isolamento-inicial`. O repositório `mundobitbyte/site`, domínio oficial e Firebase ficam somente para leitura. O acesso já autorizado não precisa ser ampliado.
 
 ## Onde abrir o conteúdo
+- [Orientação da entrega parcial](entrega-parcial.md): leitura e encadeamento do material sem iniciar a aplicação; ensaios podem ficar para depois.
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
-- [Progresso detalhado](progresso-subetapas.md): 25/31 concluídas, 6 pendentes; posição 5.3, leitor de tela real.
+- [Progresso detalhado](progresso-subetapas.md): 25/31 concluídas, 6 pendentes; posição 5.6, preparação da entrega parcial; ensaios adiados.
 - [Dossiê do mesmo sistema](../../laboratorio/percurso-mbb/analise/dossie-cantina.html)
 - [Aplicação, bancos e regras](../../laboratorio/cantina-evolutiva/README.md)
 - [Parecer da rodada QTS](../../laboratorio/percurso-mbb/qts/parecer.md)
@@ -49,7 +50,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-21.json](verificacao-checkpoint-21.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-22.json](verificacao-checkpoint-22.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -138,7 +139,7 @@ O checkpoint 21 concluiu 1.6, 2.5 e 3.5. Confirmou 360/320 px, teclado, foco, DO
 O depurador pdb foi executado no checkpoint 17; o VisuAlg será testado posteriormente pelo Professor Ronaldo, conforme instrução de 07/10/2026. Essa pendência da 4.8 não impede prosseguir nas outras subetapas.
 O diagnóstico de acesso do checkpoint 17 é histórico. No checkpoint 21, a interface foi carregada em Chromium real e suas chamadas foram encaminhadas internamente ao FastAPI real; a navegação direta por URL continuou bloqueada no ambiente gerenciado. Esse transporte permite os ensaios funcionais registrados, mas não encerra 5.4 nem equivale a leitor de tela ou participação humana. A prévia integrada precisa executar também o serviço Python. Não houve publicação externa.
 
-Próximo ensaio: abrir a prévia local no computador que conduzirá a avaliação; registrar commit, sistema, navegador e leitor de tela. Seguir as verificações de leitura do [roteiro](../../laboratorio/percurso-mbb/qts/roteiro-manual.md), observando nomes de produtos/controles e anúncios de registro, consulta, recusa e mudança de estado. Registrar o resultado realmente ouvido. Os ensaios funcionais concluídos não precisam ser repetidos para autorizar esta rodada.
+Quando o professor puder testar, o próximo ensaio será abrir a prévia local no computador que conduzirá a avaliação; registrar commit, sistema, navegador e leitor de tela. Seguir as verificações de leitura do [roteiro](../../laboratorio/percurso-mbb/qts/roteiro-manual.md), observando nomes de produtos/controles e anúncios de registro, consulta, recusa e mudança de estado. Registrar o resultado realmente ouvido. Os ensaios funcionais concluídos não precisam ser repetidos para autorizar esta rodada.
 
 Parecer atual: execução/conteúdo documentados para o laboratório; entrega completa e produto final ainda não liberados. Não existe aprovação pendente para as tarefas já autorizadas.
 

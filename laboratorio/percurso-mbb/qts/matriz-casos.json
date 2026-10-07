@@ -116,8 +116,9 @@
     "requisitos": "RQ-02",
     "arquivo": null,
     "funcao": null,
-    "situacao": "Bloqueado: navegador",
-    "limite": "360 px e rolagem horizontal real não executados"
+    "situacao": "Checkpoint 21: Chromium real",
+    "limite": "360/320 px sem rolagem horizontal confirmados; não comprova leitor de tela nem compreensão humana",
+    "evidencia": "docs/reforma/evidencia-interface-21.json"
   },
   {
     "id": "CT-COMPREENSAO",

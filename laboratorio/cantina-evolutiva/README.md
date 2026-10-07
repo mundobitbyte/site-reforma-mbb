@@ -11,7 +11,20 @@ Cupom e mudança de status estão implementados; o pedido nasce em `Novo`.
 Esta versão usa apenas dados fictícios e não possui autenticação; destina-se à
 execução local do laboratório. Não há integração com Firebase ou produção.
 
-## Executar localmente
+## Prévia de avaliação com banco temporário
+
+Com o ambiente Python preparado, da raiz do repositório experimental:
+
+```bash
+python laboratorio/cantina-evolutiva/previa_local.py
+```
+
+O iniciador serve aplicação, API e percurso juntos, com banco fictício temporário.
+Recarregar preserva os pedidos durante a sessão; Ctrl+C encerra e descarta esse
+banco. Uma nova execução inicia outro ensaio. Veja o [guia consolidado](../../docs/reforma/guia-execucao-cantina-mbb.md)
+para preparar o ambiente. A leitura do material pode ser feita antes dos ensaios.
+
+## Executar localmente com banco persistente
 
 Na pasta `laboratorio/cantina-evolutiva`:
 
@@ -132,17 +145,16 @@ as evidências anteriores dos 63 casos da aplicação permanecem válidas como r
 34 testes novos exercitam estados/histórico, as 21 transições proibidas,
 consulta antiga, concorrência, migração e rollback. Os 29 testes de pedido/cupom
 também passaram após esta evolução: 63 casos no total.
-A sintaxe do JavaScript foi verificada. Layout, interação real e uso a 360 px
-permanecem pendentes: a conexão direta ao servidor foi recusada e a prévia
-supervisionada disponível exige configuração de desenvolvimento JavaScript
-ou diretório estático, incompatível com este serviço Python integrado.
-Pedido, cupom e estados têm evidência de servidor; suas macroetapas completas
-ainda aguardam verificação da interface.
+O checkpoint 21 acrescentou execução em Chromium real integrado ao
+FastAPI/serviço/SQLite temporário: 38/38 casos de acessibilidade e 25/25 de
+integração. Pedido, cupom e estados foram concluídos; 360/320 px, teclado e
+foco foram conferidos. Leitor de tela real e compreensão com participante
+continuam pendentes. A prévia direta por URL ainda precisa de ambiente
+compatível; a execução interna do checkpoint 21 não encerra esse critério.
 
-Planejamento: `docs/reforma/planejamento-cantina-mbb.md`.
-Evidência inicial: `docs/reforma/checkpoint-08-pedido-persistente.md`.
-Cupom: `docs/reforma/checkpoint-09-cupom.md`.
-Estado atual: `docs/reforma/checkpoint-10-estados.md`.
+[Planejamento](../../docs/reforma/planejamento-cantina-mbb.md) ·
+[Evidência de navegador e integração](../../docs/reforma/evidencia-interface-21.json) ·
+[Entrega parcial e próxima retomada](../../docs/reforma/entrega-parcial.md).
 
 
 ## Programação/Python e terminal didático
@@ -171,7 +183,7 @@ e recusa consulta antiga. O CLI não aceita caminho externo de banco.
 
 Os 13 casos de `tests/test_terminal.py` passaram, com bancos temporários.
 Os arquivos VisuAlg são ponte revisada, sem execução no VisuAlg registrada.
-As pendências visuais da aplicação continuam as mesmas.
+A situação vigente de navegador, leitor de tela e participação humana está na seção Estado da verificação acima.
 
 
 ## Web/API no percurso MbB
@@ -189,7 +201,7 @@ node --test tests/clientes.test.mjs tests/simulacao.test.mjs
 ```
 
 Esses testes verificam módulos com Fetch controlado, sem navegador ou DOM real.
-Validação visual, foco, teclado, compreensão humana e 360 px continuam pendentes.
+O checkpoint 21 confirmou 360/320 px, teclado e foco da interface integrada em Chromium real. Leitor de tela real, revisão curricular em uso e compreensão humana continuam pendentes.
 Falha de comunicação após POST pode deixar resultado desconhecido; o cliente
 nunca deve reenviar automaticamente uma venda para tentar conferir.
 

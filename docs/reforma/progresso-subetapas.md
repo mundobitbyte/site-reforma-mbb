@@ -2,7 +2,7 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**25/31 concluídas; 6 pendentes. Posição atual: Entrega 5.3 (3/6), com leitor de tela real ainda pendente.**
+**25/31 concluídas; 6 pendentes. Posição atual: preparação da Entrega 5.6, parcial. Ensaios adiados; retomar pela 5.3 quando houver disponibilidade.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
@@ -68,7 +68,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Parcial:** 360/320 px, teclado, foco, DOM e árvore AX confirmados; leitor de tela real pendente |
 | 5.4 | Prévia em ambiente compatível | Bloqueada |
 | 5.5 | Rodada final de uso integrado e compreensão | Bloqueada |
-| 5.6 | Parecer e entrega final após os critérios de saída | Pendente |
+| 5.6 | Parecer e entrega final após os critérios de saída | Parcial: orientação da entrega preparada; encerramento aguarda critérios de saída |
 
 ## Não confundir trabalho com aulas
 O conteúdo central tem 81 etapas de ensino: Análise 15; Banco de Dados 11; Programação 15; Web/API 13; QTS 17; Git 10. Essas seis adaptações estão escritas. As 81 etapas de ensino não são 81 pendências do projeto e não entram no denominador 31.
@@ -96,3 +96,6 @@ A preparação da 5.3 inclui foco após operações assíncronas e preservação
 
 ## Avanço no checkpoint 21
 A Cantina foi executada em Chromium real com as fontes do branch conferidas byte a byte. A rodada de acessibilidade passou **38/38** e a rodada integrada navegador + FastAPI/serviço/SQLite temporário passou **25/25**. Um overflow de texto longo em 320 px foi encontrado e corrigido no CSS canônico, com sincronização do código exibido em Web/API. Com isso, **1.6, 2.5 e 3.5 foram concluídas** e o total passou para **25/31 concluídas, 6 pendentes**. A 5.3 permanece parcial apenas porque ainda falta leitor de tela real. [Evidência](evidencia-interface-21.json) · [Checkpoint](checkpoint-21-navegador-integracao.md).
+
+## Avanço no checkpoint 22
+O professor adiou os novos ensaios. A revisão editorial alinhou as declarações de situação ao checkpoint 21 e ao pdb já executado. A entrada principal orienta a prévia temporária; a matriz, o capítulo e os exercícios QTS14 foram sincronizados. A [entrega parcial](entrega-parcial.md) prepara a 5.6, que permanece parcial. Total mantido: **25/31**, seis pendentes. [Registro](checkpoint-22-revisao-sem-ensaios.md).
