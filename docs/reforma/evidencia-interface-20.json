@@ -1,0 +1,34 @@
+{
+  "checkpoint": 20,
+  "data_local": "2026-10-07",
+  "metodo": "JavaScript real em Node vm com elementos substitutos; sem DOM de navegador, layout ou leitor de tela",
+  "casos_logica_interface_total": 17,
+  "casos_anteriores_do_checkpoint_19": 6,
+  "casos_novos_assincronos": 11,
+  "baseline_somente_onze_novos_casos": {
+    "pass": 2,
+    "fail": 9,
+    "skipped": 0
+  },
+  "conjunto_corrigido": {
+    "aprovados": 17,
+    "falhas": 0,
+    "codigo_saida": 0
+  },
+  "motivo_repeticao_seis_casos": "JavaScript e suporte dos ensaios foram alterados; os seis casos anteriores foram conferidos como regressão da mesma interface.",
+  "suites_servidor_e_clientes_anteriores_reexecutadas": false,
+  "iniciador_local_reexecutado": false,
+  "browser_tested": false,
+  "leitor_de_tela_testado": false,
+  "visualg_executado": false,
+  "contratos_registro_e_avanco_conferidos": true,
+  "hashes_protegidos_e_servidor": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+    "laboratorio/cantina-evolutiva/app.py": "0c09a2d5d821f74a1e0ba6ce8948c69dc7ef46a811fa0e54a832c7f316975a5b",
+    "laboratorio/cantina-evolutiva/servico.py": "2567d5b9ddb0244e4e580e89c96b0e868812fa9e28e42f7d876354c0cae73c86"
+  },
+  "hash_fonte_interface_antes": "a7a93f0cdbba918011d7df4c1dc870fda62e6667119df4dbea7d29ac46e9c5c5",
+  "hash_fonte_interface_depois": "a425a260425bca0e3c678f56091216592b4157131da8ae65677a890943e23090",
+  "erros": []
+}

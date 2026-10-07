@@ -8,6 +8,12 @@ function avisar(texto, erro = false) {
   $('#mensagem').className = `mensagem ${erro ? 'erro' : 'ok'}`;
 }
 
+function recuperarFoco(origem, destino = origem) {
+  // Só recupera o foco desta ação; não interrompe quem escolheu outro controle.
+  if ((document.activeElement === origem || document.activeElement === document.body)
+      && destino && !destino.disabled) destino.focus();
+}
+
 async function api(caminho, opcoes) {
   let resposta;
   try { resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes); }
@@ -21,6 +27,8 @@ async function carregarProdutos() {
   const produtos = await api('produtos');
   estado.produtos = produtos;
   const area = $('#produtos');
+  const focoAnterior = area.contains(document.activeElement)
+    ? { id: document.activeElement.id, valor: document.activeElement.value } : null;
   area.replaceChildren();
   for (const produto of produtos) {
     const node = $('#produtoTemplate').content.cloneNode(true);
@@ -29,6 +37,8 @@ async function carregarProdutos() {
     node.querySelector('.preco').textContent = moeda(produto.preco_centavos);
     const input = node.querySelector('.quantidade');
     const botao = node.querySelector('.adicionar');
+    input.id = `quantidade-${produto.id}`;
+    botao.id = `adicionar-${produto.id}`;
     input.setAttribute('aria-label', `Quantidade de ${produto.nome}`);
     botao.setAttribute('aria-label', `Adicionar ${produto.nome} ao pedido`);
     botao.disabled = produto.estoque === 0;
@@ -53,6 +63,16 @@ async function carregarProdutos() {
       avisar(`${produto.nome} adicionado ao pedido.`);
     });
     area.appendChild(node);
+  }
+  if (focoAnterior) {
+    let destino = document.getElementById(focoAnterior.id);
+    if (destino?.disabled) {
+      destino = document.getElementById(focoAnterior.id.replace('adicionar-', 'quantidade-'));
+    }
+    if (destino) {
+      if (focoAnterior.id.startsWith('quantidade-')) destino.value = focoAnterior.valor;
+      destino.focus();
+    }
   }
 }
 
@@ -87,6 +107,8 @@ function renderizarCarrinho() {
 async function registrarPedido() {
   if (estado.enviando) return;
   if (!estado.carrinho.length) return avisar('Adicione ao menos um produto ao pedido.', true);
+  const origemFoco = $('#finalizar');
+  let destinoFoco = origemFoco;
   estado.enviando = true;
   $('#finalizar').disabled = true;
   try {
@@ -100,6 +122,7 @@ async function registrarPedido() {
     $('#pedido-id').value = pedido.id;
     estado.versaoConsulta++;
     mostrarPedido(pedido);
+    destinoFoco = $('#consulta-resultado');
     avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
     catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
@@ -108,6 +131,7 @@ async function registrarPedido() {
   } finally {
     estado.enviando = false;
     $('#finalizar').disabled = false;
+    recuperarFoco(origemFoco, destinoFoco);
   }
 }
 
@@ -156,10 +180,12 @@ $('#pedido-id').addEventListener('input', () => {
 $('#form-consulta').addEventListener('submit', async evento => {
   evento.preventDefault();
   if (estado.consultando || estado.alterando) return;
+  const origemFoco = document.activeElement === $('#pedido-id') ? $('#pedido-id') : $('#consultar');
   const id = Number($('#pedido-id').value);
   limparConsulta();
   if (!Number.isInteger(id) || id < 1) {
     $('#consulta-resultado').textContent = 'Informe um número de pedido inteiro positivo.';
+    $('#pedido-id').focus();
     return;
   }
   const versao = estado.versaoConsulta;
@@ -173,6 +199,7 @@ $('#form-consulta').addEventListener('submit', async evento => {
   } finally {
     estado.consultando = false;
     controlesConsulta();
+    if (versao === estado.versaoConsulta) recuperarFoco(origemFoco, $('#consulta-resultado'));
   }
 });
 
@@ -180,6 +207,8 @@ $('#avancar').addEventListener('click', async () => {
   const pedido = estado.consultado;
   if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
   const versao = estado.versaoConsulta;
+  let versaoParaFoco = versao;
+  let destinoFoco = $('#avancar');
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -187,15 +216,21 @@ $('#avancar').addEventListener('click', async () => {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: pedido.proximo_status, estado_esperado: pedido.status }),
     });
-    if (versao === estado.versaoConsulta) mostrarPedido(atualizado);
+    if (versao === estado.versaoConsulta) {
+      mostrarPedido(atualizado);
+      if (!atualizado.proximo_status) destinoFoco = $('#consulta-resultado');
+    }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
       limparConsulta();
       $('#consulta-resultado').textContent = erro.message + ' Consulte o pedido para conferir o estado salvo.';
+      destinoFoco = $('#consulta-resultado');
+      versaoParaFoco = estado.versaoConsulta;
     }
   } finally {
     estado.alterando = false;
     controlesConsulta();
+    if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($('#avancar'), destinoFoco);
   }
 });
 carregarProdutos().catch(erro => avisar(erro.message, true));

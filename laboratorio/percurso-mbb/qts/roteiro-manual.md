@@ -35,6 +35,7 @@ Recarregar a página mantém os dados desta sessão. Encerrar o terminal descart
 | Identificação / 5.3 | Com leitor de tela, verificar Quantidade de Água/Suco e Adicionar Água/Suco ao pedido, sem confundir os produtos | Não executado |
 | Atalho / 5.3 | Usar Tab no início e ativar Ir para o conteúdo; conferir foco no conteúdo e sua indicação | Não executado |
 | Correção e remoção / 5.3 | Recusar uma quantidade e observar foco no campo; remover item e conferir foco no botão restante ou cupom, além da mensagem | Não executado |
+| Requisições e foco / 5.3 | Registrar/consultar pelo teclado e conferir foco no resultado; avançar estado e verificar botão seguinte ou resultado final. Durante espera, escolher outro campo e conferir que ele conserva o foco. Atualizar produtos enquanto uma quantidade está em edição e conferir foco/valor | Não executado |
 | Zoom / 5.3 | Ampliar a 200%; conferir acesso a todo texto e controles | Não executado |
 | Navegação / 4.9 | Abrir o percurso e acompanhar o mesmo pedido em Análise, BD, Programação, Web/API, QTS e Git; conferir links, menu, código copiado e retorno | Não executado |
 | Compreensão / 4.9 e 5.5 | Pedir ao participante que explique como requisito, tabelas, função e teste tratam o mesmo pedido; anotar dúvidas antes de orientar | Não executado |

@@ -62,7 +62,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .consulta { margin-top: 2rem; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
 button:disabled { opacity: .6; cursor: wait; }
-button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho > div { min-width: 0; overflow-wrap: anywhere; }
 #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }

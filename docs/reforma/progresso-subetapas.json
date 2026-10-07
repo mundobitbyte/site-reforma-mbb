@@ -327,12 +327,13 @@
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/evidencia-interface-19.json",
-            "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs"
+            "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs",
+            "docs/reforma/evidencia-interface-20.json"
           ],
           "depende_de": [
             "NAVEGADOR"
           ],
-          "preparacao": "Nomes acessíveis de produtos, atalho de conteúdo e destino de foco em correção/remoção implementados; seis casos de lógica passaram. Navegador e leitor de tela ainda não testados."
+          "preparacao": "Nomes, atalho e foco em correção/remoção implementados. Recuperação de foco após registro, consulta e avanço, preservação de campo em atualização e respeito a outra ação acrescentados; 17 casos de lógica passaram. Confirmação em navegador/leitor de tela ainda pendente."
         },
         {
           "id": "5.4",
@@ -395,5 +396,5 @@
     "restantes": 9,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 19
+  "checkpoint_atualizacao": 20
 }

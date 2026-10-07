@@ -25,7 +25,7 @@
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
           &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; required&gt;
           &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
-        &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
+        &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; tabindex=&quot;-1&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
           &lt;p class=&quot;hint&quot;&gt;Cada ação avança uma etapa. Entregue encerra a sequência.&lt;/p&gt;
@@ -116,7 +116,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .consulta { margin-top: 2rem; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
 button:disabled { opacity: .6; cursor: wait; }
-button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
 #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
@@ -128,6 +128,12 @@ const $ = seletor =&gt; document.querySelector(seletor);
 function avisar(texto, erro = false) {
   $(&#x27;#mensagem&#x27;).textContent = texto;
   $(&#x27;#mensagem&#x27;).className = `mensagem ${erro ? &#x27;erro&#x27; : &#x27;ok&#x27;}`;
+}
+
+function recuperarFoco(origem, destino = origem) {
+  // Só recupera o foco desta ação; não interrompe quem escolheu outro controle.
+  if ((document.activeElement === origem || document.activeElement === document.body)
+      &amp;&amp; destino &amp;&amp; !destino.disabled) destino.focus();
 }
 
 async function api(caminho, opcoes) {
@@ -143,6 +149,8 @@ async function carregarProdutos() {
   const produtos = await api(&#x27;produtos&#x27;);
   estado.produtos = produtos;
   const area = $(&#x27;#produtos&#x27;);
+  const focoAnterior = area.contains(document.activeElement)
+    ? { id: document.activeElement.id, valor: document.activeElement.value } : null;
   area.replaceChildren();
   for (const produto of produtos) {
     const node = $(&#x27;#produtoTemplate&#x27;).content.cloneNode(true);
@@ -151,6 +159,8 @@ async function carregarProdutos() {
     node.querySelector(&#x27;.preco&#x27;).textContent = moeda(produto.preco_centavos);
     const input = node.querySelector(&#x27;.quantidade&#x27;);
     const botao = node.querySelector(&#x27;.adicionar&#x27;);
+    input.id = `quantidade-${produto.id}`;
+    botao.id = `adicionar-${produto.id}`;
     input.setAttribute(&#x27;aria-label&#x27;, `Quantidade de ${produto.nome}`);
     botao.setAttribute(&#x27;aria-label&#x27;, `Adicionar ${produto.nome} ao pedido`);
     botao.disabled = produto.estoque === 0;
@@ -175,6 +185,16 @@ async function carregarProdutos() {
       avisar(`${produto.nome} adicionado ao pedido.`);
     });
     area.appendChild(node);
+  }
+  if (focoAnterior) {
+    let destino = document.getElementById(focoAnterior.id);
+    if (destino?.disabled) {
+      destino = document.getElementById(focoAnterior.id.replace(&#x27;adicionar-&#x27;, &#x27;quantidade-&#x27;));
+    }
+    if (destino) {
+      if (focoAnterior.id.startsWith(&#x27;quantidade-&#x27;)) destino.value = focoAnterior.valor;
+      destino.focus();
+    }
   }
 }
 
@@ -209,6 +229,8 @@ function renderizarCarrinho() {
 async function registrarPedido() {
   if (estado.enviando) return;
   if (!estado.carrinho.length) return avisar(&#x27;Adicione ao menos um produto ao pedido.&#x27;, true);
+  const origemFoco = $(&#x27;#finalizar&#x27;);
+  let destinoFoco = origemFoco;
   estado.enviando = true;
   $(&#x27;#finalizar&#x27;).disabled = true;
   try {
@@ -222,6 +244,7 @@ async function registrarPedido() {
     $(&#x27;#pedido-id&#x27;).value = pedido.id;
     estado.versaoConsulta++;
     mostrarPedido(pedido);
+    destinoFoco = $(&#x27;#consulta-resultado&#x27;);
     avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
     catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
@@ -230,6 +253,7 @@ async function registrarPedido() {
   } finally {
     estado.enviando = false;
     $(&#x27;#finalizar&#x27;).disabled = false;
+    recuperarFoco(origemFoco, destinoFoco);
   }
 }
 
@@ -278,10 +302,12 @@ $(&#x27;#pedido-id&#x27;).addEventListener(&#x27;input&#x27;, () =&gt; {
 $(&#x27;#form-consulta&#x27;).addEventListener(&#x27;submit&#x27;, async evento =&gt; {
   evento.preventDefault();
   if (estado.consultando || estado.alterando) return;
+  const origemFoco = document.activeElement === $(&#x27;#pedido-id&#x27;) ? $(&#x27;#pedido-id&#x27;) : $(&#x27;#consultar&#x27;);
   const id = Number($(&#x27;#pedido-id&#x27;).value);
   limparConsulta();
   if (!Number.isInteger(id) || id &lt; 1) {
     $(&#x27;#consulta-resultado&#x27;).textContent = &#x27;Informe um número de pedido inteiro positivo.&#x27;;
+    $(&#x27;#pedido-id&#x27;).focus();
     return;
   }
   const versao = estado.versaoConsulta;
@@ -295,6 +321,7 @@ $(&#x27;#form-consulta&#x27;).addEventListener(&#x27;submit&#x27;, async evento 
   } finally {
     estado.consultando = false;
     controlesConsulta();
+    if (versao === estado.versaoConsulta) recuperarFoco(origemFoco, $(&#x27;#consulta-resultado&#x27;));
   }
 });
 
@@ -302,6 +329,8 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
   const pedido = estado.consultado;
   if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
   const versao = estado.versaoConsulta;
+  let versaoParaFoco = versao;
+  let destinoFoco = $(&#x27;#avancar&#x27;);
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -309,15 +338,21 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
       method: &#x27;POST&#x27;, headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
       body: JSON.stringify({ status: pedido.proximo_status, estado_esperado: pedido.status }),
     });
-    if (versao === estado.versaoConsulta) mostrarPedido(atualizado);
+    if (versao === estado.versaoConsulta) {
+      mostrarPedido(atualizado);
+      if (!atualizado.proximo_status) destinoFoco = $(&#x27;#consulta-resultado&#x27;);
+    }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
       limparConsulta();
       $(&#x27;#consulta-resultado&#x27;).textContent = erro.message + &#x27; Consulte o pedido para conferir o estado salvo.&#x27;;
+      destinoFoco = $(&#x27;#consulta-resultado&#x27;);
+      versaoParaFoco = estado.versaoConsulta;
     }
   } finally {
     estado.alterando = false;
     controlesConsulta();
+    if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($(&#x27;#avancar&#x27;), destinoFoco);
   }
 });
 carregarProdutos().catch(erro =&gt; avisar(erro.message, true));
@@ -413,4 +448,4 @@ def criar_app(caminho=None, hoje=None):
 
 
 app = criar_app()
-</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section><section><h2>Acessibilidade da interface web</h2><p>Quantidade e Adicionar identificam o produto. Ao recusar quantidade, o código dirige foco ao campo; ao remover item, dirige foco ao botão restante ou ao cupom e informa a remoção. O atalho Ir para o conteúdo precede o cabeçalho. Esses controles pertencem à aplicação web; não são parte dos programas VisuAlg.</p><p>Seis casos de lógica foram exercitados com elementos substitutos no Node, sem navegador. A confirmação de teclado, layout e leitor de tela continua pendente. <a href="../../cantina-evolutiva/frontend/tests/acessibilidade.test.cjs">Consultar os casos</a> · <a href="../../../docs/reforma/evidencia-interface-19.json">Ver evidência e limites</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>
+</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section><section><h2>Acessibilidade da interface web</h2><p>Quantidade e Adicionar identificam o produto. Ao recusar quantidade, o código dirige foco ao campo; ao remover item, dirige foco ao botão restante ou ao cupom e informa a remoção. O atalho Ir para o conteúdo precede o cabeçalho. Esses controles pertencem à aplicação web; não são parte dos programas VisuAlg.</p><p>No checkpoint 20, o conjunto passou a 17 casos de lógica no Node. O retorno de foco acompanha registro, consulta e avanço de estado; ao atualizar produtos, o campo em edição é reconstruído com foco e valor preservados. Uma resposta superada não assume o foco de outra ação. Os casos usam elementos substitutos, sem navegador. A confirmação de teclado, layout e leitor de tela continua pendente. <a href="../../cantina-evolutiva/frontend/tests/acessibilidade.test.cjs">Consultar os casos</a> · <a href="../../../docs/reforma/evidencia-interface-20.json">Ver evidência e limites</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>

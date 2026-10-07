@@ -19,7 +19,16 @@ async function interfaceDeTeste(estoqueAgua = 20) {
     }
     setAttribute(nome, valor) { this.attributes[nome] = valor; }
     addEventListener(nome, funcao) { this.listeners[nome] = funcao; }
-    replaceChildren() { this.children = []; }
+    contains(elemento) { return this === elemento || this.children.some(f => f.contains(elemento)); }
+    replaceChildren() {
+      if (this.children.some(f => f.contains(document.activeElement))) document.activeElement = document.body;
+      this.children = [];
+    }
+    get disabled() { return this._disabled; }
+    set disabled(valor) {
+      this._disabled = valor;
+      if (valor && document.activeElement === this) document.activeElement = document.body;
+    }
     append(...elementos) { this.children.push(...elementos); }
     appendChild(elemento) { this.children.push(elemento); return elemento; }
     querySelector(seletor) {
@@ -38,6 +47,10 @@ async function interfaceDeTeste(estoqueAgua = 20) {
     'cupom', 'pedido-id', 'recarregar', 'consultar', 'avancar', 'consulta-resultado',
     'acompanhamento', 'historico', 'form-consulta',
   ].map(id => ['#' + id, new Elemento()]));
+  ids.get('#cupom').value = '';
+  ids.get('#pedido-id').value = '';
+  document.body = new Elemento();
+  document.activeElement = document.body;
   ids.get('#produtoTemplate').content = {
     cloneNode() {
       const fragmento = new Elemento();
@@ -47,13 +60,28 @@ async function interfaceDeTeste(estoqueAgua = 20) {
     },
   };
   document.querySelector = seletor => ids.get(seletor);
+  document.getElementById = id => {
+    function buscar(node) {
+      if (node.id === id) return node;
+      for (const filho of node.children) { const n = buscar(filho); if (n) return n; }
+      return null;
+    }
+    for (const node of ids.values()) { const n = buscar(node); if (n) return n; }
+    return ids.get('#' + id) || null;
+  };
   document.createElement = () => new Elemento();
   const produtos = [
     { id: 1, nome: 'Água', preco_centavos: 300, estoque: estoqueAgua },
     { id: 2, nome: 'Suco', preco_centavos: 600, estoque: 15 },
   ];
+  let responder = async () => { throw new Error('Requisição inesperada no ensaio'); };
+  const requisicoes = [];
   const contexto = vm.createContext({ document, URL, location: { href: 'http://ensaio.invalid/' },
-    fetch: async () => ({ ok: true, json: async () => produtos }) });
+    fetch: async (url, opcoes) => {
+      requisicoes.push({ rota: url.pathname, opcoes });
+      if (url.pathname === '/api/produtos') return { ok: true, json: async () => produtos };
+      return responder(url, opcoes);
+    } });
   const fonte = process.env.MBB_INTERFACE_SOURCE || join(__dirname, '..', 'app.js');
   vm.runInContext(readFileSync(fonte, 'utf8'), contexto);
   await new Promise(resolve => setImmediate(resolve));
@@ -65,7 +93,9 @@ async function interfaceDeTeste(estoqueAgua = 20) {
     node.querySelector('.quantidade').value = String(quantidade);
     node.querySelector('.adicionar').listeners.click();
   };
-  return { document, ids, estado, cartao, adicionar };
+  const resposta = funcao => { responder = funcao; };
+  return { document, ids, estado, cartao, adicionar, resposta, produtos, requisicoes,
+    carregar: () => vm.runInContext('carregarProdutos()', contexto) };
 }
 
 test('os nomes acessíveis distinguem o produto e mantêm Quantidade/Adicionar', async () => {
@@ -131,4 +161,144 @@ test('durante envio, remover não modifica carrinho nem muda foco', async () => 
   assert.equal(ui.estado().carrinho.length, 1);
   assert.equal(ui.document.activeElement, remover);
   assert.equal(ui.ids.get('#itensCarrinho').querySelector('.remover'), remover);
+});
+
+function pedido(status = 'Novo', proximo = 'Confirmado') {
+  return { id: 1, status, proximo_status: proximo, total_centavos: 600,
+    desconto_centavos: 0, itens: [{ quantidade: 2, nome: 'Água' }], historico_status: [] };
+}
+const sucesso = dados => ({ ok: true, json: async () => dados });
+const recusa = detail => ({ ok: false, json: async () => ({ detail }) });
+function pendencia() {
+  let concluir;
+  const promessa = new Promise(resolve => { concluir = resolve; });
+  return { promessa, concluir };
+}
+
+test('async: registro confirmado dirige foco ao resultado e mantém o contrato do pedido', async () => {
+  const ui = await interfaceDeTeste();
+  ui.adicionar(0, 2);
+  ui.resposta(async () => sucesso(pedido()));
+  ui.ids.get('#finalizar').focus();
+  await ui.ids.get('#finalizar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+  assert.equal(ui.ids.get('#finalizar').disabled, false);
+  const envio = ui.requisicoes.find(r => r.rota === '/api/pedidos').opcoes;
+  assert.equal(envio.method, 'POST');
+  assert.deepEqual(JSON.parse(envio.body), { itens: [{ produto_id: 1, quantidade: 2 }], cupom: null });
+});
+
+test('async: registro recusado devolve foco ao botão e preserva o carrinho', async () => {
+  const ui = await interfaceDeTeste();
+  ui.adicionar(0, 2);
+  ui.resposta(async () => recusa('Cupom não encontrado.'));
+  ui.ids.get('#finalizar').focus();
+  await ui.ids.get('#finalizar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.ids.get('#finalizar'));
+  assert.equal(ui.estado().carrinho.length, 1);
+  assert.match(ui.ids.get('#mensagem').textContent, /Cupom não encontrado/);
+});
+
+test('async: concluir registro não tira foco de outro controle escolhido durante a espera', async () => {
+  const ui = await interfaceDeTeste();
+  ui.adicionar(0, 2);
+  const p = pendencia();
+  ui.resposta(() => p.promessa);
+  ui.ids.get('#finalizar').focus();
+  const envio = ui.ids.get('#finalizar').listeners.click();
+  ui.ids.get('#cupom').focus();
+  p.concluir(sucesso(pedido()));
+  await envio;
+  assert.equal(ui.document.activeElement, ui.ids.get('#cupom'));
+});
+
+test('async: consulta iniciada pelo campo dirige foco ao resultado depois de reabilitar controles', async () => {
+  const ui = await interfaceDeTeste();
+  ui.ids.get('#pedido-id').value = '1';
+  ui.ids.get('#pedido-id').focus();
+  ui.resposta(async () => sucesso(pedido()));
+  await ui.ids.get('#form-consulta').listeners.submit({ preventDefault() {} });
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+  assert.equal(ui.ids.get('#pedido-id').disabled, false);
+});
+
+test('async: consulta recusada dirige foco à mensagem de resultado', async () => {
+  const ui = await interfaceDeTeste();
+  ui.ids.get('#pedido-id').value = '1';
+  ui.ids.get('#consultar').focus();
+  ui.resposta(async () => recusa('Pedido não encontrado.'));
+  await ui.ids.get('#form-consulta').listeners.submit({ preventDefault() {} });
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+  assert.equal(ui.ids.get('#consulta-resultado').textContent, 'Pedido não encontrado.');
+});
+
+test('async: resposta de consulta superada não troca resultado ou foco de outra ação', async () => {
+  const ui = await interfaceDeTeste();
+  ui.ids.get('#pedido-id').value = '1';
+  ui.ids.get('#consultar').focus();
+  const p = pendencia();
+  ui.resposta(() => p.promessa);
+  const consulta = ui.ids.get('#form-consulta').listeners.submit({ preventDefault() {} });
+  ui.estado().versaoConsulta++;
+  ui.ids.get('#consulta-resultado').textContent = 'Outra ação assumiu a consulta.';
+  ui.ids.get('#cupom').focus();
+  p.concluir(sucesso(pedido()));
+  await consulta;
+  assert.equal(ui.document.activeElement, ui.ids.get('#cupom'));
+  assert.equal(ui.ids.get('#consulta-resultado').textContent, 'Outra ação assumiu a consulta.');
+});
+
+test('async: avanço intermediário reabilita e recupera foco no botão com próximo estado', async () => {
+  const ui = await interfaceDeTeste();
+  ui.estado().consultado = pedido();
+  ui.ids.get('#avancar').focus();
+  ui.resposta(async () => sucesso(pedido('Confirmado', 'Em preparação')));
+  await ui.ids.get('#avancar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.ids.get('#avancar'));
+  assert.equal(ui.ids.get('#avancar').disabled, false);
+  assert.equal(ui.ids.get('#avancar').textContent, 'Avançar para Em preparação');
+  const envio = ui.requisicoes.find(r => r.rota.endsWith('/status')).opcoes;
+  assert.deepEqual(JSON.parse(envio.body), { status: 'Confirmado', estado_esperado: 'Novo' });
+});
+
+test('async: entrega final dirige foco ao resultado em vez do botão desabilitado', async () => {
+  const ui = await interfaceDeTeste();
+  ui.estado().consultado = pedido('Pronto', 'Entregue');
+  ui.ids.get('#avancar').focus();
+  ui.resposta(async () => sucesso(pedido('Entregue', null)));
+  await ui.ids.get('#avancar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+  assert.equal(ui.ids.get('#avancar').disabled, true);
+});
+
+test('async: conflito de estado dirige foco à mensagem e pede nova consulta', async () => {
+  const ui = await interfaceDeTeste();
+  ui.estado().consultado = pedido();
+  ui.ids.get('#avancar').focus();
+  ui.resposta(async () => recusa('O estado mudou.'));
+  await ui.ids.get('#avancar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+  assert.equal(ui.estado().consultado, null);
+  assert.match(ui.ids.get('#consulta-resultado').textContent, /Consulte o pedido/);
+});
+
+test('async: reconstruir produtos mantém foco e quantidade em edição', async () => {
+  const ui = await interfaceDeTeste();
+  const anterior = ui.cartao(0).querySelector('.quantidade');
+  anterior.value = '5';
+  anterior.focus();
+  await ui.carregar();
+  const atual = ui.cartao(0).querySelector('.quantidade');
+  assert.notEqual(atual, anterior);
+  assert.equal(ui.document.activeElement, atual);
+  assert.equal(atual.value, '5');
+});
+
+test('async: produto esgotado dirige foco do antigo Adicionar à quantidade do mesmo produto', async () => {
+  const ui = await interfaceDeTeste();
+  ui.cartao(0).querySelector('.adicionar').focus();
+  ui.produtos[0].estoque = 0;
+  await ui.carregar();
+  assert.equal(ui.document.activeElement, ui.cartao(0).querySelector('.quantidade'));
+  assert.equal(ui.cartao(0).querySelector('.adicionar').disabled, true);
 });

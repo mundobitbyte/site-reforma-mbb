@@ -90,3 +90,6 @@ A subetapa 5.4 tem iniciador local integrado e roteiro para executar as validaç
 
 ## Avanço no checkpoint 19
 O professor assumiu o teste posterior do VisuAlg. A preparação da 5.3 avançou com nomes de produto nos controles, atalho para conteúdo e manejo de foco ao corrigir quantidade ou remover item. Seis casos de lógica passaram em Node, com elementos substitutos de teste; isso não prova o comportamento em navegador/leitor de tela. [Evidência](evidencia-interface-19.json). O total permanece 22/31 e os critérios não foram reduzidos.
+
+## Avanço no checkpoint 20
+A preparação da 5.3 inclui foco após operações assíncronas e preservação do campo em edição ao atualizar produtos. A interface passou nos 17 casos de lógica (seis anteriores mais 11 novos); esse conjunto foi reexecutado porque a mesma interface mudou. Não foram repetidas as suítes do servidor/clientes ou do iniciador. [Evidência](evidencia-interface-20.json). Navegador/leitor de tela ainda sem confirmação; total 22/31, VisuAlg reservado ao professor.
