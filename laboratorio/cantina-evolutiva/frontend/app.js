@@ -1,5 +1,5 @@
 'use strict';
-const estado = { produtos: [], carrinho: [], enviando: false };
+const estado = { produtos: [], carrinho: [], enviando: false, consultado: null, consultando: false, alterando: false, versaoConsulta: 0 };
 const moeda = centavos => (centavos / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const $ = seletor => document.querySelector(seletor);
 
@@ -91,6 +91,8 @@ async function registrarPedido() {
     $('#cupom').value = '';
     renderizarCarrinho();
     $('#pedido-id').value = pedido.id;
+    estado.versaoConsulta++;
+    mostrarPedido(pedido);
     avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
     catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
@@ -104,17 +106,90 @@ async function registrarPedido() {
 
 $('#finalizar').addEventListener('click', registrarPedido);
 $('#recarregar').addEventListener('click', () => carregarProdutos().catch(erro => avisar(erro.message, true)));
+
+function controlesConsulta() {
+  const ocupado = estado.consultando || estado.alterando;
+  $('#pedido-id').disabled = ocupado;
+  $('#consultar').disabled = ocupado;
+  $('#avancar').disabled = ocupado || !estado.consultado?.proximo_status;
+}
+
+function mostrarPedido(pedido) {
+  estado.consultado = pedido;
+  $('#consulta-resultado').textContent = `Pedido #${pedido.id} — ${pedido.status} — ${moeda(pedido.total_centavos)}. ` + pedido.itens.map(item => `${item.quantidade} × ${item.nome}`).join('; ');
+  $('#acompanhamento').hidden = false;
+  $('#avancar').textContent = pedido.proximo_status ? `Avançar para ${pedido.proximo_status}` : 'Pedido entregue';
+  const lista = $('#historico');
+  lista.replaceChildren();
+  if (!pedido.historico_status.length) {
+    const item = document.createElement('li');
+    item.textContent = 'Nenhuma mudança registrada nesta evolução.';
+    lista.appendChild(item);
+  }
+  for (const evento of pedido.historico_status) {
+    const item = document.createElement('li');
+    const data = new Date(evento.alterado_em.replace(' ', 'T') + 'Z').toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+    item.textContent = `${evento.estado_anterior} → ${evento.estado_novo} — ${data}`;
+    lista.appendChild(item);
+  }
+  controlesConsulta();
+}
+
+function limparConsulta() {
+  estado.consultado = null;
+  estado.versaoConsulta++;
+  $('#acompanhamento').hidden = true;
+  controlesConsulta();
+}
+
+$('#pedido-id').addEventListener('input', () => {
+  limparConsulta();
+  $('#consulta-resultado').textContent = '';
+});
 $('#form-consulta').addEventListener('submit', async evento => {
   evento.preventDefault();
+  if (estado.consultando || estado.alterando) return;
   const id = Number($('#pedido-id').value);
+  limparConsulta();
   if (!Number.isInteger(id) || id < 1) {
     $('#consulta-resultado').textContent = 'Informe um número de pedido inteiro positivo.';
     return;
   }
+  const versao = estado.versaoConsulta;
+  estado.consultando = true;
+  controlesConsulta();
   try {
     const pedido = await api(`pedidos/${id}`);
-    $('#consulta-resultado').textContent = `Pedido #${pedido.id} — ${pedido.status} — ${moeda(pedido.total_centavos)}. ` + pedido.itens.map(item => `${item.quantidade} × ${item.nome}`).join('; ');
-  } catch (erro) { $('#consulta-resultado').textContent = erro.message; }
+    if (versao === estado.versaoConsulta) mostrarPedido(pedido);
+  } catch (erro) {
+    if (versao === estado.versaoConsulta) $('#consulta-resultado').textContent = erro.message;
+  } finally {
+    estado.consultando = false;
+    controlesConsulta();
+  }
+});
+
+$('#avancar').addEventListener('click', async () => {
+  const pedido = estado.consultado;
+  if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
+  const versao = estado.versaoConsulta;
+  estado.alterando = true;
+  controlesConsulta();
+  try {
+    const atualizado = await api(`pedidos/${pedido.id}/status`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: pedido.proximo_status, estado_esperado: pedido.status }),
+    });
+    if (versao === estado.versaoConsulta) mostrarPedido(atualizado);
+  } catch (erro) {
+    if (versao === estado.versaoConsulta) {
+      limparConsulta();
+      $('#consulta-resultado').textContent = erro.message + ' Consulte o pedido para conferir o estado salvo.';
+    }
+  } finally {
+    estado.alterando = false;
+    controlesConsulta();
+  }
 });
 carregarProdutos().catch(erro => avisar(erro.message, true));
 renderizarCarrinho();

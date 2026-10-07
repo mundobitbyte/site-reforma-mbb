@@ -10,8 +10,8 @@
 <body>
   <header class="topo">
     <div><p class="eyebrow">Escola Horizonte • laboratório</p><h1>Cantina Horizonte</h1>
-      <p>Monte um pedido e consulte o registro salvo.</p></div>
-    <span class="versao">Evolução 2</span>
+      <p>Monte um pedido e acompanhe sua preparação.</p></div>
+    <span class="versao">Evolução 3</span>
   </header>
   <main class="layout">
     <section aria-labelledby="cardapio-titulo">
@@ -23,8 +23,14 @@
         <h2 id="consulta-titulo">Consultar pedido</h2>
         <form id="form-consulta"><label for="pedido-id">Número do pedido</label>
           <input id="pedido-id" type="number" min="1" step="1" required>
-          <button class="secondary" type="submit">Consultar</button></form>
+          <button id="consultar" class="secondary" type="submit">Consultar</button></form>
         <p id="consulta-resultado" aria-live="polite"></p>
+        <div id="acompanhamento" hidden>
+          <button id="avancar" class="secondary" type="button">Avançar pedido</button>
+          <p class="hint">Cada ação avança uma etapa. Entregue encerra a sequência.</p>
+          <h3>Histórico de mudanças</h3>
+          <ol id="historico"></ol>
+        </div>
       </section>
     </section>
     <aside class="carrinho" aria-labelledby="carrinho-titulo">
@@ -32,7 +38,7 @@
       <div id="itensCarrinho" class="itens-vazios">Nenhum item adicionado.</div>
       <dl class="totais"><div class="total"><dt>Subtotal previsto</dt><dd id="total">R$ 0,00</dd></div></dl>
       <label for="cupom">Cupom opcional</label><input id="cupom" type="text" placeholder="Ex.: MBB10" autocomplete="off">
-      <p class="hint">O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório. Atualização de status entra na próxima etapa.</p>
+      <p class="hint">O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório.</p>
       <button id="finalizar" class="primary">Registrar pedido</button>
       <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
     </aside>

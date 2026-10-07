@@ -1,4 +1,4 @@
-"""Pedido persistente: regras e transação, sem dependência da interface."""
+"""Pedido, cupom e estados: regras e transações independentes da interface."""
 import sqlite3
 from datetime import date, datetime
 from pathlib import Path
@@ -12,6 +12,8 @@ class ErroPedido(Exception):
 
 
 class Cantina:
+    ESTADOS = ('Novo', 'Confirmado', 'Em preparação', 'Pronto', 'Entregue')
+
     def __init__(self, caminho: Path, hoje=None):
         self.caminho = Path(caminho)
         self.hoje = hoje or (lambda: datetime.now(ZoneInfo('America/Sao_Paulo')).date())
@@ -43,6 +45,7 @@ class Cantina:
                     conn.rollback()
                     raise
             self._migrar_cupom(conn)
+            self._migrar_estados(conn)
         finally:
             conn.close()
 
@@ -58,7 +61,24 @@ class Cantina:
                     if comando.strip():
                         conn.execute(comando)
                 conn.execute('INSERT INTO cupom VALUES (?,?,?,?,0)', ('MBB10', 10, 3000, '2099-12-31'))
-            elif versao != 2:
+            elif versao not in (2, 3):
+                raise RuntimeError('Versão do banco não suportada por esta evolução.')
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+
+    @staticmethod
+    def _migrar_estados(conn):
+        conn.execute('BEGIN IMMEDIATE')
+        try:
+            versao = conn.execute('PRAGMA user_version').fetchone()[0]
+            if versao == 2:
+                script = Path(__file__).with_name('migracao-03-estados.sql').read_text()
+                for comando in script.split(';'):
+                    if comando.strip():
+                        conn.execute(comando)
+            elif versao != 3:
                 raise RuntimeError('Versão do banco não suportada por esta evolução.')
             conn.commit()
         except Exception:
@@ -150,13 +170,19 @@ class Cantina:
         finally:
             conn.close()
 
-    @staticmethod
-    def _consultar(conn, pedido_id):
+    @classmethod
+    def _consultar(cls, conn, pedido_id):
         row = conn.execute('SELECT * FROM resumo_pedido WHERE id=?', (pedido_id,)).fetchone()
         if row is None:
             raise ErroPedido('Pedido não encontrado.', 404)
         result = dict(row)
         result['total_centavos'] = result['subtotal_centavos'] - result['desconto_centavos']
+        indice = cls.ESTADOS.index(result['status'])
+        result['proximo_status'] = cls.ESTADOS[indice + 1] if indice < len(cls.ESTADOS) - 1 else None
+        result['historico_status'] = [dict(r) for r in conn.execute('''
+            SELECT estado_anterior, estado_novo, alterado_em
+            FROM historico_status WHERE pedido_id=? ORDER BY id
+        ''', (pedido_id,))]
         result['itens'] = [dict(r) for r in conn.execute('''
             SELECT i.produto_id, p.nome, i.quantidade, i.preco_unitario_centavos
             FROM item_pedido i JOIN produto p ON p.id=i.produto_id
@@ -168,5 +194,38 @@ class Cantina:
         conn = self.conectar()
         try:
             return self._consultar(conn, pedido_id)
+        finally:
+            conn.close()
+
+    def alterar_status(self, pedido_id, status, estado_esperado):
+        if type(status) is not str or status not in self.ESTADOS:
+            raise ErroPedido('Informe um estado de pedido conhecido.')
+        if type(estado_esperado) is not str or estado_esperado not in self.ESTADOS:
+            raise ErroPedido('Informe o estado exibido na consulta do pedido.')
+        conn = self.conectar()
+        try:
+            conn.execute('BEGIN IMMEDIATE')
+            pedido = conn.execute('SELECT status FROM pedido WHERE id=?', (pedido_id,)).fetchone()
+            if pedido is None:
+                raise ErroPedido('Pedido não encontrado.', 404)
+            atual = pedido['status']
+            if atual != estado_esperado:
+                raise ErroPedido('O estado do pedido mudou. Consulte novamente antes de avançar.', 409)
+            indice = self.ESTADOS.index(atual)
+            if indice == len(self.ESTADOS) - 1:
+                raise ErroPedido('O pedido já foi entregue e não pode avançar.', 409)
+            proximo = self.ESTADOS[indice + 1]
+            if status != proximo:
+                raise ErroPedido(f'O pedido em {atual} só pode avançar para {proximo}.', 409)
+            atualizado = conn.execute('UPDATE pedido SET status=? WHERE id=? AND status=?', (status, pedido_id, atual))
+            if atualizado.rowcount != 1:
+                raise ErroPedido('O estado do pedido mudou. Consulte novamente antes de avançar.', 409)
+            conn.execute('INSERT INTO historico_status (pedido_id,estado_anterior,estado_novo) VALUES (?,?,?)', (pedido_id, atual, status))
+            resultado = self._consultar(conn, pedido_id)
+            conn.commit()
+            return resultado
+        except Exception:
+            conn.rollback()
+            raise
         finally:
             conn.close()

@@ -1,4 +1,4 @@
-"""API e interface local da primeira fatia evolutiva."""
+"""API e interface local da Cantina evolutiva."""
 from contextlib import asynccontextmanager
 from pathlib import Path
 import sqlite3
@@ -26,6 +26,12 @@ class PedidoEntrada(BaseModel):
     cupom: StrictStr | None = None
 
 
+class StatusEntrada(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    status: StrictStr
+    estado_esperado: StrictStr
+
+
 def criar_app(caminho=None, hoje=None):
     cantina = Cantina(caminho or BASE / 'dados' / 'cantina-evolutiva.sqlite3', hoje)
 
@@ -34,7 +40,7 @@ def criar_app(caminho=None, hoje=None):
         cantina.preparar()
         yield
 
-    app = FastAPI(title='Cantina Horizonte — pedido e cupom', lifespan=lifespan)
+    app = FastAPI(title='Cantina Horizonte — pedido, cupom e estados', lifespan=lifespan)
     app.state.cantina = cantina
 
     @app.exception_handler(ErroPedido)
@@ -42,7 +48,7 @@ def criar_app(caminho=None, hoje=None):
         return JSONResponse(status_code=erro.status, content={'detail': str(erro)})
 
     @app.exception_handler(RequestValidationError)
-    async def entrada_invalida(_, erro):
+    async def entrada_invalida(requisicao, erro):
         campos = [e['loc'] for e in erro.errors()]
         if any('quantidade' in c for c in campos):
             mensagem = 'A quantidade deve ser um número inteiro entre 1 e 10.'
@@ -50,6 +56,8 @@ def criar_app(caminho=None, hoje=None):
             mensagem = 'Informe um identificador inteiro positivo para o produto.'
         elif any('cupom' in c for c in campos):
             mensagem = 'Informe o código do cupom como texto.'
+        elif requisicao.url.path.endswith('/status'):
+            mensagem = 'Envie somente o próximo estado e o estado exibido na consulta, ambos como texto.'
         elif any(e['type'] == 'extra_forbidden' for e in erro.errors()):
             mensagem = 'Envie somente os itens e o cupom opcional.'
         else:
@@ -71,6 +79,10 @@ def criar_app(caminho=None, hoje=None):
     @app.get('/api/pedidos/{pedido_id}')
     def consultar(pedido_id: int):
         return cantina.consultar(pedido_id)
+
+    @app.post('/api/pedidos/{pedido_id}/status')
+    def alterar_status(pedido_id: int, entrada: StatusEntrada):
+        return cantina.alterar_status(pedido_id, entrada.status, entrada.estado_esperado)
 
     app.mount('/', StaticFiles(directory=BASE / 'frontend', html=True), name='interface')
     return app
