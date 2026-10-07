@@ -84,3 +84,6 @@ Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização
 
 ## Avanço no checkpoint 17
 A subetapa 4.8 tem dois ensaios: o depurador foi concluído e o VisuAlg continua pendente. A contagem permanece 22/31, sem reduzir o critério ou alterar o denominador. [Evidência do depurador](evidencia-depurador-17.json) · [Diagnóstico de acesso](diagnostico-acesso-17.json).
+
+## Preparação no checkpoint 18
+A subetapa 5.4 tem iniciador local integrado e roteiro para executar as validações pendentes com banco temporário. O ensaio HTTP do iniciador está registrado em [evidencia-previa-local-18.json](evidencia-previa-local-18.json). O navegador continua sem resultado; a 5.4 permanece aberta, e a contagem segue 22/31.

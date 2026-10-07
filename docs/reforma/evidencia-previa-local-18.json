@@ -1,0 +1,132 @@
+{
+  "checkpoint": 18,
+  "data_local": "2026-10-07",
+  "metodo": "HTTP real via terminal; iniciador executado a partir de outro diretório",
+  "python": "3.12.14",
+  "sistema": "Linux",
+  "browser_tested": false,
+  "windows_testado": false,
+  "macos_testado": false,
+  "participante": false,
+  "visualg_executado": false,
+  "suítes_anteriores_reexecutadas": false,
+  "sessões": [
+    {
+      "sessao": 1,
+      "produtos_iniciais": 5,
+      "saldo_agua_inicial": 20,
+      "versao_schema": 3,
+      "banco_fora_do_checkout": true,
+      "banco_descartado": true,
+      "codigo_saida": 0,
+      "porta_encerrada": true,
+      "requisicoes": [
+        {
+          "rota": "/",
+          "status": 200
+        },
+        {
+          "rota": "/app.js",
+          "status": 200
+        },
+        {
+          "rota": "/styles.css",
+          "status": 200
+        },
+        {
+          "rota": "/api/produtos",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/css/analise-sistemas.css",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/percurso.js",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/analise/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/banco-de-dados/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/programacao/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/web-api/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/qts/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/git/index.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/programacao/depuracao.html",
+          "status": 200
+        },
+        {
+          "rota": "/curso/docs/reforma/guia-execucao-cantina-mbb.md",
+          "status": 200
+        },
+        {
+          "rota": "/curso/laboratorio/cantina-evolutiva/README.md",
+          "status": 200
+        },
+        {
+          "rota": "/curso/.git/HEAD",
+          "status": 404
+        },
+        {
+          "rota": "/curso/laboratorio/cantina-evolutiva/dados/cantina-evolutiva.sqlite3",
+          "status": 404
+        },
+        {
+          "rota": "/curso/laboratorio/cantina-evolutiva/__pycache__/app.pyc",
+          "status": 404
+        },
+        {
+          "rota": "/curso/laboratorio/cantina-evolutiva/.env",
+          "status": 404
+        },
+        {
+          "rota": "/curso/laboratorio/percurso-mbb/%2e%2e/%2e%2e/%2e%2e/.git/HEAD",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "sessao": 2,
+      "produtos_iniciais": 5,
+      "saldo_agua_inicial": 20,
+      "versao_schema": 3,
+      "banco_fora_do_checkout": true,
+      "banco_descartado": true,
+      "codigo_saida": 0,
+      "porta_encerrada": true,
+      "requisicoes": []
+    }
+  ],
+  "parametros_invalidos_recusados": 3,
+  "hashes_antes_depois_iguais": true,
+  "hashes": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+    "laboratorio/cantina-evolutiva/app.py": "0c09a2d5d821f74a1e0ba6ce8948c69dc7ef46a811fa0e54a832c7f316975a5b",
+    "laboratorio/cantina-evolutiva/servico.py": "2567d5b9ddb0244e4e580e89c96b0e868812fa9e28e42f7d876354c0cae73c86",
+    "laboratorio/cantina-evolutiva/frontend/app.js": "66b7c580302c843bdb0755bf1d38f9f4609b4285d70ec5ee34019301d5cde749"
+  },
+  "erros": []
+}

@@ -333,11 +333,14 @@
           "titulo": "Prévia em ambiente compatível",
           "situacao": "bloqueada",
           "evidencias": [
-            "docs/reforma/guia-execucao-cantina-mbb.md"
+            "docs/reforma/guia-execucao-cantina-mbb.md",
+            "laboratorio/cantina-evolutiva/previa_local.py",
+            "docs/reforma/evidencia-previa-local-18.json"
           ],
           "depende_de": [
             "PREVIA_COMPATIVEL"
-          ]
+          ],
+          "preparacao": "Iniciador integrado local com banco temporário preparado; acesso real por navegador e publicação compatível ainda não confirmados."
         },
         {
           "id": "5.5",
@@ -376,7 +379,7 @@
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Acesso confirmado com a API própria de navegador: net::ERR_CONNECTION_REFUSED, apesar da API local ter iniciado com base temporária. É bloqueio de acesso entre ambientes. A restrição da skill Sites não se aplica a este projeto GitHub.",
-    "PREVIA_COMPATIVEL": "Nenhuma prévia integrada alcançável pelo navegador foi confirmada. Não foi criado Site, conta de hospedagem ou publicação externa.",
+    "PREVIA_COMPATIVEL": "Iniciador integrado local executado em Linux e verificado por HTTP no checkpoint 18. Acesso pelo navegador ainda não confirmado. Não houve hospedagem externa ou publicação.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
     "AMBIENTE_VISUALG_DEPURADOR": "Depurador pdb executado no checkpoint 17; VisuAlg continua não executado e sem runtime/controle nativo disponível. A subetapa 4.8 exige ambos e permanece aberta."
   },
@@ -386,5 +389,5 @@
     "restantes": 9,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 17
+  "checkpoint_atualizacao": 18
 }

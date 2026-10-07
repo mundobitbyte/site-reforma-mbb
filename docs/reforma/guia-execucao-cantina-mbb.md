@@ -49,7 +49,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro da rodada: [verificacao-checkpoint-16.json](verificacao-checkpoint-16.json).
+Registro mais recente: [verificacao-checkpoint-18.json](verificacao-checkpoint-18.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -65,6 +65,25 @@ python laboratorio/percurso-mbb/git/exemplos/pratica_git.py
 
 Python do ambiente da Cantina é necessário para pytest/TestClient/API. Node é necessário para os clientes e o roteiro HTTP. Git é necessário para a última prática.
 Os testes Python e o comparador usam bancos temporários. O executor HTTP cria/encerra sua própria API temporária; seu cliente não deve ser apontado para banco de trabalho. A prática Git cria somente repositórios temporários, remoto bare local e identidade didática por comando; não acessa GitHub ou grava configuração global.
+
+## Prévia local integrada para os ensaios pendentes
+
+Depois de ativar o ambiente e instalar as dependências, execute na raiz do laboratório:
+
+```bash
+python laboratorio/cantina-evolutiva/previa_local.py
+```
+
+Quando o terminal informar que o servidor iniciou, abra no **mesmo computador**:
+
+- Aplicação: http://127.0.0.1:8001/
+- Percurso: http://127.0.0.1:8001/curso/laboratorio/percurso-mbb/index.html
+
+O iniciador serve os dois materiais e a API juntos. Cria banco fictício temporário novo em cada execução, mantendo os bancos existentes. Recarregar a página preserva os pedidos durante a sessão. **Ctrl+C encerra e descarta esse banco**; antes de encerrar, salve os resultados e capturas. A data do serviço fica em 07/10/2026 para o ensaio de cupom; não é a data corrente nem uma nova regra da aplicação.
+
+Se a porta 8001 estiver ocupada, use `python laboratorio/cantina-evolutiva/previa_local.py --port 8002` e os endereços que o terminal imprimir. Não é necessário alterar configuração do serviço.
+
+Siga o [roteiro de uso real](../../laboratorio/percurso-mbb/qts/roteiro-manual.md). O iniciador não abre navegador automaticamente, não publica o laboratório e não constitui evidência de uso visual. Os comandos foram ensaiados em Linux/Python 3.12; a execução em Windows/macOS ainda não foi verificada.
 
 ## Experimentar o serviço local
 Na raiz:
@@ -105,6 +124,8 @@ As práticas de Banco de Dados usam `python laboratorio_bd.py ...`: consulta é 
 - Checkpoint 14: 26 casos JavaScript aprovados; 17 requisições HTTP e quatro operações OpenAPI conferidas.
 - Checkpoint 15: nove cenários em duas versões (18 observações), oito amostras por fase TDD, 62 comandos Git locais.
 - Checkpoint 16: verificação portátil, contagem detalhada e guia consolidado. Não é nova execução das suítes anteriores.
+- Checkpoint 17: depurador pdb executado e diagnóstico de navegador corrigido.
+- Checkpoint 18: iniciador integrado local ensaiado via HTTP, com duas sessões e descarte dos bancos temporários. [Evidência](evidencia-previa-local-18.json). Navegador permanece não testado.
 
 Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertura percentual não foi medida. Actions permanece desativado; receita QTS é texto inerte. Não houve escrita no site oficial ou publicação nesta rodada.
 
