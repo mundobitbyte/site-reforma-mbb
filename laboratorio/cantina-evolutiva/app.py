@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 
 from servico import Cantina, ErroPedido
 
@@ -23,17 +23,18 @@ class ItemEntrada(BaseModel):
 class PedidoEntrada(BaseModel):
     model_config = ConfigDict(extra='forbid')
     itens: list[ItemEntrada] = Field(min_length=1)
+    cupom: StrictStr | None = None
 
 
-def criar_app(caminho=None):
-    cantina = Cantina(caminho or BASE / 'dados' / 'cantina-evolutiva.sqlite3')
+def criar_app(caminho=None, hoje=None):
+    cantina = Cantina(caminho or BASE / 'dados' / 'cantina-evolutiva.sqlite3', hoje)
 
     @asynccontextmanager
     async def lifespan(_):
         cantina.preparar()
         yield
 
-    app = FastAPI(title='Cantina Horizonte — evolução 1', lifespan=lifespan)
+    app = FastAPI(title='Cantina Horizonte — pedido e cupom', lifespan=lifespan)
     app.state.cantina = cantina
 
     @app.exception_handler(ErroPedido)
@@ -47,8 +48,10 @@ def criar_app(caminho=None):
             mensagem = 'A quantidade deve ser um número inteiro entre 1 e 10.'
         elif any('produto_id' in c for c in campos):
             mensagem = 'Informe um identificador inteiro positivo para o produto.'
+        elif any('cupom' in c for c in campos):
+            mensagem = 'Informe o código do cupom como texto.'
         elif any(e['type'] == 'extra_forbidden' for e in erro.errors()):
-            mensagem = 'Envie somente produtos e quantidades. Cupom não está disponível nesta etapa.'
+            mensagem = 'Envie somente os itens e o cupom opcional.'
         else:
             mensagem = 'Envie um pedido com pelo menos um item válido.'
         return JSONResponse(status_code=422, content={'detail': mensagem})
@@ -63,7 +66,7 @@ def criar_app(caminho=None):
 
     @app.post('/api/pedidos', status_code=201)
     def registrar(entrada: PedidoEntrada):
-        return cantina.registrar([item.model_dump() for item in entrada.itens])
+        return cantina.registrar([item.model_dump() for item in entrada.itens], entrada.cupom)
 
     @app.get('/api/pedidos/{pedido_id}')
     def consultar(pedido_id: int):

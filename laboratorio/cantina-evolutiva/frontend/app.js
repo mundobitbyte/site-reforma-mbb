@@ -9,7 +9,9 @@ function avisar(texto, erro = false) {
 }
 
 async function api(caminho, opcoes) {
-  const resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes);
+  let resposta;
+  try { resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes); }
+  catch { throw new Error('Não foi possível conversar com o servidor.'); }
   const dados = await resposta.json();
   if (!resposta.ok) throw new Error(dados.detail || 'Não foi possível concluir a operação.');
   return dados;
@@ -83,12 +85,13 @@ async function registrarPedido() {
   try {
     const pedido = await api('pedidos', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ itens: estado.carrinho.map(item => ({ produto_id: item.produto.id, quantidade: item.quantidade })) }),
+      body: JSON.stringify({ itens: estado.carrinho.map(item => ({ produto_id: item.produto.id, quantidade: item.quantidade })), cupom: $('#cupom').value.trim() || null }),
     });
     estado.carrinho = [];
+    $('#cupom').value = '';
     renderizarCarrinho();
     $('#pedido-id').value = pedido.id;
-    avisar(`Pedido #${pedido.id} registrado. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
+    avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
     catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
   } catch (erro) {

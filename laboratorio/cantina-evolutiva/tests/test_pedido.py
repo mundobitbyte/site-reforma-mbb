@@ -121,10 +121,10 @@ def test_preco_historico_nao_muda(ambiente):
     assert client.get('/api/pedidos/1').json()['total_centavos'] == 600
 
 
-def test_pedido_inexistente_e_cupom_ainda_indisponivel(ambiente):
+def test_pedido_inexistente_e_campos_desconhecidos(ambiente):
     client, cantina, _ = ambiente
     assert client.get('/api/pedidos/999').status_code == 404
-    response = client.post('/api/pedidos', json={'itens': [{'produto_id': 1, 'quantidade': 1}], 'cupom': 'MBB10'})
+    response = client.post('/api/pedidos', json={'itens': [{'produto_id': 1, 'quantidade': 1}], 'desconto': 100})
     assert response.status_code == 422
-    assert 'Cupom não está disponível' in response.json()['detail']
+    assert 'somente os itens e o cupom opcional' in response.json()['detail']
     assert estado_banco(cantina)[0] == 0
