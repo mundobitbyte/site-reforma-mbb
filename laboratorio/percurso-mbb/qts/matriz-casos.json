@@ -135,5 +135,24 @@
     "funcao": null,
     "situacao": "Não executado: Actions desativado",
     "limite": "A receita local não é pipeline remoto"
+  },
+  {
+    "id": "CT-SQL-UTF8",
+    "requisitos": "RF-09",
+    "arquivo": null,
+    "funcao": null,
+    "situacao": "Checkpoint 26: duas regressões; suíte completa reexecutada no 28",
+    "limite": "Padrão cp1252 simulado: base nova e migração v2 chegam a Entregue, com histórico, valores e estoque preservados. Não repara automaticamente uma base antiga corrompida.",
+    "evidencia": "docs/reforma/evidencia-sql-utf8-26.json",
+    "fonte": "laboratorio/cantina-evolutiva/tests/test_sql_utf8.py"
+  },
+  {
+    "id": "CT-NARRADOR",
+    "requisitos": "RQ-01/RQ-02",
+    "arquivo": null,
+    "funcao": null,
+    "situacao": "Checkpoint 27: confirmações com Narrador Windows",
+    "limite": "Nomes de controles e anúncios confirmados pelo professor; sem áudio, sem transcrição individual de foco/transições e sem avaliação de compreensão com participante.",
+    "evidencia": "docs/reforma/evidencia-narrador-windows-27.json"
   }
 ]

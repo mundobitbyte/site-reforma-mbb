@@ -19,3 +19,11 @@ Preencha versões das ferramentas e referência da evidência ao reproduzir.
 O checkpoint 21 concluiu pedido, cupom e estados em Chromium real integrado à API/serviço/SQLite temporário; confirmou 360/320 px, teclado e foco. [Evidência](../../../docs/reforma/evidencia-interface-21.json). Leitor de tela real, prévia direta compatível e compreensão com participante permanecem pendentes.
 
 No checkpoint 22, o professor adiou novos ensaios. A revisão editorial e a [orientação da entrega parcial](../../../docs/reforma/entrega-parcial.md) foram preparadas sem reexecutar as suítes ou declarar validação humana. Total 25/31; seis pendentes. Retomar os ensaios quando houver disponibilidade.
+
+## Atualização vigente — checkpoint 30
+
+Prévia direta no Windows concluída no 25; leitura UTF-8 corrigida e verificada em duas regressões no 26; Narrador confirmado no 27. No 28, a suíte Python completa passou com 89 testes e o retorno curricular foi conferido em 12 observações HTTP. No 29, o parecer foi consolidado. Os números das rodadas conservam seus escopos.
+
+Nesta atualização, a matriz liga a regressão UTF-8 a RF-09 e os relatos do Narrador a RQ-01/RQ-02. QTS02 usa a falha real para distinguir observação, hipótese, reprodução e regressão; QTS14/exercícios/matriz foram alinhados. O roteiro identifica zoom do percurso como 4.9 e orienta usar somente R07/R08 na retomada atual. Não houve novos ensaios funcionais.
+
+**27/31 concluídas; quatro abertas: 4.8, 4.9, 5.5, 5.6.** Preparação atual: 5.6. [Parecer e limites](../../../docs/reforma/parecer-final-minuta.md). Participante ainda não observado; VisuAlg adiado; nenhuma autorização pendente.

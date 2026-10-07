@@ -120,3 +120,6 @@ O professor está apenas no celular e relatou que a navegação orientada parece
 
 ## Consolidação no checkpoint 29
 A minuta reúne os resultados 25–28, identifica a versão Linux testada e a ausência de commit confirmado no Windows. O parecer QTS foi atualizado de sua situação histórica para 27/31. Guia, entrega e painel foram alinhados; a decisão final da 5.6 continua pendente. Não houve novo ensaio funcional ou humano. Total mantido: **27/31**, quatro abertas. [Registro](checkpoint-29-consolidacao-do-parecer.md).
+
+## Evidências no percurso — checkpoint 30
+A matriz QTS incorpora CT-SQL-UTF8 e CT-NARRADOR, ligados aos requisitos e aos registros existentes. A falha Windows virou exemplo de observação, investigação e regressão em QTS02; QTS14/exercícios/matriz foram alinhados à compreensão ainda pendente. O roteiro separa a nova sessão com participante dos ensaios técnicos encerrados. Nenhum novo teste funcional; **27/31**, quatro abertas, preparação 5.6. [Registro](checkpoint-30-evidencias-no-percurso.md).

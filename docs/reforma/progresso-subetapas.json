@@ -371,7 +371,8 @@
             "docs/reforma/parecer-final-minuta.md",
             "docs/reforma/registro-retomada.md",
             "docs/reforma/checkpoint-24-preparacao-do-parecer.md",
-            "docs/reforma/checkpoint-29-consolidacao-do-parecer.md"
+            "docs/reforma/checkpoint-29-consolidacao-do-parecer.md",
+            "docs/reforma/checkpoint-30-evidencias-no-percurso.md"
           ],
           "depende_de": [
             "1.6",
@@ -383,7 +384,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes."
         }
       ]
     }
@@ -402,6 +403,6 @@
     "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 29,
-  "orientacao_atual": "Checkpoint 29: parecer consolidado com resultados e versões dos registros 25–28; parecer QTS atualizado. Preparação da 5.6 avançou, sem encerrar a entrega. 27/31; próximos ensaios: zoom/cópia e compreensão com participante; VisuAlg continua adiado."
+  "checkpoint_atualizacao": 30,
+  "orientacao_atual": "Checkpoint 30: evidências UTF-8/Narrador ligadas à matriz QTS; falha real aproveitada como exemplo de investigação/regressão; QTS14 e roteiro sincronizados. Preparação 5.6; 27/31, quatro abertas. Próximos ensaios R07/R08 quando disponíveis; VisuAlg adiado."
 }

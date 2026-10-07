@@ -2,7 +2,7 @@
 
 Necessidade: conferir se uma pessoa consegue registrar, reencontrar e acompanhar o mesmo pedido, entender a recusa do cupom e estudar o percurso. Os resultados da sessão humana abaixo são **esperados**, ainda sem observação com participante.
 
-## Ponto de retomada — checkpoint 21
+## Evidências anteriores e ponto de retomada
 
 Pedido (1.6), cupom (2.5) e estados (3.5) já foram concluídos no Chromium real, integrado ao FastAPI/serviço/SQLite temporário. A rodada registrou 38/38 casos de acessibilidade e 25/25 de integração; 360/320 px, teclado, foco, DOM e árvore de acessibilidade foram conferidos. [Evidência](../../../docs/reforma/evidencia-interface-21.json).
 
@@ -19,7 +19,9 @@ Para retomar a avaliação restante, use primeiro a [ficha curta](../../../docs/
 
 Recarregar a página mantém os dados desta sessão. Encerrar o terminal descarta o banco; salve evidências antes de Ctrl+C. Para repetir com estoque e cupom iniciais, encerre e inicie outra sessão. Não use o banco de trabalho.
 
-## Aplicação — seguir esta ordem, sem reiniciar entre os casos
+## Roteiro completo de referência — para uma nova sessão com participante
+
+Os ensaios técnicos e de Narrador encerrados permanecem válidos. Para a retomada atual, faltam R07/R08 da ficha curta; não execute U01–U09 apenas para repetir o que já foi comprovado. Se optar por uma nova sessão completa com participante, a sequência abaixo usa uma base nova e os resultados continuam por observar.
 
 | Caso / subetapa | Ação | Resultado esperado | Obtido / evidência |
 |---|---|---|---|
@@ -44,7 +46,7 @@ Recarregar a página mantém os dados desta sessão. Encerrar o terminal descart
 | Atalho / 5.3 | Usar Tab no início e ativar Ir para o conteúdo; conferir foco no conteúdo e sua indicação | Não executado |
 | Correção e remoção / 5.3 | Recusar uma quantidade e observar foco no campo; remover item e conferir foco no botão restante ou cupom, além da mensagem | Não executado |
 | Requisições e foco / 5.3 | Registrar/consultar pelo teclado e conferir foco no resultado; avançar estado e verificar botão seguinte ou resultado final. Durante espera, escolher outro campo e conferir que ele conserva o foco. Atualizar produtos enquanto uma quantidade está em edição e conferir foco/valor | Não executado |
-| Zoom / 5.3 | Ampliar a 200%; conferir acesso a todo texto e controles | Não executado |
+| Zoom do percurso / 4.9 | Ampliar o percurso a 200%; conferir acesso a texto e controles; restaurar 100% depois | Não executado |
 | Navegação / 4.9 | Abrir o percurso e acompanhar o mesmo pedido em Análise, BD, Programação, Web/API, QTS e Git; conferir links, menu, código copiado e retorno | Não executado |
 | Compreensão / 4.9 e 5.5 | Pedir ao participante que explique como requisito, tabelas, função e teste tratam o mesmo pedido; anotar dúvidas antes de orientar | Não executado |
 
