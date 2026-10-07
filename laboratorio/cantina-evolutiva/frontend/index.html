@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cantina Horizonte — laboratório</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div><p class="eyebrow">Escola Horizonte • laboratório</p><h1>Cantina Horizonte</h1>
+      <p>Monte um pedido e consulte o registro salvo.</p></div>
+    <span class="versao">Evolução 1</span>
+  </header>
+  <main class="layout">
+    <section aria-labelledby="cardapio-titulo">
+      <div class="section-heading"><div><h2 id="cardapio-titulo">Produtos disponíveis</h2>
+        <p class="hint">Quantidade total por produto: de 1 a 10, respeitando o estoque.</p></div>
+        <button id="recarregar" class="ghost">Atualizar estoque</button></div>
+      <div id="produtos" class="produtos" aria-live="polite"></div>
+      <section class="consulta" aria-labelledby="consulta-titulo">
+        <h2 id="consulta-titulo">Consultar pedido</h2>
+        <form id="form-consulta"><label for="pedido-id">Número do pedido</label>
+          <input id="pedido-id" type="number" min="1" step="1" required>
+          <button class="secondary" type="submit">Consultar</button></form>
+        <p id="consulta-resultado" aria-live="polite"></p>
+      </section>
+    </section>
+    <aside class="carrinho" aria-labelledby="carrinho-titulo">
+      <h2 id="carrinho-titulo">Seu pedido</h2>
+      <div id="itensCarrinho" class="itens-vazios">Nenhum item adicionado.</div>
+      <dl class="totais"><div class="total"><dt>Total previsto</dt><dd id="total">R$ 0,00</dd></div></dl>
+      <p class="hint">O servidor confirma preços e estoque ao registrar. Cupom e atualização de status entram nas próximas etapas.</p>
+      <button id="finalizar" class="primary">Registrar pedido</button>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </aside>
+  </main>
+  <template id="produtoTemplate">
+    <article class="produto-card"><div class="produto-topo"><div><h3 class="nome"></h3><p class="estoque"></p></div><strong class="preco"></strong></div>
+      <label>Quantidade <input class="quantidade" type="number" min="1" max="10" step="1" value="1"></label>
+      <button class="adicionar primary">Adicionar</button>
+    </article>
+  </template>
+</body>
+</html>
