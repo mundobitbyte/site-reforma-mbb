@@ -256,13 +256,27 @@
         },
         {
           "id": "4.8",
-          "titulo": "Ensaios ainda não executados: VisuAlg e depurador interativo",
+          "titulo": "Ensaios VisuAlg e depurador interativo",
           "situacao": "pendente",
           "evidencias": [
-            "laboratorio/percurso-mbb/programacao/ponte-visualg.html"
+            "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+            "docs/reforma/evidencia-depurador-17.json",
+            "laboratorio/percurso-mbb/programacao/depuracao.html"
           ],
           "depende_de": [
             "AMBIENTE_VISUALG_DEPURADOR"
+          ],
+          "ensaios": [
+            {
+              "nome": "Depurador Python pdb",
+              "situacao": "concluida",
+              "evidencia": "docs/reforma/evidencia-depurador-17.json"
+            },
+            {
+              "nome": "VisuAlg",
+              "situacao": "bloqueada",
+              "motivo": "VisuAlg e Wine não instalados; controle de aplicativos nativos indisponível neste ambiente."
+            }
           ]
         },
         {
@@ -361,15 +375,16 @@
   "posicao_atual": "5.3",
   "autorizacao_pendente": false,
   "bloqueios": {
-    "NAVEGADOR": "Sem caminho supervisionado confirmado: prévia anterior sem dev script/configuração static compatível; conexão direta recusada; skill control-browser indisponível. Não repetir tentativa idêntica nem improvisar caminho vedado pelo guia já lido.",
-    "PREVIA_COMPATIVEL": "Não foi confirmada prévia que execute o serviço Python integrado. HTML estático sozinho não serve a API.",
+    "NAVEGADOR": "Acesso confirmado com a API própria de navegador: net::ERR_CONNECTION_REFUSED, apesar da API local ter iniciado com base temporária. É bloqueio de acesso entre ambientes. A restrição da skill Sites não se aplica a este projeto GitHub.",
+    "PREVIA_COMPATIVEL": "Nenhuma prévia integrada alcançável pelo navegador foi confirmada. Não foi criado Site, conta de hospedagem ou publicação externa.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "VisuAlg e depurador interativo constam como não executados; não são substituídos pela revisão do texto ou pelos exemplos Python."
+    "AMBIENTE_VISUALG_DEPURADOR": "Depurador pdb executado no checkpoint 17; VisuAlg continua não executado e sem runtime/controle nativo disponível. A subetapa 4.8 exige ambos e permanece aberta."
   },
   "resumo": {
     "total_subetapas": 31,
     "concluidas": 22,
     "restantes": 9,
     "total_etapas_ensino": 81
-  }
+  },
+  "checkpoint_atualizacao": 17
 }

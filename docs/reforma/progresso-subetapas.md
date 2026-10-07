@@ -56,7 +56,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 4.5 | QTS — 17 pontes | Concluída |
 | 4.6 | Git — 10 etapas | Concluída |
 | 4.7 | Estrutura, links e código exibido conferidos | Concluída |
-| 4.8 | Ensaios ainda não executados: VisuAlg e depurador interativo | Pendente |
+| 4.8 | Ensaios VisuAlg e depurador interativo | Parcial: pdb concluído; VisuAlg pendente |
 | 4.9 | Revisão visual e pedagógica do percurso em uso | Bloqueada |
 
 ### 5. Entrega
@@ -75,9 +75,12 @@ O conteúdo central tem 81 etapas de ensino: Análise 15; Banco de Dados 11; Pro
 Interface criada não significa interface testada em navegador. Conferir estrutura não significa avaliar uso com pessoas. A contagem das cinco macroetapas continuava igual porque cada uma ainda tinha critério de conclusão pendente.
 
 ## Bloqueios e próximos ensaios
-- Navegador supervisionado ainda sem caminho confirmado: prévia anterior sem configuração compatível, conexão direta recusada e skill control-browser indisponível. O guia já lido impede improvisar caminho alternativo quando essa skill não existe.
+- Acesso atual de navegador recusado entre ambientes (`net::ERR_CONNECTION_REFUSED`) após iniciar API local isolada. A restrição do guia Sites foi citada fora do seu contexto; ela não se aplica a este projeto GitHub.
 - Prévia compatível com a API Python não confirmada. Publicar só HTML não executa o serviço.
-- VisuAlg, depurador interativo e compreensão com participante ainda não executados.
+- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg e compreensão com participante continuam não executados. VisuAlg/Wine não estão instalados e não há controle de app nativo neste ambiente.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
 Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização. A contagem detalhada será usada nas próximas falas; cada avanço deve ter evidência.
+
+## Avanço no checkpoint 17
+A subetapa 4.8 tem dois ensaios: o depurador foi concluído e o VisuAlg continua pendente. A contagem permanece 22/31, sem reduzir o critério ou alterar o denominador. [Evidência do depurador](evidencia-depurador-17.json) · [Diagnóstico de acesso](diagnostico-acesso-17.json).

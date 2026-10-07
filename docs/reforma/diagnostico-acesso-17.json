@@ -1,0 +1,16 @@
+{
+  "data_local": "2026-10-07",
+  "tipo_projeto": "Projeto GitHub; não é Site",
+  "metodo": "Navegação com a API de navegador autorizada",
+  "api_local_iniciada": true,
+  "banco_temporario_separado": true,
+  "publicacao_externa": false,
+  "erro_navegador": "net::ERR_CONNECTION_REFUSED",
+  "interface_testada": false,
+  "nova_tentativa_cega": false,
+  "servidor_de_ensaio_encerrado": true,
+  "correcao_do_diagnostico": "A restrição control-browser da skill sites-preview-troubleshooting aplica-se somente à recuperação de prévia Sites. Não é a causa deste bloqueio. A causa confirmada nesta tentativa é acesso de rede recusado entre ambientes.",
+  "visualg_instalado": false,
+  "wine_instalado": false,
+  "controle_de_apps_nativos_disponivel": false
+}

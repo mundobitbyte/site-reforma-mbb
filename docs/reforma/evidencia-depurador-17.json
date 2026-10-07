@@ -1,0 +1,24 @@
+{
+  "data_local": "2026-10-07",
+  "arquivo": "laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py",
+  "metodo": "Sessão interativa de pdb em terminal PTY, conduzida pelo agente",
+  "funcao": "subtotal_item",
+  "linha_breakpoint": 10,
+  "retornos_observados": [
+    600,
+    1600
+  ],
+  "acumulador_observado": [
+    0,
+    600,
+    600,
+    2200
+  ],
+  "subtotal_final_centavos": 2200,
+  "processo_encerrado": true,
+  "arquivo_modificado": false,
+  "banco_utilizado": false,
+  "visualg_executado": false,
+  "participante_humano_avaliado": false,
+  "transcricao": "Breakpoint 1 at laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py:10\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(1)<module>()\n-> def subtotal_item(preco_centavos, quantidade):\n(Pdb) continue\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(10)<module>()\n-> total = total + subtotal_item(item[\"preco_centavos\"], item[\"quantidade\"])\n(Pdb) p total\n0\n(Pdb) p item\n{'preco_centavos': 300, 'quantidade': 2}\n(Pdb) step\n--Call--\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(1)subtotal_item()\n-> def subtotal_item(preco_centavos, quantidade):\n(Pdb) args\npreco_centavos = 300\nquantidade = 2\n(Pdb) return\n--Return--\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(2)subtotal_item()->600\n-> return preco_centavos * quantidade\n(Pdb) next\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(6)<module>()\n-> for item in [\n(Pdb) p total\n600\n(Pdb) continue\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(10)<module>()\n-> total = total + subtotal_item(item[\"preco_centavos\"], item[\"quantidade\"])\n(Pdb) p total\n600\n(Pdb) p item\n{'preco_centavos': 800, 'quantidade': 2}\n(Pdb) step\n--Call--\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(1)subtotal_item()\n-> def subtotal_item(preco_centavos, quantidade):\n(Pdb) args\npreco_centavos = 800\nquantidade = 2\n(Pdb) return\n--Return--\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(2)subtotal_item()->1600\n-> return preco_centavos * quantidade\n(Pdb) next\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(6)<module>()\n-> for item in [\n(Pdb) p total\n2200\n(Pdb) continue\nSubtotal em centavos: 2200\nThe program finished and will be restarted\n> laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py(1)<module>()\n-> def subtotal_item(preco_centavos, quantidade):\n(Pdb) quit\n"
+}

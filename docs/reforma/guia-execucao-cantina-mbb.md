@@ -110,9 +110,17 @@ Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertur
 
 ## O que impede encerrar a entrega
 Subetapas ainda abertas: 1.6, 2.5, 3.5, 4.8, 4.9, 5.3, 5.4, 5.5, 5.6.
-Navegador, 360 px, teclado/foco, revisão visual, participante, VisuAlg e depurador interativo permanecem sem execução. A prévia integrada precisa hospedar o serviço Python; HTML estático sozinho não atende esse critério.
-O guia de prévia anteriormente lido determina: “If that skill is unavailable, do not improvise another browser-control path.” A skill referida é control-browser, indisponível. Nenhuma tentativa idêntica foi repetida nem caminho alternativo improvisado.
-
-Fonte da restrição: `skill://sites@openai-curated-remote/root/.codex/plugins/cache/openai-curated-remote/sites/0.1.75/skills/sites-preview-troubleshooting/SKILL.md`.
+Navegador, 360 px, teclado/foco, revisão visual, participante e VisuAlg permanecem sem execução. O depurador pdb foi executado no checkpoint 17; a subetapa 4.8 continua aberta por exigir também VisuAlg. A prévia integrada precisa hospedar o serviço Python; HTML estático sozinho não atende esse critério.
+Correção do diagnóstico no checkpoint 17: a skill sites-preview-troubleshooting se limita à prévia de projetos Sites. Sua restrição não rege este projeto GitHub. O acesso pela API de navegador foi testado no contexto correto com servidor e base temporários; o navegador reportou `net::ERR_CONNECTION_REFUSED`. O servidor foi encerrado depois do ensaio. Não houve publicação externa. Veja [o registro de acesso](diagnostico-acesso-17.json).
 
 Parecer atual: execução/conteúdo documentados para o laboratório; entrega completa e produto final ainda não liberados. Não existe aprovação pendente para as tarefas já autorizadas.
+
+## Depuração adicional — ensaio concluído
+
+[Prática de pdb](../../laboratorio/percurso-mbb/programacao/depuracao.html) acompanha o exemplo de funções existente, sem alterar suas regras. Da raiz do laboratório:
+
+```bash
+python -m pdb -c "break 10" laboratorio/percurso-mbb/programacao/exemplos/07_funcoes.py
+```
+
+Use continue, p total, p item, step, args, return e next para inspecionar cada chamada. A sessão observou retornos 600/1600 e total 2200; quit encerrou o depurador. Isso não é teste do VisuAlg nem sessão com aluno. [Transcrição e valores](evidencia-depurador-17.json).

@@ -1,0 +1,33 @@
+{
+  "etapas_qts": 17,
+  "etapas_git": 10,
+  "git_acervo": 57,
+  "testes_python_reexecutados": false,
+  "github_simulado": false,
+  "paginas_html": 108,
+  "paginas_programacao": 19,
+  "paginas_web_curriculares": 17,
+  "paginas_web_recortes": 4,
+  "etapas_web": 13,
+  "web_acervo": 23,
+  "api_acervo": 45,
+  "referencias_locais": 3393,
+  "botoes_copiar": 104,
+  "codigo_canonico": 48,
+  "etapas_programacao": 15,
+  "temas_python_mapeados": 40,
+  "erros": [],
+  "browser_tested": false,
+  "visualg_executado": false,
+  "hashes_protegidos": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352"
+  },
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 22,
+    "restantes": 9,
+    "total_etapas_ensino": 81
+  },
+  "posicao_atual": "5.3"
+}
