@@ -8,12 +8,13 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="topo">
     <div><p class="eyebrow">Escola Horizonte • laboratório</p><h1>Cantina Horizonte</h1>
       <p>Monte um pedido e acompanhe sua preparação.</p></div>
     <span class="versao">Evolução 3</span>
   </header>
-  <main class="layout">
+  <main class="layout" id="conteudo" tabindex="-1">
     <section aria-labelledby="cardapio-titulo">
       <div class="section-heading"><div><h2 id="cardapio-titulo">Produtos disponíveis</h2>
         <p class="hint">Quantidade total por produto: de 1 a 10, respeitando o estoque.</p></div>
@@ -24,7 +25,7 @@
         <form id="form-consulta"><label for="pedido-id">Número do pedido</label>
           <input id="pedido-id" type="number" min="1" step="1" required>
           <button id="consultar" class="secondary" type="submit">Consultar</button></form>
-        <p id="consulta-resultado" aria-live="polite"></p>
+        <p id="consulta-resultado" role="status" aria-live="polite" aria-atomic="true"></p>
         <div id="acompanhamento" hidden>
           <button id="avancar" class="secondary" type="button">Avançar pedido</button>
           <p class="hint">Cada ação avança uma etapa. Entregue encerra a sequência.</p>
@@ -40,7 +41,7 @@
       <label for="cupom">Cupom opcional</label><input id="cupom" type="text" placeholder="Ex.: MBB10" autocomplete="off">
       <p class="hint">O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório.</p>
       <button id="finalizar" class="primary">Registrar pedido</button>
-      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
     </aside>
   </main>
   <template id="produtoTemplate">

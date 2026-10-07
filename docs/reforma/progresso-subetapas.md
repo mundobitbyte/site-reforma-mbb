@@ -56,7 +56,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 4.5 | QTS — 17 pontes | Concluída |
 | 4.6 | Git — 10 etapas | Concluída |
 | 4.7 | Estrutura, links e código exibido conferidos | Concluída |
-| 4.8 | Ensaios VisuAlg e depurador interativo | Parcial: pdb concluído; VisuAlg pendente |
+| 4.8 | Ensaios VisuAlg e depurador interativo | Parcial: pdb concluído; VisuAlg será testado depois pelo professor |
 | 4.9 | Revisão visual e pedagógica do percurso em uso | Bloqueada |
 
 ### 5. Entrega
@@ -77,7 +77,7 @@ Interface criada não significa interface testada em navegador. Conferir estrutu
 ## Bloqueios e próximos ensaios
 - Acesso atual de navegador recusado entre ambientes (`net::ERR_CONNECTION_REFUSED`) após iniciar API local isolada. A restrição do guia Sites foi citada fora do seu contexto; ela não se aplica a este projeto GitHub.
 - Prévia compatível com a API Python não confirmada. Publicar só HTML não executa o serviço.
-- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg e compreensão com participante continuam não executados. VisuAlg/Wine não estão instalados e não há controle de app nativo neste ambiente.
+- Depurador pdb executado: argumentos e retornos inspecionados, total 2200 centavos. VisuAlg ficará para teste posterior do Professor Ronaldo, conforme sua instrução; não bloqueia os demais trabalhos. A compreensão com participante continua não executada.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
 Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização. A contagem detalhada será usada nas próximas falas; cada avanço deve ter evidência.
@@ -87,3 +87,6 @@ A subetapa 4.8 tem dois ensaios: o depurador foi concluído e o VisuAlg continua
 
 ## Preparação no checkpoint 18
 A subetapa 5.4 tem iniciador local integrado e roteiro para executar as validações pendentes com banco temporário. O ensaio HTTP do iniciador está registrado em [evidencia-previa-local-18.json](evidencia-previa-local-18.json). O navegador continua sem resultado; a 5.4 permanece aberta, e a contagem segue 22/31.
+
+## Avanço no checkpoint 19
+O professor assumiu o teste posterior do VisuAlg. A preparação da 5.3 avançou com nomes de produto nos controles, atalho para conteúdo e manejo de foco ao corrigir quantidade ou remover item. Seis casos de lógica passaram em Node, com elementos substitutos de teste; isso não prova o comportamento em navegador/leitor de tela. [Evidência](evidencia-interface-19.json). O total permanece 22/31 e os critérios não foram reduzidos.

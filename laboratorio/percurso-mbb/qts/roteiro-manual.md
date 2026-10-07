@@ -32,6 +32,9 @@ Recarregar a página mantém os dados desta sessão. Encerrar o terminal descart
 | 360 px / 5.3 | Ajustar a largura da área da página a 360 px; conferir texto, botões, campos, tabelas e rolagem da página | Não executado |
 | Teclado e foco / 5.3 | Usar Tab, Shift+Tab e Enter; conferir ordem lógica, foco visível e ausência de bloqueio; observar foco após cada ação/recusa | Não executado |
 | Leitura / 5.3 | Com leitor de tela disponível, conferir nomes dos campos/botões e anúncio dos resultados; registrar ferramenta. Sem leitor, marcar não executado | Não executado |
+| Identificação / 5.3 | Com leitor de tela, verificar Quantidade de Água/Suco e Adicionar Água/Suco ao pedido, sem confundir os produtos | Não executado |
+| Atalho / 5.3 | Usar Tab no início e ativar Ir para o conteúdo; conferir foco no conteúdo e sua indicação | Não executado |
+| Correção e remoção / 5.3 | Recusar uma quantidade e observar foco no campo; remover item e conferir foco no botão restante ou cupom, além da mensagem | Não executado |
 | Zoom / 5.3 | Ampliar a 200%; conferir acesso a todo texto e controles | Não executado |
 | Navegação / 4.9 | Abrir o percurso e acompanhar o mesmo pedido em Análise, BD, Programação, Web/API, QTS e Git; conferir links, menu, código copiado e retorno | Não executado |
 | Compreensão / 4.9 e 5.5 | Pedir ao participante que explique como requisito, tabelas, função e teste tratam o mesmo pedido; anotar dúvidas antes de orientar | Não executado |
@@ -40,6 +43,6 @@ O terminal responder a HTTP não comprova nenhum desses resultados. Um caso com 
 
 ## Critério de encerramento
 
-Salvar a tabela preenchida com commit e ambiente; registrar falhas e correções necessárias. Depois encerrar a prévia. Não aprovar 5.6 enquanto os critérios pendentes de navegador, VisuAlg e uso com participante permanecerem sem evidência.
+Salvar a tabela preenchida com commit e ambiente; registrar falhas e correções necessárias. Depois encerrar a prévia. VisuAlg será testado depois pelo Professor Ronaldo; não bloqueia os demais ensaios. Registrar seu resultado na 4.8 quando ocorrer. O parecer final deve identificar qualquer ensaio que permaneça pendente; não declarar verificação completa sem evidência.
 
 Situação atual: iniciador local preparado e ensaiado via HTTP; uso em navegador, leitor de tela e participação humana continuam não executados.

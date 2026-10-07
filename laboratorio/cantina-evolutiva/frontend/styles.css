@@ -6,6 +6,8 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
+.skip-link { position: absolute; top: .5rem; left: 1rem; z-index: 10; transform: translateY(-200%); padding: .7rem 1rem; border-radius: 8px; color: white; background: #172033; }
+.skip-link:focus { transform: translateY(0); }
 button, input { font: inherit; }
 .topo {
   display: flex; justify-content: space-between; gap: 1rem; align-items: center;
@@ -60,7 +62,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .consulta { margin-top: 2rem; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
 button:disabled { opacity: .6; cursor: wait; }
-button:focus-visible, input:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho > div { min-width: 0; overflow-wrap: anywhere; }
 #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }

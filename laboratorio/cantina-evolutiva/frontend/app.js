@@ -29,6 +29,8 @@ async function carregarProdutos() {
     node.querySelector('.preco').textContent = moeda(produto.preco_centavos);
     const input = node.querySelector('.quantidade');
     const botao = node.querySelector('.adicionar');
+    input.setAttribute('aria-label', `Quantidade de ${produto.nome}`);
+    botao.setAttribute('aria-label', `Adicionar ${produto.nome} ao pedido`);
     botao.disabled = produto.estoque === 0;
     botao.addEventListener('click', () => {
       if (estado.enviando) return;
@@ -37,10 +39,12 @@ async function carregarProdutos() {
       const total = quantidade + (existente?.quantidade || 0);
       if (!Number.isInteger(quantidade) || quantidade < 1 || total > 10) {
         avisar('A quantidade total de cada produto deve ser inteira entre 1 e 10.', true);
+        input.focus();
         return;
       }
       if (total > produto.estoque) {
         avisar(`Estoque insuficiente para ${produto.nome}.`, true);
+        input.focus();
         return;
       }
       if (existente) existente.quantidade = total;
@@ -70,6 +74,9 @@ function renderizarCarrinho() {
       if (estado.enviando) return;
       estado.carrinho = estado.carrinho.filter(atual => atual !== item);
       renderizarCarrinho();
+      const destino = area.querySelector('.remover') || $('#cupom');
+      destino.focus();
+      avisar(`Produto removido do pedido: ${item.produto.nome}.`);
     });
     row.append(detalhe, remover);
     area.appendChild(row);

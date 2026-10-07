@@ -261,7 +261,8 @@
           "evidencias": [
             "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
             "docs/reforma/evidencia-depurador-17.json",
-            "laboratorio/percurso-mbb/programacao/depuracao.html"
+            "laboratorio/percurso-mbb/programacao/depuracao.html",
+            "docs/reforma/checkpoint-19-acessibilidade.md"
           ],
           "depende_de": [
             "AMBIENTE_VISUALG_DEPURADOR"
@@ -274,10 +275,12 @@
             },
             {
               "nome": "VisuAlg",
-              "situacao": "bloqueada",
-              "motivo": "VisuAlg e Wine não instalados; controle de aplicativos nativos indisponível neste ambiente."
+              "situacao": "pendente",
+              "responsavel": "Professor Ronaldo",
+              "agendamento": "Teste posterior pelo professor, conforme instrução de 07/10/2026. Não bloqueia os demais trabalhos."
             }
-          ]
+          ],
+          "adiada_pelo_usuario": true
         },
         {
           "id": "4.9",
@@ -322,11 +325,14 @@
           "titulo": "Acessibilidade real: 360 px, teclado, foco e leitura",
           "situacao": "bloqueada",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/evidencia-interface-19.json",
+            "laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs"
           ],
           "depende_de": [
             "NAVEGADOR"
-          ]
+          ],
+          "preparacao": "Nomes acessíveis de produtos, atalho de conteúdo e destino de foco em correção/remoção implementados; seis casos de lógica passaram. Navegador e leitor de tela ainda não testados."
         },
         {
           "id": "5.4",
@@ -381,7 +387,7 @@
     "NAVEGADOR": "Acesso confirmado com a API própria de navegador: net::ERR_CONNECTION_REFUSED, apesar da API local ter iniciado com base temporária. É bloqueio de acesso entre ambientes. A restrição da skill Sites não se aplica a este projeto GitHub.",
     "PREVIA_COMPATIVEL": "Iniciador integrado local executado em Linux e verificado por HTTP no checkpoint 18. Acesso pelo navegador ainda não confirmado. Não houve hospedagem externa ou publicação.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "Depurador pdb executado no checkpoint 17; VisuAlg continua não executado e sem runtime/controle nativo disponível. A subetapa 4.8 exige ambos e permanece aberta."
+    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução."
   },
   "resumo": {
     "total_subetapas": 31,
@@ -389,5 +395,5 @@
     "restantes": 9,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 18
+  "checkpoint_atualizacao": 19
 }

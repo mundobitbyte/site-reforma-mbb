@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Código integrado preservado | Cantina Horizonte — MbB</title><link rel="stylesheet" href="../../../css/analise-sistemas.css"><link rel="stylesheet" href="../percurso.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="course-header"><div class="header-left"><a class="portal-link" href="../index.html">← Percurso MbB</a><span class="course-title">Web/API</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" type="button" aria-controls="courseNav" aria-expanded="false">☰ Etapas</button></div></header><div class="course-shell"><nav class="course-nav" id="courseNav" aria-label="Etapas de Web/API"><div class="nav-project"><strong>Cantina Horizonte</strong><span>A tela pede; o servidor confirma.</span></div><a class="stage-link " href="00-fronteiras.html"><span class="stage-number">0</span><span>Do pedido à conversa entre programas</span></a><a class="stage-link " href="01-html.html"><span class="stage-number">1</span><span>Estruturar antes de estilizar</span></a><a class="stage-link " href="02-formulario.html"><span class="stage-number">2</span><span>Campos que uma pessoa consegue identificar</span></a><a class="stage-link " href="03-css.html"><span class="stage-number">3</span><span>Apresentação, caixa e adaptação ao espaço</span></a><a class="stage-link " href="04-eventos.html"><span class="stage-number">4</span><span>O evento transforma entrada em previsão</span></a><a class="stage-link " href="05-colecoes.html"><span class="stage-number">5</span><span>O carrinho representa vários itens</span></a><a class="stage-link " href="06-http.html"><span class="stage-number">6</span><span>Um contrato para perguntar e pedir alteração</span></a><a class="stage-link " href="07-fetch.html"><span class="stage-number">7</span><span>Consultar sem confundir erro HTTP e erro de rede</span></a><a class="stage-link " href="08-registro.html"><span class="stage-number">8</span><span>Registrar uma vez e ler o que foi confirmado</span></a><a class="stage-link " href="09-estados.html"><span class="stage-number">9</span><span>Consultar antes de avançar</span></a><a class="stage-link " href="10-servidor.html"><span class="stage-number">10</span><span>Validar na fronteira e operar no serviço</span></a><a class="stage-link " href="11-evidencias.html"><span class="stage-number">11</span><span>Testar cada camada e declarar seu limite</span></a><a class="stage-link " href="12-integracao.html"><span class="stage-number">12</span><span>Ler a aplicação integrada e defender o pedido</span></a><a class="stage-link" href="contrato.html">Contrato HTTP</a><a class="stage-link" href="codigo-integrado.html">Código integrado preservado</a><a class="stage-link" href="99-exercicios.html">99 · Exercícios encadeados</a><a class="stage-link" href="caderno-web-api.md">Caderno de evidências</a><a class="stage-link" href="../analise/dossie-cantina.html">Dossiê do sistema</a></nav><main class="course-main" id="conteudo"><div class="content-wrap"><section class="hero"><span class="kicker">Cantina Horizonte · laboratório</span><h1>Código integrado preservado</h1><p>A mesma interface, API, serviço e banco.</p></section><article class="chapter"><section><h2>Agora localize cada responsabilidade no conjunto</h2><p>Os blocos abaixo reproduzem os arquivos existentes do laboratório. Não houve reescrita da interface/API nesta fatia. Para executar, use o <a href="../../cantina-evolutiva/README.md">README e seu ambiente</a>; não mova esses arquivos para os recortes estáticos.</p><p>O app.js usa estado do carrinho, template, find/map/filter/reduce, função assíncrona, optional chaining e controles de envio/consulta. O acervo aprofunda a sintaxe. A leitura do código completo vem depois das pontes; ela não substitui verificação no navegador.</p></section><details><summary>frontend/index.html — código completo</summary><h3>frontend/index.html</h3><button class="copy-button" type="button" data-copy="integrado-0">Copiar código</button><pre id="integrado-0"><code>&lt;!doctype html&gt;
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Código integrado preservado | Cantina Horizonte — MbB</title><link rel="stylesheet" href="../../../css/analise-sistemas.css"><link rel="stylesheet" href="../percurso.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="course-header"><div class="header-left"><a class="portal-link" href="../index.html">← Percurso MbB</a><span class="course-title">Web/API</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" type="button" aria-controls="courseNav" aria-expanded="false">☰ Etapas</button></div></header><div class="course-shell"><nav class="course-nav" id="courseNav" aria-label="Etapas de Web/API"><div class="nav-project"><strong>Cantina Horizonte</strong><span>A tela pede; o servidor confirma.</span></div><a class="stage-link " href="00-fronteiras.html"><span class="stage-number">0</span><span>Do pedido à conversa entre programas</span></a><a class="stage-link " href="01-html.html"><span class="stage-number">1</span><span>Estruturar antes de estilizar</span></a><a class="stage-link " href="02-formulario.html"><span class="stage-number">2</span><span>Campos que uma pessoa consegue identificar</span></a><a class="stage-link " href="03-css.html"><span class="stage-number">3</span><span>Apresentação, caixa e adaptação ao espaço</span></a><a class="stage-link " href="04-eventos.html"><span class="stage-number">4</span><span>O evento transforma entrada em previsão</span></a><a class="stage-link " href="05-colecoes.html"><span class="stage-number">5</span><span>O carrinho representa vários itens</span></a><a class="stage-link " href="06-http.html"><span class="stage-number">6</span><span>Um contrato para perguntar e pedir alteração</span></a><a class="stage-link " href="07-fetch.html"><span class="stage-number">7</span><span>Consultar sem confundir erro HTTP e erro de rede</span></a><a class="stage-link " href="08-registro.html"><span class="stage-number">8</span><span>Registrar uma vez e ler o que foi confirmado</span></a><a class="stage-link " href="09-estados.html"><span class="stage-number">9</span><span>Consultar antes de avançar</span></a><a class="stage-link " href="10-servidor.html"><span class="stage-number">10</span><span>Validar na fronteira e operar no serviço</span></a><a class="stage-link " href="11-evidencias.html"><span class="stage-number">11</span><span>Testar cada camada e declarar seu limite</span></a><a class="stage-link " href="12-integracao.html"><span class="stage-number">12</span><span>Ler a aplicação integrada e defender o pedido</span></a><a class="stage-link" href="contrato.html">Contrato HTTP</a><a class="stage-link" href="codigo-integrado.html">Código integrado preservado</a><a class="stage-link" href="99-exercicios.html">99 · Exercícios encadeados</a><a class="stage-link" href="caderno-web-api.md">Caderno de evidências</a><a class="stage-link" href="../analise/dossie-cantina.html">Dossiê do sistema</a></nav><main class="course-main" id="conteudo"><div class="content-wrap"><section class="hero"><span class="kicker">Cantina Horizonte · laboratório</span><h1>Código integrado preservado</h1><p>A mesma interface, API, serviço e banco.</p></section><article class="chapter"><section><h2>Agora localize cada responsabilidade no conjunto</h2><p>Os blocos abaixo reproduzem a versão atual dos arquivos do laboratório. No checkpoint 19, a interface web recebeu nomes de produto nos controles, atalho de conteúdo e manejo de foco; API e serviço mantêm as mesmas regras. Para executar, use o <a href="../../cantina-evolutiva/README.md">README e seu ambiente</a>; não mova esses arquivos para os recortes estáticos.</p><p>O app.js usa estado do carrinho, template, find/map/filter/reduce, função assíncrona, optional chaining e controles de envio/consulta. O acervo aprofunda a sintaxe. A leitura do código completo vem depois das pontes; ela não substitui verificação no navegador.</p></section><details><summary>frontend/index.html — código completo</summary><h3>frontend/index.html</h3><button class="copy-button" type="button" data-copy="integrado-0">Copiar código</button><pre id="integrado-0"><code>&lt;!doctype html&gt;
 &lt;html lang=&quot;pt-BR&quot;&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -8,12 +8,13 @@
   &lt;script src=&quot;app.js&quot; defer&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
+  &lt;a class=&quot;skip-link&quot; href=&quot;#conteudo&quot;&gt;Ir para o conteúdo&lt;/a&gt;
   &lt;header class=&quot;topo&quot;&gt;
     &lt;div&gt;&lt;p class=&quot;eyebrow&quot;&gt;Escola Horizonte • laboratório&lt;/p&gt;&lt;h1&gt;Cantina Horizonte&lt;/h1&gt;
       &lt;p&gt;Monte um pedido e acompanhe sua preparação.&lt;/p&gt;&lt;/div&gt;
     &lt;span class=&quot;versao&quot;&gt;Evolução 3&lt;/span&gt;
   &lt;/header&gt;
-  &lt;main class=&quot;layout&quot;&gt;
+  &lt;main class=&quot;layout&quot; id=&quot;conteudo&quot; tabindex=&quot;-1&quot;&gt;
     &lt;section aria-labelledby=&quot;cardapio-titulo&quot;&gt;
       &lt;div class=&quot;section-heading&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;Produtos disponíveis&lt;/h2&gt;
         &lt;p class=&quot;hint&quot;&gt;Quantidade total por produto: de 1 a 10, respeitando o estoque.&lt;/p&gt;&lt;/div&gt;
@@ -24,7 +25,7 @@
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
           &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; required&gt;
           &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
-        &lt;p id=&quot;consulta-resultado&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+        &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
           &lt;p class=&quot;hint&quot;&gt;Cada ação avança uma etapa. Entregue encerra a sequência.&lt;/p&gt;
@@ -40,7 +41,7 @@
       &lt;label for=&quot;cupom&quot;&gt;Cupom opcional&lt;/label&gt;&lt;input id=&quot;cupom&quot; type=&quot;text&quot; placeholder=&quot;Ex.: MBB10&quot; autocomplete=&quot;off&quot;&gt;
       &lt;p class=&quot;hint&quot;&gt;O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório.&lt;/p&gt;
       &lt;button id=&quot;finalizar&quot; class=&quot;primary&quot;&gt;Registrar pedido&lt;/button&gt;
-      &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+      &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
     &lt;/aside&gt;
   &lt;/main&gt;
   &lt;template id=&quot;produtoTemplate&quot;&gt;
@@ -59,6 +60,8 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
+.skip-link { position: absolute; top: .5rem; left: 1rem; z-index: 10; transform: translateY(-200%); padding: .7rem 1rem; border-radius: 8px; color: white; background: #172033; }
+.skip-link:focus { transform: translateY(0); }
 button, input { font: inherit; }
 .topo {
   display: flex; justify-content: space-between; gap: 1rem; align-items: center;
@@ -113,7 +116,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .consulta { margin-top: 2rem; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
 button:disabled { opacity: .6; cursor: wait; }
-button:focus-visible, input:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
 #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
@@ -148,6 +151,8 @@ async function carregarProdutos() {
     node.querySelector(&#x27;.preco&#x27;).textContent = moeda(produto.preco_centavos);
     const input = node.querySelector(&#x27;.quantidade&#x27;);
     const botao = node.querySelector(&#x27;.adicionar&#x27;);
+    input.setAttribute(&#x27;aria-label&#x27;, `Quantidade de ${produto.nome}`);
+    botao.setAttribute(&#x27;aria-label&#x27;, `Adicionar ${produto.nome} ao pedido`);
     botao.disabled = produto.estoque === 0;
     botao.addEventListener(&#x27;click&#x27;, () =&gt; {
       if (estado.enviando) return;
@@ -156,10 +161,12 @@ async function carregarProdutos() {
       const total = quantidade + (existente?.quantidade || 0);
       if (!Number.isInteger(quantidade) || quantidade &lt; 1 || total &gt; 10) {
         avisar(&#x27;A quantidade total de cada produto deve ser inteira entre 1 e 10.&#x27;, true);
+        input.focus();
         return;
       }
       if (total &gt; produto.estoque) {
         avisar(`Estoque insuficiente para ${produto.nome}.`, true);
+        input.focus();
         return;
       }
       if (existente) existente.quantidade = total;
@@ -189,6 +196,9 @@ function renderizarCarrinho() {
       if (estado.enviando) return;
       estado.carrinho = estado.carrinho.filter(atual =&gt; atual !== item);
       renderizarCarrinho();
+      const destino = area.querySelector(&#x27;.remover&#x27;) || $(&#x27;#cupom&#x27;);
+      destino.focus();
+      avisar(`Produto removido do pedido: ${item.produto.nome}.`);
     });
     row.append(detalhe, remover);
     area.appendChild(row);
@@ -403,4 +413,4 @@ def criar_app(caminho=None, hoje=None):
 
 
 app = criar_app()
-</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>
+</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section><section><h2>Acessibilidade da interface web</h2><p>Quantidade e Adicionar identificam o produto. Ao recusar quantidade, o código dirige foco ao campo; ao remover item, dirige foco ao botão restante ou ao cupom e informa a remoção. O atalho Ir para o conteúdo precede o cabeçalho. Esses controles pertencem à aplicação web; não são parte dos programas VisuAlg.</p><p>Seis casos de lógica foram exercitados com elementos substitutos no Node, sem navegador. A confirmação de teclado, layout e leitor de tela continua pendente. <a href="../../cantina-evolutiva/frontend/tests/acessibilidade.test.cjs">Consultar os casos</a> · <a href="../../../docs/reforma/evidencia-interface-19.json">Ver evidência e limites</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>

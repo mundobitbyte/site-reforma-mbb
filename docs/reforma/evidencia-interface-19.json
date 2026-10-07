@@ -1,0 +1,35 @@
+{
+  "checkpoint": 19,
+  "data_local": "2026-10-07",
+  "metodo": "Node vm com elementos substitutos de teste; sem DOM ou renderização de navegador",
+  "casos_logica_novos": 6,
+  "comparacao_mesmos_casos": [
+    {
+      "fase": "antes",
+      "aprovados": 1,
+      "falhas": 5,
+      "codigo_saida": 1
+    },
+    {
+      "fase": "depois",
+      "aprovados": 6,
+      "falhas": 0,
+      "codigo_saida": 0
+    }
+  ],
+  "html_semantico_conferido": true,
+  "javascript_sintaxe_conferida": true,
+  "browser_tested": false,
+  "leitor_de_tela_testado": false,
+  "visualg_executado": false,
+  "testes_anteriores_reexecutados": false,
+  "hashes_protegidos_e_servidor": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+    "laboratorio/cantina-evolutiva/app.py": "0c09a2d5d821f74a1e0ba6ce8948c69dc7ef46a811fa0e54a832c7f316975a5b",
+    "laboratorio/cantina-evolutiva/servico.py": "2567d5b9ddb0244e4e580e89c96b0e868812fa9e28e42f7d876354c0cae73c86"
+  },
+  "hash_fonte_interface_antes": "66b7c580302c843bdb0755bf1d38f9f4609b4285d70ec5ee34019301d5cde749",
+  "hash_fonte_interface_depois": "a7a93f0cdbba918011d7df4c1dc870fda62e6667119df4dbea7d29ac46e9c5c5",
+  "erros": []
+}

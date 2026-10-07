@@ -49,7 +49,7 @@ python laboratorio/percurso-mbb/verificar_percurso.py
 Esse comando usa apenas a biblioteca padrão do Python e os arquivos do checkout. Lê HTML, vínculos locais/âncoras (inclusive aulas dinâmicas), blocos de código, matrizes, funções de teste e hashes protegidos. Confere também a contagem das 31 subetapas e seus vínculos de evidência.
 Não usa navegador, rede, servidor ou SQLite. Não escreve arquivos, instala dependências ou altera fonte. Imprime JSON e retorna código 0 quando os critérios passam; código diferente de 0 precisa ser investigado antes de prosseguir. Não substitui teste da aplicação ou acessibilidade.
 
-Registro mais recente: [verificacao-checkpoint-18.json](verificacao-checkpoint-18.json). As rodadas anteriores permanecem como histórico.
+Registro mais recente: [verificacao-checkpoint-19.json](verificacao-checkpoint-19.json). As rodadas anteriores permanecem como histórico.
 
 ## Rodadas de testes e práticas, quando uma mudança justificar
 Não é necessário repetir tudo só para abrir o material. Os comandos abaixo documentam futuras verificações. Os testes antigos não foram reexecutados para consolidar este guia.
@@ -126,12 +126,13 @@ As práticas de Banco de Dados usam `python laboratorio_bd.py ...`: consulta é 
 - Checkpoint 16: verificação portátil, contagem detalhada e guia consolidado. Não é nova execução das suítes anteriores.
 - Checkpoint 17: depurador pdb executado e diagnóstico de navegador corrigido.
 - Checkpoint 18: iniciador integrado local ensaiado via HTTP, com duas sessões e descarte dos bancos temporários. [Evidência](evidencia-previa-local-18.json). Navegador permanece não testado.
+- Checkpoint 19: seis casos de lógica da interface passaram em Node; correções de nomes, atalho de conteúdo e foco. [Evidência](evidencia-interface-19.json). Elementos de teste não substituem navegador.
 
 Essas grandezas não são somadas como se fossem o mesmo tipo de teste. Cobertura percentual não foi medida. Actions permanece desativado; receita QTS é texto inerte. Não houve escrita no site oficial ou publicação nesta rodada.
 
 ## O que impede encerrar a entrega
 Subetapas ainda abertas: 1.6, 2.5, 3.5, 4.8, 4.9, 5.3, 5.4, 5.5, 5.6.
-Navegador, 360 px, teclado/foco, revisão visual, participante e VisuAlg permanecem sem execução. O depurador pdb foi executado no checkpoint 17; a subetapa 4.8 continua aberta por exigir também VisuAlg. A prévia integrada precisa hospedar o serviço Python; HTML estático sozinho não atende esse critério.
+Navegador, 360 px, teclado/foco, revisão visual, participante e VisuAlg permanecem sem execução. O depurador pdb foi executado no checkpoint 17; o VisuAlg será testado posteriormente pelo Professor Ronaldo, conforme instrução de 07/10/2026. Essa pendência não impede prosseguir nas outras subetapas. A prévia integrada precisa hospedar o serviço Python; HTML estático sozinho não atende esse critério.
 Correção do diagnóstico no checkpoint 17: a skill sites-preview-troubleshooting se limita à prévia de projetos Sites. Sua restrição não rege este projeto GitHub. O acesso pela API de navegador foi testado no contexto correto com servidor e base temporários; o navegador reportou `net::ERR_CONNECTION_REFUSED`. O servidor foi encerrado depois do ensaio. Não houve publicação externa. Veja [o registro de acesso](diagnostico-acesso-17.json).
 
 Parecer atual: execução/conteúdo documentados para o laboratório; entrega completa e produto final ainda não liberados. Não existe aprovação pendente para as tarefas já autorizadas.
@@ -145,3 +146,13 @@ python -m pdb -c "break 10" laboratorio/percurso-mbb/programacao/exemplos/07_fun
 ```
 
 Use continue, p total, p item, step, args, return e next para inspecionar cada chamada. A sessão observou retornos 600/1600 e total 2200; quit encerrou o depurador. Isso não é teste do VisuAlg nem sessão com aluno. [Transcrição e valores](evidencia-depurador-17.json).
+
+## Conferir a lógica das correções de interface
+
+Quando uma mudança justificar, com Node disponível, na raiz:
+
+```bash
+node --test laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs
+```
+
+Esses seis casos usam o JavaScript real com elementos substitutos no Node, sem DOM, rede ou navegador. Conferem identificação dos produtos, foco na quantidade recusada e após remoção, manutenção do item restante e bloqueio durante envio. Não avaliam layout, teclado nativo ou leitor de tela.
