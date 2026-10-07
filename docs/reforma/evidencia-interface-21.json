@@ -1,0 +1,77 @@
+{
+  "checkpoint": 21,
+  "data_local": "2026-10-07",
+  "escopo": "Navegador real + interface + API/serviço/SQLite temporário; sem publicação externa.",
+  "ambiente": {
+    "navegador": "Chromium headless real",
+    "dom_layout_teclado": true,
+    "arvore_acessibilidade_chromium": true,
+    "leitor_de_tela_real": false,
+    "transporte_api": "Playwright intercepta https://cantina.local/api/** e encaminha para FastAPI TestClient porque a política gerenciada do Chromium bloqueia navegação por URL.",
+    "banco": "SQLite temporário descartável",
+    "publicacao_externa": false
+  },
+  "identidade_fontes": {
+    "frontend_index_git_blob": "240e9f494e90b6225e4497ead4c7b4a537e4cc9e",
+    "frontend_app_git_blob": "1435be502b1f7e187312f7f4fe23a6032cc6e1f6",
+    "frontend_css_git_blob": "51d08ecdc777614d8d6f2dda4c44350cf01d3e25",
+    "app_py_git_blob": "3d36b1fdfd16c0d982c64d8c5b4bbfec00b519a9",
+    "servico_py_git_blob": "50412c5432e2a493e1877ad62f51f0786b80e461",
+    "schema_git_blob": "022e57d052964bea15343068312235b31d7957bd",
+    "migracao_cupom_git_blob": "ad05c956127ff30d9ab7aac52ef622583e31c925",
+    "migracao_estados_git_blob": "159c199997d5f997977b4a247b0d9018cdfa8d58",
+    "conferidos_byte_a_byte": true
+  },
+  "rodada_acessibilidade_navegador": {
+    "casos": 38,
+    "aprovados": 38,
+    "falhas": 0,
+    "largura_360": "sem overflow",
+    "largura_320": "sem overflow após correção",
+    "teclado_foco": "aprovado",
+    "nomes_acessiveis": "aprovados na árvore AX do Chromium"
+  },
+  "defeito_encontrado_e_corrigido": {
+    "problema": "Texto longo sem espaços no resultado da consulta criava rolagem horizontal em 320 px.",
+    "arquivo": "laboratorio/cantina-evolutiva/frontend/styles.css",
+    "correcao": "#consulta-resultado, .mensagem, #acompanhamento { overflow-wrap: anywhere; }",
+    "codigo_integrado_sincronizado": true
+  },
+  "rodada_integrada_api_real": {
+    "casos": 25,
+    "aprovados": 25,
+    "falhas": 0,
+    "cobre": [
+      "carregar produtos",
+      "registrar pedido",
+      "persistir e recarregar estoque",
+      "consultar pedido",
+      "recusar cupom abaixo do mínimo",
+      "aplicar MBB10",
+      "recusar reutilização de cupom",
+      "avançar Novo → Confirmado → Em preparação → Pronto → Entregue",
+      "histórico de quatro mudanças",
+      "foco final e responsividade",
+      "ausência de exceções JavaScript"
+    ],
+    "respostas_400_409_provocadas_de_proposito": true
+  },
+  "subetapas_concluidas_neste_checkpoint": [
+    "1.6",
+    "2.5",
+    "3.5"
+  ],
+  "subetapa_5_3": {
+    "situacao": "parcial",
+    "concluido": "360/320 px, teclado, foco, DOM real e árvore de acessibilidade do Chromium",
+    "pendente": "leitor de tela real"
+  },
+  "visualg": "reservado para teste posterior do Professor Ronaldo",
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 25,
+    "restantes": 6,
+    "posicao_atual": "5.3"
+  },
+  "producao_intacta": true
+}
