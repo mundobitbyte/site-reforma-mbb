@@ -26,7 +26,7 @@ Fonte dos novos registros: [ficha de retomada](registro-retomada.md), preenchida
 | Critério | Situação antes da sessão | Resultado e evidência após a sessão |
 |---|---|---|
 | 4.8 — VisuAlg e pdb | Pdb concluído; VisuAlg adiado pelo professor. | Não preenchido |
-| 4.9 — Percurso em uso | Revisão visual/pedagógica com participante pendente. | Não preenchido |
+| 4.9 — Percurso em uso | Revisão visual/pedagógica com participante pendente. | **Parcial:** professor relatou navegação aparentemente correta. Zoom/cópia e compreensão com participante ainda pendentes; está no celular. [Registro 28](checkpoint-28-retomada-no-celular.md). |
 | 5.3 — Acessibilidade | Chromium, 360/320 px, teclado e foco confirmados; leitor de tela real pendente. | **Concluída:** confirmação dos anúncios pelo professor com Narrador Windows, complementando a evidência técnica anterior. [Registro 27](evidencia-narrador-windows-27.json). |
 | 5.4 — Prévia compatível | Iniciador verificado por HTTP; abertura direta no navegador pendente. | **Concluída:** aplicação e página curricular por URL local no Windows do professor. [Evidência 25](evidencia-previa-windows-25.json). |
 | 5.5 — Uso e compreensão | Observação com participante pendente. | Não preenchido |

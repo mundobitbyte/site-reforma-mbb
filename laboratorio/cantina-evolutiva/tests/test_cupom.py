@@ -114,7 +114,7 @@ def test_duas_tentativas_disputam_mesmo_cupom(ambiente):
 def test_migra_banco_primeira_fatia_sem_perder_venda(tmp_path):
     caminho = tmp_path / 'legado.sqlite3'
     conn = sqlite3.connect(caminho)
-    conn.executescript(Path(__file__).resolve().parents[1].joinpath('schema-inicial.sql').read_text())
+    conn.executescript(Path(__file__).resolve().parents[1].joinpath('schema-inicial.sql').read_text(encoding='utf-8'))
     conn.execute("INSERT INTO produto VALUES (1,'Água',300,18)")
     conn.execute('INSERT INTO pedido(id) VALUES (1)')
     conn.execute('INSERT INTO item_pedido VALUES (1,1,2,300)')

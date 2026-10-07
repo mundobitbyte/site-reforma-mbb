@@ -151,8 +151,8 @@ def test_migracao_preserva_pedido_v2_sem_inventar_historico(tmp_path):
     caminho = tmp_path / 'versao2.sqlite3'
     base = Path(__file__).resolve().parents[1]
     conn = sqlite3.connect(caminho)
-    conn.executescript(base.joinpath('schema-inicial.sql').read_text())
-    conn.executescript(base.joinpath('migracao-02-cupom.sql').read_text())
+    conn.executescript(base.joinpath('schema-inicial.sql').read_text(encoding='utf-8'))
+    conn.executescript(base.joinpath('migracao-02-cupom.sql').read_text(encoding='utf-8'))
     conn.execute("INSERT INTO produto VALUES (1,'Água',300,18)")
     conn.execute("INSERT INTO cupom VALUES ('MBB10',10,0,'2099-12-31',1)")
     conn.execute("INSERT INTO pedido(id,status,cupom_codigo,desconto_centavos) VALUES (1,'Confirmado','MBB10',60)")

@@ -57,7 +57,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 4.6 | Git — 10 etapas | Concluída |
 | 4.7 | Estrutura, links e código exibido conferidos | Concluída |
 | 4.8 | Ensaios VisuAlg e depurador interativo | Parcial: pdb concluído; VisuAlg será testado depois pelo professor |
-| 4.9 | Revisão visual e pedagógica do percurso em uso | Bloqueada |
+| 4.9 | Revisão visual e pedagógica do percurso em uso | **Parcial:** navegação aparentemente correta relatada pelo professor; zoom/cópia e participante pendentes |
 
 ### 5. Entrega
 
@@ -114,3 +114,6 @@ O Narrador foi observado parcialmente no Windows: nome de controles da Água, re
 
 ## Avanço no checkpoint 27
 O professor confirmou os nomes dos controles, anúncios de registro/consulta, recusa de quantidade e mínimo do cupom no Narrador. A nova sessão Windows com UTF-8 chegou a Entregue; captura mostra as quatro transições. A evidência manual complementa os ensaios anteriores de layout, teclado e foco e encerra **5.3**. Total **27/31**, quatro pendentes: 4.8, 4.9, 5.5, 5.6. [Registro e limites](evidencia-narrador-windows-27.json).
+
+## Avanço sem teste do professor no checkpoint 28
+O professor está apenas no celular e relatou que a navegação orientada pareceu funcionar, sem garantir ausência de falhas. A 4.9 passa a parcial, sem ser encerrada. O retorno do percurso que apontava para `/curso/index.html` (404 registrado no log) agora abre a aplicação da Cantina pela rota já permitida. Foram completadas leituras UTF-8 nos testes de migração e no CLI de BD. **89 testes Python passaram** e **12 observações HTTP** conferiram o retorno, os recursos, a API e as seis entradas; escopos separados. Estados de leitura/prévia atualizados nas páginas. Total mantido: **27/31**, quatro pendentes. [Registro](checkpoint-28-retomada-no-celular.md).

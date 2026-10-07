@@ -112,7 +112,7 @@ def test_ausencia_de_banco_nao_cria_arquivo_vazio(tmp_path):
 def test_dump_sql_recupera_estrutura_registros_e_relacoes(pasta):
     esperado = conteudo(pasta / 'cantina.sqlite3')
     exportar_sql(pasta)
-    script = (pasta / 'cantina.sql').read_text()
+    script = (pasta / 'cantina.sql').read_text(encoding='utf-8')
     assert 'CREATE TABLE produto' in script and 'INSERT INTO "item_pedido"' in script
     assert 'CREATE VIEW resumo_pedido' in script and 'CREATE INDEX historico_status_pedido' in script
     transacao('commit', pasta)

@@ -282,13 +282,16 @@
         {
           "id": "4.9",
           "titulo": "Revisão visual e pedagógica do percurso em uso",
-          "situacao": "bloqueada",
+          "situacao": "parcial",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/checkpoint-28-retomada-no-celular.md"
           ],
           "depende_de": [
+            "REVISAO_VISUAL_NO_COMPUTADOR",
             "PARTICIPANTE"
-          ]
+          ],
+          "preparacao": "Professor relatou que a navegação orientada pareceu funcionar, sem falha percebida. Está somente no celular; zoom 200%, cópia de código e revisão com participante não confirmados. No checkpoint 28 o retorno da entrada foi corrigido a partir do 404 no log; seis entradas e retorno foram conferidos por HTTP, sem avaliação visual nova."
         }
       ]
     },
@@ -389,7 +392,8 @@
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução."
+    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
+    "REVISAO_VISUAL_NO_COMPUTADOR": "Professor está apenas no celular; não pode conferir agora zoom/cópia ou possíveis falhas visuais não percebidas na navegação anterior."
   },
   "resumo": {
     "total_subetapas": 31,
@@ -397,6 +401,6 @@
     "restantes": 4,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 27,
-  "orientacao_atual": "Narrador confirmado pelo professor e 5.3 encerrada. Próximo: 4.9, revisão do percurso em uso, e 5.5 com participante. VisuAlg permanece adiado; parecer final aguarda esses critérios."
+  "checkpoint_atualizacao": 28,
+  "orientacao_atual": "Trabalho independente concluído no checkpoint 28: retorno à aplicação sem 404, UTF-8 nas consultas/testes, estados documentais alinhados. 4.9 parcial com relato de navegação aparentemente correta; 27/31. Retomar zoom/cópia e compreensão com participante quando o professor puder; VisuAlg adiado."
 }

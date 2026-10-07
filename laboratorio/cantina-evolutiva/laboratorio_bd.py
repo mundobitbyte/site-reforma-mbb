@@ -42,7 +42,7 @@ def consultar(nome, pasta=PASTA):
         raise ValueError('Escolha uma das consultas oferecidas pelo roteiro.')
     conn = conectar_leitura(pasta / 'cantina.sqlite3')
     try:
-        return [dict(r) for r in conn.execute((SQL / (nome + '.sql')).read_text())]
+        return [dict(r) for r in conn.execute((SQL / (nome + '.sql')).read_text(encoding='utf-8'))]
     finally:
         conn.close()
 

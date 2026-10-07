@@ -1,0 +1,85 @@
+{
+  "casos": 12,
+  "passaram": 12,
+  "observacoes": [
+    {
+      "caso": "Percurso local",
+      "status": 200
+    },
+    {
+      "caso": "Retorno à aplicação da Cantina",
+      "url": "/curso/laboratorio/cantina-evolutiva/frontend/index.html",
+      "status": 200,
+      "bytes_canonicos": true
+    },
+    {
+      "caso": "Recurso app.js",
+      "status": 200,
+      "bytes_canonicos": true
+    },
+    {
+      "caso": "Recurso styles.css",
+      "status": 200,
+      "bytes_canonicos": true
+    },
+    {
+      "caso": "API real de produtos no mesmo servidor",
+      "status": 200,
+      "produtos": 5
+    },
+    {
+      "caso": "Destino anterior ausente na prévia isolada",
+      "status_observado": 404
+    },
+    {
+      "caso": "Entrada curricular analise",
+      "status": 200
+    },
+    {
+      "caso": "Entrada curricular banco-de-dados",
+      "status": 200
+    },
+    {
+      "caso": "Entrada curricular programacao",
+      "status": 200
+    },
+    {
+      "caso": "Entrada curricular web-api",
+      "status": 200
+    },
+    {
+      "caso": "Entrada curricular qts",
+      "status": 200
+    },
+    {
+      "caso": "Entrada curricular git",
+      "status": 200
+    }
+  ],
+  "escopo": "HTTP real em FastAPI/TestClient com SQLite temporário; não é navegador nem revisão visual do professor",
+  "checkpoint": 28,
+  "python_tests": {
+    "passaram": 89,
+    "falharam": 0,
+    "avisos": 1,
+    "comando": "python -m pytest laboratorio/cantina-evolutiva/tests -q",
+    "motivacao": "Código de consultas e preparação de testes passou a ler UTF-8; rodada também cobre o serviço corrigido no checkpoint 26.",
+    "aviso": "Starlette informa depreciação de httpx em TestClient; sem falha nesta rodada."
+  },
+  "ambiente": {
+    "python": "3.12.14",
+    "sistema": "Linux",
+    "fastapi": "0.142.3",
+    "starlette": "1.7.0",
+    "pytest": "9.1.1",
+    "httpx": "0.28.1"
+  },
+  "relato_professor": {
+    "data": "2026-10-07",
+    "hora_local": "16:36",
+    "situacao": "Somente no celular",
+    "relato": "Testou conforme orientação e pareceu funcionar; pode haver falha não percebida e não consegue rever agora.",
+    "limite": "Não é confirmação de zoom, cópia de código ou compreensão com participante."
+  },
+  "testes_usuario_novos": false
+}
