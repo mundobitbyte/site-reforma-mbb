@@ -104,6 +104,29 @@ Percurso adicional de Análise: [Cantina Horizonte no MbB](../percurso-mbb/index
 com 15 etapas, caderno e dossiê ligado aos mesmos requisitos, dados e testes.
 As páginas são estáticas; a aplicação continua sendo executada pelo comando acima.
 
+Banco de Dados adicional: [capítulos e exercícios da Cantina](../percurso-mbb/banco-de-dados/index.html).
+Na mesma pasta do serviço, com o ambiente ativado:
+
+```bash
+python laboratorio_bd.py preparar
+python laboratorio_bd.py consultar 04-resumo-pedidos
+python laboratorio_bd.py transacao rollback
+python laboratorio_bd.py transacao falha
+python laboratorio_bd.py transacao commit
+python laboratorio_bd.py backup
+python laboratorio_bd.py restaurar
+python laboratorio_bd.py exportar
+python laboratorio_bd.py restaurar-sql
+```
+
+O banco didático fica em `dados/bd-didatico/cantina.sqlite3`: usa o mesmo schema,
+migrações e serviço, mas preserva o banco de trabalho da aplicação e a v1.
+Preparar é feito uma vez; destinos existentes são recusados sem reiniciar ou substituir.
+Consultas são somente leitura. Os experimentos de COMMIT são novas vendas nessa cópia.
+Backup e dump SQL são restaurados em arquivos novos. A exportação inclui estrutura,
+registros e versão de migração. Onze testes adicionais verificam este roteiro;
+as evidências anteriores dos 63 casos da aplicação permanecem válidas como registradas.
+
 ## Estado da verificação
 
 34 testes novos exercitam estados/histórico, as 21 transições proibidas,

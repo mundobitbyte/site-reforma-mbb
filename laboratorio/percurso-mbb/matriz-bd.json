@@ -1,0 +1,110 @@
+[
+  {
+    "capitulo": "0",
+    "origem": "pages/bancodedados.html#mod-inicio",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/00-historia.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD00: necessidade e comparação papel/arquivos/dados relacionados. Reusa E01–E05 de Análise.",
+    "aprofundamento": "História completa preservada no acervo; datas e tecnologias não viram pré-requisito para registrar um pedido.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "1",
+    "origem": "pages/bancodedados.html#mod-fundamentos",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/01-fundamentos.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD01: dicionário com atributo, significado, domínio e exemplo. Reusa E05/E07.",
+    "aprofundamento": "Tabelas de referência, tipos MySQL e exemplos adicionais permanecem no capítulo original.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "2",
+    "origem": "pages/bancodedados.html#mod-modelagem",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/02-modelagem-conceitual.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD02: DER da Cantina e leitura das relações em frases. Reusa E08/E09.",
+    "aprofundamento": "Relações 1:1, 1:N, N:N e atributos compostos/multivalorados permanecem como aprofundamento do acervo.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "3",
+    "origem": "pages/bancodedados.html#mod-modelagem-logica",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/03-logica-normalizacao.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD03: modelo lógico e justificativa de dependências. Reusa E09 e RF-06.",
+    "aprofundamento": "As três formas normais são discutidas por necessidade; exemplos comerciais completos continuam disponíveis.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "4",
+    "origem": "pages/bancodedados.html#mod-sql",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/04-sql-ambientes.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD04: ambiente identificado, dados iniciais e duas consultas. Reusa o modelo lógico e RF-01.",
+    "aprofundamento": "CRUD completo, AND/OR/IN/BETWEEN, NULL e agregações seguem no acervo; as práticas adicionais usam o domínio escolhido.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "5",
+    "origem": "pages/bancodedados.html#mod-joins",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/05-relacionamentos-joins.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD05: pedido completo, produtos sem venda, agrupamento e histórico. Reusa RF-06/RF-09.",
+    "aprofundamento": "Múltiplos JOIN e relatórios comerciais permanecem referências; não inventamos fornecedor para caber na consulta.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "6",
+    "origem": "pages/bancodedados.html#mod-sgbd",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/06-administracao-recuperacao.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD06: verificação, cópia, exportação e recuperação com comparação. Reusa risco de perda E13.",
+    "aprofundamento": "Administração MySQL, roles, logs e política de retenção permanecem aprofundamento do acervo.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "7",
+    "origem": "pages/bancodedados.html#mod-transacoes",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/07-transacoes-acid.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD07: conjunto confirmado/revertido e limites de isolamento. Reusa RF-04/RF-08 e testes.",
+    "aprofundamento": "SAVEPOINT e laboratórios completos de isolamento/deadlock continuam no acervo MySQL.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "8",
+    "origem": "pages/bancodedados.html#mod-avancado",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/08-sql-avancado.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD08: duas formas de pergunta, cálculo por janela e plano interpretado. Reusa RF-06/RF-09.",
+    "aprofundamento": "Rotinas armazenadas e EXPLAIN ANALYZE são aprofundamento no ambiente MySQL preservado.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "9",
+    "origem": "pages/bancodedados.html#mod-projetos",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/09-integrador.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD09: pacote ligado ao mesmo dossiê/código/QTS. Reusa E15 e todas as evidências BD.",
+    "aprofundamento": "Projeto MySQL completo permanece intacto, com seus próprios dados válidos.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "10",
+    "origem": "pages/bancodedados.html#mod-moderna",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/10-visao-moderna.html",
+    "decisao": "adaptar essencial para a Cantina; preservar comandos e acervo completo",
+    "evidencia": "BD10: decisão arquitetural proporcional e limites atuais. Reusa E12/E13.",
+    "aprofundamento": "O capítulo original mantém Big Data, cenários de arquitetura, governança e aprofundamentos completos.",
+    "browser_tested": false
+  },
+  {
+    "capitulo": "99",
+    "origem": "pages/bancodedados.html#mod-exercicios",
+    "destino": "laboratorio/percurso-mbb/banco-de-dados/99-exercicios.html",
+    "decisao": "criar exercícios encadeados por necessidade; preservar os originais",
+    "evidencia": "BD00..BD10",
+    "aprofundamento": "Exercícios comerciais completos continuam intactos.",
+    "browser_tested": false
+  }
+]
