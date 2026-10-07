@@ -1,0 +1,362 @@
+[
+  {
+    "id": "ambiente",
+    "titulo": "Prepare Python e o VS Code",
+    "origem": "pages/python.html#aprender/ambiente",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 0,
+    "destino": "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "primeiro-programa",
+    "titulo": "Crie, execute e leia o primeiro erro",
+    "origem": "pages/python.html#aprender/primeiro-programa",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 0,
+    "destino": "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "valores-variaveis",
+    "titulo": "Valores, nomes e tipos",
+    "origem": "pages/python.html#aprender/valores-variaveis",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 1,
+    "destino": "laboratorio/percurso-mbb/programacao/01-sequencia.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "entrada-expressoes",
+    "titulo": "Entrada, conversão, expressões e f-strings",
+    "origem": "pages/python.html#aprender/entrada-expressoes",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 2,
+    "destino": "laboratorio/percurso-mbb/programacao/02-entrada.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "strings",
+    "titulo": "Limpe, procure e transforme textos",
+    "origem": "pages/python.html#aprender/strings",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "decisoes",
+    "titulo": "Compare evidências e tome uma decisão",
+    "origem": "pages/python.html#aprender/decisoes",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 3,
+    "destino": "laboratorio/percurso-mbb/programacao/03-decisao.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "decisoes-multiplas",
+    "titulo": "Organize várias regras sem esconder casos",
+    "origem": "pages/python.html#aprender/decisoes-multiplas",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 3,
+    "destino": "laboratorio/percurso-mbb/programacao/03-decisao.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "while",
+    "titulo": "Repita até receber um dado válido",
+    "origem": "pages/python.html#aprender/while",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 4,
+    "destino": "laboratorio/percurso-mbb/programacao/04-repeticao.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "for-acumuladores",
+    "titulo": "Percorra uma sequência e produza um total",
+    "origem": "pages/python.html#aprender/for-acumuladores",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 5,
+    "destino": "laboratorio/percurso-mbb/programacao/05-acumulador.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "controle-lacos",
+    "titulo": "Interrompa, pule e combine laços com critério",
+    "origem": "pages/python.html#aprender/controle-lacos",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "listas",
+    "titulo": "Troque variáveis numeradas por uma lista",
+    "origem": "pages/python.html#aprender/listas",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 6,
+    "destino": "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "listas-operacoes",
+    "titulo": "Fatie, ordene e copie sem alterar o dado errado",
+    "origem": "pages/python.html#aprender/listas-operacoes",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "tuplas-conjuntos",
+    "titulo": "Use tuplas para posição fixa e conjuntos para unicidade",
+    "origem": "pages/python.html#aprender/tuplas-conjuntos",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "dicionarios",
+    "titulo": "Dê nome aos campos com dicionários",
+    "origem": "pages/python.html#aprender/dicionarios",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 6,
+    "destino": "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "colecoes-aninhadas",
+    "titulo": "Represente registros completos e só depois use comprehensions",
+    "origem": "pages/python.html#aprender/colecoes-aninhadas",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 6,
+    "destino": "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "funcoes",
+    "titulo": "Crie uma função porque a regra se repete",
+    "origem": "pages/python.html#aprender/funcoes",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 7,
+    "destino": "laboratorio/percurso-mbb/programacao/07-funcoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "parametros-escopo",
+    "titulo": "Controle parâmetros, argumentos e escopo",
+    "origem": "pages/python.html#aprender/parametros-escopo",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 7,
+    "destino": "laboratorio/percurso-mbb/programacao/07-funcoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "argumentos-flexiveis",
+    "titulo": "Use *args e **kwargs só quando a quantidade variar",
+    "origem": "pages/python.html#aprender/argumentos-flexiveis",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "funcoes-valores",
+    "titulo": "Passe funções como valores sem abusar de lambda",
+    "origem": "pages/python.html#aprender/funcoes-valores",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "modulos",
+    "titulo": "Separe o sistema em módulos e pacotes",
+    "origem": "pages/python.html#aprender/modulos",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 9,
+    "destino": "laboratorio/percurso-mbb/programacao/09-modulos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "caminhos",
+    "titulo": "Saiba onde o programa procura arquivos",
+    "origem": "pages/python.html#aprender/caminhos",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 10,
+    "destino": "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "arquivos-texto",
+    "titulo": "Escreva e leia texto com fechamento garantido",
+    "origem": "pages/python.html#aprender/arquivos-texto",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 10,
+    "destino": "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "arquivos-formatos",
+    "titulo": "Escolha CSV para tabela e JSON para estrutura",
+    "origem": "pages/python.html#aprender/arquivos-formatos",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 10,
+    "destino": "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "excecoes",
+    "titulo": "Leia o traceback e trate apenas o erro previsto",
+    "origem": "pages/python.html#aprender/excecoes",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 8,
+    "destino": "laboratorio/percurso-mbb/programacao/08-excecoes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "logging-debugger",
+    "titulo": "Registre evidências e depure passo a passo",
+    "origem": "pages/python.html#aprender/logging-debugger",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 13,
+    "destino": "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "sqlite",
+    "titulo": "Persista registros em SQLite com parâmetros",
+    "origem": "pages/python.html#aprender/sqlite",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 12,
+    "destino": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "classes-objetos",
+    "titulo": "Crie objetos quando dados e regras pertencem juntos",
+    "origem": "pages/python.html#aprender/classes-objetos",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 11,
+    "destino": "laboratorio/percurso-mbb/programacao/11-objetos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "encapsulamento-composicao",
+    "titulo": "Proteja invariantes e componha objetos",
+    "origem": "pages/python.html#aprender/encapsulamento-composicao",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 11,
+    "destino": "laboratorio/percurso-mbb/programacao/11-objetos.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "classes-avancadas",
+    "titulo": "Use herança, polimorfismo, dataclass e métodos especiais com medida",
+    "origem": "pages/python.html#aprender/classes-avancadas",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "qualidade-estilo",
+    "titulo": "Escreva para a próxima leitura",
+    "origem": "pages/python.html#aprender/qualidade-estilo",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 13,
+    "destino": "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "testes",
+    "titulo": "Transforme exemplos em testes repetíveis",
+    "origem": "pages/python.html#aprender/testes",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 13,
+    "destino": "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "ambiente-profissional",
+    "titulo": "Isole pacotes com venv e registre dependências",
+    "origem": "pages/python.html#aprender/ambiente-profissional",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 12,
+    "destino": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "configuracao-git",
+    "titulo": "Separe configuração, segredos e histórico",
+    "origem": "pages/python.html#aprender/configuracao-git",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 14,
+    "destino": "laboratorio/percurso-mbb/programacao/14-integracao.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "projeto-integrador",
+    "titulo": "Projeto integrador — Central Horizonte",
+    "origem": "pages/python.html#aprender/projeto-integrador",
+    "decisao": "adaptar o essencial na Cantina e manter aprofundamento original",
+    "etapa_cantina": 14,
+    "destino": "laboratorio/percurso-mbb/programacao/14-integracao.html",
+    "justificativa": "Reuso pela necessidade indicada na etapa; não substitui a aula completa."
+  },
+  {
+    "id": "iteradores-generators",
+    "titulo": "Entenda iteráveis, iteradores e generators",
+    "origem": "pages/python.html#aprender/iteradores-generators",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "closures-decorators",
+    "titulo": "Construa closures e só então decorators",
+    "origem": "pages/python.html#aprender/closures-decorators",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "context-managers",
+    "titulo": "Defina limites de entrada e saída com context managers",
+    "origem": "pages/python.html#aprender/context-managers",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "concorrencia-modelos",
+    "titulo": "Escolha o modelo de concorrência pelo tipo de espera",
+    "origem": "pages/python.html#aprender/concorrencia-modelos",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "threads-processos",
+    "titulo": "Use futures para threads e processos com uma interface comum",
+    "origem": "pages/python.html#aprender/threads-processos",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  },
+  {
+    "id": "asyncio",
+    "titulo": "Coordene tarefas assíncronas sem esconder o event loop",
+    "origem": "pages/python.html#aprender/asyncio",
+    "decisao": "manter como aprofundamento original, sem exigir no núcleo inicial da Cantina",
+    "etapa_cantina": null,
+    "destino": null,
+    "justificativa": "O núcleo não precisa deste recurso para registrar e consultar um pedido; retomar quando surgir uma necessidade concreta."
+  }
+]

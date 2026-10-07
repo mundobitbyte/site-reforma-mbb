@@ -1,0 +1,66 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ponte com VisuAlg | Cantina Horizonte — MbB</title><link rel="stylesheet" href="../../../css/analise-sistemas.css"><link rel="stylesheet" href="../percurso.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="course-header"><div class="header-left"><a class="portal-link" href="../index.html">← Percurso MbB</a><span class="course-title">Programação/Python</span></div><div class="header-right"><span class="brand">Professor Ronaldo Lavestein</span><button class="menu-toggle" id="menuToggle" type="button" aria-controls="courseNav" aria-expanded="false">☰ Etapas</button></div></header><div class="course-shell"><nav class="course-nav" id="courseNav" aria-label="Etapas de Programação"><div class="nav-project"><strong>Cantina Horizonte</strong><span>Do algoritmo à mesma venda persistente.</span></div><a class="stage-link " href="00-problema-ambiente.html"><span class="stage-number">0</span><span>Problema, algoritmo e ambiente</span></a><a class="stage-link " href="01-sequencia.html"><span class="stage-number">1</span><span>Valores, nomes e sequência</span></a><a class="stage-link " href="02-entrada.html"><span class="stage-number">2</span><span>Entrada, conversão e apresentação</span></a><a class="stage-link " href="03-decisao.html"><span class="stage-number">3</span><span>Decidir antes de aceitar</span></a><a class="stage-link " href="04-repeticao.html"><span class="stage-number">4</span><span>Repetir com condição de saída</span></a><a class="stage-link " href="05-acumulador.html"><span class="stage-number">5</span><span>Contar, acumular e consolidar</span></a><a class="stage-link " href="06-colecoes.html"><span class="stage-number">6</span><span>Lista de itens e campos com nome</span></a><a class="stage-link " href="07-funcoes.html"><span class="stage-number">7</span><span>Nomear uma responsabilidade</span></a><a class="stage-link " href="08-excecoes.html"><span class="stage-number">8</span><span>Recusar o erro previsto e permitir correção</span></a><a class="stage-link " href="09-modulos.html"><span class="stage-number">9</span><span>Reutilizar o código entre arquivos</span></a><a class="stage-link " href="10-arquivos.html"><span class="stage-number">10</span><span>Caminho, JSON e reabertura</span></a><a class="stage-link " href="11-objetos.html"><span class="stage-number">11</span><span>Dados e comportamento com responsabilidade</span></a><a class="stage-link " href="12-persistencia.html"><span class="stage-number">12</span><span>O terminal usa o mesmo serviço e banco</span></a><a class="stage-link " href="13-testes.html"><span class="stage-number">13</span><span>Transformar exemplos em evidências repetíveis</span></a><a class="stage-link " href="14-integracao.html"><span class="stage-number">14</span><span>Defender o mesmo pedido entre disciplinas</span></a><a class="stage-link" href="ponte-visualg.html">Ponte com VisuAlg</a><a class="stage-link" href="99-exercicios.html">99 · Exercícios encadeados</a><a class="stage-link" href="caderno-programacao.md">Caderno de evidências</a><a class="stage-link" href="../analise/dossie-cantina.html">Dossiê do sistema</a></nav><main class="course-main" id="conteudo"><div class="content-wrap"><section class="hero"><span class="kicker">Cantina Horizonte · laboratório</span><h1>Ponte com VisuAlg</h1><p>A linguagem muda; necessidade e regra continuam.</p></section><article class="chapter"><section><h2>Traduza a ideia antes da sintaxe</h2><p>Os arquivos abaixo usam o mesmo produto (Água, 300 centavos) e a mesma faixa (1–10). VisuAlg tem declaração e palavras de fechamento; Python usa nomes associados a valores e indentação. Os blocos abaixo são código completo para copiar.</p><p>Esta ponte foi revisada por leitura e teste de mesa. Não houve execução no VisuAlg nesta etapa; não apresentamos uma tela simulada como resultado real.</p><div class="table-wrap"><table><thead><tr><th scope="col">Ideia</th><th scope="col">VisuAlg</th><th scope="col">Python</th></tr></thead><tbody><tr><td>Associar valor</td><td>&lt;-</td><td>=</td></tr><tr><td>Ler</td><td>leia</td><td>input e int</td></tr><tr><td>Exibir</td><td>escreval</td><td>print</td></tr><tr><td>Decidir</td><td>se/entao/senao/fimse</td><td>if/elif/else e indentação</td></tr><tr><td>Repetir</td><td>enquanto/faca/fimenquanto</td><td>while e indentação</td></tr></tbody></table></div></section><section id="sequencia"><h2>Sequencia</h2><p>Entrada 2 → subtotal 600 centavos. Python também formata R$ 6,00; comparar valor não exige textos idênticos.</p><h3>02_sequencia.alg</h3><button class="copy-button" type="button" data-copy="alg-sequencia">Copiar código</button><pre id="alg-sequencia"><code>algoritmo &quot;Cantina_Sequencia&quot;
+var
+   quantidade, precoCentavos, subtotalCentavos: inteiro
+inicio
+   precoCentavos &lt;- 300
+   escreva(&quot;Quantidade de aguas: &quot;)
+   leia(quantidade)
+   subtotalCentavos &lt;- precoCentavos * quantidade
+   escreval(&quot;Subtotal em centavos: &quot;, subtotalCentavos)
+fimalgoritmo
+</code></pre><p><a href="visualg/02_sequencia.alg">Arquivo VisuAlg</a></p><h3>02_entrada.py</h3><button class="copy-button" type="button" data-copy="py-sequencia">Copiar código</button><pre id="py-sequencia"><code>preco_centavos = 300
+texto = input(&quot;Quantidade de águas: &quot;)
+quantidade = int(texto)
+subtotal_centavos = preco_centavos * quantidade
+print(f&quot;Subtotal: R$ {subtotal_centavos // 100},{subtotal_centavos % 100:02d}&quot;)
+</code></pre><p><a href="exemplos/02_entrada.py">Arquivo Python</a></p></section><section id="decisao"><h2>Decisao</h2><p>Entradas 0/11 são recusadas; 1/10 passam com saldo 20. Para observar falta de estoque, use saldo 1 e quantidade 2 nas duas simulações.</p><h3>03_decisao.alg</h3><button class="copy-button" type="button" data-copy="alg-decisao">Copiar código</button><pre id="alg-decisao"><code>algoritmo &quot;Cantina_Decisao&quot;
+var
+   quantidade, estoque, subtotalCentavos: inteiro
+inicio
+   estoque &lt;- 20
+   escreva(&quot;Quantidade de aguas: &quot;)
+   leia(quantidade)
+   se (quantidade &lt; 1) ou (quantidade &gt; 10) entao
+      escreval(&quot;Quantidade recusada: use de 1 a 10.&quot;)
+   senao
+      se quantidade &gt; estoque entao
+         escreval(&quot;Estoque insuficiente.&quot;)
+      senao
+         subtotalCentavos &lt;- 300 * quantidade
+         escreval(&quot;Simulacao aceita em centavos: &quot;, subtotalCentavos)
+      fimse
+   fimse
+fimalgoritmo
+</code></pre><p><a href="visualg/03_decisao.alg">Arquivo VisuAlg</a></p><h3>03_decisao.py</h3><button class="copy-button" type="button" data-copy="py-decisao">Copiar código</button><pre id="py-decisao"><code>preco_centavos = 300
+estoque = 20
+quantidade = int(input(&quot;Quantidade de águas: &quot;))
+if quantidade &lt; 1 or quantidade &gt; 10:
+    print(&quot;Quantidade recusada: use um inteiro de 1 a 10.&quot;)
+elif quantidade &gt; estoque:
+    print(&quot;Estoque insuficiente.&quot;)
+else:
+    subtotal_centavos = preco_centavos * quantidade
+    print(f&quot;Simulação aceita: {subtotal_centavos} centavos.&quot;)
+</code></pre><p><a href="exemplos/03_decisao.py">Arquivo Python</a></p></section><section id="repeticao"><h2>Repeticao</h2><p>Sequência 0, 11, 2: duas recusas e subtotal 600. Entrada não numérica continua como limite a tratar na etapa 8 de Python.</p><h3>04_repeticao.alg</h3><button class="copy-button" type="button" data-copy="alg-repeticao">Copiar código</button><pre id="alg-repeticao"><code>algoritmo &quot;Cantina_Repeticao&quot;
+var
+   quantidade, subtotalCentavos: inteiro
+inicio
+   quantidade &lt;- 0
+   enquanto (quantidade &lt; 1) ou (quantidade &gt; 10) faca
+      escreva(&quot;Quantidade de aguas (1 a 10): &quot;)
+      leia(quantidade)
+      se (quantidade &lt; 1) ou (quantidade &gt; 10) entao
+         escreval(&quot;Tente novamente com um inteiro de 1 a 10.&quot;)
+      fimse
+   fimenquanto
+   subtotalCentavos &lt;- 300 * quantidade
+   escreval(&quot;Subtotal em centavos: &quot;, subtotalCentavos)
+fimalgoritmo
+</code></pre><p><a href="visualg/04_repeticao.alg">Arquivo VisuAlg</a></p><h3>04_repeticao.py</h3><button class="copy-button" type="button" data-copy="py-repeticao">Copiar código</button><pre id="py-repeticao"><code>quantidade = 0
+while quantidade &lt; 1 or quantidade &gt; 10:
+    quantidade = int(input(&quot;Quantidade de águas (1 a 10): &quot;))
+    if quantidade &lt; 1 or quantidade &gt; 10:
+        print(&quot;Tente novamente com um inteiro de 1 a 10.&quot;)
+subtotal_centavos = 300 * quantidade
+print(&quot;Subtotal em centavos:&quot;, subtotal_centavos)
+</code></pre><p><a href="exemplos/04_repeticao.py">Arquivo Python</a></p></section><section><h2>Teste de mesa das mesmas entradas</h2><p>Anote entrada, condição, bloco escolhido, subtotal e motivo de recusa. Só depois execute no ambiente disponível e acrescente o resultado observado. A validação textual de Python não prova a leitura de um programa VisuAlg.</p><p><a href="../../../pages/visualg.html">Acervo VisuAlg preservado</a> · <a href="03-decisao.html">Retomar decisão em Python</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>

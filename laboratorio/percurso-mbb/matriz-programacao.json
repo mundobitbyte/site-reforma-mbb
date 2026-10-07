@@ -1,0 +1,406 @@
+[
+  {
+    "etapa": 0,
+    "destino": "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
+    "conceitos": [
+      "algoritmo",
+      "arquivo .py",
+      "interpretador",
+      "terminal"
+    ],
+    "pre_requisitos": [
+      "Caso fictício e dossiê de Análise"
+    ],
+    "arquivos": [],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/ambiente",
+      "pages/python.html#aprender/primeiro-programa"
+    ],
+    "evidencia": "PG00: entradas, saída, regra, limite do cálculo e ambiente identificado; reusa E01/E05/E07.",
+    "exercicio": "Leia o algoritmo em voz alta e diga o que ele ainda não salva.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 1,
+    "destino": "laboratorio/percurso-mbb/programacao/01-sequencia.html",
+    "conceitos": [
+      "atribuição",
+      "str",
+      "int",
+      "print",
+      "multiplicação"
+    ],
+    "pre_requisitos": [
+      "Etapa 0"
+    ],
+    "arquivos": [
+      "01_sequencia.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/valores-variaveis"
+    ],
+    "evidencia": "PG01: tabela nome/valor/tipo e teste de mesa; reusa BD01/RF-06.",
+    "exercicio": "Mude só a quantidade e compare previsão, saída e limite.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 2,
+    "destino": "laboratorio/percurso-mbb/programacao/02-entrada.html",
+    "conceitos": [
+      "input",
+      "int",
+      "f-string",
+      "divisão inteira",
+      "resto",
+      "formatação"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–1"
+    ],
+    "arquivos": [
+      "02_entrada.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/entrada-expressoes"
+    ],
+    "evidencia": "PG02: texto recebido, conversão e representação monetária; reusa BD01/RF-06.",
+    "exercicio": "Use 2 e 3. Guarde letras como caso previsto para retomar na etapa 8.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 3,
+    "destino": "laboratorio/percurso-mbb/programacao/03-decisao.html",
+    "conceitos": [
+      "comparação",
+      "bool",
+      "or",
+      "if",
+      "elif",
+      "else",
+      "indentação"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–2"
+    ],
+    "arquivos": [
+      "03_decisao.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/decisoes",
+      "pages/python.html#aprender/decisoes-multiplas"
+    ],
+    "evidencia": "PG03: tabela de decisão nas fronteiras e no saldo; reusa E07/BD07/RF-03/RF-04.",
+    "exercicio": "Desenhe os caminhos aceito/recusado e teste um caso de cada caminho.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 4,
+    "destino": "laboratorio/percurso-mbb/programacao/04-repeticao.html",
+    "conceitos": [
+      "while",
+      "estado inicial",
+      "condição de parada"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–3"
+    ],
+    "arquivos": [
+      "04_repeticao.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/while"
+    ],
+    "evidencia": "PG04: teste de mesa com condição, tentativa e saída; reusa RF-03 e a revisão de PG03.",
+    "exercicio": "Explique como o laço termina e indique a linha que muda seu estado.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 5,
+    "destino": "laboratorio/percurso-mbb/programacao/05-acumulador.html",
+    "conceitos": [
+      "for",
+      "range",
+      "contador",
+      "acumulador"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–4"
+    ],
+    "arquivos": [
+      "05_acumulador.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/for-acumuladores"
+    ],
+    "evidencia": "PG05: contador, acumulador e caso que soma inválida encobre; reusa RF-02/RF-03.",
+    "exercicio": "Faça o teste de mesa e explique por que somar não basta para validar.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 6,
+    "destino": "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+    "conceitos": [
+      "lista",
+      "dicionário",
+      "chave",
+      "índice",
+      "get",
+      "coleções aninhadas"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–5"
+    ],
+    "arquivos": [
+      "06_colecoes.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/listas",
+      "pages/python.html#aprender/dicionarios",
+      "pages/python.html#aprender/colecoes-aninhadas"
+    ],
+    "evidencia": "PG06: campos do item, mapa por ID e subtotal; reusa BD02/BD03/BD05.",
+    "exercicio": "Duplique uma linha de Água e acompanhe a consolidação sem criar outra variável.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 7,
+    "destino": "laboratorio/percurso-mbb/programacao/07-funcoes.html",
+    "conceitos": [
+      "def",
+      "parâmetro",
+      "argumento",
+      "return",
+      "escopo local"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–6"
+    ],
+    "arquivos": [
+      "07_funcoes.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/funcoes",
+      "pages/python.html#aprender/parametros-escopo"
+    ],
+    "evidencia": "PG07: entradas, responsabilidade e retorno; reusa RF-06 e PG06.",
+    "exercicio": "Explique o contrato e compare o número retornado com o texto exibido.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 8,
+    "destino": "laboratorio/percurso-mbb/programacao/08-excecoes.html",
+    "conceitos": [
+      "ValueError",
+      "try",
+      "except",
+      "else",
+      "raise",
+      "type",
+      "break",
+      "while True"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–7"
+    ],
+    "arquivos": [
+      "08_excecoes.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/excecoes"
+    ],
+    "evidencia": "PG08: entrada, erro previsto, recusa e nova tentativa; reusa RQ-01/PG02/PG04.",
+    "exercicio": "Preveja o fluxo para letras, 0 e 2. Registre sem preencher a execução antes de testar.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 9,
+    "destino": "laboratorio/percurso-mbb/programacao/09-modulos.html",
+    "conceitos": [
+      "import",
+      "módulo",
+      "main",
+      "__name__",
+      "biblioteca padrão"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–8"
+    ],
+    "arquivos": [
+      "regras.py",
+      "09_modulos.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/modulos"
+    ],
+    "evidencia": "PG09: mapa arquivo/responsabilidade e explicação da importação; reusa E09/E14.",
+    "exercicio": "Localize a definição usada pelo chamador e explique onde corrigir a regra.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 10,
+    "destino": "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+    "conceitos": [
+      "pathlib",
+      "__file__",
+      "with",
+      "UTF-8",
+      "json",
+      "modo x",
+      "modo r"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–9"
+    ],
+    "arquivos": [
+      "10_arquivo_json.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/caminhos",
+      "pages/python.html#aprender/arquivos-texto",
+      "pages/python.html#aprender/arquivos-formatos"
+    ],
+    "evidencia": "PG10: caminho, estrutura salva, leitura e recusa de sobrescrita; reusa BD06.",
+    "exercicio": "Abra o JSON e confirme simulacao: true; compare segunda execução com a primeira.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 11,
+    "destino": "laboratorio/percurso-mbb/programacao/11-objetos.html",
+    "conceitos": [
+      "class",
+      "instância",
+      "__init__",
+      "self",
+      "atributo",
+      "método"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–10"
+    ],
+    "arquivos": [
+      "11_objeto.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/classes-objetos",
+      "pages/python.html#aprender/encapsulamento-composicao"
+    ],
+    "evidencia": "PG11: classe/instância/atributo/método e limite; reusa E09/BD09.",
+    "exercicio": "Explique self e mostre por que guardar dados não garante uma regra.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 12,
+    "destino": "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+    "conceitos": [
+      "contrato do serviço",
+      "parâmetro SQL",
+      "transação",
+      "adaptador de terminal",
+      "argparse"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–11; BD03/BD04/BD07"
+    ],
+    "arquivos": [],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/sqlite",
+      "pages/python.html#aprender/ambiente-profissional"
+    ],
+    "evidencia": "PG12: comando, retorno salvo, reabertura e transição; reusa BD07/BD09/RF-01 a RF-09.",
+    "exercicio": "Consulte a venda salva e tente usar outra vez estado-esperado Novo: deve recusar.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 13,
+    "destino": "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "conceitos": [
+      "unittest",
+      "Arrange–Act–Assert",
+      "assertEqual",
+      "assertRaises",
+      "subTest",
+      "pytest",
+      "breakpoint"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–12"
+    ],
+    "arquivos": [
+      "13_testes.py"
+    ],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/testes",
+      "pages/python.html#aprender/logging-debugger",
+      "pages/python.html#aprender/qualidade-estilo"
+    ],
+    "evidencia": "PG13: regra, entrada, previsão, resultado, falha e reteste; reusa E12/E13 e prepara QTS.",
+    "exercicio": "Explique uma falha lógica que não gera exceção e um teste que a identifica.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  },
+  {
+    "etapa": 14,
+    "destino": "laboratorio/percurso-mbb/programacao/14-integracao.html",
+    "conceitos": [
+      "rastreabilidade",
+      "revisão circular",
+      "retomada em espiral",
+      "limite de evidência"
+    ],
+    "pre_requisitos": [
+      "Etapas 0–13; dossiê e BD09"
+    ],
+    "arquivos": [],
+    "origens": [
+      "pages/programacao.html",
+      "pages/visualg.html",
+      "pages/python.html#aprender/projeto-integrador",
+      "pages/python.html#aprender/configuracao-git"
+    ],
+    "evidencia": "PG14: mapa de impacto e defesa do mesmo pedido; reusa E15/BD09/PG00–PG13.",
+    "exercicio": "Mostre onde corrigir uma regra e quais evidências precisam ser refeitas.",
+    "limite": "simulação gradual; serviço persistente na etapa 12; navegador não verificado",
+    "browser_tested": false
+  }
+]

@@ -143,3 +143,32 @@ Planejamento: `docs/reforma/planejamento-cantina-mbb.md`.
 Evidência inicial: `docs/reforma/checkpoint-08-pedido-persistente.md`.
 Cupom: `docs/reforma/checkpoint-09-cupom.md`.
 Estado atual: `docs/reforma/checkpoint-10-estados.md`.
+
+
+## Programação/Python e terminal didático
+
+[Percurso de Programação](../percurso-mbb/programacao/index.html): 15 etapas,
+exercícios, caderno e ponte com VisuAlg. Os exemplos introdutórios são simulações;
+as vendas persistentes usam a classe Cantina já existente, sem outra cópia das regras.
+
+Na pasta deste serviço, com o ambiente ativado:
+
+```bash
+python terminal.py preparar
+python terminal.py produtos
+python terminal.py registrar --item 1:2
+python terminal.py consultar 1
+python terminal.py avancar 1 --estado-esperado Novo
+```
+
+O banco separado fica em `dados/programacao/cantina.sqlite3`, com o mesmo schema
+e migrações. Preparar cria uma vez e recusa arquivo existente, sem reset.
+Use o ID devolvido pela venda: 1 só vale para a primeira em um banco novo.
+Cada registrar aceito cria outra venda fictícia; não é comando de conferência.
+Reabrir o terminal mantém os dados. `--item 1:2 --item 1:3` consolida 5 Águas;
+`--cupom MBB10` usa a política já implementada. Avançar pede o estado consultado
+e recusa consulta antiga. O CLI não aceita caminho externo de banco.
+
+Os 13 casos de `tests/test_terminal.py` passaram, com bancos temporários.
+Os arquivos VisuAlg são ponte revisada, sem execução no VisuAlg registrada.
+As pendências visuais da aplicação continuam as mesmas.
