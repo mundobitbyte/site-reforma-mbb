@@ -12,6 +12,7 @@ Escopo: etapas 0–14, caderno e apoios de Programação, no repositório experi
 - Etapa 12: preparação local com venv e dependência tzdata, identificação da pasta, ID real retornado, consulta em outro processo, avanço e recusa por estado antigo. Usa serviço/schema existentes, sem nova implementação.
 - Etapa 13: primeiro teste com assert, falha proposital numa cópia, depois unittest; preparação de pytest em apoio separado usando requirements.txt existente.
 - Etapa 14: exemplo de RF-03 → modelo → serviço → teste → resultado real; avisos históricos desatualizados foram delimitados, sem afirmar autonomia universal.
+- Índice: título pode quebrar palavra em 320 px para evitar excesso de largura.
 - Caderno PG00–PG14: campos correspondem às atividades, exemplos didáticos rotulados onde necessários, leitura HTML com retorno a cada etapa e cópia Markdown. Site não salva respostas.
 
 ## Observações descartadas ou delimitadas
@@ -33,7 +34,12 @@ Etapas 1 e 2 reproduzem 600/900 e R$ 6,00/R$ 9,00; scripts preservados. Etapa 7 
 
 ## Publicação
 
-Fluxo existente: branch publicacao/cantina-estatica, GitHub Pages na raiz; desenvolvimento preparacao/isolamento-inicial com mesmas mudanças de Programação. Não alterar configuração, domínio, produção, Firebase, nem outras disciplinas. Verificação pública/responsiva será registrada após implantação; ainda não concluída neste registro inicial.
+Fluxo existente: branch publicacao/cantina-estatica, GitHub Pages na raiz; desenvolvimento preparacao/isolamento-inicial com mesmas mudanças de Programação. Não alterar configuração, domínio, produção, Firebase, nem outras disciplinas. Publicação confirmada no endereço público de Programação; commit de conteúdo 4145bdd9bb2eb5848a72accea1a757a722cd56f6. Índice, JSON corrigido e caderno HTML conferidos no conteúdo servido.
+
+Chromium remoto: 80 verificações aprovadas em 20 páginas × 320, 360, 768 e 1280 px. Um excesso de 3 px no índice em 320 foi corrigido com quebra da palavra do título, sem mudança de fonte/cores, e retestado nas quatro larguras. Página sem rolagem horizontal; tabelas têm rolagem interna própria, com célula direita alcançada pela interação do navegador. A tentativa de rolagem por seta não demonstrou deslocamento, portanto não é declarada como aprovada.
+Menu abriu por Enter e fechou por Escape; exemplos recolhidos foram abertos por teclado. Caderno possui 15 retornos; alvo PG10 aparece abaixo do cabeçalho (144 px), volta à etapa 10 e avança à 11. Primeiro teste aparece antes da explicação de frameworks.
+
+Cópia: alvos e conteúdo canônico conferidos; botão publicou “Comando copiado.”. Contudo, a leitura da área de transferência e colagem na página técnica retornaram o SQL anterior em vez do novo comando. Confirmação funcional da cópia ficou inconclusiva neste navegador remoto. Não se alterou o JavaScript compartilhado; os comandos continuam disponíveis para seleção manual. A página técnica de verificação não faz parte do fluxo do aluno.
 
 ## Limites
 
