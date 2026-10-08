@@ -1,0 +1,4321 @@
+{
+  "revisao": 47,
+  "data": "2026-10-08",
+  "base": "d4497821647a433ec29ce1e02ff2b1791419fcd1",
+  "commit_conteudo": "bf7066ac0c562cd32f153863510b32b9dbc5848c",
+  "commit_ajuste_publico": "e1da97625bad4c3aaef475f2f7829fa923441a41",
+  "escopo": [
+    "Web/API 00–12",
+    "QTS 00–16",
+    "Git 00–09"
+  ],
+  "ambiente": {
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "sistema": "Linux"
+  },
+  "pytest": {
+    "passaram": 99,
+    "falharam": 0,
+    "aviso": "Depreciação Starlette/httpx existente, sem alteração das dependências"
+  },
+  "node_test": {
+    "passaram": 26,
+    "falharam": 0
+  },
+  "http_local": {
+    "requisicoes": 17,
+    "operacoes_openapi": 4,
+    "estado_final": "Entregue",
+    "total_agua_centavos": 600,
+    "banco_temporario": true
+  },
+  "cliente_novo": [
+    {
+      "acao": "produtos",
+      "codigo": 0,
+      "saida": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Água\",\n    \"preco_centavos\": 300,\n    \"estoque\": 20\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Suco\",\n    \"preco_centavos\": 600,\n    \"estoque\": 15\n  },\n  {\n    \"id\": 3,\n    \"nome\": \"Salgado\",\n    \"preco_centavos\": 800,\n    \"estoque\": 10\n  },\n  {\n    \"id\": 4,\n    \"nome\": \"Sanduíche\",\n    \"preco_centavos\": 1200,\n    \"estoque\": 8\n  },\n  {\n    \"id\": 5,\n    \"nome\": \"Chocolate\",\n    \"preco_centavos\": 500,\n    \"estoque\": 12\n  }\n]\n"
+    },
+    {
+      "acao": "registrar",
+      "codigo": 0,
+      "saida": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 23:06:21\",\n  \"status\": \"Novo\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Confirmado\",\n  \"historico_status\": [],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n"
+    },
+    {
+      "acao": "consultar",
+      "codigo": 0,
+      "saida": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 23:06:21\",\n  \"status\": \"Novo\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Confirmado\",\n  \"historico_status\": [],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n"
+    },
+    {
+      "acao": "avancar",
+      "codigo": 0,
+      "saida": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 23:06:21\",\n  \"status\": \"Confirmado\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Em preparação\",\n  \"historico_status\": [\n    {\n      \"estado_anterior\": \"Novo\",\n      \"estado_novo\": \"Confirmado\",\n      \"alterado_em\": \"2026-10-08 23:06:21\"\n    }\n  ],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n"
+    },
+    {
+      "acao": "conflito",
+      "codigo": 1,
+      "saida": "HTTP 409: O estado do pedido mudou. Consulte novamente antes de avançar.\n"
+    },
+    {
+      "acao": "consultar",
+      "codigo": 0,
+      "saida": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 23:06:21\",\n  \"status\": \"Confirmado\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Em preparação\",\n  \"historico_status\": [\n    {\n      \"estado_anterior\": \"Novo\",\n      \"estado_novo\": \"Confirmado\",\n      \"alterado_em\": \"2026-10-08 23:06:21\"\n    }\n  ],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n"
+    },
+    {
+      "acao": "consultar",
+      "codigo": 1,
+      "saida": "HTTP 404: Pedido não encontrado.\n"
+    },
+    {
+      "acao": "comunicacao_sem_servidor",
+      "codigo": 1,
+      "saida": "Falha de comunicação. Este cliente não confirmou o resultado; não reenvie uma venda automaticamente.\n"
+    }
+  ],
+  "comparacao": {
+    "cenarios": 9,
+    "observacoes": 18,
+    "bancos_temporarios": true,
+    "navegador_testado": false,
+    "v1_aprovada_para_uso": false,
+    "resultados": [
+      {
+        "id": "Q-01",
+        "rf": "RF-03",
+        "cenario": "limite inferior",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 3.0,
+          "desconto": 0.0,
+          "total": 3.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-01",
+        "rf": "RF-03",
+        "cenario": "limite inferior",
+        "versao": "evolucao",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "criado_em": "2026-10-08 23:05:40",
+          "status": "Novo",
+          "cupom_codigo": null,
+          "desconto_centavos": 0,
+          "subtotal_centavos": 300,
+          "total_centavos": 300,
+          "proximo_status": "Confirmado",
+          "historico_status": [],
+          "itens": [
+            {
+              "produto_id": 1,
+              "nome": "Água",
+              "quantidade": 1,
+              "preco_unitario_centavos": 300
+            }
+          ]
+        }
+      },
+      {
+        "id": "Q-02",
+        "rf": "RF-03",
+        "cenario": "limite superior",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 30.0,
+          "desconto": 0.0,
+          "total": 30.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-02",
+        "rf": "RF-03",
+        "cenario": "limite superior",
+        "versao": "evolucao",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "criado_em": "2026-10-08 23:05:40",
+          "status": "Novo",
+          "cupom_codigo": null,
+          "desconto_centavos": 0,
+          "subtotal_centavos": 3000,
+          "total_centavos": 3000,
+          "proximo_status": "Confirmado",
+          "historico_status": [],
+          "itens": [
+            {
+              "produto_id": 1,
+              "nome": "Água",
+              "quantidade": 10,
+              "preco_unitario_centavos": 300
+            }
+          ]
+        }
+      },
+      {
+        "id": "Q-03",
+        "rf": "RF-03",
+        "cenario": "zero",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 0.0,
+          "desconto": 0.0,
+          "total": 0.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-03",
+        "rf": "RF-03",
+        "cenario": "zero",
+        "versao": "evolucao",
+        "http": 422,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+        }
+      },
+      {
+        "id": "Q-04",
+        "rf": "RF-03",
+        "cenario": "negativa",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": -3.0,
+          "desconto": 0.0,
+          "total": -3.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-04",
+        "rf": "RF-03",
+        "cenario": "negativa",
+        "versao": "evolucao",
+        "http": 422,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+        }
+      },
+      {
+        "id": "Q-05",
+        "rf": "RF-03",
+        "cenario": "acima do limite",
+        "versao": "v1",
+        "http": 400,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "Quantidade inválida."
+        }
+      },
+      {
+        "id": "Q-05",
+        "rf": "RF-03",
+        "cenario": "acima do limite",
+        "versao": "evolucao",
+        "http": 422,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "A quantidade deve ser um número inteiro entre 1 e 10."
+        }
+      },
+      {
+        "id": "Q-06",
+        "rf": "RF-04/RF-08",
+        "cenario": "saldo insuficiente",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 6.0,
+          "desconto": 0.0,
+          "total": 6.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-06",
+        "rf": "RF-04/RF-08",
+        "cenario": "saldo insuficiente",
+        "versao": "evolucao",
+        "http": 409,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "Estoque insuficiente para Água."
+        }
+      },
+      {
+        "id": "Q-07",
+        "rf": "RF-02/RF-03",
+        "cenario": "repetição soma 12",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 36.0,
+          "desconto": 0.0,
+          "total": 36.0,
+          "cupom": null,
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-07",
+        "rf": "RF-02/RF-03",
+        "cenario": "repetição soma 12",
+        "versao": "evolucao",
+        "http": 400,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "Somando os itens, cada produto pode ter no máximo 10 unidades."
+        }
+      },
+      {
+        "id": "Q-08",
+        "rf": "RF-05",
+        "cenario": "cupom abaixo do mínimo",
+        "versao": "v1",
+        "http": 201,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 6.0,
+          "desconto": 0.6,
+          "total": 5.4,
+          "cupom": "MBB10",
+          "status": "Novo"
+        }
+      },
+      {
+        "id": "Q-08",
+        "rf": "RF-05",
+        "cenario": "cupom abaixo do mínimo",
+        "versao": "evolucao",
+        "http": 400,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "O cupom exige pedido de pelo menos R$ 30,00."
+        }
+      },
+      {
+        "id": "Q-09",
+        "rf": "RF-09",
+        "cenario": "salto Novo para Entregue",
+        "versao": "v1",
+        "http": 200,
+        "recusou": false,
+        "banco_preservado": false,
+        "resposta": {
+          "id": 1,
+          "subtotal": 6.0,
+          "desconto": 0.0,
+          "total": 6.0,
+          "cupom": null,
+          "status": "Entregue"
+        }
+      },
+      {
+        "id": "Q-09",
+        "rf": "RF-09",
+        "cenario": "salto Novo para Entregue",
+        "versao": "evolucao",
+        "http": 409,
+        "recusou": true,
+        "banco_preservado": true,
+        "resposta": {
+          "detail": "O pedido em Novo só pode avançar para Confirmado."
+        }
+      }
+    ]
+  },
+  "tdd": {
+    "fases": [
+      {
+        "fase": "RED",
+        "amostras": 8,
+        "falhas": [
+          "0",
+          "-1",
+          "True",
+          "1.5"
+        ]
+      },
+      {
+        "fase": "GREEN",
+        "amostras": 8,
+        "falhas": []
+      },
+      {
+        "fase": "REFACTOR",
+        "amostras": 8,
+        "falhas": []
+      }
+    ],
+    "aplicacao_modificada": false
+  },
+  "git_original": {
+    "comandos_executados": 62,
+    "conflito_resolvido": true,
+    "revert_preservou_historico": true,
+    "fetch_sem_mudar_HEAD": true,
+    "pull_ff_conferido": true,
+    "worktree_passado_conferida": true,
+    "remoto_local": true,
+    "github_testado": false,
+    "registro": [
+      {
+        "comando": [
+          "init",
+          "-b",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "Initialized empty Git repository in <temporario>/cantina-a/.git/"
+      },
+      {
+        "comando": [
+          "check-ignore",
+          "ensaio.sqlite3"
+        ],
+        "codigo": 0,
+        "saida": "ensaio.sqlite3"
+      },
+      {
+        "comando": [
+          "status",
+          "--short"
+        ],
+        "codigo": 0,
+        "saida": "?? .gitignore\n?? evidencias.md\n?? requisitos.md"
+      },
+      {
+        "comando": [
+          "add",
+          "requisitos.md",
+          "evidencias.md",
+          ".gitignore"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "diff",
+          "--cached"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/.gitignore b/.gitignore\nnew file mode 100644\nindex 0000000..d0ce507\n--- /dev/null\n+++ b/.gitignore\n@@ -0,0 +1,2 @@\n+*.sqlite3\n+.venv/\ndiff --git a/evidencias.md b/evidencias.md\nnew file mode 100644\nindex 0000000..1b19858\n--- /dev/null\n+++ b/evidencias.md\n@@ -0,0 +1 @@\n+RQ-02: navegador ainda pendente.\ndiff --git a/requisitos.md b/requisitos.md\nnew file mode 100644\nindex 0000000..22d40ad\n--- /dev/null\n+++ b/requisitos.md\n@@ -0,0 +1 @@\n+RF-03: quantidade inteira de 1 a 10."
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(RF-03): registrar quantidade e limite da evidencia"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica (root-commit) ce5cbc0] docs(RF-03): registrar quantidade e limite da evidencia\n 3 files changed, 4 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 evidencias.md\n create mode 100644 requisitos.md"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "ce5cbc07b85fce2a1a08e11c996ddec43f52d722"
+      },
+      {
+        "comando": [
+          "diff"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..c1c10b7 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1 @@\n-RF-03: quantidade inteira de 1 a 10.\n+RF-03: quantidade inteira de 1 a 11."
+      },
+      {
+        "comando": [
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs: simular limite errado"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica 1103dd4] docs: simular limite errado\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1103dd4adce4d96495877a65fad173187390dfd4"
+      },
+      {
+        "comando": [
+          "show",
+          "ce5cbc07b85fce2a1a08e11c996ddec43f52d722:requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": "RF-03: quantidade inteira de 1 a 10."
+      },
+      {
+        "comando": [
+          "log",
+          "--oneline",
+          "--",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": "1103dd4 docs: simular limite errado\nce5cbc0 docs(RF-03): registrar quantidade e limite da evidencia"
+      },
+      {
+        "comando": [
+          "revert",
+          "--no-edit",
+          "1103dd4adce4d96495877a65fad173187390dfd4"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica 70395a0] Revert \"docs: simular limite errado\"\n Date: Thu Oct 8 20:05:41 2026 -0300\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+      },
+      {
+        "comando": [
+          "rev-list",
+          "--count",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "3"
+      },
+      {
+        "comando": [
+          "add",
+          "evidencias.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "restore",
+          "--staged",
+          "evidencias.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "diff",
+          "--cached",
+          "--",
+          "evidencias.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "diff",
+          "--",
+          "evidencias.md"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/evidencias.md b/evidencias.md\nindex 1b19858..3989344 100644\n--- a/evidencias.md\n+++ b/evidencias.md\n@@ -1 +1 @@\n-RQ-02: navegador ainda pendente.\n+RQ-02: pendente; prever ensaio a 360 px."
+      },
+      {
+        "comando": [
+          "add",
+          "evidencias.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(RQ-02): planejar ensaio sem afirmar execucao"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica d772a93] docs(RQ-02): planejar ensaio sem afirmar execucao\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+      },
+      {
+        "comando": [
+          "switch",
+          "-c",
+          "experimento/justificativa"
+        ],
+        "codigo": 0,
+        "saida": "Switched to a new branch 'experimento/justificativa'"
+      },
+      {
+        "comando": [
+          "add",
+          "justificativa.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(RF-03): justificar valores de teste"
+        ],
+        "codigo": 0,
+        "saida": "[experimento/justificativa c4a7d37] docs(RF-03): justificar valores de teste\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md"
+      },
+      {
+        "comando": [
+          "switch",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "Switched to branch 'base-didatica'"
+      },
+      {
+        "comando": [
+          "merge",
+          "--ff-only",
+          "experimento/justificativa"
+        ],
+        "codigo": 0,
+        "saida": "Updating d772a93..c4a7d37\nFast-forward\n justificativa.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md"
+      },
+      {
+        "comando": [
+          "switch",
+          "-c",
+          "experimento/limite12"
+        ],
+        "codigo": 0,
+        "saida": "Switched to a new branch 'experimento/limite12'"
+      },
+      {
+        "comando": [
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs: propor outro limite"
+        ],
+        "codigo": 0,
+        "saida": "[experimento/limite12 00bb3ab] docs: propor outro limite\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+      },
+      {
+        "comando": [
+          "switch",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "Switched to branch 'base-didatica'"
+      },
+      {
+        "comando": [
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(RF-03): explicitar consolidacao"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica 8efed13] docs(RF-03): explicitar consolidacao\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+      },
+      {
+        "comando": [
+          "merge",
+          "experimento/limite12"
+        ],
+        "codigo": 1,
+        "saida": "Auto-merging requisitos.md\nCONFLICT (content): Merge conflict in requisitos.md\nAutomatic merge failed; fix conflicts and then commit the result."
+      },
+      {
+        "comando": [
+          "diff",
+          "--name-only",
+          "--diff-filter=U"
+        ],
+        "codigo": 0,
+        "saida": "requisitos.md"
+      },
+      {
+        "comando": [
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(RF-03): resolver conflito pela regra aprovada"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica 1170473] docs(RF-03): resolver conflito pela regra aprovada"
+      },
+      {
+        "comando": [
+          "diff",
+          "--name-only",
+          "--diff-filter=U"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1170473d10de1602123b8471363af30251d1432b"
+      },
+      {
+        "comando": [
+          "worktree",
+          "add",
+          "--detach",
+          "/tmp/mbb-git-uq819ist/leitura-passado",
+          "ce5cbc07b85fce2a1a08e11c996ddec43f52d722"
+        ],
+        "codigo": 0,
+        "saida": "HEAD is now at ce5cbc0 docs(RF-03): registrar quantidade e limite da evidencia\nPreparing worktree (detached HEAD ce5cbc0)"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1170473d10de1602123b8471363af30251d1432b"
+      },
+      {
+        "comando": [
+          "worktree",
+          "remove",
+          "/tmp/mbb-git-uq819ist/leitura-passado"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "init",
+          "--bare",
+          "-b",
+          "base-didatica",
+          "/tmp/mbb-git-uq819ist/remoto-local.git"
+        ],
+        "codigo": 0,
+        "saida": "Initialized empty Git repository in <temporario>/remoto-local.git/"
+      },
+      {
+        "comando": [
+          "remote",
+          "add",
+          "origin",
+          "/tmp/mbb-git-uq819ist/remoto-local.git"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "push",
+          "-u",
+          "origin",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "branch 'base-didatica' set up to track 'origin/base-didatica'.\nTo <temporario>/remoto-local.git\n * [new branch]      base-didatica -> base-didatica"
+      },
+      {
+        "comando": [
+          "clone",
+          "/tmp/mbb-git-uq819ist/remoto-local.git",
+          "/tmp/mbb-git-uq819ist/cantina-b"
+        ],
+        "codigo": 0,
+        "saida": "Cloning into '<temporario>/cantina-b'...\ndone."
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1170473d10de1602123b8471363af30251d1432b"
+      },
+      {
+        "comando": [
+          "add",
+          "parecer.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "commit",
+          "-m",
+          "docs(QTS): registrar limite do parecer"
+        ],
+        "codigo": 0,
+        "saida": "[base-didatica 53b2d78] docs(QTS): registrar limite do parecer\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md"
+      },
+      {
+        "comando": [
+          "push",
+          "origin",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "To <temporario>/remoto-local.git\n   1170473..53b2d78  base-didatica -> base-didatica"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1170473d10de1602123b8471363af30251d1432b"
+      },
+      {
+        "comando": [
+          "fetch",
+          "origin"
+        ],
+        "codigo": 0,
+        "saida": "From <temporario>/remoto-local\n   1170473..53b2d78  base-didatica -> origin/base-didatica"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "1170473d10de1602123b8471363af30251d1432b"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "origin/base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "53b2d786fc82e2d3ab70eddc36bfe36389b1a37e"
+      },
+      {
+        "comando": [
+          "diff",
+          "HEAD..origin/base-didatica",
+          "--",
+          "parecer.md"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/parecer.md b/parecer.md\nnew file mode 100644\nindex 0000000..c9fac3a\n--- /dev/null\n+++ b/parecer.md\n@@ -0,0 +1 @@\n+Nao liberar como produto final: uso visual ainda pendente."
+      },
+      {
+        "comando": [
+          "pull",
+          "--ff-only",
+          "origin",
+          "base-didatica"
+        ],
+        "codigo": 0,
+        "saida": "Updating 1170473..53b2d78\nFast-forward\n parecer.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md\nFrom <temporario>/remoto-local\n * branch            base-didatica -> FETCH_HEAD"
+      },
+      {
+        "comando": [
+          "push",
+          "-u",
+          "origin",
+          "experimento/justificativa"
+        ],
+        "codigo": 0,
+        "saida": "branch 'experimento/justificativa' set up to track 'origin/experimento/justificativa'.\nTo <temporario>/remoto-local.git\n * [new branch]      experimento/justificativa -> experimento/justificativa"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "53b2d786fc82e2d3ab70eddc36bfe36389b1a37e"
+      },
+      {
+        "comando": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "53b2d786fc82e2d3ab70eddc36bfe36389b1a37e"
+      },
+      {
+        "comando": [
+          "tag",
+          "-a",
+          "evidencia-didatica",
+          "-m",
+          "Ensaio local; nao e release de produto"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "status",
+          "--porcelain"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "status",
+          "--porcelain"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "comando": [
+          "ls-files",
+          "ensaio.sqlite3"
+        ],
+        "codigo": 0,
+        "saida": ""
+      }
+    ]
+  },
+  "git_manual": {
+    "comandos": 65,
+    "registro": [
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "--version"
+        ],
+        "codigo": 0,
+        "saida": "git version 2.51.1\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "init",
+          "-b",
+          "aula"
+        ],
+        "codigo": 0,
+        "saida": "Initialized empty Git repository in /tmp/mbb-manual-gol56vwg/cantina-git-aula/.git/\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "config",
+          "user.name",
+          "Aluno Cantina"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "config",
+          "user.email",
+          "aluno@example.invalid"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "config",
+          "commit.gpgsign",
+          "false"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "status"
+        ],
+        "codigo": 0,
+        "saida": "On branch aula\n\nNo commits yet\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\trequisitos.md\n\nnothing added to commit but untracked files present (use \"git add\" to track)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--cached"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/requisitos.md b/requisitos.md\nnew file mode 100644\nindex 0000000..22d40ad\n--- /dev/null\n+++ b/requisitos.md\n@@ -0,0 +1 @@\n+RF-03: quantidade inteira de 1 a 10.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Registra RF-03"
+        ],
+        "codigo": 0,
+        "saida": "[aula (root-commit) 9cb826e] Registra RF-03\n 1 file changed, 1 insertion(+)\n create mode 100644 requisitos.md\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "status"
+        ],
+        "codigo": 0,
+        "saida": "On branch aula\nnothing to commit, working tree clean\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "9cb826e79278e6a602edb1dc77b429bd987065a2\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..c1c10b7 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1 @@\n-RF-03: quantidade inteira de 1 a 10.\n+RF-03: quantidade inteira de 1 a 11.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Experimento com limite 11"
+        ],
+        "codigo": 0,
+        "saida": "[aula c9f5e06] Experimento com limite 11\n 1 file changed, 1 insertion(+), 1 deletion(-)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "log",
+          "--oneline"
+        ],
+        "codigo": 0,
+        "saida": "c9f5e06 Experimento com limite 11\n9cb826e Registra RF-03\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "show",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "commit c9f5e0622ea1b60788b4dc1d989d1ee24001fd6d\nAuthor: Aluno Cantina <aluno@example.invalid>\nDate:   Thu Oct 8 20:06:20 2026 -0300\n\n    Experimento com limite 11\n\ndiff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..c1c10b7 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1 @@\n-RF-03: quantidade inteira de 1 a 10.\n+RF-03: quantidade inteira de 1 a 11.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "show",
+          "HEAD~1:requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": "RF-03: quantidade inteira de 1 a 10.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "revert",
+          "--no-edit",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "[aula 3186a3b] Revert \"Experimento com limite 11\"\n Date: Thu Oct 8 20:06:20 2026 -0300\n 1 file changed, 1 insertion(+), 1 deletion(-)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--cached"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..9f1ead9 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1,2 @@\n RF-03: quantidade inteira de 1 a 10.\n+Rascunho de aula.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "restore",
+          "--staged",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--cached"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/requisitos.md b/requisitos.md\nindex 22d40ad..9f1ead9 100644\n--- a/requisitos.md\n+++ b/requisitos.md\n@@ -1 +1,2 @@\n RF-03: quantidade inteira de 1 a 10.\n+Rascunho de aula.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "restore",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "switch",
+          "-c",
+          "experimento/justificativa"
+        ],
+        "codigo": 0,
+        "saida": "Switched to a new branch 'experimento/justificativa'\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "justificativa.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Explica limite"
+        ],
+        "codigo": 0,
+        "saida": "[experimento/justificativa c24cbea] Explica limite\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "switch",
+          "aula"
+        ],
+        "codigo": 0,
+        "saida": "Switched to branch 'aula'\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "merge",
+          "--ff-only",
+          "experimento/justificativa"
+        ],
+        "codigo": 0,
+        "saida": "Updating 3186a3b..c24cbea\nFast-forward\n justificativa.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 justificativa.md\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "switch",
+          "-c",
+          "experimento/limite12"
+        ],
+        "codigo": 0,
+        "saida": "Switched to a new branch 'experimento/limite12'\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Experimenta limite 12"
+        ],
+        "codigo": 0,
+        "saida": "[experimento/limite12 001bb56] Experimenta limite 12\n 1 file changed, 1 insertion(+), 1 deletion(-)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "switch",
+          "aula"
+        ],
+        "codigo": 0,
+        "saida": "Switched to branch 'aula'\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Consolida regra aprovada"
+        ],
+        "codigo": 0,
+        "saida": "[aula aa3da8a] Consolida regra aprovada\n 1 file changed, 1 insertion(+), 1 deletion(-)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "merge",
+          "experimento/limite12"
+        ],
+        "codigo": 1,
+        "saida": "Auto-merging requisitos.md\nCONFLICT (content): Merge conflict in requisitos.md\nAutomatic merge failed; fix conflicts and then commit the result.\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--name-only",
+          "--diff-filter=U"
+        ],
+        "codigo": 0,
+        "saida": "requisitos.md\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Resolve conflito conforme RF-03"
+        ],
+        "codigo": 0,
+        "saida": "[aula afd0535] Resolve conflito conforme RF-03\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--name-only",
+          "--diff-filter=U"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "show",
+          "9cb826e79278e6a602edb1dc77b429bd987065a2:requisitos.md"
+        ],
+        "codigo": 0,
+        "saida": "RF-03: quantidade inteira de 1 a 10.\n"
+      },
+      {
+        "pasta": "mbb-manual-gol56vwg",
+        "comando": [
+          "git",
+          "init",
+          "--bare",
+          "-b",
+          "aula",
+          "remoto-cantina.git"
+        ],
+        "codigo": 0,
+        "saida": "Initialized empty Git repository in /tmp/mbb-manual-gol56vwg/remoto-cantina.git/\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "remote",
+          "add",
+          "origin",
+          "../remoto-cantina.git"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "remote",
+          "-v"
+        ],
+        "codigo": 0,
+        "saida": "origin\t../remoto-cantina.git (fetch)\norigin\t../remoto-cantina.git (push)\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "push",
+          "-u",
+          "origin",
+          "aula"
+        ],
+        "codigo": 0,
+        "saida": "branch 'aula' set up to track 'origin/aula'.\nTo ../remoto-cantina.git\n * [new branch]      aula -> aula\n"
+      },
+      {
+        "pasta": "mbb-manual-gol56vwg",
+        "comando": [
+          "git",
+          "clone",
+          "remoto-cantina.git",
+          "cantina-colega"
+        ],
+        "codigo": 0,
+        "saida": "Cloning into 'cantina-colega'...\ndone.\n"
+      },
+      {
+        "pasta": "cantina-colega",
+        "comando": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "afd05352a3527299736da7bb2fe53805046dba9b\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          "parecer.md"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Registra parecer didatico"
+        ],
+        "codigo": 0,
+        "saida": "[aula 7f72dfa] Registra parecer didatico\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "push"
+        ],
+        "codigo": 0,
+        "saida": "To ../remoto-cantina.git\n   afd0535..7f72dfa  aula -> aula\n"
+      },
+      {
+        "pasta": "cantina-colega",
+        "comando": [
+          "git",
+          "fetch",
+          "origin"
+        ],
+        "codigo": 0,
+        "saida": "From /tmp/mbb-manual-gol56vwg/remoto-cantina\n   afd0535..7f72dfa  aula       -> origin/aula\n"
+      },
+      {
+        "pasta": "cantina-colega",
+        "comando": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "codigo": 0,
+        "saida": "afd05352a3527299736da7bb2fe53805046dba9b\n"
+      },
+      {
+        "pasta": "cantina-colega",
+        "comando": [
+          "git",
+          "diff",
+          "HEAD..origin/aula"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/parecer.md b/parecer.md\nnew file mode 100644\nindex 0000000..6825ef7\n--- /dev/null\n+++ b/parecer.md\n@@ -0,0 +1 @@\n+Uso didatico; nao e liberacao comercial.\n"
+      },
+      {
+        "pasta": "cantina-colega",
+        "comando": [
+          "git",
+          "pull",
+          "--ff-only",
+          "origin",
+          "aula"
+        ],
+        "codigo": 0,
+        "saida": "Updating afd0535..7f72dfa\nFast-forward\n parecer.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 parecer.md\nFrom /tmp/mbb-manual-gol56vwg/remoto-cantina\n * branch            aula       -> FETCH_HEAD\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "check-ignore",
+          "ensaio.sqlite3"
+        ],
+        "codigo": 0,
+        "saida": "ensaio.sqlite3\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "ls-files",
+          "ensaio.sqlite3"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "add",
+          ".gitignore"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--cached"
+        ],
+        "codigo": 0,
+        "saida": "diff --git a/.gitignore b/.gitignore\nnew file mode 100644\nindex 0000000..d0ce507\n--- /dev/null\n+++ b/.gitignore\n@@ -0,0 +1,2 @@\n+*.sqlite3\n+.venv/\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "commit",
+          "-m",
+          "Ignora dados locais"
+        ],
+        "codigo": 0,
+        "saida": "[aula ceaca9c] Ignora dados locais\n 1 file changed, 2 insertions(+)\n create mode 100644 .gitignore\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "tag",
+          "-a",
+          "cantina-didatica-v1",
+          "-m",
+          "Entrega didatica revisada"
+        ],
+        "codigo": 0,
+        "saida": ""
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "show",
+          "--no-patch",
+          "cantina-didatica-v1"
+        ],
+        "codigo": 0,
+        "saida": "tag cantina-didatica-v1\nTagger: Aluno Cantina <aluno@example.invalid>\nDate:   Thu Oct 8 20:06:21 2026 -0300\n\nEntrega didatica revisada\n\ncommit ceaca9c4edcc6bd7160548d2ade24f29c8ce67ca\nAuthor: Aluno Cantina <aluno@example.invalid>\nDate:   Thu Oct 8 20:06:21 2026 -0300\n\n    Ignora dados locais\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "log",
+          "--oneline",
+          "--decorate",
+          "-5"
+        ],
+        "codigo": 0,
+        "saida": "ceaca9c (HEAD -> aula, tag: cantina-didatica-v1) Ignora dados locais\n7f72dfa (origin/aula) Registra parecer didatico\nafd0535 Resolve conflito conforme RF-03\naa3da8a Consolida regra aprovada\n001bb56 (experimento/limite12) Experimenta limite 12\n"
+      },
+      {
+        "pasta": "cantina-git-aula",
+        "comando": [
+          "git",
+          "status",
+          "--porcelain"
+        ],
+        "codigo": 0,
+        "saida": ""
+      }
+    ],
+    "remoto_local": true,
+    "github_necessario": false
+  },
+  "recusa_banco": {
+    "http": 400,
+    "resposta": {
+      "detail": "O cupom exige pedido de pelo menos R$ 30,00."
+    },
+    "antes": {
+      "cupom": [
+        [
+          "MBB10",
+          10,
+          3000,
+          "2099-12-31",
+          0
+        ]
+      ],
+      "historico_status": [],
+      "item_pedido": [],
+      "pedido": [],
+      "produto": [
+        [
+          1,
+          "Água",
+          300,
+          20
+        ],
+        [
+          2,
+          "Suco",
+          600,
+          15
+        ],
+        [
+          3,
+          "Salgado",
+          800,
+          10
+        ],
+        [
+          4,
+          "Sanduíche",
+          1200,
+          8
+        ],
+        [
+          5,
+          "Chocolate",
+          500,
+          12
+        ]
+      ]
+    },
+    "depois": {
+      "cupom": [
+        [
+          "MBB10",
+          10,
+          3000,
+          "2099-12-31",
+          0
+        ]
+      ],
+      "historico_status": [],
+      "item_pedido": [],
+      "pedido": [],
+      "produto": [
+        [
+          1,
+          "Água",
+          300,
+          20
+        ],
+        [
+          2,
+          "Suco",
+          600,
+          15
+        ],
+        [
+          3,
+          "Salgado",
+          800,
+          10
+        ],
+        [
+          4,
+          "Sanduíche",
+          1200,
+          8
+        ],
+        [
+          5,
+          "Chocolate",
+          500,
+          12
+        ]
+      ]
+    },
+    "banco_preservado": true
+  },
+  "navegador": {
+    "initial": [
+      {
+        "page": "web-api/00-fronteiras.html",
+        "client": 305,
+        "details": 1,
+        "h1": "0 — Do pedido à conversa entre programas",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/00-fronteiras.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/00-fronteiras.html",
+        "client": 345,
+        "details": 1,
+        "h1": "0 — Do pedido à conversa entre programas",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/00-fronteiras.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/00-fronteiras.html",
+        "client": 753,
+        "details": 1,
+        "h1": "0 — Do pedido à conversa entre programas",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/00-fronteiras.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/00-fronteiras.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "0 — Do pedido à conversa entre programas",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/00-fronteiras.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/01-html.html",
+        "client": 305,
+        "details": 1,
+        "h1": "1 — Estruturar antes de estilizar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/01-html.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/01-html.html",
+        "client": 345,
+        "details": 1,
+        "h1": "1 — Estruturar antes de estilizar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/01-html.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/01-html.html",
+        "client": 753,
+        "details": 1,
+        "h1": "1 — Estruturar antes de estilizar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/01-html.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/01-html.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "1 — Estruturar antes de estilizar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/01-html.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/02-formulario.html",
+        "client": 305,
+        "details": 1,
+        "h1": "2 — Campos que uma pessoa consegue identificar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/02-formulario.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/02-formulario.html",
+        "client": 345,
+        "details": 1,
+        "h1": "2 — Campos que uma pessoa consegue identificar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/02-formulario.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/02-formulario.html",
+        "client": 753,
+        "details": 1,
+        "h1": "2 — Campos que uma pessoa consegue identificar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/02-formulario.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/02-formulario.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "2 — Campos que uma pessoa consegue identificar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/02-formulario.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/03-css.html",
+        "client": 305,
+        "details": 1,
+        "h1": "3 — Apresentação, caixa e adaptação ao espaço",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/03-css.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/03-css.html",
+        "client": 345,
+        "details": 1,
+        "h1": "3 — Apresentação, caixa e adaptação ao espaço",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/03-css.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/03-css.html",
+        "client": 753,
+        "details": 1,
+        "h1": "3 — Apresentação, caixa e adaptação ao espaço",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/03-css.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/03-css.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "3 — Apresentação, caixa e adaptação ao espaço",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/03-css.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/04-eventos.html",
+        "client": 305,
+        "details": 1,
+        "h1": "4 — O evento transforma entrada em previsão",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/04-eventos.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/04-eventos.html",
+        "client": 345,
+        "details": 1,
+        "h1": "4 — O evento transforma entrada em previsão",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/04-eventos.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/04-eventos.html",
+        "client": 753,
+        "details": 1,
+        "h1": "4 — O evento transforma entrada em previsão",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/04-eventos.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/04-eventos.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "4 — O evento transforma entrada em previsão",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/04-eventos.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/05-colecoes.html",
+        "client": 305,
+        "details": 1,
+        "h1": "5 — O carrinho representa vários itens",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/05-colecoes.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/05-colecoes.html",
+        "client": 345,
+        "details": 1,
+        "h1": "5 — O carrinho representa vários itens",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/05-colecoes.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/05-colecoes.html",
+        "client": 753,
+        "details": 1,
+        "h1": "5 — O carrinho representa vários itens",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/05-colecoes.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/05-colecoes.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "5 — O carrinho representa vários itens",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/05-colecoes.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/06-http.html",
+        "client": 305,
+        "details": 1,
+        "h1": "6 — Um contrato para perguntar e pedir alteração",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/06-http.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/06-http.html",
+        "client": 345,
+        "details": 1,
+        "h1": "6 — Um contrato para perguntar e pedir alteração",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/06-http.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/06-http.html",
+        "client": 753,
+        "details": 1,
+        "h1": "6 — Um contrato para perguntar e pedir alteração",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/06-http.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/06-http.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "6 — Um contrato para perguntar e pedir alteração",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/06-http.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/07-fetch.html",
+        "client": 305,
+        "details": 1,
+        "h1": "7 — Consultar sem confundir erro HTTP e erro de rede",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/07-fetch.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/07-fetch.html",
+        "client": 345,
+        "details": 1,
+        "h1": "7 — Consultar sem confundir erro HTTP e erro de rede",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/07-fetch.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/07-fetch.html",
+        "client": 753,
+        "details": 1,
+        "h1": "7 — Consultar sem confundir erro HTTP e erro de rede",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/07-fetch.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/07-fetch.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "7 — Consultar sem confundir erro HTTP e erro de rede",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/07-fetch.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/08-registro.html",
+        "client": 305,
+        "details": 1,
+        "h1": "8 — Registrar uma vez e ler o que foi confirmado",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/08-registro.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/08-registro.html",
+        "client": 345,
+        "details": 1,
+        "h1": "8 — Registrar uma vez e ler o que foi confirmado",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/08-registro.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/08-registro.html",
+        "client": 753,
+        "details": 1,
+        "h1": "8 — Registrar uma vez e ler o que foi confirmado",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/08-registro.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/08-registro.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "8 — Registrar uma vez e ler o que foi confirmado",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/08-registro.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/09-estados.html",
+        "client": 305,
+        "details": 1,
+        "h1": "9 — Consultar antes de avançar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/09-estados.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/09-estados.html",
+        "client": 345,
+        "details": 1,
+        "h1": "9 — Consultar antes de avançar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/09-estados.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/09-estados.html",
+        "client": 753,
+        "details": 1,
+        "h1": "9 — Consultar antes de avançar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/09-estados.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/09-estados.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "9 — Consultar antes de avançar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/09-estados.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/10-servidor.html",
+        "client": 305,
+        "details": 1,
+        "h1": "10 — Validar na fronteira e operar no serviço",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/10-servidor.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/10-servidor.html",
+        "client": 345,
+        "details": 1,
+        "h1": "10 — Validar na fronteira e operar no serviço",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/10-servidor.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/10-servidor.html",
+        "client": 753,
+        "details": 1,
+        "h1": "10 — Validar na fronteira e operar no serviço",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/10-servidor.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/10-servidor.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "10 — Validar na fronteira e operar no serviço",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/10-servidor.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/11-evidencias.html",
+        "client": 305,
+        "details": 0,
+        "h1": "11 — Testar cada camada e declarar seu limite",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/11-evidencias.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/11-evidencias.html",
+        "client": 345,
+        "details": 0,
+        "h1": "11 — Testar cada camada e declarar seu limite",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/11-evidencias.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/11-evidencias.html",
+        "client": 753,
+        "details": 0,
+        "h1": "11 — Testar cada camada e declarar seu limite",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/11-evidencias.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/11-evidencias.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "11 — Testar cada camada e declarar seu limite",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/11-evidencias.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/12-integracao.html",
+        "client": 305,
+        "details": 0,
+        "h1": "12 — Ler a aplicação integrada e defender o pedido",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/12-integracao.html",
+        "client": 345,
+        "details": 0,
+        "h1": "12 — Ler a aplicação integrada e defender o pedido",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/12-integracao.html",
+        "client": 753,
+        "details": 0,
+        "h1": "12 — Ler a aplicação integrada e defender o pedido",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/12-integracao.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "12 — Ler a aplicação integrada e defender o pedido",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/99-exercicios.html",
+        "client": 305,
+        "details": 0,
+        "h1": "99 — Exercícios Web/API",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/99-exercicios.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/99-exercicios.html",
+        "client": 345,
+        "details": 0,
+        "h1": "99 — Exercícios Web/API",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/99-exercicios.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/99-exercicios.html",
+        "client": 753,
+        "details": 0,
+        "h1": "99 — Exercícios Web/API",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/99-exercicios.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/99-exercicios.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "99 — Exercícios Web/API",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/99-exercicios.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/caderno-web-api.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Caderno WEB — como registrar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/caderno-web-api.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/caderno-web-api.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Caderno WEB — como registrar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/caderno-web-api.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/caderno-web-api.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Caderno WEB — como registrar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/caderno-web-api.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/caderno-web-api.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Caderno WEB — como registrar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/caderno-web-api.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/codigo-integrado.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Código integrado preservado",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/codigo-integrado.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/codigo-integrado.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Código integrado preservado",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/codigo-integrado.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/codigo-integrado.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Código integrado preservado",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/codigo-integrado.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/codigo-integrado.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Código integrado preservado",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/codigo-integrado.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/contrato.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Contrato HTTP da Cantina",
+        "scroll": 353,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html?revisao=47",
+        "width": 320,
+        "ok": false
+      },
+      {
+        "page": "web-api/contrato.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Contrato HTTP da Cantina",
+        "scroll": 353,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html?revisao=47",
+        "width": 360,
+        "ok": false
+      },
+      {
+        "page": "web-api/contrato.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Contrato HTTP da Cantina",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/contrato.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Contrato HTTP da Cantina",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/index.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Web/API da Cantina",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/index.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/index.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Web/API da Cantina",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/index.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/index.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Web/API da Cantina",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/index.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/index.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Web/API da Cantina",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/index.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "web-api/pratica-local.html",
+        "client": 305,
+        "details": 1,
+        "h1": "Prática HTTP local — uma operação por vez",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/pratica-local.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "web-api/pratica-local.html",
+        "client": 345,
+        "details": 1,
+        "h1": "Prática HTTP local — uma operação por vez",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/pratica-local.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "web-api/pratica-local.html",
+        "client": 753,
+        "details": 1,
+        "h1": "Prática HTTP local — uma operação por vez",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/pratica-local.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "web-api/pratica-local.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "Prática HTTP local — uma operação por vez",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/pratica-local.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/00-primeira-rodada.html",
+        "client": 305,
+        "details": 1,
+        "h1": "00 — Será que está pronto?",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/00-primeira-rodada.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/00-primeira-rodada.html",
+        "client": 345,
+        "details": 1,
+        "h1": "00 — Será que está pronto?",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/00-primeira-rodada.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/00-primeira-rodada.html",
+        "client": 753,
+        "details": 1,
+        "h1": "00 — Será que está pronto?",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/00-primeira-rodada.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/00-primeira-rodada.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "00 — Será que está pronto?",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/00-primeira-rodada.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/01-qualidade.html",
+        "client": 305,
+        "details": 1,
+        "h1": "01 — Qualidade tem várias perguntas",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/01-qualidade.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/01-qualidade.html",
+        "client": 345,
+        "details": 1,
+        "h1": "01 — Qualidade tem várias perguntas",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/01-qualidade.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/01-qualidade.html",
+        "client": 753,
+        "details": 1,
+        "h1": "01 — Qualidade tem várias perguntas",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/01-qualidade.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/01-qualidade.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "01 — Qualidade tem várias perguntas",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/01-qualidade.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/02-falha-defeito.html",
+        "client": 305,
+        "details": 1,
+        "h1": "02 — Falha observada e causa investigada",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/02-falha-defeito.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/02-falha-defeito.html",
+        "client": 345,
+        "details": 1,
+        "h1": "02 — Falha observada e causa investigada",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/02-falha-defeito.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/02-falha-defeito.html",
+        "client": 753,
+        "details": 1,
+        "h1": "02 — Falha observada e causa investigada",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/02-falha-defeito.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/02-falha-defeito.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "02 — Falha observada e causa investigada",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/02-falha-defeito.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/03-oraculo.html",
+        "client": 305,
+        "details": 0,
+        "h1": "03 — O esperado vem de uma regra",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/03-oraculo.html",
+        "client": 345,
+        "details": 0,
+        "h1": "03 — O esperado vem de uma regra",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/03-oraculo.html",
+        "client": 753,
+        "details": 0,
+        "h1": "03 — O esperado vem de uma regra",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/03-oraculo.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "03 — O esperado vem de uma regra",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/04-revisao.html",
+        "client": 305,
+        "details": 1,
+        "h1": "04 — Revisar antes de executar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/04-revisao.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/04-revisao.html",
+        "client": 345,
+        "details": 1,
+        "h1": "04 — Revisar antes de executar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/04-revisao.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/04-revisao.html",
+        "client": 753,
+        "details": 1,
+        "h1": "04 — Revisar antes de executar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/04-revisao.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/04-revisao.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "04 — Revisar antes de executar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/04-revisao.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/05-valores.html",
+        "client": 305,
+        "details": 1,
+        "h1": "05 — Valores que justificam o teste",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/05-valores.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/05-valores.html",
+        "client": 345,
+        "details": 1,
+        "h1": "05 — Valores que justificam o teste",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/05-valores.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/05-valores.html",
+        "client": 753,
+        "details": 1,
+        "h1": "05 — Valores que justificam o teste",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/05-valores.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/05-valores.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "05 — Valores que justificam o teste",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/05-valores.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/06-regras.html",
+        "client": 305,
+        "details": 1,
+        "h1": "06 — Decisões e estados",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/06-regras.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/06-regras.html",
+        "client": 345,
+        "details": 1,
+        "h1": "06 — Decisões e estados",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/06-regras.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/06-regras.html",
+        "client": 753,
+        "details": 1,
+        "h1": "06 — Decisões e estados",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/06-regras.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/06-regras.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "06 — Decisões e estados",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/06-regras.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/07-camadas.html",
+        "client": 305,
+        "details": 1,
+        "h1": "07 — A camada muda o alcance da conclusão",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/07-camadas.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/07-camadas.html",
+        "client": 345,
+        "details": 1,
+        "h1": "07 — A camada muda o alcance da conclusão",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/07-camadas.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/07-camadas.html",
+        "client": 753,
+        "details": 1,
+        "h1": "07 — A camada muda o alcance da conclusão",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/07-camadas.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/07-camadas.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "07 — A camada muda o alcance da conclusão",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/07-camadas.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/08-risco.html",
+        "client": 305,
+        "details": 1,
+        "h1": "08 — Escolher por consequência",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/08-risco.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/08-risco.html",
+        "client": 345,
+        "details": 1,
+        "h1": "08 — Escolher por consequência",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/08-risco.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/08-risco.html",
+        "client": 753,
+        "details": 1,
+        "h1": "08 — Escolher por consequência",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/08-risco.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/08-risco.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "08 — Escolher por consequência",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/08-risco.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/09-plano.html",
+        "client": 305,
+        "details": 1,
+        "h1": "09 — Planejar para poder repetir",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/09-plano.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/09-plano.html",
+        "client": 345,
+        "details": 1,
+        "h1": "09 — Planejar para poder repetir",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/09-plano.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/09-plano.html",
+        "client": 753,
+        "details": 1,
+        "h1": "09 — Planejar para poder repetir",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/09-plano.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/09-plano.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "09 — Planejar para poder repetir",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/09-plano.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/10-defeito.html",
+        "client": 305,
+        "details": 1,
+        "h1": "10 — Registrar e confirmar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/10-defeito.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/10-defeito.html",
+        "client": 345,
+        "details": 1,
+        "h1": "10 — Registrar e confirmar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/10-defeito.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/10-defeito.html",
+        "client": 753,
+        "details": 1,
+        "h1": "10 — Registrar e confirmar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/10-defeito.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/10-defeito.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "10 — Registrar e confirmar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/10-defeito.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/11-automacao.html",
+        "client": 305,
+        "details": 0,
+        "h1": "11 — Automatizar a repetição útil",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/11-automacao.html",
+        "client": 345,
+        "details": 0,
+        "h1": "11 — Automatizar a repetição útil",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/11-automacao.html",
+        "client": 753,
+        "details": 0,
+        "h1": "11 — Automatizar a repetição útil",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/11-automacao.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "11 — Automatizar a repetição útil",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/12-tdd.html",
+        "client": 305,
+        "details": 0,
+        "h1": "12 — Um ciclo pequeno antes da regra",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/12-tdd.html",
+        "client": 345,
+        "details": 0,
+        "h1": "12 — Um ciclo pequeno antes da regra",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/12-tdd.html",
+        "client": 753,
+        "details": 0,
+        "h1": "12 — Um ciclo pequeno antes da regra",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/12-tdd.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "12 — Um ciclo pequeno antes da regra",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/13-integracao.html",
+        "client": 305,
+        "details": 1,
+        "h1": "13 — Resposta e banco precisam concordar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/13-integracao.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/13-integracao.html",
+        "client": 345,
+        "details": 1,
+        "h1": "13 — Resposta e banco precisam concordar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/13-integracao.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/13-integracao.html",
+        "client": 753,
+        "details": 1,
+        "h1": "13 — Resposta e banco precisam concordar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/13-integracao.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/13-integracao.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "13 — Resposta e banco precisam concordar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/13-integracao.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/14-usuario.html",
+        "client": 305,
+        "details": 1,
+        "h1": "14 — Uso no navegador e compreensão",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/14-usuario.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/14-usuario.html",
+        "client": 345,
+        "details": 1,
+        "h1": "14 — Uso no navegador e compreensão",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/14-usuario.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/14-usuario.html",
+        "client": 753,
+        "details": 1,
+        "h1": "14 — Uso no navegador e compreensão",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/14-usuario.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/14-usuario.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "14 — Uso no navegador e compreensão",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/14-usuario.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/15-processo.html",
+        "client": 305,
+        "details": 1,
+        "h1": "15 — Testes e histórico trabalham juntos",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/15-processo.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/15-processo.html",
+        "client": 345,
+        "details": 1,
+        "h1": "15 — Testes e histórico trabalham juntos",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/15-processo.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/15-processo.html",
+        "client": 753,
+        "details": 1,
+        "h1": "15 — Testes e histórico trabalham juntos",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/15-processo.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/15-processo.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "15 — Testes e histórico trabalham juntos",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/15-processo.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/16-parecer.html",
+        "client": 305,
+        "details": 1,
+        "h1": "16 — A decisão precisa respeitar o limite",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/16-parecer.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/16-parecer.html",
+        "client": 345,
+        "details": 1,
+        "h1": "16 — A decisão precisa respeitar o limite",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/16-parecer.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/16-parecer.html",
+        "client": 753,
+        "details": 1,
+        "h1": "16 — A decisão precisa respeitar o limite",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/16-parecer.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/16-parecer.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "16 — A decisão precisa respeitar o limite",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/16-parecer.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/99-exercicios.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Exercícios de QTS",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/99-exercicios.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/99-exercicios.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Exercícios de QTS",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/99-exercicios.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/99-exercicios.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Exercícios de QTS",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/99-exercicios.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/99-exercicios.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Exercícios de QTS",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/99-exercicios.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/caderno-qts.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Caderno QTS — como registrar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/caderno-qts.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/caderno-qts.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Caderno QTS — como registrar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/caderno-qts.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/caderno-qts.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Caderno QTS — como registrar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/caderno-qts.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/caderno-qts.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Caderno QTS — como registrar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/caderno-qts.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/codigo.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Código das práticas adicionais",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/codigo.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/codigo.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Código das práticas adicionais",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/codigo.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/codigo.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Código das práticas adicionais",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/codigo.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/codigo.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Código das práticas adicionais",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/codigo.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/index.html",
+        "client": 305,
+        "details": 0,
+        "h1": "QTS da mesma Cantina",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/index.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/index.html",
+        "client": 345,
+        "details": 0,
+        "h1": "QTS da mesma Cantina",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/index.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/index.html",
+        "client": 753,
+        "details": 0,
+        "h1": "QTS da mesma Cantina",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/index.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/index.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "QTS da mesma Cantina",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/index.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "qts/matriz-casos.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Casos e evidências",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/matriz-casos.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "qts/matriz-casos.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Casos e evidências",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/matriz-casos.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "qts/matriz-casos.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Casos e evidências",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/matriz-casos.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "qts/matriz-casos.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Casos e evidências",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/matriz-casos.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/00-localizar.html",
+        "client": 305,
+        "details": 1,
+        "h1": "00 — Localizar o histórico certo",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/00-localizar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/00-localizar.html",
+        "client": 345,
+        "details": 1,
+        "h1": "00 — Localizar o histórico certo",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/00-localizar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/00-localizar.html",
+        "client": 753,
+        "details": 1,
+        "h1": "00 — Localizar o histórico certo",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/00-localizar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/00-localizar.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "00 — Localizar o histórico certo",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/00-localizar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/01-registrar.html",
+        "client": 305,
+        "details": 0,
+        "h1": "01 — Registrar uma mudança com sentido",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/01-registrar.html",
+        "client": 345,
+        "details": 0,
+        "h1": "01 — Registrar uma mudança com sentido",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/01-registrar.html",
+        "client": 753,
+        "details": 0,
+        "h1": "01 — Registrar uma mudança com sentido",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/01-registrar.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "01 — Registrar uma mudança com sentido",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/02-investigar.html",
+        "client": 305,
+        "details": 0,
+        "h1": "02 — Encontrar a mudança problemática",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/02-investigar.html",
+        "client": 345,
+        "details": 0,
+        "h1": "02 — Encontrar a mudança problemática",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/02-investigar.html",
+        "client": 753,
+        "details": 0,
+        "h1": "02 — Encontrar a mudança problemática",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/02-investigar.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "02 — Encontrar a mudança problemática",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/03-recuperar.html",
+        "client": 305,
+        "details": 0,
+        "h1": "03 — Corrigir sem perder o motivo",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/03-recuperar.html",
+        "client": 345,
+        "details": 0,
+        "h1": "03 — Corrigir sem perder o motivo",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/03-recuperar.html",
+        "client": 753,
+        "details": 0,
+        "h1": "03 — Corrigir sem perder o motivo",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/03-recuperar.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "03 — Corrigir sem perder o motivo",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/04-experimentar.html",
+        "client": 305,
+        "details": 0,
+        "h1": "04 — Uma proposta tem sua própria linha",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/04-experimentar.html",
+        "client": 345,
+        "details": 0,
+        "h1": "04 — Uma proposta tem sua própria linha",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/04-experimentar.html",
+        "client": 753,
+        "details": 0,
+        "h1": "04 — Uma proposta tem sua própria linha",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/04-experimentar.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "04 — Uma proposta tem sua própria linha",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/05-conflito.html",
+        "client": 305,
+        "details": 1,
+        "h1": "05 — Resolver pela regra, não por preferência",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/05-conflito.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/05-conflito.html",
+        "client": 345,
+        "details": 1,
+        "h1": "05 — Resolver pela regra, não por preferência",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/05-conflito.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/05-conflito.html",
+        "client": 753,
+        "details": 1,
+        "h1": "05 — Resolver pela regra, não por preferência",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/05-conflito.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/05-conflito.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "05 — Resolver pela regra, não por preferência",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/05-conflito.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/06-visitar.html",
+        "client": 305,
+        "details": 1,
+        "h1": "06 — Consultar o passado sem mover o presente",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/06-visitar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/06-visitar.html",
+        "client": 345,
+        "details": 1,
+        "h1": "06 — Consultar o passado sem mover o presente",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/06-visitar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/06-visitar.html",
+        "client": 753,
+        "details": 1,
+        "h1": "06 — Consultar o passado sem mover o presente",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/06-visitar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/06-visitar.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "06 — Consultar o passado sem mover o presente",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/06-visitar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/07-sincronizar.html",
+        "client": 305,
+        "details": 0,
+        "h1": "07 — Outra cópia não muda sozinha",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/07-sincronizar.html",
+        "client": 345,
+        "details": 0,
+        "h1": "07 — Outra cópia não muda sozinha",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/07-sincronizar.html",
+        "client": 753,
+        "details": 0,
+        "h1": "07 — Outra cópia não muda sozinha",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/07-sincronizar.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "07 — Outra cópia não muda sozinha",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/08-revisar.html",
+        "client": 305,
+        "details": 1,
+        "h1": "08 — Revisar escopo antes de enviar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/08-revisar.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/08-revisar.html",
+        "client": 345,
+        "details": 1,
+        "h1": "08 — Revisar escopo antes de enviar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/08-revisar.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/08-revisar.html",
+        "client": 753,
+        "details": 1,
+        "h1": "08 — Revisar escopo antes de enviar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/08-revisar.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/08-revisar.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "08 — Revisar escopo antes de enviar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/08-revisar.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/09-checkpoint.html",
+        "client": 305,
+        "details": 1,
+        "h1": "09 — Encerrar a rodada sem declarar entrega total",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/09-checkpoint.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/09-checkpoint.html",
+        "client": 345,
+        "details": 1,
+        "h1": "09 — Encerrar a rodada sem declarar entrega total",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/09-checkpoint.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/09-checkpoint.html",
+        "client": 753,
+        "details": 1,
+        "h1": "09 — Encerrar a rodada sem declarar entrega total",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/09-checkpoint.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/09-checkpoint.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "09 — Encerrar a rodada sem declarar entrega total",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/09-checkpoint.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/99-exercicios.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Exercícios de Git",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/99-exercicios.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/99-exercicios.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Exercícios de Git",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/99-exercicios.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/99-exercicios.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Exercícios de Git",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/99-exercicios.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/99-exercicios.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Exercícios de Git",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/99-exercicios.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/acervo.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Mapa do acervo Git",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/acervo.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/acervo.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Mapa do acervo Git",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/acervo.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/acervo.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Mapa do acervo Git",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/acervo.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/acervo.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Mapa do acervo Git",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/acervo.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/caderno-git.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Caderno GIT — como registrar",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/caderno-git.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/caderno-git.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Caderno GIT — como registrar",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/caderno-git.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/caderno-git.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Caderno GIT — como registrar",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/caderno-git.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/caderno-git.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Caderno GIT — como registrar",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/caderno-git.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/index.html",
+        "client": 305,
+        "details": 1,
+        "h1": "Git da mesma Cantina",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/index.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/index.html",
+        "client": 345,
+        "details": 1,
+        "h1": "Git da mesma Cantina",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/index.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/index.html",
+        "client": 753,
+        "details": 1,
+        "h1": "Git da mesma Cantina",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/index.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/index.html",
+        "client": 1265,
+        "details": 1,
+        "h1": "Git da mesma Cantina",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/index.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/pratica.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Prática Git isolada",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/pratica.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/pratica.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Prática Git isolada",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/pratica.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/pratica.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Prática Git isolada",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/pratica.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/pratica.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Prática Git isolada",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/pratica.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      },
+      {
+        "page": "git/trilha-manual.html",
+        "client": 305,
+        "details": 0,
+        "h1": "Git — trilha manual isolada",
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/trilha-manual.html?revisao=47",
+        "width": 320,
+        "ok": true
+      },
+      {
+        "page": "git/trilha-manual.html",
+        "client": 345,
+        "details": 0,
+        "h1": "Git — trilha manual isolada",
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/trilha-manual.html?revisao=47",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "page": "git/trilha-manual.html",
+        "client": 753,
+        "details": 0,
+        "h1": "Git — trilha manual isolada",
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/trilha-manual.html?revisao=47",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "page": "git/trilha-manual.html",
+        "client": 1265,
+        "details": 0,
+        "h1": "Git — trilha manual isolada",
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/trilha-manual.html?revisao=47",
+        "width": 1280,
+        "ok": true
+      }
+    ],
+    "contract_retest": [
+      {
+        "client": 305,
+        "scroll": 305,
+        "style": ".chapter h2{overflow-wrap:anywhere}",
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "scroll": 345,
+        "style": ".chapter h2{overflow-wrap:anywhere}",
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "scroll": 753,
+        "style": ".chapter h2{overflow-wrap:anywhere}",
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "scroll": 1265,
+        "style": ".chapter h2{overflow-wrap:anywhere}",
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/contrato.html",
+        "width": 1280
+      }
+    ],
+    "menu_keyboard": true,
+    "details_keyboard": true,
+    "simulation_600": true,
+    "native_quantity_0_rejected": true,
+    "copy_feedback": "Comando copiado.",
+    "clipboard_match": false,
+    "expanded_retest": [
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/web-api/12-integracao.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/03-oraculo.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/11-automacao.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/qts/12-tdd.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/01-registrar.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/02-investigar.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/03-recuperar.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/04-experimentar.html?revisao=47",
+        "width": 1280
+      },
+      {
+        "client": 305,
+        "open": 1,
+        "scroll": 305,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 320
+      },
+      {
+        "client": 345,
+        "open": 1,
+        "scroll": 345,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 360
+      },
+      {
+        "client": 753,
+        "open": 1,
+        "scroll": 753,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 768
+      },
+      {
+        "client": 1265,
+        "open": 1,
+        "scroll": 1265,
+        "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/git/07-sincronizar.html?revisao=47",
+        "width": 1280
+      }
+    ]
+  },
+  "preservacao": {
+    "arquivos_fora_escopo_conferidos": 1229,
+    "todos_iguais": true,
+    "scripts_existentes_areas_iguais": true
+  },
+  "limites": [
+    "Sem nova avaliação com participantes; relatos históricos 41/43 preservados.",
+    "Comandos Windows revisados, execução real em Linux.",
+    "Botão de cópia mostra confirmação; leitura da área de transferência remota não coincidiu, portanto cópia integral não confirmada.",
+    "Sem teste de leitor de tela nesta revisão.",
+    "Sem GitHub Actions ou colaboração GitHub na prática do aluno.",
+    "API real executada localmente; GitHub Pages hospeda materiais estáticos."
+  ]
+}
