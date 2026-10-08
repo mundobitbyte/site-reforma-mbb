@@ -1,5 +1,7 @@
 # Reteste dos pontos corrigidos — Cantina Horizonte
 
+**Reservado para depois de tudo pronto**, por orientação explícita do professor em 08/10/2026. Este roteiro não é condição para continuar o desenvolvimento e a integração experimental. Não solicitar participante antes dessa fase.
+
 Não repetir VisuAlg, pdb, as suítes técnicas antigas ou a leitura de todas as aulas. Este roteiro avalia as mudanças posteriores à sessão com a aluna.
 
 ## Preparar a nova cópia

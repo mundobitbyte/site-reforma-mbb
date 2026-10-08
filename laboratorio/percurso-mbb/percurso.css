@@ -20,3 +20,7 @@ pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background:
 .mapa-percurso h3 { margin: 0 0 .5rem; }
 .mapa-percurso a { overflow-wrap: anywhere; }
 @media (max-width: 600px) { .mapa-percurso { grid-template-columns: 1fr; } }
+
+/* Os dois retornos da entrada do percurso podem quebrar linha sem sair da janela. */
+.percurso-portal-header .header-left { flex-wrap: wrap; max-width: 100%; }
+.percurso-portal-header .portal-link { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }

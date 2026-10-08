@@ -1,6 +1,6 @@
 # Retomada dos ensaios — ficha curta
 
-**Versão mais recente: checkpoint 38.** Professor confirmou o ajuste visual 37, com ressalva do final do histórico. Rolagem final corrigida; outro teste manual desse detalhe dispensado. [Registro](checkpoint-38-resultado-final-e-retomada.md). Contagem 28/31; ainda falta reteste de compreensão dos pontos corrigidos com participante e parecer. [Integração preparada](integracao-navegacao-preparacao.md).
+**Versão mais recente: checkpoint 39.** Navegação integrada da cópia experimental implementada e verificada tecnicamente; [registro](checkpoint-39-integracao-navegacao.md). Professor determinou reteste com aluno somente após tudo pronto; não solicitar participante para continuar desenvolvimento. [Versão completa e ordem atual](integracao-navegacao-preparacao.md). Laboratório 28/31; revisão final disponível, sem publicação.
 
 
 **Atualização de 08/10/2026:** VisuAlg confirmado por relato do professor; rodada visual/cópia encerrada na amostra orientada. **28/31**, próximo R08/5.5 com participante. [Resultados e limites da nova sessão](checkpoint-34-sessao-windows.md). O [roteiro Windows](roteiro-final-windows.md) permanece disponível; não repetir os blocos já concluídos. Os resultados abaixo preservam a sessão histórica de 07/10.

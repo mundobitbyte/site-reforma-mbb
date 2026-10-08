@@ -83,9 +83,10 @@ python laboratorio/cantina-evolutiva/previa_local.py
 Quando o terminal informar que o servidor iniciou, abra no **mesmo computador**:
 
 - Aplicação: http://127.0.0.1:8001/
+- Áreas do site experimental: http://127.0.0.1:8001/curso/index.html
 - Percurso: http://127.0.0.1:8001/curso/laboratorio/percurso-mbb/index.html
 
-O iniciador serve os dois materiais e a API juntos. Cria banco fictício temporário novo em cada execução, mantendo os bancos existentes. Recarregar a página preserva os pedidos durante a sessão. **Ctrl+C encerra e descarta esse banco**; antes de encerrar, salve os resultados e capturas. A data do serviço fica em 07/10/2026 para o ensaio de cupom; não é a data corrente nem uma nova regra da aplicação.
+O iniciador serve aplicação, home experimental, percurso e API juntos. A navegação do novo projeto está na entrada Cantina Horizonte — percurso integrado, com seis disciplinas e retorno às áreas. A prévia continua restrita aos materiais permitidos; outras áreas e a pesquisa/conta pessoal não estão incluídas neste ensaio. Cria banco fictício temporário novo em cada execução, mantendo os bancos existentes. Recarregar a página preserva os pedidos durante a sessão. **Ctrl+C encerra e descarta esse banco**; antes de encerrar, salve os resultados e capturas. A data do serviço fica em 07/10/2026 para o ensaio de cupom; não é a data corrente nem uma nova regra da aplicação.
 
 Se a porta 8001 estiver ocupada, use `python laboratorio/cantina-evolutiva/previa_local.py --port 8002` e os endereços que o terminal imprimir. Não é necessário alterar configuração do serviço.
 

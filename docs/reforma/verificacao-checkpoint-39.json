@@ -1,0 +1,115 @@
+{
+  "etapas_qts": 17,
+  "etapas_git": 10,
+  "git_acervo": 57,
+  "testes_python_reexecutados": false,
+  "github_simulado": false,
+  "paginas_html": 108,
+  "paginas_programacao": 19,
+  "paginas_web_curriculares": 17,
+  "paginas_web_recortes": 4,
+  "etapas_web": 13,
+  "web_acervo": 23,
+  "api_acervo": 45,
+  "referencias_locais": 3432,
+  "botoes_copiar": 104,
+  "codigo_canonico": 48,
+  "etapas_programacao": 15,
+  "temas_python_mapeados": 40,
+  "erros": [],
+  "browser_tested": false,
+  "visualg_executado": false,
+  "hashes_protegidos": {
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352"
+  },
+  "acompanhamento": {
+    "total_subetapas": 31,
+    "concluidas": 28,
+    "restantes": 3,
+    "total_etapas_ensino": 81
+  },
+  "posicao_atual": "5.5",
+  "codigo_canonico_com_copia_exata": 48,
+  "blocos_copiaveis_canonicos": 52,
+  "checkpoint": 39,
+  "navegacao_http": {
+    "executados": 10,
+    "passaram": 10,
+    "ambiente": "pytest com FastAPI/Starlette TestClient; não renderiza navegador",
+    "arquivo": "laboratorio/cantina-evolutiva/tests/test_navegacao_previa.py"
+  },
+  "home_html": {
+    "equilibrado": true,
+    "ids_unicos": true,
+    "h1": 1
+  },
+  "comparacao_oficial": {
+    "somente_leitura": true,
+    "head": "fb24a793b728af346f46fc2bf9d92b96d78791b4",
+    "arquivos": [
+      {
+        "path": "index.html",
+        "identico": false,
+        "sha256_oficial": "95425ce944f99749ee5f1d76535e945d9e54013c37c8510930ecd7b7d9047fa6",
+        "sha256_experimental": "52dcc805d5ebf1f91eb620522db4f6a4360c2875ba35dd73aa302be8d5c25122",
+        "blocos_diferentes": [
+          {
+            "tipo": "replace",
+            "linhas_oficiais": 1,
+            "linhas_experimentais": 1
+          },
+          {
+            "tipo": "insert",
+            "linhas_oficiais": 0,
+            "linhas_experimentais": 14
+          },
+          {
+            "tipo": "insert",
+            "linhas_oficiais": 0,
+            "linhas_experimentais": 7
+          }
+        ]
+      },
+      {
+        "path": "css/home.css",
+        "identico": false,
+        "sha256_oficial": "55a95c3463db9d16f7e92a6bec1e917b42df3dddca19c3e3b5e3455113385aa1",
+        "sha256_experimental": "7f1bce572f29dbc06c8f0e65852bca430acf9df2f0f00eb962c186e859f874fc",
+        "blocos_diferentes": [
+          {
+            "tipo": "insert",
+            "linhas_oficiais": 0,
+            "linhas_experimentais": 17
+          }
+        ]
+      },
+      {
+        "path": "js/home.js",
+        "identico": true,
+        "sha256_oficial": "32a7ecafdabff3a132d7bb4ba522ba8c9d01e106236151888ac4f6fe7421d092",
+        "sha256_experimental": "32a7ecafdabff3a132d7bb4ba522ba8c9d01e106236151888ac4f6fe7421d092",
+        "blocos_diferentes": []
+      },
+      {
+        "path": "pages/bancodedados.html",
+        "identico": true,
+        "sha256_oficial": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+        "sha256_experimental": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04",
+        "blocos_diferentes": []
+      },
+      {
+        "path": "assets/seguranca-dados/mysql-general-log-lab.sql",
+        "identico": true,
+        "sha256_oficial": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+        "sha256_experimental": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+        "blocos_diferentes": []
+      }
+    ]
+  },
+  "reteste_aluno": "Adiado por instrução do professor até tudo pronto; não bloqueia desenvolvimento/integração",
+  "navegacao_implementada": true,
+  "publicada": false,
+  "frontend_node_reexecutado": false,
+  "frontend_ultima_evidencia": "Checkpoint 38: 25/25; frontend não alterado no39"
+}

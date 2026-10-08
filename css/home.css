@@ -205,6 +205,23 @@ main {
   display: none !important;
 }
 
+/* Entrada do percurso interdisciplinar na cópia experimental. */
+.percurso-entry {
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--soft-blue);
+}
+.percurso-entry h3 { margin: 0 0 6px; color: var(--primary-dark); }
+.percurso-entry p { margin: 0 0 12px; line-height: 1.5; }
+.percurso-action { display: inline-block; padding: 10px 14px; border-radius: 10px; background: var(--primary-dark); color: #fff; font-weight: 800; }
+.percurso-disciplinas { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; }
+.percurso-disciplinas a { color: var(--primary-dark); text-decoration: underline; text-underline-offset: 3px; }
+.percurso-entry a, .percurso-entry h3, .percurso-entry p { overflow-wrap: anywhere; }
+.percurso-entry a:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+
 .modules-view {
   margin-top: 30px;
 }

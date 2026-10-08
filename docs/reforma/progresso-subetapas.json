@@ -292,13 +292,14 @@
             "docs/reforma/checkpoint-35-primeiro-uso.md",
             "docs/reforma/checkpoint-36-ajudas-e-retorno.md",
             "docs/reforma/checkpoint-37-estoque-compacto.md",
-            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md"
+            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
+            "docs/reforma/checkpoint-39-integracao-navegacao.md"
           ],
           "depende_de": [
             "REVISAO_VISUAL_NO_COMPUTADOR",
             "PARTICIPANTE"
           ],
-          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas. No 35, primeira sessão com aluna revelou dificuldade de localizar e explicar as conexões; as cinco respostas precisaram de indicação de caminho. Mapa e pontes corrigidos; aguarda nova observação dos elementos alterados. No 36, professor apontou excesso de explicações e ausência de retorno. Ajudas recolhidas, estoque separado, retorno nos atalhos e cabeçalho compactado; conferência visual nova pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação."
+          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas. No 35, primeira sessão com aluna revelou dificuldade de localizar e explicar as conexões; as cinco respostas precisaram de indicação de caminho. Mapa e pontes corrigidos; aguarda nova observação dos elementos alterados. No 36, professor apontou excesso de explicações e ausência de retorno. Ajudas recolhidas, estoque separado, retorno nos atalhos e cabeçalho compactado; conferência visual nova pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente."
         }
       ]
     },
@@ -365,12 +366,13 @@
             "docs/reforma/reteste-primeiro-uso.md",
             "docs/reforma/checkpoint-36-ajudas-e-retorno.md",
             "docs/reforma/checkpoint-37-estoque-compacto.md",
-            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md"
+            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
+            "docs/reforma/checkpoint-39-integracao-navegacao.md"
           ],
           "depende_de": [
             "PARTICIPANTE"
           ],
-          "preparacao": "Primeira sessão realizada em 08/10, relatada pelo professor: dificuldades em adicionar, cupom, registro, recuperação do ID, consulta e leitura do avanço; estoque incompreendido. Correções frontend no 35, 23 testes de lógica passaram, sem navegador ou confirmação humana da nova versão. Reteste dos pontos afetados preparado. No 36, explicações passaram a ajudas sob demanda e navegação ganhou retorno; 23 casos de lógica existentes passaram. Observação humana da nova versão ainda pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação."
+          "preparacao": "Primeira sessão realizada em 08/10, relatada pelo professor: dificuldades em adicionar, cupom, registro, recuperação do ID, consulta e leitura do avanço; estoque incompreendido. Correções frontend no 35, 23 testes de lógica passaram, sem navegador ou confirmação humana da nova versão. Reteste dos pontos afetados preparado. No 36, explicações passaram a ajudas sob demanda e navegação ganhou retorno; 23 casos de lógica existentes passaram. Observação humana da nova versão ainda pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente."
         },
         {
           "id": "5.6",
@@ -394,7 +396,8 @@
             "docs/reforma/checkpoint-35-primeiro-uso.md",
             "docs/reforma/checkpoint-36-ajudas-e-retorno.md",
             "docs/reforma/checkpoint-37-estoque-compacto.md",
-            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md"
+            "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
+            "docs/reforma/checkpoint-39-integracao-navegacao.md"
           ],
           "depende_de": [
             "1.6",
@@ -406,7 +409,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação. No 35, parecer atualizado para revisão necessária após uso assistido; correções implementadas e reteste restrito aos pontos afetados. Não há aprovação final. Revisão 36 registrada sem conclusão dos critérios humanos. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação. No 35, parecer atualizado para revisão necessária após uso assistido; correções implementadas e reteste restrito aos pontos afetados. Não há aprovação final. Revisão 36 registrada sem conclusão dos critérios humanos. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente."
         }
       ]
     }
@@ -415,9 +418,9 @@
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
-    "PARTICIPANTE": "Primeira sessão com aluna recebida no 35; uso e compreensão exigiram ajuda. Nova observação dos pontos corrigidos pendente, sem declaração de aprovação.",
+    "PARTICIPANTE": "Reteste reservado para depois de tudo pronto por orientação explícita do professor em 08/10. Não bloqueia desenvolvimento/integração. Sessão 35 exigiu ajuda; nenhum reteste novo relatado.",
     "AMBIENTE_VISUALG_DEPURADOR": "Resolvido: pdb no checkpoint 17 e VisuAlg por relato do professor no 34.",
-    "REVISAO_VISUAL_NO_COMPUTADOR": "Professor confirmou tudo certinho na revisão 37, com ressalva do final do histórico. Rolagem final ajustada no 38; professor dispensou nova rodada manual desse detalhe. Sem registro individual de zoom ou nova confirmação do Narrador; revisão pedagógica do percurso ainda depende de participante."
+    "REVISAO_VISUAL_NO_COMPUTADOR": "Professor aprovou revisão da aplicação 37/38 por relato e dispensou novo teste manual do pequeno ajuste de rolagem. Home integrada no 39 tem verificação HTML/HTTP, sem nova renderização de navegador. Versão disponível para revisão final."
   },
   "resumo": {
     "total_subetapas": 31,
@@ -425,6 +428,13 @@
     "restantes": 3,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 38,
-  "orientacao_atual": "Checkpoint 38: ajuste visual 37 aprovado por relato do professor com ressalva da quarta linha; rolagem final corrigida e ajuda explica caráter auxiliar da consulta de estoque. Mapa de integração preparado. 28/31, posição 5.5; compreensão após as correções com participante e parecer permanecem pendentes."
+  "checkpoint_atualizacao": 39,
+  "orientacao_atual": "Checkpoint 39: navegação experimental implementada e verificada tecnicamente. Reteste com aluno reservado pelo professor para depois de tudo pronto, sem bloquear desenvolvimento/integração. Versão completa disponível para revisão. Laboratório 28/31, posição 5.5; critérios humanos e parecer permanecem abertos, sem publicação.",
+  "integracao_navegacao": {
+    "implementada": true,
+    "verificacao_tecnica_concluida": true,
+    "revisao_visual_nova": false,
+    "reteste_aluno": "Somente após tudo pronto, conforme determinação do professor",
+    "publicada": false
+  }
 }

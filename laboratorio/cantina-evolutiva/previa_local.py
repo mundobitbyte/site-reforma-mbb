@@ -14,6 +14,11 @@ MATERIAIS = (
     'css', 'js', 'pages', 'assets', 'downloads',
     'qts/cantina-horizonte-v1', 'docs/reforma',
 )
+ARQUIVOS_HOME = (
+    'index.html',
+    'meu-mbb/firebase-config.js', 'meu-mbb/conta.js', 'meu-mbb/home-conta.js',
+    'meu-mbb/visitas-diretas.js', 'meu-mbb/visitas-diretas.json',
+)
 
 
 def porta_local(texto):
@@ -31,6 +36,8 @@ def criar_previa(caminho_banco):
     from fastapi import HTTPException
     from fastapi.staticfiles import StaticFiles
     from starlette.routing import Mount
+    from starlette.responses import FileResponse
+    from starlette.routing import Route
 
     class MaterialEstudo(StaticFiles):
         async def get_response(self, path, scope):
@@ -42,7 +49,15 @@ def criar_previa(caminho_banco):
             return await super().get_response(path, scope)
 
     app = criar_app(caminho_banco, hoje=lambda: DATA_ENSAIO)
+    def servir_arquivo(caminho):
+        async def resposta(request):
+            return FileResponse(ROOT / caminho)
+        return resposta
+
     rotas = [
+        Route('/curso/' + caminho, endpoint=servir_arquivo(caminho), methods=['GET'])
+        for caminho in ARQUIVOS_HOME
+    ] + [
         Mount('/curso/' + caminho,
               app=MaterialEstudo(directory=ROOT / caminho, html=True))
         for caminho in MATERIAIS
@@ -67,6 +82,7 @@ def main():
             print('Data fixa do ensaio: 07/10/2026. Banco temporário:', banco, flush=True)
             print('Após a mensagem de servidor iniciado, abra no mesmo computador:', flush=True)
             print('Aplicação:', base + '/', flush=True)
+            print('Áreas do site experimental:', base + '/curso/index.html', flush=True)
             print('Percurso:', base + '/curso/laboratorio/percurso-mbb/index.html', flush=True)
             print('Ctrl+C encerra. Salve as evidências antes: o banco será descartado.', flush=True)
             try:

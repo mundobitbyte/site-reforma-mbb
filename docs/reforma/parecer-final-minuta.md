@@ -1,6 +1,6 @@
 # Cantina Horizonte — minuta do parecer final
 
-**Atualização 35, 08/10/2026: revisão necessária após primeira sessão com aluna.** Uso e localização/compreensão exigiram ajuda, conforme [registro](checkpoint-35-primeiro-uso.md). A nova interface/mapa recebeu correções e verificação de lógica, mas aguarda observação humana e visual. Total atual **28/31**; 4.9/5.5 parciais e 5.6 sem decisão final. As evidências históricas abaixo permanecem válidas nas versões identificadas; não comprovam aprovação da versão nova.
+**Atualização 39, 08/10/2026: aplicação revisada e navegação experimental integrada.** Professor considera a versão atual boa e determinou reteste com aluno somente após tudo pronto; não bloquear desenvolvimento/integração esperando participante. [Registro atual](checkpoint-39-integracao-navegacao.md). Laboratório **28/31**; compreensão após as correções e decisão final permanecem abertas. Versão completa pronta para revisão; sem publicação. Os relatos posteriores não apagam as dificuldades da sessão 35 nem constituem reteste independente.
 
 
 **MINUTA: resultados disponíveis consolidados; decisão final pendente.** Atualizada no checkpoint 29, em 07/10/2026. A preparação documental da 5.6 continua parcial.

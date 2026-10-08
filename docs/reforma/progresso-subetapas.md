@@ -149,3 +149,7 @@ Capturas do professor mostram a faixa de estoque aumentando o espaço acima dos 
 ## Retomada 38 — resultado final e integração preparada
 
 Professor aprovou o ajuste visual 37 com ressalva da quarta linha do histórico. [Registro e correção](checkpoint-38-resultado-final-e-retomada.md). Reteste manual desse pequeno ajuste dispensado; compreensão da aluna após as correções não foi relatada. [Mapa de navegação preparado](integracao-navegacao-preparacao.md), sem alterar a home. Contagem 28/31, posição 5.5.
+
+## Integração 39 — desenvolvimento segue antes do reteste
+
+Professor determinou reteste com aluno somente após tudo pronto; não condiciona a conclusão do desenvolvimento à participação agora. [Navegação experimental implementada](checkpoint-39-integracao-navegacao.md): entrada na home, seis disciplinas, retorno às áreas e home na prévia. Dez casos HTTP passaram. Versão pronta para revisão, sem nova renderização ou publicação. Laboratório 28/31, posição 5.5; critérios de compreensão e parecer continuam abertos.

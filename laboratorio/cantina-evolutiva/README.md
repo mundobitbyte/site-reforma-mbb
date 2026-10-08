@@ -19,7 +19,7 @@ Com o ambiente Python preparado, da raiz do repositório experimental:
 python laboratorio/cantina-evolutiva/previa_local.py
 ```
 
-O iniciador serve aplicação, API e percurso juntos, com banco fictício temporário.
+O iniciador serve aplicação, API, home experimental e percurso juntos, com banco fictício temporário. Abra a navegação do projeto em `http://127.0.0.1:8001/curso/index.html` (ou a porta escolhida). A home dá acesso ao percurso completo e às seis disciplinas; a API continua na raiz. A configuração Firebase da cópia experimental permanece vazia.
 Recarregar preserva os pedidos durante a sessão; Ctrl+C encerra e descarta esse
 banco. Uma nova execução inicia outro ensaio. Veja o [guia consolidado](../../docs/reforma/guia-execucao-cantina-mbb.md)
 para preparar o ambiente. A leitura do material pode ser feita antes dos ensaios.
