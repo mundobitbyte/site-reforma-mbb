@@ -1,0 +1,454 @@
+{
+  "revisao": 46,
+  "python": "3.12.14",
+  "linux": true,
+  "exemplos": {
+    "execucoes": [
+      {
+        "file": "01_sequencia.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Água\nSubtotal em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "02_entrada.py",
+        "inputs": "2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Subtotal: R$ 6,00\n",
+        "stderr": ""
+      },
+      {
+        "file": "02_entrada.py",
+        "inputs": "3\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Subtotal: R$ 9,00\n",
+        "stderr": ""
+      },
+      {
+        "file": "02_entrada.py",
+        "inputs": "duas\n",
+        "args": [],
+        "returncode": 1,
+        "stdout": "Quantidade de águas: ",
+        "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/b7e1e99ecb8f/pg46-execucao/exemplos/02_entrada.py\", line 3, in <module>\n    quantidade = int(texto)\n                 ^^^^^^^^^^\nValueError: invalid literal for int() with base 10: 'duas'\n"
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "0\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Quantidade recusada: use um inteiro de 1 a 10.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "-1\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Quantidade recusada: use um inteiro de 1 a 10.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "11\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Quantidade recusada: use um inteiro de 1 a 10.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "1\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Simulação aceita: 300 centavos.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Simulação aceita: 600 centavos.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_decisao.py",
+        "inputs": "10\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Simulação aceita: 3000 centavos.\n",
+        "stderr": ""
+      },
+      {
+        "file": "03_saldo_teste.py",
+        "inputs": "2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas: Estoque insuficiente.\n",
+        "stderr": ""
+      },
+      {
+        "file": "04_repeticao.py",
+        "inputs": "0\n11\n2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas (1 a 10): Tente novamente com um inteiro de 1 a 10.\nQuantidade de águas (1 a 10): Tente novamente com um inteiro de 1 a 10.\nQuantidade de águas (1 a 10): Subtotal em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "04_repeticao.py",
+        "inputs": "duas\n",
+        "args": [],
+        "returncode": 1,
+        "stdout": "Quantidade de águas (1 a 10): ",
+        "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/b7e1e99ecb8f/pg46-execucao/exemplos/04_repeticao.py\", line 3, in <module>\n    quantidade = int(input(\"Quantidade de águas (1 a 10): \"))\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 10: 'duas'\n"
+      },
+      {
+        "file": "05_acumulador.py",
+        "inputs": "2\n2\n2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Águas na linha 1: Águas na linha 2: Águas na linha 3: Quantidade consolidada: 6\nSubtotal em centavos: 1800\n",
+        "stderr": ""
+      },
+      {
+        "file": "05_acumulador.py",
+        "inputs": "6\n5\n1\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Águas na linha 1: Águas na linha 2: Águas na linha 3: Soma recusada: o produto pode ter de 1 a 10 unidades.\n",
+        "stderr": ""
+      },
+      {
+        "file": "05_acumulador.py",
+        "inputs": "-2\n4\n0\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Águas na linha 1: Águas na linha 2: Águas na linha 3: Quantidade consolidada: 2\nSubtotal em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "06_colecoes.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Água 2\nSalgado 2\nSuco 2\nQuantidades: {1: 2, 3: 2, 2: 2}\nSubtotal em centavos: 3400\n",
+        "stderr": ""
+      },
+      {
+        "file": "06_repetido_teste.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Água 2\nÁgua 2\nSalgado 2\nSuco 2\nQuantidades: {1: 4, 3: 2, 2: 2}\nSubtotal em centavos: 4000\n",
+        "stderr": ""
+      },
+      {
+        "file": "07_funcoes.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Subtotal em centavos: 2200\n",
+        "stderr": ""
+      },
+      {
+        "file": "08_excecoes.py",
+        "inputs": "duas\n0\n11\n2\n",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Quantidade de águas (1 a 10): Entrada recusada: invalid literal for int() with base 10: 'duas'\nQuantidade de águas (1 a 10): Entrada recusada: Use um inteiro de 1 a 10; booleano não é quantidade.\nQuantidade de águas (1 a 10): Entrada recusada: Use um inteiro de 1 a 10; booleano não é quantidade.\nQuantidade de águas (1 a 10): Subtotal em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "09_modulos.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Subtotal em centavos: 2200\n",
+        "stderr": ""
+      },
+      {
+        "file": "regras.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "file": "10_arquivo_json.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Recuperado em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "10_arquivo_json.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Arquivo já existe; a simulação anterior foi preservada.\nRecuperado em centavos: 600\n",
+        "stderr": ""
+      },
+      {
+        "file": "10_arquivo_json.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Arquivo já existe; a simulação anterior foi preservada.\nRecuperado em centavos: 900\n",
+        "stderr": ""
+      },
+      {
+        "file": "10_arquivo_json.py",
+        "cwd": "outra pasta",
+        "stdout": "Arquivo já existe; a simulação anterior foi preservada.\nRecuperado em centavos: 900\n",
+        "returncode": 0
+      },
+      {
+        "file": "11_objeto.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Total em centavos: 2700\n",
+        "stderr": ""
+      },
+      {
+        "file": "13_primeiro_teste.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "Teste passou: 600 centavos\n",
+        "stderr": ""
+      },
+      {
+        "file": "13_falha_teste.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/b7e1e99ecb8f/pg46-execucao/exemplos/13_falha_teste.py\", line 4, in <module>\n    assert resultado == 601, \"Duas águas devem somar 600 centavos.\"\n           ^^^^^^^^^^^^^^^^\nAssertionError: Duas águas devem somar 600 centavos.\n"
+      },
+      {
+        "file": "13_testes.py",
+        "inputs": "",
+        "args": [],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+      }
+    ],
+    "total": 30,
+    "sintaxe_arquivos_originais": 14,
+    "validacao_direta_recusas": 6,
+    "importacao_sem_saida": true,
+    "json_bytes_mtime_preservados": true,
+    "json_valor_preexistente_lido": 900,
+    "aluno_real_testado": false
+  },
+  "terminal": {
+    "commands": [
+      {
+        "args": [
+          "produtos"
+        ],
+        "returncode": 1,
+        "stdout": "Não foi possível concluir: Primeiro execute: python terminal.py preparar\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "preparar"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"mensagem\": \"Banco didático preparado; os dados são fictícios.\"\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "produtos"
+        ],
+        "returncode": 0,
+        "stdout": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Água\",\n    \"preco_centavos\": 300,\n    \"estoque\": 20\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Suco\",\n    \"preco_centavos\": 600,\n    \"estoque\": 15\n  },\n  {\n    \"id\": 3,\n    \"nome\": \"Salgado\",\n    \"preco_centavos\": 800,\n    \"estoque\": 10\n  },\n  {\n    \"id\": 4,\n    \"nome\": \"Sanduíche\",\n    \"preco_centavos\": 1200,\n    \"estoque\": 8\n  },\n  {\n    \"id\": 5,\n    \"nome\": \"Chocolate\",\n    \"preco_centavos\": 500,\n    \"estoque\": 12\n  }\n]\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "1:2"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 22:18:33\",\n  \"status\": \"Novo\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Confirmado\",\n  \"historico_status\": [],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "consultar",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 22:18:33\",\n  \"status\": \"Novo\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Confirmado\",\n  \"historico_status\": [],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "avancar",
+          "1",
+          "--estado-esperado",
+          "Novo"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 22:18:33\",\n  \"status\": \"Confirmado\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Em preparação\",\n  \"historico_status\": [\n    {\n      \"estado_anterior\": \"Novo\",\n      \"estado_novo\": \"Confirmado\",\n      \"alterado_em\": \"2026-10-08 22:18:33\"\n    }\n  ],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "avancar",
+          "1",
+          "--estado-esperado",
+          "Novo"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: O estado do pedido mudou. Consulte novamente antes de avançar.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "consultar",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 22:18:33\",\n  \"status\": \"Confirmado\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Em preparação\",\n  \"historico_status\": [\n    {\n      \"estado_anterior\": \"Novo\",\n      \"estado_novo\": \"Confirmado\",\n      \"alterado_em\": \"2026-10-08 22:18:33\"\n    }\n  ],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "preparar"
+        ],
+        "returncode": 1,
+        "stdout": "O banco didático já existe. Consulte os dados; preparar não os reinicia.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "consultar",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "{\n  \"id\": 1,\n  \"criado_em\": \"2026-10-08 22:18:33\",\n  \"status\": \"Confirmado\",\n  \"cupom_codigo\": null,\n  \"desconto_centavos\": 0,\n  \"subtotal_centavos\": 600,\n  \"total_centavos\": 600,\n  \"proximo_status\": \"Em preparação\",\n  \"historico_status\": [\n    {\n      \"estado_anterior\": \"Novo\",\n      \"estado_novo\": \"Confirmado\",\n      \"alterado_em\": \"2026-10-08 22:18:33\"\n    }\n  ],\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"nome\": \"Água\",\n      \"quantidade\": 2,\n      \"preco_unitario_centavos\": 300\n    }\n  ]\n}\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "1:0"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: A quantidade deve ser um número inteiro entre 1 e 10.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "1:11"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: A quantidade deve ser um número inteiro entre 1 e 10.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "999:1"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: Produto não encontrado.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "4:9"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: Estoque insuficiente para Sanduíche.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "1:6",
+          "--item",
+          "1:5"
+        ],
+        "returncode": 1,
+        "stdout": "Pedido recusado: Somando os itens, cada produto pode ter no máximo 10 unidades.\n",
+        "stderr": ""
+      },
+      {
+        "args": [
+          "registrar",
+          "--item",
+          "1:2.5"
+        ],
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "usage: terminal.py registrar [-h] --item ITEM [--cupom CUPOM]\nterminal.py registrar: error: argument --item: Identificador e quantidade precisam ser inteiros.\n"
+      }
+    ],
+    "count": 16,
+    "new_process_each_time": true,
+    "same_saved_order_after_reopen": true,
+    "duplicate_preparation_preserved": true,
+    "refusals_bank_bytes_unchanged": true,
+    "stock_after_sale": 18
+  },
+  "pytest_terminal": 13,
+  "pytest_suite": 99,
+  "pytest_falhas": 0,
+  "isolated_fixture_initial_missing_paths_resolved": true,
+  "pytest_warning": "Starlette/httpx deprecated integration",
+  "http_200": 36,
+  "protected_files": 171,
+  "browser_publico": "pendente",
+  "windows_mac_devices_human_tested": false,
+  "paths": [
+    "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
+    "laboratorio/percurso-mbb/programacao/01-sequencia.html",
+    "laboratorio/percurso-mbb/programacao/02-entrada.html",
+    "laboratorio/percurso-mbb/programacao/03-decisao.html",
+    "laboratorio/percurso-mbb/programacao/04-repeticao.html",
+    "laboratorio/percurso-mbb/programacao/05-acumulador.html",
+    "laboratorio/percurso-mbb/programacao/06-colecoes.html",
+    "laboratorio/percurso-mbb/programacao/07-funcoes.html",
+    "laboratorio/percurso-mbb/programacao/08-excecoes.html",
+    "laboratorio/percurso-mbb/programacao/09-modulos.html",
+    "laboratorio/percurso-mbb/programacao/10-arquivos.html",
+    "laboratorio/percurso-mbb/programacao/11-objetos.html",
+    "laboratorio/percurso-mbb/programacao/12-persistencia.html",
+    "laboratorio/percurso-mbb/programacao/13-testes.html",
+    "laboratorio/percurso-mbb/programacao/14-integracao.html",
+    "laboratorio/percurso-mbb/programacao/99-exercicios.html",
+    "laboratorio/percurso-mbb/programacao/caderno-programacao.html",
+    "laboratorio/percurso-mbb/programacao/caderno-programacao.md",
+    "laboratorio/percurso-mbb/programacao/depuracao.html",
+    "laboratorio/percurso-mbb/programacao/exemplos/10_arquivo_json.py",
+    "laboratorio/percurso-mbb/programacao/exemplos/13_primeiro_teste.py",
+    "laboratorio/percurso-mbb/programacao/index.html",
+    "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
+    "laboratorio/percurso-mbb/programacao/revisao-46.md",
+    "laboratorio/percurso-mbb/programacao/verificacao-responsiva.html",
+    "laboratorio/percurso-mbb/programacao/verificacao-revisao-46.json"
+  ]
+}
