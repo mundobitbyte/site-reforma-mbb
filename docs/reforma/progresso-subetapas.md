@@ -2,7 +2,7 @@
 
 A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não é uma contagem que já existia antes. Mantém as cinco macroetapas anteriores e organiza seu escopo em 31 subetapas. Mudanças futuras de escopo devem ser registradas, sem alterar o denominador silenciosamente.
 
-**28/31 concluídas; 3 abertas. Posição atual: Entrega 5.5, uso e compreensão com participante. VisuAlg 4.8 concluído por relato do professor; revisão visual/cópia encerrada na amostra da sessão Windows de 08/10. A 4.9 aguarda participante; a 5.6 aguarda parecer final.**
+**28/31 concluídas; 3 abertas. Posição atual: Entrega 5.5, uso e compreensão com participante. VisuAlg 4.8 concluído por relato do professor; revisão visual/cópia encerrada na amostra da sessão Windows de 08/10. Primeira sessão com participante no 35 encontrou dificuldades; 4.9/5.5 aguardam reteste dos pontos corrigidos, e 5.6 aguarda parecer final.**
 
 | Macroetapa | Concluídas / total | IDs ainda pendentes |
 |---|---:|---|
@@ -57,7 +57,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 4.6 | Git — 10 etapas | Concluída |
 | 4.7 | Estrutura, links e código exibido conferidos | Concluída |
 | 4.8 | Ensaios VisuAlg e depurador interativo | **Concluída:** pdb no 17; VisuAlg por relato do professor no 34 |
-| 4.9 | Revisão visual e pedagógica do percurso em uso | **Parcial:** rodada visual/cópia Windows encerrada na amostra do 34; participante pendente |
+| 4.9 | Revisão visual e pedagógica do percurso em uso | **Parcial:** visual anterior no 34; sessão de compreensão no 35 exigiu ajuda; mapa/pontes corrigidos aguardam revisão |
 
 ### 5. Entrega
 
@@ -67,7 +67,7 @@ A contagem detalhada foi fixada no checkpoint 16 para mostrar avanço real. Não
 | 5.2 | Guia consolidado de execução, evidências e pendências | Concluída |
 | 5.3 | Acessibilidade real: 360 px, teclado, foco e leitura | **Concluída:** evidência Chromium do 21 complementada por Narrador Windows no 27 |
 | 5.4 | Prévia em ambiente compatível | **Concluída — checkpoint 25, Windows do professor** |
-| 5.5 | Rodada final de uso integrado e compreensão | Bloqueada |
+| 5.5 | Rodada final de uso integrado e compreensão | **Parcial:** sessão realizada no 35, com ajuda; correções aguardam reteste |
 | 5.6 | Parecer e entrega final após os critérios de saída | Parcial: orientação da entrega preparada; encerramento aguarda critérios de saída |
 
 ## Não confundir trabalho com aulas
@@ -77,7 +77,7 @@ Interface criada não significa interface testada em navegador. Conferir estrutu
 ## Bloqueios e próximos ensaios
 - O Chromium real foi usado no checkpoint 21. A navegação direta por URL continua bloqueada pela política gerenciada do ambiente, mas isso não bloqueia mais 1.6, 2.5 e 3.5: a interface foi exercitada no navegador e as chamadas foram encaminhadas internamente ao FastAPI real com banco SQLite temporário.
 - A prévia direta 5.4 foi comprovada no Chrome do Windows do professor: aplicação e aula curricular abertas por URL local. A restrição histórica do Chromium gerenciado não bloqueia essa conclusão.
-- Depurador pdb executado no 17; VisuAlg confirmado pelo professor em 08/10 no 34. Narrador real confirmado no 27. Rodada visual/cópia concluída na amostra do 34; compreensão com participante continua não executada.
+- Depurador pdb executado no 17; VisuAlg confirmado pelo professor em 08/10 no 34. Narrador real confirmado no 27. Rodada visual/cópia concluída na amostra do 34. Primeira participante no 35 precisou de ajuda; a nova versão aguarda reteste.
 - Parecer/entrega final depende desses critérios; não é falta de aprovação para o trabalho já autorizado.
 
 Nada foi enviado ao repositório oficial. Não foi solicitada nova autorização. A contagem detalhada será usada nas próximas falas; cada avanço deve ter evidência.
@@ -135,3 +135,6 @@ Preparado o [roteiro Windows de 08/10](roteiro-final-windows.md) para o professo
 
 ## Sessão Windows — checkpoint 34
 VisuAlg aprovado por relato agregado do professor. Análise, BD03, PG07, Web08, matriz QTS e Git01 percorridos na rodada de zoom; capturas disponíveis conferidas e texto PG07 colado coincide com o original. **28/31**, três abertas: 4.9 (participante), 5.5 (uso/compreensão) e 5.6 (parecer). Próximo: 5.5. Sem novo teste automatizado ou publicação. [Registro e limites](checkpoint-34-sessao-windows.md).
+
+## Primeiro uso — checkpoint 35
+Aluna do terceiro ano Técnico DS realizou a sessão. Inclusão, cupom, recuperação do pedido e leitura de estados geraram dificuldades; as cinco perguntas curriculares exigiram orientação. A 5.5 passa a parcial, sem aprovação. Interface e mapa corrigidos; 23 casos de lógica passaram, verificação HTTP por TestClient e fontes exatas. Navegador novo não confirmado. **28/31**, três abertas; [registro](checkpoint-35-primeiro-uso.md) e [reteste dos pontos afetados](reteste-primeiro-uso.md).

@@ -1,5 +1,8 @@
 # Parecer parcial — QTS/Git
 
+**Situação atual, checkpoint 35: 28/31; revisão necessária.** Primeira sessão com aluna exigiu ajuda em pontos de uso e compreensão. [Observações e correções](../../../docs/reforma/checkpoint-35-primeiro-uso.md). Versão corrigida aguarda reteste humano/visual; as evidências anteriores abaixo pertencem às versões registradas.
+
+
 ## Registro histórico do checkpoint 15
 Escopo: adaptação curricular e práticas adicionais; não liberação do produto completo.
 Concluído: vínculos das 17 etapas QTS, casos reais por RF/RQ, comparação portátil isolada, recorte TDD e prática Git local.

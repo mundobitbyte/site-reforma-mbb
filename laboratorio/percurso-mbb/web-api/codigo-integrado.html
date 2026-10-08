@@ -15,39 +15,49 @@
     &lt;span class=&quot;versao&quot;&gt;Evolução 3&lt;/span&gt;
   &lt;/header&gt;
   &lt;main class=&quot;layout&quot; id=&quot;conteudo&quot; tabindex=&quot;-1&quot;&gt;
-    &lt;section aria-labelledby=&quot;cardapio-titulo&quot;&gt;
-      &lt;div class=&quot;section-heading&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;Produtos disponíveis&lt;/h2&gt;
-        &lt;p class=&quot;hint&quot;&gt;Quantidade total por produto: de 1 a 10, respeitando o estoque.&lt;/p&gt;&lt;/div&gt;
-        &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot;&gt;Atualizar estoque&lt;/button&gt;&lt;/div&gt;
+    &lt;nav class=&quot;passos&quot; aria-label=&quot;Etapas do pedido&quot;&gt;
+      &lt;a href=&quot;#cardapio&quot;&gt;1. Escolher produtos&lt;/a&gt;
+      &lt;a href=&quot;#carrinho&quot;&gt;2. Revisar e registrar&lt;/a&gt;
+      &lt;a href=&quot;#consulta&quot;&gt;3. Consultar e acompanhar&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;section id=&quot;cardapio&quot; aria-labelledby=&quot;cardapio-titulo&quot; tabindex=&quot;-1&quot;&gt;
+      &lt;div class=&quot;section-heading&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;1. Escolher produtos&lt;/h2&gt;
+        &lt;p class=&quot;hint&quot; id=&quot;quantidade-ajuda&quot;&gt;Digite a quantidade ou use as setas do campo. Depois clique em &lt;strong&gt;Adicionar ao pedido&lt;/strong&gt;. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.&lt;/p&gt;&lt;/div&gt;
+        &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot; aria-describedby=&quot;estoque-ajuda&quot;&gt;Consultar estoque atual&lt;/button&gt;&lt;/div&gt;
+      &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Este botão consulta as quantidades disponíveis; não acrescenta produtos ao seu pedido.&lt;/p&gt;
+      &lt;p id=&quot;estoque-status&quot; class=&quot;hint&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
       &lt;div id=&quot;produtos&quot; class=&quot;produtos&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
-      &lt;section class=&quot;consulta&quot; aria-labelledby=&quot;consulta-titulo&quot;&gt;
-        &lt;h2 id=&quot;consulta-titulo&quot;&gt;Consultar pedido&lt;/h2&gt;
+
+    &lt;/section&gt;
+    &lt;aside class=&quot;carrinho&quot; id=&quot;carrinho&quot; aria-labelledby=&quot;carrinho-titulo&quot; tabindex=&quot;-1&quot;&gt;
+      &lt;h2 id=&quot;carrinho-titulo&quot;&gt;2. Revisar e registrar&lt;/h2&gt;
+      &lt;p class=&quot;hint&quot;&gt;Confira os produtos adicionados abaixo. Registrar confirma a venda e devolve um número de pedido.&lt;/p&gt;
+      &lt;div id=&quot;itensCarrinho&quot; class=&quot;itens-vazios&quot;&gt;Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.&lt;/div&gt;
+      &lt;dl class=&quot;totais&quot;&gt;&lt;div class=&quot;total&quot;&gt;&lt;dt&gt;Subtotal previsto&lt;/dt&gt;&lt;dd id=&quot;total&quot;&gt;R$ 0,00&lt;/dd&gt;&lt;/div&gt;&lt;/dl&gt;
+      &lt;label for=&quot;cupom&quot;&gt;Cupom (opcional): digite aqui&lt;/label&gt;&lt;input aria-describedby=&quot;cupom-ajuda&quot; id=&quot;cupom&quot; type=&quot;text&quot; placeholder=&quot;Ex.: MBB10&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;p class=&quot;hint&quot; id=&quot;cupom-ajuda&quot;&gt;Se não tiver cupom, deixe o campo vazio. MBB10 dá 10% de desconto em pedidos a partir de R$ 30,00; um uso neste laboratório. O total será confirmado ao registrar.&lt;/p&gt;
+      &lt;button id=&quot;finalizar&quot; class=&quot;primary&quot;&gt;Registrar pedido&lt;/button&gt;
+      &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
+    &lt;/aside&gt;
+      &lt;section class=&quot;consulta&quot; id=&quot;consulta&quot; aria-labelledby=&quot;consulta-titulo&quot; tabindex=&quot;-1&quot;&gt;
+        &lt;h2 id=&quot;consulta-titulo&quot;&gt;3. Consultar e acompanhar&lt;/h2&gt;
+        &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.&lt;/p&gt;
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
-          &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; required&gt;
+          &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; aria-describedby=&quot;consulta-ajuda&quot; required&gt;
           &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
         &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; tabindex=&quot;-1&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
-          &lt;p class=&quot;hint&quot;&gt;Cada ação avança uma etapa. Entregue encerra a sequência.&lt;/p&gt;
+          &lt;p class=&quot;hint&quot;&gt;Leia o estado atual acima. Clique uma vez para avançar, aguarde a resposta e confira o novo estado. Entregue encerra a sequência.&lt;/p&gt;
           &lt;h3&gt;Histórico de mudanças&lt;/h3&gt;
           &lt;ol id=&quot;historico&quot;&gt;&lt;/ol&gt;
         &lt;/div&gt;
       &lt;/section&gt;
-    &lt;/section&gt;
-    &lt;aside class=&quot;carrinho&quot; aria-labelledby=&quot;carrinho-titulo&quot;&gt;
-      &lt;h2 id=&quot;carrinho-titulo&quot;&gt;Seu pedido&lt;/h2&gt;
-      &lt;div id=&quot;itensCarrinho&quot; class=&quot;itens-vazios&quot;&gt;Nenhum item adicionado.&lt;/div&gt;
-      &lt;dl class=&quot;totais&quot;&gt;&lt;div class=&quot;total&quot;&gt;&lt;dt&gt;Subtotal previsto&lt;/dt&gt;&lt;dd id=&quot;total&quot;&gt;R$ 0,00&lt;/dd&gt;&lt;/div&gt;&lt;/dl&gt;
-      &lt;label for=&quot;cupom&quot;&gt;Cupom opcional&lt;/label&gt;&lt;input id=&quot;cupom&quot; type=&quot;text&quot; placeholder=&quot;Ex.: MBB10&quot; autocomplete=&quot;off&quot;&gt;
-      &lt;p class=&quot;hint&quot;&gt;O servidor valida o cupom e confirma o total ao registrar. MBB10: 10% a partir de R$ 30,00, um uso por código neste laboratório.&lt;/p&gt;
-      &lt;button id=&quot;finalizar&quot; class=&quot;primary&quot;&gt;Registrar pedido&lt;/button&gt;
-      &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
-    &lt;/aside&gt;
   &lt;/main&gt;
   &lt;template id=&quot;produtoTemplate&quot;&gt;
     &lt;article class=&quot;produto-card&quot;&gt;&lt;div class=&quot;produto-topo&quot;&gt;&lt;div&gt;&lt;h3 class=&quot;nome&quot;&gt;&lt;/h3&gt;&lt;p class=&quot;estoque&quot;&gt;&lt;/p&gt;&lt;/div&gt;&lt;strong class=&quot;preco&quot;&gt;&lt;/strong&gt;&lt;/div&gt;
-      &lt;label&gt;Quantidade &lt;input class=&quot;quantidade&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;1&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
-      &lt;button class=&quot;adicionar primary&quot;&gt;Adicionar&lt;/button&gt;
+      &lt;label&gt;Quantidade a adicionar &lt;input aria-describedby=&quot;quantidade-ajuda&quot; class=&quot;quantidade&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;1&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+      &lt;button class=&quot;adicionar primary&quot;&gt;Adicionar ao pedido&lt;/button&gt;
     &lt;/article&gt;
   &lt;/template&gt;
 &lt;/body&gt;
@@ -113,13 +123,25 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 }
 
 /* Complementos da evolução; identidade da v1 preservada. */
-.consulta { margin-top: 2rem; }
+.consulta { grid-column: 1 / -1; margin-top: 0; padding: 1.25rem; background: white; border: 1px solid #e1e7f0; border-radius: 18px; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
-button:disabled { opacity: .6; cursor: wait; }
+button:disabled { opacity: .6; cursor: not-allowed; }
 button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
 #consulta-resultado, .mensagem, #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
+
+.passos { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .6rem; }
+.passos a { padding: .65rem .9rem; border: 1px solid #d8dfeb; border-radius: 10px; background: white; color: #2457d6; font-weight: 700; }
+.layout &gt; *, .section-heading &gt; div, .produto-topo &gt; div { min-width: 0; }
+.layout p, .layout a, .layout h2, .layout h3, .layout button { overflow-wrap: anywhere; }
+#cardapio, #carrinho, #consulta { scroll-margin-top: 1rem; }
+#cardapio:focus-visible, #carrinho:focus-visible, #consulta:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+#estoque-status { min-height: 1.5rem; margin: .4rem 0; }
+#consulta-resultado { font-size: 1.1rem; font-weight: 700; }
+.section-heading .ghost { flex-shrink: 0; }
+
+@media (max-height: 750px) { .carrinho { position: static; } }
 </code></pre><p><a href="../../cantina-evolutiva/frontend/styles.css">Arquivo canônico frontend/styles.css</a></p></details><details><summary>frontend/app.js — código completo</summary><h3>frontend/app.js</h3><button class="copy-button" type="button" data-copy="integrado-2">Copiar código</button><pre id="integrado-2"><code>&#x27;use strict&#x27;;
 const estado = { produtos: [], carrinho: [], enviando: false, consultado: null, consultando: false, alterando: false, versaoConsulta: 0 };
 const moeda = centavos =&gt; (centavos / 100).toLocaleString(&#x27;pt-BR&#x27;, { style: &#x27;currency&#x27;, currency: &#x27;BRL&#x27; });
@@ -138,7 +160,7 @@ function recuperarFoco(origem, destino = origem) {
 
 async function api(caminho, opcoes) {
   let resposta;
-  try { resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes); }
+  try { resposta = await fetch(new URL(`/api/${caminho}`, location.href), opcoes); }
   catch { throw new Error(&#x27;Não foi possível conversar com o servidor.&#x27;); }
   const dados = await resposta.json();
   if (!resposta.ok) throw new Error(dados.detail || &#x27;Não foi possível concluir a operação.&#x27;);
@@ -202,7 +224,7 @@ function renderizarCarrinho() {
   const area = $(&#x27;#itensCarrinho&#x27;);
   area.replaceChildren();
   area.className = estado.carrinho.length ? &#x27;&#x27; : &#x27;itens-vazios&#x27;;
-  if (!estado.carrinho.length) area.textContent = &#x27;Nenhum item adicionado.&#x27;;
+  if (!estado.carrinho.length) area.textContent = &#x27;Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.&#x27;;
   for (const item of estado.carrinho) {
     const row = document.createElement(&#x27;div&#x27;);
     row.className = &#x27;item-carrinho&#x27;;
@@ -228,7 +250,12 @@ function renderizarCarrinho() {
 
 async function registrarPedido() {
   if (estado.enviando) return;
-  if (!estado.carrinho.length) return avisar(&#x27;Adicione ao menos um produto ao pedido.&#x27;, true);
+  if (!estado.carrinho.length) {
+    avisar(&#x27;O pedido está vazio. Escolha um produto, informe a quantidade e clique em Adicionar ao pedido antes de registrar.&#x27;, true);
+    const primeiro = $(&#x27;#produtos&#x27;).querySelector(&#x27;.quantidade&#x27;);
+    if (primeiro) primeiro.focus();
+    return;
+  }
   const origemFoco = $(&#x27;#finalizar&#x27;);
   let destinoFoco = origemFoco;
   estado.enviando = true;
@@ -247,7 +274,7 @@ async function registrarPedido() {
     destinoFoco = $(&#x27;#consulta-resultado&#x27;);
     avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
-    catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
+    catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Consultar estoque atual.`, true); }
   } catch (erro) {
     avisar(erro.message || &#x27;Não foi possível conversar com o servidor.&#x27;, true);
   } finally {
@@ -258,7 +285,40 @@ async function registrarPedido() {
 }
 
 $(&#x27;#finalizar&#x27;).addEventListener(&#x27;click&#x27;, registrarPedido);
-$(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; carregarProdutos().catch(erro =&gt; avisar(erro.message, true)));
+$(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
+  const botao = $(&#x27;#recarregar&#x27;);
+  if (botao.disabled) return;
+  const mensagem = $(&#x27;#estoque-status&#x27;);
+  botao.disabled = true;
+  if (mensagem) mensagem.textContent = &#x27;Consultando estoque…&#x27;;
+  try {
+    await carregarProdutos();
+    if (mensagem) mensagem.textContent = &#x27;Estoque consultado. As quantidades disponíveis estão nos produtos.&#x27;;
+  } catch (erro) {
+    if (mensagem) mensagem.textContent = erro.message;
+    avisar(erro.message, true);
+  } finally {
+    botao.disabled = false;
+    recuperarFoco(botao);
+  }
+});
+
+function lembrarPedido(id) {
+  try { sessionStorage.setItem(&#x27;mbb-cantina-ultimo-pedido&#x27;, String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
+  const ajuda = $(&#x27;#consulta-ajuda&#x27;);
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
+}
+
+function recuperarNumeroPedido() {
+  try {
+    const numero = sessionStorage.getItem(&#x27;mbb-cantina-ultimo-pedido&#x27;);
+    const id = Number(numero);
+    if (Number.isSafeInteger(id) &amp;&amp; id &gt; 0) {
+      $(&#x27;#pedido-id&#x27;).value = id;
+      lembrarPedido(id);
+    }
+  } catch { /* Não impedir o uso quando o navegador recusa armazenamento. */ }
+}
 
 function controlesConsulta() {
   const ocupado = estado.consultando || estado.alterando;
@@ -269,6 +329,7 @@ function controlesConsulta() {
 
 function mostrarPedido(pedido) {
   estado.consultado = pedido;
+  lembrarPedido(pedido.id);
   $(&#x27;#consulta-resultado&#x27;).textContent = `Pedido #${pedido.id} — ${pedido.status} — ${moeda(pedido.total_centavos)}. ` + pedido.itens.map(item =&gt; `${item.quantidade} × ${item.nome}`).join(&#x27;; &#x27;);
   $(&#x27;#acompanhamento&#x27;).hidden = false;
   $(&#x27;#avancar&#x27;).textContent = pedido.proximo_status ? `Avançar para ${pedido.proximo_status}` : &#x27;Pedido entregue&#x27;;
@@ -330,7 +391,7 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
   if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
   const versao = estado.versaoConsulta;
   let versaoParaFoco = versao;
-  let destinoFoco = $(&#x27;#avancar&#x27;);
+  let destinoFoco = $(&#x27;#consulta-resultado&#x27;);
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -340,7 +401,6 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
     });
     if (versao === estado.versaoConsulta) {
       mostrarPedido(atualizado);
-      if (!atualizado.proximo_status) destinoFoco = $(&#x27;#consulta-resultado&#x27;);
     }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
@@ -355,6 +415,7 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
     if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($(&#x27;#avancar&#x27;), destinoFoco);
   }
 });
+recuperarNumeroPedido();
 carregarProdutos().catch(erro =&gt; avisar(erro.message, true));
 renderizarCarrinho();
 </code></pre><p><a href="../../cantina-evolutiva/frontend/app.js">Arquivo canônico frontend/app.js</a></p></details><details><summary>app.py — código completo</summary><h3>app.py</h3><button class="copy-button" type="button" data-copy="integrado-3">Copiar código</button><pre id="integrado-3"><code>&quot;&quot;&quot;API e interface local da Cantina evolutiva.&quot;&quot;&quot;
@@ -448,4 +509,4 @@ def criar_app(caminho=None, hoje=None):
 
 
 app = criar_app()
-</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section><section><h2>Acessibilidade da interface web</h2><p>Quantidade e Adicionar identificam o produto. Ao recusar quantidade, o código dirige foco ao campo; ao remover item, dirige foco ao botão restante ou ao cupom e informa a remoção. O atalho Ir para o conteúdo precede o cabeçalho. Esses controles pertencem à aplicação web; não são parte dos programas VisuAlg.</p><p>No checkpoint 20, o conjunto passou a 17 casos de lógica no Node. O retorno de foco acompanha registro, consulta e avanço de estado; ao atualizar produtos, o campo em edição é reconstruído com foco e valor preservados. Uma resposta superada não assume o foco de outra ação. Os casos usam elementos substitutos, sem navegador. Naquela rodada, teclado e layout ainda não tinham confirmação em navegador. O checkpoint 21 posteriormente confirmou 360/320 px, teclado e foco em Chromium real; Narrador real confirmado pelo professor no checkpoint 27. <a href="../../../docs/reforma/evidencia-interface-21.json">Evidência em navegador</a>. <a href="../../cantina-evolutiva/frontend/tests/acessibilidade.test.cjs">Consultar os casos</a> · <a href="../../../docs/reforma/evidencia-interface-20.json">Ver evidência e limites</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>
+</code></pre><p><a href="../../cantina-evolutiva/app.py">Arquivo canônico app.py</a></p></details><section><h2>Continuar a leitura</h2><p><a href="../../cantina-evolutiva/servico.py">Serviço Cantina</a> · <a href="../banco-de-dados/09-integrador.html">BD integrador</a> · <a href="../programacao/14-integracao.html">Programação integradora</a>.</p><p>Na interface original, a função de rede espera JSON do servidor. Os novos recortes de estudo também tratam resposta não JSON explicitamente; isso não foi incorporado automaticamente ao app.js. A proteção contra uma resposta fora do formato permanece um ponto de revisão do cliente integrado.</p></section><section><h2>Acessibilidade da interface web</h2><p>No checkpoint 35, a primeira sessão com aluna motivou orientação em três etapas, memória do último ID na mesma aba, retorno do estoque junto ao controle e foco no estado após avanço. Os 23 casos de lógica passaram com elementos substitutos; o layout e a compreensão da nova versão ainda precisam de observação. <a href="../../../docs/reforma/checkpoint-35-primeiro-uso.md">Sessão, correções e limites</a>.</p><p>Quantidade e Adicionar identificam o produto. Ao recusar quantidade, o código dirige foco ao campo; ao remover item, dirige foco ao botão restante ou ao cupom e informa a remoção. O atalho Ir para o conteúdo precede o cabeçalho. Esses controles pertencem à aplicação web; não são parte dos programas VisuAlg.</p><p>No checkpoint 20, o conjunto passou a 17 casos de lógica no Node. O retorno de foco acompanha registro, consulta e avanço de estado; ao atualizar produtos, o campo em edição é reconstruído com foco e valor preservados. Uma resposta superada não assume o foco de outra ação. Os casos usam elementos substitutos, sem navegador. Naquela rodada, teclado e layout ainda não tinham confirmação em navegador. O checkpoint 21 posteriormente confirmou 360/320 px, teclado e foco em Chromium real; Narrador real confirmado pelo professor no checkpoint 27. <a href="../../../docs/reforma/evidencia-interface-21.json">Evidência em navegador</a>. <a href="../../cantina-evolutiva/frontend/tests/acessibilidade.test.cjs">Consultar os casos</a> · <a href="../../../docs/reforma/evidencia-interface-20.json">Ver evidência e limites</a>.</p></section></article><p id="copy-status" role="status" aria-live="polite"></p></div></main></div><script src="../percurso.js" defer></script></body></html>

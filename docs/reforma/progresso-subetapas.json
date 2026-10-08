@@ -288,12 +288,14 @@
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/checkpoint-28-retomada-no-celular.md",
             "docs/reforma/evidencia-copia-31.json",
-            "docs/reforma/checkpoint-34-sessao-windows.md"
+            "docs/reforma/checkpoint-34-sessao-windows.md",
+            "docs/reforma/checkpoint-35-primeiro-uso.md"
           ],
           "depende_de": [
+            "REVISAO_VISUAL_NO_COMPUTADOR",
             "PARTICIPANTE"
           ],
-          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas."
+          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas. No 35, primeira sessão com aluna revelou dificuldade de localizar e explicar as conexões; as cinco respostas precisaram de indicação de caminho. Mapa e pontes corrigidos; aguarda nova observação dos elementos alterados."
         }
       ]
     },
@@ -353,13 +355,16 @@
         {
           "id": "5.5",
           "titulo": "Rodada final de uso integrado e compreensão",
-          "situacao": "bloqueada",
+          "situacao": "parcial",
           "evidencias": [
-            "laboratorio/percurso-mbb/qts/roteiro-manual.md"
+            "laboratorio/percurso-mbb/qts/roteiro-manual.md",
+            "docs/reforma/checkpoint-35-primeiro-uso.md",
+            "docs/reforma/reteste-primeiro-uso.md"
           ],
           "depende_de": [
             "PARTICIPANTE"
-          ]
+          ],
+          "preparacao": "Primeira sessão realizada em 08/10, relatada pelo professor: dificuldades em adicionar, cupom, registro, recuperação do ID, consulta e leitura do avanço; estoque incompreendido. Correções frontend no 35, 23 testes de lógica passaram, sem navegador ou confirmação humana da nova versão. Reteste dos pontos afetados preparado."
         },
         {
           "id": "5.6",
@@ -379,7 +384,8 @@
             "docs/reforma/checkpoint-32-comandos-e-utf8.md",
             "docs/reforma/roteiro-final-windows.md",
             "docs/reforma/checkpoint-33-roteiro-dos-testes.md",
-            "docs/reforma/checkpoint-34-sessao-windows.md"
+            "docs/reforma/checkpoint-34-sessao-windows.md",
+            "docs/reforma/checkpoint-35-primeiro-uso.md"
           ],
           "depende_de": [
             "1.6",
@@ -391,7 +397,7 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação. No 35, parecer atualizado para revisão necessária após uso assistido; correções implementadas e reteste restrito aos pontos afetados. Não há aprovação final."
         }
       ]
     }
@@ -400,9 +406,9 @@
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
-    "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
+    "PARTICIPANTE": "Primeira sessão com aluna recebida no 35; uso e compreensão exigiram ajuda. Nova observação dos pontos corrigidos pendente, sem declaração de aprovação.",
     "AMBIENTE_VISUALG_DEPURADOR": "Resolvido: pdb no checkpoint 17 e VisuAlg por relato do professor no 34.",
-    "REVISAO_VISUAL_NO_COMPUTADOR": "Resolvido nesta amostra: navegação com zoom orientado a 200% e cópia PG07 conferidas no 34. Avaliação pedagógica com participante permanece pendente."
+    "REVISAO_VISUAL_NO_COMPUTADOR": "Rodada 34 preservada como evidência anterior. Interface, mapa e pontes alterados no 35 precisam de conferência visual dos pontos novos. Navegador remoto não alcançou a prévia local; não houve resultado visual novo."
   },
   "resumo": {
     "total_subetapas": 31,
@@ -410,6 +416,6 @@
     "restantes": 3,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 34,
-  "orientacao_atual": "Checkpoint 34: VisuAlg concluído por relato do professor; rodada visual/cópia Windows encerrada. 28/31. Próximo: 5.5 uso/compreensão com participante, que também completa o critério pedagógico da 4.9. A 5.6 aguarda resultados e parecer; integração/publicação constituem fase posterior e exigem autorização explícita para publicar."
+  "checkpoint_atualizacao": 35,
+  "orientacao_atual": "Checkpoint 35: primeira participante testou com ajuda em pontos centrais; 4.9 e 5.5 seguem parciais e 5.6 aguarda parecer. Corrigidos orientação, ID/consulta, leitura do avanço, estoque e mapa curricular. 23 casos Node e verificação estrutural passaram; sem navegador/novo teste humano da versão corrigida. 28/31."
 }

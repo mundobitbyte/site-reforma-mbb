@@ -1,5 +1,8 @@
 # Testes restantes — roteiro Windows de 08/10/2026
 
+**Atualização após a sessão de 08/10:** VisuAlg e rodada visual/cópia foram concluídos no checkpoint 34. A primeira aluna encontrou dificuldades no checkpoint 35; use a nova versão e o [reteste dos pontos corrigidos](reteste-primeiro-uso.md), sem repetir os blocos encerrados. O roteiro abaixo preserva a primeira preparação.
+
+
 Comece quando estiver disponível depois das 7h30. Situação inicial: **27/31 concluídas; quatro abertas: 4.8, 4.9, 5.5 e 5.6**. Pedido 6/6; Cupom 5/5; Estados 5/5; Currículo 7/9; Entrega 4/6. Este roteiro prepara a sessão; não registra testes como executados.
 
 Ordem: preparar versão → sequência/decisão/repetição no VisuAlg → iniciar prévia → zoom/cópia → uso e compreensão com participante → salvar registros → análise do parecer. Os fluxos técnicos de pedido, cupom e estados, o pdb e os anúncios do Narrador já têm evidência. Não precisam de nova rodada só para retomar. O objetivo das ações da Cantina com participante é observar uso/compreensão, não repetir a aprovação funcional.

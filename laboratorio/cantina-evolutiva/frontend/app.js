@@ -16,7 +16,7 @@ function recuperarFoco(origem, destino = origem) {
 
 async function api(caminho, opcoes) {
   let resposta;
-  try { resposta = await fetch(new URL(`./api/${caminho}`, location.href), opcoes); }
+  try { resposta = await fetch(new URL(`/api/${caminho}`, location.href), opcoes); }
   catch { throw new Error('Não foi possível conversar com o servidor.'); }
   const dados = await resposta.json();
   if (!resposta.ok) throw new Error(dados.detail || 'Não foi possível concluir a operação.');
@@ -80,7 +80,7 @@ function renderizarCarrinho() {
   const area = $('#itensCarrinho');
   area.replaceChildren();
   area.className = estado.carrinho.length ? '' : 'itens-vazios';
-  if (!estado.carrinho.length) area.textContent = 'Nenhum item adicionado.';
+  if (!estado.carrinho.length) area.textContent = 'Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.';
   for (const item of estado.carrinho) {
     const row = document.createElement('div');
     row.className = 'item-carrinho';
@@ -106,7 +106,12 @@ function renderizarCarrinho() {
 
 async function registrarPedido() {
   if (estado.enviando) return;
-  if (!estado.carrinho.length) return avisar('Adicione ao menos um produto ao pedido.', true);
+  if (!estado.carrinho.length) {
+    avisar('O pedido está vazio. Escolha um produto, informe a quantidade e clique em Adicionar ao pedido antes de registrar.', true);
+    const primeiro = $('#produtos').querySelector('.quantidade');
+    if (primeiro) primeiro.focus();
+    return;
+  }
   const origemFoco = $('#finalizar');
   let destinoFoco = origemFoco;
   estado.enviando = true;
@@ -125,7 +130,7 @@ async function registrarPedido() {
     destinoFoco = $('#consulta-resultado');
     avisar(`Pedido #${pedido.id} registrado. Desconto: ${moeda(pedido.desconto_centavos)}. Total: ${moeda(pedido.total_centavos)}. Estado: ${pedido.status}.`);
     try { await carregarProdutos(); }
-    catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Atualizar estoque.`, true); }
+    catch { avisar(`Pedido #${pedido.id} registrado. A atualização do cardápio falhou; use Consultar estoque atual.`, true); }
   } catch (erro) {
     avisar(erro.message || 'Não foi possível conversar com o servidor.', true);
   } finally {
@@ -136,7 +141,40 @@ async function registrarPedido() {
 }
 
 $('#finalizar').addEventListener('click', registrarPedido);
-$('#recarregar').addEventListener('click', () => carregarProdutos().catch(erro => avisar(erro.message, true)));
+$('#recarregar').addEventListener('click', async () => {
+  const botao = $('#recarregar');
+  if (botao.disabled) return;
+  const mensagem = $('#estoque-status');
+  botao.disabled = true;
+  if (mensagem) mensagem.textContent = 'Consultando estoque…';
+  try {
+    await carregarProdutos();
+    if (mensagem) mensagem.textContent = 'Estoque consultado. As quantidades disponíveis estão nos produtos.';
+  } catch (erro) {
+    if (mensagem) mensagem.textContent = erro.message;
+    avisar(erro.message, true);
+  } finally {
+    botao.disabled = false;
+    recuperarFoco(botao);
+  }
+});
+
+function lembrarPedido(id) {
+  try { sessionStorage.setItem('mbb-cantina-ultimo-pedido', String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
+  const ajuda = $('#consulta-ajuda');
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
+}
+
+function recuperarNumeroPedido() {
+  try {
+    const numero = sessionStorage.getItem('mbb-cantina-ultimo-pedido');
+    const id = Number(numero);
+    if (Number.isSafeInteger(id) && id > 0) {
+      $('#pedido-id').value = id;
+      lembrarPedido(id);
+    }
+  } catch { /* Não impedir o uso quando o navegador recusa armazenamento. */ }
+}
 
 function controlesConsulta() {
   const ocupado = estado.consultando || estado.alterando;
@@ -147,6 +185,7 @@ function controlesConsulta() {
 
 function mostrarPedido(pedido) {
   estado.consultado = pedido;
+  lembrarPedido(pedido.id);
   $('#consulta-resultado').textContent = `Pedido #${pedido.id} — ${pedido.status} — ${moeda(pedido.total_centavos)}. ` + pedido.itens.map(item => `${item.quantidade} × ${item.nome}`).join('; ');
   $('#acompanhamento').hidden = false;
   $('#avancar').textContent = pedido.proximo_status ? `Avançar para ${pedido.proximo_status}` : 'Pedido entregue';
@@ -208,7 +247,7 @@ $('#avancar').addEventListener('click', async () => {
   if (estado.alterando || estado.consultando || !pedido?.proximo_status) return;
   const versao = estado.versaoConsulta;
   let versaoParaFoco = versao;
-  let destinoFoco = $('#avancar');
+  let destinoFoco = $('#consulta-resultado');
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -218,7 +257,6 @@ $('#avancar').addEventListener('click', async () => {
     });
     if (versao === estado.versaoConsulta) {
       mostrarPedido(atualizado);
-      if (!atualizado.proximo_status) destinoFoco = $('#consulta-resultado');
     }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
@@ -233,5 +271,6 @@ $('#avancar').addEventListener('click', async () => {
     if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($('#avancar'), destinoFoco);
   }
 });
+recuperarNumeroPedido();
 carregarProdutos().catch(erro => avisar(erro.message, true));
 renderizarCarrinho();

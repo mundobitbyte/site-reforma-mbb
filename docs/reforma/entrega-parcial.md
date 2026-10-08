@@ -1,5 +1,8 @@
 # Cantina Horizonte — orientação da entrega parcial
 
+**Situação atual, checkpoint 35: 28/31; revisão necessária.** Primeira sessão com aluna exigiu ajuda em pontos de uso e compreensão. [Observações e correções](checkpoint-35-primeiro-uso.md). Versão corrigida aguarda reteste humano/visual; as evidências anteriores abaixo pertencem às versões registradas.
+
+
 Este material reúne o sistema-base e seu percurso interdisciplinar no laboratório `mundobitbyte/site-reforma-mbb`, branch `preparacao/isolamento-inicial`. O site oficial e o Firebase permanecem intactos.
 
 **Situação: 27/31 subetapas concluídas; 4 pendentes.** Esta é uma entrega parcial para leitura e revisão. Narrador real confirmado no checkpoint 27; ensaios com participante e VisuAlg continuam pendentes.

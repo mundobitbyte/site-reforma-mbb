@@ -1,5 +1,8 @@
 # Guia consolidado da Cantina — execução e estado de entrega
 
+**Situação atual, checkpoint 35: 28/31; revisão necessária.** Primeira sessão com aluna exigiu ajuda em pontos de uso e compreensão. [Observações e correções](checkpoint-35-primeiro-uso.md). Versão corrigida aguarda reteste humano/visual; as evidências anteriores abaixo pertencem às versões registradas.
+
+
 Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/isolamento-inicial`. O repositório `mundobitbyte/site`, domínio oficial e Firebase ficam somente para leitura. O acesso já autorizado não precisa ser ampliado.
 
 ## Onde abrir o conteúdo

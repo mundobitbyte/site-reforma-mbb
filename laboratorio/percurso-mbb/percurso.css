@@ -14,3 +14,9 @@ pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background:
   body:not(.menu-ready) .menu-toggle { display: none; }
   .grid2 .card { min-width: 0; }
 }
+
+.mapa-percurso { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.mapa-percurso article { min-width: 0; padding: 1rem; border: 1px solid #d7e4f5; border-radius: 12px; background: #f6f9ff; }
+.mapa-percurso h3 { margin: 0 0 .5rem; }
+.mapa-percurso a { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .mapa-percurso { grid-template-columns: 1fr; } }

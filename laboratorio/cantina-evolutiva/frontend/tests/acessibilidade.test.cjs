@@ -5,7 +5,7 @@ const { join } = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
 
-async function interfaceDeTeste(estoqueAgua = 20) {
+async function interfaceDeTeste(estoqueAgua = 20, memoria = new Map(), endereco = 'http://ensaio.invalid/') {
   const document = { activeElement: null };
   class Elemento {
     constructor(classe = '') {
@@ -45,7 +45,7 @@ async function interfaceDeTeste(estoqueAgua = 20) {
   const ids = new Map([
     'mensagem', 'produtos', 'produtoTemplate', 'itensCarrinho', 'total', 'finalizar',
     'cupom', 'pedido-id', 'recarregar', 'consultar', 'avancar', 'consulta-resultado',
-    'acompanhamento', 'historico', 'form-consulta',
+    'acompanhamento', 'historico', 'form-consulta', 'consulta-ajuda', 'estoque-status',
   ].map(id => ['#' + id, new Elemento()]));
   ids.get('#cupom').value = '';
   ids.get('#pedido-id').value = '';
@@ -76,7 +76,8 @@ async function interfaceDeTeste(estoqueAgua = 20) {
   ];
   let responder = async () => { throw new Error('Requisição inesperada no ensaio'); };
   const requisicoes = [];
-  const contexto = vm.createContext({ document, URL, location: { href: 'http://ensaio.invalid/' },
+  const sessionStorage = { getItem: chave => memoria.get(chave) ?? null, setItem: (chave, valor) => memoria.set(chave, valor) };
+  const contexto = vm.createContext({ document, URL, sessionStorage, location: { href: endereco },
     fetch: async (url, opcoes) => {
       requisicoes.push({ rota: url.pathname, opcoes });
       if (url.pathname === '/api/produtos') return { ok: true, json: async () => produtos };
@@ -248,13 +249,13 @@ test('async: resposta de consulta superada não troca resultado ou foco de outra
   assert.equal(ui.ids.get('#consulta-resultado').textContent, 'Outra ação assumiu a consulta.');
 });
 
-test('async: avanço intermediário reabilita e recupera foco no botão com próximo estado', async () => {
+test('async: avanço intermediário reabilita controles e dirige foco ao novo estado para leitura', async () => {
   const ui = await interfaceDeTeste();
   ui.estado().consultado = pedido();
   ui.ids.get('#avancar').focus();
   ui.resposta(async () => sucesso(pedido('Confirmado', 'Em preparação')));
   await ui.ids.get('#avancar').listeners.click();
-  assert.equal(ui.document.activeElement, ui.ids.get('#avancar'));
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
   assert.equal(ui.ids.get('#avancar').disabled, false);
   assert.equal(ui.ids.get('#avancar').textContent, 'Avançar para Em preparação');
   const envio = ui.requisicoes.find(r => r.rota.endsWith('/status')).opcoes;
@@ -301,4 +302,71 @@ test('async: produto esgotado dirige foco do antigo Adicionar à quantidade do m
   await ui.carregar();
   assert.equal(ui.document.activeElement, ui.cartao(0).querySelector('.quantidade'));
   assert.equal(ui.cartao(0).querySelector('.adicionar').disabled, true);
+});
+
+
+test('pedido vazio explica Adicionar e dirige foco ao primeiro produto sem enviar venda', async () => {
+  const ui = await interfaceDeTeste();
+  await ui.ids.get('#finalizar').listeners.click();
+  assert.equal(ui.document.activeElement, ui.cartao(0).querySelector('.quantidade'));
+  assert.match(ui.ids.get('#mensagem').textContent, /Adicionar ao pedido antes de registrar/);
+  assert.equal(ui.requisicoes.filter(r => r.rota === '/api/pedidos').length, 0);
+});
+
+test('número confirmado reaparece na nova página e consulta usa esse ID sem registrar de novo', async () => {
+  const memoria = new Map();
+  const primeira = await interfaceDeTeste(20, memoria);
+  primeira.adicionar(0, 2);
+  primeira.resposta(async () => sucesso({ ...pedido(), id: 7 }));
+  await primeira.ids.get('#finalizar').listeners.click();
+  const segunda = await interfaceDeTeste(20, memoria);
+  assert.equal(Number(segunda.ids.get('#pedido-id').value), 7);
+  assert.match(segunda.ids.get('#consulta-ajuda').textContent, /#7/);
+  segunda.resposta(async url => {
+    assert.equal(url.pathname, '/api/pedidos/7');
+    return sucesso({ ...pedido(), id: 7 });
+  });
+  await segunda.ids.get('#form-consulta').listeners.submit({ preventDefault() {} });
+  assert.match(segunda.ids.get('#consulta-resultado').textContent, /Pedido #7/);
+  assert.equal(segunda.requisicoes.filter(r => r.opcoes?.method === 'POST').length, 0);
+});
+
+test('armazenamento bloqueado não impede registro e consulta', async () => {
+  const bloqueada = { get() { throw new Error('bloqueado'); }, set() { throw new Error('bloqueado'); } };
+  const ui = await interfaceDeTeste(20, bloqueada);
+  ui.adicionar(0, 2);
+  ui.resposta(async () => sucesso(pedido()));
+  await ui.ids.get('#finalizar').listeners.click();
+  assert.match(ui.ids.get('#consulta-resultado').textContent, /Pedido #1/);
+  assert.equal(ui.estado().carrinho.length, 0);
+});
+
+test('número inválido lembrado não preenche a consulta', async () => {
+  for (const valor of ['0', '-1', 'NaN', '1.5', '9007199254740992']) {
+    const ui = await interfaceDeTeste(20, new Map([['mbb-cantina-ultimo-pedido', valor]]));
+    assert.equal(ui.ids.get('#pedido-id').value, '');
+  }
+});
+
+test('consultar estoque dá retorno junto ao controle e preserva o carrinho', async () => {
+  const ui = await interfaceDeTeste();
+  ui.adicionar(0, 2);
+  ui.ids.get('#recarregar').focus();
+  await ui.ids.get('#recarregar').listeners.click();
+  assert.match(ui.ids.get('#estoque-status').textContent, /Estoque consultado/);
+  assert.equal(ui.estado().carrinho[0].quantidade, 2);
+  assert.equal(ui.document.activeElement, ui.ids.get('#recarregar'));
+  assert.equal(ui.ids.get('#recarregar').disabled, false);
+});
+
+
+test('rotas da API continuam na raiz quando a aplicação é aberta pelo retorno do percurso', async () => {
+  const ui = await interfaceDeTeste(20, new Map(), 'http://ensaio.invalid/curso/laboratorio/cantina-evolutiva/frontend/index.html');
+  ui.adicionar(0, 2);
+  ui.resposta(async url => {
+    assert.equal(url.pathname, '/api/pedidos');
+    return sucesso(pedido());
+  });
+  await ui.ids.get('#finalizar').listeners.click();
+  assert.match(ui.ids.get('#consulta-resultado').textContent, /Pedido #1/);
 });

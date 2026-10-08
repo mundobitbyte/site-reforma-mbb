@@ -4,6 +4,9 @@
 
 Use esta ficha quando puder testar. Não é necessário repetir as suítes de pedido, cupom e estados já concluídas. As ações abaixo produzem evidência nova de leitura, acesso direto e compreensão; resultados esperados não são aprovação.
 
+## Sessão com aluna — 08/10/2026
+Sessão realizada, com ajuda na aplicação e nas cinco perguntas curriculares. [Observações, correções e limites](checkpoint-35-primeiro-uso.md). Situação: **28/31; revisão necessária**, sem aprovação de compreensão independente. Usar a versão corrigida e o [reteste restrito aos pontos afetados](reteste-primeiro-uso.md). A rodada anterior de VisuAlg/zoom/cópia permanece registrada; não repetir tudo.
+
 ## Registro histórico de 07/10/2026
 
 Ponto de partida comprovado: **25/31 concluídas**; pedido, cupom e estados conferidos no Chromium real, com 360/320 px, teclado e foco. [Registro da rodada existente](evidencia-interface-21.json). R01 foi observado na sessão Windows de 07/10/2026; situação atual: **27/31 concluídas**, quatro pendentes. Leitura com Narrador complementada na sessão 8002; R07/R08 aguardam execução.

@@ -59,10 +59,22 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 }
 
 /* Complementos da evolução; identidade da v1 preservada. */
-.consulta { margin-top: 2rem; }
+.consulta { grid-column: 1 / -1; margin-top: 0; padding: 1.25rem; background: white; border: 1px solid #e1e7f0; border-radius: 18px; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
-button:disabled { opacity: .6; cursor: wait; }
+button:disabled { opacity: .6; cursor: not-allowed; }
 button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho > div { min-width: 0; overflow-wrap: anywhere; }
 #consulta-resultado, .mensagem, #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
+
+.passos { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .6rem; }
+.passos a { padding: .65rem .9rem; border: 1px solid #d8dfeb; border-radius: 10px; background: white; color: #2457d6; font-weight: 700; }
+.layout > *, .section-heading > div, .produto-topo > div { min-width: 0; }
+.layout p, .layout a, .layout h2, .layout h3, .layout button { overflow-wrap: anywhere; }
+#cardapio, #carrinho, #consulta { scroll-margin-top: 1rem; }
+#cardapio:focus-visible, #carrinho:focus-visible, #consulta:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+#estoque-status { min-height: 1.5rem; margin: .4rem 0; }
+#consulta-resultado { font-size: 1.1rem; font-weight: 700; }
+.section-heading .ghost { flex-shrink: 0; }
+
+@media (max-height: 750px) { .carrinho { position: static; } }
