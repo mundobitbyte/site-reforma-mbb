@@ -1,5 +1,7 @@
 # Retomada dos ensaios — ficha curta
 
+**Próxima sessão, 08/10/2026:** siga o [roteiro Windows em ordem](roteiro-final-windows.md), com cópia de teste corrigida, VisuAlg, R07 e R08. Os resultados abaixo preservam a sessão de 07/10; não são resultados da nova sessão.
+
 Use esta ficha quando puder testar. Não é necessário repetir as suítes de pedido, cupom e estados já concluídas. As ações abaixo produzem evidência nova de leitura, acesso direto e compreensão; resultados esperados não são aprovação.
 
 Ponto de partida comprovado: **25/31 concluídas**; pedido, cupom e estados conferidos no Chromium real, com 360/320 px, teclado e foco. [Registro da rodada existente](evidencia-interface-21.json). R01 foi observado na sessão Windows de 07/10/2026; situação atual: **27/31 concluídas**, quatro pendentes. Leitura com Narrador complementada na sessão 8002; R07/R08 aguardam execução.

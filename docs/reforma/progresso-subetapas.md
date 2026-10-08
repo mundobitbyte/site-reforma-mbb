@@ -129,3 +129,6 @@ Os 104 botões apontam para conteúdo não vazio. As 48 fontes canônicas aparec
 
 ## Comandos e codificação — checkpoint 32
 Quatro páginas agora identificam pasta/ambiente ou a evidência atual de acessibilidade. O roteiro HTTP temporário gravava seu módulo Python sem definir codificação; um caminho acentuado sob cp1252 reproduziu a falha de UTF-8. Correção verificada em regressão e por 17 requisições reais/4 operações OpenAPI. Escopos separados; sem nova suíte da aplicação ou observação humana. **27/31**, preparação 5.6. [Registro](checkpoint-32-comandos-e-utf8.md).
+
+## Roteiro da próxima sessão — checkpoint 33
+Preparado o [roteiro Windows de 08/10](roteiro-final-windows.md) para o professor usar depois das 7h30: cópia corrigida, sete execuções VisuAlg, zoom/cópia e uso/compreensão com participante. A versão de código foi fixada em 913e9dd8; a preparação documental não declara execução nova. **27/31**, posição 5.6 parcial. [Registro](checkpoint-33-roteiro-dos-testes.md).

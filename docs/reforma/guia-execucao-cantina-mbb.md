@@ -3,6 +3,7 @@
 Escopo: cópia experimental `mundobitbyte/site-reforma-mbb`, branch `preparacao/isolamento-inicial`. O repositório `mundobitbyte/site`, domínio oficial e Firebase ficam somente para leitura. O acesso já autorizado não precisa ser ampliado.
 
 ## Onde abrir o conteúdo
+- [Roteiro Windows dos testes restantes, 08/10/2026](roteiro-final-windows.md): ordem de preparação, VisuAlg, zoom/cópia, participante e registro.
 - [Orientação da entrega parcial](entrega-parcial.md): leitura e encadeamento do material sem iniciar a aplicação; ensaios podem ficar para depois.
 - [Ficha curta para a próxima sessão](registro-retomada.md) · [Minuta do parecer final](parecer-final-minuta.md): registrar apenas as observações ainda pendentes, sem repetir as suítes concluídas.
 - [Percurso interdisciplinar](../../laboratorio/percurso-mbb/index.html)
@@ -85,7 +86,7 @@ O iniciador serve os dois materiais e a API juntos. Cria banco fictício tempor�
 
 Se a porta 8001 estiver ocupada, use `python laboratorio/cantina-evolutiva/previa_local.py --port 8002` e os endereços que o terminal imprimir. Não é necessário alterar configuração do serviço.
 
-Siga o [roteiro de uso real](../../laboratorio/percurso-mbb/qts/roteiro-manual.md). O iniciador não abre navegador automaticamente, não publica o laboratório e não constitui evidência de uso visual. Os comandos foram ensaiados em Linux/Python 3.12; a execução em Windows/macOS ainda não foi verificada.
+Siga o [roteiro de uso real](../../laboratorio/percurso-mbb/qts/roteiro-manual.md). O iniciador não abre navegador automaticamente, não publica o laboratório e não constitui evidência de uso visual. A prévia foi ensaiada em Linux/Python 3.12 e aberta diretamente no Windows do professor no checkpoint 25; o Narrador foi confirmado no 27. Não há sessão macOS registrada. A nova sessão Windows deve identificar a versão de teste usada.
 
 ## Experimentar o serviço local
 Na raiz:
@@ -170,11 +171,11 @@ node --test laboratorio/cantina-evolutiva/frontend/tests/acessibilidade.test.cjs
 
 O conjunto atual tem 17 casos com o JavaScript real e elementos substitutos no Node, sem DOM de navegador ou rede. Inclui os seis casos do checkpoint 19 e 11 de operações assíncronas, recuperação de foco, respostas superadas e campo em edição. Não avalia layout, teclado nativo ou leitor de tela. [Evidência do checkpoint 20](evidencia-interface-20.json).
 
-## Windows: falha depois de Confirmado — checkpoint 26
+## Registro histórico Windows: falha depois de Confirmado — checkpoint 26
 
 A leitura SQL deve usar UTF-8 explicitamente. Em um Windows com codificação padrão cp1252, a leitura sem encoding corrompe `Em preparação` nas restrições CHECK. O [registro 26](evidencia-sql-utf8-26.json) reproduz essa falha e registra a correção do serviço. A mudança não repara restrições já gravadas num banco antigo. Não altere SQL protegido nem remova bancos persistentes para contornar o erro.
 
-Para retomar o ZIP anterior sem fechar o ensaio original, abra outro CMD na raiz do projeto e use:
+A retomada abaixo foi usada no ZIP anterior em 07/10/2026; a sequência foi confirmada no checkpoint 27. Para a nova sessão, use a cópia corrigida do [roteiro Windows](roteiro-final-windows.md). Comando histórico:
 
 ```bat
 laboratorio\cantina-evolutiva\.venv\Scripts\python.exe -X utf8 laboratorio\cantina-evolutiva\previa_local.py --port 8002
