@@ -421,7 +421,1125 @@
   "pytest_warning": "Starlette/httpx deprecated integration",
   "http_200": 36,
   "protected_files": 171,
-  "browser_publico": "pendente",
+  "browser_publico": {
+    "checks": [
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg00"
+        ],
+        "exampleOpened": true,
+        "heading": "0 — Problema, algoritmo e ambiente",
+        "scroll": 305,
+        "support": true,
+        "width": 305,
+        "file": "00-problema-ambiente.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg00"
+        ],
+        "exampleOpened": true,
+        "heading": "0 — Problema, algoritmo e ambiente",
+        "scroll": 345,
+        "support": true,
+        "width": 345,
+        "file": "00-problema-ambiente.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg00"
+        ],
+        "exampleOpened": true,
+        "heading": "0 — Problema, algoritmo e ambiente",
+        "scroll": 753,
+        "support": true,
+        "width": 753,
+        "file": "00-problema-ambiente.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg00"
+        ],
+        "exampleOpened": true,
+        "heading": "0 — Problema, algoritmo e ambiente",
+        "scroll": 1265,
+        "support": true,
+        "width": 1265,
+        "file": "00-problema-ambiente.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg01"
+        ],
+        "exampleOpened": false,
+        "heading": "1 — Valores, nomes e sequência",
+        "scroll": 305,
+        "support": false,
+        "width": 305,
+        "file": "01-sequencia.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg01"
+        ],
+        "exampleOpened": false,
+        "heading": "1 — Valores, nomes e sequência",
+        "scroll": 345,
+        "support": false,
+        "width": 345,
+        "file": "01-sequencia.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg01"
+        ],
+        "exampleOpened": false,
+        "heading": "1 — Valores, nomes e sequência",
+        "scroll": 753,
+        "support": false,
+        "width": 753,
+        "file": "01-sequencia.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg01"
+        ],
+        "exampleOpened": false,
+        "heading": "1 — Valores, nomes e sequência",
+        "scroll": 1265,
+        "support": false,
+        "width": 1265,
+        "file": "01-sequencia.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg02"
+        ],
+        "exampleOpened": false,
+        "heading": "2 — Entrada, conversão e apresentação",
+        "scroll": 305,
+        "support": false,
+        "width": 305,
+        "file": "02-entrada.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg02"
+        ],
+        "exampleOpened": false,
+        "heading": "2 — Entrada, conversão e apresentação",
+        "scroll": 345,
+        "support": false,
+        "width": 345,
+        "file": "02-entrada.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg02"
+        ],
+        "exampleOpened": false,
+        "heading": "2 — Entrada, conversão e apresentação",
+        "scroll": 753,
+        "support": false,
+        "width": 753,
+        "file": "02-entrada.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg02"
+        ],
+        "exampleOpened": false,
+        "heading": "2 — Entrada, conversão e apresentação",
+        "scroll": 1265,
+        "support": false,
+        "width": 1265,
+        "file": "02-entrada.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg03"
+        ],
+        "exampleOpened": true,
+        "heading": "3 — Decidir antes de aceitar",
+        "scroll": 305,
+        "support": true,
+        "width": 305,
+        "file": "03-decisao.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg03"
+        ],
+        "exampleOpened": true,
+        "heading": "3 — Decidir antes de aceitar",
+        "scroll": 345,
+        "support": true,
+        "width": 345,
+        "file": "03-decisao.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg03"
+        ],
+        "exampleOpened": true,
+        "heading": "3 — Decidir antes de aceitar",
+        "scroll": 753,
+        "support": true,
+        "width": 753,
+        "file": "03-decisao.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg03"
+        ],
+        "exampleOpened": true,
+        "heading": "3 — Decidir antes de aceitar",
+        "scroll": 1265,
+        "support": true,
+        "width": 1265,
+        "file": "03-decisao.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg04"
+        ],
+        "exampleOpened": true,
+        "heading": "4 — Repetir com condição de saída",
+        "scroll": 305,
+        "support": true,
+        "width": 305,
+        "file": "04-repeticao.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg04"
+        ],
+        "exampleOpened": true,
+        "heading": "4 — Repetir com condição de saída",
+        "scroll": 345,
+        "support": true,
+        "width": 345,
+        "file": "04-repeticao.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg04"
+        ],
+        "exampleOpened": true,
+        "heading": "4 — Repetir com condição de saída",
+        "scroll": 753,
+        "support": true,
+        "width": 753,
+        "file": "04-repeticao.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg04"
+        ],
+        "exampleOpened": true,
+        "heading": "4 — Repetir com condição de saída",
+        "scroll": 1265,
+        "support": true,
+        "width": 1265,
+        "file": "04-repeticao.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg05"
+        ],
+        "exampleOpened": true,
+        "heading": "5 — Contar, acumular e consolidar",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "05-acumulador.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg05"
+        ],
+        "exampleOpened": true,
+        "heading": "5 — Contar, acumular e consolidar",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "05-acumulador.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg05"
+        ],
+        "exampleOpened": true,
+        "heading": "5 — Contar, acumular e consolidar",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "05-acumulador.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg05"
+        ],
+        "exampleOpened": true,
+        "heading": "5 — Contar, acumular e consolidar",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "05-acumulador.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg06"
+        ],
+        "exampleOpened": true,
+        "heading": "6 — Lista de itens e campos com nome",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "06-colecoes.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg06"
+        ],
+        "exampleOpened": true,
+        "heading": "6 — Lista de itens e campos com nome",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "06-colecoes.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg06"
+        ],
+        "exampleOpened": true,
+        "heading": "6 — Lista de itens e campos com nome",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "06-colecoes.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg06"
+        ],
+        "exampleOpened": true,
+        "heading": "6 — Lista de itens e campos com nome",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "06-colecoes.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg07"
+        ],
+        "exampleOpened": false,
+        "heading": "7 — Nomear uma responsabilidade",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "07-funcoes.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg07"
+        ],
+        "exampleOpened": false,
+        "heading": "7 — Nomear uma responsabilidade",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "07-funcoes.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg07"
+        ],
+        "exampleOpened": false,
+        "heading": "7 — Nomear uma responsabilidade",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "07-funcoes.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg07"
+        ],
+        "exampleOpened": false,
+        "heading": "7 — Nomear uma responsabilidade",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "07-funcoes.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg08"
+        ],
+        "exampleOpened": true,
+        "heading": "8 — Recusar o erro previsto e permitir correção",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "08-excecoes.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg08"
+        ],
+        "exampleOpened": true,
+        "heading": "8 — Recusar o erro previsto e permitir correção",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "08-excecoes.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg08"
+        ],
+        "exampleOpened": true,
+        "heading": "8 — Recusar o erro previsto e permitir correção",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "08-excecoes.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg08"
+        ],
+        "exampleOpened": true,
+        "heading": "8 — Recusar o erro previsto e permitir correção",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "08-excecoes.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg09"
+        ],
+        "exampleOpened": true,
+        "heading": "9 — Reutilizar o código entre arquivos",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "09-modulos.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg09"
+        ],
+        "exampleOpened": true,
+        "heading": "9 — Reutilizar o código entre arquivos",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "09-modulos.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg09"
+        ],
+        "exampleOpened": true,
+        "heading": "9 — Reutilizar o código entre arquivos",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "09-modulos.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg09"
+        ],
+        "exampleOpened": true,
+        "heading": "9 — Reutilizar o código entre arquivos",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "09-modulos.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg10"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "10 — Caminho, JSON e reabertura",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "10-arquivos.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg10"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "10 — Caminho, JSON e reabertura",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "10-arquivos.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg10"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "10 — Caminho, JSON e reabertura",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "10-arquivos.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg10"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "10 — Caminho, JSON e reabertura",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "10-arquivos.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg11"
+        ],
+        "exampleOpened": false,
+        "firstTestBeforeFramework": null,
+        "heading": "11 — Dados e comportamento com responsabilidade",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "11-objetos.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg11"
+        ],
+        "exampleOpened": false,
+        "firstTestBeforeFramework": null,
+        "heading": "11 — Dados e comportamento com responsabilidade",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "11-objetos.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg11"
+        ],
+        "exampleOpened": false,
+        "firstTestBeforeFramework": null,
+        "heading": "11 — Dados e comportamento com responsabilidade",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "11-objetos.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg11"
+        ],
+        "exampleOpened": false,
+        "firstTestBeforeFramework": null,
+        "heading": "11 — Dados e comportamento com responsabilidade",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "11-objetos.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg12"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "12 — O terminal usa o mesmo serviço e banco",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "12-persistencia.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg12"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "12 — O terminal usa o mesmo serviço e banco",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "12-persistencia.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg12"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "12 — O terminal usa o mesmo serviço e banco",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "12-persistencia.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg12"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "12 — O terminal usa o mesmo serviço e banco",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "12-persistencia.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg13"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": true,
+        "heading": "13 — Transformar exemplos em evidências repetíveis",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "13-testes.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg13"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": true,
+        "heading": "13 — Transformar exemplos em evidências repetíveis",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "13-testes.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg13"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": true,
+        "heading": "13 — Transformar exemplos em evidências repetíveis",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "13-testes.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg13"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": true,
+        "heading": "13 — Transformar exemplos em evidências repetíveis",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "13-testes.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg14"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "14 — Defender o mesmo pedido entre disciplinas",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "14-integracao.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg14"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "14 — Defender o mesmo pedido entre disciplinas",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "14-integracao.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg14"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "14 — Defender o mesmo pedido entre disciplinas",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "14-integracao.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "caderno": [
+          "caderno-programacao.html#pg14"
+        ],
+        "exampleOpened": true,
+        "firstTestBeforeFramework": null,
+        "heading": "14 — Defender o mesmo pedido entre disciplinas",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "14-integracao.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "99 — Exercícios encadeados",
+        "returns": 0,
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "99-exercicios.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "99 — Exercícios encadeados",
+        "returns": 0,
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "99-exercicios.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "99 — Exercícios encadeados",
+        "returns": 0,
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "99-exercicios.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "99 — Exercícios encadeados",
+        "returns": 0,
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "99-exercicios.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": true,
+        "heading": "Caderno de Programação",
+        "returns": 15,
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "caderno-programacao.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": true,
+        "heading": "Caderno de Programação",
+        "returns": 15,
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "caderno-programacao.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": true,
+        "heading": "Caderno de Programação",
+        "returns": 15,
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "caderno-programacao.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": true,
+        "heading": "Caderno de Programação",
+        "returns": 15,
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "caderno-programacao.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Depurar a mesma função",
+        "returns": 0,
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "depuracao.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Depurar a mesma função",
+        "returns": 0,
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "depuracao.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Depurar a mesma função",
+        "returns": 0,
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "depuracao.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Depurar a mesma função",
+        "returns": 0,
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "depuracao.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Ponte com VisuAlg",
+        "returns": 0,
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "file": "ponte-visualg.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Ponte com VisuAlg",
+        "returns": 0,
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "file": "ponte-visualg.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Ponte com VisuAlg",
+        "returns": 0,
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "file": "ponte-visualg.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "exampleOpened": false,
+        "heading": "Ponte com VisuAlg",
+        "returns": 0,
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "file": "ponte-visualg.html",
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "heading": "Programação/Python da Cantina",
+        "scroll": 305,
+        "viewportActual": 320,
+        "width": 305,
+        "wrap": "anywhere",
+        "file": "index.html",
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "heading": "Programação/Python da Cantina",
+        "scroll": 345,
+        "viewportActual": 360,
+        "width": 345,
+        "wrap": "anywhere",
+        "file": "index.html",
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "heading": "Programação/Python da Cantina",
+        "scroll": 753,
+        "viewportActual": 768,
+        "width": 753,
+        "wrap": "anywhere",
+        "file": "index.html",
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "brokenCopies": 0,
+        "heading": "Programação/Python da Cantina",
+        "scroll": 1265,
+        "viewportActual": 1280,
+        "width": 1265,
+        "wrap": "anywhere",
+        "file": "index.html",
+        "viewport": 1280,
+        "pass": true
+      }
+    ],
+    "total": 80,
+    "failed": 0,
+    "menuEnter": true,
+    "menuEscape": true,
+    "cadernoTargetTop": 144.46875,
+    "returns": 15,
+    "returnTo10": true,
+    "nextTo11": true,
+    "tableRightCellReachable": true,
+    "tableKeyboardScrollConfirmed": false,
+    "copy": {
+      "status": "Comando copiado.",
+      "clipboardConfirmed": false,
+      "reason": "readText e colagem retornaram SQL anterior, apesar da mensagem de sucesso"
+    },
+    "publicJsonCorrectionConfirmed": true,
+    "viewportIsPhysicalHardware": false,
+    "humanBeginnerTested": false,
+    "url": "https://mundobitbyte.github.io/site-reforma-mbb/laboratorio/percurso-mbb/programacao/index.html"
+  },
   "windows_mac_devices_human_tested": false,
   "paths": [
     "laboratorio/percurso-mbb/programacao/00-problema-ambiente.html",
@@ -450,5 +1568,11 @@
     "laboratorio/percurso-mbb/programacao/revisao-46.md",
     "laboratorio/percurso-mbb/programacao/verificacao-responsiva.html",
     "laboratorio/percurso-mbb/programacao/verificacao-revisao-46.json"
-  ]
+  ],
+  "publicacao": {
+    "confirmada": true,
+    "branch": "publicacao/cantina-estatica",
+    "commit_conteudo": "4145bdd9bb2eb5848a72accea1a757a722cd56f6",
+    "files_only_programacao": 26
+  }
 }
