@@ -1,6 +1,6 @@
 # Progresso — laboratório encerrado
 
-**31/31 subetapas concluídas; zero restantes.** Checkpoint 41. Publicação separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente.
+**31/31 subetapas concluídas; zero restantes.** Checkpoint 41. Publicação separada, autorizada somente no experimental e fora do domínio oficial; publicação estática confirmada no checkpoint43.
 
 | Macroetapa | Concluídas/total | Restantes |
 |---|---|---|

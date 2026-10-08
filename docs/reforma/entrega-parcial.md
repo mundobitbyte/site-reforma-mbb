@@ -8,4 +8,4 @@ A revisão geral do professor está no [40](checkpoint-40-aprovacao-navegacao.md
 
 [Conclusão e evidências no parecer final](parecer-final.md) · [Acompanhamento](progresso-subetapas.md)
 
-Publicação é uma etapa separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente. O percurso poderá ser publicado como material estático; a aplicação continuará local. Nenhum domínio, Firebase ou arquivo do repositório oficial foi alterado.
+Publicação é uma etapa separada, autorizada somente no experimental e fora do domínio oficial; publicação estática confirmada no checkpoint43. O percurso está publicado como material estático; a aplicação continua local. Nenhum domínio, Firebase ou arquivo do repositório oficial foi alterado.

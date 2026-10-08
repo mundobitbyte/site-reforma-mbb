@@ -423,23 +423,31 @@
     "restantes": 0,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 41,
-  "orientacao_atual": "Laboratório encerrado41: 31/31. Publicação autorizada somente no experimental, fora do domínio oficial, sem mexer no Firebase. Preparação estática e ativação de hospedagem são separadas da contagem fixa.",
+  "checkpoint_atualizacao": 43,
+  "orientacao_atual": "Laboratório31/31 encerrado e publicação estática experimental confirmada43 em github.io. Oficial, domínio oficial e Firebase sem alterações. Aplicação/API permanecem locais.",
   "integracao_navegacao": {
     "implementada": true,
     "verificacao_tecnica_concluida": true,
     "revisao_visual_nova": true,
     "reteste_aluno": "Concluído por relato agregado do professor no41, incluindo confirmação contextual de uso sem indicação de caminhos/respostas.",
-    "publicada": false,
+    "publicada": true,
     "aprovacao_professor": true,
     "origem_aprovacao": "Relato após roteiro completo da versão39; sem nova captura",
     "codigo_aprovado": "a3e8ec2526267067d419a87568aea649c132b79b"
   },
   "publicacao": {
     "autorizacao_explicita_recebida": true,
-    "realizada": false,
+    "realizada": true,
     "repositorio_destino": "mundobitbyte/site-reforma-mbb",
     "escopo_autorizado": "Publicar somente fora de www.mundobitbyte.com.br; repositório oficial integralmente intacto; não mexer no Firebase.",
-    "bloqueio": "Experimental privado, has_pages=false; conector não configura Pages. Não mudar visibilidade sem autorização."
+    "bloqueio": null,
+    "branch_preparada": "publicacao/cantina-estatica",
+    "commit_preparado": "d7f2e83547432b475fe85617d132cf9d01976f60",
+    "evidencia_bloqueio": "docs/reforma/checkpoint-42-bloqueio-pages.md",
+    "visibilidade": "public",
+    "autorizacao_visibilidade_recebida": true,
+    "Pages_ativado": true,
+    "url_confirmada": "https://mundobitbyte.github.io/site-reforma-mbb/",
+    "evidencia_publicacao": "docs/reforma/checkpoint-43-publicacao-experimental.md"
   }
 }
