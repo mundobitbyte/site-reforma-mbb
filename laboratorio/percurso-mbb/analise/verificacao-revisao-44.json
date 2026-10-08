@@ -91,11 +91,817 @@
       "apoio_atividade_registro_conferencia": true
     }
   ],
-  "html_http": 18,
+  "html_http": 20,
   "caderno_http": 200,
   "caderno_entregas": 15,
   "diagramas_svg": 3,
   "browser_local": false,
   "motivo": "Chromium indisponível; download recebido inválido. Prévia file:// bloqueada pela política do navegador remoto, sem contorno.",
-  "teste_com_iniciante_real": false
+  "teste_com_iniciante_real": false,
+  "public_browser": {
+    "stageChecks": [
+      {
+        "caderno": "caderno-analise.html#e01",
+        "exampleOpen": true,
+        "file": "00-antes-do-sistema.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e02",
+        "exampleOpen": true,
+        "file": "01-stakeholders-escopo.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e03",
+        "exampleOpen": true,
+        "file": "02-levantamento.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e04",
+        "exampleOpen": true,
+        "file": "03-processo-as-is.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e05",
+        "exampleOpen": true,
+        "file": "04-analise-estruturada.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 251
+        },
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e06",
+        "exampleOpen": true,
+        "file": "05-processo-to-be-bpmn.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 251
+        },
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e07",
+        "exampleOpen": true,
+        "file": "06-requisitos.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e08",
+        "exampleOpen": true,
+        "file": "07-casos-de-uso.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e09",
+        "exampleOpen": true,
+        "file": "08-uml-essencial.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 251
+        },
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e10",
+        "exampleOpen": true,
+        "file": "09-agile-backlog-mvp.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e11",
+        "exampleOpen": true,
+        "file": "10-ux-prototipo.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e12",
+        "exampleOpen": true,
+        "file": "11-qualidade-integracoes.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e13",
+        "exampleOpen": true,
+        "file": "12-viabilidade-riscos-rastreabilidade.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e14",
+        "exampleOpen": true,
+        "file": "13-documentacao-ia.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e15",
+        "exampleOpen": true,
+        "file": "14-integracao-final.html",
+        "overflow": 0,
+        "scroll": 305,
+        "svg": null,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e01",
+        "exampleOpen": true,
+        "file": "00-antes-do-sistema.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e02",
+        "exampleOpen": true,
+        "file": "01-stakeholders-escopo.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e03",
+        "exampleOpen": true,
+        "file": "02-levantamento.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e04",
+        "exampleOpen": true,
+        "file": "03-processo-as-is.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e05",
+        "exampleOpen": true,
+        "file": "04-analise-estruturada.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 291
+        },
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e06",
+        "exampleOpen": true,
+        "file": "05-processo-to-be-bpmn.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 291
+        },
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e07",
+        "exampleOpen": true,
+        "file": "06-requisitos.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e08",
+        "exampleOpen": true,
+        "file": "07-casos-de-uso.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e09",
+        "exampleOpen": true,
+        "file": "08-uml-essencial.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 291
+        },
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e10",
+        "exampleOpen": true,
+        "file": "09-agile-backlog-mvp.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e11",
+        "exampleOpen": true,
+        "file": "10-ux-prototipo.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e12",
+        "exampleOpen": true,
+        "file": "11-qualidade-integracoes.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e13",
+        "exampleOpen": true,
+        "file": "12-viabilidade-riscos-rastreabilidade.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e14",
+        "exampleOpen": true,
+        "file": "13-documentacao-ia.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e15",
+        "exampleOpen": true,
+        "file": "14-integracao-final.html",
+        "overflow": 0,
+        "scroll": 345,
+        "svg": null,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e01",
+        "exampleOpen": true,
+        "file": "00-antes-do-sistema.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e02",
+        "exampleOpen": true,
+        "file": "01-stakeholders-escopo.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e03",
+        "exampleOpen": true,
+        "file": "02-levantamento.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e04",
+        "exampleOpen": true,
+        "file": "03-processo-as-is.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e05",
+        "exampleOpen": true,
+        "file": "04-analise-estruturada.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e06",
+        "exampleOpen": true,
+        "file": "05-processo-to-be-bpmn.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e07",
+        "exampleOpen": true,
+        "file": "06-requisitos.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e08",
+        "exampleOpen": true,
+        "file": "07-casos-de-uso.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e09",
+        "exampleOpen": true,
+        "file": "08-uml-essencial.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e10",
+        "exampleOpen": true,
+        "file": "09-agile-backlog-mvp.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e11",
+        "exampleOpen": true,
+        "file": "10-ux-prototipo.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e12",
+        "exampleOpen": true,
+        "file": "11-qualidade-integracoes.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e13",
+        "exampleOpen": true,
+        "file": "12-viabilidade-riscos-rastreabilidade.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e14",
+        "exampleOpen": true,
+        "file": "13-documentacao-ia.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e15",
+        "exampleOpen": true,
+        "file": "14-integracao-final.html",
+        "overflow": 0,
+        "scroll": 753,
+        "svg": null,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e01",
+        "exampleOpen": true,
+        "file": "00-antes-do-sistema.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e02",
+        "exampleOpen": true,
+        "file": "01-stakeholders-escopo.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e03",
+        "exampleOpen": true,
+        "file": "02-levantamento.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e04",
+        "exampleOpen": true,
+        "file": "03-processo-as-is.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e05",
+        "exampleOpen": true,
+        "file": "04-analise-estruturada.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e06",
+        "exampleOpen": true,
+        "file": "05-processo-to-be-bpmn.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e07",
+        "exampleOpen": true,
+        "file": "06-requisitos.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e08",
+        "exampleOpen": true,
+        "file": "07-casos-de-uso.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e09",
+        "exampleOpen": true,
+        "file": "08-uml-essencial.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": {
+          "margin": "margin:1rem 0",
+          "named": true,
+          "width": 400
+        },
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e10",
+        "exampleOpen": true,
+        "file": "09-agile-backlog-mvp.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e11",
+        "exampleOpen": true,
+        "file": "10-ux-prototipo.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e12",
+        "exampleOpen": true,
+        "file": "11-qualidade-integracoes.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e13",
+        "exampleOpen": true,
+        "file": "12-viabilidade-riscos-rastreabilidade.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e14",
+        "exampleOpen": true,
+        "file": "13-documentacao-ia.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "caderno": "caderno-analise.html#e15",
+        "exampleOpen": true,
+        "file": "14-integracao-final.html",
+        "overflow": 0,
+        "scroll": 1265,
+        "svg": null,
+        "viewport": 1280,
+        "pass": true
+      }
+    ],
+    "supportChecks": [
+      {
+        "anchors": 0,
+        "file": "index.html",
+        "returns": 0,
+        "scroll": 305,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "dossie-cantina.html",
+        "returns": 0,
+        "scroll": 305,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "wireframe-cantina.html",
+        "returns": 0,
+        "scroll": 305,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "anchorMargin": "scroll-margin-top:9rem",
+        "anchors": 15,
+        "file": "caderno-analise.html",
+        "returns": 15,
+        "scroll": 305,
+        "viewport": 320,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "index.html",
+        "returns": 0,
+        "scroll": 345,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "dossie-cantina.html",
+        "returns": 0,
+        "scroll": 345,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "wireframe-cantina.html",
+        "returns": 0,
+        "scroll": 345,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "anchorMargin": "scroll-margin-top:9rem",
+        "anchors": 15,
+        "file": "caderno-analise.html",
+        "returns": 15,
+        "scroll": 345,
+        "viewport": 360,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "index.html",
+        "returns": 0,
+        "scroll": 753,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "dossie-cantina.html",
+        "returns": 0,
+        "scroll": 753,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "wireframe-cantina.html",
+        "returns": 0,
+        "scroll": 753,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "anchorMargin": "scroll-margin-top:9rem",
+        "anchors": 15,
+        "file": "caderno-analise.html",
+        "returns": 15,
+        "scroll": 753,
+        "viewport": 768,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "index.html",
+        "returns": 0,
+        "scroll": 1265,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "dossie-cantina.html",
+        "returns": 0,
+        "scroll": 1265,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "anchors": 0,
+        "file": "wireframe-cantina.html",
+        "returns": 0,
+        "scroll": 1265,
+        "viewport": 1280,
+        "pass": true
+      },
+      {
+        "anchorMargin": "scroll-margin-top:9rem",
+        "anchors": 15,
+        "file": "caderno-analise.html",
+        "returns": 15,
+        "scroll": 1265,
+        "viewport": 1280,
+        "pass": true
+      }
+    ],
+    "menu": {
+      "opened": "true",
+      "closed": "false"
+    },
+    "navigation": {
+      "advance00to01": true,
+      "cadernoE02Opened": true,
+      "anchorVisibleAfterSmoothScroll": {
+        "headerBottom": 64,
+        "height": 936,
+        "top": 144.46875
+      },
+      "returnTo01": true,
+      "cacheRefreshNeeded": true
+    },
+    "hardwareEmulated": false,
+    "humanBeginnerSession": false,
+    "final_combinations": 76
+  },
+  "published": true,
+  "content_commit": "dee8af35ff65ddbc698a070b8ba30df911a9f86a"
 }
