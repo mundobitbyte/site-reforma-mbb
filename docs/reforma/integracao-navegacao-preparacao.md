@@ -28,13 +28,13 @@ A porta 8007 é apenas uma opção para distinguir sessões anteriores. Usar a p
 ## Ordem atual definida pelo professor
 1. Concluir desenvolvimento e integração do projeto experimental. Navegação implementada e verificação técnica concluída no 39.
 2. Revisão geral da versão completa aprovada pelo professor no checkpoint 40, após roteiro de navegação. Código 39 preservado; não repetir essa rodada.
-3. Somente depois de tudo pronto, realizar o reteste com aluno reservado pelo professor e consolidar os critérios de compreensão e o parecer.
-4. Após revisão/parecer, obter autorização explícita antes de qualquer publicação ou escrita no repositório oficial.
+3. Reteste com aluno e parecer concluídos no checkpoint41 por relato agregado; consultar os limites no registro.
+4. Após parecer41, professor autorizou publicar somente no experimental, fora de www.mundobitbyte.com.br, mantendo o oficial intacto e sem alterações no Firebase. Nenhuma escrita oficial está autorizada.
 
-Essa ordem substitui a preparação 38 que colocava reteste como primeira condição para implementar a navegação. As 31 subetapas do laboratório continuam com 28 concluídas; adiamento autorizado não comprova aprovação pedagógica. App Inventor prático, Santa Filomena e Academia permanecem fora do escopo.
+Essa ordem substitui a preparação 38 que colocava reteste como primeira condição para implementar a navegação. As 31 subetapas do laboratório foram concluídas no41; a conclusão do reteste é baseada no relato contextual agregado do professor. App Inventor prático, Santa Filomena e Academia permanecem fora do escopo.
 
 ## Limite de hospedagem
 O HTML pode integrar navegação estática; a aplicação depende de Python/FastAPI e banco local. Publicar frontend/index.html em hospedagem estática não cria a API. A execução local permanece descrita no percurso. Nenhum backend público, nova hospedagem, merge ou deploy foi realizado.
 
 ## Revisão concluída
-[Registro 40](checkpoint-40-aprovacao-navegacao.md): professor respondeu Tudo certinho com tudo. Desenvolvimento experimental pronto e revisão geral aprovada; reteste com aluno permanece reservado. Esta atualização não altera o código nem exige outro download.
+[Registro 40](checkpoint-40-aprovacao-navegacao.md): professor respondeu Tudo certinho com tudo. Desenvolvimento experimental pronto e revisão geral aprovada; reteste com aluno posteriormente confirmado no41. Esta atualização não altera o código nem exige outro download.

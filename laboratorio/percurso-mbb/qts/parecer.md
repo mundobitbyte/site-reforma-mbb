@@ -1,7 +1,6 @@
-# Parecer parcial — QTS/Git
+# Parecer QTS/Git — situação final
 
-**Situação atual, checkpoint 35: 28/31; revisão necessária.** Primeira sessão com aluna exigiu ajuda em pontos de uso e compreensão. [Observações e correções](../../../docs/reforma/checkpoint-35-primeiro-uso.md). Versão corrigida aguarda reteste humano/visual; as evidências anteriores abaixo pertencem às versões registradas.
-
+**Checkpoint41: laboratório concluído, 31/31.** [Parecer final e limites](../../../docs/reforma/parecer-final.md). Revisão geral40 e reteste agregado41 encerrados. Publicação separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente. As rodadas abaixo são históricas e não indicam pendências atuais.
 
 ## Registro histórico do checkpoint 15
 Escopo: adaptação curricular e práticas adicionais; não liberação do produto completo.
@@ -19,7 +18,7 @@ Cobertura percentual não medida; Actions não executado. Não há certificaçã
 
 Pedido, cupom e estados foram concluídos em Chromium real integrado ao FastAPI/serviço/SQLite temporário. A evidência registra 38/38 casos de acessibilidade e 25/25 de integração, incluindo 360/320 px, teclado, foco, DOM e árvore de acessibilidade. [Registro](../../../docs/reforma/evidencia-interface-21.json).
 
-## Situação atual — consolidada no checkpoint 29
+## Registro histórico — consolidação no checkpoint 29
 
 **27/31 concluídas; 4 abertas. Posição atual: 5.6, preparação do parecer.** O registro acima preserva a situação e as grandezas das rodadas anteriores.
 

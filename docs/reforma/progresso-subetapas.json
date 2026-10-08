@@ -283,7 +283,7 @@
         {
           "id": "4.9",
           "titulo": "Revisão visual e pedagógica do percurso em uso",
-          "situacao": "parcial",
+          "situacao": "concluida",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/checkpoint-28-retomada-no-celular.md",
@@ -294,12 +294,12 @@
             "docs/reforma/checkpoint-37-estoque-compacto.md",
             "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
             "docs/reforma/checkpoint-39-integracao-navegacao.md",
-            "docs/reforma/checkpoint-40-aprovacao-navegacao.md"
+            "docs/reforma/checkpoint-40-aprovacao-navegacao.md",
+            "docs/reforma/checkpoint-41-reteste-e-parecer.md",
+            "docs/reforma/parecer-final.md"
           ],
-          "depende_de": [
-            "PARTICIPANTE"
-          ],
-          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas. No 35, primeira sessão com aluna revelou dificuldade de localizar e explicar as conexões; as cinco respostas precisaram de indicação de caminho. Mapa e pontes corrigidos; aguarda nova observação dos elementos alterados. No 36, professor apontou excesso de explicações e ausência de retorno. Ajudas recolhidas, estoque separado, retorno nos atalhos e cabeçalho compactado; conferência visual nova pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente. No 40, professor respondeu Tudo certinho com tudo após roteiro da navegação completa 39. Revisão geral aprovada por relato; nenhum novo reteste com aluno informado. Desenvolvimento pronto e código 39 preservado, sem novo download necessário."
+          "depende_de": [],
+          "preparacao": "Encerrada no checkpoint 41: revisão geral pelo professor no40 e reteste agregado confirmado no41. Ver registros para versões e limites. Nenhuma repetição dos testes anteriores nesta atualização."
         }
       ]
     },
@@ -359,7 +359,7 @@
         {
           "id": "5.5",
           "titulo": "Rodada final de uso integrado e compreensão",
-          "situacao": "parcial",
+          "situacao": "concluida",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/checkpoint-35-primeiro-uso.md",
@@ -368,17 +368,17 @@
             "docs/reforma/checkpoint-37-estoque-compacto.md",
             "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
             "docs/reforma/checkpoint-39-integracao-navegacao.md",
-            "docs/reforma/checkpoint-40-aprovacao-navegacao.md"
+            "docs/reforma/checkpoint-40-aprovacao-navegacao.md",
+            "docs/reforma/checkpoint-41-reteste-e-parecer.md",
+            "docs/reforma/parecer-final.md"
           ],
-          "depende_de": [
-            "PARTICIPANTE"
-          ],
-          "preparacao": "Primeira sessão realizada em 08/10, relatada pelo professor: dificuldades em adicionar, cupom, registro, recuperação do ID, consulta e leitura do avanço; estoque incompreendido. Correções frontend no 35, 23 testes de lógica passaram, sem navegador ou confirmação humana da nova versão. Reteste dos pontos afetados preparado. No 36, explicações passaram a ajudas sob demanda e navegação ganhou retorno; 23 casos de lógica existentes passaram. Observação humana da nova versão ainda pendente. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente. No 40, professor respondeu Tudo certinho com tudo após roteiro da navegação completa 39. Revisão geral aprovada por relato; nenhum novo reteste com aluno informado. Desenvolvimento pronto e código 39 preservado, sem novo download necessário."
+          "depende_de": [],
+          "preparacao": "Encerrada no checkpoint 41: revisão geral pelo professor no40 e reteste agregado confirmado no41. Ver registros para versões e limites. Nenhuma repetição dos testes anteriores nesta atualização."
         },
         {
           "id": "5.6",
           "titulo": "Parecer e entrega final após os critérios de saída",
-          "situacao": "parcial",
+          "situacao": "concluida",
           "evidencias": [
             "laboratorio/percurso-mbb/qts/parecer.md",
             "docs/reforma/entrega-parcial.md",
@@ -399,47 +399,47 @@
             "docs/reforma/checkpoint-37-estoque-compacto.md",
             "docs/reforma/checkpoint-38-resultado-final-e-retomada.md",
             "docs/reforma/checkpoint-39-integracao-navegacao.md",
-            "docs/reforma/checkpoint-40-aprovacao-navegacao.md"
+            "docs/reforma/checkpoint-40-aprovacao-navegacao.md",
+            "docs/reforma/checkpoint-41-reteste-e-parecer.md",
+            "docs/reforma/parecer-final.md"
           ],
-          "depende_de": [
-            "1.6",
-            "2.5",
-            "3.5",
-            "4.8",
-            "4.9",
-            "5.3",
-            "5.4",
-            "5.5"
-          ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação. No 35, parecer atualizado para revisão necessária após uso assistido; correções implementadas e reteste restrito aos pontos afetados. Não há aprovação final. Revisão 36 registrada sem conclusão dos critérios humanos. No 37, capturas do professor mostraram estoque ocupando faixa inteira e último produto abaixo da área visível. Bloco compacto reposicionado ao lado do título; ajuda e retorno explicitam a linha Estoque em cada produto. Nova posição ainda aguarda conferência visual. No 38, professor relatou tudo certinho no ajuste visual 37, com ressalva de última linha do histórico abaixo da área visível. Rolagem final ajustada; nova prova manual dispensada pelo professor. Nenhum reteste novo da aluna relatado. Mapa de integração preparado sem mudar a navegação. No 39, professor determinou reteste com aluno somente após tudo pronto, sem bloquear desenvolvimento. Navegação da home, seis disciplinas e retorno às áreas implementados no experimental; dez testes HTTP passaram. Integração pronta para revisão, sem publicação. Adiamento não é evidência de compreensão independente. No 40, professor respondeu Tudo certinho com tudo após roteiro da navegação completa 39. Revisão geral aprovada por relato; nenhum novo reteste com aluno informado. Desenvolvimento pronto e código 39 preservado, sem novo download necessário."
+          "depende_de": [],
+          "preparacao": "Encerrada no checkpoint 41: revisão geral pelo professor no40 e reteste agregado confirmado no41. Ver registros para versões e limites. Nenhuma repetição dos testes anteriores nesta atualização."
         }
       ]
     }
   ],
-  "posicao_atual": "5.5",
+  "posicao_atual": "concluido",
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
-    "PARTICIPANTE": "Desenvolvimento pronto e navegação aprovada no40. Reteste com aluno reservado para depois de tudo pronto; ainda não informado. Não repetir rodada do professor ou ensaios concluídos.",
+    "PARTICIPANTE": "Resolvido no41 por confirmação contextual agregada do professor; perfil e respostas individuais não informados.",
     "AMBIENTE_VISUALG_DEPURADOR": "Resolvido: pdb no checkpoint 17 e VisuAlg por relato do professor no 34.",
     "REVISAO_VISUAL_NO_COMPUTADOR": "Revisão geral da navegação completa 39 aprovada por relato do professor no40. Sem captura nova, percentual de zoom individual ou versão independente do commit Windows. Nenhuma correção visual nova pedida."
   },
   "resumo": {
     "total_subetapas": 31,
-    "concluidas": 28,
-    "restantes": 3,
+    "concluidas": 31,
+    "restantes": 0,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 40,
-  "orientacao_atual": "Checkpoint 40: revisão geral da navegação completa 39 aprovada pelo professor. Desenvolvimento experimental pronto; código 39 permanece. Reteste com aluno reservado para após tudo pronto pode ocorrer quando professor puder. 28/31, posição 5.5; faltam observações de compreensão e parecer. Sem publicação.",
+  "checkpoint_atualizacao": 41,
+  "orientacao_atual": "Laboratório encerrado41: 31/31. Publicação autorizada somente no experimental, fora do domínio oficial, sem mexer no Firebase. Preparação estática e ativação de hospedagem são separadas da contagem fixa.",
   "integracao_navegacao": {
     "implementada": true,
     "verificacao_tecnica_concluida": true,
     "revisao_visual_nova": true,
-    "reteste_aluno": "Reservado; desenvolvimento concluído. Ainda não realizado conforme relato.",
+    "reteste_aluno": "Concluído por relato agregado do professor no41, incluindo confirmação contextual de uso sem indicação de caminhos/respostas.",
     "publicada": false,
     "aprovacao_professor": true,
     "origem_aprovacao": "Relato após roteiro completo da versão39; sem nova captura",
     "codigo_aprovado": "a3e8ec2526267067d419a87568aea649c132b79b"
+  },
+  "publicacao": {
+    "autorizacao_explicita_recebida": true,
+    "realizada": false,
+    "repositorio_destino": "mundobitbyte/site-reforma-mbb",
+    "escopo_autorizado": "Publicar somente fora de www.mundobitbyte.com.br; repositório oficial integralmente intacto; não mexer no Firebase.",
+    "bloqueio": "Experimental privado, has_pages=false; conector não configura Pages. Não mudar visibilidade sem autorização."
   }
 }

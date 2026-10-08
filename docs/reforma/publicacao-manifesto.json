@@ -1,0 +1,19 @@
+{
+  "estado": "Autorizado somente no experimental; preparação estática, ativação de hospedagem pendente",
+  "repository": "mundobitbyte/site-reforma-mbb",
+  "source_branch": "preparacao/isolamento-inicial",
+  "publication_branch": "publicacao/cantina-estatica",
+  "base_antes_conclusao41": "1995987f81d27d954f347b1347f6db166640b75f",
+  "sem_alteracao_oficial": true,
+  "sem_alteracao_firebase": true,
+  "dominio_oficial_proibido": "www.mundobitbyte.com.br",
+  "CNAME": "ausente, não criar",
+  "visibilidade": "privada, não alterar automaticamente",
+  "mudancas_exclusivas_branch_publicacao": [
+    "Adicionar .nojekyll",
+    "Cabeçalho do percurso aponta para instruções locais #executar"
+  ],
+  "backend_publico": false,
+  "Pages_ativado": false,
+  "url_publica_confirmada": null
+}

@@ -1,14 +1,10 @@
-# Retomada dos ensaios — ficha curta
+# Registro de retomada — laboratório encerrado
 
-**Registro mais recente: checkpoint 40; código continua na versão 39.** Professor aprovou a revisão geral da navegação completa; [registro](checkpoint-40-aprovacao-navegacao.md). Desenvolvimento experimental pronto. Próxima observação é o reteste com aluno reservado para depois de tudo pronto, quando professor puder. Não refazer sua revisão nem baixar outra versão por esta atualização documental. Laboratório 28/31; sem publicação.
+**Atualização vigente: checkpoint41, 31/31.** Revisão geral40 e reteste relatado41 concluídos; [parecer final](parecer-final.md). Código executável39 permanece. Não repetir as sessões históricas abaixo. Publicação separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente.
 
+## Primeira sessão com aluna — histórica
 
-**Atualização de 08/10/2026:** VisuAlg confirmado por relato do professor; rodada visual/cópia encerrada na amostra orientada. **28/31**, próximo R08/5.5 com participante. [Resultados e limites da nova sessão](checkpoint-34-sessao-windows.md). O [roteiro Windows](roteiro-final-windows.md) permanece disponível; não repetir os blocos já concluídos. Os resultados abaixo preservam a sessão histórica de 07/10.
-
-Use esta ficha quando puder testar. Não é necessário repetir as suítes de pedido, cupom e estados já concluídas. As ações abaixo produzem evidência nova de leitura, acesso direto e compreensão; resultados esperados não são aprovação.
-
-## Sessão com aluna — 08/10/2026
-Sessão realizada, com ajuda na aplicação e nas cinco perguntas curriculares. [Observações, correções e limites](checkpoint-35-primeiro-uso.md). Situação: **28/31; revisão necessária**, sem aprovação de compreensão independente. Usar a versão corrigida e o [reteste restrito aos pontos afetados](reteste-primeiro-uso.md). A rodada anterior de VisuAlg/zoom/cópia permanece registrada; não repetir tudo.
+[Checkpoint35](checkpoint-35-primeiro-uso.md): dificuldades e ajuda; foi seguida de correções e do reteste agregado41. Não reclassificar a primeira sessão como independente.
 
 ## Registro histórico de 07/10/2026
 
