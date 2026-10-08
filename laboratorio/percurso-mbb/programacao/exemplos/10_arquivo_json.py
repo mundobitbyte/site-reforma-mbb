@@ -18,7 +18,7 @@ try:
         json.dump(resumo, arquivo, ensure_ascii=False, indent=2)
 except FileExistsError:
     print("Arquivo já existe; a simulação anterior foi preservada.")
-else:
-    with caminho.open("r", encoding="utf-8") as arquivo:
-        recuperado = json.load(arquivo)
-    print("Recuperado em centavos:", recuperado["subtotal_centavos"])
+
+with caminho.open("r", encoding="utf-8") as arquivo:
+    recuperado = json.load(arquivo)
+print("Recuperado em centavos:", recuperado["subtotal_centavos"])
