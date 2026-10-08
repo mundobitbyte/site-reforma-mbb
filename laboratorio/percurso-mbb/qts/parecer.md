@@ -1,6 +1,6 @@
 # Parecer QTS/Git — situação final
 
-**Checkpoint41: laboratório concluído, 31/31.** [Parecer final e limites](../../../docs/reforma/parecer-final.md). Revisão geral40 e reteste agregado41 encerrados. Publicação separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente. As rodadas abaixo são históricas e não indicam pendências atuais.
+**Checkpoint41: laboratório concluído, 31/31.** [Parecer final e limites](../../../docs/reforma/parecer-final.md). Revisão geral40 e reteste agregado41 encerrados. Publicação separada, autorizada somente no experimental e fora do domínio oficial; publicação estática confirmada no checkpoint43. As rodadas abaixo são históricas e não indicam pendências atuais.
 
 ## Registro histórico do checkpoint 15
 Escopo: adaptação curricular e práticas adicionais; não liberação do produto completo.

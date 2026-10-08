@@ -1,6 +1,6 @@
 # Parecer final — laboratório Cantina Horizonte
 
-**Concluído: 31/31 subetapas, em 08/10/2026.** Material aprovado para a finalidade didática do laboratório e preparação de sua publicação estática. Publicação autorizada somente no experimental e fora de www.mundobitbyte.com.br; ativação de hospedagem ainda pendente.
+**Concluído: 31/31 subetapas, em 08/10/2026.** Material aprovado para a finalidade didática do laboratório e preparação de sua publicação estática. Publicação autorizada somente no experimental e fora de www.mundobitbyte.com.br; publicação estática confirmada no checkpoint43.
 
 ## Entrega
 Percurso integrado com 81 etapas de ensino: Análise 15, Banco de Dados 11, Programação 15, Web/API 13, QTS 17 e Git 10. Aplicação didática com pedido persistente, cupom e cinco estados, executada localmente com Python/FastAPI e SQLite. Entrada na home, seis disciplinas e retorno às áreas implementados no experimental na versão 39 (a3e8ec2526267067d419a87568aea649c132b79b).

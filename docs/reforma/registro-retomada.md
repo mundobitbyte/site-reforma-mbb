@@ -1,6 +1,6 @@
 # Registro de retomada — laboratório encerrado
 
-**Atualização vigente: checkpoint41, 31/31.** Revisão geral40 e reteste relatado41 concluídos; [parecer final](parecer-final.md). Código executável39 permanece. Não repetir as sessões históricas abaixo. Publicação separada, autorizada somente no experimental e fora do domínio oficial; hospedagem pendente.
+**Atualização vigente: checkpoint41, 31/31.** Revisão geral40 e reteste relatado41 concluídos; [parecer final](parecer-final.md). Código executável39 permanece. Não repetir as sessões históricas abaixo. Publicação separada, autorizada somente no experimental e fora do domínio oficial; publicação estática confirmada no checkpoint43.
 
 ## Primeira sessão com aluna — histórica
 

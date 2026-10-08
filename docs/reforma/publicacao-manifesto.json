@@ -1,5 +1,5 @@
 {
-  "estado": "Autorizado somente no experimental; preparação estática, ativação de hospedagem pendente",
+  "estado": "Publicado e conferido no domínio padrão github.io, somente experimental",
   "repository": "mundobitbyte/site-reforma-mbb",
   "source_branch": "preparacao/isolamento-inicial",
   "publication_branch": "publicacao/cantina-estatica",
@@ -8,12 +8,13 @@
   "sem_alteracao_firebase": true,
   "dominio_oficial_proibido": "www.mundobitbyte.com.br",
   "CNAME": "ausente, não criar",
-  "visibilidade": "privada, não alterar automaticamente",
+  "visibilidade": "public, autorizado especificamente pelo professor",
   "mudancas_exclusivas_branch_publicacao": [
     "Adicionar .nojekyll",
     "Cabeçalho do percurso aponta para instruções locais #executar"
   ],
   "backend_publico": false,
-  "Pages_ativado": false,
-  "url_publica_confirmada": null
+  "Pages_ativado": true,
+  "url_publica_confirmada": "https://mundobitbyte.github.io/site-reforma-mbb/",
+  "autorizacao_visibilidade": true
 }

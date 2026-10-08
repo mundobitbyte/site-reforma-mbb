@@ -38,3 +38,7 @@ O HTML pode integrar navegação estática; a aplicação depende de Python/Fast
 
 ## Revisão concluída
 [Registro 40](checkpoint-40-aprovacao-navegacao.md): professor respondeu Tudo certinho com tudo. Desenvolvimento experimental pronto e revisão geral aprovada; reteste com aluno posteriormente confirmado no41. Esta atualização não altera o código nem exige outro download.
+
+## Publicação concluída — situação vigente43
+
+[Registro43](checkpoint-43-publicacao-experimental.md): publicação somente no experimental, após autorização específica de visibilidade pública. Site conferido em https://mundobitbyte.github.io/site-reforma-mbb/ . O oficial e Firebase permanecem intactos; aplicação/API continuam locais. As descrições de preparação acima são históricas.

@@ -1,5 +1,7 @@
 # Checkpoint 42 — bloqueio concreto de GitHub Pages
 
+**Registro histórico, resolvido no [checkpoint43](checkpoint-43-publicacao-experimental.md).**
+
 08/10/2026, America/Sao_Paulo. Professor autorizou usar a interface do GitHub para configurar Pages somente no experimental, mantendo o oficial intacto e sem mexer no Firebase.
 
 ## Observação direta
