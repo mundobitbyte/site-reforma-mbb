@@ -149,7 +149,7 @@ $('#recarregar').addEventListener('click', async () => {
   if (mensagem) mensagem.textContent = 'Consultando estoque…';
   try {
     await carregarProdutos();
-    if (mensagem) mensagem.textContent = 'Estoque consultado. As quantidades disponíveis estão nos produtos.';
+    if (mensagem) mensagem.textContent = 'Estoque consultado. Confira a linha Estoque abaixo do nome de cada produto. Sem novas vendas, os números permanecem iguais.';
   } catch (erro) {
     if (mensagem) mensagem.textContent = erro.message;
     avisar(erro.message, true);
@@ -162,7 +162,7 @@ $('#recarregar').addEventListener('click', async () => {
 function lembrarPedido(id) {
   try { sessionStorage.setItem('mbb-cantina-ultimo-pedido', String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
   const ajuda = $('#consulta-ajuda');
-  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão.`;
 }
 
 function recuperarNumeroPedido() {

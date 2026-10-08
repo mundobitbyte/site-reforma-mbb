@@ -19,7 +19,8 @@ button, input { font: inherit; }
 .eyebrow { margin: 0; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #2457d6; }
 .versao { white-space: nowrap; padding: .4rem .7rem; border-radius: 999px; background: #eef3ff; color: #2457d6; font-size: .82rem; font-weight: 700; }
 .layout { width: min(1180px, calc(100% - 2rem)); margin: 1rem auto; display: grid; grid-template-columns: 1fr 360px; gap: 1.25rem; align-items: start; }
-.section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: .2rem; }
+.section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; align-items: flex-start; margin-bottom: .65rem; }
+.escolha-orientacoes { flex: 1 1 17rem; }
 .produtos { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .produto-card, .carrinho { background: white; border: 1px solid #e1e7f0; border-radius: 18px; box-shadow: 0 10px 30px rgba(20,33,61,.05); }
 .produto-card { padding: 1.15rem; }
@@ -55,7 +56,8 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 }
 @media (max-width: 560px) {
   .produtos { grid-template-columns:1fr; }
-  .section-heading { align-items:flex-start; flex-direction:column; }
+  .section-heading { flex-direction:column; }
+  .escolha-orientacoes { flex-basis:auto; width:100%; }
 }
 
 /* Complementos da evolução; identidade da v1 preservada. */
@@ -88,7 +90,8 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .ajuda { margin: .35rem 0 .65rem; }
 .ajuda summary { cursor: pointer; color: #2457d6; font-size: .88rem; text-decoration: underline; text-underline-offset: .15em; }
 .ajuda p { margin-top: .5rem; padding: .65rem .8rem; background: #f5f7fb; border-left: 2px solid #d8dfeb; border-radius: 6px; }
-.estoque-controles { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: .75rem 0 1rem; padding: .75rem; border: 1px solid #e1e7f0; border-radius: 12px; background: #eef3ff; }
-.estoque-controles .ajuda { flex: 1 1 10rem; min-width: 0; margin: 0; }
+.estoque-controles { display: flex; flex-wrap: wrap; flex: 0 1 auto; align-items: center; gap: .35rem .55rem; width: fit-content; max-width: min(100%, 25rem); margin: 0; padding: .45rem .65rem; border: 1px solid #e1e7f0; border-radius: 12px; background: #eef3ff; }
+.estoque-controles .ghost { max-width:100%; }
+.estoque-controles .ajuda { flex: 1 1 9rem; min-width: 0; margin: 0; }
 #atalhos { scroll-margin-top: 1rem; }
 #atalhos:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }

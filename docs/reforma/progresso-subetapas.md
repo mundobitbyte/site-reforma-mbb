@@ -141,3 +141,7 @@ Aluna do terceiro ano Técnico DS realizou a sessão. Inclusão, cupom, recupera
 
 ## Ajudas e retorno — checkpoint 36
 Após observação do professor, seis explicações ficam recolhidas, estoque ganha bloco próprio, três etapas têm retorno aos atalhos e cabeçalho usa menos espaço vertical. 23 casos de lógica passaram; novo layout e uso humano aguardam conferência. **28/31**, posição 5.5, sem publicação. [Registro](checkpoint-36-ajudas-e-retorno.md).
+
+## Ajuste 37 — estoque compacto
+
+Capturas do professor mostram a faixa de estoque aumentando o espaço acima dos produtos e o último cartão parcialmente abaixo da janela. [Correção e limites](checkpoint-37-estoque-compacto.md): bloco ao lado do título quando há espaço, instrução de onde ler o resultado e botão Consultar pedido identificado. Mantidos 28/31 e posição 5.5; sem aprovação visual da nova posição.

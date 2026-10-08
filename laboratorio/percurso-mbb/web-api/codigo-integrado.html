@@ -21,17 +21,21 @@
       &lt;a href=&quot;#consulta&quot;&gt;3. Consultar e acompanhar&lt;/a&gt;
     &lt;/nav&gt;
     &lt;section id=&quot;cardapio&quot; aria-labelledby=&quot;cardapio-titulo&quot; tabindex=&quot;-1&quot;&gt;
-      &lt;div class=&quot;section-heading&quot;&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;1. Escolher produtos&lt;/h2&gt;&lt;/div&gt;
-      &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
-      &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como adicionar produtos?&lt;/summary&gt;
-        &lt;p class=&quot;hint&quot; id=&quot;quantidade-ajuda&quot;&gt;Digite a quantidade ou use as setas do campo. Depois clique em &lt;strong&gt;Adicionar ao pedido&lt;/strong&gt;. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.&lt;/p&gt;
-      &lt;/details&gt;
-      &lt;div class=&quot;estoque-controles&quot;&gt;
+      &lt;div class=&quot;section-heading&quot;&gt;
+        &lt;div class=&quot;escolha-orientacoes&quot;&gt;
+          &lt;h2 id=&quot;cardapio-titulo&quot;&gt;1. Escolher produtos&lt;/h2&gt;
+          &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
+          &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como adicionar produtos?&lt;/summary&gt;
+            &lt;p class=&quot;hint&quot; id=&quot;quantidade-ajuda&quot;&gt;Digite a quantidade ou use as setas do campo. Depois clique em &lt;strong&gt;Adicionar ao pedido&lt;/strong&gt;. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.&lt;/p&gt;
+          &lt;/details&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;estoque-controles&quot;&gt;
         &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot; aria-describedby=&quot;estoque-ajuda&quot;&gt;Consultar estoque atual&lt;/button&gt;
-        &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;O que este botão faz?&lt;/summary&gt;
-          &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Consulta as quantidades disponíveis e atualiza os valores de estoque nos produtos. Não repõe estoque nem acrescenta produtos ao seu pedido.&lt;/p&gt;
+        &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Onde vejo o estoque?&lt;/summary&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Clique para buscar as quantidades disponíveis no banco. O resultado aparece na linha &lt;strong&gt;Estoque&lt;/strong&gt;, abaixo do nome de cada produto. Se não houve novas vendas, os números permanecem iguais. O botão não repõe estoque nem acrescenta produtos ao pedido.&lt;/p&gt;
         &lt;/details&gt;
         &lt;p id=&quot;estoque-status&quot; class=&quot;hint&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
       &lt;div id=&quot;produtos&quot; class=&quot;produtos&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
 
@@ -55,11 +59,11 @@
         &lt;h2 id=&quot;consulta-titulo&quot;&gt;3. Consultar e acompanhar&lt;/h2&gt;
         &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
         &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como reencontrar meu pedido?&lt;/summary&gt;
-          &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.&lt;/p&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão. Guarde o número para reencontrar o pedido.&lt;/p&gt;
         &lt;/details&gt;
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
           &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; aria-describedby=&quot;consulta-ajuda&quot; required&gt;
-          &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
+          &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar pedido&lt;/button&gt;&lt;/form&gt;
         &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; tabindex=&quot;-1&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
@@ -100,7 +104,8 @@ button, input { font: inherit; }
 .eyebrow { margin: 0; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #2457d6; }
 .versao { white-space: nowrap; padding: .4rem .7rem; border-radius: 999px; background: #eef3ff; color: #2457d6; font-size: .82rem; font-weight: 700; }
 .layout { width: min(1180px, calc(100% - 2rem)); margin: 1rem auto; display: grid; grid-template-columns: 1fr 360px; gap: 1.25rem; align-items: start; }
-.section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: .2rem; }
+.section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; align-items: flex-start; margin-bottom: .65rem; }
+.escolha-orientacoes { flex: 1 1 17rem; }
 .produtos { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .produto-card, .carrinho { background: white; border: 1px solid #e1e7f0; border-radius: 18px; box-shadow: 0 10px 30px rgba(20,33,61,.05); }
 .produto-card { padding: 1.15rem; }
@@ -136,7 +141,8 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 }
 @media (max-width: 560px) {
   .produtos { grid-template-columns:1fr; }
-  .section-heading { align-items:flex-start; flex-direction:column; }
+  .section-heading { flex-direction:column; }
+  .escolha-orientacoes { flex-basis:auto; width:100%; }
 }
 
 /* Complementos da evolução; identidade da v1 preservada. */
@@ -169,8 +175,9 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .ajuda { margin: .35rem 0 .65rem; }
 .ajuda summary { cursor: pointer; color: #2457d6; font-size: .88rem; text-decoration: underline; text-underline-offset: .15em; }
 .ajuda p { margin-top: .5rem; padding: .65rem .8rem; background: #f5f7fb; border-left: 2px solid #d8dfeb; border-radius: 6px; }
-.estoque-controles { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: .75rem 0 1rem; padding: .75rem; border: 1px solid #e1e7f0; border-radius: 12px; background: #eef3ff; }
-.estoque-controles .ajuda { flex: 1 1 10rem; min-width: 0; margin: 0; }
+.estoque-controles { display: flex; flex-wrap: wrap; flex: 0 1 auto; align-items: center; gap: .35rem .55rem; width: fit-content; max-width: min(100%, 25rem); margin: 0; padding: .45rem .65rem; border: 1px solid #e1e7f0; border-radius: 12px; background: #eef3ff; }
+.estoque-controles .ghost { max-width:100%; }
+.estoque-controles .ajuda { flex: 1 1 9rem; min-width: 0; margin: 0; }
 #atalhos { scroll-margin-top: 1rem; }
 #atalhos:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 </code></pre><p><a href="../../cantina-evolutiva/frontend/styles.css">Arquivo canônico frontend/styles.css</a></p></details><details><summary>frontend/app.js — código completo</summary><h3>frontend/app.js</h3><button class="copy-button" type="button" data-copy="integrado-2">Copiar código</button><pre id="integrado-2"><code>&#x27;use strict&#x27;;
@@ -324,7 +331,7 @@ $(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
   if (mensagem) mensagem.textContent = &#x27;Consultando estoque…&#x27;;
   try {
     await carregarProdutos();
-    if (mensagem) mensagem.textContent = &#x27;Estoque consultado. As quantidades disponíveis estão nos produtos.&#x27;;
+    if (mensagem) mensagem.textContent = &#x27;Estoque consultado. Confira a linha Estoque abaixo do nome de cada produto. Sem novas vendas, os números permanecem iguais.&#x27;;
   } catch (erro) {
     if (mensagem) mensagem.textContent = erro.message;
     avisar(erro.message, true);
@@ -337,7 +344,7 @@ $(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
 function lembrarPedido(id) {
   try { sessionStorage.setItem(&#x27;mbb-cantina-ultimo-pedido&#x27;, String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
   const ajuda = $(&#x27;#consulta-ajuda&#x27;);
-  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão.`;
 }
 
 function recuperarNumeroPedido() {
