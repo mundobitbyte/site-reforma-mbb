@@ -1,3 +1,9 @@
+# Situação vigente — checkpoints 41 e 43
+
+A rodada do laboratório foi encerrada (31/31), com confirmação agregada de aplicação e percurso. [Registro 41](../../../docs/reforma/checkpoint-41-reteste-e-parecer.md). Os registros antigos abaixo conservam o estado e os limites de cada data; pendências antigas não são pendências atuais. O roteiro pode ser reutilizado como modelo em branco para nova sessão, sem atribuir resultados não registrados.
+
+## Registro histórico e modelo de nova rodada
+
 # Plano adicional de QTS
 Registro do plano da rodada de adaptação QTS/Git (checkpoint 15). A situação daquela rodada foi preservada abaixo; a atualização vigente está ao final.
 Versões: v1 preservada; evolução do checkpoint 14. Não é versão final de produção.
@@ -20,7 +26,7 @@ O checkpoint 21 concluiu pedido, cupom e estados em Chromium real integrado à A
 
 No checkpoint 22, o professor adiou novos ensaios. A revisão editorial e a [orientação da entrega parcial](../../../docs/reforma/entrega-parcial.md) foram preparadas sem reexecutar as suítes ou declarar validação humana. Total 25/31; seis pendentes. Retomar os ensaios quando houver disponibilidade.
 
-## Atualização vigente — checkpoint 30
+## Situação histórica — checkpoint 30
 
 Prévia direta no Windows concluída no 25; leitura UTF-8 corrigida e verificada em duas regressões no 26; Narrador confirmado no 27. No 28, a suíte Python completa passou com 89 testes e o retorno curricular foi conferido em 12 observações HTTP. No 29, o parecer foi consolidado. Os números das rodadas conservam seus escopos.
 

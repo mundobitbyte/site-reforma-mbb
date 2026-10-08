@@ -1,146 +1,107 @@
-# Caderno de Web/API — Cantina Horizonte
+# Caderno WEB — Cantina Horizonte
 
-Previsão não é venda confirmada. Separe execução do módulo, HTTP, servidor, navegador e observação humana.
+Use uma cópia pessoal. Exemplos e resultados esperados não são evidências suas. Registre somente o que realmente fez; se não executou, marque Não executado. Atividades conceituais não exigem comandos ou HTTP fictícios.
 
-## WEB00 — Do pedido à conversa entre programas
+## WEB00
 
-WEB00: mapa responsabilidade/artefato/limite; reusa E09/E12/PG14.
+- Responsabilidades: tela, API, serviço e banco:
+- Mapa explicado por mim:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+## WEB01
 
-## WEB01 — Estruturar antes de estilizar
+- Arquivos criados e pasta:
+- Hierarquia HTML observada:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-WEB01: hierarquia e campos exibidos com origem; reusa E11/BD01.
+## WEB02
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+- Campos e restrições:
+- Resultado da validação nativa:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-## WEB02 — Campos que uma pessoa consegue identificar
+## WEB03
 
-WEB02: rótulo/campo/limite/resultado; reusa E11/RQ-01/RF-03.
+- CSS alterado e largura:
+- Legibilidade e adaptação observadas:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+## WEB04
 
-## WEB03 — Apresentação, caixa e adaptação ao espaço
+- Campo, evento, validação, resultado:
+- Subtotal previsto e limite da simulação:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-WEB03: regra visual, largura prevista e roteiro de verificação; reusa RQ-02/E11.
+## WEB05
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+- Comando Node e versão:
+- Subtotal e JSON realmente impressos:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-## WEB04 — O evento transforma entrada em previsão
+## WEB06
 
-WEB04: evento, entrada, previsão e mensagem; reusa PG01/PG03/RQ-01.
+- Preparação, porta e banco temporário:
+- Contrato: intenção, resposta e limites:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+## WEB07
 
-## WEB05 — O carrinho representa vários itens
+- GET, ID consultado e resposta:
+- HTTP recebido ou falha de comunicação:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-WEB05: subtotal previsto e JSON de intenção, sem preço; reusa PG06/BD03/RF-02/RF-06.
+## WEB08
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+- POST único e entrada:
+- ID retornado, total e estado confirmados:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-## WEB06 — Um contrato para perguntar e pedir alteração
+## WEB09
 
-WEB06: método/rota/corpo/status/efeito; reusa BD09/PG12/E12.
+- ID, estado antes, esperado e próximo:
+- Resposta, consulta depois e conflito:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+## WEB10
 
-## WEB07 — Consultar sem confundir erro HTTP e erro de rede
+- Erro estrutural e regra de negócio:
+- Camada que recusou e efeito observado:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-WEB07: requisição, resposta, motivo e camada da falha; reusa PG08/E12/RQ-01.
+## WEB11
 
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+- Pergunta, camada e instrumento:
+- Resultado real e limite:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:
 
-## WEB08 — Registrar uma vez e ler o que foi confirmado
+## WEB12
 
-WEB08: intenção, resposta salva e caminho de falha; reusa RF-03 a RF-08/PG12.
-
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
-
-## WEB09 — Consultar antes de avançar
-
-WEB09: consulta, intenção, estado salvo, histórico e conflito; reusa RF-09/BD07/PG12.
-
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
-
-## WEB10 — Validar na fronteira e operar no serviço
-
-WEB10: camada, campo, regra, operação e limite; reusa E12/BD07/PG11.
-
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
-
-## WEB11 — Testar cada camada e declarar seu limite
-
-WEB11: pergunta/camada/instrumento/resultado/limite; reusa E11/E12/PG13.
-
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
-
-## WEB12 — Ler a aplicação integrada e defender o pedido
-
-WEB12: defesa do mesmo pedido e mapa de impacto; reusa E15/BD09/PG14.
-
-- Requisito e necessidade:
-- Arquivo, método/rota e entrada:
-- Previsão antes da execução:
-- Instrumento/camada/ambiente:
-- Status, resposta e resultado observado:
-- Diferença, limite e reteste:
+- Requisito e cadeia UI/API/serviço/banco/teste:
+- Execução ou revisão que sustenta minha conclusão:
+- Onde registrei (arquivo, anotação ou captura):
+- Situação: Concluído / Falhou / Bloqueado / Não executado.
+- Limite e próximo passo:

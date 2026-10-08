@@ -109,7 +109,7 @@
     "arquivo": "laboratorio/cantina-evolutiva/tests/test_pedido.py",
     "funcao": "test_tipo_ou_quantidade_invalida_sem_efeitos",
     "situacao": "Evidência anterior: checkpoint 13",
-    "limite": "Texto retornado verificado; compreensão humana pendente"
+    "limite": "Texto retornado verificado nesta camada; relatos humanos agregados registrados no checkpoint 41."
   },
   {
     "id": "CT-USO-360",
@@ -125,15 +125,16 @@
     "requisitos": "RQ-01",
     "arquivo": null,
     "funcao": null,
-    "situacao": "Não executado: sessão com participante",
-    "limite": "Mensagens não foram avaliadas com pessoa usuária"
+    "situacao": "Checkpoint 41: avaliação relatada encerrada",
+    "limite": "Aplicação e percurso confirmados em relato agregado; sem transcrição individual completa.",
+    "evidencia": "docs/reforma/checkpoint-41-reteste-e-parecer.md"
   },
   {
     "id": "CT-CI",
     "requisitos": "Processo",
     "arquivo": null,
     "funcao": null,
-    "situacao": "Não executado: Actions desativado",
+    "situacao": "Sem evidência de execução remota nesta rodada",
     "limite": "A receita local não é pipeline remoto"
   },
   {

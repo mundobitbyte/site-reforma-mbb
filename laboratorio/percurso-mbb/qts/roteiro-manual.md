@@ -1,3 +1,9 @@
+# Situação vigente — checkpoints 41 e 43
+
+A rodada do laboratório foi encerrada (31/31), com confirmação agregada de aplicação e percurso. [Registro 41](../../../docs/reforma/checkpoint-41-reteste-e-parecer.md). Os registros antigos abaixo conservam o estado e os limites de cada data; pendências antigas não são pendências atuais. O roteiro pode ser reutilizado como modelo em branco para nova sessão, sem atribuir resultados não registrados.
+
+## Registro histórico e modelo de nova rodada
+
 # Uso real — roteiro para leitor de tela e participação humana
 
 Necessidade: conferir se uma pessoa consegue registrar, reencontrar e acompanhar o mesmo pedido, entender a recusa do cupom e estudar o percurso. Os resultados da sessão humana abaixo são **esperados**, ainda sem observação com participante.
