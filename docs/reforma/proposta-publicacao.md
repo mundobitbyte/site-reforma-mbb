@@ -10,6 +10,8 @@ A versão estática conserva a home experimental com entrada Cantina Horizonte, 
 CNAME já ausente no experimental; não criar domínio customizado. Configuração de Firebase isolada já existente permanece como está. Não alterar Firebase, credenciais, conta ou repositório oficial. Não mudar o experimental de privado para público automaticamente.
 
 ## Bloqueio observado
+Interface conferida no [checkpoint42](checkpoint-42-bloqueio-pages.md): GitHub exibiu “Upgrade or make this repository public to enable Pages”. Nenhuma mudança aplicada. Branch estática preparada: d7f2e83547432b475fe85617d132cf9d01976f60. Tornar o repositório público expõe arquivos e histórico e depende de autorização específica.
+
 Metadata do repositório: private=true, has_pages=false. O conector salva arquivos/branches, mas não oferece operação de ativação de GitHub Pages; endpoint /pages rejeitado pelo próprio conector. Assim, versão salva não significa site publicado. Ainda não há URL pública confirmada. Capacidade de Pages para este repositório privado deve ser verificada na configuração, sem pressupor o plano.
 
 ## Configuração necessária

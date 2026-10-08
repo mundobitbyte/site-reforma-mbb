@@ -423,7 +423,7 @@
     "restantes": 0,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 41,
+  "checkpoint_atualizacao": 42,
   "orientacao_atual": "Laboratório encerrado41: 31/31. Publicação autorizada somente no experimental, fora do domínio oficial, sem mexer no Firebase. Preparação estática e ativação de hospedagem são separadas da contagem fixa.",
   "integracao_navegacao": {
     "implementada": true,
@@ -440,6 +440,9 @@
     "realizada": false,
     "repositorio_destino": "mundobitbyte/site-reforma-mbb",
     "escopo_autorizado": "Publicar somente fora de www.mundobitbyte.com.br; repositório oficial integralmente intacto; não mexer no Firebase.",
-    "bloqueio": "Experimental privado, has_pages=false; conector não configura Pages. Não mudar visibilidade sem autorização."
+    "bloqueio": "Confirmado na interface: Upgrade or make this repository public to enable Pages. Repositório privado, nenhuma mudança aplicada. Aguardando decisão específica de visibilidade ou plano.",
+    "branch_preparada": "publicacao/cantina-estatica",
+    "commit_preparado": "d7f2e83547432b475fe85617d132cf9d01976f60",
+    "evidencia_bloqueio": "docs/reforma/checkpoint-42-bloqueio-pages.md"
   }
 }
