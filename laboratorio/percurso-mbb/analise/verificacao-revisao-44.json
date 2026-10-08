@@ -1,0 +1,101 @@
+{
+  "etapas": [
+    {
+      "etapa": 0,
+      "entrega": "E01",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 1,
+      "entrega": "E02",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 2,
+      "entrega": "E03",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 3,
+      "entrega": "E04",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 4,
+      "entrega": "E05",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 5,
+      "entrega": "E06",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 6,
+      "entrega": "E07",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 7,
+      "entrega": "E08",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 8,
+      "entrega": "E09",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 9,
+      "entrega": "E10",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 10,
+      "entrega": "E11",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 11,
+      "entrega": "E12",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 12,
+      "entrega": "E13",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 13,
+      "entrega": "E14",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    },
+    {
+      "etapa": 14,
+      "entrega": "E15",
+      "http": 200,
+      "apoio_atividade_registro_conferencia": true
+    }
+  ],
+  "html_http": 18,
+  "caderno_http": 200,
+  "caderno_entregas": 15,
+  "diagramas_svg": 3,
+  "browser_local": false,
+  "motivo": "Chromium indisponível; download recebido inválido. Prévia file:// bloqueada pela política do navegador remoto, sem contorno.",
+  "teste_com_iniciante_real": false
+}
