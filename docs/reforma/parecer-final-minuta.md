@@ -1,6 +1,6 @@
 # Cantina Horizonte — minuta do parecer final
 
-**Atualização 39, 08/10/2026: aplicação revisada e navegação experimental integrada.** Professor considera a versão atual boa e determinou reteste com aluno somente após tudo pronto; não bloquear desenvolvimento/integração esperando participante. [Registro atual](checkpoint-39-integracao-navegacao.md). Laboratório **28/31**; compreensão após as correções e decisão final permanecem abertas. Versão completa pronta para revisão; sem publicação. Os relatos posteriores não apagam as dificuldades da sessão 35 nem constituem reteste independente.
+**Atualização 40, 08/10/2026: desenvolvimento experimental e navegação completa aprovados pelo professor por relato.** Código permanece versão 39. [Registro atual](checkpoint-40-aprovacao-navegacao.md). Total **28/31**: observações de compreensão com participante e decisão final ainda abertas. Reteste reservado para depois de tudo pronto pode ocorrer quando professor puder; não repetir revisão concluída. Relato atual não equivale a novo teste independente com aluno nem autoriza publicação.
 
 
 **MINUTA: resultados disponíveis consolidados; decisão final pendente.** Atualizada no checkpoint 29, em 07/10/2026. A preparação documental da 5.6 continua parcial.

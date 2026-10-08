@@ -153,3 +153,7 @@ Professor aprovou o ajuste visual 37 com ressalva da quarta linha do histórico.
 ## Integração 39 — desenvolvimento segue antes do reteste
 
 Professor determinou reteste com aluno somente após tudo pronto; não condiciona a conclusão do desenvolvimento à participação agora. [Navegação experimental implementada](checkpoint-39-integracao-navegacao.md): entrada na home, seis disciplinas, retorno às áreas e home na prévia. Dez casos HTTP passaram. Versão pronta para revisão, sem nova renderização ou publicação. Laboratório 28/31, posição 5.5; critérios de compreensão e parecer continuam abertos.
+
+## Aprovação 40 — desenvolvimento pronto
+
+Professor confirmou Tudo certinho com tudo após roteiro completo da navegação 39. [Registro](checkpoint-40-aprovacao-navegacao.md). Desenvolvimento e integração aprovados no escopo da revisão; código permanece 39, sem download novo. Contagem 28/31, posição 5.5: uma sessão posterior com aluno pode atender compreensão do percurso (4.9) e uso integrado (5.5); depois parecer (5.6). Publicação não autorizada.

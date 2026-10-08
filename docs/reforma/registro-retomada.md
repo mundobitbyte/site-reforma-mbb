@@ -1,6 +1,6 @@
 # Retomada dos ensaios — ficha curta
 
-**Versão mais recente: checkpoint 39.** Navegação integrada da cópia experimental implementada e verificada tecnicamente; [registro](checkpoint-39-integracao-navegacao.md). Professor determinou reteste com aluno somente após tudo pronto; não solicitar participante para continuar desenvolvimento. [Versão completa e ordem atual](integracao-navegacao-preparacao.md). Laboratório 28/31; revisão final disponível, sem publicação.
+**Registro mais recente: checkpoint 40; código continua na versão 39.** Professor aprovou a revisão geral da navegação completa; [registro](checkpoint-40-aprovacao-navegacao.md). Desenvolvimento experimental pronto. Próxima observação é o reteste com aluno reservado para depois de tudo pronto, quando professor puder. Não refazer sua revisão nem baixar outra versão por esta atualização documental. Laboratório 28/31; sem publicação.
 
 
 **Atualização de 08/10/2026:** VisuAlg confirmado por relato do professor; rodada visual/cópia encerrada na amostra orientada. **28/31**, próximo R08/5.5 com participante. [Resultados e limites da nova sessão](checkpoint-34-sessao-windows.md). O [roteiro Windows](roteiro-final-windows.md) permanece disponível; não repetir os blocos já concluídos. Os resultados abaixo preservam a sessão histórica de 07/10.
