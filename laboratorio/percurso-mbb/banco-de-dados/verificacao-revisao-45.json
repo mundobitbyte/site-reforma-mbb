@@ -1,0 +1,527 @@
+{
+  "revisao": 45,
+  "http_local": {
+    "html": 15,
+    "markdown": 1,
+    "todos_200": true
+  },
+  "sqlite_execucao": {
+    "sql_consultas": 16,
+    "comandos_sucesso": 29,
+    "reexecucoes_recusadas_sem_apagar": 5,
+    "sqlite": "3.53.1",
+    "saidas": {
+      "preparar": {
+        "resultado": "Banco didático criado pelo mesmo serviço da aplicação.",
+        "banco": "/workspace/scratch/b7e1e99ecb8f/bd45-ambiente-novo/laboratorio/cantina-evolutiva/dados/bd-didatico/cantina.sqlite3",
+        "pedidos_iniciais": 2
+      },
+      "consultar:01-cardapio": [
+        {
+          "id": 1,
+          "nome": "Água",
+          "preco_centavos": 300,
+          "estoque": 18
+        },
+        {
+          "id": 2,
+          "nome": "Suco",
+          "preco_centavos": 600,
+          "estoque": 10
+        },
+        {
+          "id": 3,
+          "nome": "Salgado",
+          "preco_centavos": 800,
+          "estoque": 10
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche",
+          "preco_centavos": 1200,
+          "estoque": 8
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate",
+          "preco_centavos": 500,
+          "estoque": 12
+        }
+      ],
+      "consultar:02-saldo-baixo": [
+        {
+          "id": 4,
+          "nome": "Sanduíche",
+          "estoque": 8
+        },
+        {
+          "id": 2,
+          "nome": "Suco",
+          "estoque": 10
+        },
+        {
+          "id": 3,
+          "nome": "Salgado",
+          "estoque": 10
+        }
+      ],
+      "consultar:03-pedido-completo": [
+        {
+          "pedido_id": 1,
+          "status": "Em preparação",
+          "nome": "Água",
+          "quantidade": 2,
+          "preco_unitario_centavos": 300,
+          "valor_item_centavos": 600
+        }
+      ],
+      "consultar:04-resumo-pedidos": [
+        {
+          "id": 1,
+          "status": "Em preparação",
+          "subtotal_centavos": 600,
+          "desconto_centavos": 0,
+          "total_centavos": 600
+        },
+        {
+          "id": 2,
+          "status": "Novo",
+          "subtotal_centavos": 3000,
+          "desconto_centavos": 300,
+          "total_centavos": 2700
+        }
+      ],
+      "consultar:05-nunca-vendidos": [
+        {
+          "id": 3,
+          "nome": "Salgado"
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche"
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate"
+        }
+      ],
+      "consultar:06-vendas-por-produto": [
+        {
+          "id": 1,
+          "nome": "Água",
+          "pedidos_com_produto": 1,
+          "unidades_vendidas": 2,
+          "subtotal_vendido_centavos": 600
+        },
+        {
+          "id": 2,
+          "nome": "Suco",
+          "pedidos_com_produto": 1,
+          "unidades_vendidas": 5,
+          "subtotal_vendido_centavos": 3000
+        },
+        {
+          "id": 3,
+          "nome": "Salgado",
+          "pedidos_com_produto": 0,
+          "unidades_vendidas": 0,
+          "subtotal_vendido_centavos": 0
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche",
+          "pedidos_com_produto": 0,
+          "unidades_vendidas": 0,
+          "subtotal_vendido_centavos": 0
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate",
+          "pedidos_com_produto": 0,
+          "unidades_vendidas": 0,
+          "subtotal_vendido_centavos": 0
+        }
+      ],
+      "consultar:07-historico": [
+        {
+          "pedido_id": 1,
+          "status": "Em preparação",
+          "estado_anterior": "Novo",
+          "estado_novo": "Confirmado",
+          "alterado_em": "2026-10-08 21:58:37"
+        },
+        {
+          "pedido_id": 1,
+          "status": "Em preparação",
+          "estado_anterior": "Confirmado",
+          "estado_novo": "Em preparação",
+          "alterado_em": "2026-10-08 21:58:37"
+        },
+        {
+          "pedido_id": 2,
+          "status": "Novo",
+          "estado_anterior": null,
+          "estado_novo": null,
+          "alterado_em": null
+        }
+      ],
+      "consultar:08-cupom": [
+        {
+          "codigo": "MBB10",
+          "percentual": 10,
+          "minimo_centavos": 3000,
+          "validade": "2099-12-31",
+          "utilizado": 1
+        }
+      ],
+      "consultar:09-sem-venda-exists": [
+        {
+          "id": 3,
+          "nome": "Salgado"
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche"
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate"
+        }
+      ],
+      "consultar:10-cte": [
+        {
+          "id": 2,
+          "total_centavos": 2700
+        }
+      ],
+      "consultar:11-acumulado": [
+        {
+          "id": 1,
+          "total_centavos": 600,
+          "acumulado_centavos": 600
+        },
+        {
+          "id": 2,
+          "total_centavos": 2700,
+          "acumulado_centavos": 3300
+        }
+      ],
+      "consultar:12-ranking": [
+        {
+          "id": 2,
+          "nome": "Suco",
+          "unidades": 5,
+          "posicao": 1
+        },
+        {
+          "id": 1,
+          "nome": "Água",
+          "unidades": 2,
+          "posicao": 2
+        },
+        {
+          "id": 3,
+          "nome": "Salgado",
+          "unidades": 0,
+          "posicao": 3
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche",
+          "unidades": 0,
+          "posicao": 3
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate",
+          "unidades": 0,
+          "posicao": 3
+        }
+      ],
+      "consultar:13-plano-historico": [
+        {
+          "id": 4,
+          "parent": 0,
+          "notused": 61,
+          "detail": "SEARCH historico_status USING INDEX historico_status_pedido (pedido_id=?)"
+        }
+      ],
+      "consultar:14-itens-sem-join": [
+        {
+          "pedido_id": 1,
+          "produto_id": 1,
+          "quantidade": 2,
+          "preco_unitario_centavos": 300
+        }
+      ],
+      "consultar:15-itens-com-produto": [
+        {
+          "pedido_id": 1,
+          "nome": "Água",
+          "quantidade": 2
+        }
+      ],
+      "consultar:16-estrutura": [
+        {
+          "type": "index",
+          "name": "historico_status_pedido",
+          "sql": "CREATE INDEX historico_status_pedido ON historico_status(pedido_id, id)"
+        },
+        {
+          "type": "table",
+          "name": "cupom",
+          "sql": "CREATE TABLE cupom (\n    codigo TEXT PRIMARY KEY CHECK (length(trim(codigo)) > 0),\n    percentual INTEGER NOT NULL\n        CHECK (typeof(percentual) = 'integer' AND percentual BETWEEN 1 AND 100),\n    minimo_centavos INTEGER NOT NULL\n        CHECK (typeof(minimo_centavos) = 'integer' AND minimo_centavos >= 0),\n    validade TEXT NOT NULL,\n    utilizado INTEGER NOT NULL DEFAULT 0 CHECK (utilizado IN (0, 1))\n)"
+        },
+        {
+          "type": "table",
+          "name": "historico_status",
+          "sql": "CREATE TABLE historico_status (\n    id INTEGER PRIMARY KEY,\n    pedido_id INTEGER NOT NULL REFERENCES pedido(id),\n    estado_anterior TEXT NOT NULL,\n    estado_novo TEXT NOT NULL,\n    alterado_em TEXT NOT NULL DEFAULT (datetime('now')),\n    CHECK (\n        (estado_anterior = 'Novo' AND estado_novo = 'Confirmado') OR\n        (estado_anterior = 'Confirmado' AND estado_novo = 'Em preparação') OR\n        (estado_anterior = 'Em preparação' AND estado_novo = 'Pronto') OR\n        (estado_anterior = 'Pronto' AND estado_novo = 'Entregue')\n    )\n)"
+        },
+        {
+          "type": "table",
+          "name": "item_pedido",
+          "sql": "CREATE TABLE item_pedido (\n    pedido_id INTEGER NOT NULL REFERENCES pedido(id),\n    produto_id INTEGER NOT NULL REFERENCES produto(id),\n    quantidade INTEGER NOT NULL\n        CHECK (typeof(quantidade) = 'integer' AND quantidade BETWEEN 1 AND 10),\n    preco_unitario_centavos INTEGER NOT NULL\n        CHECK (typeof(preco_unitario_centavos) = 'integer' AND preco_unitario_centavos >= 0),\n    PRIMARY KEY (pedido_id, produto_id)\n)"
+        },
+        {
+          "type": "table",
+          "name": "pedido",
+          "sql": "CREATE TABLE pedido (\n    id INTEGER PRIMARY KEY,\n    criado_em TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    status TEXT NOT NULL DEFAULT 'Novo'\n        CHECK (status IN ('Novo', 'Confirmado', 'Em preparação', 'Pronto', 'Entregue'))\n, cupom_codigo TEXT REFERENCES cupom(codigo), desconto_centavos INTEGER NOT NULL DEFAULT 0\n    CHECK (typeof(desconto_centavos) = 'integer' AND desconto_centavos >= 0))"
+        },
+        {
+          "type": "table",
+          "name": "produto",
+          "sql": "CREATE TABLE produto (\n    id INTEGER PRIMARY KEY,\n    nome TEXT NOT NULL CHECK (length(trim(nome)) > 0),\n    preco_centavos INTEGER NOT NULL\n        CHECK (typeof(preco_centavos) = 'integer' AND preco_centavos >= 0),\n    estoque INTEGER NOT NULL\n        CHECK (typeof(estoque) = 'integer' AND estoque >= 0)\n)"
+        },
+        {
+          "type": "view",
+          "name": "resumo_pedido",
+          "sql": "CREATE VIEW resumo_pedido AS\nSELECT p.id, p.criado_em, p.status, p.cupom_codigo, p.desconto_centavos,\n       COALESCE(SUM(i.quantidade * i.preco_unitario_centavos), 0) AS subtotal_centavos\nFROM pedido AS p\nLEFT JOIN item_pedido AS i ON i.pedido_id = p.id\nGROUP BY p.id, p.criado_em, p.status, p.cupom_codigo, p.desconto_centavos"
+        }
+      ],
+      "verificar": {
+        "integridade": [
+          "ok"
+        ],
+        "violacoes_fk": [],
+        "versao": 3,
+        "contagens": {
+          "produto": 5,
+          "pedido": 3,
+          "item_pedido": 3,
+          "cupom": 1,
+          "historico_status": 2
+        }
+      },
+      "backup": {
+        "destino": "/workspace/scratch/b7e1e99ecb8f/bd45-ambiente-novo/laboratorio/cantina-evolutiva/dados/bd-didatico/backup.sqlite3",
+        "verificacao": {
+          "integridade": [
+            "ok"
+          ],
+          "violacoes_fk": [],
+          "versao": 3,
+          "contagens": {
+            "produto": 5,
+            "pedido": 2,
+            "item_pedido": 2,
+            "cupom": 1,
+            "historico_status": 2
+          }
+        }
+      },
+      "restaurar": {
+        "destino": "/workspace/scratch/b7e1e99ecb8f/bd45-ambiente-novo/laboratorio/cantina-evolutiva/dados/bd-didatico/restaurado.sqlite3",
+        "verificacao": {
+          "integridade": [
+            "ok"
+          ],
+          "violacoes_fk": [],
+          "versao": 3,
+          "contagens": {
+            "produto": 5,
+            "pedido": 2,
+            "item_pedido": 2,
+            "cupom": 1,
+            "historico_status": 2
+          }
+        }
+      },
+      "exportar": {
+        "arquivo": "/workspace/scratch/b7e1e99ecb8f/bd45-ambiente-novo/laboratorio/cantina-evolutiva/dados/bd-didatico/cantina.sql",
+        "conteudo": "Estrutura e registros; não inclui contas MySQL ou ambiente da máquina."
+      },
+      "restaurar-sql": {
+        "destino": "/workspace/scratch/b7e1e99ecb8f/bd45-ambiente-novo/laboratorio/cantina-evolutiva/dados/bd-didatico/restaurado-sql.sqlite3",
+        "verificacao": {
+          "integridade": [
+            "ok"
+          ],
+          "violacoes_fk": [],
+          "versao": 3,
+          "contagens": {
+            "produto": 5,
+            "pedido": 2,
+            "item_pedido": 2,
+            "cupom": 1,
+            "historico_status": 2
+          }
+        }
+      },
+      "transacao:rollback": {
+        "resultado": "ROLLBACK",
+        "antes": {
+          "estoque_chocolate": 12,
+          "pedidos": 2
+        },
+        "durante": {
+          "estoque_chocolate": 11,
+          "pedidos": 3
+        },
+        "depois": {
+          "estoque_chocolate": 12,
+          "pedidos": 2
+        }
+      },
+      "transacao:falha": {
+        "resultado": "Falha esperada de FK; transação revertida.",
+        "antes": {
+          "estoque_chocolate": 12,
+          "pedidos": 2
+        },
+        "depois": {
+          "estoque_chocolate": 12,
+          "pedidos": 2
+        }
+      },
+      "transacao:commit": {
+        "resultado": "COMMIT",
+        "antes": {
+          "estoque_chocolate": 12,
+          "pedidos": 2
+        },
+        "durante": {
+          "estoque_chocolate": 11,
+          "pedidos": 3
+        },
+        "depois": {
+          "estoque_chocolate": 11,
+          "pedidos": 3
+        }
+      }
+    },
+    "apos_commit": {
+      "04-resumo-pedidos": [
+        {
+          "id": 1,
+          "status": "Em preparação",
+          "subtotal_centavos": 600,
+          "desconto_centavos": 0,
+          "total_centavos": 600
+        },
+        {
+          "id": 2,
+          "status": "Novo",
+          "subtotal_centavos": 3000,
+          "desconto_centavos": 300,
+          "total_centavos": 2700
+        },
+        {
+          "id": 3,
+          "status": "Novo",
+          "subtotal_centavos": 500,
+          "desconto_centavos": 0,
+          "total_centavos": 500
+        }
+      ],
+      "11-acumulado": [
+        {
+          "id": 1,
+          "total_centavos": 600,
+          "acumulado_centavos": 600
+        },
+        {
+          "id": 2,
+          "total_centavos": 2700,
+          "acumulado_centavos": 3300
+        },
+        {
+          "id": 3,
+          "total_centavos": 500,
+          "acumulado_centavos": 3800
+        }
+      ],
+      "12-ranking": [
+        {
+          "id": 2,
+          "nome": "Suco",
+          "unidades": 5,
+          "posicao": 1
+        },
+        {
+          "id": 1,
+          "nome": "Água",
+          "unidades": 2,
+          "posicao": 2
+        },
+        {
+          "id": 5,
+          "nome": "Chocolate",
+          "unidades": 1,
+          "posicao": 3
+        },
+        {
+          "id": 3,
+          "nome": "Salgado",
+          "unidades": 0,
+          "posicao": 4
+        },
+        {
+          "id": 4,
+          "nome": "Sanduíche",
+          "unidades": 0,
+          "posicao": 4
+        }
+      ]
+    },
+    "restauracoes_iguais_em_todos_os_registros": true,
+    "windows_testado": false,
+    "mysql_executado": false
+  },
+  "pytest_bd": {
+    "passed": 11,
+    "failed": 0
+  },
+  "venv_linux": {
+    "criado_ativado": true,
+    "pip_tzdata_instalado": true,
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "sqls_existentes_protegidos": {
+    "laboratorio/cantina-evolutiva/schema-inicial.sql": "1cdfca88a2791815730274ebe5855e8601cc7025dacd59a8bc748dd5024f0454",
+    "laboratorio/cantina-evolutiva/migracao-02-cupom.sql": "060878ee31b06d378e9d909847025b6b05fb00fe70c61e5bee32a6fe9050111c",
+    "laboratorio/cantina-evolutiva/migracao-03-estados.sql": "783e4b88ba4cbcf7fb19af4ac19d08f910acdcbcd734a0dfbdde49c1bc9a795f",
+    "laboratorio/cantina-evolutiva/dados/bd-didatico/cantina.sql": "d246226821a5fb1f6923dcabb7fb790dd84eddf8148f67ee35f80b9b4df410f4",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/05-nunca-vendidos.sql": "d383605cfe295629364e4ef83aad59f33bd3febd1933ece37afede715e5dc809",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/10-cte.sql": "55e27f37270392a22cc10f73c7d93a4627d02ee3a88bd8f56d90e431b4b3e7db",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/12-ranking.sql": "f7a00db8779e0aa65bcfbb2580d6f9b79672b459514e19facd494a7829cd6840",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/03-pedido-completo.sql": "795836d1d79d80493300eb34765d339bda1e609a571042f596281f73f916e94c",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/13-plano-historico.sql": "1440fa381fbbbb4d9570370a67589a31a35f2df84690afcf2bacbecc2c99c297",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/09-sem-venda-exists.sql": "057e9299a9ba655023b854cc0a0a026672b4ea36265a79efaa130cd9a161d9eb",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/07-historico.sql": "fa9f0fccce2a863e6ed4559bb9faa8e91a5967b83b67ee2f5d3377c2adc2dffd",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/06-vendas-por-produto.sql": "f81b103994b6851dfb187cbe00e2d6586e25c265f0c44cdac43dacd916d1ac3a",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/02-saldo-baixo.sql": "14003ea1bb2fe64788f8f96ec910cc79ede61673ebae3f301b11c1e32330fdf1",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/08-cupom.sql": "c1f3a955209dcd1abe7242f3665c8a940dc5a982ec00c1b5c0b323d928140fd9",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/04-resumo-pedidos.sql": "400ce112dc30407aca45424c51b1575077edeb91742fa4dac9902de96ef7f86a",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/01-cardapio.sql": "605964c2617d852e44cbde00377ef535fb5e4eab476ca37b72b67c00a93afe74",
+    "laboratorio/percurso-mbb/banco-de-dados/sql/11-acumulado.sql": "48b1cd7f4657958bd6f4b53b782cf2f1e048c5004e16a50c9d395f60cbfac9a9",
+    "assets/seguranca-dados/mysql-general-log-lab.sql": "b68631aad643d6a2400dd3dc4ac490a332b337ebc19431c932b34f9502ce6352",
+    "pages/bancodedados.html": "f46eee0470402bc9462c1179fb5fb3fa75099dcc6a442af1dcc572556cbb5f04"
+  },
+  "blocos_sql_originais_preservados": true,
+  "caderno_atividades_conceituais_sem_sql_obrigatorio": true,
+  "browser_publico": "aguardando verificação após implantação",
+  "teste_iniciante_real": false,
+  "windows_executado": false,
+  "mysql_executado": false
+}
