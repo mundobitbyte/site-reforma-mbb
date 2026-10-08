@@ -78,6 +78,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 #estoque-status { flex-basis: 100%; margin: 0; }
 #estoque-status:empty { display: none; }
 #consulta-resultado { font-size: 1.1rem; font-weight: 700; }
+#historico > li:last-child { scroll-margin-bottom: 1rem; }
 .section-heading .ghost { flex-shrink: 0; }
 
 @media (max-height: 750px) { .carrinho { position: static; } }

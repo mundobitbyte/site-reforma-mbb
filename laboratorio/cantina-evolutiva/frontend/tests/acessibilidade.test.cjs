@@ -41,6 +41,8 @@ async function interfaceDeTeste(estoqueAgua = 20, memoria = new Map(), endereco 
       return null;
     }
     focus() { document.activeElement = this; }
+    get lastElementChild() { return this.children.at(-1) || null; }
+    scrollIntoView(opcoes) { this.rolagem = opcoes; }
   }
   const ids = new Map([
     'mensagem', 'produtos', 'produtoTemplate', 'itensCarrinho', 'total', 'finalizar',
@@ -281,6 +283,43 @@ test('async: conflito de estado dirige foco à mensagem e pede nova consulta', a
   assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
   assert.equal(ui.estado().consultado, null);
   assert.match(ui.ids.get('#consulta-resultado').textContent, /Consulte o pedido/);
+});
+
+function pedidoEntregueComHistorico() {
+  const final = pedido('Entregue', null);
+  const estados = ['Novo', 'Confirmado', 'Em preparação', 'Pronto', 'Entregue'];
+  final.historico_status = estados.slice(1).map((estado_novo, indice) => ({
+    estado_anterior: estados[indice], estado_novo, alterado_em: '2026-10-08 16:00:00',
+  }));
+  return final;
+}
+
+test('entrega final revela a quarta transição sem habilitar outro avanço', async () => {
+  const ui = await interfaceDeTeste();
+  ui.estado().consultado = pedido('Pronto', 'Entregue');
+  ui.ids.get('#avancar').focus();
+  ui.resposta(async () => sucesso(pedidoEntregueComHistorico()));
+  await ui.ids.get('#avancar').listeners.click();
+  const historico = ui.ids.get('#historico');
+  assert.equal(historico.children.length, 4);
+  assert.match(historico.lastElementChild.textContent, /Pronto → Entregue/);
+  assert.equal(historico.lastElementChild.rolagem.block, 'nearest');
+  assert.equal(ui.ids.get('#avancar').disabled, true);
+  assert.equal(ui.document.activeElement, ui.ids.get('#consulta-resultado'));
+});
+
+test('entrega final não desloca a tela de quem escolheu outro controle durante a espera', async () => {
+  const ui = await interfaceDeTeste();
+  ui.estado().consultado = pedido('Pronto', 'Entregue');
+  ui.ids.get('#avancar').focus();
+  const p = pendencia();
+  ui.resposta(() => p.promessa);
+  const avancar = ui.ids.get('#avancar').listeners.click();
+  ui.ids.get('#cupom').focus();
+  p.concluir(sucesso(pedidoEntregueComHistorico()));
+  await avancar;
+  assert.equal(ui.document.activeElement, ui.ids.get('#cupom'));
+  assert.equal(ui.ids.get('#historico').lastElementChild.rolagem, undefined);
 });
 
 test('async: reconstruir produtos mantém foco e quantidade em edição', async () => {

@@ -11,7 +11,11 @@ function avisar(texto, erro = false) {
 function recuperarFoco(origem, destino = origem) {
   // Só recupera o foco desta ação; não interrompe quem escolheu outro controle.
   if ((document.activeElement === origem || document.activeElement === document.body)
-      && destino && !destino.disabled) destino.focus();
+      && destino && !destino.disabled) {
+    destino.focus();
+    return true;
+  }
+  return false;
 }
 
 async function api(caminho, opcoes) {
@@ -248,6 +252,7 @@ $('#avancar').addEventListener('click', async () => {
   const versao = estado.versaoConsulta;
   let versaoParaFoco = versao;
   let destinoFoco = $('#consulta-resultado');
+  let entregaConcluida = false;
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -257,6 +262,7 @@ $('#avancar').addEventListener('click', async () => {
     });
     if (versao === estado.versaoConsulta) {
       mostrarPedido(atualizado);
+      entregaConcluida = atualizado.status === 'Entregue';
     }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
@@ -268,7 +274,12 @@ $('#avancar').addEventListener('click', async () => {
   } finally {
     estado.alterando = false;
     controlesConsulta();
-    if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($('#avancar'), destinoFoco);
+    if (versaoParaFoco === estado.versaoConsulta) {
+      const focoRecuperado = recuperarFoco($('#avancar'), destinoFoco);
+      if (focoRecuperado && entregaConcluida) {
+        $('#historico').lastElementChild?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+      }
+    }
   }
 });
 recuperarNumeroPedido();

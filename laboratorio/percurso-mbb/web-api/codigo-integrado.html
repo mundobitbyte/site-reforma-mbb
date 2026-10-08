@@ -32,7 +32,7 @@
         &lt;div class=&quot;estoque-controles&quot;&gt;
         &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot; aria-describedby=&quot;estoque-ajuda&quot;&gt;Consultar estoque atual&lt;/button&gt;
         &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Onde vejo o estoque?&lt;/summary&gt;
-          &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Clique para buscar as quantidades disponíveis no banco. O resultado aparece na linha &lt;strong&gt;Estoque&lt;/strong&gt;, abaixo do nome de cada produto. Se não houve novas vendas, os números permanecem iguais. O botão não repõe estoque nem acrescenta produtos ao pedido.&lt;/p&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;O estoque já é consultado ao abrir a tela e após registrar um pedido. Use este botão para buscar novamente os valores, por exemplo se a atualização falhar ou houver vendas em outra aba. Ele atualiza a mesma linha &lt;strong&gt;Estoque&lt;/strong&gt; abaixo do nome de cada produto. Sem novas vendas, os números permanecem iguais. Não repõe estoque nem acrescenta produtos ao pedido.&lt;/p&gt;
         &lt;/details&gt;
         &lt;p id=&quot;estoque-status&quot; class=&quot;hint&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
         &lt;/div&gt;
@@ -163,6 +163,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 #estoque-status { flex-basis: 100%; margin: 0; }
 #estoque-status:empty { display: none; }
 #consulta-resultado { font-size: 1.1rem; font-weight: 700; }
+#historico &gt; li:last-child { scroll-margin-bottom: 1rem; }
 .section-heading .ghost { flex-shrink: 0; }
 
 @media (max-height: 750px) { .carrinho { position: static; } }
@@ -193,7 +194,11 @@ function avisar(texto, erro = false) {
 function recuperarFoco(origem, destino = origem) {
   // Só recupera o foco desta ação; não interrompe quem escolheu outro controle.
   if ((document.activeElement === origem || document.activeElement === document.body)
-      &amp;&amp; destino &amp;&amp; !destino.disabled) destino.focus();
+      &amp;&amp; destino &amp;&amp; !destino.disabled) {
+    destino.focus();
+    return true;
+  }
+  return false;
 }
 
 async function api(caminho, opcoes) {
@@ -430,6 +435,7 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
   const versao = estado.versaoConsulta;
   let versaoParaFoco = versao;
   let destinoFoco = $(&#x27;#consulta-resultado&#x27;);
+  let entregaConcluida = false;
   estado.alterando = true;
   controlesConsulta();
   try {
@@ -439,6 +445,7 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
     });
     if (versao === estado.versaoConsulta) {
       mostrarPedido(atualizado);
+      entregaConcluida = atualizado.status === &#x27;Entregue&#x27;;
     }
   } catch (erro) {
     if (versao === estado.versaoConsulta) {
@@ -450,7 +457,12 @@ $(&#x27;#avancar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
   } finally {
     estado.alterando = false;
     controlesConsulta();
-    if (versaoParaFoco === estado.versaoConsulta) recuperarFoco($(&#x27;#avancar&#x27;), destinoFoco);
+    if (versaoParaFoco === estado.versaoConsulta) {
+      const focoRecuperado = recuperarFoco($(&#x27;#avancar&#x27;), destinoFoco);
+      if (focoRecuperado &amp;&amp; entregaConcluida) {
+        $(&#x27;#historico&#x27;).lastElementChild?.scrollIntoView({ block: &#x27;nearest&#x27;, behavior: &#x27;instant&#x27; });
+      }
+    }
   }
 });
 recuperarNumeroPedido();
