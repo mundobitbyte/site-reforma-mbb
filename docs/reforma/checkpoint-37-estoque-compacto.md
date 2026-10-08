@@ -9,7 +9,7 @@ A captura evidencia distribuição vertical; não demonstra falha de API, corte 
 - Título, retorno e ajuda de quantidade ficam em grupo próprio. Botão de estoque e sua ajuda ficam em bloco compacto ao lado desse grupo quando há largura, sem faixa adicional ocupando todo o cardápio. Em janela estreita, os grupos passam para linhas distintas; não há altura fixa ou ocultação dos produtos.
 - Ajuda renomeada para Onde vejo o estoque? Explica que a consulta busca as quantidades no banco e as exibe na linha Estoque abaixo do nome de cada produto. Se não houve novas vendas, os valores podem permanecer iguais. A consulta não repõe estoque nem adiciona itens.
 - Após sucesso, a mensagem junto ao botão aponta explicitamente para essa linha nos produtos. Continua aparecendo somente depois da operação, com estado de carregamento e erro preservados.
-- Na etapa 3, Consultar passou a Consultar pedido. Ajuda inicial e ajuda dinâmica do último ID informam que estado, total e produtos aparecem logo abaixo do botão.
+- Professor esclareceu que toda a observação se referia a Consultar estoque atual. Botão Consultar e ajuda do pedido da etapa 3 mantidos como estavam no checkpoint 36.
 - HTML, CSS e JS canônicos sincronizados na página de código integrado. Regras de venda, API, banco, armazenamento do ID e transições permanecem as existentes.
 
 ## Verificação e limites

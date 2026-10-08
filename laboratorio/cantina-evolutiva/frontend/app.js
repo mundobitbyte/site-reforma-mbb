@@ -162,7 +162,7 @@ $('#recarregar').addEventListener('click', async () => {
 function lembrarPedido(id) {
   try { sessionStorage.setItem('mbb-cantina-ultimo-pedido', String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
   const ajuda = $('#consulta-ajuda');
-  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão.`;
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
 }
 
 function recuperarNumeroPedido() {

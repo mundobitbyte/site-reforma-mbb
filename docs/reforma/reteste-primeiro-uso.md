@@ -23,7 +23,7 @@ Deixe o CMD aberto. Abra no mesmo computador:
 - Aplicação: http://127.0.0.1:8005/
 - Percurso: http://127.0.0.1:8005/curso/laboratorio/percurso-mbb/index.html
 
-Confirme os textos Adicionar ao pedido e Consultar estoque atual, Consultar pedido na etapa 3, os três atalhos numerados, os links Voltar aos atalhos e as ajudas fechadas junto aos controles. Se a porta estiver ocupada, use 8006 no comando e nas duas URLs. Uma execução nova cria outra base; não reutilize IDs de sessões anteriores.
+Confirme os textos Adicionar ao pedido e Consultar estoque atual, os três atalhos numerados, os links Voltar aos atalhos e as ajudas fechadas junto aos controles. Se a porta estiver ocupada, use 8006 no comando e nas duas URLs. Uma execução nova cria outra base; não reutilize IDs de sessões anteriores.
 
 ## Conduzir sem pressão de nota
 Diga: “Estamos conferindo se o material orienta bem. Pode ler com calma, explorar e dizer o que não estiver claro. Não é uma prova para atribuir nota.” Dê uma tarefa por vez, com tempo para leitura. Não ofereça resposta ou caminho antes da tentativa; registre dúvida antes de ajudar. Se for a mesma aluna, anote o contato prévio; não tratar reconhecimento posterior como primeira descoberta independente.

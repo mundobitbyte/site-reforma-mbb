@@ -144,4 +144,4 @@ Após observação do professor, seis explicações ficam recolhidas, estoque ga
 
 ## Ajuste 37 — estoque compacto
 
-Capturas do professor mostram a faixa de estoque aumentando o espaço acima dos produtos e o último cartão parcialmente abaixo da janela. [Correção e limites](checkpoint-37-estoque-compacto.md): bloco ao lado do título quando há espaço, instrução de onde ler o resultado e botão Consultar pedido identificado. Mantidos 28/31 e posição 5.5; sem aprovação visual da nova posição.
+Capturas do professor mostram a faixa de estoque aumentando o espaço acima dos produtos e o último cartão parcialmente abaixo da janela. [Correção e limites](checkpoint-37-estoque-compacto.md): bloco ao lado do título quando há espaço, instrução de onde ler o resultado. Mantidos 28/31 e posição 5.5; sem aprovação visual da nova posição.

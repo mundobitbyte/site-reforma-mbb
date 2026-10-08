@@ -59,11 +59,11 @@
         <h2 id="consulta-titulo">3. Consultar e acompanhar</h2>
         <a class="retorno" href="#atalhos">← Voltar aos atalhos</a>
         <details class="ajuda"><summary>Como reencontrar meu pedido?</summary>
-          <p class="hint" id="consulta-ajuda">Depois de registrar, o número do pedido aparece aqui. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão. Guarde o número para reencontrar o pedido.</p>
+          <p class="hint" id="consulta-ajuda">Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.</p>
         </details>
         <form id="form-consulta"><label for="pedido-id">Número do pedido</label>
           <input id="pedido-id" type="number" min="1" step="1" aria-describedby="consulta-ajuda" required>
-          <button id="consultar" class="secondary" type="submit">Consultar pedido</button></form>
+          <button id="consultar" class="secondary" type="submit">Consultar</button></form>
         <p id="consulta-resultado" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
         <div id="acompanhamento" hidden>
           <button id="avancar" class="secondary" type="button">Avançar pedido</button>

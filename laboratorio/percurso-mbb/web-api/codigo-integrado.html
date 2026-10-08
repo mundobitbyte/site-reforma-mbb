@@ -59,11 +59,11 @@
         &lt;h2 id=&quot;consulta-titulo&quot;&gt;3. Consultar e acompanhar&lt;/h2&gt;
         &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
         &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como reencontrar meu pedido?&lt;/summary&gt;
-          &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão. Guarde o número para reencontrar o pedido.&lt;/p&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.&lt;/p&gt;
         &lt;/details&gt;
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
           &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; aria-describedby=&quot;consulta-ajuda&quot; required&gt;
-          &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar pedido&lt;/button&gt;&lt;/form&gt;
+          &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
         &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; tabindex=&quot;-1&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
@@ -344,7 +344,7 @@ $(&#x27;#recarregar&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; {
 function lembrarPedido(id) {
   try { sessionStorage.setItem(&#x27;mbb-cantina-ultimo-pedido&#x27;, String(id)); } catch { /* A consulta funciona mesmo sem armazenamento. */ }
   const ajuda = $(&#x27;#consulta-ajuda&#x27;);
-  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar. Clique em Consultar pedido: o estado, o total e os produtos aparecem logo abaixo do botão.`;
+  if (ajuda) ajuda.textContent = `Último pedido consultado nesta aba: #${id}. O número fica preenchido ao recarregar; clique em Consultar para conferir o estado salvo.`;
 }
 
 function recuperarNumeroPedido() {
