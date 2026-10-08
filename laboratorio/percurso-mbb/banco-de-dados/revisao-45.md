@@ -34,8 +34,10 @@ Os 13 SQLs existentes são válidos nos testes desta revisão; não foram trocad
 ## Publicação e limites
 
 Fluxo existente preservado: GitHub Pages, branch publicacao/cantina-estatica, raiz; desenvolvimento preparacao/isolamento-inicial recebe o mesmo conteúdo de BD. Sem alterar configuração/domínio/Firebase/produção.
-Verificação pública e responsiva: pendente neste registro inicial, será acrescentada após conferir o conteúdo servido.
-Navegador local não disponível nesta sessão; a conferência em navegador ocorrerá na publicação experimental pelo Chromium remoto, sem contornar políticas de acesso local.
+Publicação confirmada no endereço público: revisão de conteúdo 68b0820d82ee2f0999ec6df54d9ac68c745dc6ca. O índice servido apresenta a entrada para iniciantes, 16 consultas e o caderno HTML.
+Chromium remoto: 56 verificações aprovadas (14 páginas × 320, 360, 768 e 1280 px), sem rolagem horizontal da página; exemplos abertos pelo teclado, diagrama dentro da largura, 11 retornos do caderno. Menu abriu com Enter e fechou com Escape. Navegação real: índice→capítulo 4→BD04 (título visível a 144 px do topo)→retorno ao capítulo 4→capítulo 5. Cópia do novo JOIN SQL confirmada com conteúdo literal.
+Limitação de cópia: ao copiar o comando Windows de ativação, a página informou “Comando copiado”, mas a leitura da área de transferência do navegador remoto retornou o SQL anterior; não foi possível confirmar esta cópia. O comando permanece visível e pode ser selecionado manualmente. Não se alterou o JavaScript compartilhado fora do escopo.
+Verificador estrutural: 112 HTMLs, 3532 referências, 123 botões de cópia, 51 arquivos canônicos e 55 blocos correspondentes; zero erros. As quatro larguras são viewports no navegador, não aparelhos físicos.
 Não declarar teste físico de celular/tablet, leitor de tela ou autonomia de aluno iniciante real. MySQL permanece material de referência protegido: as práticas executáveis desta revisão usam SQLite.
 
 ## Arquivos
