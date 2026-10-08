@@ -254,16 +254,15 @@
         {
           "id": "4.8",
           "titulo": "Ensaios VisuAlg e depurador interativo",
-          "situacao": "pendente",
+          "situacao": "concluida",
           "evidencias": [
             "laboratorio/percurso-mbb/programacao/ponte-visualg.html",
             "docs/reforma/evidencia-depurador-17.json",
             "laboratorio/percurso-mbb/programacao/depuracao.html",
-            "docs/reforma/checkpoint-19-acessibilidade.md"
+            "docs/reforma/checkpoint-19-acessibilidade.md",
+            "docs/reforma/checkpoint-34-sessao-windows.md"
           ],
-          "depende_de": [
-            "AMBIENTE_VISUALG_DEPURADOR"
-          ],
+          "depende_de": [],
           "ensaios": [
             {
               "nome": "Depurador Python pdb",
@@ -272,12 +271,14 @@
             },
             {
               "nome": "VisuAlg",
-              "situacao": "pendente",
+              "situacao": "concluida",
               "responsavel": "Professor Ronaldo",
-              "agendamento": "Teste posterior pelo professor, conforme instrução de 07/10/2026. Não bloqueia os demais trabalhos."
+              "agendamento": "Teste posterior pelo professor, conforme instrução de 07/10/2026. Não bloqueia os demais trabalhos.",
+              "evidencia": "docs/reforma/checkpoint-34-sessao-windows.md",
+              "resultado": "Professor relatou em 08/10/2026: já testei o visualg e deu tudo certo. Relato agregado, sem saídas individuais ou versão do VisuAlg informadas."
             }
           ],
-          "adiada_pelo_usuario": true
+          "adiada_pelo_usuario": false
         },
         {
           "id": "4.9",
@@ -286,13 +287,13 @@
           "evidencias": [
             "laboratorio/percurso-mbb/qts/roteiro-manual.md",
             "docs/reforma/checkpoint-28-retomada-no-celular.md",
-            "docs/reforma/evidencia-copia-31.json"
+            "docs/reforma/evidencia-copia-31.json",
+            "docs/reforma/checkpoint-34-sessao-windows.md"
           ],
           "depende_de": [
-            "REVISAO_VISUAL_NO_COMPUTADOR",
             "PARTICIPANTE"
           ],
-          "preparacao": "Professor relatou que a navegação orientada pareceu funcionar, sem falha percebida. Está somente no celular; zoom 200%, cópia de código e revisão com participante não confirmados. No checkpoint 28 o retorno da entrada foi corrigido a partir do 404 no log; seis entradas e retorno foram conferidos por HTTP, sem avaliação visual nova. No checkpoint 31, os 104 alvos de cópia foram auditados e as 48 fontes canônicas aparecem completas em blocos associados a botão Copiar; a área de transferência real e o zoom continuam sem confirmação."
+          "preparacao": "Sessão Windows 08/10, porta 8003: revisão orientada a 200% em Análise, BD03, PG07, Web08, matriz QTS e Git01. Capturas de Análise, BD, Web e QTS conferidas; Git OK por relato. Código PG07 colado pelo professor corresponde ao original, com indentação preservada. Conferência visual/cópia encerrada nesta amostra; revisão pedagógica com participante continua pendente. Não é avaliação de todas as 81 etapas."
         }
       ]
     },
@@ -377,7 +378,8 @@
             "docs/reforma/checkpoint-31-conferencia-da-copia.md",
             "docs/reforma/checkpoint-32-comandos-e-utf8.md",
             "docs/reforma/roteiro-final-windows.md",
-            "docs/reforma/checkpoint-33-roteiro-dos-testes.md"
+            "docs/reforma/checkpoint-33-roteiro-dos-testes.md",
+            "docs/reforma/checkpoint-34-sessao-windows.md"
           ],
           "depende_de": [
             "1.6",
@@ -389,25 +391,25 @@
             "5.4",
             "5.5"
           ],
-          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu."
+          "preparacao": "Minuta, ficha e entrega parcial preparadas nos checkpoints 22–24. No 29, consolidados resultados, versões, correções e reservas dos registros 25–28; parecer QTS atualizado. Decisão final permanece pendente dos critérios de saída. No 30, matriz QTS e pontes didáticas passaram a reutilizar as evidências reais de UTF-8 e Narrador; roteiro alinhado às observações restantes. No 31, verificador de cópia fortalecido e descrição de pdb em PG13 corrigida; observações humanas continuam pendentes. No 32, pastas de execução e dependências esclarecidas; roteiro HTTP corrigido para codificação UTF-8 e verificado em caminho acentuado simulado. Observações humanas continuam pendentes. No 33, preparado roteiro ordenado para a sessão Windows, com entradas/saídas VisuAlg, zoom/cópia, tarefas de participante e registro dos resultados. A sessão ainda não ocorreu. No 34, registrados relato VisuAlg e revisão visual/cópia de 08/10. Restam participante e decisão final; sem publicação."
         }
       ]
     }
   ],
-  "posicao_atual": "5.6",
+  "posicao_atual": "5.5",
   "autorizacao_pendente": false,
   "bloqueios": {
     "NAVEGADOR": "Restrição histórica do Chromium gerenciado. A prévia direta foi comprovada no computador Windows do professor no checkpoint 25; não bloqueia 5.4.",
     "PARTICIPANTE": "Compreensão e uso com participante ainda não executados.",
-    "AMBIENTE_VISUALG_DEPURADOR": "Depurador concluído. VisuAlg reservado para teste posterior pelo Professor Ronaldo; não bloqueia os demais trabalhos. Continua sem resultado de execução.",
-    "REVISAO_VISUAL_NO_COMPUTADOR": "Professor está apenas no celular; não pode conferir agora zoom/cópia ou possíveis falhas visuais não percebidas na navegação anterior."
+    "AMBIENTE_VISUALG_DEPURADOR": "Resolvido: pdb no checkpoint 17 e VisuAlg por relato do professor no 34.",
+    "REVISAO_VISUAL_NO_COMPUTADOR": "Resolvido nesta amostra: navegação com zoom orientado a 200% e cópia PG07 conferidas no 34. Avaliação pedagógica com participante permanece pendente."
   },
   "resumo": {
     "total_subetapas": 31,
-    "concluidas": 27,
-    "restantes": 4,
+    "concluidas": 28,
+    "restantes": 3,
     "total_etapas_ensino": 81
   },
-  "checkpoint_atualizacao": 33,
-  "orientacao_atual": "Checkpoint 33: preparado roteiro Windows para sessão de 08/10 após 7h30: versão corrigida 913e9dd8, VisuAlg (sete execuções), R07 zoom/cópia e R08 uso/compreensão com participante. Contagem 27/31; 5.6 parcial. Nenhum teste humano novo foi declarado."
+  "checkpoint_atualizacao": 34,
+  "orientacao_atual": "Checkpoint 34: VisuAlg concluído por relato do professor; rodada visual/cópia Windows encerrada. 28/31. Próximo: 5.5 uso/compreensão com participante, que também completa o critério pedagógico da 4.9. A 5.6 aguarda resultados e parecer; integração/publicação constituem fase posterior e exigem autorização explícita para publicar."
 }
