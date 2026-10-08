@@ -80,7 +80,7 @@ function renderizarCarrinho() {
   const area = $('#itensCarrinho');
   area.replaceChildren();
   area.className = estado.carrinho.length ? '' : 'itens-vazios';
-  if (!estado.carrinho.length) area.textContent = 'Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.';
+  if (!estado.carrinho.length) area.textContent = 'Nenhum produto adicionado.';
   for (const item of estado.carrinho) {
     const row = document.createElement('div');
     row.className = 'item-carrinho';

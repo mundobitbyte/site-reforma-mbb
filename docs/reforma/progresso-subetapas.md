@@ -138,3 +138,6 @@ VisuAlg aprovado por relato agregado do professor. Análise, BD03, PG07, Web08, 
 
 ## Primeiro uso — checkpoint 35
 Aluna do terceiro ano Técnico DS realizou a sessão. Inclusão, cupom, recuperação do pedido e leitura de estados geraram dificuldades; as cinco perguntas curriculares exigiram orientação. A 5.5 passa a parcial, sem aprovação. Interface e mapa corrigidos; 23 casos de lógica passaram, verificação HTTP por TestClient e fontes exatas. Navegador novo não confirmado. **28/31**, três abertas; [registro](checkpoint-35-primeiro-uso.md) e [reteste dos pontos afetados](reteste-primeiro-uso.md).
+
+## Ajudas e retorno — checkpoint 36
+Após observação do professor, seis explicações ficam recolhidas, estoque ganha bloco próprio, três etapas têm retorno aos atalhos e cabeçalho usa menos espaço vertical. 23 casos de lógica passaram; novo layout e uso humano aguardam conferência. **28/31**, posição 5.5, sem publicação. [Registro](checkpoint-36-ajudas-e-retorno.md).

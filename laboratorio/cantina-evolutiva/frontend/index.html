@@ -15,40 +15,57 @@
     <span class="versao">Evolução 3</span>
   </header>
   <main class="layout" id="conteudo" tabindex="-1">
-    <nav class="passos" aria-label="Etapas do pedido">
+    <nav class="passos" id="atalhos" tabindex="-1" aria-label="Etapas do pedido">
       <a href="#cardapio">1. Escolher produtos</a>
       <a href="#carrinho">2. Revisar e registrar</a>
       <a href="#consulta">3. Consultar e acompanhar</a>
     </nav>
     <section id="cardapio" aria-labelledby="cardapio-titulo" tabindex="-1">
-      <div class="section-heading"><div><h2 id="cardapio-titulo">1. Escolher produtos</h2>
-        <p class="hint" id="quantidade-ajuda">Digite a quantidade ou use as setas do campo. Depois clique em <strong>Adicionar ao pedido</strong>. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.</p></div>
-        <button id="recarregar" class="ghost" aria-describedby="estoque-ajuda">Consultar estoque atual</button></div>
-      <p class="hint" id="estoque-ajuda">Este botão consulta as quantidades disponíveis; não acrescenta produtos ao seu pedido.</p>
-      <p id="estoque-status" class="hint" role="status" aria-live="polite"></p>
+      <div class="section-heading"><h2 id="cardapio-titulo">1. Escolher produtos</h2></div>
+      <a class="retorno" href="#atalhos">← Voltar aos atalhos</a>
+      <details class="ajuda"><summary>Como adicionar produtos?</summary>
+        <p class="hint" id="quantidade-ajuda">Digite a quantidade ou use as setas do campo. Depois clique em <strong>Adicionar ao pedido</strong>. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.</p>
+      </details>
+      <div class="estoque-controles">
+        <button id="recarregar" class="ghost" aria-describedby="estoque-ajuda">Consultar estoque atual</button>
+        <details class="ajuda"><summary>O que este botão faz?</summary>
+          <p class="hint" id="estoque-ajuda">Consulta as quantidades disponíveis e atualiza os valores de estoque nos produtos. Não repõe estoque nem acrescenta produtos ao seu pedido.</p>
+        </details>
+        <p id="estoque-status" class="hint" role="status" aria-live="polite"></p>
+      </div>
       <div id="produtos" class="produtos" aria-live="polite"></div>
 
     </section>
     <aside class="carrinho" id="carrinho" aria-labelledby="carrinho-titulo" tabindex="-1">
       <h2 id="carrinho-titulo">2. Revisar e registrar</h2>
-      <p class="hint">Confira os produtos adicionados abaixo. Registrar confirma a venda e devolve um número de pedido.</p>
-      <div id="itensCarrinho" class="itens-vazios">Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.</div>
+      <a class="retorno" href="#atalhos">← Voltar aos atalhos</a>
+      <details class="ajuda"><summary>Como registrar o pedido?</summary>
+        <p class="hint">Confira os produtos adicionados abaixo. Registrar confirma a venda e devolve um número de pedido.</p>
+      </details>
+      <div id="itensCarrinho" class="itens-vazios">Nenhum produto adicionado.</div>
       <dl class="totais"><div class="total"><dt>Subtotal previsto</dt><dd id="total">R$ 0,00</dd></div></dl>
       <label for="cupom">Cupom (opcional): digite aqui</label><input aria-describedby="cupom-ajuda" id="cupom" type="text" placeholder="Ex.: MBB10" autocomplete="off">
-      <p class="hint" id="cupom-ajuda">Se não tiver cupom, deixe o campo vazio. MBB10 dá 10% de desconto em pedidos a partir de R$ 30,00; um uso neste laboratório. O total será confirmado ao registrar.</p>
+      <details class="ajuda"><summary>Como usar um cupom?</summary>
+        <p class="hint" id="cupom-ajuda">Se não tiver cupom, deixe o campo vazio. MBB10 dá 10% de desconto em pedidos a partir de R$ 30,00; um uso neste laboratório. O total será confirmado ao registrar.</p>
+      </details>
       <button id="finalizar" class="primary">Registrar pedido</button>
       <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
     </aside>
       <section class="consulta" id="consulta" aria-labelledby="consulta-titulo" tabindex="-1">
         <h2 id="consulta-titulo">3. Consultar e acompanhar</h2>
-        <p class="hint" id="consulta-ajuda">Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.</p>
+        <a class="retorno" href="#atalhos">← Voltar aos atalhos</a>
+        <details class="ajuda"><summary>Como reencontrar meu pedido?</summary>
+          <p class="hint" id="consulta-ajuda">Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.</p>
+        </details>
         <form id="form-consulta"><label for="pedido-id">Número do pedido</label>
           <input id="pedido-id" type="number" min="1" step="1" aria-describedby="consulta-ajuda" required>
           <button id="consultar" class="secondary" type="submit">Consultar</button></form>
         <p id="consulta-resultado" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
         <div id="acompanhamento" hidden>
           <button id="avancar" class="secondary" type="button">Avançar pedido</button>
-          <p class="hint">Leia o estado atual acima. Clique uma vez para avançar, aguarde a resposta e confira o novo estado. Entregue encerra a sequência.</p>
+          <details class="ajuda"><summary>Como avançar o pedido?</summary>
+            <p class="hint">Leia o estado atual acima. Clique uma vez para avançar, aguarde a resposta e confira o novo estado. Entregue encerra a sequência.</p>
+          </details>
           <h3>Histórico de mudanças</h3>
           <ol id="historico"></ol>
         </div>

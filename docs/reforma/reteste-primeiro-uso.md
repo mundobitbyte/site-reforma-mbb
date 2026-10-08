@@ -3,7 +3,7 @@
 Não repetir VisuAlg, pdb, as suítes técnicas antigas ou a leitura de todas as aulas. Este roteiro avalia as mudanças posteriores à sessão com a aluna.
 
 ## Preparar a nova cópia
-Baixe o ZIP da versão do checkpoint 35 indicada na conversa, extraia em pasta nova e abra CMD na pasta que contém index.html, laboratorio, docs e pages. Não usar a antiga aba 8003 para avaliar as correções.
+Baixe o ZIP da versão corrigida mais recente indicada na conversa, extraia em pasta nova e abra CMD na pasta que contém index.html, laboratorio, docs e pages. Não usar a antiga aba 8003 para avaliar as correções.
 
 Execute um comando por vez:
 
@@ -16,14 +16,14 @@ laboratorio\cantina-evolutiva\.venv\Scripts\python.exe -m pip install -r laborat
 ```
 
 ```bat
-laboratorio\cantina-evolutiva\.venv\Scripts\python.exe -X utf8 laboratorio\cantina-evolutiva\previa_local.py --port 8004
+laboratorio\cantina-evolutiva\.venv\Scripts\python.exe -X utf8 laboratorio\cantina-evolutiva\previa_local.py --port 8005
 ```
 
 Deixe o CMD aberto. Abra no mesmo computador:
-- Aplicação: http://127.0.0.1:8004/
-- Percurso: http://127.0.0.1:8004/curso/laboratorio/percurso-mbb/index.html
+- Aplicação: http://127.0.0.1:8005/
+- Percurso: http://127.0.0.1:8005/curso/laboratorio/percurso-mbb/index.html
 
-Confirme os novos textos Adicionar ao pedido e Consultar estoque atual e os três atalhos numerados. Se a porta estiver ocupada, use 8005 no comando e nas duas URLs. Uma execução nova cria outra base; não reutilize IDs de sessões anteriores.
+Confirme os textos Adicionar ao pedido e Consultar estoque atual, os três atalhos numerados, os links Voltar aos atalhos e as ajudas fechadas junto aos controles. Se a porta estiver ocupada, use 8006 no comando e nas duas URLs. Uma execução nova cria outra base; não reutilize IDs de sessões anteriores.
 
 ## Conduzir sem pressão de nota
 Diga: “Estamos conferindo se o material orienta bem. Pode ler com calma, explorar e dizer o que não estiver claro. Não é uma prova para atribuir nota.” Dê uma tarefa por vez, com tempo para leitura. Não ofereça resposta ou caminho antes da tentativa; registre dúvida antes de ajudar. Se for a mesma aluna, anote o contato prévio; não tratar reconhecimento posterior como primeira descoberta independente.
@@ -47,7 +47,7 @@ Peça que leia a abertura e explique a ligação entre aplicação e disciplinas
 Registre as palavras dela e o local consultado. Uma resposta repetida após explicação do professor deve ser marcada como orientada.
 
 ## Visual alterado — professor
-Na aplicação e na entrada do percurso, confira os novos atalhos, rótulos, mapa e retorno de estoque com zoom 200%; depois volte a 100%. Não é necessário repetir a rodada completa das seis páginas já conferidas no checkpoint 34. Se for possível, use também uma janela estreita para conferir a navegação e os cartões. Para os nomes/retornos alterados, pode complementar com Narrador; isso será uma observação nova, sem apagar a evidência anterior.
+Na aplicação, abra e feche as ajudas e confira os três retornos aos atalhos, a separação do estoque e o cabeçalho compacto. Na aplicação e na entrada do percurso, confira os atalhos, rótulos, mapa e retorno de estoque com zoom 200%; depois volte a 100%. Não é necessário repetir a rodada completa das seis páginas já conferidas no checkpoint 34. Se for possível, use também uma janela estreita para conferir a navegação e os cartões. Para os nomes/retornos alterados, pode complementar com Narrador; isso será uma observação nova, sem apagar a evidência anterior.
 
 ## Registro
 ```text

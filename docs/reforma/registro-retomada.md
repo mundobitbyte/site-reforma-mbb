@@ -1,5 +1,8 @@
 # Retomada dos ensaios — ficha curta
 
+**Versão mais recente: checkpoint 36.** Ajudas e retorno ajustados após observação do professor; [registro](checkpoint-36-ajudas-e-retorno.md). Usar a nova cópia e porta 8005 no [reteste](reteste-primeiro-uso.md). Contagem 28/31, sem nova aprovação humana.
+
+
 **Atualização de 08/10/2026:** VisuAlg confirmado por relato do professor; rodada visual/cópia encerrada na amostra orientada. **28/31**, próximo R08/5.5 com participante. [Resultados e limites da nova sessão](checkpoint-34-sessao-windows.md). O [roteiro Windows](roteiro-final-windows.md) permanece disponível; não repetir os blocos já concluídos. Os resultados abaixo preservam a sessão histórica de 07/10.
 
 Use esta ficha quando puder testar. Não é necessário repetir as suítes de pedido, cupom e estados já concluídas. As ações abaixo produzem evidência nova de leitura, acesso direto e compreensão; resultados esperados não são aprovação.

@@ -15,40 +15,57 @@
     &lt;span class=&quot;versao&quot;&gt;Evolução 3&lt;/span&gt;
   &lt;/header&gt;
   &lt;main class=&quot;layout&quot; id=&quot;conteudo&quot; tabindex=&quot;-1&quot;&gt;
-    &lt;nav class=&quot;passos&quot; aria-label=&quot;Etapas do pedido&quot;&gt;
+    &lt;nav class=&quot;passos&quot; id=&quot;atalhos&quot; tabindex=&quot;-1&quot; aria-label=&quot;Etapas do pedido&quot;&gt;
       &lt;a href=&quot;#cardapio&quot;&gt;1. Escolher produtos&lt;/a&gt;
       &lt;a href=&quot;#carrinho&quot;&gt;2. Revisar e registrar&lt;/a&gt;
       &lt;a href=&quot;#consulta&quot;&gt;3. Consultar e acompanhar&lt;/a&gt;
     &lt;/nav&gt;
     &lt;section id=&quot;cardapio&quot; aria-labelledby=&quot;cardapio-titulo&quot; tabindex=&quot;-1&quot;&gt;
-      &lt;div class=&quot;section-heading&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;1. Escolher produtos&lt;/h2&gt;
-        &lt;p class=&quot;hint&quot; id=&quot;quantidade-ajuda&quot;&gt;Digite a quantidade ou use as setas do campo. Depois clique em &lt;strong&gt;Adicionar ao pedido&lt;/strong&gt;. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.&lt;/p&gt;&lt;/div&gt;
-        &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot; aria-describedby=&quot;estoque-ajuda&quot;&gt;Consultar estoque atual&lt;/button&gt;&lt;/div&gt;
-      &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Este botão consulta as quantidades disponíveis; não acrescenta produtos ao seu pedido.&lt;/p&gt;
-      &lt;p id=&quot;estoque-status&quot; class=&quot;hint&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+      &lt;div class=&quot;section-heading&quot;&gt;&lt;h2 id=&quot;cardapio-titulo&quot;&gt;1. Escolher produtos&lt;/h2&gt;&lt;/div&gt;
+      &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
+      &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como adicionar produtos?&lt;/summary&gt;
+        &lt;p class=&quot;hint&quot; id=&quot;quantidade-ajuda&quot;&gt;Digite a quantidade ou use as setas do campo. Depois clique em &lt;strong&gt;Adicionar ao pedido&lt;/strong&gt;. Cada clique soma a quantidade escolhida; o total por produto deve ser de 1 a 10, respeitando o estoque.&lt;/p&gt;
+      &lt;/details&gt;
+      &lt;div class=&quot;estoque-controles&quot;&gt;
+        &lt;button id=&quot;recarregar&quot; class=&quot;ghost&quot; aria-describedby=&quot;estoque-ajuda&quot;&gt;Consultar estoque atual&lt;/button&gt;
+        &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;O que este botão faz?&lt;/summary&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;estoque-ajuda&quot;&gt;Consulta as quantidades disponíveis e atualiza os valores de estoque nos produtos. Não repõe estoque nem acrescenta produtos ao seu pedido.&lt;/p&gt;
+        &lt;/details&gt;
+        &lt;p id=&quot;estoque-status&quot; class=&quot;hint&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
       &lt;div id=&quot;produtos&quot; class=&quot;produtos&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
 
     &lt;/section&gt;
     &lt;aside class=&quot;carrinho&quot; id=&quot;carrinho&quot; aria-labelledby=&quot;carrinho-titulo&quot; tabindex=&quot;-1&quot;&gt;
       &lt;h2 id=&quot;carrinho-titulo&quot;&gt;2. Revisar e registrar&lt;/h2&gt;
-      &lt;p class=&quot;hint&quot;&gt;Confira os produtos adicionados abaixo. Registrar confirma a venda e devolve um número de pedido.&lt;/p&gt;
-      &lt;div id=&quot;itensCarrinho&quot; class=&quot;itens-vazios&quot;&gt;Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.&lt;/div&gt;
+      &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
+      &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como registrar o pedido?&lt;/summary&gt;
+        &lt;p class=&quot;hint&quot;&gt;Confira os produtos adicionados abaixo. Registrar confirma a venda e devolve um número de pedido.&lt;/p&gt;
+      &lt;/details&gt;
+      &lt;div id=&quot;itensCarrinho&quot; class=&quot;itens-vazios&quot;&gt;Nenhum produto adicionado.&lt;/div&gt;
       &lt;dl class=&quot;totais&quot;&gt;&lt;div class=&quot;total&quot;&gt;&lt;dt&gt;Subtotal previsto&lt;/dt&gt;&lt;dd id=&quot;total&quot;&gt;R$ 0,00&lt;/dd&gt;&lt;/div&gt;&lt;/dl&gt;
       &lt;label for=&quot;cupom&quot;&gt;Cupom (opcional): digite aqui&lt;/label&gt;&lt;input aria-describedby=&quot;cupom-ajuda&quot; id=&quot;cupom&quot; type=&quot;text&quot; placeholder=&quot;Ex.: MBB10&quot; autocomplete=&quot;off&quot;&gt;
-      &lt;p class=&quot;hint&quot; id=&quot;cupom-ajuda&quot;&gt;Se não tiver cupom, deixe o campo vazio. MBB10 dá 10% de desconto em pedidos a partir de R$ 30,00; um uso neste laboratório. O total será confirmado ao registrar.&lt;/p&gt;
+      &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como usar um cupom?&lt;/summary&gt;
+        &lt;p class=&quot;hint&quot; id=&quot;cupom-ajuda&quot;&gt;Se não tiver cupom, deixe o campo vazio. MBB10 dá 10% de desconto em pedidos a partir de R$ 30,00; um uso neste laboratório. O total será confirmado ao registrar.&lt;/p&gt;
+      &lt;/details&gt;
       &lt;button id=&quot;finalizar&quot; class=&quot;primary&quot;&gt;Registrar pedido&lt;/button&gt;
       &lt;p id=&quot;mensagem&quot; class=&quot;mensagem&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/p&gt;
     &lt;/aside&gt;
       &lt;section class=&quot;consulta&quot; id=&quot;consulta&quot; aria-labelledby=&quot;consulta-titulo&quot; tabindex=&quot;-1&quot;&gt;
         &lt;h2 id=&quot;consulta-titulo&quot;&gt;3. Consultar e acompanhar&lt;/h2&gt;
-        &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.&lt;/p&gt;
+        &lt;a class=&quot;retorno&quot; href=&quot;#atalhos&quot;&gt;← Voltar aos atalhos&lt;/a&gt;
+        &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como reencontrar meu pedido?&lt;/summary&gt;
+          &lt;p class=&quot;hint&quot; id=&quot;consulta-ajuda&quot;&gt;Depois de registrar, o número do pedido aparece aqui. Guarde esse número para consultar o pedido.&lt;/p&gt;
+        &lt;/details&gt;
         &lt;form id=&quot;form-consulta&quot;&gt;&lt;label for=&quot;pedido-id&quot;&gt;Número do pedido&lt;/label&gt;
           &lt;input id=&quot;pedido-id&quot; type=&quot;number&quot; min=&quot;1&quot; step=&quot;1&quot; aria-describedby=&quot;consulta-ajuda&quot; required&gt;
           &lt;button id=&quot;consultar&quot; class=&quot;secondary&quot; type=&quot;submit&quot;&gt;Consultar&lt;/button&gt;&lt;/form&gt;
         &lt;p id=&quot;consulta-resultado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; tabindex=&quot;-1&quot;&gt;&lt;/p&gt;
         &lt;div id=&quot;acompanhamento&quot; hidden&gt;
           &lt;button id=&quot;avancar&quot; class=&quot;secondary&quot; type=&quot;button&quot;&gt;Avançar pedido&lt;/button&gt;
-          &lt;p class=&quot;hint&quot;&gt;Leia o estado atual acima. Clique uma vez para avançar, aguarde a resposta e confira o novo estado. Entregue encerra a sequência.&lt;/p&gt;
+          &lt;details class=&quot;ajuda&quot;&gt;&lt;summary&gt;Como avançar o pedido?&lt;/summary&gt;
+            &lt;p class=&quot;hint&quot;&gt;Leia o estado atual acima. Clique uma vez para avançar, aguarde a resposta e confira o novo estado. Entregue encerra a sequência.&lt;/p&gt;
+          &lt;/details&gt;
           &lt;h3&gt;Histórico de mudanças&lt;/h3&gt;
           &lt;ol id=&quot;historico&quot;&gt;&lt;/ol&gt;
         &lt;/div&gt;
@@ -75,15 +92,15 @@ body { margin: 0; }
 button, input { font: inherit; }
 .topo {
   display: flex; justify-content: space-between; gap: 1rem; align-items: center;
-  padding: 2rem max(1.25rem, calc((100vw - 1180px) / 2));
+  padding: .85rem max(1.25rem, calc((100vw - 1180px) / 2));
   background: white; border-bottom: 1px solid #e3e8f0;
 }
 .topo h1, .section-heading h2, .carrinho h2 { margin: .1rem 0 .35rem; }
 .topo p { margin: 0; color: #566178; }
 .eyebrow { margin: 0; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #2457d6; }
 .versao { white-space: nowrap; padding: .4rem .7rem; border-radius: 999px; background: #eef3ff; color: #2457d6; font-size: .82rem; font-weight: 700; }
-.layout { width: min(1180px, calc(100% - 2rem)); margin: 2rem auto; display: grid; grid-template-columns: 1fr 360px; gap: 2rem; align-items: start; }
-.section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+.layout { width: min(1180px, calc(100% - 2rem)); margin: 1rem auto; display: grid; grid-template-columns: 1fr 360px; gap: 1.25rem; align-items: start; }
+.section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: .2rem; }
 .produtos { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .produto-card, .carrinho { background: white; border: 1px solid #e1e7f0; border-radius: 18px; box-shadow: 0 10px 30px rgba(20,33,61,.05); }
 .produto-card { padding: 1.15rem; }
@@ -113,7 +130,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .ok { color:#067647; }
 .erro { color:#b42318; }
 @media (max-width: 820px) {
-  .topo { align-items:flex-start; flex-direction:column; }
+  .topo { align-items:center; gap:.5rem; }
   .layout { grid-template-columns:1fr; }
   .carrinho { position:static; }
 }
@@ -126,7 +143,7 @@ button { border:0; border-radius:10px; padding:.72rem .9rem; font-weight:800; cu
 .consulta { grid-column: 1 / -1; margin-top: 0; padding: 1.25rem; background: white; border: 1px solid #e1e7f0; border-radius: 18px; }
 .consulta form { display: grid; gap: .65rem; max-width: 24rem; }
 button:disabled { opacity: .6; cursor: not-allowed; }
-button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible, #conteudo:focus-visible, #consulta-resultado:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 .item-carrinho &gt; div { min-width: 0; overflow-wrap: anywhere; }
 #consulta-resultado, .mensagem, #acompanhamento { overflow-wrap: anywhere; }
 #avancar { max-width: 100%; }
@@ -137,11 +154,25 @@ button:focus-visible, input:focus-visible, a:focus-visible, #conteudo:focus-visi
 .layout p, .layout a, .layout h2, .layout h3, .layout button { overflow-wrap: anywhere; }
 #cardapio, #carrinho, #consulta { scroll-margin-top: 1rem; }
 #cardapio:focus-visible, #carrinho:focus-visible, #consulta:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
-#estoque-status { min-height: 1.5rem; margin: .4rem 0; }
+#estoque-status { flex-basis: 100%; margin: 0; }
+#estoque-status:empty { display: none; }
 #consulta-resultado { font-size: 1.1rem; font-weight: 700; }
 .section-heading .ghost { flex-shrink: 0; }
 
 @media (max-height: 750px) { .carrinho { position: static; } }
+
+/* Orientações sob demanda; estados e mensagens de operação ficam visíveis. */
+.topo &gt; div { min-width: 0; flex: 1; }
+.topo h1 { font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1.2; }
+.topo &gt; div &gt; p:last-child { font-size: .9rem; }
+.retorno { display: inline-block; margin: 0 0 .4rem; color: #2457d6; font-size: .85rem; }
+.ajuda { margin: .35rem 0 .65rem; }
+.ajuda summary { cursor: pointer; color: #2457d6; font-size: .88rem; text-decoration: underline; text-underline-offset: .15em; }
+.ajuda p { margin-top: .5rem; padding: .65rem .8rem; background: #f5f7fb; border-left: 2px solid #d8dfeb; border-radius: 6px; }
+.estoque-controles { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: .75rem 0 1rem; padding: .75rem; border: 1px solid #e1e7f0; border-radius: 12px; background: #eef3ff; }
+.estoque-controles .ajuda { flex: 1 1 10rem; min-width: 0; margin: 0; }
+#atalhos { scroll-margin-top: 1rem; }
+#atalhos:focus-visible { outline: 3px solid #b45309; outline-offset: 3px; }
 </code></pre><p><a href="../../cantina-evolutiva/frontend/styles.css">Arquivo canônico frontend/styles.css</a></p></details><details><summary>frontend/app.js — código completo</summary><h3>frontend/app.js</h3><button class="copy-button" type="button" data-copy="integrado-2">Copiar código</button><pre id="integrado-2"><code>&#x27;use strict&#x27;;
 const estado = { produtos: [], carrinho: [], enviando: false, consultado: null, consultando: false, alterando: false, versaoConsulta: 0 };
 const moeda = centavos =&gt; (centavos / 100).toLocaleString(&#x27;pt-BR&#x27;, { style: &#x27;currency&#x27;, currency: &#x27;BRL&#x27; });
@@ -224,7 +255,7 @@ function renderizarCarrinho() {
   const area = $(&#x27;#itensCarrinho&#x27;);
   area.replaceChildren();
   area.className = estado.carrinho.length ? &#x27;&#x27; : &#x27;itens-vazios&#x27;;
-  if (!estado.carrinho.length) area.textContent = &#x27;Escolha um produto, informe a quantidade e clique em Adicionar ao pedido.&#x27;;
+  if (!estado.carrinho.length) area.textContent = &#x27;Nenhum produto adicionado.&#x27;;
   for (const item of estado.carrinho) {
     const row = document.createElement(&#x27;div&#x27;);
     row.className = &#x27;item-carrinho&#x27;;
